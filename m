@@ -4,194 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18967C9830E
-	for <linux-i3c@archiver.kernel.org>; Thu, 24 Sep 2026 11:54:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A68EBC98318
+	for <linux-i3c@archiver.kernel.org>; Thu, 24 Sep 2026 15:28:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QI4/Ey84aVSZppQZmwgPKGS8gEDAWR9/BEvpbEAKlyo=; b=q7759cDkgiD11epUuvipykIGCX
-	Mq9B8+eYWsUhwUEslcPgTw2wGiIqCGv4D1y3xGIb6yRn1lAd9tfvc9rrORMzefb7DNDA14SvipSO2
-	tTg9VcG1oPPQJvukkMYhj0PsvsFcSLrAtUOtFUjUUZXgzSWmSo8VP7VktPpWt6YRGcRZEbsAWGGUI
-	e+WeOg7tsgwwE/gqoOAokOJTZMddh7k7dCsgoK5QBJRuvIDo0+PRGjTK9ailXwT9IcFJkKE8QJopk
-	DUtMR5h96BsNiErBnr7W3J+u5wFcgLtetstOQEm5CQvpWt7J/HimkJ/zNpqKX4Fz5ZDS8iuZSLruI
-	aytqVAaw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z9uEjLpnvexLd9tDNWeRGrsAC5g25vV+YfQsQbNswgo=; b=PywtF4ihpo3O3a
+	fGCu/LWBgB8+/g+Ul2rovxjJJQQBXyiEEVofQgpm4YOMaqEYto0q1J7P901LblVXaqrAm/34S2d/g
+	lDn8jxN2qOjj/Ur3XRhAH4QkVsx0VCTuZI617ZNpJkFHyUWfVP2FthziT812UFVIbirKwJlW1ftni
+	kIPeqxVUGOzJAiP3MEC2pypO3ekWFuPfKprnbQkQnxd2NFYzndKlugOyCIMg5oLdOCUANmQGkqH71
+	cAF5M2+6xPu/oSddIFCylm9SiW+FlpTzUW6+DQunJwO+SL8AErAUsLM7xhK3iujPf9nNDBZRVZNEa
+	1WOQwrgrZBHC6Td3R2jw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9i1p-0000000Auoa-2bcl;
-	Thu, 24 Sep 2026 11:54:17 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x9lMe-0000000BOTt-1O1r;
+	Thu, 24 Sep 2026 15:28:00 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9i1o-0000000AuoJ-27ku
-	for linux-i3c@bombadil.infradead.org;
-	Thu, 24 Sep 2026 11:54:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:In-Reply-To:From:References:CC:To:Subject:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=Hj0RTIXnfV9vQzN/XvQHlLA3BOJKufYM8xm59mMpz6M=; b=UBNkQAjsXfakoBNoCR0fKSYDSI
-	VEULAADne2OiesrZh5fJaJGslnA/uvGDI8QUNfw+SDiDss5ik0dsw29qDk1xAIhOqxRiOCp+xTcnU
-	DP73PSZ2SKoSf6MSc0UgO1S0YM8KQoNp9mYMhqmWy+Rhz5D4XFEzLg3bWDETnDjqBl+XC7V0Hgh7J
-	N+D8ItKL0VHWcSEJKZ2LnPNmwp5y/pwfNux35SdIbdJXFk/YE3ST8qrngnZrNT362iYm4d48KyeBJ
-	pkmpEDIfQH+o1LXb9BiREnomuCYO2jTK9mOom90UlG2aYX2ApSR9dvvl0Gab+5XwSzR7qI5dcv/3m
-	ivtRUwpQ==;
-Received: from mgamail.intel.com ([192.198.163.7])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x9i1k-0000000FvYl-3UoG
+	id 1x9lMX-0000000BOOe-0g83
 	for linux-i3c@lists.infradead.org;
-	Thu, 24 Sep 2026 11:54:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1790250852; x=1821786852;
-  h=message-id:date:subject:to:cc:references:from:
-   in-reply-to:content-transfer-encoding:mime-version;
-  bh=TdFWjgMLlCZHLFXhjNYdZYDaDcWRvne8QCdaxtSoS0w=;
-  b=D+lsRQ4AsrS4ljyp+fHVPNEn0SKHsXhuKOfbtrCPVZljeb5P9yTYGST2
-   Y46ROaDHYB3UeaaYVdNoWdWMSAFYdvCAELCZ18VUWvpyfvKjG5cAyoPIg
-   28W+USfG9CF3A8ysCtQFsWUyPVPky7DSjpDDtPUuN+HuJRyZg0gorVJHn
-   NYTIB8W3A0/GwDjK0uQnHv3OIff1mVIGRgoliMqEOFOHf5IbsFGSJaEgi
-   yhQAbaZNkeP3/Jkw1S5PFBrGc/vfMkn7LK/xskhRbeT8cwhQvpux16tbO
-   MMEjZiKapc0XZhcUdYtcPpIrEooTTcqL9RCA8rXlAgmIDrAZNUDffefPl
-   A==;
-X-CSE-ConnectionGUID: o6AxWFTbT/6LTrCsrsHcMQ==
-X-CSE-MsgGUID: O9GwLZhNSMKTM1s0ZKv8Lw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11914"; a="116543108"
-X-IronPort-AV: E=Sophos;i="6.27,120,1787036400"; 
-   d="scan'208";a="116543108"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Sep 2026 04:54:08 -0700
-X-CSE-ConnectionGUID: K9hF03DVSb2gMrAZV4fRcg==
-X-CSE-MsgGUID: m+N7KosDTaCK+TQ+D8W+bw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,120,1787036400"; 
-   d="scan'208";a="278722408"
-Received: from orsmsx901.amr.corp.intel.com ([10.22.229.23])
-  by fmviesa004.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Sep 2026 04:54:08 -0700
-Received: from ORSMSX903.amr.corp.intel.com (10.22.229.25) by
- ORSMSX901.amr.corp.intel.com (10.22.229.23) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.46; Thu, 24 Sep 2026 04:54:07 -0700
-Received: from ORSEDG902.ED.cps.intel.com (10.7.248.12) by
- ORSMSX903.amr.corp.intel.com (10.22.229.25) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.46 via Frontend Transport; Thu, 24 Sep 2026 04:54:07 -0700
-Received: from DM5PR21CU001.outbound.protection.outlook.com (52.101.62.17) by
- edgegateway.intel.com (134.134.137.112) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.46; Thu, 24 Sep 2026 04:54:07 -0700
+	Thu, 24 Sep 2026 15:27:56 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ETBIHMu6B4TwZJV+s/J1NH7ZdpHKz/BVySDZUDcQRdWn96DRGLqepv2M/JBKG0Qv9mqvDOUKW6ge70XU5DUeCPyb3I9oTlLmwRfLzmzpAubGMjc6vq3zvYJVZuG3wMcQ1NRbFXGblkJYi8dVofIgT1TPeMpMjH6s1JBVa+Wp1UMITHMkSSEL2DpSvq8/NTN7XT0CbOoTKNtZoQinDKd99dTFeRmRMjwqhI6WiA4EDOapPwuHa9DdIQGurQPityABdceaWKNGn/apCJyT4Rg5lzQ/Qp+hbmKkVNEE+c6yAvvaOb2lcbsUL8m5fysL/xHNrbsheMBUj0x/wuURBDUz/A==
+ b=aCmBztgYjgvq3Xo+itL1S11ydcp3zbSUhb5caPmPXawWDujnL7VvsgyIpinDM+vSU54T8VPrGvLZpyXmKZvEgt2n8KJXukFlnkVNOsJdhFF8791x51WRIy0woGeOPFNDP8fK9yhfS/m9Ryv9ZGE6KAQleDvKQavO2xZnM9BKmEGXPnxKBbdC7BnxFKA062B6BkwK1zAM2tKizh+7/sMboADIRYUWK1JjdLfzltGa5kamQkHBm2tLTgAbSpcHNnKxU90onJD8XEhyag4EMKlLF2AQ82pO+LlTNQcSoGUnhnGvlE7Osoxk/6Ij3q3hv8q1raptTJxWFrAI6a8UpkVFHw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Hj0RTIXnfV9vQzN/XvQHlLA3BOJKufYM8xm59mMpz6M=;
- b=tCkw2lRUEdjpR9/WHHI0ewOKxqinbbYGSwovmwbbnNYfwULFha9ijU3UZ555YqjP/XX5IIdBoWAO0ugEpcBznhHKvr5J2xGG7Qm645MBCA/Zx4xnCn2kAAWuB5JBZL0UXL5fnXBQnbRjgSAgj2st8+5V0HAQCrWoAaFVrzhcd+tATS4zEtQDFvi+atFRQ+KNauqFwAAIBmm6GzkU3DeOIcSkzSy5DhzwUhxrN8ISqoQEc5Z0KepITNuJ0tBBLldAcg60zkLcWBNslWXmTI7HVnorl7W1aKPS23ELP9uhg9tde4/hvWC/Htm5YwNoaa1dl740rK68kqybJ+wA6DWUTA==
+ bh=c1NJ3AEmqfqRDtLKd6NKC57jF8HYJ1IG4W3j5qSiGdY=;
+ b=Z4Ce55B/sA6i2qk8+eSNc9LaGFqnIZfzokb+fc8B7Mr1svjcmTcFAnnzKTjN5z7TdFRGrQNNDgWV6S7bDB273c1CXcAyUAZwtQLDmDLHEqo6QYG6WkFaMoSqceNtuAJVZTuU5RC/KFHrNs0u8AHSq0kH9dL8zTf6v3DnMKcOZGba3eN0DZDztVnltLATyH0hpHsPh5yZ/uFuaGs/SM/h/FN8hwQq15xqA1RZVF82gsvoc9tB8bIlgQF15uL9aXiAaYGj0TJuTi4Tpu2Ix1fRoP738U1IEtRHmTV5myv6S0DrVnAh1C7qijT8+zNEcJCWu7bISJL+07hObonzFlvNWA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=intel.com;
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by SJ2PR11MB8540.namprd11.prod.outlook.com (2603:10b6:a03:574::10) with
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=c1NJ3AEmqfqRDtLKd6NKC57jF8HYJ1IG4W3j5qSiGdY=;
+ b=um+2z+bEAKMnrsK6awxNLpEuTgIyGZwA/BFe+q2NXQ+HNeI5NYXRZiI+iE32jIaHyN+J/Jj5+tKCPyU0rxqJcbpJFk4jU2dW+NUQ7bD56BfzmVDA9ClP9ciOPc+WvRNqReLnCNDkmj/E+31RR6+frTxdTJg9U30pwEd/vOSTZfrsKGqY86gdhm+l9HcrMz41uTssdMN9Mjyf7hfk+WHV4FsBsE8/cLFO40JZAh6yZxzbxSUiJKYunRPwWxCCN57zOaZYFDdwEGWYmGiBXxbKuBRwNxUeGg0EVW+lTJnqB/DmEKAj2k+B7lPZQcSUDHNsHdBfJMcYSFk5mcsRH3o1Kw==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by VI2PR04MB11027.eurprd04.prod.outlook.com (2603:10a6:800:276::15) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.18; Thu, 24 Sep
- 2026 11:54:00 +0000
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.21.0451.014; Thu, 24 Sep 2026
- 11:53:59 +0000
-Message-ID: <79492a3b-dfe4-4311-8ded-0d77b8ce2a57@intel.com>
-Date: Thu, 24 Sep 2026 14:53:54 +0300
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 3/5] i3c: use actual_len for read transfers
-To: Sam Agazaryan <samagazaryan@google.com>, <linux-i3c@lists.infradead.org>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
-	<Frank.Li@nxp.com>
-CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Wolfram Sang
-	<wsa+renesas@sang-engineering.com>, Arnd Bergmann <arnd@arndb.de>, "Meagan
- Lloyd" <meaganlloyd@linux.microsoft.com>, Vitor Soares
-	<vitor.soares@toradex.com>, Oleksandr Shulzhenko
-	<oleksandr.shulzhenko.viktorovych@intel.com>, Boris Brezillon
-	<boris.brezillon@collabora.com>, <linux-kernel@vger.kernel.org>
-References: <20260921230603.2518652-1-samagazaryan@google.com>
- <20260921230603.2518652-4-samagazaryan@google.com>
-Content-Language: en-US
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
- 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
- 4, Domiciled in Helsinki
-In-Reply-To: <20260921230603.2518652-4-samagazaryan@google.com>
-X-ClientProxiedBy: DU2PR04CA0029.eurprd04.prod.outlook.com
- (2603:10a6:10:3b::34) To IA1PR11MB7198.namprd11.prod.outlook.com
- (2603:10b6:208:419::15)
+ 2026 15:27:42 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0451.014; Thu, 24 Sep 2026
+ 15:27:42 +0000
+Date: Thu, 24 Sep 2026 11:27:35 -0400
+From: Frank Li <Frank.li@oss.nxp.com>
+To: "Patil, Shubham Sanjay" <shubpati@amd.com>
+Cc: Shubham Patil <shubhamsanjay.patil@amd.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	meaganlloyd@linux.microsoft.com, git@amd.com
+Subject: Re: [PATCH] i3c: master: dw: Clamp GETMRL/GETMWL to controller FIFO
+ limits
+Message-ID: <arVBZ0j2noe0g0Wi@lizhi-Precision-Tower-5810>
+References: <20260908102724.3232660-1-shubhamsanjay.patil@amd.com>
+ <aqL4HaQ1gjeaJYUQ@lizhi-Precision-Tower-5810>
+ <eff031f6-e212-43a8-98c0-5f52a4b9317b@amd.com>
+Content-Disposition: inline
+In-Reply-To: <eff031f6-e212-43a8-98c0-5f52a4b9317b@amd.com>
+X-ClientProxiedBy: CY5PR19CA0042.namprd19.prod.outlook.com
+ (2603:10b6:930:1a::26) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|SJ2PR11MB8540:EE_
-X-MS-Office365-Filtering-Correlation-Id: c65f9538-5121-4796-8e19-08df1a32853b
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI2PR04MB11027:EE_
+X-MS-Office365-Filtering-Correlation-Id: 49f256fe-f4ff-4558-903c-08df1a506035
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|7416014|376014|1800799024|366016|10067099003|56012099006|3023799007|18002099003|22082099003|4143699003|11063799006;
-X-Microsoft-Antispam-Message-Info: BSn+FZYQTgm2Cy4NeejFjJmMTS/d0+AMPyHBelVe6tcyGFMb/tOBYA4uc+VqRdPPJjiVo0mSK3+BVl/WvyWVbkyJOxQbbTTsUhjMLLyWbjVhA4jrbEJCHJM7gyajtlmv1styZlakoYlsc8l03tbQFJh+GwCSiEywHreucUYq/qixB8BB8DbTQ+S1VmEYcL2t6Trt9+V5c426U+etb8N46l4BXtQona/e9QsPqlUl01rshrSrDizt+1c0DzFO3b++jwmVEDs4y2scBYu6ns05wtDh1RJ8UgNy6YSuMau/7RjGKlZLRbG55I1JCGN/OGfcnTgO25Cc+PNPG8iJks4uMvI7WZfM4x0dpZpWofDtUepDNdzOXkbjcCuQr7QsvTO4yXLp0k0wtqnZBqGRByRYw3Vkt3pAQ4/Bw2KfO+//U5csoaONwPjGeG4x3U11Crxt73DCQblokYlU/RFo7m5FUSic95PZroqUiiTNaugTX8Px7KjgVfBZRpBGndI8JUn7OBqco7AANORWxLeu6a/0qopn+7jlGX4drgkqbC6xuDBjcFJa52yIymgK9+ZUciEwGWXCV56kkFjBoauLsSb3YcZuAE52U752eME4REysvVA=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(7416014)(376014)(1800799024)(366016)(10067099003)(56012099006)(3023799007)(18002099003)(22082099003)(4143699003)(11063799006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|23010399003|1800799024|19092799006|4143699003|6133799003|10067099003|11063799006|56012099006|18002099003|22082099003|3023799007;
+X-Microsoft-Antispam-Message-Info: Zs4cOza+9FSla96bwear256PoyP+0RXzUi0h5Ol6sjxQ+lhtwB4GO65KYg/xQqqtIOMaK+5hhx0vl6ZRlKPPg5sLnRGOuL233NzvOiash9Nn7T9jZqjzALGzIXNKF6w2a4AaWqbJlAK4qQF0Vd1aPO2bv7TSrGUYptTglanAavAs7gwFZu6pjIsB8URjx9ZLB2jKNFcne6MrLezo+VQyvpp/ROF51d3hvX4Igi9B7dA5/uykriifTckN4eF9jflrxt1a+s5JN2aVeJ5SY+myZwYjZZQ3jTHtj1VenWc3+BSf5APB64/ZUyY0sZ1w2PXkqbyoACBXRW4zD7nqQJIlDu1DtRAgwkd/lJcyK/XFmctxC8nkgY05PuaoDEP2Z/kEoWeqR4qmqgTYiGCmbTgGfD6S12f5EgnLlRBbfq4DU+Nj6aOMkpvunCqGBXBEozH+1xSZAI8wxgPe96rHVoPHNAsrXC4gdTAPPZyyXZN3hqAA7whf8j3YptVP5ZHBXP2DRnwZQPY38Woe3ONBA1SftjWtP3ygeyR+6CWEXCQ1f1OrZcnYJuv0Hm1Nt55Kh25yvb6XuLRM3xBgvI/qC+2J96oOPi9eH8KEfz1yaHuuf617q04qxisRhaHSUYaxnOAyKyvrQxoEp4dnML0s1klzDSpnFhou7AUjA4ILZxTwxSk=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(23010399003)(1800799024)(19092799006)(4143699003)(6133799003)(10067099003)(11063799006)(56012099006)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?YVcxU0ExTlp4bWNtWTFCWHJjOGU0a2RyR2lXYWdIaGNCTVpNZlY4NldDVjR2?=
- =?utf-8?B?YVdIZlJSVnZ1YXVhbi9jVjVybENCdWtINjVlZ05TQkNqNmNYZEplY0hET0dx?=
- =?utf-8?B?L3phUFFMZDkxUzMzOXVaajBSWVV1bW4wbzZTdG1SRXpnaTJUS2UyUEZQeVRx?=
- =?utf-8?B?NS96VXhxZ2tJWTJra0N4VmJnVkFiU3c0S0wvOGRzNGZHU09PUE04a3lYOWFL?=
- =?utf-8?B?WjIxQ1lPS2ljMG1UR1Q2cDV3RE5kckhYK2FwT01zRHo4SjVwU0w5VnAzYzFJ?=
- =?utf-8?B?QlZYQUMyeDdSTWV4U0kvYjNNSklUS1R4cFJYSWZvMDhoK1JDKy9EbGE3U3pn?=
- =?utf-8?B?dGNERUl0YmY3Q1NmMldwcUFGY2JhWHpmVGsza2ZiaWF5UnFrNXcyL25mVUFa?=
- =?utf-8?B?RWhIRGozdVE1NzRGZnlkNGJ3N0pUNWlSSnVGR0I0eXpVM3V2eFRZWkFPdmcr?=
- =?utf-8?B?MDJQUDJpMjFaSk0zOExiSnBiOGIvdFpCQklBWGd1OVY5K09sZ1U3WW5Sa09O?=
- =?utf-8?B?OTlFVnVQYkdicTMrOUVqc1hUK0VjZ2pXdFRnM1ZoaUJrcDZrM3ZHYktlWlNS?=
- =?utf-8?B?eDdubUpRRGlINVFYMWF3TUc4TlEwczRkOVVzNEE0c1pRa091c1pzR01SR1cy?=
- =?utf-8?B?N080dUtQN3NQbms1d1QvRjNRMi9namc3c3lBRUh3S0JGQTJCUWVFaFZaa0dE?=
- =?utf-8?B?azhWdHoyb0F2SkdxMGhCMFZ2ak5SQlZDOWdNUFlENHpyWkRPK1FUTlJIZk5L?=
- =?utf-8?B?K2RxdExaZnk3enYxL0NkYk5JeXZDbDNMd2FWUW9qckc0OFA5SzNEK2VUd21Y?=
- =?utf-8?B?QUFlUHJqTmlvYWg4UzkyVGVKUkpoM3ZhcDlRcXNISnVOdzNqV3BCWTNUbEFs?=
- =?utf-8?B?QWhNd29LT3kxTXh4cm1iZXdJR0pOT0dxL2xmZWp6dXpVRmxOYk16TlliTlA4?=
- =?utf-8?B?OHpOZ2xIU3ZlbEswWm90Y2didG9FMWpzYWNtZXRjT2h2emcxUE5aQWhMazRW?=
- =?utf-8?B?MC9FVC9xNmttbysyWVlSTWx1MzlmcW1iNlEvSzNPcE00OURmRnE0elcxR3A3?=
- =?utf-8?B?cHE4dWN0dllLSm5JT0NMY1dYNDlrMzJ5SWNtMW9uSnFCSllISEYzWW9zUVB5?=
- =?utf-8?B?eDl5Kzg1dFdtVmhnaDlKdEJHM1VldHVxN3dtTGI2Yk9WK1FkM3pMZURiOVFG?=
- =?utf-8?B?emkvZ013amhnMit4SHZ1bTE0d2ZZMVNJM21keGNiS2Q0emYyRUtMcnlvZUNQ?=
- =?utf-8?B?cU1mVlpPR2RjamxqeVpZbTlpUUhSSkMvZGl6c2c5ZEUzMi9pVDdCU1ZDL1Bh?=
- =?utf-8?B?TVN5NkRGZm9DU1pmYi91d3pvWHpRVXg3YUhwMHpoc3ppcVlOdVF6MGkzc2RW?=
- =?utf-8?B?QmVaYTlKR2FpUEh2aC9EV0tTdU8xSSt5K1hJazdRN2t0eFEyMlFGcVRZVVdX?=
- =?utf-8?B?ZFJsLzc0OXdqakFta2srR21LazJKQkVyd3hWeG85UHJTVUJ2YTMxanR5TkN4?=
- =?utf-8?B?MWxpZjNnR05LY3RYWDRsN01vd2NWODFPZ0RvRTlmdWJSQjNFbGJDdFhaemU5?=
- =?utf-8?B?Y2xXSTNReHVDRkJIRi85SW1NQXRSb08rdTlWZHpQV1dKQzdKLzlQWjNRcTNV?=
- =?utf-8?B?dlN1dXM4RmtGbmY0RjNiaHFxUnJhclllWFdJcWI2VVFucHRQTUZsYWhLTGVB?=
- =?utf-8?B?NWsxWU53K1liUzVrOUFITHF5MmtJeG1UVzQ0TVFnck8xb0lNa2hMNmhDaGFh?=
- =?utf-8?B?RlRNMHdnOVUyNnJ5ajVWT3Fwc1VFdnVWaktBYm84Z0dtRTZVVXlpZlBydk5U?=
- =?utf-8?B?OUtzdVd3SE9Peks1ckVNRlpZWXJLSWlSazZFaVZRVWlRTnFzZndjRFJRbldG?=
- =?utf-8?B?RnZDc1VXaENTMjJPQkJkQ0xTdWRCVWduV2IzRkl3WlhTS0tiazdNL3NaQzND?=
- =?utf-8?B?Yk1ZOWJNdUFDWHhIZTkzYWZ2Z3NkMkxGUnlFZFpjUzc5TzI5WGJQaGxVdVZq?=
- =?utf-8?B?VHp3SnJDRk9TbTMyMnF4bTZuQmpZRVNCd2VJZnA1Q0E0NnNUSWk0akR3RHVw?=
- =?utf-8?B?eVZPL3QrQjFOT3cyTDJOL1NCZjVwM3c4ZjV2c1AxYmNHcWFORStLQk5HZFJ6?=
- =?utf-8?B?bVBJWFNOTkVnQ2swZHUvS0cxZHVzcHo5ZEdmcjZLM2t0a2dTSVdSZ285TjY3?=
- =?utf-8?B?VENSZUpHVytGR3R5SUFxbUlnSDF1RXVCOUkwbHJhRjN1MnA1WnRNeXZGY2FJ?=
- =?utf-8?B?Ukg3YVpob3VwVFBmUUJ3SVdqZlYyZVRkb3VKekdnRFB2MG9FWTBCK291WFQv?=
- =?utf-8?B?bzZ1d29ZWnFFeGtUckYrYjAwTEpva2g4MlFpNE14RGpVTHFBT2IxQkd1ZUZj?=
- =?utf-8?Q?0z4YjFEYK4ofu47Q=3D?=
-X-Exchange-RoutingPolicyChecked: wRos4/2lvdXnmWnbWwodISIUR2ZGKc63TqVLn2pLZJqskdcTE2JVIhY/uB2LYwoyBmfO+G0pUog6wi0obswvKzythODkUYyXCw1EUY0Oe976uAV4sQ6rA9Y96U+jdkeEwEdpNihyL+BsNVi61ySpMozOl1Q64RLSjHEQY1JvED8pMwV42PBzd9NMQJe0NIorQ7huL86ZiVNuWR8YU5h7IVJ8IholDp8zQ+QqGeEySOvixJUkIMZFT3zrj33jhjXnDBVf08Zc0jOK/g6I9JET5rKcqyjSWdE8wx0ZvURNnCn7CpXAib/ewMik04as/PrSv8cfquloXKnrX+OHw7kL3g==
-X-MS-Exchange-CrossTenant-Network-Message-Id: c65f9538-5121-4796-8e19-08df1a32853b
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?S8coz309MOxiS/iW2uhPnouh+ykeEDlpoWZbMlExd2rp1tAdMYswKRGy/zyw?=
+ =?us-ascii?Q?tYNGt46rUJ9u3zjkHlmIHmXsNrrJQq9PjL2hcXdBzAV2jakfYjVs7hkh6CJS?=
+ =?us-ascii?Q?Z2yNMfJymq6YgEIXuhtD5/zWIg/aX9/lkRsLn99/1x9lzS0s5oHFNQVIm97l?=
+ =?us-ascii?Q?KBvEwMzATWix+JOVxpxEF8wA6dl9wPpeVvQEsN6VUC4uX8hgRt/BeOpGYU6G?=
+ =?us-ascii?Q?sK3FSAcxqK6iwfzsYpIszULX8ko2Dp+JdRneAF5WUJUSmIy5NlPvfDXltm9C?=
+ =?us-ascii?Q?uwF50aUnbZQXL4ThnulPqtYdfq7N9BwfDiVLsZA9r03knfvDmy1nPwSsGkwd?=
+ =?us-ascii?Q?ZxqDnxJH8krcqGtgXR6r1CpXeplR6wHp+nOv+DorFyMGzowwOuIDrrQHlu3U?=
+ =?us-ascii?Q?8z58ADwxmNHrOMvC3P9Y1R7ATd1WqL2l6iW/krD9J8qWzlahRBZhZlkV9psY?=
+ =?us-ascii?Q?0GhZYZ6ZqpZb3J4JkP2XiO0xtcBS+LVXiHz23tIYWUhFGnclM7PZbQWU4LGo?=
+ =?us-ascii?Q?wiH/9PYeE3XunxTaYWRAwpNL9Rh3OoWKDLYhre5rtM9P4dFcvlQRPj49GHcC?=
+ =?us-ascii?Q?7/U0Gl1kRxHcmzn56JfYtGEOvhU80y2HRh7blR2S6twSNo9p2cigyhgwtqlx?=
+ =?us-ascii?Q?RETxuTe5xX+4NOttlragGYJs6Gnwt/HZw813TaepAzdHbgz7BbO7THTZXS2B?=
+ =?us-ascii?Q?V0pFgb32vw9Zm5MhmlQWoctlJKoRIRZ65y2DQ4Bxxbq8yc3wax27Ff96Lh5I?=
+ =?us-ascii?Q?9Jrgu5yRKXLmnf5T00rL5oTKxo4c3ZrnMZSc6QISfH+swPhKF2VN5qZUtM8d?=
+ =?us-ascii?Q?6LSGLsYZrIfg3Nu56msAvQVgPK4lmqaHWHUBxE/Y4DGPGc741yOwNXoIR207?=
+ =?us-ascii?Q?uSvtnyEhsdnCIjMMuFaeFJrhfAkIDHyP8G+Qupob5W6eaWjVG7xmi1yihZOD?=
+ =?us-ascii?Q?raadHdZNxhxtaLm4tUkvDKCMa9ojG9dbbgusJThYQ+Hr9/kMsLJ0pZP/jXq2?=
+ =?us-ascii?Q?WqCGst9TKqdP//FDW3IG2wQgRXRttAjs8dcbFutUUUhiriYDmxyY2DnYLzvz?=
+ =?us-ascii?Q?zmJXNVHv2bLU1bg5OsAehPtAfsKbYU+CJUn2NoC49lXzGbYiDQ+/mVbF+xnd?=
+ =?us-ascii?Q?2l8Dl0RI1T4Ndc09Z2Kh5/XgTCnH4+yXAuh37xFhIhUgyE+QvITHuP2Y20xw?=
+ =?us-ascii?Q?rIBSTYjejaxYKugKACbDZ36TFeAEpYEB9au738FAVRW+Pkq2W0IUvW3gw/k0?=
+ =?us-ascii?Q?+CvjbMhdWTlQWP94GD47doHOUylWjbYpy5UWNVE5P/cnbsfj2w9snQZhGUGE?=
+ =?us-ascii?Q?mnc0zFPUpimF8JNT1cAPO5JAFt7ktJeibLW2kKCmkqJrT00Vi8s9vTXYozre?=
+ =?us-ascii?Q?qlBv7Vtpcg5spWpUhe1vNifm/xofO19DIml3x0Eo8Ygu5i9TlFZHaleazIWt?=
+ =?us-ascii?Q?jEiTzmJlhjOaVdD5uJiYq8M3zJif+l37uXvDedwe/nN15xm3k2Yh2YTYmmIF?=
+ =?us-ascii?Q?F94sWYVAB1rF9Y1rZXrJlzYsY5eFUw6g7oV4aKQxwWIl33rQu2anl1RamsM8?=
+ =?us-ascii?Q?SuY1IVkRvffkNaA+CjvBhS63xB1E0cvL8mKhWIvDqhCioZPNXrD5/qjreFvf?=
+ =?us-ascii?Q?UPwwM7BiJKRpYkgQAUJAyzcspmR4pNxheGd061QXnF/pBYhhXfqw4Ubmpp8A?=
+ =?us-ascii?Q?p5ahJmKrOQOEIN7W2gJgXwNvVb+KFLM8C+yY1z6joekBsfklVTr4avM5MadN?=
+ =?us-ascii?Q?W/0+1U8k0dtBNESuDpTas849AZXsofzFCTprEzBFmtxLT7ZMY3pc?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 49f256fe-f4ff-4558-903c-08df1a506035
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Sep 2026 11:53:59.9217
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Sep 2026 15:27:42.5430
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: cSMy3qB3PGB84WQz2yImYIX0pY3D18rz5wups/XyvblaGeNE0bfnndjVInDN5yTbOCIcO7Uf8Dn8tgZn12ta0g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR11MB8540
-X-OriginatorOrg: intel.com
+X-MS-Exchange-CrossTenant-UserPrincipalName: FerLtsYV/B+e80+rcCqfAVDbAelhJex7bICEk9sArBc2kJPYpe2ICAxD2o60et4Rzo79d9v8k9gi2d84IGFz78PBluvxfArjkQayjM+CPmdWKrTmeLS0eeQ7urtbQowF
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB11027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260924_125413_478555_4AA60E1F 
-X-CRM114-Status: GOOD (  20.87  )
+X-CRM114-CacheID: sfid-20260924_082753_390300_9F6DF74A 
+X-CRM114-Status: GOOD (  40.26  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -208,168 +142,273 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 22/09/2026 02:06, Sam Agazaryan wrote:
-> Currently only the amd and svc I3C controller drivers populate
-> i3c_xfer.actual_len on reads, while dw-i3c-master and mipi-i3c-hci
-> overwrite i3c_xfer.len with the received byte count and leave actual_len
-> as 0. Because of this inconsistency, mctp-i3c reads xfer.len instead of
-> xfer.actual_len, making it fail on controllers that do not mutate len.
-> 
-> Unify read length reporting across the subsystem:
-> - Clarify in <linux/i3c/device.h> that actual_len reflects the actual
->   number of bytes transferred on reads.
-> - Update adi, cdns, dw, mipi-i3c-hci, and renesas controller drivers to
->   populate actual_len on read transfers without mutating len.
-> - Update mctp-i3c to read xfer.actual_len instead of xfer.len.
-> 
-> Co-developed-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-> Signed-off-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-> Signed-off-by: Sam Agazaryan <samagazaryan@google.com>
+On Thu, Sep 24, 2026 at 10:25:44AM +0530, Patil, Shubham Sanjay wrote:
+>
+>
+> On 9/11/2026 12:04 AM, Frank Li wrote:
+> > Caution: This message originated from an External Source. Use proper caution when opening attachments, clicking links, or responding.
+> >
+> >
+> > On Tue, Sep 08, 2026 at 03:57:24PM +0530, Shubham Patil wrote:
+> > > The DW master rejects private SDR transfers larger than
+> > > caps.datafifodepth with -EOPNOTSUPP. Targets often report MRL/MWL
+> > > values larger than that FIFO, so the core stores limits the controller
+> > > cannot meet.
+> > >
+> > > After a successful GETMRL/GETMWL, issue Direct SETMRL/SETMWL to the
+> > > same target with lengths capped to the data FIFO (in bytes), then
+> > > rewrite the GET payload so the core keeps the same values. Only update
+> > > the GET buffer once SET is acked, so a failed SET does not leave the
+> > > core and the target disagreeing.
+> >
+> > I think i3c device driver should know these information choose
+> > min value dring each xfer. even though you set devcie's MRL/MXL, device
+> > driver still issue a longer transfer.
+> >
+> > Frank
+>
+> Understood - I will drop the SETMRL/SETMWL and stop rewriting the GET
+> payload, and instead expose the controller limit so the min is taken
+> per transfer. Two questions on how you want that done:
+> 1) Where should the min be taken?
+>    a) In the core: the controller driver sets max_read_len /
+>       max_write_len / max_ibi_len in struct i3c_master_controller, and
+>       the core caps i3c_device_info to min(target, controller) after
+>       GETMRL/GETMWL. Device drivers then use i3c_device_get_info()
+>       as-is and cannot forget.
+>    b) In each device driver: the core keeps reporting the raw target
+>       values, and drivers do the min themselves.
 
-Looks good.
+We can provide APIs for device driver to get whole data path required
+max_read/write_len.
 
-1 issue from Sashiko:
+> 2) Either way, a driver that ignores these limits still gets
+>    -EOPNOTSUPP from dw_i3c_master_i3c_xfers() when the transfer does
+>    not fit the data FIFO. Should the driver keep returning that, or
+>    would you consider splitting an oversized private SDR transfer into
+>    FIFO-sized chunks in the controller driver? My understanding is
+>    no - splitting changes what the target sees on the bus - but I
+>    want to be sure before v2.
 
-	https://sashiko.dev/#/patchset/20260921230603.2518652-1-samagazaryan%40google.com?part=3
+the decision about split transfer should be decided by device drivers.
+Not all device treat two continue repeat START as continue write/read.
 
-Also i3c_dev_do_xfers_locked() should probably clamp actual_len to len.
-
-> ---
->  drivers/i3c/master/adi-i3c-master.c    |  5 ++++-
->  drivers/i3c/master/dw-i3c-master.c     |  2 +-
->  drivers/i3c/master/i3c-master-cdns.c   |  5 ++++-
->  drivers/i3c/master/mipi-i3c-hci/core.c |  2 +-
->  drivers/i3c/master/renesas-i3c.c       |  3 +++
->  drivers/net/mctp/mctp-i3c.c            | 10 +++++-----
->  include/linux/i3c/device.h             |  2 +-
->  7 files changed, 19 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/i3c/master/adi-i3c-master.c b/drivers/i3c/master/adi-i3c-master.c
-> index b35386260350..d033bfd4ecc2 100644
-> --- a/drivers/i3c/master/adi-i3c-master.c
-> +++ b/drivers/i3c/master/adi-i3c-master.c
-> @@ -412,8 +412,11 @@ static int adi_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
->  
->  	ret = xfer->ret;
->  
-> -	for (i = 0; i < nxfers; i++)
-> +	for (i = 0; i < nxfers; i++) {
->  		xfers[i].err = adi_i3c_cmd_get_err(&xfer->cmds[i]);
-> +		if (xfers[i].rnw)
-> +			xfers[i].actual_len = xfer->cmds[i].rx_len;
-> +	}
->  
->  	return ret;
->  }
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 4563d8761ba0..28e8eb293747 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -1029,7 +1029,7 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
->  		struct dw_i3c_cmd *cmd = &xfer->cmds[i];
->  
->  		if (i3c_xfers[i].rnw)
-> -			i3c_xfers[i].len = cmd->rx_len;
-> +			i3c_xfers[i].actual_len = cmd->rx_len;
->  	}
->  
->  	ret = xfer->ret;
-> diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-> index 2d98c1ce9b12..331062c10b31 100644
-> --- a/drivers/i3c/master/i3c-master-cdns.c
-> +++ b/drivers/i3c/master/i3c-master-cdns.c
-> @@ -795,8 +795,11 @@ static int cdns_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
->  
->  	ret = cdns_xfer->ret;
->  
-> -	for (i = 0; i < nxfers; i++)
-> +	for (i = 0; i < nxfers; i++) {
->  		xfers[i].err = cdns_i3c_cmd_get_err(&cdns_xfer->cmds[i]);
-> +		if (xfers[i].rnw)
-> +			xfers[i].actual_len = cdns_xfer->cmds[i].rx_len;
-> +	}
->  
->  	cdns_i3c_master_free_xfer(cdns_xfer);
->  
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-> index dadf049bd4b5..f74c02fab9e3 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-> @@ -509,7 +509,7 @@ static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
->  		goto out;
->  	for (i = 0; i < nxfers; i++) {
->  		if (i3c_xfers[i].rnw)
-> -			i3c_xfers[i].len = RESP_DATA_LENGTH(xfer[i].response);
-> +			i3c_xfers[i].actual_len = RESP_DATA_LENGTH(xfer[i].response);
->  		if (RESP_STATUS(xfer[i].response) != RESP_SUCCESS) {
->  			ret = -EIO;
->  			goto out;
-> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-> index 28c0927a0179..a3dcb4cd9b0e 100644
-> --- a/drivers/i3c/master/renesas-i3c.c
-> +++ b/drivers/i3c/master/renesas-i3c.c
-> @@ -918,6 +918,9 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
->  		time_left = renesas_i3c_wait_xfer(i3c, xfer);
->  		if (!time_left)
->  			xfer_failed = true;
-> +
-> +		if (i3c_xfers[i].rnw)
-> +			i3c_xfers[i].actual_len = cmd->rx_count;
->  	}
->  
->  	if (xfer_failed)
-> diff --git a/drivers/net/mctp/mctp-i3c.c b/drivers/net/mctp/mctp-i3c.c
-> index 6d2bbae7477b..5f94c11a1712 100644
-> --- a/drivers/net/mctp/mctp-i3c.c
-> +++ b/drivers/net/mctp/mctp-i3c.c
-> @@ -131,12 +131,12 @@ static int mctp_i3c_read(struct mctp_i3c_device *mi)
->  	if (rc < 0)
->  		goto err;
->  
-> -	if (WARN_ON_ONCE(xfer.len > mi->mrl)) {
-> +	if (WARN_ON_ONCE(xfer.actual_len > mi->mrl)) {
->  		/* Bad i3c bus driver */
->  		rc = -EIO;
->  		goto err;
->  	}
-> -	if (xfer.len < MCTP_I3C_MINLEN) {
-> +	if (xfer.actual_len < MCTP_I3C_MINLEN) {
->  		stats->rx_length_errors++;
->  		rc = -EIO;
->  		goto err;
-> @@ -145,15 +145,15 @@ static int mctp_i3c_read(struct mctp_i3c_device *mi)
->  	/* check PEC, including address byte */
->  	addr = mi->addr << 1 | 1;
->  	pec = i2c_smbus_pec(0, &addr, 1);
-> -	pec = i2c_smbus_pec(pec, xfer.data.in, xfer.len - 1);
-> -	if (pec != ((u8 *)xfer.data.in)[xfer.len - 1]) {
-> +	pec = i2c_smbus_pec(pec, xfer.data.in, xfer.actual_len - 1);
-> +	if (pec != ((u8 *)xfer.data.in)[xfer.actual_len - 1]) {
->  		stats->rx_crc_errors++;
->  		rc = -EINVAL;
->  		goto err;
->  	}
->  
->  	/* Remove PEC */
-> -	skb_trim(skb, xfer.len - 1);
-> +	skb_trim(skb, xfer.actual_len - 1);
->  
->  	cb = __mctp_cb(skb);
->  	cb->halen = PID_SIZE;
-> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
-> index 971d53349b6f..f868a7bf2bc9 100644
-> --- a/include/linux/i3c/device.h
-> +++ b/include/linux/i3c/device.h
-> @@ -59,7 +59,7 @@ enum i3c_xfer_mode {
->   * @rnw: encodes the transfer direction. true for a read, false for a write
->   * @cmd: Read/Write command in HDR mode, read: 0x80 - 0xff, write: 0x00 - 0x7f
->   * @len: transfer length in bytes of the transfer
-> - * @actual_len: actual length in bytes are transferred by the controller
-> + * @actual_len: actual length in bytes transferred by the controller on read
->   * @data: input/output buffer
->   * @data.in: input buffer. Must point to a DMA-able buffer
->   * @data.out: output buffer. Must point to a DMA-able buffer
-
+Frank
+>
+> Thanks,
+> Shubham>
+> > >
+> > > GETMRL is variable length: the optional third byte is max IBI payload
+> > > and is only present if the target returned it. Clamp that IBI byte to
+> > > the IBI queue depth from QUEUE_SIZE_CAPABILITY.IBI_BUF_SIZE (bits 19:16
+> > > at 0xe8, encoded as 2^(n+1) dwords).
+> > >
+> > > Rename the unused EXTENDED_CAPABILITY macro at 0xe8 to the databook
+> > > name QUEUE_SIZE_CAPABILITY.
+> > >
+> > > Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> > > ---
+> > >   drivers/i3c/master/dw-i3c-master.c | 149 ++++++++++++++++++++++++++++-
+> > >   drivers/i3c/master/dw-i3c-master.h |   1 +
+> > >   2 files changed, 149 insertions(+), 1 deletion(-)
+> > >
+> > > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> > > index 4563d8761ba0..51defcb57761 100644
+> > > --- a/drivers/i3c/master/dw-i3c-master.c
+> > > +++ b/drivers/i3c/master/dw-i3c-master.c
+> > > @@ -203,7 +203,13 @@
+> > >   #define BUS_IDLE_TIMING                      0xd8
+> > >   #define I3C_VER_ID                   0xe0
+> > >   #define I3C_VER_TYPE                 0xe4
+> > > -#define EXTENDED_CAPABILITY          0xe8
+> > > +#define QUEUE_SIZE_CAPABILITY                0xe8
+> > > +#define QUEUE_SIZE_CAPABILITY_IBI_BUF(x)     (((x) & GENMASK(19, 16)) >> 16)
+> > > +/*
+> > > + * IBI_BUF_SIZE is encoded as 2^(field + 1) dwords: the smallest buffer is
+> > > + * 2 dwords and each increment of the field doubles the depth.
+> > > + */
+> > > +#define QUEUE_SIZE_IBI_BUF_MIN_DWORDS        2
+> > >   #define SLAVE_CONFIG                 0xec
+> > >
+> > >   #define DYN_ADDR_LO_MASK GENMASK(4, 0)
+> > > @@ -844,6 +850,130 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
+> > >        return ret;
+> > >   }
+> > >
+> > > +/*
+> > > + * Cap the limits a target reported through GETMRL to what this controller can
+> > > + * actually transfer, so the core never asks for a private read the data FIFO
+> > > + * cannot hold. The optional IBI payload byte is capped to the IBI queue depth
+> > > + * instead; since that byte is a u8, the IBI cap only ever applies to
+> > > + * controllers whose IBI queue is smaller than 255 bytes.
+> > > + *
+> > > + * Direct SETMRL is optional, so a target may implement GETMRL and NACK the SET.
+> > > + * Clamp the values handed back to the core either way: a failed SET only means
+> > > + * the target keeps its own larger limit, which is harmless as long as the core
+> > > + * stays within ours.
+> > > + */
+> > > +static int dw_i3c_master_clamp_mrl(struct dw_i3c_master *master,
+> > > +                                struct i3c_ccc_cmd *ccc)
+> > > +{
+> > > +     u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
+> > > +     u32 max_ibi_bytes = master->caps.ibififodepth * sizeof(u32);
+> > > +     u16 actual_len = ccc->dests[0].payload.actual_len;
+> > > +     struct i3c_ccc_cmd_dest set_dest = { };
+> > > +     struct i3c_ccc_cmd set_cmd = { };
+> > > +     struct i3c_ccc_mrl set_mrl;
+> > > +     struct i3c_ccc_mrl *mrl;
+> > > +     bool clamp_ibi = false;
+> > > +     bool clamp_read;
+> > > +     u8 ibi_len = 0;
+> > > +     u16 read_len;
+> > > +     int ret;
+> > > +
+> > > +     /* Need at least the 2-byte max read length field to act on. */
+> > > +     if (actual_len < 2)
+> > > +             return 0;
+> > > +
+> > > +     mrl = ccc->dests[0].payload.data;
+> > > +     read_len = be16_to_cpu(mrl->read_len);
+> > > +     clamp_read = read_len > max_fifo_bytes;
+> > > +
+> > > +     /* Optional third byte is valid only if the target returned it. */
+> > > +     if (actual_len > 2) {
+> > > +             ibi_len = mrl->ibi_len;
+> > > +             clamp_ibi = max_ibi_bytes && ibi_len > max_ibi_bytes;
+> > > +     }
+> > > +
+> > > +     if (!clamp_read && !clamp_ibi)
+> > > +             return 0;
+> > > +
+> > > +     set_mrl.read_len = cpu_to_be16(clamp_read ? max_fifo_bytes : read_len);
+> > > +     if (actual_len > 2)
+> > > +             set_mrl.ibi_len = clamp_ibi ? max_ibi_bytes : ibi_len;
+> > > +
+> > > +     set_dest.addr = ccc->dests[0].addr;
+> > > +     set_dest.payload.data = &set_mrl;
+> > > +     set_dest.payload.len = actual_len;
+> > > +
+> > > +     set_cmd.rnw = 0;
+> > > +     set_cmd.id = I3C_CCC_SETMRL(false);
+> > > +     set_cmd.ndests = 1;
+> > > +     set_cmd.dests = &set_dest;
+> > > +
+> > > +     ret = dw_i3c_ccc_set(master, &set_cmd);
+> > > +     if (ret)
+> > > +             dev_dbg(&master->base.dev,
+> > > +                     "SETMRL not accepted by target: %d\n", ret);
+> > > +
+> > > +     if (clamp_read) {
+> > > +             mrl->read_len = cpu_to_be16(max_fifo_bytes);
+> > > +             dev_dbg(&master->base.dev,
+> > > +                     "clamped target MRL from %u to %u bytes (FIFO depth limit)\n",
+> > > +                     read_len, max_fifo_bytes);
+> > > +     }
+> > > +     if (clamp_ibi) {
+> > > +             mrl->ibi_len = max_ibi_bytes;
+> > > +             dev_dbg(&master->base.dev,
+> > > +                     "clamped target IBI len from %u to %u bytes (IBI buffer limit)\n",
+> > > +                     ibi_len, max_ibi_bytes);
+> > > +     }
+> > > +
+> > > +     return 0;
+> > > +}
+> > > +
+> > > +/* Same contract as dw_i3c_master_clamp_mrl(), for the write direction. */
+> > > +static int dw_i3c_master_clamp_mwl(struct dw_i3c_master *master,
+> > > +                                struct i3c_ccc_cmd *ccc)
+> > > +{
+> > > +     u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
+> > > +     struct i3c_ccc_cmd_dest set_dest = { };
+> > > +     struct i3c_ccc_cmd set_cmd = { };
+> > > +     struct i3c_ccc_mwl set_mwl;
+> > > +     struct i3c_ccc_mwl *mwl;
+> > > +     u16 write_len;
+> > > +     int ret;
+> > > +
+> > > +     if (ccc->dests[0].payload.actual_len < 2)
+> > > +             return 0;
+> > > +
+> > > +     mwl = ccc->dests[0].payload.data;
+> > > +     write_len = be16_to_cpu(mwl->len);
+> > > +
+> > > +     if (write_len <= max_fifo_bytes)
+> > > +             return 0;
+> > > +
+> > > +     set_mwl.len = cpu_to_be16(max_fifo_bytes);
+> > > +
+> > > +     set_dest.addr = ccc->dests[0].addr;
+> > > +     set_dest.payload.data = &set_mwl;
+> > > +     set_dest.payload.len = sizeof(set_mwl);
+> > > +
+> > > +     set_cmd.rnw = 0;
+> > > +     set_cmd.id = I3C_CCC_SETMWL(false);
+> > > +     set_cmd.ndests = 1;
+> > > +     set_cmd.dests = &set_dest;
+> > > +
+> > > +     ret = dw_i3c_ccc_set(master, &set_cmd);
+> > > +     if (ret)
+> > > +             dev_dbg(&master->base.dev,
+> > > +                     "SETMWL not accepted by target: %d\n", ret);
+> > > +
+> > > +     mwl->len = cpu_to_be16(max_fifo_bytes);
+> > > +     dev_dbg(&master->base.dev,
+> > > +             "clamped target MWL from %u to %u bytes (FIFO depth limit)\n",
+> > > +             write_len, max_fifo_bytes);
+> > > +
+> > > +     return 0;
+> > > +}
+> > > +
+> > >   static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+> > >                                      struct i3c_ccc_cmd *ccc)
+> > >   {
+> > > @@ -866,6 +996,18 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+> > >        else
+> > >                ret = dw_i3c_ccc_set(master, ccc);
+> > >
+> > > +     /*
+> > > +      * Clamp GETMRL/GETMWL responses to the data FIFO depth, and the
+> > > +      * optional GETMRL IBI byte to the IBI queue depth. The GET itself has
+> > > +      * already succeeded, so its result is never overridden here.
+> > > +      */
+> > > +     if (!ret && ccc->rnw) {
+> > > +             if (ccc->id == I3C_CCC_GETMRL)
+> > > +                     dw_i3c_master_clamp_mrl(master, ccc);
+> > > +             else if (ccc->id == I3C_CCC_GETMWL)
+> > > +                     dw_i3c_master_clamp_mwl(master, ccc);
+> > > +     }
+> > > +
+> > >        pm_runtime_put_autosuspend(master->dev);
+> > >        return ret;
+> > >   }
+> > > @@ -1728,6 +1870,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+> > >        ret = readl(master->regs + DATA_BUFFER_STATUS_LEVEL);
+> > >        master->caps.datafifodepth = DATA_BUFFER_STATUS_LEVEL_TX(ret);
+> > >
+> > > +     /* Read the IBI data buffer size advertised by the controller. */
+> > > +     ret = readl(master->regs + QUEUE_SIZE_CAPABILITY);
+> > > +     master->caps.ibififodepth = QUEUE_SIZE_IBI_BUF_MIN_DWORDS <<
+> > > +                                 QUEUE_SIZE_CAPABILITY_IBI_BUF(ret);
+> > > +
+> > >        ret = readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
+> > >        master->datstartaddr = ret;
+> > >        master->maxdevs = ret >> 16;
+> > > diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
+> > > index 17ad817d1f8e..54c3912374c8 100644
+> > > --- a/drivers/i3c/master/dw-i3c-master.h
+> > > +++ b/drivers/i3c/master/dw-i3c-master.h
+> > > @@ -15,6 +15,7 @@
+> > >   struct dw_i3c_master_caps {
+> > >        u8 cmdfifodepth;
+> > >        u8 datafifodepth;
+> > > +     u32 ibififodepth;
+> > >   };
+> > >
+> > >   struct dw_i3c_dat_entry {
+> > > --
+> > > 2.34.1
+> > >
+>
 
 -- 
 linux-i3c mailing list
