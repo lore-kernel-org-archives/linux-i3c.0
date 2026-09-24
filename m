@@ -4,125 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9A62C98302
-	for <linux-i3c@archiver.kernel.org>; Wed, 23 Sep 2026 16:42:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34490C982FD
+	for <linux-i3c@archiver.kernel.org>; Thu, 24 Sep 2026 04:56:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JoSmS77s46EjDsB9TivBGvqf+wQAouEYPNeRabsd5eU=; b=fn2P0zUA9rq7nt
-	fFaMpAcYpAe/tW79YQlPR8LaJzwNXeQyI9arMCJpcAFgXB7nBDuiwpmCSCcJr/RZI2+RgiBasyIje
-	k6esujaGT6wwgxa7tphYUpT+wXAx2RPCsGMV8W0fdLcJEIatxpIQr48b+GRvTlcbL2CJI5HCg5brB
-	baglSHywtobM50ulTB9C9CmVElPpJscpxZNZCeo9JQMnrgYbp9wH80mYtq3Mnq/xNv0HvE8qe5cQI
-	ZkJD5Wx/3+cqBgy6FXG8Xad7Seg0pWVU2vFM1Qrxir6SntLPZr+3Z7outbMkJCH/TM7sBnSrsyKAt
-	orU/+8Jk45y+qI55b5Wg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fg8aOw86fxrV6lUVcUrUTS17BYv/DDCZGlAus15W7Ls=; b=3tYa5c2PLYp87Fueh2Oik9fwxG
+	fyy2Ti+2HS1jJLe96cVYqTGen/65LQBjOR0WbqIzsn/vLWGs6fGfpxN5nb+fLA0DqPScUdho2uGZw
+	5FOwswM9j+LulL5f/kGH1Zni6Xdzf69/yROiy0EcUOa2cUoMv/REr4tVnxfjFmu/yx1T1rZnZN9lj
+	EfjdTdrHfpI6wYluBalY/sFZwoWg8aGrF1YAAZxHGAFyVxzO7IIx+TIoBX8U1I7lGd30Q4s4Szshx
+	C/U2v79P3iRYyJJm5MsdiFaLTFUoefJ21IpP0OhCJE/qlsmFe5lUEjKNgCiA8jJG0kZUmTBSiG6Rm
+	fU0ZCRMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9Q3V-00000008uOg-27yt;
-	Wed, 23 Sep 2026 16:42:49 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1x9bV7-0000000A1u4-2Gq1;
+	Thu, 24 Sep 2026 04:56:05 +0000
+Received: from mail-northcentralusazon11010038.outbound.protection.outlook.com ([52.101.193.38] helo=CH1PR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9Q39-00000008uJz-2rPU
+	id 1x9bV4-0000000A1tj-2IBb
 	for linux-i3c@lists.infradead.org;
-	Wed, 23 Sep 2026 16:42:31 +0000
+	Thu, 24 Sep 2026 04:56:04 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Iuz/25FFFNi157sPzofzJ0cJBUhQWBT3gj70xRqwiP7PNQaxCFn/fYbTCkRDtEUGeeUpZNKXaaj9LnacRyzq+Ca8f8tEEjnBR7DHbW5fnxntuuegHmuPlt9WovFQFoW6x8gW5de5AFU9u6RPo79Q2rfafYqRvY1k9KzLN3fdGtOCnkYny7Fq1PnrpdbwbfmNFSMV7iU+Q/94cuFct/p6m3RFY1YpRsVFwEyJT/BS29jrZNHqByTyCcN4exDGdblAMrk3Let4MgcewL2b19MbnnX/spMkEQmyKA587b91gWgaTDA/7yg1lMLkaoGq/I55M+c683/7Rojtc7Jf8aW+jQ==
+ b=fcpEUF1y5cOjhqHuU6Z0RE499yM7SGena1ZIdXaXOCXjZsbnFFYTWpXm8ENJapOffzkfZ6yUd7yQSmhIBKTB+IPi9AAWH7V0Nn1Gtc99AbJujF1FwPIT/jsjkUByhczwJhibH/sBDQpvjbwQMk/jAIPJDQA+eF7jDO/d2XQ5bzyRBAQrUUvXhTOQ7cRPEEX0374I7/kRjbp50faIBahRDzKVIazzFouWRZrPGTa5JfXMf78SXkWt9Aar4X0FOhtxEJbmzcFvDJnp37LogBitj+zCfvF0Xpvuj8duTX/z5EXmopx3hwVH3H3azQsqpvb/E5yiK5hRHY9HIvk6Fl/dHg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Oejb5g3w0UauPVXc6oXtRUgH1LbqQe6DbajlZMBoyvg=;
- b=H8xuo27OGm/yc1F9NX4QAEa0GvAILXhmeVfO6Q41lsG5sVllS1gNttVW+NLiN+eu6Lkl7kN6vIpO24R12vzDJokNCPTvB2oehlcgq7RudUVvtGmIAF2Jr56Tb8Bi45l5JS2fob4kSv7y40qqCg78ZQ/fKUuQi3DtMizxR93p82ZQT6ZbXWnxV5DlCUkAaLz8e5xAf5VkE0XVpj5H2ixEMAaMluRvLsSWtMFf5Hn9M5hX1wqqwToF4HoytCXTWjGU9EuccPoAKbLn15FGqAGB2zzXzfZ0Do1QKpcFcRqchtN7UkTfNt3pFnYFTXnEqcjh+hbE1Ys1UuwFSowzIblBsQ==
+ bh=Rue2HsbyA0mddJGD02t42c4ThRXvYzHIRZjTg9JPo6c=;
+ b=GazHqZCuzqeXJE0sYrj8UQGDyH9v/6tSFMWfqWLmo8H16kmaVaFXzleMeXvb6liOmVpshzv3fttceHfV0/qyj9YdFm5kkLevXRnyeFEhKcg1LVqODULhCCBdEycfmmb5+d6ocFNwJVUD5O/Za4aOXSpfvrKeM3H1AUoz0Ez0IByNfg68TGO0Eq1O+FKlehRqAgAaAogbC9jXRDlq7CgRiSXPQHnmd04LHarWVRQPNoBd5heJw9QJ2SaNpiYT/yd5voSjlaEpomsMMwWZqGqDSJmk4rvyKiYvUWrHoq5eow6Cw87NRd9lZiYu1JtBkzFebCTy5t6x018A7xn3AgzfRA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Oejb5g3w0UauPVXc6oXtRUgH1LbqQe6DbajlZMBoyvg=;
- b=I4ErPXr3cZYkvevhNhtIHxChhAypqmEsxwjHkukJcOaAtDrevXP3zQ22lbsZydWI9VwMuUvxDIS5uZfenKuxVaO1VVwszb1QB1wE6b7McMJYID3OqytgRC3pjEAOB1FJ+tyqee4e4OyGn1X2d0q7+nrFPgeUsFLlyJZ5/q/DpJtFZtnEPJVWCQjwmygT71Nu5fEKS3uCQJrazb4pWbMlQ3JV9D5SC7/Gyt1bw+QslV098+mLGBlbMZ6FJpFKzzwjz8tYKIO1R6/HMbt3Q+9Hz1wsyix3TfY6j4kg319SnUZjil+391jmsxgANpIQlvXvuhwwvry8RLMtIofQ9mpjfQ==
+ bh=Rue2HsbyA0mddJGD02t42c4ThRXvYzHIRZjTg9JPo6c=;
+ b=JXmlgxkXiftFSLVvmF7t1HpNPybSyi+1O/skH/U8QbcJI/9fGwlVR8ll23i+ltAP22CUt1f6BzDV8vDjWwmqUUIOmSiyyqRhKLWfWbw3TDFu1GyPNbCZQ6zNtgL4DTMVddpsjlkfk/VMWd9tDvLzAmZLk1vvKdZRELPpFM343O8=
 Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AM9PR04MB7506.eurprd04.prod.outlook.com (2603:10a6:20b:281::14) with
+ header.d=none;dmarc=none action=none header.from=amd.com;
+Received: from IA1PR12MB8408.namprd12.prod.outlook.com (2603:10b6:208:3db::13)
+ by SJ0PR12MB8613.namprd12.prod.outlook.com (2603:10b6:a03:44d::20) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.17; Wed, 23 Sep
- 2026 16:42:22 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0428.015; Wed, 23 Sep 2026
- 16:42:22 +0000
-Date: Wed, 23 Sep 2026 12:42:15 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Fan Wu <fanwu01@zju.edu.cn>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.18; Thu, 24 Sep
+ 2026 04:55:51 +0000
+Received: from IA1PR12MB8408.namprd12.prod.outlook.com
+ ([fe80::10cf:64f0:2de6:e466]) by IA1PR12MB8408.namprd12.prod.outlook.com
+ ([fe80::10cf:64f0:2de6:e466%7]) with mapi id 15.21.0451.014; Thu, 24 Sep 2026
+ 04:55:51 +0000
+Message-ID: <eff031f6-e212-43a8-98c0-5f52a4b9317b@amd.com>
+Date: Thu, 24 Sep 2026 10:25:44 +0530
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] i3c: master: dw: Clamp GETMRL/GETMWL to controller FIFO
+ limits
+To: Frank Li <Frank.li@oss.nxp.com>,
+ Shubham Patil <shubhamsanjay.patil@amd.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, stable@vger.kernel.org,
-	Song Li <songl@zju.edu.cn>
-Subject: Re: [PATCH] i3c: master: adi: free the IRQ before unregistering the
- master
-Message-ID: <arQBZ93iYSiaVueC@lizhi-Precision-Tower-5810>
-References: <20260923085340.490776-1-fanwu01@zju.edu.cn>
-Content-Disposition: inline
-In-Reply-To: <20260923085340.490776-1-fanwu01@zju.edu.cn>
-X-ClientProxiedBy: CY5PR10CA0004.namprd10.prod.outlook.com
- (2603:10b6:930:1c::19) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+ Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ meaganlloyd@linux.microsoft.com, git@amd.com
+References: <20260908102724.3232660-1-shubhamsanjay.patil@amd.com>
+ <aqL4HaQ1gjeaJYUQ@lizhi-Precision-Tower-5810>
+Content-Language: en-US
+From: "Patil, Shubham Sanjay" <shubpati@amd.com>
+In-Reply-To: <aqL4HaQ1gjeaJYUQ@lizhi-Precision-Tower-5810>
+X-ClientProxiedBy: MA5P287CA0178.INDP287.PROD.OUTLOOK.COM
+ (2603:1096:a01:1af::14) To IA1PR12MB8408.namprd12.prod.outlook.com
+ (2603:10b6:208:3db::13)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB7506:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7fd32460-2ff8-40f4-6ffe-08df1991a3fe
+X-MS-TrafficTypeDiagnostic: IA1PR12MB8408:EE_|SJ0PR12MB8613:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9786d87e-6d0d-4894-aa37-08df19f81b1b
+X-LD-Processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|23010399003|19092799006|18002099003|22082099003|11063799006|56012099006|10067099003;
-X-Microsoft-Antispam-Message-Info: mUPxTx05AegQA/Or5xqeE+yN64A5MBrQflfDb0JWcHWC3feIz3xfpreOnVBHEP05kPXxLzlNijrJnHC9Mk05T/RzIi9gMgZ4FnhZAg1tobnG8PBT22QYMHyHgGzanUh2WLyZFddFGDooVnNZQ0CKAE1/xf44SMOmxRiCIUCSJPueNLPdF/Z9QRmtChsHpqrQkO0dxzVi9f8sz8knexIklvW4ncniB+cbOthSz2bCK0haY6e7up9h81AcklI6Kr52zEwYVMn5Oox2roDjklBQCqSyf72yH6Lynk177suOxs4DIWkK5CjirYgEe5uWDkWmygM/IoJpEtRPEU+6yfGF89FkMk2bwSKha7xAWib7SQz3MxFOehMVobzS5Dj1xp+fthPn6iQy89i7WkLKgZ8YpWmW7yifIa6+QVkptUMAiH6MpAJHQkK83/LQVe22Ze4CySxmaf8MqUcprDs+snVH4hZnAZSUzE5oee2sl0g9znxSE+yPmQAEKpZ3MPp0n3+UYd5dvoFuRWMVB7LPVSneyfQRdmi27yQonwscGhoeNauHp4EMNQOWGEy/huZjDjG3FwiOF61D7frXWu+JEVbZBKknl2NhdgXq5C6iyR6B9D6U4oG6l5hTjDGzlLqLyotcVj03Bd27IW9SoWwk7SN+Ho55q+1o4g7JFOC0ZjGKF5A=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(23010399003)(19092799006)(18002099003)(22082099003)(11063799006)(56012099006)(10067099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016|23010399003|3023799007|11063799006|6133799003|10067099003|56012099006|4143699003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: QtKGfMeRCqe4llMjCypr3DakUFGlzEMgBhfGccA3irvh8KLWqhCcLJNomq7QW4JF5s7MJcbTKYho6+EcplQQadmLZ41CTNpHtae0D3kvYgTl+ZsqTgmrb/0jsIP991lVGKnOS9dF47//WPIwKCTD/EtHWszLV53BfF2zOu5+jG2DQfSYRiAIKc66Ol3G8rwrKGwOznaNza1fDkzyMOjQhhui6J3PtNmNxQWfQS8kuFTaqGpP8LT0CtISjwtfbmg38zCVeNOiKiVs1j4EVR+orQHv9rMcUofBbsvycB0/JlVeR6FTYbW6LpM0NKRFMqAlbvtdfL/HlcwYd7r3SsQSght9jSBKM4/9zR45ZQnLEM33R1Gq+3tyV7MRVHpXzJr1Kh7CRyjWTMGTvtXAJ8uP3bue+hgVR/FO/U/VYyB054nUkWZb//fYC+R9Ej0AJfLf/C4jTVD0/iANhkXUAAJWVX10t/0EKq5i61+fVOOPRy2ReeCXOHX6BhPOsR2XN+mktqBiIAdjSbYiew76WqcIBUJKcMf/XP+ZFAgCZOG9ZCPHmsUbNVEV1/NBmSkutuY3sZBOXHqE2mKWeRcy1AOD88MqacGozPYWeVUhoryj9RRUFUd9M/pgHzxgwwa/JoSo6VieTmPB35/83IAFRdD7pJ/R4OoMVKUR1gG0nCTq3dg=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR12MB8408.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(23010399003)(3023799007)(11063799006)(6133799003)(10067099003)(56012099006)(4143699003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?YP+P3qt9gQNgKw81jUiUi7aTyJRsuE7oNiN0bYSp5zm9uuWp7vAnD5ve25ya?=
- =?us-ascii?Q?cxwu8vvQajpIEdLMrPjek2ZlZONVk6p7vKe4BmDn9X2gu/JycckOrJG5WeZU?=
- =?us-ascii?Q?EQye2FGfZp7v5ub2PFJ/RqF05xa43kKfDBKP1jqyn03PYPkQ4iGU0VuZqr83?=
- =?us-ascii?Q?RXacpg0fQQkk3OlrNxR9NLfaiT4/pQBw2+B5UEVP7gw8rRTS+ptXMGL3NGJJ?=
- =?us-ascii?Q?8JJMT5KdkU2mrCqeYjhGdcHlsvgyOhD3Q3DaAPQMtT+R3lSyk+WuG2cX7mU5?=
- =?us-ascii?Q?ujaQ/MN5rcK4TzREnufMp4f8HJUmIgTLqWdncxzEcpKkyTTQB4fZw0oaIiWk?=
- =?us-ascii?Q?GlxrbHIFA9WPG8LtuWlulFxXQ85D3ZBTDy/B7Q2NGqtEyEO98ojgtUw536+2?=
- =?us-ascii?Q?iVeAbQkzDbDn2mVMy+njgU9yKv3f2VYNfurPxFY5vkjfmZanxb0/F4FlNlJV?=
- =?us-ascii?Q?iSpvb4QMWu47sMce+z0pCnho8//3U8QJJqfwZZN+Y+JEsKbOx290bYbT6HT9?=
- =?us-ascii?Q?et91EW5oHBXFVi83rpPSAr3jyv9de0DQa3hPunRTiulGRmKxOIlynxXDA9Tn?=
- =?us-ascii?Q?70Wa/Bu9AGPW+oRwLJBxiQ7ADgeXU+ECl4VBVgfkBRPDkkpY5Tq6OLiDcqSJ?=
- =?us-ascii?Q?2UPgMCbBe9Apa24AUG/DVVWHGIM2LQTow1dgXm03I6dOvtK3CZ0UAPbNHRIw?=
- =?us-ascii?Q?dozBbUs7Th2qXRyZE6ilsT84XiPEaQs4YtQ6XxKlKu080Gfx/VUJDiBAFFPG?=
- =?us-ascii?Q?M1UZ0Hl0Nr8u7DA5HjJMIIZEqQ3BGuV8kfbfwrPca+ctX/R+ibTTXps5mQqy?=
- =?us-ascii?Q?/2IX839zy3FwCMINPWv7zSORQXuLVkH1LMhZpzuTKME7yxG4aaz7jm3oaNkS?=
- =?us-ascii?Q?z6jdD8HMawUJV9ABpWVjU2uXQNFof5KsYpZI78x4XKC2lwm+bDbub+p2Lwlx?=
- =?us-ascii?Q?zCZar+xUVqwupcF1HlNS4lHhgwxvu0gUDGTeEQIaZfjjnn1sxhGOygBFA8Hu?=
- =?us-ascii?Q?isk4+Cri5zGrulRsVd7FTlG7WzsCkq4BVeB4u+6TihZ2X83TkIS3daD6wGhU?=
- =?us-ascii?Q?dlmsJ6Pv4u24dLTBDMqV52dL0nBKTKk9xNBhXoOVDu68BQzcXvfzLa5PU7a7?=
- =?us-ascii?Q?miJUI/Eu/8vx8Y4W0IeduIE4pPS7Q7GuFgvDSb0/4JShap58571D7rGN6QWf?=
- =?us-ascii?Q?UhOJ+9oZE41eGKURpzxC3yH0XMxgCStgM+EWs3ZTWrY6RxicdKsGDT/nAkwT?=
- =?us-ascii?Q?8bLAwrnQefYqdtTJjC/CWZvnJaBpdV6Bw5/s67MkmCgYzgrwg2jOobzQxAxO?=
- =?us-ascii?Q?druHiocO0n/X4GUDwwUny8vltzoL+q+C3kpZRQ0erRpbBL3lsrMmszpZEYLI?=
- =?us-ascii?Q?4T+wj6tSYD0ymTFAv+P0EUKyiyQLcIvQVJG+QNafhbQm36WjiJbtJ6dB6YWR?=
- =?us-ascii?Q?qPUyVph1ZlETVcUcoRaisWuQFC1TKSd3PXrd4rNvafhq8UseX6aOEXiHGCnr?=
- =?us-ascii?Q?qJBeXbYwttlG1HK0FxA6FruApBr372R8O0+tnV5NsT0pyiyPisEmy0x1A/wm?=
- =?us-ascii?Q?3YIh6lYaZhN+m+Ddzv7edK0aUu6ICJuzauIWKKj/xyc0DbcGwYJRd9kYiLuS?=
- =?us-ascii?Q?mLBI90nYkMqGzxLM4Gcb6uvlx6Lo50g97ELYF06Sq8OgDcr0ViVbMPtLaBLB?=
- =?us-ascii?Q?igY+hnFhGqgqa2cnypV2/kB9IKsWboc7b0eMGFTe1rojV3RW1uizACE0ib9c?=
- =?us-ascii?Q?JZb1rQtlMBjMXN8yfaDur0hOg2BEFszNh+gF8KkdHNsulUn6nMhW?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7fd32460-2ff8-40f4-6ffe-08df1991a3fe
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZTFhaXg2NXhhTUp4OWp1WWxBcTNMdFFPeE8vOExkbGdzVWdoSDJETGJjS3Jn?=
+ =?utf-8?B?UW1QOGJxK2xUbXQ3eUorRDVWYUx6S0pwSTFFMnM1T20vOVJ4TmpDc0pyUGJo?=
+ =?utf-8?B?UTdENzNJanNibE10RlBoVEFoYWJST2Z5am5ISGkxUkZCeEFOZEZaQ2FvR1ZT?=
+ =?utf-8?B?RnFLa1VUU3NTMnBQcm9BWXRnNHhBNWZ6Wm0rQVgramF0VHMwdXVNR0lIaWRq?=
+ =?utf-8?B?eUEweGY1dXJEZFU0TWFZenVGcWVKUnB0QisxV3ZrdUV5RTZQZlFISVI4bFhl?=
+ =?utf-8?B?T0JWUkEzR3Flcmx1ejVlVE96WXk0cWIzRTZOSWtxbW16dzM1K28zcStLM2lH?=
+ =?utf-8?B?cG9nbzV3aHVtdncwOTNITGsyYTgxU1pzNS9Ob2huYVV1NnNpakFLQmx1NVox?=
+ =?utf-8?B?VFNma0hMQzFITUphZXAxZldlbC80ZmY0UHpBVzJWMzJDbUFDdEI2SmNRa0hW?=
+ =?utf-8?B?cXl4blVGaHVRTGtKWTl6VFQ1Y2FYNzdhTE5MYnEyR1NNemRRbEZXTXJNMlFE?=
+ =?utf-8?B?NlhjTmdCRGE5MlJ5K3lOQUxMa2NYUUJhZVNkV2V1U0xlWnJLQ2N1WkQ5emFJ?=
+ =?utf-8?B?MVBtd3pJdUkzZzZzL2hiUlBDZjQzL1l1SWtsL1pKN0o2QlBwcFpLZ1Bya2Rr?=
+ =?utf-8?B?ZWxjSS9aS2llaC81d1pzWEttZThEN3YvajNjMVpkakkzMTQ5b3JLWXQrblh4?=
+ =?utf-8?B?Y2wvbXRNZnlYRC9Kc3JMTFdHYkc5SzJxTDZvRTVhTVZNVzZHZU8veUgrRUJF?=
+ =?utf-8?B?SWpONi9lc2UzaEZueHlWQldyS1hDVzIzUTlPQU1LL2xQWkVGc0dXV0VkMHUx?=
+ =?utf-8?B?NUVxNmhXZVduMTdmSzErbytlS0hXRTYvNXVZR3pRNHBtT3lnZVNnSDF0QXMy?=
+ =?utf-8?B?K21DS3NYRXliRFA0dDlkVzZQTjhwZUVCRVo5QTVTWDI0K1VPcXBOVVB5aFNY?=
+ =?utf-8?B?ejgxdmx4QXl2aEZmbHh5YkJ5aE52bG1PREZ2WVcrbTRZc2l3T1ZtUnppREcx?=
+ =?utf-8?B?N3RlV0FrNWZVZ01pVkRXbDF6d21vL0VibHVLQ1ZtRlNTZFpNMDlYbDk2bTRX?=
+ =?utf-8?B?YVliL2VNUFBGY25uYXJzc2JxbW9ic0xTeVRRcmxXY0tXck1WRTl1VG80OUF3?=
+ =?utf-8?B?aFVkakQrSWl1bzBOR2hMdnpXeWZDS2o1MTBadEVSaWY3TmxVemlXeFFkQ2o3?=
+ =?utf-8?B?cnRrd2FCbGNXaUpXZmpteVA5Q2s3MFBCbU5HL3BWTW5IVDZvajB6ZXBJdTJ3?=
+ =?utf-8?B?bk1EdXc3TFJZcVpjTHhpR2VHdEJZZFp3eklaTDNOcmQzdGpvQXY0WHE4OS9l?=
+ =?utf-8?B?bTQyTzFSSndaU1o1OFU1dlFxL29aU3BzT3dLMlYyRE5IM2ZWVm1HRm8yWHZr?=
+ =?utf-8?B?Y290bVFyclBXa1NpYWxXTHpCSzdaWjRBNmJiRE9IeE8vcXdhbzNlUFF5Wk5D?=
+ =?utf-8?B?MHQwQmZ5WCtCZ2pYWVVISW1nYzVzUGdsMGZ1aDdFRFpHZVhCRlhVTmRjMXFw?=
+ =?utf-8?B?RVJSVFF2VjBhMjhXbjVWMDhrU2x6TENwSmpQWDloZXdlNUxwN3UwZFJOeVI2?=
+ =?utf-8?B?S0NCMVlPVCtZdUV2aXhXb2RhdllpMndCRWZQb0RVMldXTGdnSFoxeHR1Y1NR?=
+ =?utf-8?B?U3kxMnFaSVpKOVVqeGRqazF2cndmV3JYdHVudi9MRnNmdjU5MGZKK3pOaVNM?=
+ =?utf-8?B?NUl1SC9KY3pPUVR4NzlWWGdsOVc1NmI2a1NoRFBIZWdHSmhXZ3dyMFBWTzlx?=
+ =?utf-8?B?a05PY1Nhdnl5akR3ZGxrclA2M1dKNVQ1YWozWXRkQk1uMk9BMjYvb2lMbi83?=
+ =?utf-8?B?cWVRZXYwaXpwRVY5RllNNGRoci82dkVJWlZYSXB4b1o2bWk4R0J1cUNpNHU3?=
+ =?utf-8?B?K3JVZGdNQ0pvZGs5cGk4TWFXMStVNUE0YTcwY1kxSjQ5VWhzRXZiMTZ3QlV1?=
+ =?utf-8?B?VGJxaXowQzFRMHBlYjZYYVNPU0hJZUduMU04TGZZek5ZZUl4UXlaeWwzSEhE?=
+ =?utf-8?B?aGZtMkNaTnFNdXhUSWxtb0txVG9FWGFweTNBeGt1bnFVTi9yZlM3ZENWejFJ?=
+ =?utf-8?B?dHp0bVpQd0JMa2dXdWUweGhjeEtjcE4rUmNzcm1vd2pDa0k3cXZ4Z3dEd2Er?=
+ =?utf-8?B?YnFoTnp0S3FKMkpqVW5ZY2pKMC9EdHhvMjFSSytCOXFSWVBtVlc5Qi8yS0Qy?=
+ =?utf-8?B?dDB6bTZmdlp1aXRXTGplWmt6WE5SbXVmSXAxTFBnSHZjNFg5RWJ6TTVlZ2xZ?=
+ =?utf-8?B?SHJCUFFEcnZRZHVtMEdFTTJ0RDkzVlB4UFphRTdNR0NYS3p1S3VCQ1FyZmty?=
+ =?utf-8?B?T0kwN2lHUGpqNUZ1NXlqQkV2dmhMQndmZTdHZk9OSlVJb3VQZ2Z3dz09?=
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9786d87e-6d0d-4894-aa37-08df19f81b1b
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR12MB8408.namprd12.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2026 16:42:22.4370
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Sep 2026 04:55:51.1658
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: bVKVcysOPUSmvKivShYY0H131m/plOaGSr3KESGs6OMUKr97YER8W6ZXLfKKQ4X9wr+wn5K+SzbNygdQRQ8nBZuBmyUIrE3288OxaNQBdLqXXoQp2ux7ueX30rSraGl5
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB7506
+X-MS-Exchange-CrossTenant-UserPrincipalName: O5DdIpqswvLmNkqk8HWkdrDcQlPiI4C4QiU1omQ5T5yeTBgymqfZw5P02tS2p9hitpV9CxbfHTYzoNOfM/V/EA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR12MB8613
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260923_094229_555383_E10F485E 
-X-CRM114-Status: GOOD (  20.53  )
+X-CRM114-CacheID: sfid-20260923_215602_736802_E0BD0EA2 
+X-CRM114-Status: GOOD (  28.19  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,67 +146,268 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 23, 2026 at 08:53:40AM +0000, Fan Wu wrote:
-> adi_i3c_master_irq() is requested with devm_request_irq(), so it stays
-> registered when adi_i3c_master_remove() runs, and the writes masking the
-> controller IRQ sources do not synchronize with a handler that is already
-> running on another CPU. i3c_master_unregister() then frees the
-> struct i3c_dev_desc objects that master->ibi.slots[] still point to, so
-> the IBI path in adi_i3c_master_handle_ibi() can dereference freed memory.
->
-> Fix this by storing the IRQ number in the private structure and calling
-> devm_free_irq() after the IRQ sources are masked, so a running handler
-> is finished before the master is torn down.
->
-> This issue was found by an in-house static analysis tool.
->
-> Fixes: a79ac2cdc91d ("i3c: master: Add driver for Analog Devices I3C Controller IP")
-> Cc: stable@vger.kernel.org
-> Co-developed-by: Song Li <songl@zju.edu.cn>
-> Signed-off-by: Song Li <songl@zju.edu.cn>
-> Signed-off-by: Fan Wu <fanwu01@zju.edu.cn>
-> ---
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
->  drivers/i3c/master/adi-i3c-master.c | 4 ++++
->  1 file changed, 4 insertions(+)
->
-> diff --git a/drivers/i3c/master/adi-i3c-master.c b/drivers/i3c/master/adi-i3c-master.c
-> index 6380a38..9b0ee4e 100644
-> --- a/drivers/i3c/master/adi-i3c-master.c
-> +++ b/drivers/i3c/master/adi-i3c-master.c
-> @@ -115,6 +115,7 @@ struct adi_i3c_master {
->  		spinlock_t lock; /* Protect transfer */
->  	} xferqueue;
->  	void __iomem *regs;
-> +	int irq;
->  	struct clk *clk;
->  	unsigned long i3c_scl_lim;
->  	struct {
-> @@ -954,6 +955,7 @@ static int adi_i3c_master_probe(struct platform_device *pdev)
->  	irq = platform_get_irq(pdev, 0);
->  	if (irq < 0)
->  		return irq;
-> +	master->irq = irq;
->
->  	version = readl(master->regs + ADI_AXI_REG_VERSION);
->  	if (ADI_AXI_PCORE_VER_MAJOR(version) != 1)
-> @@ -999,6 +1001,8 @@ static void adi_i3c_master_remove(struct platform_device *pdev)
->  	writel(0x00, master->regs + REG_IRQ_MASK);
->  	writel(0x01, master->regs + REG_ENABLE);
->
-> +	devm_free_irq(&pdev->dev, master->irq, master);
-> +
->  	i3c_master_unregister(&master->base);
->  }
->
->
+On 9/11/2026 12:04 AM, Frank Li wrote:
+> Caution: This message originated from an External Source. Use proper caution when opening attachments, clicking links, or responding.
+> 
+> 
+> On Tue, Sep 08, 2026 at 03:57:24PM +0530, Shubham Patil wrote:
+>> The DW master rejects private SDR transfers larger than
+>> caps.datafifodepth with -EOPNOTSUPP. Targets often report MRL/MWL
+>> values larger than that FIFO, so the core stores limits the controller
+>> cannot meet.
+>>
+>> After a successful GETMRL/GETMWL, issue Direct SETMRL/SETMWL to the
+>> same target with lengths capped to the data FIFO (in bytes), then
+>> rewrite the GET payload so the core keeps the same values. Only update
+>> the GET buffer once SET is acked, so a failed SET does not leave the
+>> core and the target disagreeing.
+> 
+> I think i3c device driver should know these information choose
+> min value dring each xfer. even though you set devcie's MRL/MXL, device
+> driver still issue a longer transfer.
+> 
+> Frank
+
+Understood - I will drop the SETMRL/SETMWL and stop rewriting the GET
+payload, and instead expose the controller limit so the min is taken
+per transfer. Two questions on how you want that done:
+1) Where should the min be taken?
+    a) In the core: the controller driver sets max_read_len /
+       max_write_len / max_ibi_len in struct i3c_master_controller, and
+       the core caps i3c_device_info to min(target, controller) after
+       GETMRL/GETMWL. Device drivers then use i3c_device_get_info()
+       as-is and cannot forget.
+    b) In each device driver: the core keeps reporting the raw target
+       values, and drivers do the min themselves.
+2) Either way, a driver that ignores these limits still gets
+    -EOPNOTSUPP from dw_i3c_master_i3c_xfers() when the transfer does
+    not fit the data FIFO. Should the driver keep returning that, or
+    would you consider splitting an oversized private SDR transfer into
+    FIFO-sized chunks in the controller driver? My understanding is
+    no - splitting changes what the target sees on the bus - but I
+    want to be sure before v2.
+
+Thanks,
+Shubham>
+>>
+>> GETMRL is variable length: the optional third byte is max IBI payload
+>> and is only present if the target returned it. Clamp that IBI byte to
+>> the IBI queue depth from QUEUE_SIZE_CAPABILITY.IBI_BUF_SIZE (bits 19:16
+>> at 0xe8, encoded as 2^(n+1) dwords).
+>>
+>> Rename the unused EXTENDED_CAPABILITY macro at 0xe8 to the databook
+>> name QUEUE_SIZE_CAPABILITY.
+>>
+>> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+>> ---
+>>   drivers/i3c/master/dw-i3c-master.c | 149 ++++++++++++++++++++++++++++-
+>>   drivers/i3c/master/dw-i3c-master.h |   1 +
+>>   2 files changed, 149 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+>> index 4563d8761ba0..51defcb57761 100644
+>> --- a/drivers/i3c/master/dw-i3c-master.c
+>> +++ b/drivers/i3c/master/dw-i3c-master.c
+>> @@ -203,7 +203,13 @@
+>>   #define BUS_IDLE_TIMING                      0xd8
+>>   #define I3C_VER_ID                   0xe0
+>>   #define I3C_VER_TYPE                 0xe4
+>> -#define EXTENDED_CAPABILITY          0xe8
+>> +#define QUEUE_SIZE_CAPABILITY                0xe8
+>> +#define QUEUE_SIZE_CAPABILITY_IBI_BUF(x)     (((x) & GENMASK(19, 16)) >> 16)
+>> +/*
+>> + * IBI_BUF_SIZE is encoded as 2^(field + 1) dwords: the smallest buffer is
+>> + * 2 dwords and each increment of the field doubles the depth.
+>> + */
+>> +#define QUEUE_SIZE_IBI_BUF_MIN_DWORDS        2
+>>   #define SLAVE_CONFIG                 0xec
+>>
+>>   #define DYN_ADDR_LO_MASK GENMASK(4, 0)
+>> @@ -844,6 +850,130 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
+>>        return ret;
+>>   }
+>>
+>> +/*
+>> + * Cap the limits a target reported through GETMRL to what this controller can
+>> + * actually transfer, so the core never asks for a private read the data FIFO
+>> + * cannot hold. The optional IBI payload byte is capped to the IBI queue depth
+>> + * instead; since that byte is a u8, the IBI cap only ever applies to
+>> + * controllers whose IBI queue is smaller than 255 bytes.
+>> + *
+>> + * Direct SETMRL is optional, so a target may implement GETMRL and NACK the SET.
+>> + * Clamp the values handed back to the core either way: a failed SET only means
+>> + * the target keeps its own larger limit, which is harmless as long as the core
+>> + * stays within ours.
+>> + */
+>> +static int dw_i3c_master_clamp_mrl(struct dw_i3c_master *master,
+>> +                                struct i3c_ccc_cmd *ccc)
+>> +{
+>> +     u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
+>> +     u32 max_ibi_bytes = master->caps.ibififodepth * sizeof(u32);
+>> +     u16 actual_len = ccc->dests[0].payload.actual_len;
+>> +     struct i3c_ccc_cmd_dest set_dest = { };
+>> +     struct i3c_ccc_cmd set_cmd = { };
+>> +     struct i3c_ccc_mrl set_mrl;
+>> +     struct i3c_ccc_mrl *mrl;
+>> +     bool clamp_ibi = false;
+>> +     bool clamp_read;
+>> +     u8 ibi_len = 0;
+>> +     u16 read_len;
+>> +     int ret;
+>> +
+>> +     /* Need at least the 2-byte max read length field to act on. */
+>> +     if (actual_len < 2)
+>> +             return 0;
+>> +
+>> +     mrl = ccc->dests[0].payload.data;
+>> +     read_len = be16_to_cpu(mrl->read_len);
+>> +     clamp_read = read_len > max_fifo_bytes;
+>> +
+>> +     /* Optional third byte is valid only if the target returned it. */
+>> +     if (actual_len > 2) {
+>> +             ibi_len = mrl->ibi_len;
+>> +             clamp_ibi = max_ibi_bytes && ibi_len > max_ibi_bytes;
+>> +     }
+>> +
+>> +     if (!clamp_read && !clamp_ibi)
+>> +             return 0;
+>> +
+>> +     set_mrl.read_len = cpu_to_be16(clamp_read ? max_fifo_bytes : read_len);
+>> +     if (actual_len > 2)
+>> +             set_mrl.ibi_len = clamp_ibi ? max_ibi_bytes : ibi_len;
+>> +
+>> +     set_dest.addr = ccc->dests[0].addr;
+>> +     set_dest.payload.data = &set_mrl;
+>> +     set_dest.payload.len = actual_len;
+>> +
+>> +     set_cmd.rnw = 0;
+>> +     set_cmd.id = I3C_CCC_SETMRL(false);
+>> +     set_cmd.ndests = 1;
+>> +     set_cmd.dests = &set_dest;
+>> +
+>> +     ret = dw_i3c_ccc_set(master, &set_cmd);
+>> +     if (ret)
+>> +             dev_dbg(&master->base.dev,
+>> +                     "SETMRL not accepted by target: %d\n", ret);
+>> +
+>> +     if (clamp_read) {
+>> +             mrl->read_len = cpu_to_be16(max_fifo_bytes);
+>> +             dev_dbg(&master->base.dev,
+>> +                     "clamped target MRL from %u to %u bytes (FIFO depth limit)\n",
+>> +                     read_len, max_fifo_bytes);
+>> +     }
+>> +     if (clamp_ibi) {
+>> +             mrl->ibi_len = max_ibi_bytes;
+>> +             dev_dbg(&master->base.dev,
+>> +                     "clamped target IBI len from %u to %u bytes (IBI buffer limit)\n",
+>> +                     ibi_len, max_ibi_bytes);
+>> +     }
+>> +
+>> +     return 0;
+>> +}
+>> +
+>> +/* Same contract as dw_i3c_master_clamp_mrl(), for the write direction. */
+>> +static int dw_i3c_master_clamp_mwl(struct dw_i3c_master *master,
+>> +                                struct i3c_ccc_cmd *ccc)
+>> +{
+>> +     u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
+>> +     struct i3c_ccc_cmd_dest set_dest = { };
+>> +     struct i3c_ccc_cmd set_cmd = { };
+>> +     struct i3c_ccc_mwl set_mwl;
+>> +     struct i3c_ccc_mwl *mwl;
+>> +     u16 write_len;
+>> +     int ret;
+>> +
+>> +     if (ccc->dests[0].payload.actual_len < 2)
+>> +             return 0;
+>> +
+>> +     mwl = ccc->dests[0].payload.data;
+>> +     write_len = be16_to_cpu(mwl->len);
+>> +
+>> +     if (write_len <= max_fifo_bytes)
+>> +             return 0;
+>> +
+>> +     set_mwl.len = cpu_to_be16(max_fifo_bytes);
+>> +
+>> +     set_dest.addr = ccc->dests[0].addr;
+>> +     set_dest.payload.data = &set_mwl;
+>> +     set_dest.payload.len = sizeof(set_mwl);
+>> +
+>> +     set_cmd.rnw = 0;
+>> +     set_cmd.id = I3C_CCC_SETMWL(false);
+>> +     set_cmd.ndests = 1;
+>> +     set_cmd.dests = &set_dest;
+>> +
+>> +     ret = dw_i3c_ccc_set(master, &set_cmd);
+>> +     if (ret)
+>> +             dev_dbg(&master->base.dev,
+>> +                     "SETMWL not accepted by target: %d\n", ret);
+>> +
+>> +     mwl->len = cpu_to_be16(max_fifo_bytes);
+>> +     dev_dbg(&master->base.dev,
+>> +             "clamped target MWL from %u to %u bytes (FIFO depth limit)\n",
+>> +             write_len, max_fifo_bytes);
+>> +
+>> +     return 0;
+>> +}
+>> +
+>>   static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+>>                                      struct i3c_ccc_cmd *ccc)
+>>   {
+>> @@ -866,6 +996,18 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+>>        else
+>>                ret = dw_i3c_ccc_set(master, ccc);
+>>
+>> +     /*
+>> +      * Clamp GETMRL/GETMWL responses to the data FIFO depth, and the
+>> +      * optional GETMRL IBI byte to the IBI queue depth. The GET itself has
+>> +      * already succeeded, so its result is never overridden here.
+>> +      */
+>> +     if (!ret && ccc->rnw) {
+>> +             if (ccc->id == I3C_CCC_GETMRL)
+>> +                     dw_i3c_master_clamp_mrl(master, ccc);
+>> +             else if (ccc->id == I3C_CCC_GETMWL)
+>> +                     dw_i3c_master_clamp_mwl(master, ccc);
+>> +     }
+>> +
+>>        pm_runtime_put_autosuspend(master->dev);
+>>        return ret;
+>>   }
+>> @@ -1728,6 +1870,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>>        ret = readl(master->regs + DATA_BUFFER_STATUS_LEVEL);
+>>        master->caps.datafifodepth = DATA_BUFFER_STATUS_LEVEL_TX(ret);
+>>
+>> +     /* Read the IBI data buffer size advertised by the controller. */
+>> +     ret = readl(master->regs + QUEUE_SIZE_CAPABILITY);
+>> +     master->caps.ibififodepth = QUEUE_SIZE_IBI_BUF_MIN_DWORDS <<
+>> +                                 QUEUE_SIZE_CAPABILITY_IBI_BUF(ret);
+>> +
+>>        ret = readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
+>>        master->datstartaddr = ret;
+>>        master->maxdevs = ret >> 16;
+>> diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
+>> index 17ad817d1f8e..54c3912374c8 100644
+>> --- a/drivers/i3c/master/dw-i3c-master.h
+>> +++ b/drivers/i3c/master/dw-i3c-master.h
+>> @@ -15,6 +15,7 @@
+>>   struct dw_i3c_master_caps {
+>>        u8 cmdfifodepth;
+>>        u8 datafifodepth;
+>> +     u32 ibififodepth;
+>>   };
+>>
+>>   struct dw_i3c_dat_entry {
+>> --
+>> 2.34.1
+>>
+
 
 -- 
 linux-i3c mailing list
