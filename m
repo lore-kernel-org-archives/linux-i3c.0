@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2523A606A32C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EE4D2606A326
 	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 11:00:54 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=c+OKF+N+;
-	dkim=permerror header.d=baylibre.com header.i=@baylibre.com header.a=rsa-sha1 header.s=google header.b=hd7gNXgx
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=t9P6uG8R;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=fj11jVh9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,92 +14,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=zSXkOoy9uY4vg9OTyOGpwiAUJZA4gclQ6Rat9Sb9z88=; b=c+OKF+N+vEqRZkR9oIPOp81HUW
-	arKhfWtiRBkH3BSiNO2DmntXVkJb3yeqtcD31l9PT0uMV9hl8cyHT4ypb/wYsjEKiYmrwerwx6Xw6
-	j/EA66xCCsVB5ix547QeO8cj6zvK7YoxUIE3rDMNsGdiuKATCi5j/Nz5Ql7SrYZ0vYI2CQATJoVUi
-	58CZ/VambT1Ep3FEoS6dRX5f6MKq23BCmrX/PnV78T9YG1DdxlGesNTKPvwf/kmyNNHPJBjh4MEKk
-	isoIl5Szihtvk4s6ly3RGVVAei2p+YDbwsths7WsdFrzUPlEaI369VzuxHhuFq2bKRlBphTrl+T96
-	VOKOVyCw==;
+	bh=iENN6FS5TCEgmwyfiKQJ0sSkKOYHDPBSiNVvCTmAI4o=; b=t9P6uG8R6rHhg4pJ8WKFw9xN5E
+	TM1oAWgKG8WKTI7+UYntHMxlg28fI6JNlv60iFHRIcYADNWYTFmot8XsYXUebHxr9WfPZuDMYlcZM
+	flAyxa9NmAYuzJnhztkwMrnkkl5XyVri3PvJGuNaxCc5uEfVqcVmxBAbnZSJyzHoTz9Pq5ZKiInSz
+	cCqEFqs7kwggduGAifr3l0zwew/YF5bh0IEqpjMeD/7zHxgtGxcB52stRL3mcmkNdPfOuwJ1+yldM
+	jlODcwVCUk6VQsEfqBnmmXWGPwLrCbGmE5jiQ8zaGx1cZg7ng8Uq9mKPvoH2bXPJp+Tc9QIi0nbA5
+	sB8mWUHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLevF-00000004NH2-2b2L;
-	Tue, 27 Oct 2026 11:00:53 +0000
-Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
+	id 1xLevG-00000004NIU-2jtB;
+	Tue, 27 Oct 2026 11:00:54 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBZr6-00000003wpO-2RH9
-	for linux-i3c@lists.infradead.org;
-	Tue, 29 Sep 2026 15:34:58 +0000
-Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49fff72474fso16889185e9.3
-        for <linux-i3c@lists.infradead.org>; Tue, 29 Sep 2026 08:34:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre.com; s=google; t=1790696094; x=1791300894; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=bK1kRsPsOXdZFtj24JVUR5GYlNpzvwaq05tohnScRrQ=;
-        b=hd7gNXgxuw8C4BCeP/pYEdK5RfZTmrBALhwC2gidfJCRJg0bsUduUvV5T+bhpSs+TN
-         hh419ABlIRcxAp92syhxOyidc79yABIyT+i6hW3CP5tfpK7WBbN2GKP60JLlJeN6gKRl
-         8IlTyN7sf61TTQR3OeO3g9OJVL1ZzStno2Cn+UJ1/5Sal9NNUuhY1qFxMSgg5u4JOhdM
-         I2i1Uao21CYTtHefrSzD/e3F4eUeZH0hODl1Qhu0coJ9z1H10IBpoq1hDqWsuhU4jnFD
-         kLJLIcQN5nBT3G55srQsR9cd7VtssqpHLoQEE54GPoBTi6Bt2N1NN2jPw4olktodcXoO
-         5D3w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790696094; x=1791300894;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=bK1kRsPsOXdZFtj24JVUR5GYlNpzvwaq05tohnScRrQ=;
-        b=DhoE+PdudSRf3Vf1YSwUH2G796t58On4X7fO4TRtFztC87bYkOVjmXkMeZLlX8+Ohi
-         9NLCSohMghj+SAJOKPG6VzpomCaIDeHipbx+kqra+bSWUMvRHewtTy3bis2XnvvgbRVj
-         HS7BNE7Hdq8D5a0ny+6S3ARIsA4NDiHGPs8idAfbFMbduXnF7h+iGOloseDhaRoreHyp
-         OvqGQeiH3T+r8S9eA3MkNSuB2jGHEF7Tc3vLO6pZk+wJGTUwQurqYlTOOxoZtW2QoSu1
-         OH9/Ig+8AKdVAMKMDbvM7hY61BXX60jDCJijCW4GZGpDDTjr77qcLba4AuMA2h/khWlF
-         HcCA==
-X-Forwarded-Encrypted: i=1; AKwUvByKkSnWHIm3KKKR+QDh4Og3GfmacIF7YOfAz9vh8WsC2d3XGuuOYLDBw/FjlQk09J9Ni15T+UOpl20=@lists.infradead.org
-X-Gm-Message-State: AFuF++mEZgALV7v/hW8AijyWDLKEtwVWux/DRARe0nbiskpCzjZr79ov
-	ptk4ghrbMWetgb6Yy1bNFzm/hwNS8u6Mf68SGVU+YKh2TrKjdcKhFJmAB3joHzgMjcM=
-X-Gm-Gg: AYBFou07Do5pgtySSakHxTlS59J0vbb70wkvD41kKjqnvYykVX/trxqQ8PWrSJKIDOI
-	2sT1uQzzctv+OLe8IMayL+/1zqfAn/v5Skp7dklzx6wFCGMD58LcFSRSWcnxBem7+KmKYjf52Ao
-	r7xcmo3ePlaDAhUCnhg1vczn5aIYvkgE9FgnzoeDCaTTXNSvJqJAIgQEqNxAaGWZL6bgB/no804
-	Buf7Ja9mpKOOI21/o3spvhNe2FvsU6/vVwng1bHfzXRMI9arhaRjb4QHcDsdeO7Q4v0d4da601q
-	o8x8OTKDRUw/RHdewxhOmvcN2mQv/M+KrTyHPxtTZHh03AwFPRce+HxOY7l3yL/y8appmRpUyY2
-	qsaAMGNAxTyuYaIqapK459KdVOjWeoEHrX296xvM6akW8LgpcIZIjloarBE6cJ4W790XM9VL3RH
-	XS2FZ7ec1Rc6WdcGs8drnRdqHrT7fHcHYG9CBYZI+knkDJhjVqox4ZM+HSYOixZ6Kp8Wah+RTdW
-	4FY/YzNl4Rl7d9twm3do4wmNU4iwjNF+tWSc0pG8pcXnp1dwIBK7Pyxb6+3ViublJjIA80D
-X-Received: by 2002:a05:600c:8b6c:b0:49f:ffd0:9a9a with SMTP id 5b1f17b1804b1-49fffd09b09mr145822235e9.25.1790696094266;
-        Tue, 29 Sep 2026 08:34:54 -0700 (PDT)
-Received: from localhost (p200300f65f19a904123cb16e9a8bb736.dip0.t-ipconnect.de. [2003:f6:5f19:a904:123c:b16e:9a8b:b736])
-        by smtp.gmail.com with UTF8SMTPSA id 5b1f17b1804b1-4a00d0f442dsm81897025e9.13.2026.09.29.08.34.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 29 Sep 2026 08:34:53 -0700 (PDT)
-Date: Tue, 29 Sep 2026 17:34:52 +0200
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+	id 1xBdfH-00000004OPY-3fax;
+	Tue, 29 Sep 2026 19:38:59 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3F718412CD;
+	Tue, 29 Sep 2026 19:38:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D59D1F000FF;
+	Tue, 29 Sep 2026 19:38:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790710739;
+	bh=VsGpWLQ4V1vn9Tkitk4/L46O9pJ0sPXyLWBFVS/Nrs4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=fj11jVh99BJrwxKYIiKxEfLqjBw8IgTj2t8u8K+Qbhjj6i2r3O4J19cjqCKMcc0x7
+	 3pjU1jPb3MmY6lReift+WlXzce/KSulEsw4QGtLAmO8bgUM3PCeJe1IN1Wc0F1PLLY
+	 EtE6R0y7ofJDC+Fwp1gsUG7an3u3q+xpOmOfblyT1rsIjQaNi+kqjpVsrHT1dp7EmW
+	 t1mQ2zNdRwqPQ0A7TqLalEVPESJhh+fuiO0+GX8uJigtS8EJATk/I8xeiEl9vpMut3
+	 hzokpXB+U0h0zadU0cfhGF7mxc7QTCqbBE8ux3N8t0I45sSEVwPZ3fJzuqyOk3/Omz
+	 dJ1ya0c+b8LwQ==
+Date: Tue, 29 Sep 2026 20:38:52 +0100
+From: Conor Dooley <conor@kernel.org>
 To: Jisheng Zhang <jszhang@kernel.org>
-Cc: Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
-	Jerome Brunet <jbrunet+clk@baylibre.com>, Andi Shyti <andi.shyti@kernel.org>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, Lee Jones <lee@kernel.org>, 
-	Linus Walleij <linusw@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
-	Mark Brown <broonie@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby <jirislaby@kernel.org>, 
-	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-clk@vger.kernel.org, linux-i2c@vger.kernel.org, linux-i3c@lists.infradead.org, 
-	mfd@lists.linux.dev, linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org, 
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Andi Shyti <andi.shyti@kernel.org>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Lee Jones <lee@kernel.org>,
+	Linus Walleij <linusw@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Jiri Slaby <jirislaby@kernel.org>,
+	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
+	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
 	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 14/20] pinctrl: berlin: support Synaptics SL261X SoCs
-Message-ID: <arvZnEsAdJ5R9mBi@monoceros>
+Subject: Re: [PATCH 00/20] arm64: add Synaptics SL261X SoCs and RDK boards
+Message-ID: <20260929-smoked-laurel-087d5a3523a3@spud>
 References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929061417.20733-15-jszhang@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20260929061417.20733-15-jszhang@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260929_083456_638108_D95BEAD6 
-X-CRM114-Status: GOOD (  17.47  )
-X-Spam-Score: -2.1 (--)
-X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:47 -0700
+In-Reply-To: <20260929061417.20733-1-jszhang@kernel.org>
+X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:48 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,98 +81,169 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8427230120052820185=="
+Content-Type: multipart/mixed; boundary="===============7208346477655719802=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-
---===============8427230120052820185==
+--===============7208346477655719802==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qdr5pu2vmyb2k4sk"
+	protocol="application/pgp-signature"; boundary="ftlp7D0f7O7319jz"
 Content-Disposition: inline
 
-
---qdr5pu2vmyb2k4sk
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+--ftlp7D0f7O7319jz
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 14/20] pinctrl: berlin: support Synaptics SL261X SoCs
-MIME-Version: 1.0
 
-Hello,
+On Tue, Sep 29, 2026 at 02:13:57PM +0800, Jisheng Zhang wrote:
+> Add initial support for the Synaptics SL261X SoCs and corresponding
+> RDK boards.
+>=20
+> The SL261X SoCs include five pin-to-pin compatible SoCs: SL2611, SL2613,
+> SL2615, SL2617, and SL2619.
+>=20
+> Only reset, pinctrl, clk/pll, uart, gpio, i2c, spi, i3c are included in
+> this series. The support for Ethernet, USB, SDHCI, CAN, DMAC, XSPI will
+> be submitted after this series is merged.
 
-On Tue, Sep 29, 2026 at 02:14:11PM +0800, Jisheng Zhang wrote:
-> +#include <linux/mod_devicetable.h>
+This series is filled with wildcard compatibles, which we don't permit
+typically. The only case for SoCs that I've seen them accepted is when
+the devices covered are actually just different binnings of the same
+device. I took a look at the docs for this device, but it wasn't clear
+to me if these are actually binnings or if there are different
+integrations here. If they're binnings, I'd rather you used 0 as the
+final digit, rather than x, since that matches the synaptics
+documentation for the family. If they're not binnings, there's no
+guarantee that they share the same errata etc, and must have different
+compatibles.
 
-Please rely on <linux/platform_device.h> to pull in the definition of
-of_device_id and drop the inclusion of <linux/mod_devicetable.h>.=20
+Cheers,
+Conor.
 
-Including <linux/mod_devicetable.h> creates a bunch of unneeded
-dependencies on subsystems you will never need in this driver.
+>=20
+>=20
+> Jisheng Zhang (20):
+>   dt-bindings: serial: snps-dw-apb-uart: Add Synaptics sl261x uart
+>   dt-bindings: i2c: dw: Add Synaptics sl261x i2c
+>   spi: dt-bindings: snps,dw-apb-ssi: Add Synaptics sl261x spi
+>   dt-bindings: i3c: dw: support up to two reset lines
+>   i3c: dw: switch to array-based exclusive reset control
+>   dt-bindings: i3c: Add Synaptics sl261x i3c
+>   arm64: kconfig: let ARCH_BERLIN cover Synaptics arm64 SoCs
+>   dt-bindings: reset: add Synaptics SL261X SoCs
+>   reset: add Synaptics SL261x reset support
+>   pinctrl: berlin: use u16 instead of u8 for the offset
+>   pinctrl: berlin: enable module build support
+>   pinctrl: berlin: add optional pinconf support
+>   dt-bindings: pinctrl: berlin: Support Synaptics SL261X SoCs
+>   pinctrl: berlin: support Synaptics SL261X SoCs
+>   dt-bindings: clock: add Synaptics SL261X clock
+>   clk: berlin: add Synaptics SL261X SoC clocks and plls
+>   dt-bindings: mfd: Add Synaptics SL261x global block binding
+>   regulator: dt-bindings: sy8827n: support standard properties
+>   dt-bindings: arm: berlin: Add Synaptics SL261X SoC and RDK board
+>   arm64: dts: synaptics: Add Synaptics SL261X SoC and RDK board
+>=20
+>  .../bindings/arm/marvell,berlin.yaml          |  20 +
+>  .../bindings/clock/syna,sl261x-clk.yaml       |  92 +++
+>  .../bindings/i2c/snps,designware-i2c.yaml     |   1 +
+>  .../bindings/i3c/snps,dw-i3c-master.yaml      |   6 +-
+>  .../bindings/mfd/syna,sl261x-gbl.yaml         | 208 +++++
+>  .../pinctrl/marvell,berlin2-soc-pinctrl.yaml  |  10 +-
+>  .../bindings/regulator/silergy,sy8827n.yaml   |   5 +-
+>  .../bindings/reset/syna,sl261x-reset.yaml     |  40 +
+>  .../bindings/serial/snps-dw-apb-uart.yaml     |  12 +-
+>  .../bindings/spi/snps,dw-apb-ssi.yaml         |   1 +
+>  arch/arm64/Kconfig.platforms                  |   4 +-
+>  arch/arm64/boot/dts/synaptics/Makefile        |   5 +
+>  arch/arm64/boot/dts/synaptics/sl2611-rdk.dts  |  16 +
+>  arch/arm64/boot/dts/synaptics/sl2611.dtsi     | 490 ++++++++++++
+>  arch/arm64/boot/dts/synaptics/sl2613-rdk.dts  |  16 +
+>  arch/arm64/boot/dts/synaptics/sl2613.dtsi     |  12 +
+>  arch/arm64/boot/dts/synaptics/sl2615-rdk.dts  |  16 +
+>  arch/arm64/boot/dts/synaptics/sl2615.dtsi     |  46 ++
+>  arch/arm64/boot/dts/synaptics/sl2617-rdk.dts  |  16 +
+>  arch/arm64/boot/dts/synaptics/sl2617.dtsi     |  46 ++
+>  arch/arm64/boot/dts/synaptics/sl2619-rdk.dts  |  16 +
+>  arch/arm64/boot/dts/synaptics/sl2619.dtsi     |  44 ++
+>  .../boot/dts/synaptics/sl261x-rdk-common.dtsi | 135 ++++
+>  drivers/clk/Kconfig                           |   1 +
+>  drivers/clk/berlin/Kconfig                    |  25 +
+>  drivers/clk/berlin/Makefile                   |   4 +
+>  drivers/clk/berlin/sl-clk.c                   | 279 +++++++
+>  drivers/clk/berlin/sl-clk.h                   |  31 +
+>  drivers/clk/berlin/sl-sysmgr-clk.c            | 250 ++++++
+>  drivers/clk/berlin/sl-sysmgr-clk.h            |  44 ++
+>  drivers/clk/berlin/sl261x-clks.c              | 385 +++++++++
+>  drivers/clk/berlin/sl261x-pll.c               | 145 ++++
+>  drivers/clk/berlin/sl261x-pll.h               |  14 +
+>  drivers/i3c/master/dw-i3c-master.c            |  24 +-
+>  drivers/i3c/master/dw-i3c-master.h            |   2 +-
+>  drivers/pinctrl/berlin/Kconfig                |   7 +
+>  drivers/pinctrl/berlin/Makefile               |   1 +
+>  drivers/pinctrl/berlin/berlin.c               | 259 +++++-
+>  drivers/pinctrl/berlin/berlin.h               |  17 +-
+>  drivers/pinctrl/berlin/pinctrl-sl261x.c       | 745 ++++++++++++++++++
+>  drivers/reset/Kconfig                         |   6 +
+>  drivers/reset/Makefile                        |   1 +
+>  drivers/reset/reset-sl261x.c                  | 224 ++++++
+>  include/dt-bindings/clock/syna,sl261x.h       | 131 +++
+>  include/dt-bindings/reset/syna,sl261x-reset.h |  80 ++
+>  45 files changed, 3899 insertions(+), 33 deletions(-)
+>  create mode 100755 Documentation/devicetree/bindings/clock/syna,sl261x-c=
+lk.yaml
+>  create mode 100644 Documentation/devicetree/bindings/mfd/syna,sl261x-gbl=
+=2Eyaml
+>  create mode 100644 Documentation/devicetree/bindings/reset/syna,sl261x-r=
+eset.yaml
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2611-rdk.dts
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2611.dtsi
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2613-rdk.dts
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2613.dtsi
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2615-rdk.dts
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2615.dtsi
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2617-rdk.dts
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2617.dtsi
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2619-rdk.dts
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl2619.dtsi
+>  create mode 100644 arch/arm64/boot/dts/synaptics/sl261x-rdk-common.dtsi
+>  create mode 100644 drivers/clk/berlin/Kconfig
+>  create mode 100644 drivers/clk/berlin/sl-clk.c
+>  create mode 100644 drivers/clk/berlin/sl-clk.h
+>  create mode 100644 drivers/clk/berlin/sl-sysmgr-clk.c
+>  create mode 100644 drivers/clk/berlin/sl-sysmgr-clk.h
+>  create mode 100644 drivers/clk/berlin/sl261x-clks.c
+>  create mode 100644 drivers/clk/berlin/sl261x-pll.c
+>  create mode 100644 drivers/clk/berlin/sl261x-pll.h
+>  create mode 100644 drivers/pinctrl/berlin/pinctrl-sl261x.c
+>  create mode 100644 drivers/reset/reset-sl261x.c
+>  create mode 100644 include/dt-bindings/clock/syna,sl261x.h
+>  create mode 100644 include/dt-bindings/reset/syna,sl261x-reset.h
+>=20
+> --=20
+> 2.53.0
+>=20
 
-> [...]
-> +static const struct of_device_id sl261x_pinctrl_match[] =3D {
-> +	{
-> +		.compatible =3D "syna,sl261x-soc-pinctrl",
-> +		.data =3D &sl261x_soc_pinctrl_data,
-> +	},
-> +	{
-> +		.compatible =3D "syna,sl261x-system-pinctrl",
-> +		.data =3D &sl261x_sysmgr_pinctrl_data,
-> +	},
-> +	{}
-
-Please use { } (with a space) to match the most common style for these
-arrays.
-
-> +};
-> +MODULE_DEVICE_TABLE(of, sl261x_pinctrl_match);
-> +
-> +static int sl261x_pinctrl_probe(struct platform_device *pdev)
-> +{
-> +	return berlin_pinctrl_probe(pdev, device_get_match_data(&pdev->dev));
-> +}
-> +
-> +static struct platform_driver sl261x_pinctrl_driver =3D {
-> +	.probe	=3D sl261x_pinctrl_probe,
-
-Not a fan on aligning the =3D, still more if it's done inconsistently in a
-single struct. If you ask me, just use a single space before the =3D.
-
-> +	.driver	=3D {
-> +		.name =3D "sl261x-pinctrl",
-> +		.of_match_table =3D sl261x_pinctrl_match,
-> +	},
-> +};
-> +module_platform_driver(sl261x_pinctrl_driver);
-
-Best regards
-Uwe
-
---qdr5pu2vmyb2k4sk
-Content-Type: application/pgp-signature; name="signature.asc"
+--ftlp7D0f7O7319jz
+Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmq72pkACgkQj4D7WH0S
-/k6pzAf+PhNU58V7LTtOu13Q7FpXZuGYfITE5o06ZTODsXEE48OgW8ZdwP7VY1Rr
-OASvkk8I0b2igulZlmDQF6y/Uo8vr7BFFtBnDNLOlskSrwtGlRdlA+OxtblggT3/
-ZtDs4aXeswkygIA/WvR5ypgSrpFZbf3ulmLpJxoG7wyWd2z20AE0RMgHMxWnRRRK
-u1HPQWxqFS3vW0NsDLIGQ8yxAhuvL3DkQrfMVQONTNlqb9YbbJ5Ei9pHPDcYiggC
-2NvAR0+Iczq3x7p1plWpq1ism4qNBPatzP3vOw+KMQXMHzNrOEICQ0lR54jlGDtd
-U3aErEDsuZZpCY/HwikxQiabfzr3uA==
-=ieOW
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCarwTywAKCRB4tDGHoIJi
+0iSUAQDQBP7yTMTRQHM/PgAAhHzzJvYdwsiryiFIj8dSXwY0TAD9F2PqX3b5V+ld
+h0q5oG8eDLbjjVQcWB1DWaQc14lxeQw=
+=yJKk
 -----END PGP SIGNATURE-----
 
---qdr5pu2vmyb2k4sk--
+--ftlp7D0f7O7319jz--
 
 
---===============8427230120052820185==
+--===============7208346477655719802==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -211,5 +254,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============8427230120052820185==--
+--===============7208346477655719802==--
 
