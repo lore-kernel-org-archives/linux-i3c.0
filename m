@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1D719606A339
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 31CDD606A33B
 	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 11:00:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UQ+cjmcX;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=P2d3TTkI
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jtGMjRH9;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Z3CdhxMv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=OjIEF3BVFt04Yf3c6mQ0eP5z4Y6YcMLlVzS+v+zH/VE=; b=UQ+cjmcXiQ31/SZFm8exNFeQFG
-	/fJRFxBMitmr8KxjMhofFdS1voWvC3iPhbGSGsKAokJpLxXllqRLXehvG2rXfosY/2qsLR/eCq1Ow
-	M6U7AAb5iZRHUIYi2I+6/tc1LmPUKHQr9rFP+/ylSLQQtIQkgKWy8i/Irg1OTmZ7dldDR/fLloam3
-	Y3rpCDVAwSgrTTKKWrdE/cniLdElF+oRIPoCObnjypd3xoDrlzkpPOZhJbl9lWVame7waOiRQ5TKk
-	rG/9PFcniWzdXQxRhsfk1PBV45SL8nqmdmzxHmnibNGtQ2w5yJUOpz8ByAjDwU6epPGtCy3THfRsx
-	0DWZmXcw==;
+	bh=JlYf1R2FvaWpsGxeVzB32RtUBfxFjqTXsCXLdz2NiBM=; b=jtGMjRH90/ZEM2qx/YJQ6w7Z6X
+	sRCojlAV2EcvO1ELPZXfbwcQBZqRx6MSIt0y822tEiRzA7bDwij/F4LYnqrukUPEnlqVCg8TW0zaB
+	R71dQiQVRQPGhO2L2kUqlV4DRG+KhNsFayUh+CjNXzbbVn3fYHfWNWhKBlUrolD0CqShLVtxoRqT3
+	BZ7ewGntRFGg54Eb8BKTjacOrKZPYx3tVxsXosgp9MXJbZaTcQuptSKezDpD3nR5QWyPj2hv8VmnZ
+	EGEy3FjgtisWqIsbaW1OH/jP98dNVIzrkJMunL/bDQh6nL+AYrTkigyS2M30gG1s4n05kELZcV7It
+	copLN9jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLevH-00000004NKH-2voD;
+	id 1xLevH-00000004NKe-3spV;
 	Tue, 27 Oct 2026 11:00:55 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBdhE-00000004Ogl-0IWb;
-	Tue, 29 Sep 2026 19:41:00 +0000
+	id 1xBdkT-00000004Pkz-2OUe;
+	Tue, 29 Sep 2026 19:44:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 474326022F;
-	Tue, 29 Sep 2026 19:40:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E20111F000FF;
-	Tue, 29 Sep 2026 19:40:53 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id E39986022B;
+	Tue, 29 Sep 2026 19:44:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ACB941F000FF;
+	Tue, 29 Sep 2026 19:44:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790710859;
-	bh=KAUghNeL44tviTaVmIMjHkDsIJ29Dhpn/+AN6JDKLAs=;
+	s=k20260515; t=1790711060;
+	bh=q3QKjMvgAUkuQ17t6YdqoLww5IfrGk8hudIFHctZSl0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=P2d3TTkISdUJC1YsLuhZljaOYdZOKKzQF+g7bVMFxM78S9Y9e+uNzUmoc/ZtK4D3F
-	 LIstQvkhHvev0H5nG4LCBasAdNG0umlWOg8/QZW+Zjk4C1PfR3W71azyaBKDfe+hiU
-	 sI/Mnpfc/dntc7NK0ZruCuOnKM8ucxfqNICfC9BmvVnXi115NbQ2a2Ne0F2TnBjPAl
-	 lXvm4XHznPyHKOhVeq8wj/Ay9+UZdpd0NtahbFiQ4kYL22BdR8YhMCjt2ZqjkPu+Bs
-	 juq/wcsIezSGXOEDR7kvrCbPcLsZdyC15CG3OetKSBLIGAPE5Y1rJGTW31qSg+EOSA
-	 mOqszPh2hETDw==
-Date: Tue, 29 Sep 2026 20:40:51 +0100
+	b=Z3CdhxMvpO05S2GgF2NZcveZP8lKIPhs7HlQHh6JwjS1CdumoqzZY3CzYY0Dy12x+
+	 FqbBLDsmkXJBRJsPr5MEuclQkEbdHXeibLfySXgXA4FSqzSrTjG8+unEq2/mnNe9MY
+	 Z6101ZT+tNWCw/LONh33tvF4SUb1OXgrcNT+tDRfievI3hEMYcPyI68GX0ziI9050k
+	 IcwWnZyUg2tDZPaYu1JNMEDYZSEiNwtM4Y8WYz+FZvu+gto+yzQeKLTEjjIc8n+w6Q
+	 fyuIqGlEQgpeV/GQwMvAyQRVR7kSMBQH6qR/9hF46TZ6Uen9cy5H+12FYsUSXQoj3K
+	 oN/Er3jEluMng==
+Date: Tue, 29 Sep 2026 20:44:13 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Jisheng Zhang <jszhang@kernel.org>
 Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -65,14 +65,13 @@ Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
 	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
 	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 18/20] regulator: dt-bindings: sy8827n: support standard
- properties
-Message-ID: <20260929-childish-ethically-0a9c6d63ee62@spud>
+Subject: Re: [PATCH 08/20] dt-bindings: reset: add Synaptics SL261X SoCs
+Message-ID: <20260929-sprang-stir-af07a907ccb2@spud>
 References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929061417.20733-19-jszhang@kernel.org>
+ <20260929061417.20733-9-jszhang@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20260929061417.20733-19-jszhang@kernel.org>
+In-Reply-To: <20260929061417.20733-9-jszhang@kernel.org>
 X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:48 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,42 +82,196 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5821177156889907172=="
+Content-Type: multipart/mixed; boundary="===============7063273490993757529=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============5821177156889907172==
+--===============7063273490993757529==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="6jYRsrYHOKy0uFBN"
+	protocol="application/pgp-signature"; boundary="/eZs2VEqyPUB++Zv"
 Content-Disposition: inline
 
---6jYRsrYHOKy0uFBN
+--/eZs2VEqyPUB++Zv
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-pw-bot: not-applicable
+On Tue, Sep 29, 2026 at 02:14:05PM +0800, Jisheng Zhang wrote:
+> Add device tree bindings for the resets on Synaptics SL261X SoCs.
+>=20
+> Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+> ---
+>  .../bindings/reset/syna,sl261x-reset.yaml     | 40 ++++++++++
+>  include/dt-bindings/reset/syna,sl261x-reset.h | 80 +++++++++++++++++++
+>  2 files changed, 120 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/reset/syna,sl261x-r=
+eset.yaml
+>  create mode 100644 include/dt-bindings/reset/syna,sl261x-reset.h
+>=20
+> diff --git a/Documentation/devicetree/bindings/reset/syna,sl261x-reset.ya=
+ml b/Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
+> new file mode 100644
+> index 000000000000..8cfec17df800
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
+> @@ -0,0 +1,40 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright (C) 2026 Synaptics Incorporated
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/reset/syna,sl261x-reset.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Synaptics SL261X reset controller
+> +
+> +maintainers:
+> +  - Jisheng Zhang <jszhang@kernel.org>
+> +
+> +description: The reset controller node must be a sub-node of the chip
+> +  controller node on SL261X SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - syna,sl261x-soc-reset
+> +      - syna,sl261x-system-reset
+> +
+> +  "#reset-cells":
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - "#reset-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    chip: chip-control@f7e10000 {
+> +        reg =3D <0xf7e10000 0x1000>;
+> +
+> +        chip_rst: reset {
+> +            compatible =3D "syna,sl261x-soc-reset";
+> +            #reset-cells =3D <1>;
+> +        };
 
---6jYRsrYHOKy0uFBN
+Why can't this just be part of the parent node?
+=46rom a quick check of the dts, the node with this subnode didn't also
+have a system-reset node too, so there's no conflict or anything of that
+nature.
+
+> +    };
+> diff --git a/include/dt-bindings/reset/syna,sl261x-reset.h b/include/dt-b=
+indings/reset/syna,sl261x-reset.h
+> new file mode 100644
+> index 000000000000..7034f58aae5b
+> --- /dev/null
+> +++ b/include/dt-bindings/reset/syna,sl261x-reset.h
+> @@ -0,0 +1,80 @@
+> +/* SPDX-License-Identifier: (GPL-2.0 OR MIT) */
+> +/*
+> + * Copyright (C) 2026 Synaptics Incorporated
+> + *
+> + * Author: Jisheng Zhang <jszhang@kernel.org>
+> + */
+> +
+> +#ifndef _DT_BINDINGS_SL261X_RESET_H
+> +#define _DT_BINDINGS_SL261X_RESET_H
+> +
+> +/* ACPU subsystem */
+> +#define RST_SOC_SDIO0		0
+> +#define RST_SOC_USB0		1
+> +#define RST_SOC_EMMC		2
+> +#define RST_SOC_GETH0		3
+> +#define RST_SOC_SDIO1		4
+> +#define RST_SOC_USB1		5
+> +#define RST_SOC_GETH1		6
+> +#define RST_SOC_USB0PHY		7
+> +#define RST_SOC_USB0CORE	8
+> +#define RST_SOC_USB0MAHB	9
+> +#define RST_SOC_USB1PHY		10
+> +#define RST_SOC_USB1CORE	11
+> +#define RST_SOC_USB1MAHB	12
+> +#define RST_SOC_UART0		13
+> +#define RST_SOC_UART1		14
+> +#define RST_SOC_UART2		15
+> +#define RST_SOC_UART3		16
+> +#define RST_SOC_I2C0		17
+> +#define RST_SOC_I2C1		18
+> +#define RST_SOC_SPI0		19
+> +#define RST_SOC_SPI1		20
+> +#define RST_SOC_SPI2		21
+> +#define RST_SOC_SPI3		22
+> +#define RST_SOC_APBTIMERS	23
+> +#define RST_SOC_APBSYSCNT	24
+> +#define RST_SOC_APBWDT		25
+> +#define RST_SOC_APBGPIO		26
+> +#define RST_SOC_APBDMA		27
+> +#define RST_SOC_GPUCORE		28
+> +#define RST_SOC_NPUCORE		29
+> +#define RST_SOC_AVIOAIOG	30
+> +#define RST_SOC_AVIOVPPG	31
+> +#define RST_SOC_AVIOVIPG	32
+> +
+> +/* system subsystem */
+> +#define RST_SM_ADCCORE		0
+> +#define RST_SM_ADCPRST		1
+> +#define RST_SM_CAN0PRST		2
+> +#define RST_SM_CAN0SRST		3
+> +#define RST_SM_CAN1PRST		4
+> +#define RST_SM_CAN1SRST		5
+> +#define RST_SM_GPIOPRST		6
+> +#define RST_SM_GPIOSRST		7
+> +#define RST_SM_I2CM0PRST	8
+> +#define RST_SM_I2CM0SRST	9
+> +#define RST_SM_I2CM1PRST	10
+> +#define RST_SM_I2CM1SRST	11
+> +#define RST_SM_I3CPRST		12
+> +#define RST_SM_I3CSRST		13
+> +#define RST_SM_PDMPRST		14
+> +#define RST_SM_PDMSRST		15
+> +#define RST_SM_PVTHSRST		16
+> +#define RST_SM_PVTPRST		17
+> +#define RST_SM_PWMPERIRST	18
+> +#define RST_SM_PWMPRST		19
+> +#define RST_SM_SPIMPRST		20
+> +#define RST_SM_SPIMSRST		21
+> +#define RST_SM_SPISPRST		22
+> +#define RST_SM_SPISSRST		23
+> +#define RST_SM_UART0PRST	24
+> +#define RST_SM_UART0SRST	25
+> +#define RST_SM_UART1PRST	26
+> +#define RST_SM_UART1SRST	27
+> +#define RST_SM_UART2PRST	28
+> +#define RST_SM_UART2SRST	29
+> +#define RST_SM_UART3PRST	30
+> +#define RST_SM_UART3SRST	31
+> +
+> +#endif /* _DT_BINDINGS_SL261X_RESET_H */
+> --=20
+> 2.53.0
+>=20
+
+--/eZs2VEqyPUB++Zv
 Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCarwUQwAKCRB4tDGHoIJi
-0kiZAP98RDyWo+sgTIVhEcs8b/0YZbaCHEucmwHwYittmSNXQgD/ViPojKzhd0DA
-1NfubBBIQUkUPapBQUZaKnCSWaP1BAw=
-=mlj2
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCarwVDQAKCRB4tDGHoIJi
+0hGwAP4ptyfAiZ/Hyv5m5DXC1l4L5OIOyvVbaRVAxy6CVrteRgD7BDhIbPYIHQMg
+hqZCgq4VRutWdr432OpL5OAfu0MmLQM=
+=RY0u
 -----END PGP SIGNATURE-----
 
---6jYRsrYHOKy0uFBN--
+--/eZs2VEqyPUB++Zv--
 
 
---===============5821177156889907172==
+--===============7063273490993757529==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -129,5 +282,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============5821177156889907172==--
+--===============7063273490993757529==--
 
