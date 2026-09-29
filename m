@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0863CA5FAE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53E38C9832A
 	for <linux-i3c@archiver.kernel.org>; Tue, 29 Sep 2026 06:36:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,35 +12,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YZx1LzrFnuV+ZOsd/SpylxglL3fcOGd6UMb1GdtRKEk=; b=w4QTYeg90fG+5o
-	f8/5ii7KpOUvam4YNHL3LICHVWk4vHg+96nGhb/QLzweIMtIUYvT+CCj7ci4fjX9qRmTSPMslvxOs
-	cJQbPZaxAUItlCr6FuoBu2pbbS294CHlacoccloS9QoAY7VpbwsFqYUlXZ76T2HY8YQ2Q/lYy4dtx
-	qJOHixWtWUPlnZMQrnX4kh+42lZzKWATj++sugD2gWPr8ZDWMdIn//zp8Qa9L1Zia/VXyM2BO/ckX
-	gFzc97UMp/5PuBxuuOSD6qCRyXZvQ2TLa7LqG5MsfkcS+pqVYNHyMHirV2LoGvrK0IDt5a93v/vwG
-	sPQdu6YxdwkEaWLtZ/MQ==;
+	List-Owner; bh=uR9tcH6qhzF2NWIpBQhn1GRqFi0tj8JMMWDno4JuZ5k=; b=mGq060touc5BCX
+	eDj/aeTH2wmVfQOZnf2LsVK2MAIyfbkAgGRXy1t2gEauI+3ESQ/go4lpclVM8mKaULdgEubtc6Omq
+	j4iNH4tMNeER0S3VwX7yEMV9RyAYGAFsTCY76u8qkdp1gxseY62Xw+a8X9BU/W9Kum7z74yY3o66V
+	6vxWUm8asr7UGYa41DZY7pBjuzuR2YUvvOgfMX4RB/09yyZWYUPYUfifPU1gpMYYwFpYf+s8L/KCT
+	kPFwTumgwctF8KMBvJLGwrxzq4aPgQEj/5PUlrsU6vZLoG1XjEDlTCC8kPBD4RAetZRCp0JCCEGTB
+	x7b06m3SR1M+EA+7H32Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBRSG-00000002U1A-0usE;
+	id 1xBRSG-00000002U0O-00IJ;
 	Tue, 29 Sep 2026 06:36:44 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBRS3-00000002Tuv-3w55;
-	Tue, 29 Sep 2026 06:36:34 +0000
+	id 1xBRRt-00000002TpJ-3BPz;
+	Tue, 29 Sep 2026 06:36:22 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9F5574482A;
-	Tue, 29 Sep 2026 06:36:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 385C31F00893;
-	Tue, 29 Sep 2026 06:36:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8303C434D7;
+	Tue, 29 Sep 2026 06:36:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 56FA51F000FF;
+	Tue, 29 Sep 2026 06:36:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790663791;
-	bh=ukhdfHyooHk8uiIysY2W1PAtOO+m4p47/3kwBKFwiMQ=;
+	s=k20260515; t=1790663781;
+	bh=sK92kjwtQgzYzyqBYyYH3USgcFn3Hilolf2mqG5ssq0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=dMZXwo5/TTzmnHjpbsbm3l7KD6qM7KYF9QF4g620SRTncw5OKGs1mZUUmsYgB+naL
-	 t9j84UdGUdJuHVk8u9lU+mxjvDkO83L5GK4ltsox3xI6XaAEVbcsW6DR9ACerrd/g4
-	 gWT3S7F1D2jSkAlQvJSfeTZIXzDIu/SVaU/kjadPzg+KPpDtDtNOPklxhwJg2V44+P
-	 EtpEZzM7dllu2b6Oj0PIJUx5eUj8vZH1RKJzzPzEren3e1p0pev3IxYfBquntC/9/s
-	 FbU1dD1QMIkBsqJ6fdUdtkrD1mAlSWwM8hyVg1xwAXU+YRgsK9womFbwc1P9EhO7jq
-	 9qesGOGjsEwEw==
+	b=drbxlan0e0renGOqaBmek+B+M/uFa2zUEZ3rW4CDYMXLv77X+X5lL471r1bKByjf6
+	 t7TmXeheEY0v9VSawd7sbdeGYfsstWv2yh+Q3YF21ylwZY2xcKqvi0/FNw9ynIIrGI
+	 QxOgxmxOpG7xU4YGiswoksx4cO8HCAiUy0+7faHjQWDuj03kQ0zPGuZ0Pe7HstQbUz
+	 Ej1nJb4okzWjpqgFtkzjglqomyKOJONL7M2ScbA3YOZNUs/DHtioCLPGKxedo9Jg4V
+	 4JGsK4xXLd27aVJiRJN/rZOwpA9Ug9C0xGVFQXA8HtB9q8Nd07BIn7062LAoldlrzM
+	 dD4VaURkMeaAg==
 From: Jisheng Zhang <jszhang@kernel.org>
 To: Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -69,9 +69,9 @@ Cc: devicetree@vger.kernel.org,
 	linux-serial@vger.kernel.org,
 	linux-spi@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 19/20] dt-bindings: arm: berlin: Add Synaptics SL261X SoC and RDK board
-Date: Tue, 29 Sep 2026 14:14:16 +0800
-Message-ID: <20260929061417.20733-20-jszhang@kernel.org>
+Subject: [PATCH 18/20] regulator: dt-bindings: sy8827n: support standard properties
+Date: Tue, 29 Sep 2026 14:14:15 +0800
+Message-ID: <20260929061417.20733-19-jszhang@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260929061417.20733-1-jszhang@kernel.org>
 References: <20260929061417.20733-1-jszhang@kernel.org>
@@ -92,49 +92,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add devicetree binding for the Synaptics SL261X SoCs and corresponding
-RDK boards.
-
-The SL261X include five pin-to-pin compatible SoCs: SL2611, SL2613,
-SL2615, SL2617, and SL2619.
-
-The corresponding RDK boards are based on the these SoCs.
+Support standard properties regulator.yaml, such as
+regulator-active-discharge', 'regulator-always-on',
+'regulator-boot-on', 'regulator-max-microvolt',
+'regulator-min-microvolt', 'regulator-name' and on.
 
 Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
 ---
- .../bindings/arm/marvell,berlin.yaml          | 20 +++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ .../devicetree/bindings/regulator/silergy,sy8827n.yaml       | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/marvell,berlin.yaml b/Documentation/devicetree/bindings/arm/marvell,berlin.yaml
-index 4e8442980dcb..30d94059e2f2 100644
---- a/Documentation/devicetree/bindings/arm/marvell,berlin.yaml
-+++ b/Documentation/devicetree/bindings/arm/marvell,berlin.yaml
-@@ -41,5 +41,25 @@ properties:
-               - marvell,berlin4ct-stb
-           - const: marvell,berlin4ct
-           - const: marvell,berlin
-+      - items:
-+          - enum:
-+              - syna,sl2611-rdk
-+          - const: syna,sl2611
-+      - items:
-+          - enum:
-+              - syna,sl2613-rdk
-+          - const: syna,sl2613
-+      - items:
-+          - enum:
-+              - syna,sl2615-rdk
-+          - const: syna,sl2615
-+      - items:
-+          - enum:
-+              - syna,sl2617-rdk
-+          - const: syna,sl2617
-+      - items:
-+          - enum:
-+              - syna,sl2619-rdk
-+          - const: syna,sl2619
+diff --git a/Documentation/devicetree/bindings/regulator/silergy,sy8827n.yaml b/Documentation/devicetree/bindings/regulator/silergy,sy8827n.yaml
+index b222adabc7b4..0baf93ca67ca 100644
+--- a/Documentation/devicetree/bindings/regulator/silergy,sy8827n.yaml
++++ b/Documentation/devicetree/bindings/regulator/silergy,sy8827n.yaml
+@@ -31,7 +31,10 @@ required:
+   - compatible
+   - reg
  
- additionalProperties: true
+-additionalProperties: false
++allOf:
++  - $ref: regulator.yaml#
++
++unevaluatedProperties: false
+ 
+ examples:
+   - |
 -- 
 2.53.0
 
