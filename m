@@ -4,180 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2FE1C9833F
-	for <linux-i3c@archiver.kernel.org>; Mon, 28 Sep 2026 10:43:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EE04C9832A
+	for <linux-i3c@archiver.kernel.org>; Tue, 29 Sep 2026 06:34:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=4nFGTx8ZC92MTagKjJw66z7qJue2C155ZU9SUWXc05A=; b=jbiC8KTXfNIbHUwo8t7U89izq7
-	7Gf4Adbr8zfagRehtPbPGvd4GKTYys93vmqUllXCiTT7HyNAFePOfTDQb32Em0fivPLM1xkw12TTt
-	7wktErVtHeKE3jH0zBf7v6Ct505BmavlYBmRdErBdCWvdK+AbmaREcax+8daBBPY2NXzaHyQc8EbU
-	OWSKDYJOAGe+WJeEpsmuRNr1zkAHWm1ZGQvlWvQQkcFyPDAWz0cjPVef4iVS3XrA0npys1K4qyOyT
-	nKL/vvC44E+KoT8Eu3t4gpRxRT6c+dz+iCtW4yw7saFwf7Emw+Pd8jjS31WBUodkmDoltw5QDYpgf
-	Tx/0KFAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uFk/7tf58MJbEbSIKNGFdPJZXQ61DsrpYbuk5h4WnKo=; b=z/gRmWAMOXT2Yd
+	JPs7DhUBoy0oXScxEQ0PONhNuBdrn1C03v3snU/4yHXdWckZAts5+D4X4uzGB3wK+jkJHUnkwFsxs
+	KYdaxfEcgaZH8wD1D9qagF3M9ZNp7V11WY9CF8yhx9oNk5qVKH0cHb4LFT2lGniTxURa7lAsc3M11
+	xw2sSO4vFxNt5fym0sCRsQLH7Eh9hvjbFo7AyzA/AYvSiyo17goWSBMuaRHk9Jb0gOfp9JHWt79Yx
+	kBkVFXHiNISck9yJ+36+iJk++A4T5uN02WyWoETREsBB/CGY3fzCKdrfW6jkUEOIG7haNaSACt8uZ
+	m/LI2FPy56UN9/0NTtgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xB8pA-00000000N8X-2Xh7;
-	Mon, 28 Sep 2026 10:43:08 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1xBRPx-00000002SWh-0uM5;
+	Tue, 29 Sep 2026 06:34:21 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xB8p7-00000000N7z-479V
-	for linux-i3c@lists.infradead.org;
-	Mon, 28 Sep 2026 10:43:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1790592186; x=1822128186;
-  h=message-id:date:subject:to:cc:references:from:
-   in-reply-to:content-transfer-encoding:mime-version;
-  bh=UCqiainbWVqJ3+SkbbODQNAmb5jNMPYza1m0pmxonB0=;
-  b=VWt+Yx34dYiAbv5q8jZjLV9fMg9CQe4gGNcYwNTOnBA9q4dxDMHJNWjI
-   qOSS14DsTNRC0s1VsX7CLWhCpaBQ6Nm0/KGHsABPUA35AukO/utC81ZqJ
-   kxVXfmfcsPpEoh94a2BVWMLQsNwzVd1iKYrAMwp74UCUng/SjHTtZ3pth
-   Uegw6pp+bCFY3k3AwzeJIToIIkd8PUoycqWfZZOu5VjBI5J6naIjP6+Jp
-   pbRMggqmGbNc1imchRuuY+QmeQS4+Nk0cYrxl02gSBaTDaZX/HpeWHu51
-   hOVZw9FqTjHfXPCR3lLtZQ26HKYic0Or57M6IU2q6ex5krSzbMKEaH931
-   w==;
-X-CSE-ConnectionGUID: te0UOWkTTS+bWVFspwft4w==
-X-CSE-MsgGUID: uOgC/iG8RQKz4H+cwDxGxw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11918"; a="116816766"
-X-IronPort-AV: E=Sophos;i="6.27,128,1787036400"; 
-   d="scan'208";a="116816766"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Sep 2026 03:43:05 -0700
-X-CSE-ConnectionGUID: oY9S6Yo7SsCwNRt1BQlGgQ==
-X-CSE-MsgGUID: 0/hpJfezToy7DnPcXzD8tQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,128,1787036400"; 
-   d="scan'208";a="278381082"
-Received: from orsmsx902.amr.corp.intel.com ([10.22.229.24])
-  by orviesa004.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Sep 2026 03:43:04 -0700
-Received: from ORSMSX903.amr.corp.intel.com (10.22.229.25) by
- ORSMSX902.amr.corp.intel.com (10.22.229.24) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.46; Mon, 28 Sep 2026 03:43:04 -0700
-Received: from ORSEDG902.ED.cps.intel.com (10.7.248.12) by
- ORSMSX903.amr.corp.intel.com (10.22.229.25) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.46 via Frontend Transport; Mon, 28 Sep 2026 03:43:04 -0700
-Received: from BL0PR03CU003.outbound.protection.outlook.com (52.101.53.34) by
- edgegateway.intel.com (134.134.137.112) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.46; Mon, 28 Sep 2026 03:43:04 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=SXWbl7XUQ3F+IUiEWYe5X01S+23cBoBfatroXkd7LRuU+nO8QDVBIoZnBUPny+ixJ0lHSluDZcIN/XZpUxOojw4ZdBZHQURh6tAGVRIiSmun9fUeRFmsU0XK8WWV43nyAYPrA/M+4QGEgWEps3d6dAffmP7mx1OK3maATlm7+R0zO7zhxaE+ToHkUDfC9ePma1sM5+gzVsHOvMUT7JBHObUZBPttOTYpBNsR+6hWQIio7TTKnozfBSZw1XsI8DkaNvozPcMOq6PQtSba21muBLos5UM+bckctEioILPW3Ji8XMRXTf8rHY9JS7Lz7Z35eQuvc+U+a+ZGkPn9/u69bQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+12s527L1RwV8BHnXII3xxry3I/ssJwBpHbwqsHIDpQ=;
- b=tJMlSY4r2psHoRE2O15QZgw5siBSpgvO9NVJ6NH80sds/I3hjPWIrMJEaUUJIs98qh8wU6Gd2G6TsBGZWkJ2hS+DAxskEnFqZOOiDjamRlgqgmJZGb41OEPknnTKLo52VFgh/2yCplvR3ZHA+DzdddO1sjYz+U+2DXsPztKu+TUH45q/3brQy9uBWHLDcZaf+C7l/Ei9kpt7sBAPOPmFw+STWOnZIflgKIB9rPKRicRhNtaQqaPzM9tQ+OfKXtdxVkCBLm/gElc1bmqo9R0bqaUGZ2PMzJBZlOflXNQpC4YTWw4QQbayKnRiMkTE6kNuDLSZOCfOdjgkdf1e9VGHOg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=intel.com;
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by LV8PR11MB8608.namprd11.prod.outlook.com (2603:10b6:408:1f0::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.24; Mon, 28 Sep
- 2026 10:43:01 +0000
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.21.0451.022; Mon, 28 Sep 2026
- 10:43:01 +0000
-Message-ID: <22623823-a2c7-4627-b123-12d1baed0e93@intel.com>
-Date: Mon, 28 Sep 2026 13:42:56 +0300
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 3/5] i3c: use actual_len for read transfers
-To: Frank Li <Frank.li@oss.nxp.com>, Sam Agazaryan <samagazaryan@google.com>
-CC: <linux-i3c@lists.infradead.org>, Alexandre Belloni
-	<alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, "Greg
- Kroah-Hartman" <gregkh@linuxfoundation.org>, Wolfram Sang
-	<wsa+renesas@sang-engineering.com>, Arnd Bergmann <arnd@arndb.de>, "Meagan
- Lloyd" <meaganlloyd@linux.microsoft.com>, Vitor Soares
-	<vitor.soares@toradex.com>, Oleksandr Shulzhenko
-	<oleksandr.shulzhenko.viktorovych@intel.com>, Boris Brezillon
-	<boris.brezillon@collabora.com>, <linux-kernel@vger.kernel.org>
-References: <20260921230603.2518652-1-samagazaryan@google.com>
- <20260921230603.2518652-4-samagazaryan@google.com>
- <araSUuwTSx0aIuDp@lizhi-Precision-Tower-5810>
-Content-Language: en-US
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
- 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
- 4, Domiciled in Helsinki
-In-Reply-To: <araSUuwTSx0aIuDp@lizhi-Precision-Tower-5810>
-X-ClientProxiedBy: DU6P191CA0021.EURP191.PROD.OUTLOOK.COM
- (2603:10a6:10:540::26) To IA1PR11MB7198.namprd11.prod.outlook.com
- (2603:10b6:208:419::15)
+	id 1xBRPv-00000002SWN-3sHq;
+	Tue, 29 Sep 2026 06:34:19 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 50BD84160D;
+	Tue, 29 Sep 2026 06:34:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 32CA21F000FF;
+	Tue, 29 Sep 2026 06:34:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790663659;
+	bh=6oJG3VT3p7c40ieV9zR6J1LoJP9uSbSF4TseeoYjhr4=;
+	h=From:To:Cc:Subject:Date;
+	b=CIVeX+oK9XYnlEWr2yt+GsuzjnGEMR7TYO5hwhInVHyFv9y6MM2LmJ5MiWhL+XI9Q
+	 jpciIUkgutKjPZ4+Dk8L6ZIioFty8mzAwZ9auuf//+CF0dBaBRAQ286ln7qYGBRnqb
+	 T4SY/d0iosiw6WmfhA3cmzoWj7aVKjKVowRBNSN8QN4rPh/GEMtAU0/gVRskdo8WgZ
+	 82eJO32MhsoFcSq2BJl/7dnY2B5OanaBT7Zkg6z4P2Sly/QsvmnfYeDScKIrE08qQ4
+	 KsCCB2mlkrFwT95UVtXZXaWdb0RpQ/GKPQ0lHg8h82KEDRalfzBS+0IzHHis5+UtgD
+	 dEiAxPVQVVYMA==
+From: Jisheng Zhang <jszhang@kernel.org>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Andi Shyti <andi.shyti@kernel.org>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Lee Jones <lee@kernel.org>,
+	Linus Walleij <linusw@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Jiri Slaby <jirislaby@kernel.org>,
+	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-i2c@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	mfd@lists.linux.dev,
+	linux-gpio@vger.kernel.org,
+	linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 00/20] arm64: add Synaptics SL261X SoCs and RDK boards
+Date: Tue, 29 Sep 2026 14:13:57 +0800
+Message-ID: <20260929061417.20733-1-jszhang@kernel.org>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|LV8PR11MB8608:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2dd36372-ae4b-420e-67ca-08df1d4d44e9
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|7416014|376014|1800799024|10067099003|11063799006|56012099006|22082099003|18002099003|4143699003;
-X-Microsoft-Antispam-Message-Info: sx24amtxBbx9lA55PYeyn3Fg7SIPzLgBQGM5Lkz/zb7kB48itIlisa4hl4bOwThvB14jSgxdCtPMvOBG+QA7tEEkYbJI1rRgLJYiRwiS5G52sHnNvEi2rhLBzx6nu1Ckbv7YUzVgdmdEWT9EzXS4jVPOt2PT1DwlE34+scZ9yOZeYt91f0VMY3Wok7zgwAo3xah8/znzhuncb07xBMJwl62LXoTL15+fN7RhE/IHLqYFcKcBvnTu3lmicmkO8unxtoqvCe+t+HFFG0lH6XY7MJ6tAbYbbVo57U5o1vjK6nONLweKDTZ5gab+g3rsSBOaQJuJmvg3BTJYrRQ3X5BcJTpZMfBref/x0SMN9/m41kmDkNw/ogJTgP8ekmahwetO4uJufI2TU7Xce8cCtWL1eqkuI03gP9ZeewEtEKe0SCIsZZ7bZdHGZQXhJYhFoe/QovK4KgZ9fhXWrLQw68wsMJqPNJR6pxdhnIj2PAliHkkundOaqLLJYKkjEDctDkTA1hpVQuKlImEUE6GZ4+UyzKn2vICiPhXpigp1+fGRUhc1kLsHDiFSA+m/dkTsETkHoLpxCZSB7UzpDMNO4fWnawI3DEku34T9apSruRKKrtc1elx7I33EEQYVN0jZ49kmF61Kt3F4VlULtMFMoWGNhCMQ+Ak6APp2eV3VFQ3fRjA=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(7416014)(376014)(1800799024)(10067099003)(11063799006)(56012099006)(22082099003)(18002099003)(4143699003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?alFacDI1QmR2Qk8zb3hPcEQvWnJRbVVVM1B2SnowTUtZeXhuc25MOGorekZ1?=
- =?utf-8?B?dHArY3RhOXJjRXlSTTJVdVJYclVPblErQmpack5Md2NTcU5uLythTHNQN242?=
- =?utf-8?B?V2Y3cUsrODFvSS82SEhpR29ZakFBaTBNZk5xU0pmQUpnNkpBNzRpMlFuZXlv?=
- =?utf-8?B?TmVYM3lQZnRSS05EeVo5STVrcWV4UVo5ZDRnSnJ2YkRMaEhNVmYrMTlwZU1T?=
- =?utf-8?B?d2x4ZVYzeDFyZkxKUCtiTXZBaUZLclJPbE9TeElWUUp6S3NHSTlGOHBpUFZu?=
- =?utf-8?B?dGRFcEJ2ZWF4cVluNjdWUXRMc3RRbXRwL1gwU0VzeU9rZUJDMHhHL0JvRzI5?=
- =?utf-8?B?WDJZaEhTU0ZWQkUyUU5JbGJVZm9xL05JRERqb0ZVblNJTTVjMzJpbnVlRzJw?=
- =?utf-8?B?N0Q3ZkVsaEVjNWZBdGh1eXVXb3FHOTJ3RkZzdXprUzlURC95Uk9XcUt1b05P?=
- =?utf-8?B?bXRHUTBOcE9QaXRScmlaVDNNT01IWG5NdHVwb1QwRkxBZUprYnkxWlFoTDJ1?=
- =?utf-8?B?ZG1XSXh2M0RSaGFST1JDZm0xOS9HQVMwQ1U0YmRFT3NCZFpBVllHK3dTK2di?=
- =?utf-8?B?ZHVIbHRRbFZETnpZM1U0cTcvMDh4bC9ZUnJIWFV0ZW94Y2xtanQ2WHc3T1Jz?=
- =?utf-8?B?Ym5wSXdtYlljWjlnREk3TjBqWlBjRzhlZU5QUWxvUjlONW1ORm1wb3Rua0ZZ?=
- =?utf-8?B?TWhweXUwcnREWEQ4RWlCVSthS25yaUtVM2ZHK3lZL2NZcTZXSzV5L0lJYUdn?=
- =?utf-8?B?M29iMnJENm1aenluZkdIODhSSEtBVitWZEpHNmtneExiVXdrYWRCcUxKN2Q1?=
- =?utf-8?B?TXVKVDZodDQvYVlFRklrdkIyZ2JzMUtrN2tGZ0oybVlpTkdVTDl5RFlHa091?=
- =?utf-8?B?TUJwNjJwSWhGMEJLYUU1Q2FPRWtpTklkVVE5NVhZZ0M4MUJQTDZNSHRxSjNM?=
- =?utf-8?B?M2htU2kvT2FaM1RUejhZejdmdGVaOXpaaDIzRUV2blJwNGFVVDRUVlM2VnBy?=
- =?utf-8?B?VXdzbWd6MkVTQ1VYS3B4WndCamk0Wmw4WmQzODFtSkRtQUFuV2lhMHEySTNM?=
- =?utf-8?B?Q2cvMzRxSmhMREhHdzR1VCt2ZGhsQjZrQ2htR3RZR29HWlpJWFhnbHNwYVR3?=
- =?utf-8?B?WDVlOEo0MFhlUzZ6YUFXYzFHQnRDbVBPdjd5aUpBcjNWS0ZoenRWMG1qeUdu?=
- =?utf-8?B?MHhUanl4Z0d1cGhJUzZiRmJYRjVKWUcvK0NsejFqNEJIbFBnaXpvbkZPUG1J?=
- =?utf-8?B?Q2l1V0dkREd6L1BPOUpna29VNytrN29pV01RcDU3bVRTUTNiWXhuLzc2S0kx?=
- =?utf-8?B?clpvZUhHZjZpaU1CYUhleFc2ckZGQnk1Y2gyRURzSmhTVVB3WHhGcTh3MTlO?=
- =?utf-8?B?UFpvQ0dpNUYvZDhwaHZieVV0dGJVN2dGMkROYm12THV0anMvMnUxaG9JWVJG?=
- =?utf-8?B?ZzI3bm5NRDh6NDQ5cjRtYXByODdmdHZsRGRmUytlQnU1RW1IbFVheGpvdzEy?=
- =?utf-8?B?QkN0bmlKN2FUdWtTYmhLT2NGQU9sanpVa3BYT2dBbFZJY2RQYWJoYm5BYlpp?=
- =?utf-8?B?dFovU1p3SFRmTHlHMHM4MUtLZ3B1U2J1NjNVSUNHNWJIVmo5QWROSitnblJv?=
- =?utf-8?B?cVEwcnMrUTNjRW9qR0hqdnozT1owT25Za2pnQ3hZZnhzcW1Jd3kxNUJVcE1S?=
- =?utf-8?B?K01jejhCQ1lmTGVpb0hLUUpkeGRWNGdMcE56U00vaVBUZmJMbGNhM1JscWlo?=
- =?utf-8?B?Z2M0Qk1UcmptUVMwUW5hUHAxZ1IwSStCWjVhTjZPZlhtUEZEamw4elhRYjkw?=
- =?utf-8?B?Y2Y2MGIvMjgwYjVyMENrMFNKTnVSWUl5akt1QjFZbUpxbXpCOUloTGYyekli?=
- =?utf-8?B?SklHak13QlhWMDFvVjVRbGdhK2d2S0hFcUFCU0NFUzZ2OXd1QXM5b3lxRnBF?=
- =?utf-8?B?ZXVVaUh1eWV4R2tYMUp3ZFhEOFVFWEZQR0tlVStiMWxJcDlqU1FsVnRFRnhh?=
- =?utf-8?B?ZkFpM0F2MnRIMEhKWlRBeUhqUHRqY1BOTkE1blhVMzVSQ2sraWNIWVllQzRk?=
- =?utf-8?B?VzhIODVjOUY0VjRGM0ZaQmlBemxUQzE0VGVKOExvTDhmblpYTk94MGxsOWll?=
- =?utf-8?B?dDFVaUVJUDNma1VkNnk0RlZ1d0JWK0gwZDg5ODJEZXdmbVpoRFAxOGl5UzNu?=
- =?utf-8?B?K3BFM2F6bTB6RnV0UjJ2SFBTVklhOVJLSU1za1lyODlrL0xqUFhmbmhmVlpF?=
- =?utf-8?B?UDFTRnJzYlluOUVWZ1pUeHBxMjJsU0lqMlBkTStBc2VXVU5IeDJGTnVJY2hM?=
- =?utf-8?B?ZUdyRzhZeGlranQ4R09ZVzZKa2dVNE4vTTdjQndUZjgxRmhSd1lVbDBWbThJ?=
- =?utf-8?Q?d+X50aTOB9Q9PrPE=3D?=
-X-Exchange-RoutingPolicyChecked: z9ZdJN+q1FGoHyQDu8vFs4UnMNAIU92oFfDkoAey4j2u2lWCO/C7Dlh/HJZhdLz6Ly+nYIlSKzciWNc9d+lzb9Ksck38nlmoJ4WC7XBeaoR0uee7FUbXHuN6QkFweX2XrKUxKPXOHVOgipDZm2UvqJTINAK9Gzuc5dex58M96+Pp+bWjWQE00eClpxT+KlNenHz7DaPDPt3+/HR4k+qLeuWXfLYNp0YrsF4r1aEAgoJ1l38qzGdnijY5XyiBThzgiSFaibS25XW3xHMYKvrB+ukZCovZR2I5CgwA3B+9uvVpKvAWcBnFRGlI/ePVpXXBFMkMpETlanrXskgX+y0p2A==
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2dd36372-ae4b-420e-67ca-08df1d4d44e9
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Sep 2026 10:43:01.7310
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: rHj9Nlbz4ikUtGOLof1lryD0z30GYRZiY7yEeK2xFrOZEDp7aWDo1oXozlUpcmpLXUJaa11PPVTO6VzgPUuK1g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV8PR11MB8608
-X-OriginatorOrg: intel.com
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260928_034306_041707_82C47AA8 
-X-CRM114-Status: GOOD (  13.71  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -194,37 +90,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 25/09/2026 18:25, Frank Li wrote:
-> On Mon, Sep 21, 2026 at 11:06:01PM +0000, Sam Agazaryan wrote:
->> Currently only the amd and svc I3C controller drivers populate
->> i3c_xfer.actual_len on reads, while dw-i3c-master and mipi-i3c-hci
->> overwrite i3c_xfer.len with the received byte count and leave actual_len
->> as 0. Because of this inconsistency, mctp-i3c reads xfer.len instead of
->> xfer.actual_len, making it fail on controllers that do not mutate len.
->>
->> Unify read length reporting across the subsystem:
->> - Clarify in <linux/i3c/device.h> that actual_len reflects the actual
->>   number of bytes transferred on reads.
->> - Update adi, cdns, dw, mipi-i3c-hci, and renesas controller drivers to
->>   populate actual_len on read transfers without mutating len.
->> - Update mctp-i3c to read xfer.actual_len instead of xfer.len.
->>
->> Co-developed-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
->> Signed-off-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
->> Signed-off-by: Sam Agazaryan <samagazaryan@google.com>
->> ---
->>  drivers/i3c/master/adi-i3c-master.c    |  5 ++++-
->>  drivers/i3c/master/dw-i3c-master.c     |  2 +-
->>  drivers/i3c/master/i3c-master-cdns.c   |  5 ++++-
->>  drivers/i3c/master/mipi-i3c-hci/core.c |  2 +-
->>  drivers/i3c/master/renesas-i3c.c       |  3 +++
->>  drivers/net/mctp/mctp-i3c.c            | 10 +++++-----
-> 
-> There are not dependence, suppose mctp-i3c.c change go through other tree
-> It'd better use sperate patch to fix it.
+Add initial support for the Synaptics SL261X SoCs and corresponding
+RDK boards.
 
-Isn't mctp-i3c.c dependent on the len -> actual_len change in
-any of the master drivers?
+The SL261X SoCs include five pin-to-pin compatible SoCs: SL2611, SL2613,
+SL2615, SL2617, and SL2619.
+
+Only reset, pinctrl, clk/pll, uart, gpio, i2c, spi, i3c are included in
+this series. The support for Ethernet, USB, SDHCI, CAN, DMAC, XSPI will
+be submitted after this series is merged.
+
+
+Jisheng Zhang (20):
+  dt-bindings: serial: snps-dw-apb-uart: Add Synaptics sl261x uart
+  dt-bindings: i2c: dw: Add Synaptics sl261x i2c
+  spi: dt-bindings: snps,dw-apb-ssi: Add Synaptics sl261x spi
+  dt-bindings: i3c: dw: support up to two reset lines
+  i3c: dw: switch to array-based exclusive reset control
+  dt-bindings: i3c: Add Synaptics sl261x i3c
+  arm64: kconfig: let ARCH_BERLIN cover Synaptics arm64 SoCs
+  dt-bindings: reset: add Synaptics SL261X SoCs
+  reset: add Synaptics SL261x reset support
+  pinctrl: berlin: use u16 instead of u8 for the offset
+  pinctrl: berlin: enable module build support
+  pinctrl: berlin: add optional pinconf support
+  dt-bindings: pinctrl: berlin: Support Synaptics SL261X SoCs
+  pinctrl: berlin: support Synaptics SL261X SoCs
+  dt-bindings: clock: add Synaptics SL261X clock
+  clk: berlin: add Synaptics SL261X SoC clocks and plls
+  dt-bindings: mfd: Add Synaptics SL261x global block binding
+  regulator: dt-bindings: sy8827n: support standard properties
+  dt-bindings: arm: berlin: Add Synaptics SL261X SoC and RDK board
+  arm64: dts: synaptics: Add Synaptics SL261X SoC and RDK board
+
+ .../bindings/arm/marvell,berlin.yaml          |  20 +
+ .../bindings/clock/syna,sl261x-clk.yaml       |  92 +++
+ .../bindings/i2c/snps,designware-i2c.yaml     |   1 +
+ .../bindings/i3c/snps,dw-i3c-master.yaml      |   6 +-
+ .../bindings/mfd/syna,sl261x-gbl.yaml         | 208 +++++
+ .../pinctrl/marvell,berlin2-soc-pinctrl.yaml  |  10 +-
+ .../bindings/regulator/silergy,sy8827n.yaml   |   5 +-
+ .../bindings/reset/syna,sl261x-reset.yaml     |  40 +
+ .../bindings/serial/snps-dw-apb-uart.yaml     |  12 +-
+ .../bindings/spi/snps,dw-apb-ssi.yaml         |   1 +
+ arch/arm64/Kconfig.platforms                  |   4 +-
+ arch/arm64/boot/dts/synaptics/Makefile        |   5 +
+ arch/arm64/boot/dts/synaptics/sl2611-rdk.dts  |  16 +
+ arch/arm64/boot/dts/synaptics/sl2611.dtsi     | 490 ++++++++++++
+ arch/arm64/boot/dts/synaptics/sl2613-rdk.dts  |  16 +
+ arch/arm64/boot/dts/synaptics/sl2613.dtsi     |  12 +
+ arch/arm64/boot/dts/synaptics/sl2615-rdk.dts  |  16 +
+ arch/arm64/boot/dts/synaptics/sl2615.dtsi     |  46 ++
+ arch/arm64/boot/dts/synaptics/sl2617-rdk.dts  |  16 +
+ arch/arm64/boot/dts/synaptics/sl2617.dtsi     |  46 ++
+ arch/arm64/boot/dts/synaptics/sl2619-rdk.dts  |  16 +
+ arch/arm64/boot/dts/synaptics/sl2619.dtsi     |  44 ++
+ .../boot/dts/synaptics/sl261x-rdk-common.dtsi | 135 ++++
+ drivers/clk/Kconfig                           |   1 +
+ drivers/clk/berlin/Kconfig                    |  25 +
+ drivers/clk/berlin/Makefile                   |   4 +
+ drivers/clk/berlin/sl-clk.c                   | 279 +++++++
+ drivers/clk/berlin/sl-clk.h                   |  31 +
+ drivers/clk/berlin/sl-sysmgr-clk.c            | 250 ++++++
+ drivers/clk/berlin/sl-sysmgr-clk.h            |  44 ++
+ drivers/clk/berlin/sl261x-clks.c              | 385 +++++++++
+ drivers/clk/berlin/sl261x-pll.c               | 145 ++++
+ drivers/clk/berlin/sl261x-pll.h               |  14 +
+ drivers/i3c/master/dw-i3c-master.c            |  24 +-
+ drivers/i3c/master/dw-i3c-master.h            |   2 +-
+ drivers/pinctrl/berlin/Kconfig                |   7 +
+ drivers/pinctrl/berlin/Makefile               |   1 +
+ drivers/pinctrl/berlin/berlin.c               | 259 +++++-
+ drivers/pinctrl/berlin/berlin.h               |  17 +-
+ drivers/pinctrl/berlin/pinctrl-sl261x.c       | 745 ++++++++++++++++++
+ drivers/reset/Kconfig                         |   6 +
+ drivers/reset/Makefile                        |   1 +
+ drivers/reset/reset-sl261x.c                  | 224 ++++++
+ include/dt-bindings/clock/syna,sl261x.h       | 131 +++
+ include/dt-bindings/reset/syna,sl261x-reset.h |  80 ++
+ 45 files changed, 3899 insertions(+), 33 deletions(-)
+ create mode 100755 Documentation/devicetree/bindings/clock/syna,sl261x-clk.yaml
+ create mode 100644 Documentation/devicetree/bindings/mfd/syna,sl261x-gbl.yaml
+ create mode 100644 Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2611-rdk.dts
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2611.dtsi
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2613-rdk.dts
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2613.dtsi
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2615-rdk.dts
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2615.dtsi
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2617-rdk.dts
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2617.dtsi
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2619-rdk.dts
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl2619.dtsi
+ create mode 100644 arch/arm64/boot/dts/synaptics/sl261x-rdk-common.dtsi
+ create mode 100644 drivers/clk/berlin/Kconfig
+ create mode 100644 drivers/clk/berlin/sl-clk.c
+ create mode 100644 drivers/clk/berlin/sl-clk.h
+ create mode 100644 drivers/clk/berlin/sl-sysmgr-clk.c
+ create mode 100644 drivers/clk/berlin/sl-sysmgr-clk.h
+ create mode 100644 drivers/clk/berlin/sl261x-clks.c
+ create mode 100644 drivers/clk/berlin/sl261x-pll.c
+ create mode 100644 drivers/clk/berlin/sl261x-pll.h
+ create mode 100644 drivers/pinctrl/berlin/pinctrl-sl261x.c
+ create mode 100644 drivers/reset/reset-sl261x.c
+ create mode 100644 include/dt-bindings/clock/syna,sl261x.h
+ create mode 100644 include/dt-bindings/reset/syna,sl261x-reset.h
+
+-- 
+2.53.0
 
 
 -- 
