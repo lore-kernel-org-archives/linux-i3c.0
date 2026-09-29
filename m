@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7692E60A2600
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5D67D606A33F
 	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 11:00:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jCmZ84Pf;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=BqkbTaeE
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DoZWw8Y2;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dnVI9pk/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=NgWWC5pG+XPJ7EwgGDZqg9hQ3thELF/ZFTqLVZouY+M=; b=jCmZ84PfIAHBZG96Gp12zkNWx/
-	PeCbuKDRQxKjdc7z+8BsukL+ay879kaMSwtL8l0c9IakbS5Zk3eepojhhUwxMRW3yhdciEefr9nOf
-	TavRxtmCIjFZy66V5Hbm1BhvcPXXwV7kza4UATQqxC/r7LVl7go+gwSMXR7et/UxrWzU8uryBThTH
-	pFf+/2DqHeyVqduJi8nE2v77ml42XRm7fTule8m58Z8ixGzCQeizuZWGE8yXLp9nw4IHj4vZs+frE
-	ql2OFNOcRQjPuHqRc0W0K/WlPxLpND8PUApim0Qpru9ljawWLyde/Z/iT+JYMGjNax4egjvxubPpM
-	cw7uyZ9A==;
+	bh=zOq8xJ18bkYx5A4PFaiGZmOAZKnBevDqg7x5eOe48yE=; b=DoZWw8Y2C2hpBnH0zFgBJJjto1
+	V7hHcaPL7HhkUVC5F/AA0Qyo+AnvSqvEWs5aarZqQhYfYhUeQWvhGj5wvhAxyT55pDCxsMfHwmn5S
+	8a7HB4igfywEy09RvKtnLhHNqwMZavpMtsqt2lpALMpq96oVqfZWDeCn9ftH2sYUxvdwKwf2/N9qu
+	TfQO66xYVR6kAcLTvtWr2GFy/qlJpk6bp7QlF+X4/mIfDOWyw2adeTRTUdke2NVukzMlAF0PTcwdB
+	3XfI8HHbce5j6z6vZPr4x3+nY19ti0MrF3tvDYLJFgzz+63/8uaVciGsUaPUWsIo3x/P2uov9bFn9
+	yuQbznNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLevI-00000004NLk-0kLN;
+	id 1xLevI-00000004NLC-0DTT;
 	Tue, 27 Oct 2026 11:00:56 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBxH3-00000006iKK-087O;
-	Wed, 30 Sep 2026 16:35:17 +0000
+	id 1xBduu-00000004Qvd-43VU;
+	Tue, 29 Sep 2026 19:55:09 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 73C4F60252;
-	Wed, 30 Sep 2026 16:35:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 11FCA1F00893;
-	Wed, 30 Sep 2026 16:35:10 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id BCFF06022B;
+	Tue, 29 Sep 2026 19:55:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75B111F000FF;
+	Tue, 29 Sep 2026 19:55:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790786116;
-	bh=IotFDljTrZjJVOHJs5Jb8Ssuv+icr3IseWCLlR0xMJ0=;
+	s=k20260515; t=1790711707;
+	bh=4WYtVO5seJAuSUgV9wcL7uDSrkV53Em2i+FDrtDNOs4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=BqkbTaeEJGPn65JzBCPQabvkfi4q3suZsUonrQ3JIYiiyBzhY/r9JNQUUwQ4lEnDf
-	 UHIK5MS3srRqxbW56VkqD3p70BI2Y0c6OKFlj6G4gltrPwBGrgKdbY408ULgmc4Tm0
-	 Ztg7yaeTGTz9GRlUb3PsnbV39dgYKKXEQJsjbdmo0RgLhWDe00VmQ+JF0ITPnrBbHF
-	 9szCsNcsoKrnCD6vV9vh4wvdr2bSD3+XSqIb5sGXvL/J2w291GLOEWYhZkQ2L7TsXM
-	 xDS79Vy3/jO+IhE+uyNP7JEPXozepUeV4VPYvK7sJgvoA4nYxECPu4SXOKrFPEXz95
-	 +aGYtEz7XxSYQ==
-Date: Wed, 30 Sep 2026 17:35:09 +0100
+	b=dnVI9pk/2GBJTKGok5UQMMwR5/xIZdds+aR6UkDfQ5or6+EcbFL2qWZ33BcjSLgYi
+	 TjWrFvbg1gqy6Qo5T1R9jPxEvvkio+QW58kfR65MFF6grSOGdf1vbx//z35hVnduAN
+	 NJk08yE8pttIvCwCDuHnnfQVzSU8AR0vrF5LFAYW02GVCea6qzR6bXNb27GYSSwCqf
+	 AgnHB+QO3mrN1n+7OGQG0vNf/CHXYYY4rT3OI92DvXlwyjBu+FY0TVMLiwZg5Gaxxz
+	 i9Wt7kGTec7w9unRyOqe/JlCZBLFgWyCCfdJi8/q9XbxWVZeDHF5h26wHCAlNI4jw4
+	 VJ53nSaFC+Kpg==
+Date: Tue, 29 Sep 2026 20:55:00 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Jisheng Zhang <jszhang@kernel.org>
 Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -65,14 +65,14 @@ Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
 	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
 	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 00/20] arm64: add Synaptics SL261X SoCs and RDK boards
-Message-ID: <20260930-consoling-scouting-e60864374d04@spud>
+Subject: Re: [PATCH 17/20] dt-bindings: mfd: Add Synaptics SL261x global
+ block binding
+Message-ID: <20260929-handyman-penalize-0c5cbf13c5fd@spud>
 References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929-smoked-laurel-087d5a3523a3@spud>
- <ar0da71zOeeYxURQ@xhacker>
+ <20260929061417.20733-18-jszhang@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <ar0da71zOeeYxURQ@xhacker>
+In-Reply-To: <20260929061417.20733-18-jszhang@kernel.org>
 X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:48 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,85 +83,302 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7020796014814420037=="
+Content-Type: multipart/mixed; boundary="===============4318060991518215252=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============7020796014814420037==
+--===============4318060991518215252==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="0aKKosY+SZkBUlIw"
+	protocol="application/pgp-signature"; boundary="GS+jVj3BFMGXFZD8"
 Content-Disposition: inline
 
---0aKKosY+SZkBUlIw
+--GS+jVj3BFMGXFZD8
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Sep 30, 2026 at 10:32:11PM +0800, Jisheng Zhang wrote:
-> On Tue, Sep 29, 2026 at 08:38:52PM +0100, Conor Dooley wrote:
-> > On Tue, Sep 29, 2026 at 02:13:57PM +0800, Jisheng Zhang wrote:
-> > > Add initial support for the Synaptics SL261X SoCs and corresponding
-> > > RDK boards.
-> > >=20
-> > > The SL261X SoCs include five pin-to-pin compatible SoCs: SL2611, SL26=
-13,
-> > > SL2615, SL2617, and SL2619.
-> > >=20
-> > > Only reset, pinctrl, clk/pll, uart, gpio, i2c, spi, i3c are included =
-in
-> > > this series. The support for Ethernet, USB, SDHCI, CAN, DMAC, XSPI wi=
-ll
-> > > be submitted after this series is merged.
-> >=20
-> > This series is filled with wildcard compatibles, which we don't permit
-> > typically. The only case for SoCs that I've seen them accepted is when
-> > the devices covered are actually just different binnings of the same
-> > device. I took a look at the docs for this device, but it wasn't clear
-> > to me if these are actually binnings or if there are different
-> > integrations here. If they're binnings, I'd rather you used 0 as the
-> > final digit, rather than x, since that matches the synaptics
-> > documentation for the family. If they're not binnings, there's no
-> > guarantee that they share the same errata etc, and must have different
-> > compatibles.
+On Tue, Sep 29, 2026 at 02:14:14PM +0800, Jisheng Zhang wrote:
+> Document the AVIO global, CPU wrapper, chip control, and MCU global
+> register blocks on SL261x SoCs. Each block exposes its clock and, where
+> applicable, pinctrl and reset functions through child nodes.
 >=20
-> BTW: May I query a qustion?
-> After searching the maillist archieves, it seems now maintainers prefer
-> spiliting this kind of SoC initial support series into separate patches
-> for different subsystems, e.g uart, i2c, i3c, spi and so on, then the
-> SoC pinctrl, clk, reset and dtsi/dts files, but AIUI, there will be
-> dtb check failures with the SoC dts(i) files patch(es), what's
-> the normal solution then?
+> Document the chip control syscon phandle used by the CPU clock
+> controller.
+>=20
+> Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+> ---
+>  .../bindings/mfd/syna,sl261x-gbl.yaml         | 208 ++++++++++++++++++
+>  1 file changed, 208 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mfd/syna,sl261x-gbl=
+=2Eyaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/mfd/syna,sl261x-gbl.yaml b=
+/Documentation/devicetree/bindings/mfd/syna,sl261x-gbl.yaml
 
-Depends on the type of failure, but yes it can be okay. If the failure is
-some missing schema causing validation to fail, that's fine as long as it
-passes in linux-next (same as when you add a new driver and binding, but
-the dts goes to a different branch). What's not acceptable is breaking the
-build because some header that provides clock defines is missing in the dts
-branch or in the driver branch. In that case, either send all that stuff in
-one "New SoC" PR to the soc tree, or put the binding headers in a shared
-tag that is the basis for your PR to the relevant maintainers (typically
-clock) and the dts PR to the soc tree.
+Filename should match a compatible.
 
---0aKKosY+SZkBUlIw
+> new file mode 100644
+> index 000000000000..3e5842169c4a
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mfd/syna,sl261x-gbl.yaml
+> @@ -0,0 +1,208 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mfd/syna,sl261x-gbl.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Synaptics SL261x global and control register blocks
+> +
+> +maintainers:
+> +  - Jisheng Zhang <jszhang@kernel.org>
+> +
+> +description: |
+> +  The SL261x global and control register blocks contain clock, reset, and
+> +  pin control registers. Each functional child uses its parent's register
+> +  range. The CPU clock controller also refers to the chip control syscon.
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - items:
+> +          - const: syna,sl261x-avio-gbl
+> +          - const: syscon
+> +          - const: simple-mfd
+> +      - items:
+> +          - const: syna,sl261x-cpu-wrp
+> +          - const: syscon
+> +          - const: simple-mfd
+> +      - items:
+> +          - const: syna,sl261x-chip-control
+> +          - const: syscon
+> +          - const: simple-mfd
+> +      - items:
+> +          - const: syna,sl261x-mcu-gbl
+> +          - const: syscon
+> +          - const: simple-mfd
+
+This can be simplified significantly by using an enum for the variable
+part.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clock:
+> +    type: object
+> +    additionalProperties: true
+> +
+> +  pin-controller:
+> +    type: object
+> +    additionalProperties: true
+> +
+> +  reset:
+> +    type: object
+> +    additionalProperties: true
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +
+
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: syna,sl261x-avio-gbl
+> +    then:
+> +      required:
+> +        - clock
+> +      properties:
+> +        clock:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-aio-clk
+> +        pin-controller: false
+> +        reset: false
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: syna,sl261x-cpu-wrp
+> +    then:
+> +      required:
+> +        - clock
+> +      properties:
+> +        clock:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-cpu-clk
+> +        pin-controller: false
+> +        reset: false
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: syna,sl261x-chip-control
+> +    then:
+> +      required:
+> +        - clock
+> +        - pin-controller
+> +        - reset
+> +      properties:
+> +        clock:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-soc-clk
+> +        pin-controller:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-soc-pinctrl
+> +        reset:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-soc-reset
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: syna,sl261x-mcu-gbl
+> +    then:
+> +      required:
+> +        - clock
+> +        - pin-controller
+> +        - reset
+> +      properties:
+> +        clock:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-system-clk
+> +        pin-controller:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-system-pinctrl
+> +        reset:
+> +          properties:
+> +            compatible:
+> +              const: syna,sl261x-system-reset
+
+Most of this can just disappear because most of these subnodes don't need to
+exist. In fact, maybe all of them can be removed, leaving you just with
+the syscon nodes themselves containing the relevant properties for
+resets/clocks/pinctrl.
+
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    osc: clock-osc {
+> +        compatible =3D "fixed-clock";
+> +        #clock-cells =3D <0>;
+> +        clock-frequency =3D <25000000>;
+> +    };
+
+Nodes like this will get simulated by the tooling, they're not needed
+here.
+
+> +
+> +    avio_gbl: avio-gbl@f7490000 {
+> +        compatible =3D "syna,sl261x-avio-gbl", "syscon", "simple-mfd";
+> +        reg =3D <0xf7490000 0x4000>;
+> +
+> +        aioclk: clock {
+> +            compatible =3D "syna,sl261x-aio-clk";
+> +            #clock-cells =3D <1>;
+> +            clocks =3D <&osc>;
+> +        };
+> +    };
+> +
+> +    chip: chip-control@f7e10000 {
+> +        compatible =3D "syna,sl261x-chip-control", "syscon", "simple-mfd=
+";
+> +        reg =3D <0xf7e10000 0x10000>;
+> +
+> +        clk: clock {
+> +            compatible =3D "syna,sl261x-soc-clk";
+> +            #clock-cells =3D <1>;
+> +            clocks =3D <&osc>;
+> +        };
+> +
+> +        pinctrl: pin-controller {
+> +            compatible =3D "syna,sl261x-soc-pinctrl";
+> +        };
+> +
+> +        rst: reset {
+> +            compatible =3D "syna,sl261x-soc-reset";
+> +            #reset-cells =3D <1>;
+> +        };
+> +    };
+> +
+> +    cpu_wrp: cpu-wrp@f7e30000 {
+
+Please don't make up new node names for your device, use something
+established like "system-controller" or "syscon" please.
+
+pw-bot: changes-requested
+
+Thanks,
+Conor.
+
+> +        compatible =3D "syna,sl261x-cpu-wrp", "syscon", "simple-mfd";
+> +        reg =3D <0xf7e30000 0x4000>;
+> +
+> +        cpuclk: clock {
+> +            compatible =3D "syna,sl261x-cpu-clk";
+> +            #clock-cells =3D <1>;
+> +            clocks =3D <&osc>;
+> +            syna,gbl-syscon =3D <&chip>;
+> +        };
+> +    };
+> +
+> +    mcu_gbl: mcu-gbl@e5025000 {
+> +        compatible =3D "syna,sl261x-mcu-gbl", "syscon", "simple-mfd";
+> +        reg =3D <0xe5025000 0x1000>;
+> +
+> +        sm_clk: clock {
+> +            compatible =3D "syna,sl261x-system-clk";
+> +            #clock-cells =3D <1>;
+> +        };
+> +
+> +        sm_pinctrl: pin-controller {
+> +            compatible =3D "syna,sl261x-system-pinctrl";
+> +        };
+> +
+> +        sm_rst: reset {
+> +            compatible =3D "syna,sl261x-system-reset";
+> +            #reset-cells =3D <1>;
+> +        };
+> +    };
+> +...
+> --=20
+> 2.53.0
+>=20
+
+--GS+jVj3BFMGXFZD8
 Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCar06PAAKCRB4tDGHoIJi
-0hpkAP0blrEbmogoZD0AKnwhpfLwMnReZOlvZF7i9+6g8f+4VAEAnxRjQq9YWWJf
-7AVUGg191KqlxkjCS4xQdsNuVaTiiQw=
-=6gkk
+iHQEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCarwXlAAKCRB4tDGHoIJi
+0oZfAP961KDyuZuHW6X/Y8S1uq/6yK2664KS0xlfZKQ7Zncl0wD2KCI2eV4qMyE7
+oBJLm3S1r/YSGvXdxZKpAP9pZT8LBA==
+=32mr
 -----END PGP SIGNATURE-----
 
---0aKKosY+SZkBUlIw--
+--GS+jVj3BFMGXFZD8--
 
 
---===============7020796014814420037==
+--===============4318060991518215252==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -172,5 +389,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============7020796014814420037==--
+--===============4318060991518215252==--
 
