@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5D67D606A33F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 81D0F606A31A
 	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 11:00:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DoZWw8Y2;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dnVI9pk/
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=cw+Ae2xD;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FllT5+0s
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=zOq8xJ18bkYx5A4PFaiGZmOAZKnBevDqg7x5eOe48yE=; b=DoZWw8Y2C2hpBnH0zFgBJJjto1
-	V7hHcaPL7HhkUVC5F/AA0Qyo+AnvSqvEWs5aarZqQhYfYhUeQWvhGj5wvhAxyT55pDCxsMfHwmn5S
-	8a7HB4igfywEy09RvKtnLhHNqwMZavpMtsqt2lpALMpq96oVqfZWDeCn9ftH2sYUxvdwKwf2/N9qu
-	TfQO66xYVR6kAcLTvtWr2GFy/qlJpk6bp7QlF+X4/mIfDOWyw2adeTRTUdke2NVukzMlAF0PTcwdB
-	3XfI8HHbce5j6z6vZPr4x3+nY19ti0MrF3tvDYLJFgzz+63/8uaVciGsUaPUWsIo3x/P2uov9bFn9
-	yuQbznNw==;
+	bh=ncn2rLfgwAeKv+VC7AJfM+SFFipB7PwS+Umb4XLcifU=; b=cw+Ae2xDSbIgpQh5ZAO6uWy+FN
+	YQcNos170A4EKmWYqZOBD2BXmsQ7lqR3aG95m1d44N2SSHWqqmFi3sT55ZqMdFTpuE/gkB4JXfMUA
+	Y4JHfoWEIFDyo4/p8pmUM2oPLtx14ivikC2e8s7L6PrkdeSsLnoL+wPZnHG7rfq2UK8Z4je60HCJH
+	A4RV6z2aDFm/bM7QTKCWBvHIKgvdHkxsXt72LdFHquJhGzRp6g0apQ2TvNhw3wZpnL5VER7yM/fTW
+	nWM6k37KmoJ7Fo62SOi0jDJxv92b061vDYlowwayY7CEOG7V5ZiLvNDHovg9v+4tsqiEwx/I6U634
+	zVber9mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLevI-00000004NLC-0DTT;
+	id 1xLevI-00000004NLy-14pk;
 	Tue, 27 Oct 2026 11:00:56 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBduu-00000004Qvd-43VU;
-	Tue, 29 Sep 2026 19:55:09 +0000
+	id 1xBxUj-00000006jrA-3Zuc;
+	Wed, 30 Sep 2026 16:49:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id BCFF06022B;
-	Tue, 29 Sep 2026 19:55:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75B111F000FF;
-	Tue, 29 Sep 2026 19:55:02 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 4F1A040F47;
+	Wed, 30 Sep 2026 16:49:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 317041F000FF;
+	Wed, 30 Sep 2026 16:49:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790711707;
-	bh=4WYtVO5seJAuSUgV9wcL7uDSrkV53Em2i+FDrtDNOs4=;
+	s=k20260515; t=1790786965;
+	bh=adx5lrGUm60VPD0xpyStwfAZj/AucsyPoZQvyOLG+x8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=dnVI9pk/2GBJTKGok5UQMMwR5/xIZdds+aR6UkDfQ5or6+EcbFL2qWZ33BcjSLgYi
-	 TjWrFvbg1gqy6Qo5T1R9jPxEvvkio+QW58kfR65MFF6grSOGdf1vbx//z35hVnduAN
-	 NJk08yE8pttIvCwCDuHnnfQVzSU8AR0vrF5LFAYW02GVCea6qzR6bXNb27GYSSwCqf
-	 AgnHB+QO3mrN1n+7OGQG0vNf/CHXYYY4rT3OI92DvXlwyjBu+FY0TVMLiwZg5Gaxxz
-	 i9Wt7kGTec7w9unRyOqe/JlCZBLFgWyCCfdJi8/q9XbxWVZeDHF5h26wHCAlNI4jw4
-	 VJ53nSaFC+Kpg==
-Date: Tue, 29 Sep 2026 20:55:00 +0100
+	b=FllT5+0sqWH2a84AcXnGYzdV++VSjqNtvH0A1iaTFDtNSHdjv0xOkfddaoZS0jNgL
+	 WhbtNE3RF4a/trwOuv08wCj2joBe6sBDIglEC3i/1HKFu4QuikFdDtwTAiFc3FR8/G
+	 bGgJq937pUfE17I2SJoff596ikabjY5JGBXmM7oGZU4VNDk4EN/nIm0urnELQkMp5d
+	 PI8aznU4KFk323r1qbE6c9zuOYDQw1A7VNzLsApG10OD8Z7OrBIOj0KuXUiFYIPppf
+	 nK4Mek+J/xWmq/YqgSvf+aGV59ubSmLSDwiqYFg22ppmOvWLYpO5VFrmB504wkHa2i
+	 wVt99H7WEYVTw==
+Date: Wed, 30 Sep 2026 17:49:18 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Jisheng Zhang <jszhang@kernel.org>
 Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -65,14 +65,15 @@ Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
 	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
 	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 17/20] dt-bindings: mfd: Add Synaptics SL261x global
- block binding
-Message-ID: <20260929-handyman-penalize-0c5cbf13c5fd@spud>
+Subject: Re: [PATCH 08/20] dt-bindings: reset: add Synaptics SL261X SoCs
+Message-ID: <20260930-legend-helium-ca5a0ff56709@spud>
 References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929061417.20733-18-jszhang@kernel.org>
+ <20260929061417.20733-9-jszhang@kernel.org>
+ <20260929-sprang-stir-af07a907ccb2@spud>
+ <ar0npPCHX1P5Gjzx@xhacker>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20260929061417.20733-18-jszhang@kernel.org>
+In-Reply-To: <ar0npPCHX1P5Gjzx@xhacker>
 X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:48 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,7 +84,7 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4318060991518215252=="
+Content-Type: multipart/mixed; boundary="===============0487373663450427224=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
@@ -92,293 +93,275 @@ X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============4318060991518215252==
+--===============0487373663450427224==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="GS+jVj3BFMGXFZD8"
+	protocol="application/pgp-signature"; boundary="OKi514OHcB6CuiXw"
 Content-Disposition: inline
 
---GS+jVj3BFMGXFZD8
+--OKi514OHcB6CuiXw
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Sep 29, 2026 at 02:14:14PM +0800, Jisheng Zhang wrote:
-> Document the AVIO global, CPU wrapper, chip control, and MCU global
-> register blocks on SL261x SoCs. Each block exposes its clock and, where
-> applicable, pinctrl and reset functions through child nodes.
+On Wed, Sep 30, 2026 at 11:15:48PM +0800, Jisheng Zhang wrote:
+> On Tue, Sep 29, 2026 at 08:44:13PM +0100, Conor Dooley wrote:
+> > On Tue, Sep 29, 2026 at 02:14:05PM +0800, Jisheng Zhang wrote:
+> > > Add device tree bindings for the resets on Synaptics SL261X SoCs.
+> > >=20
+> > > Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+> > > ---
+> > >  .../bindings/reset/syna,sl261x-reset.yaml     | 40 ++++++++++
+> > >  include/dt-bindings/reset/syna,sl261x-reset.h | 80 +++++++++++++++++=
+++
+> > >  2 files changed, 120 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/reset/syna,sl26=
+1x-reset.yaml
+> > >  create mode 100644 include/dt-bindings/reset/syna,sl261x-reset.h
+> > >=20
+> > > diff --git a/Documentation/devicetree/bindings/reset/syna,sl261x-rese=
+t.yaml b/Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
+> > > new file mode 100644
+> > > index 000000000000..8cfec17df800
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
+> > > @@ -0,0 +1,40 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > > +# Copyright (C) 2026 Synaptics Incorporated
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/reset/syna,sl261x-reset.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Synaptics SL261X reset controller
+> > > +
+> > > +maintainers:
+> > > +  - Jisheng Zhang <jszhang@kernel.org>
+> > > +
+> > > +description: The reset controller node must be a sub-node of the chip
+> > > +  controller node on SL261X SoCs.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    enum:
+> > > +      - syna,sl261x-soc-reset
+> > > +      - syna,sl261x-system-reset
+> > > +
+> > > +  "#reset-cells":
+> > > +    const: 1
+> > > +
+> > > +required:
+> > > +  - compatible
+> > > +  - "#reset-cells"
+> > > +
+> > > +additionalProperties: false
+> > > +
+> > > +examples:
+> > > +  - |
+> > > +    chip: chip-control@f7e10000 {
+> > > +        reg =3D <0xf7e10000 0x1000>;
+> > > +
+> > > +        chip_rst: reset {
+> > > +            compatible =3D "syna,sl261x-soc-reset";
+> > > +            #reset-cells =3D <1>;
+> > > +        };
+> >=20
+> > Why can't this just be part of the parent node?
 >=20
-> Document the chip control syscon phandle used by the CPU clock
-> controller.
+> Good question! IMHO, the reasons are:
 >=20
-> Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
-> ---
->  .../bindings/mfd/syna,sl261x-gbl.yaml         | 208 ++++++++++++++++++
->  1 file changed, 208 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mfd/syna,sl261x-gbl=
-=2Eyaml
+> 1. the so called Gbls(Gbl means global) such as mcuGbl and
+> chip control Gbl contain not only reset, pinctrl and clk/plls
+> but also some other registers for different purposes, e.g in the
+> chip control gbl, there are some registers to control eth phy sel(RMII
+> or RGMII), and TXC 90 degree selection etc. These registers will
+> be used by the Ethernet driver;
 >=20
-> diff --git a/Documentation/devicetree/bindings/mfd/syna,sl261x-gbl.yaml b=
-/Documentation/devicetree/bindings/mfd/syna,sl261x-gbl.yaml
+> While there's no pinctrl regs in avioGbl and vppGbl. In the vppgbl,
+> there are some registers for DPHYTX etc.
+>=20
+> As can been, in different Gbls, there maybe different purposes registers,=
+ no
+> obvious patterns.
+>=20
+> So the question here is why not split the gbl into different register
+> spaces, and abstract each space for each function group?
 
-Filename should match a compatible.
+No, you misunderstood. I'm not asking for the register space to be
+split, I am asking why you cannot do
+| syscon@f7e1000 {
+| 	compatible =3D "syna,sl2610-soc-syscon", "syscon";
+| 	reg =3D <0xf7e10000 0x1000>;
+| 	#clock-cells =3D <1>;
+| 	#reset-cells =3D <1>;
+| };
+With this kind of thing, you can either use the auxiliary bus or
+MFD_CELL_NAME() to create the other devices. The latter is good if
+you've got a region with clocks that also has resets thrown in, the
+former is probably better if you have a syscon with a genuine
+assortment of different functions that you're going to be looking up via
+phandle.
 
-> new file mode 100644
-> index 000000000000..3e5842169c4a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mfd/syna,sl261x-gbl.yaml
-> @@ -0,0 +1,208 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mfd/syna,sl261x-gbl.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Synaptics SL261x global and control register blocks
-> +
-> +maintainers:
-> +  - Jisheng Zhang <jszhang@kernel.org>
-> +
-> +description: |
-> +  The SL261x global and control register blocks contain clock, reset, and
-> +  pin control registers. Each functional child uses its parent's register
-> +  range. The CPU clock controller also refers to the chip control syscon.
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - const: syna,sl261x-avio-gbl
-> +          - const: syscon
-> +          - const: simple-mfd
-> +      - items:
-> +          - const: syna,sl261x-cpu-wrp
-> +          - const: syscon
-> +          - const: simple-mfd
-> +      - items:
-> +          - const: syna,sl261x-chip-control
-> +          - const: syscon
-> +          - const: simple-mfd
-> +      - items:
-> +          - const: syna,sl261x-mcu-gbl
-> +          - const: syscon
-> +          - const: simple-mfd
+> Two blocking
+> points make this impossible and ugly: different reg space may not be
+> aligned at 4KB boundary, e.g reset: 0x350 ~ 0x37c; eth phy sel:0xa18;
+> some registers which belong to similar functionality, e.g clks, may not be
+> adjacent.
 
-This can be simplified significantly by using an enum for the variable
-part.
+This sort of thing, with non-adjacent clocks is still possible, you have
+a regmap just like before.
 
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clock:
-> +    type: object
-> +    additionalProperties: true
-> +
-> +  pin-controller:
-> +    type: object
-> +    additionalProperties: true
-> +
-> +  reset:
-> +    type: object
-> +    additionalProperties: true
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +
+> So the best way is to abstract these GBLs via. "syscon", "simple-mfd", and
+> put necessary subnodes such as reset, pinctrl and clks under the GBL
+> node. If the registers in GBL is misc control, pass the syscon phandle
+> to the main driver, e.g I planed to pass the syscon phandle to GMAC
+> driver to control the RMII/RGMII selection.
 
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: syna,sl261x-avio-gbl
-> +    then:
-> +      required:
-> +        - clock
-> +      properties:
-> +        clock:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-aio-clk
-> +        pin-controller: false
-> +        reset: false
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: syna,sl261x-cpu-wrp
-> +    then:
-> +      required:
-> +        - clock
-> +      properties:
-> +        clock:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-cpu-clk
-> +        pin-controller: false
-> +        reset: false
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: syna,sl261x-chip-control
-> +    then:
-> +      required:
-> +        - clock
-> +        - pin-controller
-> +        - reset
-> +      properties:
-> +        clock:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-soc-clk
-> +        pin-controller:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-soc-pinctrl
-> +        reset:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-soc-reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: syna,sl261x-mcu-gbl
-> +    then:
-> +      required:
-> +        - clock
-> +        - pin-controller
-> +        - reset
-> +      properties:
-> +        clock:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-system-clk
-> +        pin-controller:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-system-pinctrl
-> +        reset:
-> +          properties:
-> +            compatible:
-> +              const: syna,sl261x-system-reset
+And you can get the regmap from other drivers by doing phandle or
+compatible based lookups just like before.
 
-Most of this can just disappear because most of these subnodes don't need to
-exist. In fact, maybe all of them can be removed, leaving you just with
-the syscon nodes themselves containing the relevant properties for
-resets/clocks/pinctrl.
+>=20
+> 2.follow current bg2 and bg2q style
+> e.g arch/arm/boot/dts/synaptics/berlin2q.dtsi
+>=20
+> IMHO, why bg2 and bg2q dtsi files are implemented as current
+> style is due to the above point 1.
 
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    osc: clock-osc {
-> +        compatible =3D "fixed-clock";
-> +        #clock-cells =3D <0>;
-> +        clock-frequency =3D <25000000>;
-> +    };
+Unfortunately, this is the berlin2q devicetree showing its age, we've
+been pushing people away from nodes that exist just to probe a driver
+and don't provide any additional value. Something like
+| chip-control@f7e10000 {
+|     reg =3D <0xf7e10000 0x1000>;
+|=20
+|     chip_rst: reset {
+|         compatible =3D "syna,sl261x-soc-reset";
+|         #reset-cells =3D <1>;
+|     };
+|=20
+|     chip_clk: clock {
+|         compatible =3D "syna,sl261x-soc-clock";
+|         #clock-cells =3D <1>;
+|     };
+is exactly the pattern we are trying to avoid.
 
-Nodes like this will get simulated by the tooling, they're not needed
-here.
-
-> +
-> +    avio_gbl: avio-gbl@f7490000 {
-> +        compatible =3D "syna,sl261x-avio-gbl", "syscon", "simple-mfd";
-> +        reg =3D <0xf7490000 0x4000>;
-> +
-> +        aioclk: clock {
-> +            compatible =3D "syna,sl261x-aio-clk";
-> +            #clock-cells =3D <1>;
-> +            clocks =3D <&osc>;
-> +        };
-> +    };
-> +
-> +    chip: chip-control@f7e10000 {
-> +        compatible =3D "syna,sl261x-chip-control", "syscon", "simple-mfd=
-";
-> +        reg =3D <0xf7e10000 0x10000>;
-> +
-> +        clk: clock {
-> +            compatible =3D "syna,sl261x-soc-clk";
-> +            #clock-cells =3D <1>;
-> +            clocks =3D <&osc>;
-> +        };
-> +
-> +        pinctrl: pin-controller {
-> +            compatible =3D "syna,sl261x-soc-pinctrl";
-> +        };
-> +
-> +        rst: reset {
-> +            compatible =3D "syna,sl261x-soc-reset";
-> +            #reset-cells =3D <1>;
-> +        };
-> +    };
-> +
-> +    cpu_wrp: cpu-wrp@f7e30000 {
-
-Please don't make up new node names for your device, use something
-established like "system-controller" or "syscon" please.
-
-pw-bot: changes-requested
-
-Thanks,
+Cheers,
 Conor.
 
-> +        compatible =3D "syna,sl261x-cpu-wrp", "syscon", "simple-mfd";
-> +        reg =3D <0xf7e30000 0x4000>;
-> +
-> +        cpuclk: clock {
-> +            compatible =3D "syna,sl261x-cpu-clk";
-> +            #clock-cells =3D <1>;
-> +            clocks =3D <&osc>;
-> +            syna,gbl-syscon =3D <&chip>;
-> +        };
-> +    };
-> +
-> +    mcu_gbl: mcu-gbl@e5025000 {
-> +        compatible =3D "syna,sl261x-mcu-gbl", "syscon", "simple-mfd";
-> +        reg =3D <0xe5025000 0x1000>;
-> +
-> +        sm_clk: clock {
-> +            compatible =3D "syna,sl261x-system-clk";
-> +            #clock-cells =3D <1>;
-> +        };
-> +
-> +        sm_pinctrl: pin-controller {
-> +            compatible =3D "syna,sl261x-system-pinctrl";
-> +        };
-> +
-> +        sm_rst: reset {
-> +            compatible =3D "syna,sl261x-system-reset";
-> +            #reset-cells =3D <1>;
-> +        };
-> +    };
-> +...
-> --=20
-> 2.53.0
+>=20
+> Kindly let me know if there's a better solution.
+>=20
+> > From a quick check of the dts, the node with this subnode didn't also
+> > have a system-reset node too, so there's no conflict or anything of that
+> > nature.
+> >=20
+> > > +    };
+> > > diff --git a/include/dt-bindings/reset/syna,sl261x-reset.h b/include/=
+dt-bindings/reset/syna,sl261x-reset.h
+> > > new file mode 100644
+> > > index 000000000000..7034f58aae5b
+> > > --- /dev/null
+> > > +++ b/include/dt-bindings/reset/syna,sl261x-reset.h
+> > > @@ -0,0 +1,80 @@
+> > > +/* SPDX-License-Identifier: (GPL-2.0 OR MIT) */
+> > > +/*
+> > > + * Copyright (C) 2026 Synaptics Incorporated
+> > > + *
+> > > + * Author: Jisheng Zhang <jszhang@kernel.org>
+> > > + */
+> > > +
+> > > +#ifndef _DT_BINDINGS_SL261X_RESET_H
+> > > +#define _DT_BINDINGS_SL261X_RESET_H
+> > > +
+> > > +/* ACPU subsystem */
+> > > +#define RST_SOC_SDIO0		0
+> > > +#define RST_SOC_USB0		1
+> > > +#define RST_SOC_EMMC		2
+> > > +#define RST_SOC_GETH0		3
+> > > +#define RST_SOC_SDIO1		4
+> > > +#define RST_SOC_USB1		5
+> > > +#define RST_SOC_GETH1		6
+> > > +#define RST_SOC_USB0PHY		7
+> > > +#define RST_SOC_USB0CORE	8
+> > > +#define RST_SOC_USB0MAHB	9
+> > > +#define RST_SOC_USB1PHY		10
+> > > +#define RST_SOC_USB1CORE	11
+> > > +#define RST_SOC_USB1MAHB	12
+> > > +#define RST_SOC_UART0		13
+> > > +#define RST_SOC_UART1		14
+> > > +#define RST_SOC_UART2		15
+> > > +#define RST_SOC_UART3		16
+> > > +#define RST_SOC_I2C0		17
+> > > +#define RST_SOC_I2C1		18
+> > > +#define RST_SOC_SPI0		19
+> > > +#define RST_SOC_SPI1		20
+> > > +#define RST_SOC_SPI2		21
+> > > +#define RST_SOC_SPI3		22
+> > > +#define RST_SOC_APBTIMERS	23
+> > > +#define RST_SOC_APBSYSCNT	24
+> > > +#define RST_SOC_APBWDT		25
+> > > +#define RST_SOC_APBGPIO		26
+> > > +#define RST_SOC_APBDMA		27
+> > > +#define RST_SOC_GPUCORE		28
+> > > +#define RST_SOC_NPUCORE		29
+> > > +#define RST_SOC_AVIOAIOG	30
+> > > +#define RST_SOC_AVIOVPPG	31
+> > > +#define RST_SOC_AVIOVIPG	32
+> > > +
+> > > +/* system subsystem */
+> > > +#define RST_SM_ADCCORE		0
+> > > +#define RST_SM_ADCPRST		1
+> > > +#define RST_SM_CAN0PRST		2
+> > > +#define RST_SM_CAN0SRST		3
+> > > +#define RST_SM_CAN1PRST		4
+> > > +#define RST_SM_CAN1SRST		5
+> > > +#define RST_SM_GPIOPRST		6
+> > > +#define RST_SM_GPIOSRST		7
+> > > +#define RST_SM_I2CM0PRST	8
+> > > +#define RST_SM_I2CM0SRST	9
+> > > +#define RST_SM_I2CM1PRST	10
+> > > +#define RST_SM_I2CM1SRST	11
+> > > +#define RST_SM_I3CPRST		12
+> > > +#define RST_SM_I3CSRST		13
+> > > +#define RST_SM_PDMPRST		14
+> > > +#define RST_SM_PDMSRST		15
+> > > +#define RST_SM_PVTHSRST		16
+> > > +#define RST_SM_PVTPRST		17
+> > > +#define RST_SM_PWMPERIRST	18
+> > > +#define RST_SM_PWMPRST		19
+> > > +#define RST_SM_SPIMPRST		20
+> > > +#define RST_SM_SPIMSRST		21
+> > > +#define RST_SM_SPISPRST		22
+> > > +#define RST_SM_SPISSRST		23
+> > > +#define RST_SM_UART0PRST	24
+> > > +#define RST_SM_UART0SRST	25
+> > > +#define RST_SM_UART1PRST	26
+> > > +#define RST_SM_UART1SRST	27
+> > > +#define RST_SM_UART2PRST	28
+> > > +#define RST_SM_UART2SRST	29
+> > > +#define RST_SM_UART3PRST	30
+> > > +#define RST_SM_UART3SRST	31
+> > > +
+> > > +#endif /* _DT_BINDINGS_SL261X_RESET_H */
+> > > --=20
+> > > 2.53.0
+> > >=20
+>=20
 >=20
 
---GS+jVj3BFMGXFZD8
+--OKi514OHcB6CuiXw
 Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iHQEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCarwXlAAKCRB4tDGHoIJi
-0oZfAP961KDyuZuHW6X/Y8S1uq/6yK2664KS0xlfZKQ7Zncl0wD2KCI2eV4qMyE7
-oBJLm3S1r/YSGvXdxZKpAP9pZT8LBA==
-=32mr
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCar09jQAKCRB4tDGHoIJi
+0hXAAP4wkxv9gIHHzTNPzHQ1LSg0/0HuRZwizirkiYFgYkvLVgD9HubayuyUaz2R
+jmI1JkNXlp/H1hcWDAEFGtkCJ+XW7wM=
+=OnMl
 -----END PGP SIGNATURE-----
 
---GS+jVj3BFMGXFZD8--
+--OKi514OHcB6CuiXw--
 
 
---===============4318060991518215252==
+--===============0487373663450427224==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -389,5 +372,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============4318060991518215252==--
+--===============0487373663450427224==--
 
