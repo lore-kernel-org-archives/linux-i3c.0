@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 46ED0606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7692E60A2600
 	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 11:00:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vjh1UvaI;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=UNvqdL2c
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jCmZ84Pf;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=BqkbTaeE
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZHBhnIbVdrwOjyTOTYmJqUdqiYjbq+nPrM5GWcy9XCs=; b=vjh1UvaI79p6huPz+gfX/ga9vo
-	hD9WA0uXyMS2lR6tAAq31rjNBh7v76vPNmPdDdlRudQoTIdPFBuOFpFCtnPjfpjlyVZz5GPZdlklr
-	/FHSUMZi3OgOTSqQ6D5U4UJ0uvQgcoJzVjSdX5YEql3hCDk/FLqnPjUZ9snFxTxPLc0m2KfeGHc8W
-	mt2hfaEE069g2sQfM1WVWN5JwgaA77IKaru0fBEg3skZQAWSvksKqZ9GQratBNAc+voeKdWBvkfjA
-	27OxIeKBzlIs8yiQiGM/FUfJia+MZ2Ds4qsoA/CgKy3t/4+z2BfTpaUr6wpqZUbimTWZS0z0eT7pX
-	Xb0wp4JQ==;
+	bh=NgWWC5pG+XPJ7EwgGDZqg9hQ3thELF/ZFTqLVZouY+M=; b=jCmZ84PfIAHBZG96Gp12zkNWx/
+	PeCbuKDRQxKjdc7z+8BsukL+ay879kaMSwtL8l0c9IakbS5Zk3eepojhhUwxMRW3yhdciEefr9nOf
+	TavRxtmCIjFZy66V5Hbm1BhvcPXXwV7kza4UATQqxC/r7LVl7go+gwSMXR7et/UxrWzU8uryBThTH
+	pFf+/2DqHeyVqduJi8nE2v77ml42XRm7fTule8m58Z8ixGzCQeizuZWGE8yXLp9nw4IHj4vZs+frE
+	ql2OFNOcRQjPuHqRc0W0K/WlPxLpND8PUApim0Qpru9ljawWLyde/Z/iT+JYMGjNax4egjvxubPpM
+	cw7uyZ9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLevH-00000004NKu-49AJ;
-	Tue, 27 Oct 2026 11:00:55 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xLevI-00000004NLk-0kLN;
+	Tue, 27 Oct 2026 11:00:56 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBdn2-00000004QCB-0PTS;
-	Tue, 29 Sep 2026 19:47:00 +0000
+	id 1xBxH3-00000006iKK-087O;
+	Wed, 30 Sep 2026 16:35:17 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7606543BD0;
-	Tue, 29 Sep 2026 19:46:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E7431F000FF;
-	Tue, 29 Sep 2026 19:46:54 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 73C4F60252;
+	Wed, 30 Sep 2026 16:35:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 11FCA1F00893;
+	Wed, 30 Sep 2026 16:35:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790711219;
-	bh=HiNTupmKwpfKkS3g9iNzLPQ0hs/1u+N8ruRyY8+XoYs=;
+	s=k20260515; t=1790786116;
+	bh=IotFDljTrZjJVOHJs5Jb8Ssuv+icr3IseWCLlR0xMJ0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=UNvqdL2cKc38mjozqD7PUzdm+2vHKtkorsESKmgrgCEpz25D0NnjnQ6bRCSrxXhm6
-	 LX+QqFM1ozAqGgTyZRQmsKlvvbqD2arvR8UY5GETNP697pWIZBc/foOZv8Wu/7sz/o
-	 WFcw24KeL6Eukj2j04hm3LXLRvfq7aUadK5h69KZVbnnEAl3OrNeZzFopAZn/sPP7n
-	 Gw4JdWx2m3IF/Gik4j7cBl+5xSoTDmGDWf3Pdt9S4b+garshxpxESKaPhn827aWbm2
-	 cE1gDIiGtpIr77KaTgTdV1PAmUGyj3ygB/jvOKKfAQiYyb/rElCCW7/QDShNGOXr5W
-	 b9TgTVzGdUxOQ==
-Date: Tue, 29 Sep 2026 20:46:52 +0100
+	b=BqkbTaeEJGPn65JzBCPQabvkfi4q3suZsUonrQ3JIYiiyBzhY/r9JNQUUwQ4lEnDf
+	 UHIK5MS3srRqxbW56VkqD3p70BI2Y0c6OKFlj6G4gltrPwBGrgKdbY408ULgmc4Tm0
+	 Ztg7yaeTGTz9GRlUb3PsnbV39dgYKKXEQJsjbdmo0RgLhWDe00VmQ+JF0ITPnrBbHF
+	 9szCsNcsoKrnCD6vV9vh4wvdr2bSD3+XSqIb5sGXvL/J2w291GLOEWYhZkQ2L7TsXM
+	 xDS79Vy3/jO+IhE+uyNP7JEPXozepUeV4VPYvK7sJgvoA4nYxECPu4SXOKrFPEXz95
+	 +aGYtEz7XxSYQ==
+Date: Wed, 30 Sep 2026 17:35:09 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Jisheng Zhang <jszhang@kernel.org>
 Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -65,13 +65,14 @@ Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
 	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
 	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 15/20] dt-bindings: clock: add Synaptics SL261X clock
-Message-ID: <20260929-triage-unpiloted-cf3734477487@spud>
+Subject: Re: [PATCH 00/20] arm64: add Synaptics SL261X SoCs and RDK boards
+Message-ID: <20260930-consoling-scouting-e60864374d04@spud>
 References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929061417.20733-16-jszhang@kernel.org>
+ <20260929-smoked-laurel-087d5a3523a3@spud>
+ <ar0da71zOeeYxURQ@xhacker>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20260929061417.20733-16-jszhang@kernel.org>
+In-Reply-To: <ar0da71zOeeYxURQ@xhacker>
 X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:48 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,303 +83,85 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8544824483099437853=="
+Content-Type: multipart/mixed; boundary="===============7020796014814420037=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============8544824483099437853==
+--===============7020796014814420037==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="8PUm9dCOOcXFVem5"
+	protocol="application/pgp-signature"; boundary="0aKKosY+SZkBUlIw"
 Content-Disposition: inline
 
---8PUm9dCOOcXFVem5
+--0aKKosY+SZkBUlIw
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Sep 29, 2026 at 02:14:12PM +0800, Jisheng Zhang wrote:
-> Add support for clocks, plls in Synaptics SL261X SoCs.
+On Wed, Sep 30, 2026 at 10:32:11PM +0800, Jisheng Zhang wrote:
+> On Tue, Sep 29, 2026 at 08:38:52PM +0100, Conor Dooley wrote:
+> > On Tue, Sep 29, 2026 at 02:13:57PM +0800, Jisheng Zhang wrote:
+> > > Add initial support for the Synaptics SL261X SoCs and corresponding
+> > > RDK boards.
+> > >=20
+> > > The SL261X SoCs include five pin-to-pin compatible SoCs: SL2611, SL26=
+13,
+> > > SL2615, SL2617, and SL2619.
+> > >=20
+> > > Only reset, pinctrl, clk/pll, uart, gpio, i2c, spi, i3c are included =
+in
+> > > this series. The support for Ethernet, USB, SDHCI, CAN, DMAC, XSPI wi=
+ll
+> > > be submitted after this series is merged.
+> >=20
+> > This series is filled with wildcard compatibles, which we don't permit
+> > typically. The only case for SoCs that I've seen them accepted is when
+> > the devices covered are actually just different binnings of the same
+> > device. I took a look at the docs for this device, but it wasn't clear
+> > to me if these are actually binnings or if there are different
+> > integrations here. If they're binnings, I'd rather you used 0 as the
+> > final digit, rather than x, since that matches the synaptics
+> > documentation for the family. If they're not binnings, there's no
+> > guarantee that they share the same errata etc, and must have different
+> > compatibles.
 >=20
-> Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
-> ---
->  .../bindings/clock/syna,sl261x-clk.yaml       |  92 ++++++++++++
->  include/dt-bindings/clock/syna,sl261x.h       | 131 ++++++++++++++++++
->  2 files changed, 223 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/clock/syna,sl261x-c=
-lk.yaml
->  create mode 100644 include/dt-bindings/clock/syna,sl261x.h
->=20
-> diff --git a/Documentation/devicetree/bindings/clock/syna,sl261x-clk.yaml=
- b/Documentation/devicetree/bindings/clock/syna,sl261x-clk.yaml
-> new file mode 100755
-> index 000000000000..3fd380c1dd39
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/clock/syna,sl261x-clk.yaml
-> @@ -0,0 +1,92 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/clock/syna,sl261x-clk.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Synaptics SL261x clock controllers
-> +
-> +maintainers:
-> +  - Jisheng Zhang <jszhang@kernel.org>
-> +
-> +description: |
-> +  The SL261x clock hardware is divided into SoC, CPU, AIO, and system
-> +  manager register blocks. Each clock controller is a child of the node
-> +  containing its register range. The CPU clock node has a phandle to the
-> +  global chip control syscon.
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - enum:
-> +          - syna,sl261x-soc-clk
-> +          - syna,sl261x-cpu-clk
-> +          - syna,sl261x-aio-clk
-> +          - syna,sl261x-system-clk
-> +      - items:
-> +          - const: simple-mfd
-> +          - const: syscon
+> BTW: May I query a qustion?
+> After searching the maillist archieves, it seems now maintainers prefer
+> spiliting this kind of SoC initial support series into separate patches
+> for different subsystems, e.g uart, i2c, i3c, spi and so on, then the
+> SoC pinctrl, clk, reset and dtsi/dts files, but AIUI, there will be
+> dtb check failures with the SoC dts(i) files patch(es), what's
+> the normal solution then?
 
-What's going on here? You're entirely missing specific compatibles for
-your syscon nodes (which aren't clock controllers and shouldn't be
-defined here.
-Similarly to the reset stuff, why can't these just be parts of their
-parent nodes?
+Depends on the type of failure, but yes it can be okay. If the failure is
+some missing schema causing validation to fail, that's fine as long as it
+passes in linux-next (same as when you add a new driver and binding, but
+the dts goes to a different branch). What's not acceptable is breaking the
+build because some header that provides clock defines is missing in the dts
+branch or in the driver branch. In that case, either send all that stuff in
+one "New SoC" PR to the soc tree, or put the binding headers in a shared
+tag that is the basis for your PR to the relevant maintainers (typically
+clock) and the dts PR to the soc tree.
 
-Thanks,
-Conor.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  syna,gbl-syscon:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: Phandle to the SL261x global chip control syscon.
-> +
-> +  '#clock-cells':
-> +    const: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description: Reference clock used as the input to the PLLs.
-> +
-> +required:
-> +  - compatible
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: syna,sl261x-cpu-clk
-> +    then:
-> +      required:
-> +        - syna,gbl-syscon
-> +    else:
-> +      properties:
-> +        syna,gbl-syscon: false
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    osc: clock-osc {
-> +        compatible =3D "fixed-clock";
-> +        #clock-cells =3D <0>;
-> +        clock-frequency =3D <25000000>;
-> +    };
-> +
-> +    chip: syscon@f7e10000 {
-> +        compatible =3D "syscon", "simple-mfd";
-> +        reg =3D <0xf7e10000 0x10000>;
-> +
-> +        clk: clock {
-> +            compatible =3D "syna,sl261x-soc-clk";
-> +            #clock-cells =3D <1>;
-> +            clocks =3D <&osc>;
-> +        };
-> +    };
-> +
-> +    cpu_wrap: cpu-wrap@f7e30000 {
-> +        compatible =3D "syscon", "simple-mfd";
-> +        reg =3D <0xf7e30000 0x4000>;
-> +
-> +        cpuclk: clock {
-> +            compatible =3D "syna,sl261x-cpu-clk";
-> +            #clock-cells =3D <1>;
-> +            clocks =3D <&osc>;
-> +            syna,gbl-syscon =3D <&chip>;
-> +        };
-> +    };
-> +...
-> diff --git a/include/dt-bindings/clock/syna,sl261x.h b/include/dt-binding=
-s/clock/syna,sl261x.h
-> new file mode 100644
-> index 000000000000..4649b233f08a
-> --- /dev/null
-> +++ b/include/dt-bindings/clock/syna,sl261x.h
-> @@ -0,0 +1,131 @@
-> +/* SPDX-License-Identifier: (GPL-2.0 OR MIT) */
-> +/*
-> + * Synaptics SL261X clock tree IDs
-> + *
-> + * Copyright (C) 2025 Synaptics Incorporated
-> + *
-> + * Author: Jisheng Zhang <jszhang@kernel.org>
-> + */
-> +
-> +/* SoC domain */
-> +
-> +/* GBL common clks */
-> +#define CLK_CPUFASTREF		0
-> +#define CLK_MEMFASTREF		1
-> +#define CLK_CFG			2
-> +#define CLK_SYS			3
-> +#define CLK_PERIFSYS		4
-> +#define CLK_APBCORE		5
-> +#define CLK_APBSER		6
-> +#define CLK_ATB			7
-> +#define CLK_HPC			8
-> +#define CLK_EMMC		9
-> +#define CLK_SD0			10
-> +#define CLK_SD1			11
-> +#define CLK_GETHRGMII		12
-> +#define CLK_GETHRGMII1		13
-> +#define CLK_GE0_PTP_REF		14
-> +#define CLK_GE1_PTP_REF		15
-> +#define CLK_USB2TEST		16
-> +#define CLK_USB2TEST480MG0	17
-> +#define CLK_USB2TEST480MG1	18
-> +#define CLK_USB2TEST480MG2	19
-> +#define CLK_USB2TEST100MG0	20
-> +#define CLK_USB2TEST100MG1	21
-> +#define CLK_USB2TEST100MG2	22
-> +#define CLK_USB2TEST100MG3	23
-> +#define CLK_PERIFTEST125MG0	24
-> +#define CLK_PERIFTEST200MG0	25
-> +#define CLK_PERIFTEST200MG1	26
-> +#define CLK_GPU			27
-> +#define CLK_NPU			28
-> +#define CLK_AVIOSYS		29
-> +#define CLK_AIOSYS		30
-> +#define CLK_AVIO_LCDC2SCAN	31
-> +#define CLK_AVIO_IPI		32
-> +#define CLK_AVIO_P		33
-> +#define CLK_AVIO_DPHYRXTXESC	34
-> +#define CLK_AVIOFPLL		35
-> +#define CLK_AVIO_RX_SCANBYTE	36
-> +#define CLK_AVIO_RX_SCANTEST	37
-> +
-> +/* GBL gate clks */
-> +#define CLK_USB0CORE		38
-> +#define CLK_SDIOSYS		39
-> +#define CLK_EMMCSYS		40
-> +#define CLK_GPUAXI		41
-> +#define CLK_GETHRGMIISYS	42
-> +#define CLK_SDIO1SYS		43
-> +#define CLK_USB1CORE		44
-> +#define CLK_GETHRGMII1SYS	45
-> +#define CLK_USB0PHYREF		46
-> +#define CLK_USB1PHYREF		47
-> +#define CLK_APBUART0		48
-> +#define CLK_APBUART1		49
-> +#define CLK_APBUART2		50
-> +#define CLK_APBUART3		51
-> +#define CLK_APBI2C0		52
-> +#define CLK_APBI2C1		53
-> +#define CLK_APBSPI0		54
-> +#define CLK_APBSPI1		55
-> +#define CLK_APBSPI2		56
-> +#define CLK_APBSPI3		57
-> +#define CLK_APBGPIO		58
-> +#define CLK_APBTIMERS		59
-> +#define CLK_APBSYSCNT		60
-> +#define CLK_APBWDT		61
-> +#define CLK_APBDMA		62
-> +#define SL261X_CLK_MAX		63
-> +
-> +/* cpuss */
-> +#define CLK_CPU0		0
-> +#define CLK_CPU1		1
-> +#define CLK_DSU			2
-> +#define SL261X_CPU_CLK_MAX	3
-> +
-> +
-> +/* sysmgr domain */
-> +
-> +#define CLK_CFG_UART0		0
-> +#define CLK_SER_UART0		1
-> +#define CLK_CFG_UART1		2
-> +#define CLK_CFG_UART2		3
-> +#define CLK_CFG_UART3		4
-> +#define CLK_CFG_GPIO		5
-> +#define CLK_CFG_I2CM0		6
-> +#define CLK_CFG_I2CM1		7
-> +#define CLK_CFG_SPIM		8
-> +#define CLK_CFG_SPIS		9
-> +#define CLK_CFG_I3C		10
-> +#define CLK_CFG_XSPI		11
-> +#define CLK_AXI_XSPI		12
-> +#define CLK_CFG_PVT		13
-> +#define CLK_CFG_ADC		14
-> +#define CLK_CFG_PWM		15
-> +#define CLK_BUS_CAN0		16
-> +#define CLK_BUS_CAN1		17
-> +#define CLK_CFG_PDM		18
-> +
-> +#define CLK_SER_UART1		19
-> +#define CLK_SER_UART2		20
-> +#define CLK_SER_UART3		21
-> +#define CLK_DEB_GPIO		22
-> +#define CLK_SER_I2CM0		23
-> +#define CLK_SER_I2CM1		24
-> +#define CLK_SER_SPIM		25
-> +#define CLK_SER_SPIS		26
-> +#define CLK_SER_I3C		27
-> +#define CLK_SER_XSPI		28
-> +#define CLK_HS_PVT		29
-> +#define CLK_CORE_ADC		30
-> +#define CLK_SER_PWM		31
-> +#define CLK_SER_CAN0		32
-> +#define CLK_SER_CAN1		33
-> +#define CLK_SER_PDM		34
-> +#define CLK_REF_CALIB		35
-> +
-> +#define CLK_MCU_REF		36
-> +#define CLK_MCU_PLL		37
-> +#define CLK_MCU_IO_PLL		38
-> +#define CLK_MCU_APB		39
-> +#define CLK_MCU_AXI		40
-> --=20
-> 2.53.0
->=20
-
---8PUm9dCOOcXFVem5
+--0aKKosY+SZkBUlIw
 Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCarwVrAAKCRB4tDGHoIJi
-0lBNAQDZMOYK+Svkt7bavpqwDnNzw0s9RrPE7ghr2xnd802PkwEAz6WsjFxD+d2k
-18PAB7WNfoQN2zckLdyXXfOvE+NmmQw=
-=A6nB
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCar06PAAKCRB4tDGHoIJi
+0hpkAP0blrEbmogoZD0AKnwhpfLwMnReZOlvZF7i9+6g8f+4VAEAnxRjQq9YWWJf
+7AVUGg191KqlxkjCS4xQdsNuVaTiiQw=
+=6gkk
 -----END PGP SIGNATURE-----
 
---8PUm9dCOOcXFVem5--
+--0aKKosY+SZkBUlIw--
 
 
---===============8544824483099437853==
+--===============7020796014814420037==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -389,5 +172,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============8544824483099437853==--
+--===============7020796014814420037==--
 
