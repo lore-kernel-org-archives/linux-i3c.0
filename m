@@ -4,73 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C7F9CA5FC7
-	for <linux-i3c@archiver.kernel.org>; Wed, 30 Sep 2026 15:36:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6DC3CA5FCB
+	for <linux-i3c@archiver.kernel.org>; Thu,  1 Oct 2026 15:10:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+XbhzmrRdozYtvxGdSM82h06eJp+xlBXr/VUYqxadl4=; b=fJJdNdDxwAe0jp
-	cSA9LIBjbkzm/Ds7m6ig2FtASyH48LBjxyqoMmhQ165vrp7WwJl+oQkyTleUZQIv2I06BnGvub44L
-	mt5ZHd+xtEwro74dTCM1CMxEtCDU8FMfs9Y4WS8/C9mt6zGvq6ltrbCxmaAPPxZCOEDce3sGAveAx
-	q+0XKs1AxdGTv2VXGbYKRCAT2/UmwvhGLA8yOkiMsOXTbSQaYX7i++G2pnvX+1SWqKwRaGblksFXD
-	k3md9AoBqPnLCBuTSbOAEYuv4xGMZfmwylR0MShpT2H0NjPEa9+njDCT9EbzxlngU8KjA2BDbAqdQ
-	Ojy/v8THyg/B34z9biuA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QC1MEI8Czf6QWOZE9V4BZVf1rdg7H1EOj4v2HYehdGk=; b=1b0mMClnWZ5ofZ
+	ZC/9qCB5AutrEX5GfTOd5WrZ3LKb7KMKyabamNzeqfLC5s3l1lNIep1jr9LdXV9c8GJA2W9od1PpI
+	FPw6tWFtsw3hQWj29vIAa4ckMlRVX0mQtwxDO69uRxsXrsh1PW1NHEOZLLooFbliMrrlqQtP5Zra9
+	o+bnQtztmmnxJc614TRhldsCg1fpuf3myuFUkcRHNhFnIFnRv0GmDPR53f5xudxPklnjVES5r8Lmv
+	/hDRKTF9IQgiDofpcGEz+qW+nSfkmhOg0JW5IBMPJrbH9Q8upscvToyZilNpI97DD3JnPrCBq6NCT
+	f+oSGkTFqEo9nyHMFUJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBwLj-00000006XWA-4AsT;
-	Wed, 30 Sep 2026 15:36:03 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xCIQz-00000009U5Z-0U4w;
+	Thu, 01 Oct 2026 15:10:57 +0000
+Received: from mail-japanwestazon11011010.outbound.protection.outlook.com ([40.107.74.10] helo=OS0P286CU010.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBwLY-00000006XSI-2VmB;
-	Wed, 30 Sep 2026 15:35:52 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id ABF8A60211;
-	Wed, 30 Sep 2026 15:35:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C2F6C1F0089B;
-	Wed, 30 Sep 2026 15:35:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790782551;
-	bh=wS4LjSmeazs7ipEDl8K4WoxVwnKJqPAAcY7mjsKl19I=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=ENsxnJqmKcCzQZ8LtzXYoty9iQBgyMbQ5ouiTwV+pPSNRRJa/HzE3uVwu9gdjL2Qu
-	 cCcprq6/VuytjCI2cRuOnwFqzy1pvxOZRSh41CRX5PzT/drKE5NCvDjy/p3sTUpM6t
-	 dOQ4QNR7D+dfaHgZ7jHN5N8niUKBGd8uSADoEm7ByRsKdm4v1vChc59Q12OrriwIjt
-	 o7rJpNBR2QMSvHDhF/XgZqzMQUnDdVx9ThN7t3o+mTjRM8TsengaDQDexOQKMckmES
-	 VGYiJRAbQIWfUbpgF2CXcgKYyvvOiD+8IwoTjZfbgAc28SA04z8OYLlOyQQ3kHb12G
-	 BMKs34GfPoovg==
-Date: Wed, 30 Sep 2026 23:15:48 +0800
-From: Jisheng Zhang <jszhang@kernel.org>
-To: Conor Dooley <conor@kernel.org>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	Brian Masney <bmasney+clk@redhat.com>,
-	Jerome Brunet <jbrunet+clk@baylibre.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Lee Jones <lee@kernel.org>,
-	Linus Walleij <linusw@kernel.org>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Jiri Slaby <jirislaby@kernel.org>,
-	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
-	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 08/20] dt-bindings: reset: add Synaptics SL261X SoCs
-Message-ID: <ar0npPCHX1P5Gjzx@xhacker>
-References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929061417.20733-9-jszhang@kernel.org>
- <20260929-sprang-stir-af07a907ccb2@spud>
+	id 1xCIQv-00000009U4t-1d20
+	for linux-i3c@lists.infradead.org;
+	Thu, 01 Oct 2026 15:10:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=SbK/KlGlBgfuvnRAPtUIk3t5sIdy21FZ6eWOr4Eks6Of8OC5z5YQflCBLa4U2/1RqMhBxIlDLXZFZQdvc0nU5iVFJYrkcxOOLsQPVa89px+/cGBpUaBfKq/pcQc2Ys6crvo/CDuMlhRmOuvCgG2+fHsTBh/Xh7U4Xp2McfwDRZe2tIz/eiZAI153wUHDUN9vTz90qD15lkEyqQJNRMyu0g0vJQFa0avTppNHtYvm9P1VVS3bLRdvjk+EmISmjzHnVZ/V+komGyuZda4JVZM1K86VKyh3YJOUzOja0Iz8P5rRdeeDCsC6trTaCdrDN9kahyAJd+BeO7GteZBG2Xd1aQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=j739L7rUCmNjaLKZN1985XO0CsCsdoJrePR3yrJ2/J0=;
+ b=lEOMdtuagbFSCq4ayYwxGjn6gDxwzmb8hTiR+4i/mmoprZK4rBBWFtx47dxOe/tkKAU1CjwwZpz9C/F7C990yF1H1uaZ3ddBNRtmgl7Zf0UqTqfp03ld6L36VeaJvDlM8r9hGiC4aNcqFzSTAz7TafrdinW42JxpCGXcBn909zR/FXRfp7I8kuc8J+18OrsX1/h8idaa5/vf/S15e/GUl5sHz4UmP5tKdtF2ZZU020B6qYI2tP9KPeLb87rO3OMn1BwAXsawFvqiSVsNWRVB+3vEEonZd7dZXiY5IIGTJkP47ZBQo6G0eZTIwld3En0sLNt2+Mv8yHzKHTIy8FYLEA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 8.62.32.50) smtp.rcpttodomain=bootlin.com smtp.mailfrom=renesas.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=renesas.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=j739L7rUCmNjaLKZN1985XO0CsCsdoJrePR3yrJ2/J0=;
+ b=JJBrBVvz8kyl+zjO/zI86+EdT8n0AfskzRZigMnGAdw5cduUt4Yn/PnV57kQM850ub5yyYsBMJ3mVWTWc8bqrNd1VCi4XBXaSi45pH6Kx4CUDRd0y0Uf7Qtk3swOE4NfQMu+exae64i6Bgb4wDLfRG5MGjwI9r0JWQ5AjgbFPMo=
+Received: from TYCPR01CA0127.jpnprd01.prod.outlook.com (2603:1096:400:26d::12)
+ by TYYPR01MB13985.jpnprd01.prod.outlook.com (2603:1096:405:1a6::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.472.18; Thu, 1 Oct
+ 2026 15:10:42 +0000
+Received: from TYO1EPF0000501F.JPNP286.PROD.OUTLOOK.COM
+ (2603:1096:400:26d:cafe::42) by TYCPR01CA0127.outlook.office365.com
+ (2603:1096:400:26d::12) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.472.17 via Frontend Transport; Thu, 1
+ Oct 2026 15:10:42 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 8.62.32.50) smtp.mailfrom=renesas.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=renesas.com;
+Received-SPF: Pass (protection.outlook.com: domain of renesas.com designates
+ 8.62.32.50 as permitted sender) receiver=protection.outlook.com;
+ client-ip=8.62.32.50; helo=ejcrelay005p.adwin.renesas.com; pr=E
+Received: from ejcrelay005p.adwin.renesas.com (8.62.32.50) by
+ TYO1EPF0000501F.mail.protection.outlook.com (10.167.240.4) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.472.14
+ via Frontend Transport; Thu, 1 Oct 2026 15:10:40 +0000
+Received: from [192.168.1.82] (DEU-5CG4161SZR.adwin.renesas.com [10.226.92.88])
+	by ejcrelay005p.adwin.renesas.com (Postfix) with ESMTP id D48293000255;
+	Fri,  2 Oct 2026 00:10:37 +0900 (JST)
+From: Diogo Ivo <diogo.ivo.sx@renesas.com>
+Date: Thu, 01 Oct 2026 16:10:09 +0100
+Subject: [PATCH] i3c: renesas: Fix MDYAD(x) field length
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260929-sprang-stir-af07a907ccb2@spud>
+Message-Id: <20261001-divo-ssgrlpcsrc-2966-i3c_mdyad-v1-1-2250225e6d20@renesas.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXN0QrCMAxA0V8ZeTbQVqjUXxGRLokzottodDjG/
+ n1VH8/LvQuYFBWDY7NAkUlNh77C7xqgW+47QeVqCC5E75xH1mlAs648RrJCGFKMqHu6PHnOjK7
+ NB+cpZeYENTIWuernNzid/7Z3exd6fauwrhtSO+vjggAAAA==
+X-Change-ID: 20261001-divo-ssgrlpcsrc-2966-i3c_mdyad-0ba701c9add9
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ stable@vger.kernel.org, Diogo Ivo <diogo.ivo.sx@renesas.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1790867437; l=1100;
+ i=diogo.ivo.sx@renesas.com; s=20240529; h=from:subject:message-id;
+ bh=p7deA08Qe7Ys+za7Smwz2XnGR9jNHZdyiazT91+7k/c=;
+ b=b639q54jB7mWBOFE+yaGhke88acOOiwSLBr54/zfhli38SYwaxQVW2wxnnEH8NoZDTjBYPqnf
+ rt3nUkFGJ+SAQhB9Rc+J+JOLkIYoFCxIs+nZDB6iBzi+npUSlW04b22
+X-Developer-Key: i=diogo.ivo.sx@renesas.com; a=ed25519;
+ pk=BRGXhMh1q5KDlZ9y2B8SodFFY8FGupal+NMtJPwRpUQ=
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TYO1EPF0000501F:EE_|TYYPR01MB13985:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8c167102-8eb0-4d95-9bd1-08df1fce2831
+X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|82310400026|1800799024|36860700016|23010399003|11063799006|56012099006|10067099003|18002099003;
+X-Microsoft-Antispam-Message-Info: FelJWm4UbruUhG4pWzfqBn9xcLwAhBI5c03hr4wIzz7YX5u70Jm56IJWmYMmRPZqTONywm/5f/Ho8HqhtkKKrI8lzda+ljUDMsRKJzmEK6mIui0WYtntrXGiwruAIOocw3TMJIsDjKGjVAhX1VbAf8Ce3tL+AiJd3CtT6IFcdlIPTt5HOKid7EwwqiIo+dLKbVgJsz5S3QF8nViOpPfi1/Cmmm+mVy207p1263xKuxVCZeow+IglbVvngzA94+lXkYm0T6L4YsuUtXaaN6r9bx6Z3bicsiU1EX7eH7UOZQx1rBRE+hVT8odcsjObnDTCh3OBACxpWSor7KMxeu2vv7+0EY96zcb1YDx/TfNslRgH4uofyXLZ5Iyiu2/FCLxUFocohVQbhfNMljFZjSRXtMxQ1Y9GDmwoALLg3v22jcQfx4mKZd9E9VTkR2NwdoAq+rZ/pDmdHD3F3N+YTItpjZuM4g36wi5HgPCpneu3aDEMKD8ruKnZyDMHv1lZcqHS9hCXOa72HhogjUhxgHJm4SaUu2x5i6r+FWj4CYWPMKHTY7OCONkRhpDLVviMxuCmIw7e3TYzx0KD2wGFUJ4BctmaYhZaaCf839xNxHai12G44Phl85iz0EiAtqMPMmA1V2Dmf9mR6URlEeYnJAKSkQAx3yYwXlmtPld1JOyk10oTj0nl4b5UpjVXX+0W4/0rnKcN3iyRuGaRR1c3JD4BoA==
+X-Forefront-Antispam-Report: CIP:8.62.32.50;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ejcrelay005p.adwin.renesas.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(82310400026)(1800799024)(36860700016)(23010399003)(11063799006)(56012099006)(10067099003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: j+ZyAS+8zFxRxXZ69oKY63qd0CitV7yeGAv6Dp23785UQtCtj63kBHJ4BlMmwJxrGIALRTf5fBsFU4eaRU+kLrjfM2VoC8aY5sIcRVQ4cSglX01AiIxh4Q2nu0Fty7SKFcKqSpnpgsKqatEJJA1a5rPxG/oYufozF4fiAMFah9NFTotw31iCXRtWnpD3IxOd45HjKkrYKhBCLT4CB/l6m59oJ31oAAD0M0bQETR1s3felrg+EnSCCYp26XLXLFWIblRhA2ut6Dxpxc78Z890KXMXW0C8QjpzCS/zZ1HBc60XuZlmF19Zsn19UMg7sOQ3h7aad7rcYCehiif+AuTQct1H2x6GiQ/5MlwdSpC2VFOfL7qTfeCrhmc5SEdYHUH0o4FyRON/iZf6i+j1rSfbMPRtatjbKW+YWzC5kNzoLCIGpt379ApkqrlffqlwULrd
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Oct 2026 15:10:40.7475
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8c167102-8eb0-4d95-9bd1-08df1fce2831
+X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=53d82571-da19-47e4-9cb4-625a166a4a2a;Ip=[8.62.32.50];Helo=[ejcrelay005p.adwin.renesas.com]
+X-MS-Exchange-CrossTenant-AuthSource: TYO1EPF0000501F.JPNP286.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYYPR01MB13985
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261001_081054_175486_F20E6D78 
+X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,198 +131,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 29, 2026 at 08:44:13PM +0100, Conor Dooley wrote:
-> On Tue, Sep 29, 2026 at 02:14:05PM +0800, Jisheng Zhang wrote:
-> > Add device tree bindings for the resets on Synaptics SL261X SoCs.
-> > 
-> > Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
-> > ---
-> >  .../bindings/reset/syna,sl261x-reset.yaml     | 40 ++++++++++
-> >  include/dt-bindings/reset/syna,sl261x-reset.h | 80 +++++++++++++++++++
-> >  2 files changed, 120 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
-> >  create mode 100644 include/dt-bindings/reset/syna,sl261x-reset.h
-> > 
-> > diff --git a/Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml b/Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
-> > new file mode 100644
-> > index 000000000000..8cfec17df800
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/reset/syna,sl261x-reset.yaml
-> > @@ -0,0 +1,40 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +# Copyright (C) 2026 Synaptics Incorporated
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/reset/syna,sl261x-reset.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Synaptics SL261X reset controller
-> > +
-> > +maintainers:
-> > +  - Jisheng Zhang <jszhang@kernel.org>
-> > +
-> > +description: The reset controller node must be a sub-node of the chip
-> > +  controller node on SL261X SoCs.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - syna,sl261x-soc-reset
-> > +      - syna,sl261x-system-reset
-> > +
-> > +  "#reset-cells":
-> > +    const: 1
-> > +
-> > +required:
-> > +  - compatible
-> > +  - "#reset-cells"
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    chip: chip-control@f7e10000 {
-> > +        reg = <0xf7e10000 0x1000>;
-> > +
-> > +        chip_rst: reset {
-> > +            compatible = "syna,sl261x-soc-reset";
-> > +            #reset-cells = <1>;
-> > +        };
-> 
-> Why can't this just be part of the parent node?
+Fix the length of the MDYAD(x) macro to be 7 bits as it represents an
+I3C address, which is 7 bits. The length of this field was confirmed on
+the documentation of the RZ/G3{E,L,S} SoCs.
 
-Good question! IMHO, the reasons are:
+Fixes: d028219a9f148 ("i3c: master: Add basic driver for the Renesas I3C controller")
+Cc: stable@vger.kernel.org
+Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
+---
+ drivers/i3c/master/renesas-i3c.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-1. the so called Gbls(Gbl means global) such as mcuGbl and
-chip control Gbl contain not only reset, pinctrl and clk/plls
-but also some other registers for different purposes, e.g in the
-chip control gbl, there are some registers to control eth phy sel(RMII
-or RGMII), and TXC 90 degree selection etc. These registers will
-be used by the Ethernet driver;
+diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+index 28c0927a0179..8b264f72e55c 100644
+--- a/drivers/i3c/master/renesas-i3c.c
++++ b/drivers/i3c/master/renesas-i3c.c
+@@ -37,7 +37,7 @@
+ #define  BCTL_BUSE             BIT(31)
 
-While there's no pinctrl regs in avioGbl and vppGbl. In the vppgbl,
-there are some registers for DPHYTX etc.
+ #define MSDVAD                 0x18
+-#define  MSDVAD_MDYAD(x)       FIELD_PREP(GENMASK(21, 16), x)
++#define  MSDVAD_MDYAD(x)       FIELD_PREP(GENMASK(22, 16), x)
+ #define  MSDVAD_MDYADV         BIT(31)
 
-As can been, in different Gbls, there maybe different purposes registers, no
-obvious patterns.
+ #define RSTCTL                 0x20
 
-So the question here is why not split the gbl into different register
-spaces, and abstract each space for each function group? Two blocking
-points make this impossible and ugly: different reg space may not be
-aligned at 4KB boundary, e.g reset: 0x350 ~ 0x37c; eth phy sel:0xa18;
-some registers which belong to similar functionality, e.g clks, may not be
-adjacent.
+---
+base-commit: 66b734f67a4a0a4c2313afb89033d5ab8b8f7523
+change-id: 20261001-divo-ssgrlpcsrc-2966-i3c_mdyad-0ba701c9add9
 
-So the best way is to abstract these GBLs via. "syscon", "simple-mfd", and
-put necessary subnodes such as reset, pinctrl and clks under the GBL
-node. If the registers in GBL is misc control, pass the syscon phandle
-to the main driver, e.g I planed to pass the syscon phandle to GMAC
-driver to control the RMII/RGMII selection.
+Best regards,
+--
+Diogo Ivo <diogo.ivo.sx@renesas.com>
 
-2.follow current bg2 and bg2q style
-e.g arch/arm/boot/dts/synaptics/berlin2q.dtsi
+________________________________
 
-IMHO, why bg2 and bg2q dtsi files are implemented as current
-style is due to the above point 1.
+Renesas Electronics Europe GmbH
+Registered Office: Arcadiastrasse 10
+DE-40472 Duesseldorf
+Commercial Registry: Duesseldorf, HRB 3708
+Managing Director: Carsten Jauch
+VAT-No.: DE 14978647
+Tax-ID-No: 105/5839/1793
 
-Kindly let me know if there's a better solution.
-
-> From a quick check of the dts, the node with this subnode didn't also
-> have a system-reset node too, so there's no conflict or anything of that
-> nature.
-> 
-> > +    };
-> > diff --git a/include/dt-bindings/reset/syna,sl261x-reset.h b/include/dt-bindings/reset/syna,sl261x-reset.h
-> > new file mode 100644
-> > index 000000000000..7034f58aae5b
-> > --- /dev/null
-> > +++ b/include/dt-bindings/reset/syna,sl261x-reset.h
-> > @@ -0,0 +1,80 @@
-> > +/* SPDX-License-Identifier: (GPL-2.0 OR MIT) */
-> > +/*
-> > + * Copyright (C) 2026 Synaptics Incorporated
-> > + *
-> > + * Author: Jisheng Zhang <jszhang@kernel.org>
-> > + */
-> > +
-> > +#ifndef _DT_BINDINGS_SL261X_RESET_H
-> > +#define _DT_BINDINGS_SL261X_RESET_H
-> > +
-> > +/* ACPU subsystem */
-> > +#define RST_SOC_SDIO0		0
-> > +#define RST_SOC_USB0		1
-> > +#define RST_SOC_EMMC		2
-> > +#define RST_SOC_GETH0		3
-> > +#define RST_SOC_SDIO1		4
-> > +#define RST_SOC_USB1		5
-> > +#define RST_SOC_GETH1		6
-> > +#define RST_SOC_USB0PHY		7
-> > +#define RST_SOC_USB0CORE	8
-> > +#define RST_SOC_USB0MAHB	9
-> > +#define RST_SOC_USB1PHY		10
-> > +#define RST_SOC_USB1CORE	11
-> > +#define RST_SOC_USB1MAHB	12
-> > +#define RST_SOC_UART0		13
-> > +#define RST_SOC_UART1		14
-> > +#define RST_SOC_UART2		15
-> > +#define RST_SOC_UART3		16
-> > +#define RST_SOC_I2C0		17
-> > +#define RST_SOC_I2C1		18
-> > +#define RST_SOC_SPI0		19
-> > +#define RST_SOC_SPI1		20
-> > +#define RST_SOC_SPI2		21
-> > +#define RST_SOC_SPI3		22
-> > +#define RST_SOC_APBTIMERS	23
-> > +#define RST_SOC_APBSYSCNT	24
-> > +#define RST_SOC_APBWDT		25
-> > +#define RST_SOC_APBGPIO		26
-> > +#define RST_SOC_APBDMA		27
-> > +#define RST_SOC_GPUCORE		28
-> > +#define RST_SOC_NPUCORE		29
-> > +#define RST_SOC_AVIOAIOG	30
-> > +#define RST_SOC_AVIOVPPG	31
-> > +#define RST_SOC_AVIOVIPG	32
-> > +
-> > +/* system subsystem */
-> > +#define RST_SM_ADCCORE		0
-> > +#define RST_SM_ADCPRST		1
-> > +#define RST_SM_CAN0PRST		2
-> > +#define RST_SM_CAN0SRST		3
-> > +#define RST_SM_CAN1PRST		4
-> > +#define RST_SM_CAN1SRST		5
-> > +#define RST_SM_GPIOPRST		6
-> > +#define RST_SM_GPIOSRST		7
-> > +#define RST_SM_I2CM0PRST	8
-> > +#define RST_SM_I2CM0SRST	9
-> > +#define RST_SM_I2CM1PRST	10
-> > +#define RST_SM_I2CM1SRST	11
-> > +#define RST_SM_I3CPRST		12
-> > +#define RST_SM_I3CSRST		13
-> > +#define RST_SM_PDMPRST		14
-> > +#define RST_SM_PDMSRST		15
-> > +#define RST_SM_PVTHSRST		16
-> > +#define RST_SM_PVTPRST		17
-> > +#define RST_SM_PWMPERIRST	18
-> > +#define RST_SM_PWMPRST		19
-> > +#define RST_SM_SPIMPRST		20
-> > +#define RST_SM_SPIMSRST		21
-> > +#define RST_SM_SPISPRST		22
-> > +#define RST_SM_SPISSRST		23
-> > +#define RST_SM_UART0PRST	24
-> > +#define RST_SM_UART0SRST	25
-> > +#define RST_SM_UART1PRST	26
-> > +#define RST_SM_UART1SRST	27
-> > +#define RST_SM_UART2PRST	28
-> > +#define RST_SM_UART2SRST	29
-> > +#define RST_SM_UART3PRST	30
-> > +#define RST_SM_UART3SRST	31
-> > +
-> > +#endif /* _DT_BINDINGS_SL261X_RESET_H */
-> > -- 
-> > 2.53.0
-> > 
-
-
+Legal Disclaimer: This e-mail communication (and any attachment/s) is confidential and contains proprietary information, some or all of which may be legally privileged. It is intended solely for the use of the individual or entity to which it is addressed. Access to this email by anyone else is unauthorized. If you are not the intended recipient, any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.
 
 -- 
 linux-i3c mailing list
