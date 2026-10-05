@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B76FBCA5FF0
-	for <linux-i3c@archiver.kernel.org>; Mon,  5 Oct 2026 15:44:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD051CA5FFC
+	for <linux-i3c@archiver.kernel.org>; Mon,  5 Oct 2026 15:44:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MFKQah9WcE8id1ZPENHL3QbQ6sPV0R85rc07PlCU07I=; b=BkmZ4vW3lyXeMs
-	uuo+4svmTSTwvM+0ycbrZtObHe0jn9S4S/z3pkKzQpxZ6sXCXrbK/IqoVL+7Q6kTCUv/FadWq0yBX
-	JdIxRgTktbfi49fYPvIsRH+TW7hT8MjYrnyEQGWpvvlDtfWwLe9kTR018fr7StLU48i8wTT3Q5VI7
-	VrscJpDSmwrEBrx0Ncj2ydsIpfDHp4WFweVo7kWrWtjX9UBdIwXxXrckptf4LgxkKvHZk+BArvYYr
-	2oqaWWokGAiOTlONKMeLHMdyI/DR/MIoq1CvzNSUnU6jSR2VhPtAVWUBrVPPC8yJ1oq6lVogmozGi
-	rltdMnX6mJdWZqSE2KKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qgZtchPDH6Gu87qohyAxHUeMJsbt9yDkhFWGGoMkyLw=; b=chbAyOfqycNfA9
+	+FBpKeAR+S4V6k780v4L7NVwc+QEjh8TZ9JAIYL1gyiPFh/sV/jq2xEBKJtZeMJgMfo2kqTb5Byvy
+	/mexjXYGMe/2vMqqc186u2/K/LuSqn37KcXHn0KNqEMrZmIcD8z88oEDw1YQTfeIbrmh66/u7FYuz
+	IzCe2Kvepnry+Ou3yDNz+s3ns+LdPKOHLzWTtuVCd5+rSLCnXGwKf+8qFlKhc0eXgBZ9GhJSOw/aC
+	BQ3f/RPtVnXlYqT/731uwR3pkO2A2xrOJz49HYp+FwHetiw76rWh5ZOZ+93p81uQEhNBgw3jii+8v
+	PyzzyEK0RlvatHMAYsDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDkrZ-0000000GmVi-1WPZ;
-	Mon, 05 Oct 2026 15:44:25 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xDkrb-0000000GmW4-1eor;
+	Mon, 05 Oct 2026 15:44:27 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDkrX-0000000GmVR-1sbG
+	id 1xDkrZ-0000000GmVh-3tTC
 	for linux-i3c@lists.infradead.org;
-	Mon, 05 Oct 2026 15:44:23 +0000
+	Mon, 05 Oct 2026 15:44:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id E0FA560514;
+	by tor.source.kernel.org (Postfix) with ESMTP id 3335F60514;
+	Mon,  5 Oct 2026 15:44:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1147F1F00893;
 	Mon,  5 Oct 2026 15:44:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BE4F21F000FF;
-	Mon,  5 Oct 2026 15:44:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791215062;
-	bh=duh1CZ14r9XeWHOeo0rXi5XjMvhGZKGUxzSBxfATc50=;
-	h=From:To:Cc:Subject:Date;
-	b=G+g/06BuFkh+yJNEzPkCi7GR+Zd+Zx0FLylJfoZy0t4QkmS5nyblDCuBAeaEauFxn
-	 zPLlCNIa/MUr/Zjy7l7eDxO237X1br1k19YzsTqUWFMA2gSlQtp1d4uChcqo1WTNc/
-	 Rz0kiBk4CUG5NOzFxRyNfJBFLeCpoN5uL89vaHQUlz0QMUawaGKSntlZHjyI1XRuVP
-	 AdUeciarYt78LmcWCaKwPbGYGbpCRKv/9q3DXQqQDbfK7C2V+vlKmT4uWbBquVXkuQ
-	 YC/inZJras+Ljm5Y6iZkeUQt5U0Dlp7iJE633mwdQHILj5FZct5PT5QsgdkV5PNQEC
-	 wuETUD4H6b/XQ==
+	s=k20260515; t=1791215064;
+	bh=DqDJogYpgQ3jah0rAOAnF+gLRYHGFjmYGPMIhElTFIE=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=YKsy63/aDAey26QsfWa2amcXZhztspcU8MlsPcUvQ+jDf7xbzRxwODv440s7CJqSz
+	 6v6FBABURMTxBZPtrmyAc6dgzznxyRMFMraMu1G5LWtLfV+t4dgOU/9AVEu7i5WsjL
+	 L/xzdgBxtRPQrAIPVLiL4xvdEgb6M+3WfaUTjpbZv+Gz9E8pR2zL/KmpetFGlZjulr
+	 tIniM6C7IOXZPFOgyH0kCRhB1pbm8LPiBVHHuu9TJ/kZEAzInRzMf3zdLYEX5rKMRr
+	 GevrWdEb/gVfFaIulUb81yiCqNF4Sha/LmXmFPAAc0aJE/q6Nd5RB7IILH+29KQEgT
+	 jLQ2jcFDOkDuA==
 From: Jisheng Zhang <jszhang@kernel.org>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
@@ -52,10 +52,12 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 Cc: linux-i3c@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 0/3] i3c: dw: Support Synaptics sl2610 i3c
-Date: Mon,  5 Oct 2026 23:24:22 +0800
-Message-ID: <20261005152425.25319-1-jszhang@kernel.org>
+Subject: [PATCH v2 1/3] dt-bindings: i3c: dw: support up to two reset lines
+Date: Mon,  5 Oct 2026 23:24:23 +0800
+Message-ID: <20261005152425.25319-2-jszhang@kernel.org>
 X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20261005152425.25319-1-jszhang@kernel.org>
+References: <20261005152425.25319-1-jszhang@kernel.org>
 MIME-Version: 1.0
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,28 +75,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-This is subset of the "arm64: add Synaptics SL261X SoCs and RDK boards"
-series.
+The Synopsys DesignWare I3C master controller can have multiple reset
+lines, such as core reset, apb reset, and dma reset.
 
-Support the Synaptics SL2610 SoC I3C controller, which is compatible
-with the Synopsys DesignWare I3C.
+Update the DT binding documentation to increase maxItems for the resets
+property to 2.
 
-Since v1:
- - collect Reviewed-by tag
- - use sl2610 instead of sl261x
- - restrict altera i3c reset to 1
- - send as a separate series for i3c subsystem
+Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+---
+ .../devicetree/bindings/i3c/snps,dw-i3c-master.yaml  | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-Jisheng Zhang (3):
-  dt-bindings: i3c: dw: support up to two reset lines
-  i3c: dw: switch to array-based exclusive reset control
-  dt-bindings: i3c: Add Synaptics sl2610 i3c
-
- .../bindings/i3c/snps,dw-i3c-master.yaml      | 16 +++++++++++--
- drivers/i3c/master/dw-i3c-master.c            | 24 ++++++++++++++-----
- drivers/i3c/master/dw-i3c-master.h            |  2 +-
- 3 files changed, 33 insertions(+), 9 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
+index dc7ee38001d6..6da7d90caa3e 100644
+--- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
++++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
+@@ -12,6 +12,16 @@ maintainers:
+ allOf:
+   - $ref: i3c.yaml#
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: altr,agilex5-dw-i3c-master
++    then:
++      properties:
++        resets:
++          maxItems: 1
++
+ properties:
+   compatible:
+     oneOf:
+@@ -39,7 +49,7 @@ properties:
+     maxItems: 1
+ 
+   resets:
+-    maxItems: 1
++    maxItems: 2
+ 
+   power-domains:
+     maxItems: 1
 -- 
 2.53.0
 
