@@ -4,110 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9300DCA9ED0
-	for <linux-i3c@archiver.kernel.org>; Mon, 12 Oct 2026 22:03:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65371CC6B03
+	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 07:31:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eaURabQmQUMs5VkDomwcGQ/Xb+AOJBY4Ly1VVKZwCtA=; b=ZyxXJYr2qrqBIr
-	BWXlCaLVvI2xydRWEdpBmW4gk8H8KruIspLQBDzJoBrrvuKshgKzEbB+/y8qenNwO1by0laexipen
-	A9to6fykn1APGiPK+ILeReV1UmkCfDEDe9kUE9K5QguoqFtPWwd0LXUn0VB69Eax/iUUp3sZUanCO
-	1WxUl657hEujT9hu2BYWqopdG5x30//UQJRsJyEdg5sB9KGEblEsjTHu9Pds9SzfS4bWDERGImQel
-	TBrhvPJPDUMJMMQ7TTQwT9wLNzhKXkq/jZlzsqt5JDJKpXMyLdi1FdAJMcmoTgrJwbazuwTQ+rOwR
-	om6us9/xx0LIcQXIJ32w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X4ULPzfloDp1GSlIozfEbqOw029oyIPRrrfxZrHIxKk=; b=OkfUPddV4oYn93
+	mckQjZXafAjonUxPcJsx+nq643f9vPpBd039G7jbe+WVHbCFfT9yZf1/BkGR6++WKyvHnBTQ+Ot+C
+	CCOJpMOGA3TvDL8bpVa4JZMo7qmx9ZoCxvpvJpAJlbE8zekMYXUeQFDRhfRQxEfwREX4U5Ndte6bD
+	6I391uozjsAnpHo8YEwGkGsiKPKrIAS3/9WStNNV7Lc1J1aiLx/Fhg610Xzd1OtJaRaEVy2jt37g4
+	ijoQ9oGQ4jr4sjcEemChXLKyVYngXIfXZtVrb4m/N9B1dlUcAV1CyXYFS1rwh/m8vcnJTUanfpLNd
+	ItaAaAFVIZOwBUqwUOYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGO6w-0000000Bb6g-3Xkc;
-	Mon, 12 Oct 2026 22:03:10 +0000
-Received: from mail-yw1-x1133.google.com ([2607:f8b0:4864:20::1133])
+	id 1xGWzG-0000000CDg7-0W6T;
+	Tue, 13 Oct 2026 07:31:50 +0000
+Received: from mx0b-00230701.pphosted.com ([148.163.158.9])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGO6u-0000000Bb6N-0cWv
+	id 1xGWzB-0000000CDev-1fVB
 	for linux-i3c@lists.infradead.org;
-	Mon, 12 Oct 2026 22:03:09 +0000
-Received: by mail-yw1-x1133.google.com with SMTP id 00721157ae682-8b0703011c2so16680657b3.2
-        for <linux-i3c@lists.infradead.org>; Mon, 12 Oct 2026 15:03:07 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1791842587; cv=none;
-        d=google.com; s=arc-20260327;
-        b=LAWqdwcFYwBDV23WvYJe+IwmQbt6DOgvy5maDH2auUQPzTMPPG9Nipf1IHKYRn90kF
-         SuDhyLX8AXjBKQMb5sMvsgST0KlTtXba1okwrTTftxj9QiiFlWqv//TMqdGFQuBvcARI
-         2+0kZfAgySqx5/amLvr9O78/QapLTWQ4jw42rP2goBGrkOFrNR8pbAn05+vTzXV+mnEm
-         LcVQiq4BAoJEHiiWIb+smu/Cs76325NJdLM17xvC2s9p2Jxru1SnbrBLzgTHvqRoqNqe
-         nq3D/QBHv3CKccHEjKQFffpSz8VJUAT31/Mr8zXYu5lcYsJmZLo4M/KSLcApc+q31meO
-         7kNw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=vzyboqz3gdzKLZQtJtdBkHZxkGcpVNHjaJ87oe6XI4I=;
-        fh=YCGhyQg4qFhP3hveCMRc8rl8vylMJiw9v1MDLLOWzYo=;
-        b=ZrPWsanzv/XtrjCERYp4G1UBSx0ozXX95bFXLiPoV2K1jc1CnVXyLl7aUbItKJdVFE
-         DBnQ7Sw/1uhAe9pdevTHMtup+4+6TudDcjiscG+7vdxrl1r6RAsGKJthOY2XK0RxW+xK
-         aKqtYNlyOIAS1suSHBqv1tLgNTJKQN5ip1gPTi+o8tMN2VfT2C+q9SyvxwywMaVyv0En
-         vC1yBPbmD3farneFt4um+qoggUiQxOcX3olcKmfl8DDKJL9urP53EmZCfgXCiQQuJ520
-         8GLyIPopojZKqEYSGB7k9l2yp6GlN4AINjkzXwV9RXCX04ATz7TwDIQAv1HpO3Oyah/a
-         fu8w==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20251104; t=1791842587; x=1792447387; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=vzyboqz3gdzKLZQtJtdBkHZxkGcpVNHjaJ87oe6XI4I=;
-        b=clLHbTuHpPyYjbkEuTdWgUgnjTmxWF0dC19bIPRxHosQH/eTa8ptJBS495aVl/n2f3
-         OE9b1Xc2qOs5X8bwhR2ojZrP4BuUmFcbIeCNv7LbJ2cd3t+sCx0dTw50AC2N/EXc6/7U
-         LdLb5LCwQHa9DR3ac99zqKJQCDXvNmmdPxUcm4taqe+plJgnngPpVBkAF9vNTCeSuolN
-         WI3jcCsqhKeVz4+bVkHe67OFH8GXFVS3v7oLcpeypDXs2IgXN2UpwNbMdYfgUmRmdoHD
-         rOcCwKp0oSr2Vr2jzVF/y+Jt2XcIxvDnfwfU30F0xlZLqaEji1k4VsbL7ruuHCl3ERGp
-         UgYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791842587; x=1792447387;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=vzyboqz3gdzKLZQtJtdBkHZxkGcpVNHjaJ87oe6XI4I=;
-        b=C949UY6Po22BnDe143gQSKQH6fTgvDF8rdOZoFwQrcgKQ7CzL+3/3h5XKQaSsnz5ez
-         ulX7gytgIKPasxoclgF50Ki+eF4LTmKSDqPBTjNIzDtUO2vTUG0MyyCJvmBqAV06Q85j
-         YvNrchAwNMeCqZOIYRTkeBC/FGVWOcRIQNEJAPobLxuxupsNTEASjFqwEZD4I0X9rLsD
-         vmNgJLWH1tOg8JwwBsqS6c59919EZbA/dl5adKZh3UAfMyQVJ5eqwiz0Yr1UnhtAZhtC
-         wxnzrnFYmdbMqAlzsNrx/IqeFtASXNDefbZu/jDIDrDCaRO8DIf9Q/rho/lbxcTkyIY2
-         a/og==
-X-Gm-Message-State: AFq9FYJxRd8XRfvNLNka/7l8DsMDCWecBZlVy4p96ld+ywNI60Pp8jj1
-	FMWckcT33oDvKYSobh/cq0uqLjqe9ef9kiXK2gqASeO+cu96Ql1NDzu/dKlQ6zapgBx8cTV63/U
-	EHV+EohTO/3odqGADDico6+aYT4FQ2WAdjF2qo+ZrTEEx/w3f6N1PRkTYRaVuYA==
-X-Gm-Gg: AYBFou1tEiRtdtiNado0Bcf8us+fnaAsKBX/dbGTvEDhnRJY+/iWu5vFtlcdvMK/KK/
-	eBmbNgooaxdYbPYtgr8gtSX4bgOZ2byqE/3/nFXsOuj1xTVxYPR4BrRWrlm7nj8E0/CmnMIP34H
-	4pBz5Ss3z7B/69rrtd9aj8M3SH5IFm8Ytp/8/MuyNchgXaVd9NVneU3Ij5cQ3tl96eQoRQtwgpG
-	a4fdxMJa5mxGoteTFFh0XqJE09wCFP5TqYfyGmawBrXoy4D8SAuFnsWd5IzRkcwpRk6xhspp44A
-	OHq/VNtVziLuPJKSXFeZ1gln2WuMrpizV0uzOLGV295FWQX62Hj0N4K7xN4vF6wREmzaQnBNRUW
-	iWAKSxP7SgTk7v59eAM/1
-X-Received: by 2002:a05:690c:38a:b0:8a9:4dfa:491b with SMTP id
- 00721157ae682-8b07edbf34emr30660547b3.21.1791842586148; Mon, 12 Oct 2026
- 15:03:06 -0700 (PDT)
+	Tue, 13 Oct 2026 07:31:46 +0000
+Received: from pps.filterd (m0098572.ppops.net [127.0.0.1])
+	by mx0b-00230701.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69D41XVQ3475974;
+	Tue, 13 Oct 2026 00:31:36 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=pfptdkimsnps; bh=owN1UmmtjgLgzKrUQS3jOpX0poTZ06Sk
+	EKeJFoDeNOM=; b=eJfZLOUipDxO7Hhsgxtcn4irSChb2vPKvgesHMIzneNZepwF
+	Jo3sCkOJSmFHCxhn8ZnE+CCs7OdLgt19GJVaqsa17FFLi9yRPnGaiKrzwt5xjOWM
+	9+m/KirystGhCP+6Ld24518bBf7gikRM9nC3Saei8759m5H4Gs0Zf95yyw066F7F
+	3cKxsA/TqO3kb6T4XUyysKOeANQYWXYZNEhzYd7QcKKW/iYlBWbIK7vkFqy53gBq
+	ERmF5FpVlTaRk3qC8GHrj2As7YwvKcBLSFblurZkKjT4Rh8KWRGCfD5NT9zKk00g
+	FuRwLt+4tLPjefer8qs5rrnnSN/ocjo2/GmyrQ==
+Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com [149.117.73.133])
+	by mx0b-00230701.pphosted.com (PPS) with ESMTPS id 4h9419bus3-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Tue, 13 Oct 2026 00:31:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+	t=1791876695; bh=cyoX8usjrnz5JrAsQHpENhV1cb6kzzfG0G6czWstdCY=;
+	h=From:To:Cc:Subject:Date:From;
+	b=jzw7hzHdWfrDz1d7R4UQzRH86B1oZxyB6oaHAlqtUHo0FBykmXz0825IB0pCoTmP+
+	 GKZwkdVAepSZtl1SY4pvmrekVBq46yQ8hXSWHzRZkRxk1rHswlCzhQjuEUqCbUH/s6
+	 yiUVMR/njKenU1YQo4qj+LuJWlOda9BZ99sDuxM1+wYw0DC+Ks0rlNr2P3Fu7kGR0y
+	 Xmf4cRtEZM8GFO65HKpz19+FyDIVT35BZUZK+kphP1tTrNyK5D4kv9VqyIJLR4/Y3T
+	 9/R4/P+039QHN+ndtMYMG7JQHyQn2VBxlaZHkUh3O+oRFX6iRaXPgZ/Qo9br7ZB25+
+	 vjV45NCmq7bXA==
+Received: from mailhost.synopsys.com (eudc-mailhost2.synopsys.com [10.213.161.17])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits)
+	 client-signature RSA-PSS (2048 bits))
+	(Client CN "mailhost.synopsys.com", Issuer "SNPSica2" (verified OK))
+	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 828424041F;
+	Tue, 13 Oct 2026 07:31:33 +0000 (UTC)
+Received: from Ubuntu.internal.synopsys.com (unknown [10.150.7.185])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(Client did not present a certificate)
+	by mailhost.synopsys.com (Postfix) with ESMTPSA id 8DD75C14BD;
+	Tue, 13 Oct 2026 07:31:30 +0000 (UTC)
+X-SNPS-Relay: synopsys.com
+From: Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
+To: linux-i3c@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
+        linux-kernel@vger.kernel.org,
+        Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
+Subject: [PATCH] i3c: master: dw-i3c-master: Add HDR-DDR support to Designware Controller.
+Date: Tue, 13 Oct 2026 13:01:26 +0530
+Message-Id: <20261013073126.5948-1-parame@synopsys.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-References: <20260921230603.2518652-1-samagazaryan@google.com>
- <20260921230603.2518652-5-samagazaryan@google.com> <araVh6bbUTGcOf0a@lizhi-Precision-Tower-5810>
-In-Reply-To: <araVh6bbUTGcOf0a@lizhi-Precision-Tower-5810>
-From: Sam Agazaryan <samagazaryan@google.com>
-Date: Mon, 12 Oct 2026 15:02:55 -0700
-X-Gm-Features: AclHuK-4LYE2f0BdadiEK8K0xDLDyM1BsWxpVUWgmwiScvTkyVvHA5N3qTqlemc
-Message-ID: <CAHreonGqzUjXGhotEia=k8pQtGodfOH0jiPpVZ-5Nsf=RDzh5g@mail.gmail.com>
-Subject: Re: [PATCH v5 4/5] i3c: add i3cdev module to expose i3c dev in /dev
-To: Frank Li <Frank.li@oss.nxp.com>
-Cc: linux-i3c@lists.infradead.org, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Wolfram Sang <wsa+renesas@sang-engineering.com>, Arnd Bergmann <arnd@arndb.de>, 
-	Adrian Hunter <adrian.hunter@intel.com>, Meagan Lloyd <meaganlloyd@linux.microsoft.com>, 
-	Vitor Soares <vitor.soares@toradex.com>, 
-	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>, 
-	Boris Brezillon <boris.brezillon@collabora.com>, linux-kernel@vger.kernel.org
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEzMDAyOSBTYWx0ZWRfXxWk6BnFiCsO4
+ wMVnveNu/pe+PG693NG284bZYZwZPx6pxGkYNSiRrPdkO8QpReHVNHiWs+QPL609zAx/d7Cb0uf
+ 1sPsxUktw5sVCWFL1l3v+hW9tqvgcCgM0QVUIaxZpWYrqiC8BGRnPx6Sx5rhS+0qaWSyN70Nivj
+ 80kxVjes/FNnXXZsTm7m8DAQ/Pk5sWQl3k2ItFbU+OoQWreyKkWdP9uRvH2caNqQH28ih5xK/rP
+ r6yXa9MUkn/3qChVGwe9F4TJLJA+1x8ZYJcHfrP/VYhwpsjCGHJg8u07vLivPo854uMPUndgT7z
+ n6pa98Cz2rOh/6Ach59OEkKiRSSmKUdC4Lb/QO2tIcOW64Vu7zStU52XRBPrKfLIU2JltcDKIPO
+ nbAy/7SzGS1DOb0f5o9GTaB/8GJTsufGDzFE23pCaXI9xghaD80i57SXS2FnXTbcVi5G0djWZag
+ FtI0n4u0DfaoAcivdog==
+X-Proofpoint-GUID: 43xQif-LFZZ6U_x2XNINNIr7PoA6FSB8
+X-Proofpoint-ORIG-GUID: 43xQif-LFZZ6U_x2XNINNIr7PoA6FSB8
+X-Authority-Analysis: v=2.4 cv=bZf+w+PB c=1 sm=1 tr=0 ts=6acdde57 cx=c_pps
+ a=8EbXvwLXkpGsT4ql/pYRAw==:117 a=8EbXvwLXkpGsT4ql/pYRAw==:17
+ a=660iZSQnnn4A:10 a=qPHU084jO2kA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=tU_645BZ7FZt8VqRJtHG:22 a=jSPayVjLy6xbsuKauFBc:22 a=jIQo8A4GAAAA:8
+ a=z177fXb8LXOLxaScacMA:9
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEzMDAyOSBTYWx0ZWRfX5B3QKotfEwU9
+ VA3ETvCKVaL1BUwHeiUMcrYFiTqjVjhe2KMjtb1FVuQiAT1zxJll/yc6Lj4YzXu1uxjNWHv2woV
+ 7OBjfVdVcoVmFji8M9eb7EXxlcCvC1g=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-13_01,2026-10-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_active_cloned_notspam
+ policy=outbound_active_cloned score=0 priorityscore=1501 impostorscore=0
+ malwarescore=0 lowpriorityscore=0 suspectscore=0 phishscore=0 adultscore=0
+ spamscore=0 clxscore=1011 bulkscore=0 classifier=typeunknown authscore=0
+ authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.22.0-2610080000 definitions=main-2610130029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261012_150308_218204_984A011D 
-X-CRM114-Status: UNSURE (   6.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261013_003145_565462_FEC745EE 
+X-CRM114-Status: GOOD (  12.05  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,27 +122,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
->
-> cleanup.h prefer declear tmp here
->
->         char *tmp __free(kfree) = kzalloc(count, GFP_KERNEL);
->
-> check others
->
+Implement HDR-DDR transfer support for the DesignWare Controller.
+Only support for private transfers and does not support sending CCC
+commands in HDR mode.
 
-Declared all __free(kfree) vars inline when they are allocated
-(i3cdev_read(), i3cdev_write(), i3cdev_do_xfer(), i3cdev_ioc_xfer())
+Key differences:
+- Sends ENTHDR CCC for entering to HDR-DDR mode before sending data.
+To do that we are setting the ENTHDR in controller cmd. Sets the speed
+to HDR_DDR_SPEED(6) to do data transfer in HDR-DDR mode.
+- HDR exit pattern must be sent instead of send a stop after transfer
+completion.
 
-> Can we share the above information include MODE* with i3c system to avoid
-> duplicate it?
->
+Signed-off-by: Dineshkumar Parameswaran <parame@synopsys.com>
+---
+ drivers/i3c/master/dw-i3c-master.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 05584ddaf104..58c54746bbe5 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -232,6 +232,8 @@
+ #define I3C_BUS_I2C_FMP_TLOW_MIN_NS	500
+ #define I3C_BUS_THIGH_MAX_NS		41
+ 
++#define DW_I3C_HDR_DDR_SPEED	6
++
+ #define XFER_TIMEOUT (msecs_to_jiffies(1000))
+ #define RPM_AUTOSUSPEND_TIMEOUT 1000 /* ms */
+ 
+@@ -1017,6 +1019,11 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
+ 			       COMMAND_PORT_DEV_INDEX(data->index) |
+ 			       COMMAND_PORT_ROC;
+ 
++		if (mode == I3C_HDR_DDR)
++			cmd->cmd_lo |= COMMAND_PORT_CP |
++				COMMAND_PORT_CMD(I3C_CCC_ENTHDR(0)) |
++				COMMAND_PORT_SPEED(DW_I3C_HDR_DDR_SPEED);
++
+ 		if (i == (i3c_nxfers - 1))
+ 			cmd->cmd_lo |= COMMAND_PORT_TOC;
+ 	}
+-- 
+2.34.1
 
-For v6 the i3c_xfer_mode enum will live in include/uapi/linux/i3c/i3cdev.h and
-be included by include/linux/i3c/device.h.
-
-Thanks,
-Sam
 
 -- 
 linux-i3c mailing list
