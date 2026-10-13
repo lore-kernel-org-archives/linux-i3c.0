@@ -4,108 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65371CC6B03
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 07:31:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D26ABCC6B0E
+	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 07:42:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=X4ULPzfloDp1GSlIozfEbqOw029oyIPRrrfxZrHIxKk=; b=OkfUPddV4oYn93
-	mckQjZXafAjonUxPcJsx+nq643f9vPpBd039G7jbe+WVHbCFfT9yZf1/BkGR6++WKyvHnBTQ+Ot+C
-	CCOJpMOGA3TvDL8bpVa4JZMo7qmx9ZoCxvpvJpAJlbE8zekMYXUeQFDRhfRQxEfwREX4U5Ndte6bD
-	6I391uozjsAnpHo8YEwGkGsiKPKrIAS3/9WStNNV7Lc1J1aiLx/Fhg610Xzd1OtJaRaEVy2jt37g4
-	ijoQ9oGQ4jr4sjcEemChXLKyVYngXIfXZtVrb4m/N9B1dlUcAV1CyXYFS1rwh/m8vcnJTUanfpLNd
-	ItaAaAFVIZOwBUqwUOYg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EHFakdFXzwXGE4vHUb+PmTBFCe9uX18t00hIhktZBOM=; b=YseDRS8eyhfPxa
+	t6fMZ+cIZ8PZ2ZOmc0IxBW+WHjUpM2/Kiebu58iZFIksYnsALHv9/yi32H9gfB15HNBNo2tLix9L/
+	AYw40Mt1rEa9eFgUI9bHaT6WffuSzcukig7+xQMEQgzoiPLpp6DQGkC6R2ZgEg0Hd65e52waAbwus
+	m4VdUDylAtoaw7JtoPXKtsuySSd1ozzGsfwJnl+4hl5m1OocgJFbs4q5PF9dwlbh3DhcmMIJLwaAx
+	c81C4CJS47duHjc2azuYddB3rjDeVUb9pr6MUWKcXRCQ5Ec584dVFzEWmIKBSfPxfBOa0iW4UDRWY
+	O+lz5BHsIU83SiT3Fpcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGWzG-0000000CDg7-0W6T;
-	Tue, 13 Oct 2026 07:31:50 +0000
-Received: from mx0b-00230701.pphosted.com ([148.163.158.9])
+	id 1xGX9v-0000000CF0S-1raM;
+	Tue, 13 Oct 2026 07:42:51 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGWzB-0000000CDev-1fVB
+	id 1xGX9t-0000000CF0A-2lmZ
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Oct 2026 07:31:46 +0000
-Received: from pps.filterd (m0098572.ppops.net [127.0.0.1])
-	by mx0b-00230701.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69D41XVQ3475974;
-	Tue, 13 Oct 2026 00:31:36 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=pfptdkimsnps; bh=owN1UmmtjgLgzKrUQS3jOpX0poTZ06Sk
-	EKeJFoDeNOM=; b=eJfZLOUipDxO7Hhsgxtcn4irSChb2vPKvgesHMIzneNZepwF
-	Jo3sCkOJSmFHCxhn8ZnE+CCs7OdLgt19GJVaqsa17FFLi9yRPnGaiKrzwt5xjOWM
-	9+m/KirystGhCP+6Ld24518bBf7gikRM9nC3Saei8759m5H4Gs0Zf95yyw066F7F
-	3cKxsA/TqO3kb6T4XUyysKOeANQYWXYZNEhzYd7QcKKW/iYlBWbIK7vkFqy53gBq
-	ERmF5FpVlTaRk3qC8GHrj2As7YwvKcBLSFblurZkKjT4Rh8KWRGCfD5NT9zKk00g
-	FuRwLt+4tLPjefer8qs5rrnnSN/ocjo2/GmyrQ==
-Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com [149.117.73.133])
-	by mx0b-00230701.pphosted.com (PPS) with ESMTPS id 4h9419bus3-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Tue, 13 Oct 2026 00:31:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
-	t=1791876695; bh=cyoX8usjrnz5JrAsQHpENhV1cb6kzzfG0G6czWstdCY=;
-	h=From:To:Cc:Subject:Date:From;
-	b=jzw7hzHdWfrDz1d7R4UQzRH86B1oZxyB6oaHAlqtUHo0FBykmXz0825IB0pCoTmP+
-	 GKZwkdVAepSZtl1SY4pvmrekVBq46yQ8hXSWHzRZkRxk1rHswlCzhQjuEUqCbUH/s6
-	 yiUVMR/njKenU1YQo4qj+LuJWlOda9BZ99sDuxM1+wYw0DC+Ks0rlNr2P3Fu7kGR0y
-	 Xmf4cRtEZM8GFO65HKpz19+FyDIVT35BZUZK+kphP1tTrNyK5D4kv9VqyIJLR4/Y3T
-	 9/R4/P+039QHN+ndtMYMG7JQHyQn2VBxlaZHkUh3O+oRFX6iRaXPgZ/Qo9br7ZB25+
-	 vjV45NCmq7bXA==
-Received: from mailhost.synopsys.com (eudc-mailhost2.synopsys.com [10.213.161.17])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits)
-	 client-signature RSA-PSS (2048 bits))
-	(Client CN "mailhost.synopsys.com", Issuer "SNPSica2" (verified OK))
-	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 828424041F;
-	Tue, 13 Oct 2026 07:31:33 +0000 (UTC)
-Received: from Ubuntu.internal.synopsys.com (unknown [10.150.7.185])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(Client did not present a certificate)
-	by mailhost.synopsys.com (Postfix) with ESMTPSA id 8DD75C14BD;
-	Tue, 13 Oct 2026 07:31:30 +0000 (UTC)
-X-SNPS-Relay: synopsys.com
-From: Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
-To: linux-i3c@lists.infradead.org
-Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
-        linux-kernel@vger.kernel.org,
-        Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
-Subject: [PATCH] i3c: master: dw-i3c-master: Add HDR-DDR support to Designware Controller.
-Date: Tue, 13 Oct 2026 13:01:26 +0530
-Message-Id: <20261013073126.5948-1-parame@synopsys.com>
-X-Mailer: git-send-email 2.34.1
-MIME-Version: 1.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEzMDAyOSBTYWx0ZWRfXxWk6BnFiCsO4
- wMVnveNu/pe+PG693NG284bZYZwZPx6pxGkYNSiRrPdkO8QpReHVNHiWs+QPL609zAx/d7Cb0uf
- 1sPsxUktw5sVCWFL1l3v+hW9tqvgcCgM0QVUIaxZpWYrqiC8BGRnPx6Sx5rhS+0qaWSyN70Nivj
- 80kxVjes/FNnXXZsTm7m8DAQ/Pk5sWQl3k2ItFbU+OoQWreyKkWdP9uRvH2caNqQH28ih5xK/rP
- r6yXa9MUkn/3qChVGwe9F4TJLJA+1x8ZYJcHfrP/VYhwpsjCGHJg8u07vLivPo854uMPUndgT7z
- n6pa98Cz2rOh/6Ach59OEkKiRSSmKUdC4Lb/QO2tIcOW64Vu7zStU52XRBPrKfLIU2JltcDKIPO
- nbAy/7SzGS1DOb0f5o9GTaB/8GJTsufGDzFE23pCaXI9xghaD80i57SXS2FnXTbcVi5G0djWZag
- FtI0n4u0DfaoAcivdog==
-X-Proofpoint-GUID: 43xQif-LFZZ6U_x2XNINNIr7PoA6FSB8
-X-Proofpoint-ORIG-GUID: 43xQif-LFZZ6U_x2XNINNIr7PoA6FSB8
-X-Authority-Analysis: v=2.4 cv=bZf+w+PB c=1 sm=1 tr=0 ts=6acdde57 cx=c_pps
- a=8EbXvwLXkpGsT4ql/pYRAw==:117 a=8EbXvwLXkpGsT4ql/pYRAw==:17
- a=660iZSQnnn4A:10 a=qPHU084jO2kA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=tU_645BZ7FZt8VqRJtHG:22 a=jSPayVjLy6xbsuKauFBc:22 a=jIQo8A4GAAAA:8
- a=z177fXb8LXOLxaScacMA:9
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEzMDAyOSBTYWx0ZWRfX5B3QKotfEwU9
- VA3ETvCKVaL1BUwHeiUMcrYFiTqjVjhe2KMjtb1FVuQiAT1zxJll/yc6Lj4YzXu1uxjNWHv2woV
- 7OBjfVdVcoVmFji8M9eb7EXxlcCvC1g=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-10-13_01,2026-10-09_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_active_cloned_notspam
- policy=outbound_active_cloned score=0 priorityscore=1501 impostorscore=0
- malwarescore=0 lowpriorityscore=0 suspectscore=0 phishscore=0 adultscore=0
- spamscore=0 clxscore=1011 bulkscore=0 classifier=typeunknown authscore=0
- authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.22.0-2610080000 definitions=main-2610130029
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_003145_565462_FEC745EE 
-X-CRM114-Status: GOOD (  12.05  )
+	Tue, 13 Oct 2026 07:42:49 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id C83C0600D1;
+	Tue, 13 Oct 2026 07:42:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3C0321F000FF;
+	Tue, 13 Oct 2026 07:42:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791877368;
+	bh=jYup5wLeCRlRSBc1xknFw22JmiPuKeTYBUjDoiALrgg=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=al16FpNov/LT6Ny2hDMaBKO7Y05KW/0HMpCOkPD0dpLd3n5tUdb4yByrLDLPGbwvu
+	 w1CxSa/YqkF3eVCC8Zw+x9SFtPnYJp5hT+Vx18qFaHN+m0oKBeebg6+QhobMcf/ifG
+	 7sexVg9E0VJlsyAPCsiVf2u2dcRYC0H+dPXk3EzSsKy3ZWEnaV40910BAZfKwXk0Yr
+	 2lbcNIodDyzOA/1+35zHFdBv+lZGABgo1C8j1QzT04ztACuNu9eZlh+qpGmlo5M30Z
+	 oRQ0fck/kA7nmgGzDwifpaPAO0vbxeNdpwjCRZ3uh56cHnp3nAWA6Ifv9j0ajHXriZ
+	 5pSAqip1Sd22Q==
+Message-ID: <sashiko-outbox-169200@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] i3c: master: dw-i3c-master: Add HDR-DDR support to
+ Designware Controller.
+To: "Dineshkumar Parameswaran" <Dineshkumar.Parameswaran@synopsys.com>, linux-i3c@lists.infradead.org
+Cc: Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
+In-Reply-To: <20261013073126.5948-1-parame@synopsys.com>
+References: <20261013073126.5948-1-parame@synopsys.com>
+Date: Tue, 13 Oct 2026 07:42:47 +0000
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,57 +62,62 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Implement HDR-DDR transfer support for the DesignWare Controller.
-Only support for private transfers and does not support sending CCC
-commands in HDR mode.
-
-Key differences:
-- Sends ENTHDR CCC for entering to HDR-DDR mode before sending data.
-To do that we are setting the ENTHDR in controller cmd. Sets the speed
-to HDR_DDR_SPEED(6) to do data transfer in HDR-DDR mode.
-- HDR exit pattern must be sent instead of send a stop after transfer
-completion.
-
-Signed-off-by: Dineshkumar Parameswaran <parame@synopsys.com>
----
- drivers/i3c/master/dw-i3c-master.c | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 05584ddaf104..58c54746bbe5 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -232,6 +232,8 @@
- #define I3C_BUS_I2C_FMP_TLOW_MIN_NS	500
- #define I3C_BUS_THIGH_MAX_NS		41
- 
-+#define DW_I3C_HDR_DDR_SPEED	6
-+
- #define XFER_TIMEOUT (msecs_to_jiffies(1000))
- #define RPM_AUTOSUSPEND_TIMEOUT 1000 /* ms */
- 
-@@ -1017,6 +1019,11 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
- 			       COMMAND_PORT_DEV_INDEX(data->index) |
- 			       COMMAND_PORT_ROC;
- 
-+		if (mode == I3C_HDR_DDR)
-+			cmd->cmd_lo |= COMMAND_PORT_CP |
-+				COMMAND_PORT_CMD(I3C_CCC_ENTHDR(0)) |
-+				COMMAND_PORT_SPEED(DW_I3C_HDR_DDR_SPEED);
-+
- 		if (i == (i3c_nxfers - 1))
- 			cmd->cmd_lo |= COMMAND_PORT_TOC;
- 	}
--- 
-2.34.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGkzYzogYml0d2lzZSBP
+UiB3aXRob3V0IGNsZWFyIGNvcnJ1cHRzIENPTU1BTkRfUE9SVF9TUEVFRCBpbiBIRFItRERSIG1v
+ZGUKLSBbSGlnaF0gaTNjOiBFTlRIRFIwIENDQyByZWR1bmRhbnRseSBhcHBsaWVkIHRvIGFsbCB0
+cmFuc2ZlcnMgaW4gYSBiYXRjaAotIFtIaWdoXSBpM2M6IHNwZWVkIGZpZWxkIGNvcnJ1cHRpb24g
+YW5kIEVOVEhEUiByZXBldGl0aW9uIGluIEhEUiBtb2RlCi0gW01lZGl1bV0gaTNjOiBtaXNzaW5n
+IEhEUi1ERFIgY2FwYWJpbGl0eSBhZHZlcnRpc2VtZW50IGluIGR3X2kzY19tYXN0ZXJfYnVzX2lu
+aXQoKQotLQoKY29tbWl0IDllZWFhYmIyOTZmZTEzMzUzYmNkMGNiNzg4MzA3NjU2N2UyNjU3NjAK
+QXV0aG9yOiBEaW5lc2hrdW1hciBQYXJhbWVzd2FyYW4gPERpbmVzaGt1bWFyLlBhcmFtZXN3YXJh
+bkBzeW5vcHN5cy5jb20+CgppM2M6IG1hc3RlcjogZHctaTNjLW1hc3RlcjogQWRkIEhEUi1ERFIg
+c3VwcG9ydCB0byBEZXNpZ253YXJlIENvbnRyb2xsZXIuCiAgICAKSW1wbGVtZW50IEhEUi1ERFIg
+dHJhbnNmZXIgc3VwcG9ydCBmb3IgdGhlIERlc2lnbldhcmUgQ29udHJvbGxlci4KT25seSBzdXBw
+b3J0IGZvciBwcml2YXRlIHRyYW5zZmVycyBhbmQgZG9lcyBub3Qgc3VwcG9ydCBzZW5kaW5nIEND
+Qwpjb21tYW5kcyBpbiBIRFIgbW9kZS4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rl
+ci9kdy1pM2MtbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4g
+aW5kZXggZDExMTlmMjAzZDFiNi4uZDEwMTMyMDRhYjdiNyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJz
+L2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL2R3
+LWkzYy1tYXN0ZXIuYwpbIC4uLiBdCj4gQEAgLTEwMTcsNiArMTAxOSwxMSBAQCBzdGF0aWMgaW50
+IGR3X2kzY19tYXN0ZXJfaTNjX3hmZXJzKHN0cnVjdCBpM2NfZGV2X2Rlc2MgKmRldiwKPiAgCQkJ
+ICAgICAgIENPTU1BTkRfUE9SVF9ERVZfSU5ERVgoZGF0YS0+aW5kZXgpIHwKPiAgCQkJICAgICAg
+IENPTU1BTkRfUE9SVF9ST0M7Cj4gIAo+ICsJCWlmIChtb2RlID09IEkzQ19IRFJfRERSKQo+ICsJ
+CQljbWQtPmNtZF9sbyB8PSBDT01NQU5EX1BPUlRfQ1AgfAo+ICsJCQkJQ09NTUFORF9QT1JUX0NN
+RChJM0NfQ0NDX0VOVEhEUigwKSkgfAo+ICsJCQkJQ09NTUFORF9QT1JUX1NQRUVEKERXX0kzQ19I
+RFJfRERSX1NQRUVEKTsKCltTZXZlcml0eTogSGlnaF0KU2luY2UgY21kLT5jbWRfbG8gd2FzIGlu
+aXRpYWxpemVkIGVhcmxpZXIgaW4gdGhpcyBsb29wIHdpdGgKQ09NTUFORF9QT1JUX1NQRUVEKGRl
+di0+aW5mby5tYXhfcmVhZF9kcykgb3IgbWF4X3dyaXRlX2RzLCB3b24ndCB0aGlzIGJpdHdpc2UK
+T1Igb3BlcmF0aW9uIG1lcmdlIHRoZSB0d28gc3BlZWQgdmFsdWVzIHRvZ2V0aGVyIHdpdGhvdXQg
+Y2xlYXJpbmcgdGhlIHByZXZpb3VzCmJpdHM/IFRoaXMgY291bGQgcmVzdWx0IGluIGNvcnJ1cHRl
+ZCBzcGVlZCBjb25maWd1cmF0aW9uIGJpdHMgYmVpbmcgc2VudCB0byB0aGUKaGFyZHdhcmUgY29u
+dHJvbGxlci4KCltTZXZlcml0eTogSGlnaF0KVGhpcyBibG9jayBpcyBpbnNpZGUgdGhlIGZvciBs
+b29wIGl0ZXJhdGluZyBvdmVyIGkzY19ueGZlcnMuIFdpbGwgdGhpcwpjYXVzZSB0aGUgQ09NTUFO
+RF9QT1JUX0NQIGFuZCBJM0NfQ0NDX0VOVEhEUigwKSBjb21tYW5kIGJpdHMgdG8gYmUgcmVwZWF0
+ZWRseQphcHBsaWVkIHRvIGV2ZXJ5IHNlZ21lbnQgb2YgYSBtdWx0aS1tZXNzYWdlIHRyYW5zZmVy
+LCBpbnN0ZWFkIG9mIGp1c3QgdGhlIGZpcnN0CnRyYW5zZmVyPyBTZW5kaW5nIHRoZSBFTlRIRFIw
+IGNvbW1hbmQgcmVwZWF0ZWRseSB3aGlsZSBhbHJlYWR5IGluIEhEUiBtb2RlIG1heQpjYXVzZSBw
+cm90b2NvbCB2aW9sYXRpb25zIG9uIHRoZSBidXMuCgpbU2V2ZXJpdHk6IE1lZGl1bV0KU2luY2Ug
+dGhpcyBwYXRjaCBhZGRzIEhEUi1ERFIgdHJhbnNmZXIgc3VwcG9ydCwgc2hvdWxkIHRoZSBtYXN0
+ZXIgY29udHJvbGxlcgphbHNvIGFkdmVydGlzZSB0aGlzIG5ldyBjYXBhYmlsaXR5IGR1cmluZyBi
+dXMgaW5pdGlhbGl6YXRpb24/CgpJbiBkd19pM2NfbWFzdGVyX2J1c19pbml0KCksIGluZm8uaGRy
+X2NhcCBpcyBub3QgdXBkYXRlZCB0byBpbmNsdWRlCnRoZSBJM0NfSERSX0REUiBjYXBhYmlsaXR5
+OgoKCW1lbXNldCgmaW5mbywgMCwgc2l6ZW9mKGluZm8pKTsKCWluZm8uZHluX2FkZHIgPSByZXQ7
+CgoJcmV0ID0gaTNjX21hc3Rlcl9zZXRfaW5mbygmbWFzdGVyLT5iYXNlLCAmaW5mbyk7CgpXaXRo
+b3V0IHNldHRpbmcgaW5mby5oZHJfY2FwIHRvIGluY2x1ZGUgSTNDX0NDQ19IRFJfTU9ERShJM0Nf
+SERSX0REUiksIHdvbid0CnRoZSBJM0MgY29yZSByZWplY3QgSERSLUREUiB0cmFuc2ZlcnMgd2l0
+aCAtRU9QTk9UU1VQUCBpbgppM2NfZGV2X2RvX3hmZXJzX2xvY2tlZCgpIGJlZm9yZSB0aGV5IGNh
+biBldmVyIHJlYWNoIHRoZSBuZXdseSBhZGRlZCBjb2RlIGluCmR3X2kzY19tYXN0ZXJfaTNjX3hm
+ZXJzKCk/Cgo+ICsKPiAgCQlpZiAoaSA9PSAoaTNjX254ZmVycyAtIDEpKQo+ICAJCQljbWQtPmNt
+ZF9sbyB8PSBDT01NQU5EX1BPUlRfVE9DOwo+ICAJfQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3
+IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTAxMzA3MzEyNi41OTQ4LTEtcGFy
+YW1lQHN5bm9wc3lzLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4
+LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtaTNjCg==
