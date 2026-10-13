@@ -4,53 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D26ABCC6B0E
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 07:42:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C994FCC6B0E
+	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 08:04:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EHFakdFXzwXGE4vHUb+PmTBFCe9uX18t00hIhktZBOM=; b=YseDRS8eyhfPxa
-	t6fMZ+cIZ8PZ2ZOmc0IxBW+WHjUpM2/Kiebu58iZFIksYnsALHv9/yi32H9gfB15HNBNo2tLix9L/
-	AYw40Mt1rEa9eFgUI9bHaT6WffuSzcukig7+xQMEQgzoiPLpp6DQGkC6R2ZgEg0Hd65e52waAbwus
-	m4VdUDylAtoaw7JtoPXKtsuySSd1ozzGsfwJnl+4hl5m1OocgJFbs4q5PF9dwlbh3DhcmMIJLwaAx
-	c81C4CJS47duHjc2azuYddB3rjDeVUb9pr6MUWKcXRCQ5Ec584dVFzEWmIKBSfPxfBOa0iW4UDRWY
-	O+lz5BHsIU83SiT3Fpcg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lRedaua8WMxbv45m9iRMnjh/tBsAEiTazW+EZNex4yM=; b=ui62EjHNBiyNPM
+	LEH11mXctjdhZrpAnaoenKIqew5052VC8dtMdh35rBRflMy+9yq8brxU6WTx+G9996u6m1K+5qj5c
+	YvJCs0Or0HhZGR+Bd5eOy7ZnVeXX44HHir0vVLyKUmboxXbMtTxxAfkoHZH/zU/wWIdFMgsJhb5co
+	8sqtE17N9Z1K8h5lR1cDo6jAqe6AM6IolBQjESnnfCGdZTJmJV0zsgjeVRJrR8OKvMQN8QmzDXLzm
+	a+RhjBaeheZyHTPW8oZcXEIJFE1PmeCLZCvUCsiZ58biUHMNasIgRdQLKBR99n0fQVSFofF+rj6sV
+	2EIFaTbzw7oB2+eMSlDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGX9v-0000000CF0S-1raM;
-	Tue, 13 Oct 2026 07:42:51 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xGXUs-0000000CHhX-22et;
+	Tue, 13 Oct 2026 08:04:30 +0000
+Received: from mx0b-00230701.pphosted.com ([148.163.158.9])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGX9t-0000000CF0A-2lmZ
+	id 1xGXUp-0000000CHh4-1t1V
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Oct 2026 07:42:49 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id C83C0600D1;
-	Tue, 13 Oct 2026 07:42:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3C0321F000FF;
-	Tue, 13 Oct 2026 07:42:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791877368;
-	bh=jYup5wLeCRlRSBc1xknFw22JmiPuKeTYBUjDoiALrgg=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=al16FpNov/LT6Ny2hDMaBKO7Y05KW/0HMpCOkPD0dpLd3n5tUdb4yByrLDLPGbwvu
-	 w1CxSa/YqkF3eVCC8Zw+x9SFtPnYJp5hT+Vx18qFaHN+m0oKBeebg6+QhobMcf/ifG
-	 7sexVg9E0VJlsyAPCsiVf2u2dcRYC0H+dPXk3EzSsKy3ZWEnaV40910BAZfKwXk0Yr
-	 2lbcNIodDyzOA/1+35zHFdBv+lZGABgo1C8j1QzT04ztACuNu9eZlh+qpGmlo5M30Z
-	 oRQ0fck/kA7nmgGzDwifpaPAO0vbxeNdpwjCRZ3uh56cHnp3nAWA6Ifv9j0ajHXriZ
-	 5pSAqip1Sd22Q==
-Message-ID: <sashiko-outbox-169200@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] i3c: master: dw-i3c-master: Add HDR-DDR support to
- Designware Controller.
-To: "Dineshkumar Parameswaran" <Dineshkumar.Parameswaran@synopsys.com>, linux-i3c@lists.infradead.org
-Cc: Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20261013073126.5948-1-parame@synopsys.com>
-References: <20261013073126.5948-1-parame@synopsys.com>
-Date: Tue, 13 Oct 2026 07:42:47 +0000
+	Tue, 13 Oct 2026 08:04:28 +0000
+Received: from pps.filterd (m0098572.ppops.net [127.0.0.1])
+	by mx0b-00230701.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69D41XUZ3475959;
+	Tue, 13 Oct 2026 01:04:24 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=pfptdkimsnps; bh=OTvFQN8GuaxjCQFUI5eOYJ4ZW9EGafT8
+	93ykKSAHAjg=; b=rys98Wxl7WfQxF71R1qe5aAeKZdRSI9ybm10B3A5RpmAIsyx
+	O7UcuZVtg1ZbOv4c1hfZw0pheWWswk1NeCV5UEpcUTkKSffKFQfQDRRYIU3pSJmE
+	Pl1Yr7NCvnlIo2SfSNJiK1vXeM3rs59pyLVfrREbznaW0oCZXoOwM66Nl0NCGn5P
+	YDrL+it2uVzuxmTMiVbGTllp0puIM4crXEko9nKwDKVnUNPS53MS/CzkyJJFXrWG
+	aMpkl7quq9qyGTFruyVaV1z6IVyQwy4dwm5rlSEtODb4O8JG89bB7L7y8i04eW3I
+	erQ4mtTHWA52pb47i5WDkFXBPqOJaGxrpRcE8Q==
+Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com [149.117.87.133])
+	by mx0b-00230701.pphosted.com (PPS) with ESMTPS id 4h9419c1ry-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Tue, 13 Oct 2026 01:04:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+	t=1791878662; bh=gwKT56U/gMcmxFvrhIA8kIdLdQvjSm13snfTFYrtgY0=;
+	h=From:To:Cc:Subject:Date:From;
+	b=E+UNlfhr+WOoCLZEBoTu6/rhbkg31dNXWMiMOv9e5jiRZgmss+1+8QkS1KuXuz4xe
+	 rtlbQT8x1300PdHVAx3V66pqiL3urZFAxnX8BPSfQVVPd5MxMbFXkw2uJnxdaRjiwB
+	 MH586NrPxaKr9Vd/gGwjj0XpXikRbleERWejwG0wNtvCsJU327OM31TYKfwbOzMYwg
+	 2cJ/c5pYlIzjuaUFDrStMGG3DtnRB+3HdB3CrxhGPzMjW273CI8Ian0Q5EGns+7ODq
+	 BQ8XUSsh7pCAdQz4dOpGM8YNarwZN4N73riqLzI65e4297ZHloHoyWedhL2edcaWTJ
+	 Dp/DIrckte0+A==
+Received: from mailhost.synopsys.com (eudc-mailhost2.synopsys.com [10.213.161.17])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits)
+	 client-signature RSA-PSS (2048 bits))
+	(Client CN "mailhost.synopsys.com", Issuer "SNPSica2" (verified OK))
+	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 309C940230;
+	Tue, 13 Oct 2026 08:04:21 +0000 (UTC)
+Received: from Ubuntu.internal.synopsys.com (unknown [10.150.7.185])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(Client did not present a certificate)
+	by mailhost.synopsys.com (Postfix) with ESMTPSA id 4ABBEC0F94;
+	Tue, 13 Oct 2026 08:04:18 +0000 (UTC)
+X-SNPS-Relay: synopsys.com
+From: Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
+To: linux-i3c@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
+        linux-kernel@vger.kernel.org,
+        Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
+Subject: [PATCH 0/2] i3c: master: dw-i3c-master: HDR-BT support
+Date: Tue, 13 Oct 2026 13:34:11 +0530
+Message-Id: <20261013080413.7470-1-parame@synopsys.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDEzMDAzMSBTYWx0ZWRfX55+hBQ/C2GUz
+ aDbPuJVsz45Y1rWPfuvp4gaeuzEvyh2UIMqbI3G8wEtzWXAWGlVZAZMV+OZqxu13QLXtbjn60lZ
+ FOPT8U+kZ3Gj7mUIOncf+RELOwvqJcMAGTm+GzXIJW2XMmz5fwIpS0lNPaQD/apAvETyXgbjkom
+ MPXEoC3m3GOo0TXPuxHZezdyu7x6cB+eGkXfhqbWbPh+oXVhleNqvW6ebZmOlh4Di6ctYXZBYrS
+ Pq7WhTIkQA7y2YIykJ0bQydE6VswoGLNgp2rI5fZUPjNLNhhAZgioc4ytiDm3QbO3mIJC2dTa9N
+ cUYKB+RgXzlBNgc5eCuIpp861kG/626JtUF6UPjBRiH6qWPjjOqgbSOaXECKgaQtI/20mqRfVYS
+ Atd1+0/kCSPi6fp/TWYB8++Wx2Lq9pK2ro5mIDsIIKCvCGBl31zTQ5v1MqGOUQaOYCyuwJWfQoB
+ DZzz6Q1osYlXCYuZF+w==
+X-Proofpoint-GUID: 0WCI6DgLFtc1ht_XCE26vyBRuWZWeKyl
+X-Proofpoint-ORIG-GUID: 0WCI6DgLFtc1ht_XCE26vyBRuWZWeKyl
+X-Authority-Analysis: v=2.4 cv=bZf+w+PB c=1 sm=1 tr=0 ts=6acde608 cx=c_pps
+ a=t4gDRyhI9k+KZ5gXRQysFQ==:117 a=t4gDRyhI9k+KZ5gXRQysFQ==:17
+ a=660iZSQnnn4A:10 a=qPHU084jO2kA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=tU_645BZ7FZt8VqRJtHG:22 a=jSPayVjLy6xbsuKauFBc:22 a=RtHSx0SzW_mo1qVRsOEA:9
+ a=ZXulRonScM0A:10
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDEzMDAzMSBTYWx0ZWRfX1RZiwswm/CCd
+ 3HzKtw5dL/fdz5hTE2sqSF67hH2YL1DPcJSI6W45xI90MyGl1he5EWcM7gK+ALMbNyPSKFZL0ZG
+ Di1llAvmPjzqWgDkh6lE0xLCCplVAlw=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-13_01,2026-10-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_active_cloned_notspam
+ policy=outbound_active_cloned score=0 priorityscore=1501 impostorscore=0
+ malwarescore=0 lowpriorityscore=0 suspectscore=0 phishscore=0 adultscore=0
+ spamscore=0 clxscore=1015 bulkscore=0 classifier=typeunknown authscore=0
+ authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.22.0-2610080000 definitions=main-2610130031
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261013_010427_623617_0C30C597 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,62 +118,40 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGkzYzogYml0d2lzZSBP
-UiB3aXRob3V0IGNsZWFyIGNvcnJ1cHRzIENPTU1BTkRfUE9SVF9TUEVFRCBpbiBIRFItRERSIG1v
-ZGUKLSBbSGlnaF0gaTNjOiBFTlRIRFIwIENDQyByZWR1bmRhbnRseSBhcHBsaWVkIHRvIGFsbCB0
-cmFuc2ZlcnMgaW4gYSBiYXRjaAotIFtIaWdoXSBpM2M6IHNwZWVkIGZpZWxkIGNvcnJ1cHRpb24g
-YW5kIEVOVEhEUiByZXBldGl0aW9uIGluIEhEUiBtb2RlCi0gW01lZGl1bV0gaTNjOiBtaXNzaW5n
-IEhEUi1ERFIgY2FwYWJpbGl0eSBhZHZlcnRpc2VtZW50IGluIGR3X2kzY19tYXN0ZXJfYnVzX2lu
-aXQoKQotLQoKY29tbWl0IDllZWFhYmIyOTZmZTEzMzUzYmNkMGNiNzg4MzA3NjU2N2UyNjU3NjAK
-QXV0aG9yOiBEaW5lc2hrdW1hciBQYXJhbWVzd2FyYW4gPERpbmVzaGt1bWFyLlBhcmFtZXN3YXJh
-bkBzeW5vcHN5cy5jb20+CgppM2M6IG1hc3RlcjogZHctaTNjLW1hc3RlcjogQWRkIEhEUi1ERFIg
-c3VwcG9ydCB0byBEZXNpZ253YXJlIENvbnRyb2xsZXIuCiAgICAKSW1wbGVtZW50IEhEUi1ERFIg
-dHJhbnNmZXIgc3VwcG9ydCBmb3IgdGhlIERlc2lnbldhcmUgQ29udHJvbGxlci4KT25seSBzdXBw
-b3J0IGZvciBwcml2YXRlIHRyYW5zZmVycyBhbmQgZG9lcyBub3Qgc3VwcG9ydCBzZW5kaW5nIEND
-Qwpjb21tYW5kcyBpbiBIRFIgbW9kZS4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rl
-ci9kdy1pM2MtbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4g
-aW5kZXggZDExMTlmMjAzZDFiNi4uZDEwMTMyMDRhYjdiNyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJz
-L2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL2R3
-LWkzYy1tYXN0ZXIuYwpbIC4uLiBdCj4gQEAgLTEwMTcsNiArMTAxOSwxMSBAQCBzdGF0aWMgaW50
-IGR3X2kzY19tYXN0ZXJfaTNjX3hmZXJzKHN0cnVjdCBpM2NfZGV2X2Rlc2MgKmRldiwKPiAgCQkJ
-ICAgICAgIENPTU1BTkRfUE9SVF9ERVZfSU5ERVgoZGF0YS0+aW5kZXgpIHwKPiAgCQkJICAgICAg
-IENPTU1BTkRfUE9SVF9ST0M7Cj4gIAo+ICsJCWlmIChtb2RlID09IEkzQ19IRFJfRERSKQo+ICsJ
-CQljbWQtPmNtZF9sbyB8PSBDT01NQU5EX1BPUlRfQ1AgfAo+ICsJCQkJQ09NTUFORF9QT1JUX0NN
-RChJM0NfQ0NDX0VOVEhEUigwKSkgfAo+ICsJCQkJQ09NTUFORF9QT1JUX1NQRUVEKERXX0kzQ19I
-RFJfRERSX1NQRUVEKTsKCltTZXZlcml0eTogSGlnaF0KU2luY2UgY21kLT5jbWRfbG8gd2FzIGlu
-aXRpYWxpemVkIGVhcmxpZXIgaW4gdGhpcyBsb29wIHdpdGgKQ09NTUFORF9QT1JUX1NQRUVEKGRl
-di0+aW5mby5tYXhfcmVhZF9kcykgb3IgbWF4X3dyaXRlX2RzLCB3b24ndCB0aGlzIGJpdHdpc2UK
-T1Igb3BlcmF0aW9uIG1lcmdlIHRoZSB0d28gc3BlZWQgdmFsdWVzIHRvZ2V0aGVyIHdpdGhvdXQg
-Y2xlYXJpbmcgdGhlIHByZXZpb3VzCmJpdHM/IFRoaXMgY291bGQgcmVzdWx0IGluIGNvcnJ1cHRl
-ZCBzcGVlZCBjb25maWd1cmF0aW9uIGJpdHMgYmVpbmcgc2VudCB0byB0aGUKaGFyZHdhcmUgY29u
-dHJvbGxlci4KCltTZXZlcml0eTogSGlnaF0KVGhpcyBibG9jayBpcyBpbnNpZGUgdGhlIGZvciBs
-b29wIGl0ZXJhdGluZyBvdmVyIGkzY19ueGZlcnMuIFdpbGwgdGhpcwpjYXVzZSB0aGUgQ09NTUFO
-RF9QT1JUX0NQIGFuZCBJM0NfQ0NDX0VOVEhEUigwKSBjb21tYW5kIGJpdHMgdG8gYmUgcmVwZWF0
-ZWRseQphcHBsaWVkIHRvIGV2ZXJ5IHNlZ21lbnQgb2YgYSBtdWx0aS1tZXNzYWdlIHRyYW5zZmVy
-LCBpbnN0ZWFkIG9mIGp1c3QgdGhlIGZpcnN0CnRyYW5zZmVyPyBTZW5kaW5nIHRoZSBFTlRIRFIw
-IGNvbW1hbmQgcmVwZWF0ZWRseSB3aGlsZSBhbHJlYWR5IGluIEhEUiBtb2RlIG1heQpjYXVzZSBw
-cm90b2NvbCB2aW9sYXRpb25zIG9uIHRoZSBidXMuCgpbU2V2ZXJpdHk6IE1lZGl1bV0KU2luY2Ug
-dGhpcyBwYXRjaCBhZGRzIEhEUi1ERFIgdHJhbnNmZXIgc3VwcG9ydCwgc2hvdWxkIHRoZSBtYXN0
-ZXIgY29udHJvbGxlcgphbHNvIGFkdmVydGlzZSB0aGlzIG5ldyBjYXBhYmlsaXR5IGR1cmluZyBi
-dXMgaW5pdGlhbGl6YXRpb24/CgpJbiBkd19pM2NfbWFzdGVyX2J1c19pbml0KCksIGluZm8uaGRy
-X2NhcCBpcyBub3QgdXBkYXRlZCB0byBpbmNsdWRlCnRoZSBJM0NfSERSX0REUiBjYXBhYmlsaXR5
-OgoKCW1lbXNldCgmaW5mbywgMCwgc2l6ZW9mKGluZm8pKTsKCWluZm8uZHluX2FkZHIgPSByZXQ7
-CgoJcmV0ID0gaTNjX21hc3Rlcl9zZXRfaW5mbygmbWFzdGVyLT5iYXNlLCAmaW5mbyk7CgpXaXRo
-b3V0IHNldHRpbmcgaW5mby5oZHJfY2FwIHRvIGluY2x1ZGUgSTNDX0NDQ19IRFJfTU9ERShJM0Nf
-SERSX0REUiksIHdvbid0CnRoZSBJM0MgY29yZSByZWplY3QgSERSLUREUiB0cmFuc2ZlcnMgd2l0
-aCAtRU9QTk9UU1VQUCBpbgppM2NfZGV2X2RvX3hmZXJzX2xvY2tlZCgpIGJlZm9yZSB0aGV5IGNh
-biBldmVyIHJlYWNoIHRoZSBuZXdseSBhZGRlZCBjb2RlIGluCmR3X2kzY19tYXN0ZXJfaTNjX3hm
-ZXJzKCk/Cgo+ICsKPiAgCQlpZiAoaSA9PSAoaTNjX254ZmVycyAtIDEpKQo+ICAJCQljbWQtPmNt
-ZF9sbyB8PSBDT01NQU5EX1BPUlRfVE9DOwo+ICAJfQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3
-IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTAxMzA3MzEyNi41OTQ4LTEtcGFy
-YW1lQHN5bm9wc3lzLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4
-LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtaTNjCg==
+Hello,
+
+This series adds HDR-BT (High Data Rate - Bulk Transport)
+support to the Synopsys DesignWare I3C master driver.
+
+The DesignWare controller provides hardware support for HDR-BT
+transfers, but the current driver only supports SDR transfers.
+This limitation prevents users from utilizing the higher
+throughput capabilities available on supported hardware.
+
+Patch Overview:
+1. Add HDR-BT capability in the I3C framework.
+2. Implement HDR-BT operation in the DesignWare master driver.
+
+Dineshkumar Parameswaran.
+
+Dineshkumar Parameswaran (2):
+  i3c: Add HDR_BT mode to the I3C framework
+  i3c: master: dw-i3c-master: add HDR-BT transfer support
+
+ drivers/i3c/master/dw-i3c-master.c | 146 +++++++++++++++++++++--------
+ include/linux/i3c/device.h         |   4 +-
+ 2 files changed, 109 insertions(+), 41 deletions(-)
+
+-- 
+2.34.1
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
