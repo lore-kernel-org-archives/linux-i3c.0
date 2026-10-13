@@ -4,85 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0569CC6B0F
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 14:15:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1124CCC6B1A
+	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 19:04:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ykEJO3Rkiuej9BWHtp51spOkgipkkaF0IhJzMrcs7A0=; b=Au3FBg2vA1A9WA
-	rpcYmC7OaOT7Yk6MpR+GCXeQerJmGnYHWA9ee35kaRgaFU8IetYIl76yIxZr/PCQFgxfaJXaP1MvU
-	qK2wRCLR/HBu03ebPN6bHvWYCSYMLGQZEfYp/IXGk80cvWOQywDky8Y4BRohoplWerUp75Ok9cNl0
-	e4vJDoJaVqoUMkLn1DseTefJIXOniYI2EJIDRoSJy5bBI7w9MPMxO8SslX/KW+m4/x0MVkzQwHLbo
-	sSVGV4TaCNJZrywNpepe07LA0oFOd9VDg74VRhYzg68q1QX1MnB5MflrsyIKZPZVl+zx+3vtIgDAm
-	wuPwETy4hZXXI8JhWpvA==;
+	List-Owner; bh=MSIkySFYiRBa33D61S8hQ8pvCgzxxkb3FeZy4G0Ters=; b=o+ycROedJUVtAv
+	RuIyvXUYDRrQS3NJW5a2mIlp1jm0NELeLtun7/YHyfLeMmWMUZjsrgoC2rdm334kclaKRJX/bpdRA
+	VGFin2A1+NubEyRRui6kUdF2OKSXeAw4bWTt8PeAINHgEoUbNVejEWNzfBpBgYeA/xuyDyrqqLT92
+	guT82R1kbwtp7rF8fUq/VFuQKConsrc9owlzQZpJ2NWq1MnH8SfwbKwcsuG36WpzpWFiTrEjGEyPh
+	RAMZH3Ho8TaSgRwDVWMaI+ic9yDPw0A8YSxCJEDelNE8eSO1uVIoAT5XKAPuL+3q08GKq98C9SD0b
+	jV4jgb7oo2S6sEEFeP/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGdHj-0000000D3e0-1ET7;
-	Tue, 13 Oct 2026 14:15:19 +0000
-Received: from mgamail.intel.com ([198.175.65.10])
+	id 1xGhnT-0000000DtF5-36r9;
+	Tue, 13 Oct 2026 19:04:23 +0000
+Received: from mail-francecentralazon11013036.outbound.protection.outlook.com ([40.107.162.36] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGdHe-0000000D3ZW-49yL
+	id 1xGhnQ-0000000DtER-2LqB
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Oct 2026 14:15:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1791900915; x=1823436915;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=cgkk8QrlKLdZ7JSLU/PFwMs3Wl79B9R/+27rzDTNwdQ=;
-  b=kyWMITXyxZ7bRsXyi/wiMxqsswymmSWSNTH+v/C51D1OykFEUIT9tPAp
-   6pWTLZORXkeK/w6cKaNs7qLJN9W3xQMcoG+Z4GdoGoktqbQOrTPtAfCdG
-   pvGbogvvLlJBhoIeoGZOTK+LvnIxb1PIHwncrNlN8vLnrBG4sMe32zIrm
-   VqiWfcwj9kGkra8AXhXigAQVI7/DfnDI4aBqoMJfjcUtLm+YoJt/AksbU
-   ZITgj3cRM7ag3iUAdAtxgpApLwqLOXuTwGq7yerlxX7TChW+Y7t8qMjKy
-   bSQ+5RQehdYuOFI0O3d9tVHH0xjcdtaM5rQxK4Ja7drIJzjUCkwdkUXB5
-   w==;
-X-CSE-ConnectionGUID: UhxUFcaLTRaKf3zE74Sjgg==
-X-CSE-MsgGUID: OdTW0RWkS5KrjwLpjTZ3Uw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11934"; a="517783"
-X-IronPort-AV: E=Sophos;i="6.27,155,1787036400"; 
-   d="scan'208";a="517783"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Oct 2026 07:15:15 -0700
-X-CSE-ConnectionGUID: 9ASn9lEORse25sGnFboHlg==
-X-CSE-MsgGUID: TvitHJNwToe/Y6ui6NCAkA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,155,1787036400"; 
-   d="scan'208";a="1115876"
-Received: from ncintean-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.245.48])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Oct 2026 07:15:11 -0700
-Date: Tue, 13 Oct 2026 17:15:08 +0300
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: Sam Agazaryan <samagazaryan@google.com>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	linux-i3c@lists.infradead.org,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Adrian Hunter <adrian.hunter@intel.com>,
-	Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
-	Vitor Soares <vitor.soares@toradex.com>,
-	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>,
-	Boris Brezillon <boris.brezillon@collabora.com>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 0/5] i3c: add i3cdev module to expose i3c dev in /dev
-Message-ID: <as487H8-0Gc77mXI@ashevche-desk.local>
-References: <20260921230603.2518652-1-samagazaryan@google.com>
- <arY6DfVf_9tZ_TCu@black.igk.intel.com>
- <arZTphXbVF5wagy2@shikoro>
- <CAHreonFzhYk6fDswn7OVZfL3ybUHU15G3_q9+1sDhe8h670r3A@mail.gmail.com>
-MIME-Version: 1.0
+	Tue, 13 Oct 2026 19:04:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=S7OiaT5vzw+QatR1m9GdvQIx8gGX1rg8M4xFr6jgiRdz9ueDoe98R1a/zBaYhcO1vY87/CjUW6MeSpLGibG735sBZhf0SNPoSCni7b4EwCODUU+45i9Q/hjj5O3IP5j9N5uvPd5QY6RcykL5TTelfQdQZkyjocyHQccNHPOVRGjeN3Xh1sLf0ptI1P+QETILdyuKvLQ5AnPL1NbaKKXb2UGHX7e826jDrYM5aByVAiXTUJ1lllvwwEuWCC5KKzmUqDStmosFgRe097BWFfvTv+miRQJ8b6ZMUZZ1qNIchz51FkQCa/IuOQSNCGhgL6DL6zq/oQssiqj5uJv0GUiUrA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=TaEqmQjg+r6tl0AxMiMrnnds+8wI2TVLxekhjPOVAMg=;
+ b=UIfF1G/RXl3CZ87X0nKjxEOsEfjphyIud8darMvSVcbuOKH/TTIIC3Pn4H3V+71+jIl2PwL4vq7DbsGvWnueM7hJK5EMngVXbNd0hrMQOWKFflptFW6mIajfCZKNcpn0tni5Xp24t1DlbZhfSBj8HIsuUt2BnTpTJjccOfORDPZodA/bTWv7HTH8FQuvSjsbxJ3Q5Y85SDEpXWkHAwiO7oXygxHPnpVWJ0PXwj9PkRFSK/NpF2phxtktJe9AwpCPJh/tqswh+cO+Hc5DtkUR0eU1udRU2v7VkF61TvVnvWsTkdIliyZjoacedRgoHIL7aVJj11CpZCwuipZBrzFuTA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TaEqmQjg+r6tl0AxMiMrnnds+8wI2TVLxekhjPOVAMg=;
+ b=YJ4lsN76WNxUsdCOHZdeHBvdOE9MrHtc/SN1vecVDil7QtycbK3NqE3sBSbS0PTuIb2/CZqnwjYRxB9z4bEsdXSCFusAE0yjyLcTL+joQl31XjMtUNdosIhwglaAHVYcYuyMVO0qgj+XGPWZk/Uqggmmlt3LVhthvYoTJdLmXvRfAIB9pzX7Mk62OZsjAcBJO+MuvvrZF5pdEXpmjE3/UGWrIK7C2SRh9GtkvA9WjU23mZLqeQIMQRNum90BAxY5YB6abdNOKwWtT8sKxUhrKVW4RoL0Vv7AyqSqv2LGr2x8f05eI+IuWl8TAEQmaGADz5xD4C9v2gWTaU1AIL03sg==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by AM9PR04MB9013.eurprd04.prod.outlook.com (2603:10a6:20b:409::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.522.12; Tue, 13 Oct
+ 2026 19:04:14 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0522.011; Tue, 13 Oct 2026
+ 19:04:14 +0000
+Date: Tue, 13 Oct 2026 15:04:07 -0400
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
+Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
+	Frank.Li@nxp.com, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/2] i3c: master: dw-i3c-master: HDR-BT support
+Message-ID: <as6ApwxTzvpMunQc@lizhi-Precision-Tower-5810>
+References: <20261013080413.7470-1-parame@synopsys.com>
 Content-Disposition: inline
-In-Reply-To: <CAHreonFzhYk6fDswn7OVZfL3ybUHU15G3_q9+1sDhe8h670r3A@mail.gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
+In-Reply-To: <20261013080413.7470-1-parame@synopsys.com>
+X-ClientProxiedBy: CY5PR15CA0150.namprd15.prod.outlook.com
+ (2603:10b6:930:67::9) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB9013:EE_
+X-MS-Office365-Filtering-Correlation-Id: d5624043-e005-4968-01b3-08df295cc5af
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|1800799024|366016|376014|6133799003|10067099003|22082099003|18002099003|11063799006|261009223027099003|261009220027099003|261009223327099003|261009221727099003|261009221227099003|56012099006;
+X-Microsoft-Antispam-Message-Info: e9yQldWkE1L4i+iimdvHznb9EmNDLKx/FREreJQRf2GQEN+fZ64ysFIiCZcXqnCO3aq908C9HYHrt7lyocmmw4wd+ABoNI8+51lYOrtVfTAiAyYZ52ww5nKsEO82bByDPJIhG98B3wSb1kBb23EwZFS/c1RLZurOvjBxrDiPYXXQCxQLuroMD+9eUB5nepMJDjkUwbCbv1HoubSenCp085aUOLRtAt8yp1/dJwDwubo5qf7difEj/D99Vj3TN5SnEDzzeBZffZNotRHWbJD7WK6SDn5tUTgNEw65ZLVUNBkjAgQCBwFXRB8uk3Ix7HZoudUrYScf4+pxvEJYMyu+skmgQoT88f8+dpgLJcZdZcL8ivpiA7YfjyGbyxBeDKL4s0wd85P5LII7PJuoBkgu/Y0s6at2VVp9BbR2hoNDa/A4PmGHHbYMYGjn/4at21jiuo80DYUT3IMjs8XmPbb7oR2sONOTtHpWpVJXoLpj3BT71YRTM0UZAjNCDgdktXtZ/bfD0ltdIrGETLBNx3JFGIWB5cBCHQI6oDa6NQrpkw/HfNkeNFW2Gs5Z2isrQJp/9wiNFDNiOqLiIabF3TwHCyU1SW+gyNAzWo/OKVIIUTJDsUlCOdzPDbQCDPUIrS4L
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(1800799024)(366016)(376014)(6133799003)(10067099003)(22082099003)(18002099003)(11063799006)(261009223027099003)(261009220027099003)(261009223327099003)(261009221727099003)(261009221227099003)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?qS38C/2ra0jo4gxib0UaP++OajvZ/EzSXCEWcw+ZTeLnP8RRwRAeZXW4wTsd?=
+ =?us-ascii?Q?b5Ui0c3h3MA4fYyIiND87mQxXrihIwvQR7kq8PzNyCM7e1Ay9uWGT9YhM/uR?=
+ =?us-ascii?Q?1HlkZYasV6wGzql87vngRPRMX1x3f5AI0CJupThnozm9pKM4ew0+Lq1mBN+F?=
+ =?us-ascii?Q?yH22PG9GYwXX6LYT305bcYdnQ17E2lImAHyLdDeUOFzD6ttinAqpJ3hJvftQ?=
+ =?us-ascii?Q?OHGt800ogMZgeaiyvOMtaaO/OLFsHztvs6GPlPg/jWUFAe1ot+rTZ5m+Dow0?=
+ =?us-ascii?Q?abnSbzz11jnHomQwv2FJQ5TQ6xPtFj64vlC5iZ0n3HK+K4N7QOWxvRJuDpvI?=
+ =?us-ascii?Q?fqwe1fqVDnmMuoyxm+wMDAehXFE6t/MjvaDMHT+/q+il0Df7kLoj7qvGN1I4?=
+ =?us-ascii?Q?0f1aXLtczBNRd8IxKqZgxrgQZ+rsArJ3wOYOvESaqvGzFpLxDgwcmGu8pHq2?=
+ =?us-ascii?Q?JF6lt8mqtbGmCYAyr8n+FB072XXt5dd1iT9B4AOoe4J43M/chDgrWgfdg9jg?=
+ =?us-ascii?Q?HVF2VW8mELc6RrkGFA6PwWx2cKt51i9VJ6+5ACacKrhqvNqKZyZEx2KeARXu?=
+ =?us-ascii?Q?E0vCsc+fhlJbQhss5YG8DUkdU9UNA/Qq3DeWG2V8Z5RR4lBAMr+cPCOixEuv?=
+ =?us-ascii?Q?Uc4lOC69Q7ZGRysqZRPQacJnzMEK4gRWsD0lPKaw2YPDXb1zLsboLaTsL9q3?=
+ =?us-ascii?Q?uRl9tCP9ZhDkaXjSOLN/bw1n+tGSzMzIeRe38bBG+R2qc4lEbvX2YUMCnOIp?=
+ =?us-ascii?Q?5l0T4GE/lgoKDA5EZgbcvqIHyAdfazPdq31uoXc5wvcaR8pVVMzIzqHmIeG/?=
+ =?us-ascii?Q?4mxVr19Kt3+BUH7A85oET7/BnWbr6bEi9VWx1Ayuk+JqO5NTj5DUkbUcaz5l?=
+ =?us-ascii?Q?hVraP/EEN9MLW75IFlRRm2kIF1rpPGMVCvsMoJ3HYHt5DXkLEpOT9KaECw+P?=
+ =?us-ascii?Q?U0s4bdFzHAyQhFVvOtQLTJMH/1annSC2zJP7eT0Z9siJo/apCh9+T2x0vXQp?=
+ =?us-ascii?Q?Q9IDCDLCUD08xaPiHi20pdNP8E0EQjJc+L0I6xcF1Q1vHd1NHSlfqrYT5ChK?=
+ =?us-ascii?Q?NWGVjb8zC2d14FVaGwj6qmLfTn3stVLWdLNKvDwQwhYqsic2nWCTN8nROcCy?=
+ =?us-ascii?Q?vAhsvlT7aSe3FHAKoiv4LLWAjezHiKeR7A1DnraknxStw+lEkR2wCaF7J2dF?=
+ =?us-ascii?Q?mRL6sPDheFDyMvIaLDKJk/XVloz7Gvf86iKeBMZP/V7Ns4GwMnRn76G6Z26b?=
+ =?us-ascii?Q?VIEziRNdgVaLA3AjO2b+UgJWOvlFcad8Ip8Qdip/C9VBydAvt05tOOBIDNwH?=
+ =?us-ascii?Q?tS/Tf2dsUjS5rrmzQant6RaIBpjGSH/GMqYPK42TbYC0TT40BeNUX9DQ7Uj7?=
+ =?us-ascii?Q?97nGkYY22X7a1f0xBhoDRVrpM0khBhrtm3ZQOaKGNuE3LWejHVaCA6dcNJQZ?=
+ =?us-ascii?Q?rej8FCeIe0lYyzOWnEoVA4TKi+Pho1Tr8R76fhmwR5YSdEwPqu3nKrYTK/Na?=
+ =?us-ascii?Q?cJLf6sBC2sDmQ4Yskzbmw6GzRjKd5o6unENZtZy3X+h41cwWr8mTsTjrtOe1?=
+ =?us-ascii?Q?TMjUJ/NJWuaKnRasQ9lSQqeW8z7ndT4DT9f/pKlMPK/1JcXSW7OxTcouCkae?=
+ =?us-ascii?Q?mHgKXPIbghBckTWB47THIBzM0kKrO/ZTd9HxtnCfVnWlGBljaRJ1cNl2KYMY?=
+ =?us-ascii?Q?ijBXm0rxwjg2f6BxO3rNR1Fk6JA+MiNGdVQhFAoKaekblASJB3dsLod7ucLu?=
+ =?us-ascii?Q?rswF/4H2PR4AWfUZTMbFHRwmbNM7COJmh6SKHCWiSCZexJkBz0tF?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d5624043-e005-4968-01b3-08df295cc5af
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2026 19:04:14.4737
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: h6Fq+UNXDpBZVWD3lSbrqbVQmiDx70/zbjkL98dwa82kpQU3H1DNTgEYRJkJy7c+vU0AIGqkKf7NQwH4QCdtYZSI/a2S+T7RxLSo4DJ6GdmApdw+jUiuVqEjZCj2iuwD
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB9013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_071515_090060_3FE52E56 
-X-CRM114-Status: GOOD (  35.36  )
+X-CRM114-CacheID: sfid-20261013_120420_600921_249A685C 
+X-CRM114-Status: GOOD (  12.37  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,72 +136,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 09, 2026 at 09:05:28PM -0700, Sam Agazaryan wrote:
+On Tue, Oct 13, 2026 at 01:34:11PM +0530, Dineshkumar Parameswaran wrote:
+> Hello,
+>
+> This series adds HDR-BT (High Data Rate - Bulk Transport)
+> support to the Synopsys DesignWare I3C master driver.
+>
+> The DesignWare controller provides hardware support for HDR-BT
+> transfers, but the current driver only supports SDR transfers.
+> This limitation prevents users from utilizing the higher
+> throughput capabilities available on supported hardware.
+>
+> Patch Overview:
+> 1. Add HDR-BT capability in the I3C framework.
+> 2. Implement HDR-BT operation in the DesignWare master driver.
+>
+> Dineshkumar Parameswaran.
 
-> > I do not know how we end up here. The not-settled yet discussion is in
-> > thread with aqt_dCazxTDR4cpk@ashevche-desk.local.
-> 
-> There has been some back and forth but I originally uploaded this
-> patch set using
-> notifiers for binding looking for comments on the revival of a
-> potential upstream
-> i3cdev driver - Meagan had been working on a similar effort with i3cdev
-> using a different approach for binding and as of right now the bus notifier
-> approach seems to be more favored, but not approved nor decided on yet.
-> 
-> > But I have a big concern about exposing i3c to user space in the way we have it
-> > in i2c. Taking into account that i2c is an odd bus and might lead even to HW
-> > *physical* breakage, I would thing 100 times before making the same mistake
-> > in i3c. If you ever want to do this, this must not be user visible feature
-> > (hidden under expert and debug and maybe even more guards for the starter).
-> 
-> Just to make sure we're on the same page here about this - is your concern that
-> we can arbitrarily address any device on the i3c bus at-will as is the case
-> with i2c-dev?
+You just post i3c: master: dw-i3c-master: Add HDR-DDR support to Designware Controller.
+https://lore.kernel.org/linux-i3c/sashiko-outbox-169200@kernel.org/T/#me5d00e8b02fcad9a477e2969758ca9cfb1a051e0
 
-Yes and more as this bus (i3c) is still non-discoverable (am I mistaken?).
+what's relationship with this thread?
 
-> FWIW, i3cdev as it exists in this patchset does not have as much free reign
-> over the i3c bus as i2c-dev does over an i2c bus:
-> 
-> 1. i3cdev attaches to discrete target devices rather than exposing the
-> bus as a whole.
-> This means if I have 5 devices on my electrical bus that are up and operational
-> and 4 of them have a proper i3c driver to bind to (E.G. mctp-i3c) then
-> i3cdev will
-> not touch those devices, only the 5th device without a bound driver and
-> that would be via the i3cdev instance created specifically for that
-> device. A matching
-> kernel driver being found for a device later means i3cdev
-> automatically detaches itself
-> and makes way for a compatible client driver to bind.
+Frank
 
-This makes even less usefulness in my eyes. Immediate Q: if 4 already have the
-proper driver in the kernel, what's wrong to make it for the fifth one?
-
-What if the device needs more? Or if this is a multi-functional device that
-may have driver for only one part?
-
-What to do with the i2c devices connected to i3c bus in the compatible mode?
-
-> 2. Master controllers are also not a binding option for the driver, so
-> no free access to
-> send out arbitrary CCCs, perform bus scans, do DAA work, etc.
-> 
-> CONFIG_I3CDEV defaults to n and only creates root-owned character
-> devices for unbound targets, though if i3c maintainers prefer adding
-> "depends on EXPERT" or expanding the Kconfig help text, I am happy to do
-> that in v6.
-
-I really want to announce that as debug feature. Maybe I missed some use cases
-when it's the only way to handle the target devices, but for now I fail to see
-that.
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
+>
+> Dineshkumar Parameswaran (2):
+>   i3c: Add HDR_BT mode to the I3C framework
+>   i3c: master: dw-i3c-master: add HDR-BT transfer support
+>
+>  drivers/i3c/master/dw-i3c-master.c | 146 +++++++++++++++++++++--------
+>  include/linux/i3c/device.h         |   4 +-
+>  2 files changed, 109 insertions(+), 41 deletions(-)
+>
+> --
+> 2.34.1
+>
 
 -- 
 linux-i3c mailing list
