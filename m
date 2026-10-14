@@ -4,122 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1124CCC6B1A
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Oct 2026 19:04:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE633CC6B1A
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 Oct 2026 15:04:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MSIkySFYiRBa33D61S8hQ8pvCgzxxkb3FeZy4G0Ters=; b=o+ycROedJUVtAv
-	RuIyvXUYDRrQS3NJW5a2mIlp1jm0NELeLtun7/YHyfLeMmWMUZjsrgoC2rdm334kclaKRJX/bpdRA
-	VGFin2A1+NubEyRRui6kUdF2OKSXeAw4bWTt8PeAINHgEoUbNVejEWNzfBpBgYeA/xuyDyrqqLT92
-	guT82R1kbwtp7rF8fUq/VFuQKConsrc9owlzQZpJ2NWq1MnH8SfwbKwcsuG36WpzpWFiTrEjGEyPh
-	RAMZH3Ho8TaSgRwDVWMaI+ic9yDPw0A8YSxCJEDelNE8eSO1uVIoAT5XKAPuL+3q08GKq98C9SD0b
-	jV4jgb7oo2S6sEEFeP/A==;
+	List-Owner; bh=Uma4QhrBGmiXylT8DK7OvNqIeGrH2QfWCVd+vZfdgC4=; b=OwMBPh5xRyoCHt
+	ZF6Z/QLtoes6V8NwXisxaZA7qzjThHFhwKgyUBKJcbMkY8y8FabAWC0KtXRKxzmDM/OUL8H0l9FP0
+	WWbQr8WRhXSb/Q41+5DpQifGraKvX820l2arPHjg3m/zJNVOWMg8Lb2Q1cPaWSzm4rAn9laKHIqqc
+	HJVvMYHeHSzdV+5wjGrabqCKO5xoWBjeQnCQnvu0KkobiLZYdBh+UDa1MjSAjKDVOON2l9t14pzDP
+	ew/cLuHu+6KWPzAEShIuDZ0uQZO1U4d9czyuQlRQ3/cL3J4R5WIv6GkKhCgD/b2zb6ETSWOJhKI63
+	aDwMLudCO5L4K4cRepeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGhnT-0000000DtF5-36r9;
-	Tue, 13 Oct 2026 19:04:23 +0000
-Received: from mail-francecentralazon11013036.outbound.protection.outlook.com ([40.107.162.36] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	id 1xH0Wn-0000000Fnbf-135w;
+	Wed, 14 Oct 2026 15:04:25 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGhnQ-0000000DtER-2LqB
+	id 1xH0Wm-0000000FnbW-1eU6
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Oct 2026 19:04:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=S7OiaT5vzw+QatR1m9GdvQIx8gGX1rg8M4xFr6jgiRdz9ueDoe98R1a/zBaYhcO1vY87/CjUW6MeSpLGibG735sBZhf0SNPoSCni7b4EwCODUU+45i9Q/hjj5O3IP5j9N5uvPd5QY6RcykL5TTelfQdQZkyjocyHQccNHPOVRGjeN3Xh1sLf0ptI1P+QETILdyuKvLQ5AnPL1NbaKKXb2UGHX7e826jDrYM5aByVAiXTUJ1lllvwwEuWCC5KKzmUqDStmosFgRe097BWFfvTv+miRQJ8b6ZMUZZ1qNIchz51FkQCa/IuOQSNCGhgL6DL6zq/oQssiqj5uJv0GUiUrA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=TaEqmQjg+r6tl0AxMiMrnnds+8wI2TVLxekhjPOVAMg=;
- b=UIfF1G/RXl3CZ87X0nKjxEOsEfjphyIud8darMvSVcbuOKH/TTIIC3Pn4H3V+71+jIl2PwL4vq7DbsGvWnueM7hJK5EMngVXbNd0hrMQOWKFflptFW6mIajfCZKNcpn0tni5Xp24t1DlbZhfSBj8HIsuUt2BnTpTJjccOfORDPZodA/bTWv7HTH8FQuvSjsbxJ3Q5Y85SDEpXWkHAwiO7oXygxHPnpVWJ0PXwj9PkRFSK/NpF2phxtktJe9AwpCPJh/tqswh+cO+Hc5DtkUR0eU1udRU2v7VkF61TvVnvWsTkdIliyZjoacedRgoHIL7aVJj11CpZCwuipZBrzFuTA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TaEqmQjg+r6tl0AxMiMrnnds+8wI2TVLxekhjPOVAMg=;
- b=YJ4lsN76WNxUsdCOHZdeHBvdOE9MrHtc/SN1vecVDil7QtycbK3NqE3sBSbS0PTuIb2/CZqnwjYRxB9z4bEsdXSCFusAE0yjyLcTL+joQl31XjMtUNdosIhwglaAHVYcYuyMVO0qgj+XGPWZk/Uqggmmlt3LVhthvYoTJdLmXvRfAIB9pzX7Mk62OZsjAcBJO+MuvvrZF5pdEXpmjE3/UGWrIK7C2SRh9GtkvA9WjU23mZLqeQIMQRNum90BAxY5YB6abdNOKwWtT8sKxUhrKVW4RoL0Vv7AyqSqv2LGr2x8f05eI+IuWl8TAEQmaGADz5xD4C9v2gWTaU1AIL03sg==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AM9PR04MB9013.eurprd04.prod.outlook.com (2603:10a6:20b:409::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.522.12; Tue, 13 Oct
- 2026 19:04:14 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0522.011; Tue, 13 Oct 2026
- 19:04:14 +0000
-Date: Tue, 13 Oct 2026 15:04:07 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
-Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/2] i3c: master: dw-i3c-master: HDR-BT support
-Message-ID: <as6ApwxTzvpMunQc@lizhi-Precision-Tower-5810>
-References: <20261013080413.7470-1-parame@synopsys.com>
-Content-Disposition: inline
-In-Reply-To: <20261013080413.7470-1-parame@synopsys.com>
-X-ClientProxiedBy: CY5PR15CA0150.namprd15.prod.outlook.com
- (2603:10b6:930:67::9) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	Wed, 14 Oct 2026 15:04:24 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id D532541B06;
+	Wed, 14 Oct 2026 15:04:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 868421F000C4;
+	Wed, 14 Oct 2026 15:04:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791990263;
+	bh=Smuh1MWEePD3V5wu3Lx4JJ7s9l89/Q5ATH1FeAf43Lo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=HqTmKzh2ax96W+Hb5Y283wXiKHe0QKklrroREGryeuNtFLmIdtOCbaUHVj6atdf+u
+	 lHMqK1YiwGcBZvkrYvN0UMtnUcjLJ59i+oHpr+RDsp06X31Ej1qzsYfS9CyvRgYyqv
+	 1uGyFHSyv6v0Gxndi8z7sm5hyPhMF/l5xOgyLCu0hETJCsSXKrPO7kQU/1JKZgiy8b
+	 5gZ9X0CEytrFTT1+BP+L/bEokOzH2WD8YzzpOAbG0AV0tYhShuICUuiTbHo4+duvDz
+	 YtaHUHyvfbnpIfdJ+qGIwyx+viYAY6C4faXzKvJAa/w1DKBvKOxWc5gwbD15fTKD6T
+	 lkQltugcsxFUw==
+Date: Wed, 14 Oct 2026 16:04:17 +0100
+From: Lee Jones <lee@kernel.org>
+To: zain_zhou@realsil.com.cn
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Vikash Bansal <vikash.bansal@nxp.com>,
+	Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
+	Lakshay Piplani <lakshay.piplani@nxp.com>,
+	devicetree@vger.kernel.org, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, mfd@lists.linux.dev,
+	Wei Wang <wei_wang@realsil.com.cn>
+Subject: Re: [RFC PATCH 2/4] mfd: Add driver for Realtek RTS490x I3C hub
+Message-ID: <179198542200.839288.16069032392567490984@kernel.org>
+References: <20260920100501.4091351-1-zain_zhou@realsil.com.cn>
+ <20260920100501.4091351-3-zain_zhou@realsil.com.cn>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB9013:EE_
-X-MS-Office365-Filtering-Correlation-Id: d5624043-e005-4968-01b3-08df295cc5af
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|1800799024|366016|376014|6133799003|10067099003|22082099003|18002099003|11063799006|261009223027099003|261009220027099003|261009223327099003|261009221727099003|261009221227099003|56012099006;
-X-Microsoft-Antispam-Message-Info: e9yQldWkE1L4i+iimdvHznb9EmNDLKx/FREreJQRf2GQEN+fZ64ysFIiCZcXqnCO3aq908C9HYHrt7lyocmmw4wd+ABoNI8+51lYOrtVfTAiAyYZ52ww5nKsEO82bByDPJIhG98B3wSb1kBb23EwZFS/c1RLZurOvjBxrDiPYXXQCxQLuroMD+9eUB5nepMJDjkUwbCbv1HoubSenCp085aUOLRtAt8yp1/dJwDwubo5qf7difEj/D99Vj3TN5SnEDzzeBZffZNotRHWbJD7WK6SDn5tUTgNEw65ZLVUNBkjAgQCBwFXRB8uk3Ix7HZoudUrYScf4+pxvEJYMyu+skmgQoT88f8+dpgLJcZdZcL8ivpiA7YfjyGbyxBeDKL4s0wd85P5LII7PJuoBkgu/Y0s6at2VVp9BbR2hoNDa/A4PmGHHbYMYGjn/4at21jiuo80DYUT3IMjs8XmPbb7oR2sONOTtHpWpVJXoLpj3BT71YRTM0UZAjNCDgdktXtZ/bfD0ltdIrGETLBNx3JFGIWB5cBCHQI6oDa6NQrpkw/HfNkeNFW2Gs5Z2isrQJp/9wiNFDNiOqLiIabF3TwHCyU1SW+gyNAzWo/OKVIIUTJDsUlCOdzPDbQCDPUIrS4L
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(1800799024)(366016)(376014)(6133799003)(10067099003)(22082099003)(18002099003)(11063799006)(261009223027099003)(261009220027099003)(261009223327099003)(261009221727099003)(261009221227099003)(56012099006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?qS38C/2ra0jo4gxib0UaP++OajvZ/EzSXCEWcw+ZTeLnP8RRwRAeZXW4wTsd?=
- =?us-ascii?Q?b5Ui0c3h3MA4fYyIiND87mQxXrihIwvQR7kq8PzNyCM7e1Ay9uWGT9YhM/uR?=
- =?us-ascii?Q?1HlkZYasV6wGzql87vngRPRMX1x3f5AI0CJupThnozm9pKM4ew0+Lq1mBN+F?=
- =?us-ascii?Q?yH22PG9GYwXX6LYT305bcYdnQ17E2lImAHyLdDeUOFzD6ttinAqpJ3hJvftQ?=
- =?us-ascii?Q?OHGt800ogMZgeaiyvOMtaaO/OLFsHztvs6GPlPg/jWUFAe1ot+rTZ5m+Dow0?=
- =?us-ascii?Q?abnSbzz11jnHomQwv2FJQ5TQ6xPtFj64vlC5iZ0n3HK+K4N7QOWxvRJuDpvI?=
- =?us-ascii?Q?fqwe1fqVDnmMuoyxm+wMDAehXFE6t/MjvaDMHT+/q+il0Df7kLoj7qvGN1I4?=
- =?us-ascii?Q?0f1aXLtczBNRd8IxKqZgxrgQZ+rsArJ3wOYOvESaqvGzFpLxDgwcmGu8pHq2?=
- =?us-ascii?Q?JF6lt8mqtbGmCYAyr8n+FB072XXt5dd1iT9B4AOoe4J43M/chDgrWgfdg9jg?=
- =?us-ascii?Q?HVF2VW8mELc6RrkGFA6PwWx2cKt51i9VJ6+5ACacKrhqvNqKZyZEx2KeARXu?=
- =?us-ascii?Q?E0vCsc+fhlJbQhss5YG8DUkdU9UNA/Qq3DeWG2V8Z5RR4lBAMr+cPCOixEuv?=
- =?us-ascii?Q?Uc4lOC69Q7ZGRysqZRPQacJnzMEK4gRWsD0lPKaw2YPDXb1zLsboLaTsL9q3?=
- =?us-ascii?Q?uRl9tCP9ZhDkaXjSOLN/bw1n+tGSzMzIeRe38bBG+R2qc4lEbvX2YUMCnOIp?=
- =?us-ascii?Q?5l0T4GE/lgoKDA5EZgbcvqIHyAdfazPdq31uoXc5wvcaR8pVVMzIzqHmIeG/?=
- =?us-ascii?Q?4mxVr19Kt3+BUH7A85oET7/BnWbr6bEi9VWx1Ayuk+JqO5NTj5DUkbUcaz5l?=
- =?us-ascii?Q?hVraP/EEN9MLW75IFlRRm2kIF1rpPGMVCvsMoJ3HYHt5DXkLEpOT9KaECw+P?=
- =?us-ascii?Q?U0s4bdFzHAyQhFVvOtQLTJMH/1annSC2zJP7eT0Z9siJo/apCh9+T2x0vXQp?=
- =?us-ascii?Q?Q9IDCDLCUD08xaPiHi20pdNP8E0EQjJc+L0I6xcF1Q1vHd1NHSlfqrYT5ChK?=
- =?us-ascii?Q?NWGVjb8zC2d14FVaGwj6qmLfTn3stVLWdLNKvDwQwhYqsic2nWCTN8nROcCy?=
- =?us-ascii?Q?vAhsvlT7aSe3FHAKoiv4LLWAjezHiKeR7A1DnraknxStw+lEkR2wCaF7J2dF?=
- =?us-ascii?Q?mRL6sPDheFDyMvIaLDKJk/XVloz7Gvf86iKeBMZP/V7Ns4GwMnRn76G6Z26b?=
- =?us-ascii?Q?VIEziRNdgVaLA3AjO2b+UgJWOvlFcad8Ip8Qdip/C9VBydAvt05tOOBIDNwH?=
- =?us-ascii?Q?tS/Tf2dsUjS5rrmzQant6RaIBpjGSH/GMqYPK42TbYC0TT40BeNUX9DQ7Uj7?=
- =?us-ascii?Q?97nGkYY22X7a1f0xBhoDRVrpM0khBhrtm3ZQOaKGNuE3LWejHVaCA6dcNJQZ?=
- =?us-ascii?Q?rej8FCeIe0lYyzOWnEoVA4TKi+Pho1Tr8R76fhmwR5YSdEwPqu3nKrYTK/Na?=
- =?us-ascii?Q?cJLf6sBC2sDmQ4Yskzbmw6GzRjKd5o6unENZtZy3X+h41cwWr8mTsTjrtOe1?=
- =?us-ascii?Q?TMjUJ/NJWuaKnRasQ9lSQqeW8z7ndT4DT9f/pKlMPK/1JcXSW7OxTcouCkae?=
- =?us-ascii?Q?mHgKXPIbghBckTWB47THIBzM0kKrO/ZTd9HxtnCfVnWlGBljaRJ1cNl2KYMY?=
- =?us-ascii?Q?ijBXm0rxwjg2f6BxO3rNR1Fk6JA+MiNGdVQhFAoKaekblASJB3dsLod7ucLu?=
- =?us-ascii?Q?rswF/4H2PR4AWfUZTMbFHRwmbNM7COJmh6SKHCWiSCZexJkBz0tF?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d5624043-e005-4968-01b3-08df295cc5af
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2026 19:04:14.4737
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: h6Fq+UNXDpBZVWD3lSbrqbVQmiDx70/zbjkL98dwa82kpQU3H1DNTgEYRJkJy7c+vU0AIGqkKf7NQwH4QCdtYZSI/a2S+T7RxLSo4DJ6GdmApdw+jUiuVqEjZCj2iuwD
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB9013
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_120420_600921_249A685C 
-X-CRM114-Status: GOOD (  12.37  )
+Content-Disposition: inline
+In-Reply-To: <20260920100501.4091351-3-zain_zhou@realsil.com.cn>
+X-AI-Review-Draft: <20260920100501.4091351-3-zain_zhou@realsil.com.cn>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,42 +81,286 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 13, 2026 at 01:34:11PM +0530, Dineshkumar Parameswaran wrote:
-> Hello,
->
-> This series adds HDR-BT (High Data Rate - Bulk Transport)
-> support to the Synopsys DesignWare I3C master driver.
->
-> The DesignWare controller provides hardware support for HDR-BT
-> transfers, but the current driver only supports SDR transfers.
-> This limitation prevents users from utilizing the higher
-> throughput capabilities available on supported hardware.
->
-> Patch Overview:
-> 1. Add HDR-BT capability in the I3C framework.
-> 2. Implement HDR-BT operation in the DesignWare master driver.
->
-> Dineshkumar Parameswaran.
+On Sun, 20 Sep 2026, zain_zhou@realsil.com.cn wrote:
 
-You just post i3c: master: dw-i3c-master: Add HDR-DDR support to Designware Controller.
-https://lore.kernel.org/linux-i3c/sashiko-outbox-169200@kernel.org/T/#me5d00e8b02fcad9a477e2969758ca9cfb1a051e0
-
-what's relationship with this thread?
-
-Frank
-
+> From: Yin Zhou <zain_zhou@realsil.com.cn>
 >
-> Dineshkumar Parameswaran (2):
->   i3c: Add HDR_BT mode to the I3C framework
->   i3c: master: dw-i3c-master: add HDR-BT transfer support
+> Add the MFD core driver for the Realtek RTS490x family of I3C hubs.
+> The driver initializes the shared register map, identifies the hub
+> variant, and registers the regulator and I3C hub child devices.
 >
->  drivers/i3c/master/dw-i3c-master.c | 146 +++++++++++++++++++++--------
->  include/linux/i3c/device.h         |   4 +-
->  2 files changed, 109 insertions(+), 41 deletions(-)
+> Signed-off-by: Yin Zhou <zain_zhou@realsil.com.cn>
+> ---
+>  MAINTAINERS                 |   2 +
+>  drivers/mfd/Kconfig         |  11 +++
+>  drivers/mfd/Makefile        |   1 +
+>  drivers/mfd/rts490x-core.c  | 131 ++++++++++++++++++++++++++++++++++++
+>  include/linux/mfd/rts490x.h |  53 +++++++++++++++
+>  5 files changed, 198 insertions(+)
+>  create mode 100644 drivers/mfd/rts490x-core.c
+>  create mode 100644 include/linux/mfd/rts490x.h
 >
-> --
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index a2c171a28cd2..659f553420eb 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -22998,6 +22998,8 @@ L:	linux-i3c@lists.infradead.org
+>  L:	linux-kernel@vger.kernel.org
+>  S:	Maintained
+>  F:	Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml
+> +F:	drivers/mfd/rts490x-core.c
+> +F:	include/linux/mfd/rts490x.h
+>
+>  REALTEK OTTO WATCHDOG
+>  M:	Sander Vanheule <sander@svanheule.net>
+> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+> index ee809b0c1b8f..6da8967de1a2 100644
+> --- a/drivers/mfd/Kconfig
+> +++ b/drivers/mfd/Kconfig
+> @@ -630,6 +630,17 @@ config MFD_P3H2X4X
+>  	  This driver provides support for I3C hub and regulator, each subdriver
+>  	  can be enabled independently depending on the required functionality.
+>
+> +config MFD_RTS490X
+> +	tristate "Realtek RTS490x I3C hub"
+> +	depends on I3C
+> +	select MFD_CORE
+> +	select REGMAP_I3C
+> +	help
+> +	  Enable support for the Realtek RTS490x family of I3C hub devices.
+> +	  This driver provides the shared register map and parent state used by
+> +	  the I3C hub and regulator child drivers. The hub is connected to the
+> +	  host through I3C.
+> +
+>  config MFD_PF1550
+>  	tristate "NXP PF1550 PMIC Support"
+>  	depends on I2C=y && OF
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index ec4e093f3540..97988277bee9 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -124,6 +124,7 @@ obj-$(CONFIG_MFD_MC13XXX_I2C)	+= mc13xxx-i2c.o
+>
+>  obj-$(CONFIG_MFD_P3H2X4X)	+= p3h2840.o
+>  obj-$(CONFIG_MFD_PF1550)	+= pf1550.o
+> +obj-$(CONFIG_MFD_RTS490X)	+= rts490x-core.o
+>
+>  obj-$(CONFIG_MFD_NCT6694)	+= nct6694.o
+>
+> diff --git a/drivers/mfd/rts490x-core.c b/drivers/mfd/rts490x-core.c
+> new file mode 100644
+> index 000000000000..c10718397167
+> --- /dev/null
+> +++ b/drivers/mfd/rts490x-core.c
+> @@ -0,0 +1,131 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/* Copyright (c) 2025-2026 Realtek Semiconductor Corp. */
+> +
+> +#include <linux/bitfield.h>
+> +#include <linux/i3c/device.h>
+> +#include <linux/mfd/core.h>
+> +#include <linux/mfd/rts490x.h>
+> +#include <linux/regmap.h>
+> +
+> +struct rts490x_device_info {
+> +	const char *model;
+> +	u16 part_id;
+> +	u8 num_target_ports;
+> +};
+> +
+> +static const struct rts490x_device_info rts490x_devices[] = {
+> +	{ "RTS4900", 0x4000, 4 },
+> +	{ "RTS4901", 0x4100, 4 },
+> +	{ "RTS4902", 0x8000, 8 },
+> +	{ "RTS4903", 0x8100, 8 },
+> +	{ "RTS4904", 0x4001, 4 },
+> +	{ "RTS4906", 0x8001, 8 },
+> +};
+> +
+> +static const struct mfd_cell rts490x_cells[] = {
+> +	MFD_CELL_NAME("rts490x-regulator"),
+> +	MFD_CELL_NAME("rts490x-i3c-hub"),
+> +};
+> +
+> +static const struct regmap_config rts490x_regmap_config = {
+> +	.reg_bits = 8,
+> +	.val_bits = 8,
+> +	.max_register = 0xff,
+> +};
+> +
+> +static int rts490x_read_device_info(struct device *dev, struct rts490x *rts490x)
+> +{
+> +	unsigned int value;
+> +	u16 part_id;
+> +	int ret;
+> +	int i;
+
+Please declare loop counters inside the 'for' statement.
+
+> +
+> +	ret = regmap_read(rts490x->regmap, RTS490X_DEV_INFO_0, &value);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "failed to read device information\n");
+> +
+> +	part_id = value << 8;
+> +
+> +	ret = regmap_read(rts490x->regmap, RTS490X_DEV_REV, &value);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "failed to read device revision\n");
+> +
+> +	part_id |= FIELD_GET(RTS490X_DEV_REV_LDO_MASK, value);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(rts490x_devices); i++) {
+> +		if (rts490x_devices[i].part_id != part_id)
+> +			continue;
+> +
+> +		rts490x->model = rts490x_devices[i].model;
+> +		rts490x->part_id = part_id;
+> +		rts490x->num_target_ports = rts490x_devices[i].num_target_ports;
+> +		return 0;
+> +	}
+> +
+> +	return dev_err_probe(dev, -ENODEV,
+> +			     "unsupported RTS490x device ID 0x%04x\n", part_id);
+> +}
+> +
+> +static int rts490x_probe(struct i3c_device *i3cdev)
+> +{
+> +	struct device *dev = i3cdev_to_dev(i3cdev);
+> +	struct i3c_device_info info;
+> +	struct rts490x *rts490x;
+> +	int ret;
+> +
+> +	i3c_device_get_info(i3cdev, &info);
+> +	if (I3C_PID_MANUF_ID(info.pid) != RTS490X_MANUFACTURER_ID)
+> +		return -ENODEV;
+
+Doesn't 'rts490x_i3c_ids' already match on 'I3C_MATCH_MANUF' with
+'RTS490X_MANUFACTURER_ID'?   When would this check ever trigger?
+
+> +	rts490x = devm_kzalloc(dev, sizeof(*rts490x), GFP_KERNEL);
+> +	if (!rts490x)
+> +		return -ENOMEM;
+> +
+> +	ret = devm_mutex_init(dev, &rts490x->protected_reg_lock);
+> +	if (ret)
+> +		return ret;
+> +
+> +	rts490x->regmap = devm_regmap_init_i3c(i3cdev, &rts490x_regmap_config);
+> +	if (IS_ERR(rts490x->regmap))
+> +		return dev_err_probe(dev, PTR_ERR(rts490x->regmap),
+> +				     "failed to initialize regmap\n");
+> +
+> +	rts490x->i3cdev = i3cdev;
+> +	i3cdev_set_drvdata(i3cdev, rts490x);
+> +
+> +	ret = rts490x_read_device_info(dev, rts490x);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO,
+> +				   rts490x_cells, ARRAY_SIZE(rts490x_cells),
+> +				   NULL, 0, NULL);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "failed to add child devices\n");
+> +
+> +	dev_info(dev, "%s I3C hub with %u target ports\n",
+> +		 rts490x->model, rts490x->num_target_ports);
+
+Keep the kernel log clean whenever possible please.
+
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct i3c_device_id rts490x_i3c_ids[] = {
+> +	{
+> +		.match_flags = I3C_MATCH_DCR | I3C_MATCH_MANUF,
+> +		.dcr = I3C_DCR_HUB,
+> +		.manuf_id = RTS490X_MANUFACTURER_ID,
+> +	},
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(i3c, rts490x_i3c_ids);
+> +
+> +static struct i3c_driver rts490x_driver = {
+> +	.driver.name = "rts490x",
+> +	.probe = rts490x_probe,
+> +	.id_table = rts490x_i3c_ids,
+> +};
+> +module_i3c_driver(rts490x_driver);
+> +
+> +MODULE_AUTHOR("Yin Zhou <zain_zhou@realsil.com.cn>");
+> +MODULE_DESCRIPTION("Realtek RTS490x I3C hub MFD driver");
+
+Please drop "MFD" from the description.
+
+> +MODULE_LICENSE("GPL");
+> diff --git a/include/linux/mfd/rts490x.h b/include/linux/mfd/rts490x.h
+> new file mode 100644
+> index 000000000000..2af77d22dab9
+> --- /dev/null
+> +++ b/include/linux/mfd/rts490x.h
+> @@ -0,0 +1,53 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/* Copyright (c) 2025-2026 Realtek Semiconductor Corp. */
+> +#ifndef _LINUX_MFD_RTS490X_H
+> +#define _LINUX_MFD_RTS490X_H
+> +
+> +#include <linux/bits.h>
+> +#include <linux/mutex.h>
+> +#include <linux/types.h>
+> +
+> +#define RTS490X_MAX_TARGET_PORTS		8
+> +
+> +/* Device information registers shared by the MFD children. */
+> +#define RTS490X_DEV_INFO_0		0x00
+> +#define RTS490X_DEV_REV			0x0b
+> +#define RTS490X_DEV_REV_LDO_MASK	GENMASK(7, 6)
+> +
+> +/* Regulator registers shared with the regulator child. */
+> +#define RTS490X_LDO_CONF		0x16
+> +#define RTS490X_LDO_AND_PULLUP_CONF	0x19
+> +
+> +/* Protected-register access shared by the MFD children. */
+> +#define RTS490X_PROTECTION_CODE		0x10
+> +#define RTS490X_REGISTERS_LOCK_CODE	0x00
+> +#define RTS490X_REGISTERS_UNLOCK_CODE	0x69
+> +
+> +#define RTS490X_MANUFACTURER_ID		0x025d
+> +
+> +struct i3c_device;
+> +struct regmap;
+> +struct rts490x_hub;
+> +
+> +/**
+> + * struct rts490x - shared state for RTS490x MFD children
+> + * @i3cdev: upstream I3C device
+> + * @regmap: register map shared by all child drivers
+> + * @protected_reg_lock: serializes protected-register transactions
+> + * @model: detected chip model
+> + * @part_id: hardware part identifier
+> + * @num_target_ports: number of implemented target ports
+> + * @hub: hub child state used by the hub-device IBI handler
+> + */
+> +struct rts490x {
+> +	struct i3c_device *i3cdev;
+> +	struct regmap *regmap;
+> +	/* Serializes protected-register transactions across child drivers. */
+> +	struct mutex protected_reg_lock;
+> +	const char *model;
+> +	u16 part_id;
+> +	u8 num_target_ports;
+> +	struct rts490x_hub *hub;
+> +};
+> +
+> +#endif /* _LINUX_MFD_RTS490X_H */
+> -- 
 > 2.34.1
 >
+
+-- 
+Lee Jones
 
 -- 
 linux-i3c mailing list
