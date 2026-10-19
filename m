@@ -4,124 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7CD3CCF2D6
-	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 07:40:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C0DDCCF2DA
+	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 09:45:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CF8+Tnh5DoviVvGfGtaEVmNBp3mA7bLUeVrTEbFMqAM=; b=Z38QJiytvEpFDNQl2hk0xHoFYO
-	GmusTosHHTvb0DfviSB3V0PXRkl++I+uTrOxXA6hHcvP/Igq0GkImJQZ9hiRJvLjsbQaBupf2FrwN
-	Lr42hEGcpDEagDRDa93Nk2iV7sC/I+APtBJyMDUypSBFmSY0AK0ANL2fu7CgDAaS9AdP4l/ado2z8
-	q6GyJRPogYPAYFWpKNTScN9d021i7FUBbj5fv+fZhxK6pWL7Yw502H2w48NPuutv1DX/+S8bnqamx
-	txyx21Pgu1wtopNQOWL3Nu1juGF5b50M6nA9c7GoeJBc5ttQL/G8cWIROM8MvRfb7hb803qWJZQyS
-	LDtqCk9w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3NtQyjh+s6NV6Rodeg856EQWoNt9MFzxyaVl5ECabF8=; b=D/wJljdzLUG7QI
+	zufY19N6kNSy78yTJvgGtdRE3hkH2uFyRxwWaPIfvSE4K9Rl/hxpPItLLT8JNyZyYPDGGk4sR3uWq
+	j5QMayiLYSGaVHGb0tonwLL7rzmPF0wBX5v0S37j7CTQ4UNckgchTmIuV/mcjHCbk1oy70vFL1gfG
+	Rwsz24yWa6+8qHADyPBI08uFcdNLqCk3mEBMZFSe1ndYelrkxWYlDeKoILWyXjGhLEy1XUxs516vT
+	T1nejEiR/1ipBqhlEhJKjhNFtm9KNKChiWjhFhMSDd+4vVJ+bYx4Aqk6i5I6fdMFtHPKwH2EGF41K
+	r3SbHz3REVKcoFFbuWLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIhya-00000006mGn-1OUC;
-	Mon, 19 Oct 2026 07:40:08 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1xIjvi-000000072zV-0oHi;
+	Mon, 19 Oct 2026 09:45:18 +0000
+Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIhyY-00000006mFi-2OsM
+	id 1xIjvd-000000072vz-2KIU
 	for linux-i3c@lists.infradead.org;
-	Mon, 19 Oct 2026 07:40:07 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-48af4d4e61fso998371f8f.2
-        for <linux-i3c@lists.infradead.org>; Mon, 19 Oct 2026 00:40:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1792395605; x=1793000405; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:organization
-         :autocrypt:content-language:references:cc:to:subject:reply-to:from
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=M0SUy48Ueh56GzaTiRmwygfsPwqE3Nw6AJaFjvfAhy4=;
-        b=ke6cxNQxE3BIp2bnBP0l3SmtdZMKTgAA695y6RbBdJ4EQsHBKtwBOeCvOP/WJzLdIh
-         F/PH067+Y0YitmsPXt2EUqfe2YrWza4aEUWxT5i+RuCOXZbhuoCFkqgjj9Mia86mwumF
-         PGb4NVPS4EEwk0W5+enzf0LdYlRfNswy89lFZGqvXIPoXWa6RWrT5zAUpOGqWSwMe1Fy
-         XrtMaGIksNCv8iU9RN/qA1LDY+DSiUbj9g8UE/iv9DcU+WyvQem4njZNhf7kU0Urasu0
-         38ArGt2vUFRVzHQLHe5LkxrWBX+vDu4b20DWK1j27R3jsmTRBkXYGj/+yerPBDp5Ya48
-         phhg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792395605; x=1793000405;
-        h=content-transfer-encoding:content-type:in-reply-to:organization
-         :autocrypt:content-language:references:cc:to:subject:reply-to:from
-         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=M0SUy48Ueh56GzaTiRmwygfsPwqE3Nw6AJaFjvfAhy4=;
-        b=X6OL5hBkmLRcwLLn1QwxCdQOIwlngr+l65uYGaLeH0K7zd7co6BvR/wLFbiELA5T7O
-         vyRwqUrC3LAs1wIrHJnVfXAiSeacJuaI1ufPc7tLM1bHFz0MpcnCNloIxdGiHWcYUfON
-         6YFwPOQDlf3+5u4z99dkVCv48KP03njGoGW07ch9fla/ZZAj7P80SPCaP8wPofs1fCO2
-         Txt9j3Gq+hMxyHlF2UXhcZQHDgjk95AwKY0aj4VffzgReZdCPCqYNOLt852XHJ3D25+U
-         xHY73uPzpvG4B4XrUEmoQijA2XiEhvrCA8WWwqRIszG2DDnEFzsmMb1XrSLdHj2ZfWze
-         Bybw==
-X-Gm-Message-State: AFq9FYJ5CEmlyUWmBQDINdEsS4tCAUbfdxIvBKoy0KQj/h8ky4BkarQj
-	Ckm9xx/DPPxWX+eDcexdOq+kcA9+f2bLjVAWTVJUhmSSq0d1h+ocnAaaFp+F7ue5/Vs=
-X-Gm-Gg: AYBFou0atLR3sdMKHhYNo7WWu52N5D6BlaSJESZLY7MJIhGrUlA1P2eq9b2CWjLSX54
-	PoakGQsbZtRLUQ9zg2bMagEbTPpkLWq6V6jWbLet7eDBA2Hh9SC7/bMCJU/Zynfq/hS6+WLdOWP
-	DXFft/u2LLWYAlmY4uAIYiHnuRFJ/HpA2dmuDNW8hdoB074Ue6JPu2LGWvpJ8ss35SxxLmEMKAx
-	l8JswaoHNApbJw2dK/sAMog7ddJkfAaa41DLvD4t6E9HPr1LpmJzAdXr9XRh5AsMpX+36ghclZ1
-	3HLeuVS9vPeClegebOwa+AjKu0Skp7TtlqMcUuabk9v0OjkEAN8A1pIsTprumZRI1s44iZKfKeb
-	6h/Dexi0PorZ7lb+te5OkF0TwnGZD4po0BksUrbYmOCzi1itXjVPJjxPrtAIsmnTd/iLwSN8r32
-	r+1OXXB6ayavP3KOhBWzAQjdLtMWdHEoxlFvtftXb3InJxLJ3G7tlMsjOAvGUYuChpI+373fc8U
-	HMRJAgs2hilfG3nQvdR4r7x7emP9+JwXkTyeHiNjW33RpGuJgnTBg==
-X-Received: by 2002:a05:6000:29c6:b0:48b:5e2:52dd with SMTP id ffacd0b85a97d-48e07bbd36emr9726692f8f.11.1792395604385;
-        Mon, 19 Oct 2026 00:40:04 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:106d:1080:6674:33bf:38d6:bc10? ([2a01:e0a:106d:1080:6674:33bf:38d6:bc10])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48dfd4f8bd9sm22298261f8f.35.2026.10.19.00.40.03
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 19 Oct 2026 00:40:03 -0700 (PDT)
-Message-ID: <98df3ac1-c6ae-4acb-b0ee-ddda92487660@linaro.org>
-Date: Mon, 19 Oct 2026 09:40:03 +0200
+	Mon, 19 Oct 2026 09:45:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1792403113; x=1823939113;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:content-transfer-encoding:in-reply-to;
+  bh=w4UHhObpYApuoYUrGBdsgMQGLO/WGyYDONI7l3vgqfk=;
+  b=G8BXrwqSZnNKNNVP2cpL5Pz0hhZfaqIYm072zirSyrNjAmUoq3V5swFC
+   AUR3i0xERt/g+bY3lNkgC5TW+aAMUguyyav3EacIM325U9oaMJ0qUP6YC
+   31425i06j4vZdUtJgHEX7Efbvlb7MX/yigrNX+LgqNioK/o0LWVhoWQRw
+   ZOcXl9kdoZHGh0V/HqDdnrHHdADS/NN8t+8TQyACkp4NRdXngM8OMmjG6
+   +6+asn9qNBRVOOMTuj40DRzAg4DKeppdzgWJk5bwNmZMqgk4Sda78u+so
+   BjTyHQohFfEZeRF0emOLczBkR5KTaB6yRW3Clh/PRCDdGXs4g9lMACLXF
+   w==;
+X-CSE-ConnectionGUID: /0I2OmYVQ+yZxf1rgEWEXA==
+X-CSE-MsgGUID: VCnOBxX5RuWvOCkZApd+kw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11939"; a="983659"
+X-IronPort-AV: E=Sophos;i="6.27,167,1787036400"; 
+   d="scan'208";a="983659"
+Received: from fmviesa012.fm.intel.com ([10.60.135.152])
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Oct 2026 02:45:11 -0700
+X-CSE-ConnectionGUID: PJQrtk4pTXW/F4y7qXJNDw==
+X-CSE-MsgGUID: 4Ld0QSQnS6WRwwsnxgvfjg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,167,1787036400"; 
+   d="scan'208";a="4252753"
+Received: from pgcooper-mobl3.ger.corp.intel.com (HELO localhost) ([10.245.245.209])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Oct 2026 02:45:09 -0700
+Date: Mon, 19 Oct 2026 12:45:06 +0300
+From: Andy Shevchenko <andriy.shevchenko@intel.com>
+To: Sam Agazaryan <samagazaryan@google.com>
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	linux-i3c@lists.infradead.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Adrian Hunter <adrian.hunter@intel.com>,
+	Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
+	Vitor Soares <vitor.soares@toradex.com>,
+	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>,
+	Boris Brezillon <boris.brezillon@collabora.com>,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 0/5] i3c: add i3cdev module to expose i3c dev in /dev
+Message-ID: <atXmovzepBLP8Mqo@ashevche-desk.local>
+References: <20260921230603.2518652-1-samagazaryan@google.com>
+ <arY6DfVf_9tZ_TCu@black.igk.intel.com>
+ <arZTphXbVF5wagy2@shikoro>
+ <CAHreonFzhYk6fDswn7OVZfL3ybUHU15G3_q9+1sDhe8h670r3A@mail.gmail.com>
+ <as487H8-0Gc77mXI@ashevche-desk.local>
+ <CAHreonHiesGbR4VB+3sRxoLDmNHXFFEB=6_o6TNedm-N6VksEQ@mail.gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH 3/3] i3c: master: svc: Add Amlogic A9 glue layer
-To: junyi.zhao@amlogic.com, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, Kees Cook <kees@kernel.org>,
- "Gustavo A. R. Silva" <gustavoars@kernel.org>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, imx@lists.linux.dev,
- linux-hardening@vger.kernel.org, xianwei.zhao@amlogic.com,
- Kelvin.Zhang@amlogic.com
-References: <20261019-a9_i3c-v1-0-329d819d621f@amlogic.com>
- <20261019-a9_i3c-v1-3-329d819d621f@amlogic.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20261019-a9_i3c-v1-3-329d819d621f@amlogic.com>
+Content-Disposition: inline
+In-Reply-To: <CAHreonHiesGbR4VB+3sRxoLDmNHXFFEB=6_o6TNedm-N6VksEQ@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_004006_684100_9A26AE5A 
-X-CRM114-Status: GOOD (  30.97  )
+X-CRM114-CacheID: sfid-20261019_024513_622806_24E50701 
+X-CRM114-Status: GOOD (  31.80  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,340 +96,77 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 10/19/26 07:34, Junyi Zhao via B4 Relay wrote:
-> From: Junyi Zhao <junyi.zhao@amlogic.com>
-> 
-> Add support for the Amlogic A9 implementation of the Silvaco
-> SVC I3C controller.
-> 
-> The glue layer provides Amlogic-specific operations and resource
-> handling while reusing the common SVC I3C core driver.
-> 
-> Add a corresponding MAINTAINERS entry for the Amlogic I3C
-> controller.
-> 
-> Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
-> ---
->   MAINTAINERS                          |   6 +
->   drivers/i3c/master/svc/Kconfig       |   7 +
->   drivers/i3c/master/svc/Makefile      |   1 +
->   drivers/i3c/master/svc/i3c-amlogic.c | 250 +++++++++++++++++++++++++++++++++++
->   4 files changed, 264 insertions(+)
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index dffc63af2..478979446 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -1398,6 +1398,12 @@ F:	Documentation/userspace-api/media/v4l/metafmt-c3-isp.rst
->   F:	drivers/media/platform/amlogic/c3/isp/
->   F:	include/uapi/linux/media/amlogic/
->   
-> +AMLOGIC I3C DRIVER
-> +M:	Junyi Zhao <junyi.zhao@amlogic.com>
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/i3c/amlogic,i3c-a9.yaml
-> +F:	drivers/i3c/master/svc/i3c-amlogic.c
-> +
->   AMLOGIC MIPI ADAPTER DRIVER
->   M:	Keke Li <keke.li@amlogic.com>
->   L:	linux-media@vger.kernel.org
-> diff --git a/drivers/i3c/master/svc/Kconfig b/drivers/i3c/master/svc/Kconfig
-> index 14fa1e542..df3528bc1 100644
-> --- a/drivers/i3c/master/svc/Kconfig
-> +++ b/drivers/i3c/master/svc/Kconfig
-> @@ -18,4 +18,11 @@ config I3C_SILVACO
->   	  compatible strings such as "silvaco,i3c-master-v1" and
->   	  "nuvoton,npcm845-i3c".
->   
-> +config I3C_AMLOGIC
-> +	tristate "Amlogic I3C support"
-> +	default y
-> +	help
-> +	  This selects the Amlogic SoC glue layer support for
-> +	  the Silvaco device driver. This driver is used for A9, C5 SoCs.
-> +
->   endif # SVC_I3C
-> diff --git a/drivers/i3c/master/svc/Makefile b/drivers/i3c/master/svc/Makefile
-> index cf18c5da6..695863d1f 100644
-> --- a/drivers/i3c/master/svc/Makefile
-> +++ b/drivers/i3c/master/svc/Makefile
-> @@ -3,3 +3,4 @@
->   
->   obj-$(CONFIG_SVC_I3C)	+= i3c-main.o
->   obj-$(CONFIG_I3C_SILVACO)	+= i3c-silvaco.o
-> +obj-$(CONFIG_I3C_AMLOGIC)	+= i3c-amlogic.o
-> diff --git a/drivers/i3c/master/svc/i3c-amlogic.c b/drivers/i3c/master/svc/i3c-amlogic.c
-> new file mode 100644
-> index 000000000..82300d6ae
-> --- /dev/null
-> +++ b/drivers/i3c/master/svc/i3c-amlogic.c
-> @@ -0,0 +1,250 @@
-> +// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
-> +/*
-> + * Copyright (C) 2026 Amlogic, Inc. All rights reserved
-> + */
-> +#include "i3c-main.h"
-> +#include <linux/math64.h>
-> +
-> +/* Amlogic specific registers */
-> +#define I3C_BG_RD_ADDR			0x200
-> +#define I3C_BG_WR_ADDR			0x204
-> +#define I3C_BG_WR_CTRL			0x208
-> +#define I3C_BG_R_TT_LEN			0x20c
-> +#define I3C_BG_X_CNT			0x210
-> +#define I3C_BUS_MON_CTRL		0x214
-> +#define I3C_BUS_MON_ADDR		0x218
-> +#define I3C_BUS_MON_DATA		0x21c
-> +#define I3C_BUS_MON_DATA_MAK		0x220
-> +#define I3C_CLK_SLOW_DIV_CTRL		0x224
-> +#define I3C_BG_R_WCNT_CLR		0x228
-> +#define I3C_DEBUG_MODIFY		0x22c
-> +
-> +#define I3C_AO_CLK_SLOW_DIV_CTRL	0x300
-> +#define I3C_AO_FCLK_DIV_CTRL		0x304
-> +#define I3C_AO_FCLK_DIV_MASK		GENMASK(7, 0)
-> +#define I3C_AO_FCLK_DIV_EN		BIT(8)
-> +#define I3C_AO_FCLK_EN			BIT(9)
-> +#define I3C_AO_DEBUG_MODIFY		0x308
-> +
-> +#define I3C_DEFAULT_FCLK_RATE		25000000UL
-> +
-> +struct amlogic_i3c_priv {
-> +	int num_clks;
-> +	struct clk_bulk_data *clks;
-> +};
-> +
-> +struct amlogic_i3c_drvdata {
-> +	int (*fclk_rate_init)(struct svc_i3c_master *master,
-> +			      struct clk *fclk, unsigned long rate);
-> +};
-> +
-> +static int default_i3c_fclk_rate_init(struct svc_i3c_master *master,
-> +				      struct clk *fclk, unsigned long rate)
-> +{
-> +	int err;
-> +
-> +	err = clk_set_rate(fclk, rate);
-> +	if (err)
-> +		return dev_err_probe(master->dev, err,
-> +				     "setting fast clock rate failed\n");
-> +
-> +	return 0;
-> +}
-> +
-> +static int ao_i3c_fclk_rate_init(struct svc_i3c_master *master,
-> +				 struct clk *fclk, unsigned long rate)
-> +{
-> +	unsigned int div_cnt, reg_val;
-> +	unsigned long fin_freq = clk_get_rate(fclk);
-> +
-> +	if (!fin_freq)
-> +		return dev_err_probe(master->dev, -EINVAL,
-> +				     "can't get I3C fast clock rate\n");
-> +
-> +	div_cnt = div64_u64(fin_freq, rate);
-> +	if (!div_cnt || div_cnt > I3C_AO_FCLK_DIV_MASK)
-> +		return dev_err_probe(master->dev, -EINVAL,
-> +				     "requested fast clock frequency too low\n");
-> +
-> +	reg_val = I3C_AO_FCLK_DIV_EN | I3C_AO_FCLK_EN | (div_cnt - 1);
-> +	writel(reg_val, master->regs + I3C_AO_FCLK_DIV_CTRL);
-> +
-> +	return 0;
-> +}
-
-You could also create a clock divider, register it and use a common clk_set_rate()
-for both setups.
-
-Neil
-
-> +
-> +static int amlogic_i3c_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	const struct amlogic_i3c_drvdata *data;
-> +	struct svc_i3c_master *master;
-> +	struct amlogic_i3c_priv *priv;
-> +	struct clk *fclk;
-> +	int ret, i;
-> +
-> +	master = svc_i3c_master_alloc(dev);
-> +	if (!master)
-> +		return -ENOMEM;
-> +
-> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> +	if (!priv)
-> +		return -ENOMEM;
-> +
-> +	master->drvdata = of_device_get_match_data(dev);
-> +	if (!master->drvdata)
-> +		return -EINVAL;
-> +
-> +	data = master->drvdata->bsp_data;
-> +	if (!data)
-> +		return -EINVAL;
-> +
-> +	master->regs = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(master->regs))
-> +		return PTR_ERR(master->regs);
-> +
-> +	master->irq = platform_get_irq(pdev, 0);
-> +	if (master->irq < 0)
-> +		return master->irq;
-> +
-> +	priv->num_clks = devm_clk_bulk_get_all(dev, &priv->clks);
-> +	if (priv->num_clks < 0)
-> +		return dev_err_probe(dev, -EINVAL, "can't get I3C clocks\n");
-> +
-> +	for (i = 0; i < priv->num_clks; i++) {
-> +		if (!strcmp(priv->clks[i].id, "fast_clk"))
-> +			break;
-> +	}
-> +
-> +	if (i == priv->num_clks)
-> +		return dev_err_probe(dev, -EINVAL,
-> +				     "can't get I3C peripheral clock\n");
-> +
-> +	if (IS_ERR(priv->clks[i].clk))
-> +		return PTR_ERR(priv->clks[i].clk);
-> +	fclk = priv->clks[i].clk;
-> +
-> +	ret = clk_bulk_prepare_enable(priv->num_clks, priv->clks);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "can't enable I3C clocks\n");
-> +
-> +	master->dev = dev;
-> +	master->bsp_priv = priv;
-> +	ret = data->fclk_rate_init(master, fclk, I3C_DEFAULT_FCLK_RATE);
-> +	if (ret)
-> +		goto err_disable_clks;
-> +	master->fclk_rate = I3C_DEFAULT_FCLK_RATE;
-> +
-> +	pm_runtime_set_autosuspend_delay(dev, SVC_I3C_PM_TIMEOUT_MS);
-> +	pm_runtime_use_autosuspend(dev);
-> +	pm_runtime_get_noresume(dev);
-> +	pm_runtime_set_active(dev);
-> +	pm_runtime_enable(dev);
-> +
-> +	ret = svc_i3c_master_probe(pdev, master);
-> +	if (ret)
-> +		goto rpm_disable;
-> +
-> +	platform_set_drvdata(pdev, master);
-> +	pm_runtime_put_autosuspend(dev);
-> +
-> +	return 0;
-> +
-> +rpm_disable:
-> +	pm_runtime_dont_use_autosuspend(dev);
-> +	pm_runtime_put_noidle(dev);
-> +	pm_runtime_disable(dev);
-> +	pm_runtime_set_suspended(dev);
-> +
-> +err_disable_clks:
-> +	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
-> +
-> +	return ret;
-> +}
-> +
-> +static void amlogic_i3c_remove(struct platform_device *pdev)
-> +{
-> +	struct svc_i3c_master *master = platform_get_drvdata(pdev);
-> +
-> +	svc_i3c_master_remove(master);
-> +
-> +	pm_runtime_dont_use_autosuspend(&pdev->dev);
-> +	pm_runtime_disable(&pdev->dev);
-> +}
-> +
-> +static int __maybe_unused amlogic_i3c_runtime_suspend(struct device *dev)
-> +{
-> +	struct svc_i3c_master *master = dev_get_drvdata(dev);
-> +	struct amlogic_i3c_priv *priv = master->bsp_priv;
-> +
-> +	svc_i3c_save_regs(master);
-> +	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
-> +	pinctrl_pm_select_sleep_state(dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused amlogic_i3c_runtime_resume(struct device *dev)
-> +{
-> +	struct svc_i3c_master *master = dev_get_drvdata(dev);
-> +	struct amlogic_i3c_priv *priv = master->bsp_priv;
-> +	int ret;
-> +
-> +	pinctrl_pm_select_default_state(dev);
-> +	ret = clk_bulk_prepare_enable(priv->num_clks, priv->clks);
-> +	if (ret)
-> +		return ret;
-> +
-> +	svc_i3c_restore_regs(master);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct dev_pm_ops amlogic_i3c_pm_ops = {
-> +	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
-> +				      pm_runtime_force_resume)
-> +	SET_RUNTIME_PM_OPS(amlogic_i3c_runtime_suspend,
-> +			   amlogic_i3c_runtime_resume, NULL)
-> +};
-> +
-> +static const struct amlogic_i3c_drvdata amlogic_i3c_data = {
-> +	.fclk_rate_init = default_i3c_fclk_rate_init,
-> +};
-> +
-> +static const struct amlogic_i3c_drvdata amlogic_i3c_ao_data = {
-> +	.fclk_rate_init = ao_i3c_fclk_rate_init,
-> +};
-> +
-> +static const struct svc_i3c_drvdata amlogic_a9_drvdata = {
-> +	.quirks = SVC_I3C_QUIRK_FIFO_EMPTY |
-> +		SVC_I3C_QUIRK_FALSE_SLVSTART |
-> +		SVC_I3C_QUIRK_DAA_CORRUPT,
-> +	.bsp_data = &amlogic_i3c_data,
-> +};
-> +
-> +static const struct svc_i3c_drvdata amlogic_a9_ao_drvdata = {
-> +	.quirks = SVC_I3C_QUIRK_FIFO_EMPTY |
-> +		SVC_I3C_QUIRK_FALSE_SLVSTART |
-> +		SVC_I3C_QUIRK_DAA_CORRUPT,
-> +	.bsp_data = &amlogic_i3c_ao_data,
-> +};
-> +
-> +static const struct of_device_id amlogic_i3c_of_match_tbl[] = {
-> +	{ .compatible = "amlogic,i3c-a9", .data = &amlogic_a9_drvdata },
-> +	{ .compatible = "amlogic,i3c-ao-a9", .data = &amlogic_a9_ao_drvdata },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, amlogic_i3c_of_match_tbl);
-> +
-> +static struct platform_driver amlogic_i3c_master = {
-> +	.probe = amlogic_i3c_probe,
-> +	.remove = amlogic_i3c_remove,
-> +	.driver = {
-> +		.name = "amlogic-i3c-master",
-> +		.of_match_table = amlogic_i3c_of_match_tbl,
-> +		.pm = &amlogic_i3c_pm_ops,
-> +	},
-> +};
-> +module_platform_driver(amlogic_i3c_master);
-> +
-> +MODULE_AUTHOR("Junyi Zhao <junyi.zhao@amlogic.com>");
-> +MODULE_DESCRIPTION("Amlogic I3C master driver");
-> +MODULE_LICENSE("GPL");
-> 
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gU3VuLCBPY3QgMTgsIDIwMjYgYXQgMDE6Mjg6NDRQTSAtMDcwMCwgU2FtIEFnYXphcnlhbiB3
+cm90ZToKPiA+IFllcyBhbmQgbW9yZSBhcyB0aGlzIGJ1cyAoaTNjKSBpcyBzdGlsbCBub24tZGlz
+Y292ZXJhYmxlIChhbSBJIG1pc3Rha2VuPykuCj4gCj4gSTNDIGlzIGEgZHluYW1pY2FsbHkgZGlz
+Y292ZXJhYmxlIGJ1cy4gRHVyaW5nIERBQSBlYWNoIEkzQyB0YXJnZXQgcmVwb3J0cyBhCj4gUHJv
+dmlzaW9uZWQgSUQgKFBJRCksIEJ1cyBDaGFyYWN0ZXJpc3RpYyBSZWdpc3RlciAoQkNSKSwgYW5k
+IERldmljZQo+IENoYXJhY3RlcmlzdGljIFJlZ2lzdGVyIChEQ1IpLCBhbmQgaXMgYXNzaWduZWQg
+YSBkeW5hbWljIGFkZHJlc3MgYnkgdGhlCj4gY29udHJvbGxlci4KCkRpZCBJIG1pc3MgdGhpcyBp
+biB0aGUgaW5pdGlhbCBleHBsYW5hdGlvbj8gSWYgbm90LCBwbGVhc2UgYWRkIGl0IG5leHQgdGlt
+ZS4KCj4gPiBUaGlzIG1ha2VzIGV2ZW4gbGVzcyB1c2VmdWxuZXNzIGluIG15IGV5ZXMuIEltbWVk
+aWF0ZSBROiBpZiA0IGFscmVhZHkgaGF2ZSB0aGUKPiA+IHByb3BlciBkcml2ZXIgaW4gdGhlIGtl
+cm5lbCwgd2hhdCdzIHdyb25nIHRvIG1ha2UgaXQgZm9yIHRoZSBmaWZ0aCBvbmU/Cj4gCj4gMS4g
+VGhlIG9yaWdpbmFsIHVzZSBjYXNlIHdhcyBoYXJkd2FyZSBicmluZy11cCwgc2lsaWNvbiB2YWxp
+ZGF0aW9uLCBhbmQgZGVidWcKPiAoaTNjdHJhbnNmZXIpOiBKdXN0IGxpa2Ugc3BpZGV2LCBlbmdp
+bmVlcnMgbmVlZCBhIGRlYnVnIGludGVyZmFjZQo+IHRvIGlzc3VlIGFkLWhvYyBTRFIvSERSIHRy
+YW5zZmVycyBkdXJpbmcgYnJpbmctdXAgb3IgaGFyZHdhcmUgdmFsaWRhdGlvbiBiZWZvcmUKPiBh
+IGRyaXZlciBleGlzdHMuCgpUb3RhbGx5IGRlYnVnIGZlYXR1cmUgdG8gbWUuIE9uY2UgeW91IGV4
+cG9zZSBzb21ldGhpbmcgaW4gL2RldiAoaW1wbHkgSU9DVEwpLAppdCB3aWxsIGJlY29tZSBhbiBB
+QkkuIEFuZCBJJ20gZnVsbHkgYWdhaW5zdCB0aGlzLgoKPiAyLiBVc2Vyc3BhY2UgZmlybXdhcmUg
+cmVjb3ZlcnkgLyB1cGRhdGUgdG9vbHMgKE9DUCBTZWN1cmUgRmlybXdhcmUKPiBSZWNvdmVyeSwg
+Q2FsaXB0cmEgUm9UKToKPiBUaGUgcmVjb3ZlcnkgcHJvdG9jb2wgaXMgcHVyZWx5IGEgcG9sbGVk
+IHJlcXVlc3QvcmVzcG9uc2UgdHJhbnNwb3J0Cj4gKG5vIElCSXMgYWxsb3dlZCBwZXIgc3BlYykg
+dXNlZCBieSB1c2Vyc3BhY2UgdXBkYXRlIHRvb2xpbmcgKGZ3dXBkIC8gQk1DCj4gcmVjb3Zlcnkg
+ZGFlbW9ucykgdG8gcGFyc2Ugc2lnbmVkIGZpcm13YXJlIG1hbmlmZXN0cywgc3RyZWFtIHJlY292
+ZXJ5IGltYWdlCj4gY2h1bmtzIHRvIElORElSRUNUX0ZJRk9fREFUQSwgYW5kIHBvbGwgUkVDT1ZF
+UllfU1RBVFVT4oCUc2ltaWxhciB0byBob3cKPiB1c2Vyc3BhY2UgZmlybXdhcmUgdXBkYXRlcnMg
+b3BlcmF0ZSBvdmVyIHNwaWRldiwgaGlkcmF3LCBvciBVU0IvTlZNZSBpb2N0bHMKPiByYXRoZXIg
+dGhhbiBwdXR0aW5nIGZpcm13YXJlIGltYWdlIHBhcnNpbmcgYW5kIHVwZGF0ZSBwb2xpY3kgaW5z
+aWRlIHRoZQo+IGtlcm5lbC4gSW4gbXkgcmVzcG9uc2UgdG8gV29sZnJhbSBhYm92ZSBJIGRpc2N1
+c3NlZCB0aGlzIHNvbWUgbW9yZS4KCkRvIHdlIGhhdmUgc3VjaCB1c2UgY2FzZXMgSVJMPyBEbyB3
+ZSBoYXZlIHRvb2xpbmcgc3VwcG9ydCAoYXQgbGVhc3QgcGVuZGluZykKc29tZXdoZXJlPyBXaHkg
+ZG9lcyBpdCByZXF1aXJlIHVzZXIgc3BhY2UgaW50ZXJhY3Rpb24gaW4gX3RoaXNfIHdheSAobWVh
+bmluZwpJT0NUTCBhbmQgL2RldiBub2RlKT8KCj4gPiBXaGF0IGlmIHRoZSBkZXZpY2UgbmVlZHMg
+bW9yZT8gT3IgaWYgdGhpcyBpcyBhIG11bHRpLWZ1bmN0aW9uYWwgZGV2aWNlIHRoYXQKPiA+IG1h
+eSBoYXZlIGRyaXZlciBmb3Igb25seSBvbmUgcGFydD8KPiAKPiBJZiBhIGRldmljZSBuZWVkcyBt
+b3JlIHRoYW4gYmFzaWMgdHJhbnNmZXJzIChzdWNoIGFzIElCSXMsCj4gaG90LWpvaW4gaGFuZGxp
+bmcsIG9yIGludGVncmF0aW9uIHdpdGggYSBzdWJzeXN0ZW0gbGlrZSBod21vbi9paW8vbWN0cCks
+Cj4gaXQgc2hvdWxkIHVzZSBhIGRlZGljYXRlZCBrZXJuZWwgZHJpdmVyLgo+IAo+IEZvciBtdWx0
+aS1mdW5jdGlvbiBkZXZpY2VzLCBpZiB0aGUgZnVuY3Rpb25zIGFyZSBleHBvc2VkIGFzIE1JUEkg
+STNDCj4gVGFyZ2V0cyAoZS5nLiBhIGRldmljZSBleHBvc2luZyBib3RoIGFuIG1jdHAtaTNjIGlu
+dGVyZmFjZSBhbmQKPiBhbiBPQ1AgcmVjb3ZlcnkgaW50ZXJmYWNlKSwgZWFjaCB2aXJ0dWFsIHRh
+cmdldCBpcyBhc3NpZ25lZCBpdHMgb3duCj4gZHluYW1pYyBhZGRyZXNzIGFuZCBEQ1IgZHVyaW5n
+IEVOVERBQSBhbmQgaXMgZW51bWVyYXRlZCBhcyBhIGRpc3RpbmN0Cj4gaTNjX2RldmljZSBpbnN0
+YW5jZSBvbiB0aGUgYnVzLiBDb252ZXJzZWx5LCBpZiBtdWx0aXBsZSBmdW5jdGlvbnMgc2hhcmUK
+PiBhIHNpbmdsZSBJM0MgdGFyZ2V0IGFkZHJlc3MgYW5kIHJlZ2lzdGVyIG1hcCwgaTNjZGV2IGlu
+dGVudGlvbmFsbHkgZG9lcwo+IG5vdCBhbGxvdyB1c2Vyc3BhY2UgdG8gYWNjZXNzIGEgdGFyZ2V0
+IHdoaWxlIGEga2VybmVsIGRyaXZlciBpcyBib3VuZAo+IHRvIGl0IChhdm9pZGluZyB0aGUgSTJD
+X1NMQVZFX0ZPUkNFIHByb2JsZW0gd2hlcmUgdXNlcnNwYWNlIGNhbiByYWNlCj4gd2l0aCBhIGJv
+dW5kIGRyaXZlciksIHNvIHRoYXQgY2FzZSBzaG91bGQgYmUgaGFuZGxlZCBieSBhbiBpbi1rZXJu
+ZWwKPiBNRkQgZHJpdmVyIC0gYnV0IHRoYXQgaXMgbm90IHRoZSB1c2UgY2FzZSBiZWluZyB0YXJn
+ZXRlZCBoZXJlIHdpdGggT0NQCj4gcmVjb3ZlcnkuCgpTbywgaW1hZ2luZSB0aGF0IHNvbWVvbmUg
+c3VibWl0cyBhIGtlcm5lbCBkcml2ZXIgZm9yIGEgc2ltcGxlIGRldmljZSwgd2hpbGUKYW5vdGhl
+ciBwZXJzb24gYWxyZWFkeSB1c2VzIHRoZSBkcml2ZXIgZm9yIG11bHRpLWZ1bmN0aW9uYWwgZGV2
+aWNlIHdoZXJlIHRoZQpmb3JtZXIgb25lIGlzIGRyaXZpbmcgb25seSBwYXJ0IG9mIGl0LiBTdHJp
+Y3RseSBzcGVha2luZyB0aGUga2VybmVsIGRyaXZlcgpzdWJtaXNzaW9uIGJlY29tZXMgYSB1c2Vy
+IHNwYWNlIHJlZ3Jlc3Npb24uIFdoaWNoIGVmZmVjdGl2ZWx5IG1lYW5zIHRoYXQgd2hlbmV2ZXIK
+eW91IG9wZW4gaTNjZGV2LCBubyBvdGhlciBrZXJuZWwgZHJpdmVycyBtYXkgYXBwZWFyLiBZZXMs
+IEkgdW5kZXJzdGFuZCB0aGF0CmEgcG9vciB2aWN0aW0gb2Ygc3VjaCBhbiB1bmxpa2VseSBjb3Vy
+c2Ugb2YgZXZlbnRzIG1heSByZWNvbXBpbGUgdGhlIGtlcm5lbCwKZGlzYWJsZSBkcml2ZXIsIGV0
+IGNldGVyYSwgYnV0IHRoaXMgc3RpbGwgcmFpc2VzIHRoZSBzYW1lIHF1ZXN0aW9uLCB3aHkgZG8K
+d2UgZG8gdGhhdCB0byB0aGUgbWVyZSB1c2Vycz8KCj4gPiBXaGF0IHRvIGRvIHdpdGggdGhlIGky
+YyBkZXZpY2VzIGNvbm5lY3RlZCB0byBpM2MgYnVzIGluIHRoZSBjb21wYXRpYmxlIG1vZGU/Cj4g
+Cj4gSTNDIG1hc3RlciBjb250cm9sbGVycyByZWdpc3RlciBhbiBpMmMgYWRhcHRlciBmb3IgaTJj
+IGRldmljZXMgcnVubmluZyBvbiBhbgo+IGkzYyBtaXhlZCBtb2RlIGJ1cyAtIHRoZXkgYXJlIGlk
+ZW50aWZpZWQgYXMgaTJjX2J1c190eXBlLCBub3QgaTNjLgoKUC5TPiBTdGlsbCBub3QgY29udmlu
+Y2VkLCB0aGF0IHRoaXMgaGFzIHRvIGJlIGFuIEFCSS4gRm9yIGRlYnVnZnMgYW5kIHNvbWV0aGlu
+ZwpsaWtlIHRoaXMsIG5vIG9iamVjdGlvbnMsIGJ1dCBBQkkuCgotLSAKV2l0aCBCZXN0IFJlZ2Fy
+ZHMsCkFuZHkgU2hldmNoZW5rbwoKCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1p
+M2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LWkzYwo=
