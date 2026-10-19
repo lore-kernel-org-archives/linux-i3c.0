@@ -4,78 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C6DBCCF2DB
-	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 05:34:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 202F5CCF2D3
+	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 05:52:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HGx49F/TPGo3tea0/yvPBO3g2Bde7h/VQdDS9k93EXk=; b=w7kliGIONY9AXw
-	A3dB2WATD2p1ftsa+V3Y6k90+SrkqhVoZT6OZKFw66WMRfsDD+GdCX2Zvb09lwp2cFIqNjqeorUon
-	V/bZr8qEUEcKgPCyG0J/tpkwGNNESi3/5+KJ2uGT018NdfvRJRtsxQuzJvJKb/47DbYDP+bz7DyFo
-	IbGWaWSw+7AgYX+01sB3tvzKOEb17t98nizHjX4XFgikqTUhXn/KjH5zSeON9j/tE/4y1cuRjjp4v
-	5SqfoGXX6Ft2OqIssdHBPeMAalsbNPQ2VsHrm5toHpJVZFfHfA/gCZOAN/8rvpB4lz/BOtwvCcJX0
-	/VTitIFwwy/PgJJ2ejuA==;
+	List-Owner; bh=xwXYydMflgrZJ7Z0xK1W00kgWSSOzLLoqsJ5tuAbDro=; b=gaLV/N0OdrDmHP
+	ZQANINBG0G7tjdDnqhhCiERePz++VoV6GS0PzGrGYdWa2XpoWcpHN9Gne4jNWOOg10krBrGze0oIM
+	VYtjT0tD+/40cA37x1SpaTAMYzeCQUY7Vzo+8dUnGlwOQBcFk2VYv2yqfdGd4yHmnsfcY3A3kuCVo
+	HwSYFfExHXfrIdsnmTQqI5mPgqntCfrHquzkiowgS9z9A5kKTz/qLUpeUIEODPcUh1wPGEQSU0FRR
+	N2T1jO6TPt9a63rjMnP6LN1wHlyxzheH7eEP3nPcIUwt0VTApHq/uFtcypAa1ChgKfsNeO9Jb8acN
+	yN4ygZh+PSgyLdZi8C6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIg1T-00000006dld-17bj;
-	Mon, 19 Oct 2026 05:34:59 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xIgI9-00000006eyl-3IMG;
+	Mon, 19 Oct 2026 05:52:13 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIg18-00000006dab-3gxF;
-	Mon, 19 Oct 2026 05:34:38 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 26855447AC;
-	Mon, 19 Oct 2026 05:34:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id DAA43C32786;
-	Mon, 19 Oct 2026 05:34:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1792388077;
-	bh=JoPMgpSSkQtoYNNFjAxCD/ByzizHV8lVXrPdWzh2e+M=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=B02Y/1BbgXL+rnchkZsEEglpblXkDbJWSY3gJtTaANxqgSKp1dujRlhl+Uro1fLgJ
-	 2rQMBNPQpUxqNVKoDWl3kcHODGIGMST+oV6fNYa2Y/9yT8dSOKmSldBKbjRVr6+jB6
-	 UUwvJcZlFHeXgmdWncHhJNHZYpXWj1RFO94k/3aYt01bCb5RWumWTXfvPHit440Kje
-	 jBp+vj3HzlIQ4xkA1lWVO2O9FPGdZJNxEoHJsXZrDbSMe66bankFXWWaU6DtzP2xlI
-	 7/HnWQVoujj3h6QEBnCPPMzgwlQKxiJt7X7lclUyfo9lFesAM5M5TS4hR0Ui2MHUkd
-	 oKrAPPLbxTZJg==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C1DCECCF2D3;
-	Mon, 19 Oct 2026 05:34:37 +0000 (UTC)
-From: Junyi Zhao via B4 Relay <devnull+junyi.zhao.amlogic.com@kernel.org>
-Date: Mon, 19 Oct 2026 13:34:28 +0800
-Subject: [PATCH 3/3] i3c: master: svc: Add Amlogic A9 glue layer
-MIME-Version: 1.0
-Message-Id: <20261019-a9_i3c-v1-3-329d819d621f@amlogic.com>
+	id 1xIgI6-00000006eyT-115T;
+	Mon, 19 Oct 2026 05:52:10 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1F0AE600CB;
+	Mon, 19 Oct 2026 05:52:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7193A1F000C5;
+	Mon, 19 Oct 2026 05:52:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792389127;
+	bh=rkza5uVRf34cN3QyerCAeal95ev4k8kEa3sElA7jHBE=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=OFYMXqBanYhuS4CFmXxh8oVGz7ZlxTDx99/nflQfpNGVEaiEVutaAGucoj/4rUSL2
+	 rz3hIzTqv1ClPFoQ882yy3Wx7us2HvNYAyOShCcD/kLMDH76WsMRQLYpQEY5MrT0bJ
+	 r9HSi4bTDPBje+MLoTf5XG4fGZmllMDFpLiQk7u9F7Sjqxot97R1iea3ozk4lcZybZ
+	 BUfQEK+TsjcAgmMbIAlLbZ6MURi5H/GuBzyMBSGgapvI3Jkm4WBsb87Wj6bmqYZ5de
+	 vWlvBqNAAkslUahxpbivyXgSpCslTlVD1ZKkF69u2OoTmCg8anOfBfKVfOyxC+YfWI
+	 rwbKUfSsqLf0A==
+Message-ID: <sashiko-outbox-176673@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 3/3] i3c: master: svc: Add Amlogic A9 glue layer
+To: "Junyi Zhao" <junyi.zhao@amlogic.com>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org, imx@lists.linux.dev, robh@kernel.org, conor+dt@kernel.org, Frank.Li@kernel.org, neil.armstrong@linaro.org, "Alexandre
+ Belloni" <alexandre.belloni@bootlin.com>
+In-Reply-To: <20261019-a9_i3c-v1-3-329d819d621f@amlogic.com>
 References: <20261019-a9_i3c-v1-0-329d819d621f@amlogic.com>
-In-Reply-To: <20261019-a9_i3c-v1-0-329d819d621f@amlogic.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
- Miquel Raynal <miquel.raynal@bootlin.com>, Kees Cook <kees@kernel.org>, 
- "Gustavo A. R. Silva" <gustavoars@kernel.org>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-amlogic@lists.infradead.org, imx@lists.linux.dev, 
- linux-hardening@vger.kernel.org, xianwei.zhao@amlogic.com, 
- Kelvin.Zhang@amlogic.com, Junyi Zhao <junyi.zhao@amlogic.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792388075; l=9305;
- i=junyi.zhao@amlogic.com; s=20260924; h=from:subject:message-id;
- bh=18O6s8M2HxsH0py6HaePc4GkPMaOz4lmZIsMAJSYEsw=;
- b=WboHZG3aLyG1z/LNaPDc6zu67E5+bGy4TeSJgqA55H0gQZhNpG6ok3eT+LJVd05OCf75KTFmx
- w9e970NFGCjARok2uGYxPFb4vgSgFwvY1BSda7eT2rFazD+YZiSHPv0
-X-Developer-Key: i=junyi.zhao@amlogic.com; a=ed25519;
- pk=hiL5PjGIksGFiWvEx9J3MhQqU/ro6vNbj72NIw4bbvA=
-X-Endpoint-Received: by B4 Relay for junyi.zhao@amlogic.com/20260924 with
- auth_id=1054
-X-Original-From: Junyi Zhao <junyi.zhao@amlogic.com>
+ <20261019-a9_i3c-v1-3-329d819d621f@amlogic.com>
+Date: Mon, 19 Oct 2026 05:52:07 +0000
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,336 +62,157 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: junyi.zhao@amlogic.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Junyi Zhao <junyi.zhao@amlogic.com>
-
-Add support for the Amlogic A9 implementation of the Silvaco
-SVC I3C controller.
-
-The glue layer provides Amlogic-specific operations and resource
-handling while reusing the common SVC I3C core driver.
-
-Add a corresponding MAINTAINERS entry for the Amlogic I3C
-controller.
-
-Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
----
- MAINTAINERS                          |   6 +
- drivers/i3c/master/svc/Kconfig       |   7 +
- drivers/i3c/master/svc/Makefile      |   1 +
- drivers/i3c/master/svc/i3c-amlogic.c | 250 +++++++++++++++++++++++++++++++++++
- 4 files changed, 264 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index dffc63af2..478979446 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1398,6 +1398,12 @@ F:	Documentation/userspace-api/media/v4l/metafmt-c3-isp.rst
- F:	drivers/media/platform/amlogic/c3/isp/
- F:	include/uapi/linux/media/amlogic/
- 
-+AMLOGIC I3C DRIVER
-+M:	Junyi Zhao <junyi.zhao@amlogic.com>
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/i3c/amlogic,i3c-a9.yaml
-+F:	drivers/i3c/master/svc/i3c-amlogic.c
-+
- AMLOGIC MIPI ADAPTER DRIVER
- M:	Keke Li <keke.li@amlogic.com>
- L:	linux-media@vger.kernel.org
-diff --git a/drivers/i3c/master/svc/Kconfig b/drivers/i3c/master/svc/Kconfig
-index 14fa1e542..df3528bc1 100644
---- a/drivers/i3c/master/svc/Kconfig
-+++ b/drivers/i3c/master/svc/Kconfig
-@@ -18,4 +18,11 @@ config I3C_SILVACO
- 	  compatible strings such as "silvaco,i3c-master-v1" and
- 	  "nuvoton,npcm845-i3c".
- 
-+config I3C_AMLOGIC
-+	tristate "Amlogic I3C support"
-+	default y
-+	help
-+	  This selects the Amlogic SoC glue layer support for
-+	  the Silvaco device driver. This driver is used for A9, C5 SoCs.
-+
- endif # SVC_I3C
-diff --git a/drivers/i3c/master/svc/Makefile b/drivers/i3c/master/svc/Makefile
-index cf18c5da6..695863d1f 100644
---- a/drivers/i3c/master/svc/Makefile
-+++ b/drivers/i3c/master/svc/Makefile
-@@ -3,3 +3,4 @@
- 
- obj-$(CONFIG_SVC_I3C)	+= i3c-main.o
- obj-$(CONFIG_I3C_SILVACO)	+= i3c-silvaco.o
-+obj-$(CONFIG_I3C_AMLOGIC)	+= i3c-amlogic.o
-diff --git a/drivers/i3c/master/svc/i3c-amlogic.c b/drivers/i3c/master/svc/i3c-amlogic.c
-new file mode 100644
-index 000000000..82300d6ae
---- /dev/null
-+++ b/drivers/i3c/master/svc/i3c-amlogic.c
-@@ -0,0 +1,250 @@
-+// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
-+/*
-+ * Copyright (C) 2026 Amlogic, Inc. All rights reserved
-+ */
-+#include "i3c-main.h"
-+#include <linux/math64.h>
-+
-+/* Amlogic specific registers */
-+#define I3C_BG_RD_ADDR			0x200
-+#define I3C_BG_WR_ADDR			0x204
-+#define I3C_BG_WR_CTRL			0x208
-+#define I3C_BG_R_TT_LEN			0x20c
-+#define I3C_BG_X_CNT			0x210
-+#define I3C_BUS_MON_CTRL		0x214
-+#define I3C_BUS_MON_ADDR		0x218
-+#define I3C_BUS_MON_DATA		0x21c
-+#define I3C_BUS_MON_DATA_MAK		0x220
-+#define I3C_CLK_SLOW_DIV_CTRL		0x224
-+#define I3C_BG_R_WCNT_CLR		0x228
-+#define I3C_DEBUG_MODIFY		0x22c
-+
-+#define I3C_AO_CLK_SLOW_DIV_CTRL	0x300
-+#define I3C_AO_FCLK_DIV_CTRL		0x304
-+#define I3C_AO_FCLK_DIV_MASK		GENMASK(7, 0)
-+#define I3C_AO_FCLK_DIV_EN		BIT(8)
-+#define I3C_AO_FCLK_EN			BIT(9)
-+#define I3C_AO_DEBUG_MODIFY		0x308
-+
-+#define I3C_DEFAULT_FCLK_RATE		25000000UL
-+
-+struct amlogic_i3c_priv {
-+	int num_clks;
-+	struct clk_bulk_data *clks;
-+};
-+
-+struct amlogic_i3c_drvdata {
-+	int (*fclk_rate_init)(struct svc_i3c_master *master,
-+			      struct clk *fclk, unsigned long rate);
-+};
-+
-+static int default_i3c_fclk_rate_init(struct svc_i3c_master *master,
-+				      struct clk *fclk, unsigned long rate)
-+{
-+	int err;
-+
-+	err = clk_set_rate(fclk, rate);
-+	if (err)
-+		return dev_err_probe(master->dev, err,
-+				     "setting fast clock rate failed\n");
-+
-+	return 0;
-+}
-+
-+static int ao_i3c_fclk_rate_init(struct svc_i3c_master *master,
-+				 struct clk *fclk, unsigned long rate)
-+{
-+	unsigned int div_cnt, reg_val;
-+	unsigned long fin_freq = clk_get_rate(fclk);
-+
-+	if (!fin_freq)
-+		return dev_err_probe(master->dev, -EINVAL,
-+				     "can't get I3C fast clock rate\n");
-+
-+	div_cnt = div64_u64(fin_freq, rate);
-+	if (!div_cnt || div_cnt > I3C_AO_FCLK_DIV_MASK)
-+		return dev_err_probe(master->dev, -EINVAL,
-+				     "requested fast clock frequency too low\n");
-+
-+	reg_val = I3C_AO_FCLK_DIV_EN | I3C_AO_FCLK_EN | (div_cnt - 1);
-+	writel(reg_val, master->regs + I3C_AO_FCLK_DIV_CTRL);
-+
-+	return 0;
-+}
-+
-+static int amlogic_i3c_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	const struct amlogic_i3c_drvdata *data;
-+	struct svc_i3c_master *master;
-+	struct amlogic_i3c_priv *priv;
-+	struct clk *fclk;
-+	int ret, i;
-+
-+	master = svc_i3c_master_alloc(dev);
-+	if (!master)
-+		return -ENOMEM;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	master->drvdata = of_device_get_match_data(dev);
-+	if (!master->drvdata)
-+		return -EINVAL;
-+
-+	data = master->drvdata->bsp_data;
-+	if (!data)
-+		return -EINVAL;
-+
-+	master->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(master->regs))
-+		return PTR_ERR(master->regs);
-+
-+	master->irq = platform_get_irq(pdev, 0);
-+	if (master->irq < 0)
-+		return master->irq;
-+
-+	priv->num_clks = devm_clk_bulk_get_all(dev, &priv->clks);
-+	if (priv->num_clks < 0)
-+		return dev_err_probe(dev, -EINVAL, "can't get I3C clocks\n");
-+
-+	for (i = 0; i < priv->num_clks; i++) {
-+		if (!strcmp(priv->clks[i].id, "fast_clk"))
-+			break;
-+	}
-+
-+	if (i == priv->num_clks)
-+		return dev_err_probe(dev, -EINVAL,
-+				     "can't get I3C peripheral clock\n");
-+
-+	if (IS_ERR(priv->clks[i].clk))
-+		return PTR_ERR(priv->clks[i].clk);
-+	fclk = priv->clks[i].clk;
-+
-+	ret = clk_bulk_prepare_enable(priv->num_clks, priv->clks);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "can't enable I3C clocks\n");
-+
-+	master->dev = dev;
-+	master->bsp_priv = priv;
-+	ret = data->fclk_rate_init(master, fclk, I3C_DEFAULT_FCLK_RATE);
-+	if (ret)
-+		goto err_disable_clks;
-+	master->fclk_rate = I3C_DEFAULT_FCLK_RATE;
-+
-+	pm_runtime_set_autosuspend_delay(dev, SVC_I3C_PM_TIMEOUT_MS);
-+	pm_runtime_use_autosuspend(dev);
-+	pm_runtime_get_noresume(dev);
-+	pm_runtime_set_active(dev);
-+	pm_runtime_enable(dev);
-+
-+	ret = svc_i3c_master_probe(pdev, master);
-+	if (ret)
-+		goto rpm_disable;
-+
-+	platform_set_drvdata(pdev, master);
-+	pm_runtime_put_autosuspend(dev);
-+
-+	return 0;
-+
-+rpm_disable:
-+	pm_runtime_dont_use_autosuspend(dev);
-+	pm_runtime_put_noidle(dev);
-+	pm_runtime_disable(dev);
-+	pm_runtime_set_suspended(dev);
-+
-+err_disable_clks:
-+	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
-+
-+	return ret;
-+}
-+
-+static void amlogic_i3c_remove(struct platform_device *pdev)
-+{
-+	struct svc_i3c_master *master = platform_get_drvdata(pdev);
-+
-+	svc_i3c_master_remove(master);
-+
-+	pm_runtime_dont_use_autosuspend(&pdev->dev);
-+	pm_runtime_disable(&pdev->dev);
-+}
-+
-+static int __maybe_unused amlogic_i3c_runtime_suspend(struct device *dev)
-+{
-+	struct svc_i3c_master *master = dev_get_drvdata(dev);
-+	struct amlogic_i3c_priv *priv = master->bsp_priv;
-+
-+	svc_i3c_save_regs(master);
-+	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
-+	pinctrl_pm_select_sleep_state(dev);
-+
-+	return 0;
-+}
-+
-+static int __maybe_unused amlogic_i3c_runtime_resume(struct device *dev)
-+{
-+	struct svc_i3c_master *master = dev_get_drvdata(dev);
-+	struct amlogic_i3c_priv *priv = master->bsp_priv;
-+	int ret;
-+
-+	pinctrl_pm_select_default_state(dev);
-+	ret = clk_bulk_prepare_enable(priv->num_clks, priv->clks);
-+	if (ret)
-+		return ret;
-+
-+	svc_i3c_restore_regs(master);
-+
-+	return 0;
-+}
-+
-+static const struct dev_pm_ops amlogic_i3c_pm_ops = {
-+	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
-+				      pm_runtime_force_resume)
-+	SET_RUNTIME_PM_OPS(amlogic_i3c_runtime_suspend,
-+			   amlogic_i3c_runtime_resume, NULL)
-+};
-+
-+static const struct amlogic_i3c_drvdata amlogic_i3c_data = {
-+	.fclk_rate_init = default_i3c_fclk_rate_init,
-+};
-+
-+static const struct amlogic_i3c_drvdata amlogic_i3c_ao_data = {
-+	.fclk_rate_init = ao_i3c_fclk_rate_init,
-+};
-+
-+static const struct svc_i3c_drvdata amlogic_a9_drvdata = {
-+	.quirks = SVC_I3C_QUIRK_FIFO_EMPTY |
-+		SVC_I3C_QUIRK_FALSE_SLVSTART |
-+		SVC_I3C_QUIRK_DAA_CORRUPT,
-+	.bsp_data = &amlogic_i3c_data,
-+};
-+
-+static const struct svc_i3c_drvdata amlogic_a9_ao_drvdata = {
-+	.quirks = SVC_I3C_QUIRK_FIFO_EMPTY |
-+		SVC_I3C_QUIRK_FALSE_SLVSTART |
-+		SVC_I3C_QUIRK_DAA_CORRUPT,
-+	.bsp_data = &amlogic_i3c_ao_data,
-+};
-+
-+static const struct of_device_id amlogic_i3c_of_match_tbl[] = {
-+	{ .compatible = "amlogic,i3c-a9", .data = &amlogic_a9_drvdata },
-+	{ .compatible = "amlogic,i3c-ao-a9", .data = &amlogic_a9_ao_drvdata },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, amlogic_i3c_of_match_tbl);
-+
-+static struct platform_driver amlogic_i3c_master = {
-+	.probe = amlogic_i3c_probe,
-+	.remove = amlogic_i3c_remove,
-+	.driver = {
-+		.name = "amlogic-i3c-master",
-+		.of_match_table = amlogic_i3c_of_match_tbl,
-+		.pm = &amlogic_i3c_pm_ops,
-+	},
-+};
-+module_platform_driver(amlogic_i3c_master);
-+
-+MODULE_AUTHOR("Junyi Zhao <junyi.zhao@amlogic.com>");
-+MODULE_DESCRIPTION("Amlogic I3C master driver");
-+MODULE_LICENSE("GPL");
-
--- 
-2.42.0
-
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGkzYzogbWFzdGVyOiBz
+dmM6IGJyb2tlbiBwcm9iZSBkZWZlcnJhbCBpbiBhbWxvZ2ljX2kzY19wcm9iZSgpCi0gW01lZGl1
+bV0gaTNjOiBtYXN0ZXI6IHN2YzogY2xvY2sgZW5hYmxlIGxlYWsgaW4gYW1sb2dpY19pM2NfcmVt
+b3ZlKCkKLSBbTWVkaXVtXSBpM2M6IG1hc3Rlcjogc3ZjOiBpM2MtYW1sb2dpYzogbWlzc2luZyBJ
+M0NfQU9fRkNMS19ESVZfQ1RSTCByZXN0b3JlIG9uIHJlc3VtZQotIFtNZWRpdW1dIGkzYzogbWFz
+dGVyOiBzdmM6IGluY29ycmVjdCBmY2xrIHJhdGUgYW5kIGRpdmlkZXIgbWF0aCBpbiBhbWxvZ2lj
+X2kzY19wcm9iZSgpCi0tCgpjb21taXQgY2Y3MGNkN2I1OTM5NWRlODQ1NjFkMzBhNWUzYjM4NjJh
+YTI3NWFjNApBdXRob3I6IEp1bnlpIFpoYW8gPGp1bnlpLnpoYW9AYW1sb2dpYy5jb20+CgppM2M6
+IG1hc3Rlcjogc3ZjOiBBZGQgQW1sb2dpYyBBOSBnbHVlIGxheWVyCgpUaGlzIGNvbW1pdCBhZGRz
+IGFuIEFtbG9naWMgQTkgZ2x1ZSBkcml2ZXIgZm9yIHRoZSBTaWx2YWNvIFNWQyBJM0MKY29udHJv
+bGxlciwgcHJvdmlkaW5nIEFtbG9naWMtc3BlY2lmaWMgY2xvY2sgYW5kIHJ1bnRpbWUgUE0gaGFu
+ZGxpbmcgd2hpbGUKcmV1c2luZyB0aGUgY29tbW9uIFNWQyBJM0MgY29yZSBkcml2ZXIuCgo+IGRp
+ZmYgLS1naXQgYS9kcml2ZXJzL2kzYy9tYXN0ZXIvc3ZjL2kzYy1hbWxvZ2ljLmMgYi9kcml2ZXJz
+L2kzYy9tYXN0ZXIvc3ZjL2kzYy1hbWxvZ2ljLmMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGlu
+ZGV4IDAwMDAwMDAwMDAwMDAuLjgyMzAwZDZhZTVhMzEKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIv
+ZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy9pM2MtYW1sb2dpYy5jCj4gQEAgLTAsMCArMSwyNTAgQEAK
+ClsgLi4uIF0KCj4gK3N0YXRpYyBpbnQgZGVmYXVsdF9pM2NfZmNsa19yYXRlX2luaXQoc3RydWN0
+IHN2Y19pM2NfbWFzdGVyICptYXN0ZXIsCj4gKwkJCQkgICAgICBzdHJ1Y3QgY2xrICpmY2xrLCB1
+bnNpZ25lZCBsb25nIHJhdGUpCj4gK3sKPiArCWludCBlcnI7Cj4gKwo+ICsJZXJyID0gY2xrX3Nl
+dF9yYXRlKGZjbGssIHJhdGUpOwo+ICsJaWYgKGVycikKPiArCQlyZXR1cm4gZGV2X2Vycl9wcm9i
+ZShtYXN0ZXItPmRldiwgZXJyLAo+ICsJCQkJICAgICAic2V0dGluZyBmYXN0IGNsb2NrIHJhdGUg
+ZmFpbGVkXG4iKTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsKPiArc3RhdGljIGludCBhb19p
+M2NfZmNsa19yYXRlX2luaXQoc3RydWN0IHN2Y19pM2NfbWFzdGVyICptYXN0ZXIsCj4gKwkJCQkg
+c3RydWN0IGNsayAqZmNsaywgdW5zaWduZWQgbG9uZyByYXRlKQo+ICt7Cj4gKwl1bnNpZ25lZCBp
+bnQgZGl2X2NudCwgcmVnX3ZhbDsKPiArCXVuc2lnbmVkIGxvbmcgZmluX2ZyZXEgPSBjbGtfZ2V0
+X3JhdGUoZmNsayk7Cj4gKwo+ICsJaWYgKCFmaW5fZnJlcSkKPiArCQlyZXR1cm4gZGV2X2Vycl9w
+cm9iZShtYXN0ZXItPmRldiwgLUVJTlZBTCwKPiArCQkJCSAgICAgImNhbid0IGdldCBJM0MgZmFz
+dCBjbG9jayByYXRlXG4iKTsKPiArCj4gKwlkaXZfY250ID0gZGl2NjRfdTY0KGZpbl9mcmVxLCBy
+YXRlKTsKPiArCWlmICghZGl2X2NudCB8fCBkaXZfY250ID4gSTNDX0FPX0ZDTEtfRElWX01BU0sp
+Cj4gKwkJcmV0dXJuIGRldl9lcnJfcHJvYmUobWFzdGVyLT5kZXYsIC1FSU5WQUwsCj4gKwkJCQkg
+ICAgICJyZXF1ZXN0ZWQgZmFzdCBjbG9jayBmcmVxdWVuY3kgdG9vIGxvd1xuIik7Cj4gKwo+ICsJ
+cmVnX3ZhbCA9IEkzQ19BT19GQ0xLX0RJVl9FTiB8IEkzQ19BT19GQ0xLX0VOIHwgKGRpdl9jbnQg
+LSAxKTsKPiArCXdyaXRlbChyZWdfdmFsLCBtYXN0ZXItPnJlZ3MgKyBJM0NfQU9fRkNMS19ESVZf
+Q1RSTCk7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgYW1sb2dpY19p
+M2NfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiArewo+ICsJc3RydWN0IGRl
+dmljZSAqZGV2ID0gJnBkZXYtPmRldjsKPiArCWNvbnN0IHN0cnVjdCBhbWxvZ2ljX2kzY19kcnZk
+YXRhICpkYXRhOwo+ICsJc3RydWN0IHN2Y19pM2NfbWFzdGVyICptYXN0ZXI7Cj4gKwlzdHJ1Y3Qg
+YW1sb2dpY19pM2NfcHJpdiAqcHJpdjsKPiArCXN0cnVjdCBjbGsgKmZjbGs7Cj4gKwlpbnQgcmV0
+LCBpOwoKWyAuLi4gXQoKPiArCXByaXYtPm51bV9jbGtzID0gZGV2bV9jbGtfYnVsa19nZXRfYWxs
+KGRldiwgJnByaXYtPmNsa3MpOwo+ICsJaWYgKHByaXYtPm51bV9jbGtzIDwgMCkKPiArCQlyZXR1
+cm4gZGV2X2Vycl9wcm9iZShkZXYsIC1FSU5WQUwsICJjYW4ndCBnZXQgSTNDIGNsb2Nrc1xuIik7
+CgpbU2V2ZXJpdHk6IEhpZ2hdClNob3VsZCBhbWxvZ2ljX2kzY19wcm9iZSgpIHBhc3MgcHJpdi0+
+bnVtX2Nsa3MgaW5zdGVhZCBvZiAtRUlOVkFMIHRvCmRldl9lcnJfcHJvYmUoKSBoZXJlPwoKV2hl
+biBkZXZtX2Nsa19idWxrX2dldF9hbGwoKSByZXR1cm5zIC1FUFJPQkVfREVGRVIgYmVjYXVzZSB0
+aGUgY2xvY2sKY29udHJvbGxlciBoYXMgbm90IHByb2JlZCB5ZXQsIHBhc3NpbmcgYSBoYXJkY29k
+ZWQgLUVJTlZBTCBjYXVzZXMKZGV2X2Vycl9wcm9iZSgpIHRvIGxvZyBhbiBlcnJvciBhbmQgYWJv
+cnQgcHJvYmluZyBwZXJtYW5lbnRseSBpbnN0ZWFkIG9mCmRlZmVycmluZy4KCj4gKwo+ICsJZm9y
+IChpID0gMDsgaSA8IHByaXYtPm51bV9jbGtzOyBpKyspIHsKPiArCQlpZiAoIXN0cmNtcChwcml2
+LT5jbGtzW2ldLmlkLCAiZmFzdF9jbGsiKSkKPiArCQkJYnJlYWs7Cj4gKwl9Cj4gKwo+ICsJaWYg
+KGkgPT0gcHJpdi0+bnVtX2Nsa3MpCj4gKwkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCAtRUlO
+VkFMLAo+ICsJCQkJICAgICAiY2FuJ3QgZ2V0IEkzQyBwZXJpcGhlcmFsIGNsb2NrXG4iKTsKPiAr
+Cj4gKwlpZiAoSVNfRVJSKHByaXYtPmNsa3NbaV0uY2xrKSkKPiArCQlyZXR1cm4gUFRSX0VSUihw
+cml2LT5jbGtzW2ldLmNsayk7Cj4gKwlmY2xrID0gcHJpdi0+Y2xrc1tpXS5jbGs7Cj4gKwo+ICsJ
+cmV0ID0gY2xrX2J1bGtfcHJlcGFyZV9lbmFibGUocHJpdi0+bnVtX2Nsa3MsIHByaXYtPmNsa3Mp
+Owo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIHJldCwgImNhbid0
+IGVuYWJsZSBJM0MgY2xvY2tzXG4iKTsKPiArCj4gKwltYXN0ZXItPmRldiA9IGRldjsKPiArCW1h
+c3Rlci0+YnNwX3ByaXYgPSBwcml2Owo+ICsJcmV0ID0gZGF0YS0+ZmNsa19yYXRlX2luaXQobWFz
+dGVyLCBmY2xrLCBJM0NfREVGQVVMVF9GQ0xLX1JBVEUpOwo+ICsJaWYgKHJldCkKPiArCQlnb3Rv
+IGVycl9kaXNhYmxlX2Nsa3M7Cj4gKwltYXN0ZXItPmZjbGtfcmF0ZSA9IEkzQ19ERUZBVUxUX0ZD
+TEtfUkFURTsKCltTZXZlcml0eTogTWVkaXVtXQpDYW4gdGhlIGRpdmlkZXIgbWF0aCBpbiBhb19p
+M2NfZmNsa19yYXRlX2luaXQoKSBhbmQgdGhlIGhhcmRjb2RlZAptYXN0ZXItPmZjbGtfcmF0ZSBh
+c3NpZ25tZW50IGluIGFtbG9naWNfaTNjX3Byb2JlKCkgZmFpbCBwcm9iZSBvbiBhIDI0IE1Iegpp
+bnB1dCBjbG9jayBvciBwcm9kdWNlIGFuIGluYWNjdXJhdGUgZmNsa19yYXRlPwoKSW4gYW9faTNj
+X2ZjbGtfcmF0ZV9pbml0KCksIGRpdl9jbnQgPSBkaXY2NF91NjQoZmluX2ZyZXEsIHJhdGUpIHRy
+dW5jYXRlcyB2aWEKaW50ZWdlciBkaXZpc2lvbjoKCjEuIEZvciB0aGUgQWx3YXlzLU9uIEkzQyBj
+b250cm9sbGVyLCBmYXN0X2NsayBpcyBhOV9hb19zeXNfaTNjLCB3aGljaCBpcwogICBnYXRlZCBm
+cm9tIGE5X2FvX3N5cyAobXV4ZWQgYmV0d2VlbiB0aGUgMjQgTUh6IGFvX3h0YWwgYW5kIHN5cyku
+IFdoZW4KICAgZmluX2ZyZXEgaXMgMjQgTUh6LCBkaXY2NF91NjQoMjQwMDAwMDAsIDI1MDAwMDAw
+KSBldmFsdWF0ZXMgdG8gMCwgY2F1c2luZwogICBhb19pM2NfZmNsa19yYXRlX2luaXQoKSB0byBm
+YWlsIHByb2JlIHdpdGggLUVJTlZBTC4KCjIuIFdoZW4gZmluX2ZyZXEgaXMgbm90IGFuIGV4YWN0
+IG11bHRpcGxlIG9mIDI1IE1IeiAoZm9yIGV4YW1wbGUsIGEKICAgMTY2LjY3IE1IeiBzeXMgY2xv
+Y2spLCBkaXY2NF91NjQoZmluX2ZyZXEsIHJhdGUpIHRydW5jYXRlcyBkb3duIHRvIDYsCiAgIGNv
+bmZpZ3VyaW5nIEkzQ19BT19GQ0xLX0RJVl9DVFJMIGZvciAyNy43OCBNSHogd2hpbGUgbWFzdGVy
+LT5mY2xrX3JhdGUgaXMKICAgaGFyZGNvZGVkIHRvIEkzQ19ERUZBVUxUX0ZDTEtfUkFURSAoMjUg
+TUh6KS4gU2ltaWxhcmx5LCBpbgogICBkZWZhdWx0X2kzY19mY2xrX3JhdGVfaW5pdCgpLCBjbGtf
+c2V0X3JhdGUoKSByb3VuZHMgdG8gdGhlIGNsb3Nlc3QgcmF0ZQogICBzdXBwb3J0ZWQgYnkgdGhl
+IGNsb2NrIHRyZWUgcmF0aGVyIHRoYW4gZ3VhcmFudGVlaW5nIDI1IE1Iei4gV2hlbiB0aGUKICAg
+YWN0dWFsIGNsb2NrIHJhdGUgZXhjZWVkcyAyNSBNSHosIHN2Y19pM2NfbWFzdGVyX2J1c19pbml0
+KCkgYW5kCiAgIHN2Y19pM2NfbWFzdGVyX3NldF9zcGVlZCgpIGNvbXB1dGUgcHBiYXVkLCBvZGJh
+dWQsIGFuZCBpMmNiYXVkIGFzc3VtaW5nCiAgIDI1IE1Ieiwgd2hpY2ggY2FuIGRyaXZlIHB1c2gt
+cHVsbCBTQ0wgYWJvdmUgdGhlIDEyLjUgTUh6IE1JUEkgSTNDIGxpbWl0LgoKMy4gQmVjYXVzZSAo
+ZGl2X2NudCAtIDEpIGlzIHdyaXR0ZW4gaW50byB0aGUgOC1iaXQgSTNDX0FPX0ZDTEtfRElWX01B
+U0sgZmllbGQKICAgKEdFTk1BU0soNywgMCkpLCB0aGUgbWF4aW11bSBzdXBwb3J0ZWQgZGl2aWRl
+ciBpcyBJM0NfQU9fRkNMS19ESVZfTUFTSyArIDEKICAgKDI1NiksIHNvIGNoZWNraW5nIGRpdl9j
+bnQgPiBJM0NfQU9fRkNMS19ESVZfTUFTSyBpcyBvZmYgYnkgb25lLgoKU2hvdWxkIGFvX2kzY19m
+Y2xrX3JhdGVfaW5pdCgpIHJvdW5kIHRoZSBkaXZpZGVyIHVwIChmb3IgZXhhbXBsZSB3aXRoCkRJ
+Vl9ST1VORF9VUF9VTEwpIGFuZCB1cGRhdGUgbWFzdGVyLT5mY2xrX3JhdGUgdG8gdGhlIGFjdHVh
+bCBkaXZpZGVkIG9yCnF1ZXJpZWQgY2xvY2sgcmF0ZT8KCj4gKwo+ICsJcG1fcnVudGltZV9zZXRf
+YXV0b3N1c3BlbmRfZGVsYXkoZGV2LCBTVkNfSTNDX1BNX1RJTUVPVVRfTVMpOwo+ICsJcG1fcnVu
+dGltZV91c2VfYXV0b3N1c3BlbmQoZGV2KTsKPiArCXBtX3J1bnRpbWVfZ2V0X25vcmVzdW1lKGRl
+dik7Cj4gKwlwbV9ydW50aW1lX3NldF9hY3RpdmUoZGV2KTsKPiArCXBtX3J1bnRpbWVfZW5hYmxl
+KGRldik7CgpbIC4uLiBdCgo+ICtzdGF0aWMgdm9pZCBhbWxvZ2ljX2kzY19yZW1vdmUoc3RydWN0
+IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiArewo+ICsJc3RydWN0IHN2Y19pM2NfbWFzdGVyICpt
+YXN0ZXIgPSBwbGF0Zm9ybV9nZXRfZHJ2ZGF0YShwZGV2KTsKPiArCj4gKwlzdmNfaTNjX21hc3Rl
+cl9yZW1vdmUobWFzdGVyKTsKPiArCj4gKwlwbV9ydW50aW1lX2RvbnRfdXNlX2F1dG9zdXNwZW5k
+KCZwZGV2LT5kZXYpOwo+ICsJcG1fcnVudGltZV9kaXNhYmxlKCZwZGV2LT5kZXYpOwo+ICt9Cgpb
+U2V2ZXJpdHk6IE1lZGl1bV0KRG9lcyBhbWxvZ2ljX2kzY19yZW1vdmUoKSBsZWFrIGNsb2NrIHBy
+ZXBhcmUgYW5kIGVuYWJsZSByZWZlcmVuY2VzIG9uCnByaXYtPmNsa3Mgd2hlbiB0aGUgZGV2aWNl
+IGlzIHN0aWxsIGFjdGl2ZSBhdCByZW1vdmFsIHRpbWU/CgpJbiBhbWxvZ2ljX2kzY19wcm9iZSgp
+LCBjbG9ja3MgYXJlIGFjcXVpcmVkIHZpYSBkZXZtX2Nsa19idWxrX2dldF9hbGwoKSBhbmQKbWFu
+dWFsbHkgZW5hYmxlZCB3aXRoIGNsa19idWxrX3ByZXBhcmVfZW5hYmxlKHByaXYtPm51bV9jbGtz
+LCBwcml2LT5jbGtzKS4KCkR1cmluZyByZW1vdmFsLCBzdmNfaTNjX21hc3Rlcl9yZW1vdmUoKSBj
+YWxscwppM2NfbWFzdGVyX3VucmVnaXN0ZXIoKS0+c3ZjX2kzY19tYXN0ZXJfYnVzX2NsZWFudXAo
+KSwgd2hpY2ggcmVzdW1lcyB0aGUKZGV2aWNlIHZpYSBwbV9ydW50aW1lX3Jlc3VtZV9hbmRfZ2V0
+KCkgYW5kIGNhbGxzCnBtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCkuCgpJZiBDT05GSUdfUE0g
+aXMgZGlzYWJsZWQgKHdoZXJlIHJ1bnRpbWUgUE0gaGVscGVycyBhcmUgbm8tb3BzKSwgb3IgaWYg
+cnVudGltZQpzdXNwZW5kIGlzIHByZXZlbnRlZCBhdCByZW1vdmFsIHRpbWUgKGZvciBleGFtcGxl
+IHZpYSBzeXNmcyBwb3dlci9jb250cm9sIG9yCmJlY2F1c2Ugc3ZjX2kzY19tYXN0ZXJfZW5hYmxl
+X2hvdGpvaW4oKSBpbmNyZW1lbnRlZCBtYXN0ZXItPmRldidzIHJ1bnRpbWUgUE0KdXNhZ2UgY291
+bnQgd2l0aG91dCBhIG1hdGNoaW5nIHB1dCBpbiBzdmNfaTNjX21hc3Rlcl9yZW1vdmUoKSksCnBt
+X3J1bnRpbWVfZG9udF91c2VfYXV0b3N1c3BlbmQoKSB3aWxsIG5vdCBpbnZva2UKYW1sb2dpY19p
+M2NfcnVudGltZV9zdXNwZW5kKCkuCgpTaG91bGQgYW1sb2dpY19pM2NfcmVtb3ZlKCkgY2hlY2sg
+IXBtX3J1bnRpbWVfc3RhdHVzX3N1c3BlbmRlZCgmcGRldi0+ZGV2KQphZnRlciBwbV9ydW50aW1l
+X2Rpc2FibGUoJnBkZXYtPmRldikgYW5kIGNhbGwgY2xrX2J1bGtfZGlzYWJsZV91bnByZXBhcmUo
+KQphbmQgcG1fcnVudGltZV9zZXRfc3VzcGVuZGVkKCZwZGV2LT5kZXYpPwoKPiArCj4gK3N0YXRp
+YyBpbnQgX19tYXliZV91bnVzZWQgYW1sb2dpY19pM2NfcnVudGltZV9zdXNwZW5kKHN0cnVjdCBk
+ZXZpY2UgKmRldikKPiArewo+ICsJc3RydWN0IHN2Y19pM2NfbWFzdGVyICptYXN0ZXIgPSBkZXZf
+Z2V0X2RydmRhdGEoZGV2KTsKPiArCXN0cnVjdCBhbWxvZ2ljX2kzY19wcml2ICpwcml2ID0gbWFz
+dGVyLT5ic3BfcHJpdjsKPiArCj4gKwlzdmNfaTNjX3NhdmVfcmVncyhtYXN0ZXIpOwo+ICsJY2xr
+X2J1bGtfZGlzYWJsZV91bnByZXBhcmUocHJpdi0+bnVtX2Nsa3MsIHByaXYtPmNsa3MpOwo+ICsJ
+cGluY3RybF9wbV9zZWxlY3Rfc2xlZXBfc3RhdGUoZGV2KTsKPiArCj4gKwlyZXR1cm4gMDsKPiAr
+fQo+ICsKPiArc3RhdGljIGludCBfX21heWJlX3VudXNlZCBhbWxvZ2ljX2kzY19ydW50aW1lX3Jl
+c3VtZShzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gK3sKPiArCXN0cnVjdCBzdmNfaTNjX21hc3RlciAq
+bWFzdGVyID0gZGV2X2dldF9kcnZkYXRhKGRldik7Cj4gKwlzdHJ1Y3QgYW1sb2dpY19pM2NfcHJp
+diAqcHJpdiA9IG1hc3Rlci0+YnNwX3ByaXY7Cj4gKwlpbnQgcmV0Owo+ICsKPiArCXBpbmN0cmxf
+cG1fc2VsZWN0X2RlZmF1bHRfc3RhdGUoZGV2KTsKPiArCXJldCA9IGNsa19idWxrX3ByZXBhcmVf
+ZW5hYmxlKHByaXYtPm51bV9jbGtzLCBwcml2LT5jbGtzKTsKPiArCWlmIChyZXQpCj4gKwkJcmV0
+dXJuIHJldDsKPiArCj4gKwlzdmNfaTNjX3Jlc3RvcmVfcmVncyhtYXN0ZXIpOwo+ICsKPiArCXJl
+dHVybiAwOwo+ICt9CgpbU2V2ZXJpdHk6IE1lZGl1bV0KT24gImFtbG9naWMsaTNjLWFvLWE5IiBk
+ZXZpY2VzLCBjYW4gSTNDX0FPX0ZDTEtfRElWX0NUUkwgbG9zZSBpdHMKY29uZmlndXJhdGlvbiBh
+Y3Jvc3Mgc3VzcGVuZCBhbmQgcmVzdW1lPwoKRHVyaW5nIHByb2JlLCBhb19pM2NfZmNsa19yYXRl
+X2luaXQoKSB3cml0ZXMgSTNDX0FPX0ZDTEtfRElWX0VOLApJM0NfQU9fRkNMS19FTiwgYW5kIHRo
+ZSBkaXZpZGVyIGludG8gbWFzdGVyLT5yZWdzICsgSTNDX0FPX0ZDTEtfRElWX0NUUkwuCgpXaGVu
+IHN1c3BlbmRpbmcgYW5kIHJlc3VtaW5nIHZpYSBhbWxvZ2ljX2kzY19ydW50aW1lX3N1c3BlbmQo
+KSBhbmQKYW1sb2dpY19pM2NfcnVudGltZV9yZXN1bWUoKSAod2hpY2ggYXJlIGFsc28gdXNlZCBm
+b3Igc3lzdGVtIHNsZWVwIHZpYQpwbV9ydW50aW1lX2ZvcmNlX3N1c3BlbmQoKSBhbmQgcG1fcnVu
+dGltZV9mb3JjZV9yZXN1bWUoKSksCnN2Y19pM2Nfc2F2ZV9yZWdzKCkgYW5kIHN2Y19pM2NfcmVz
+dG9yZV9yZWdzKCkgb25seSBzYXZlIGFuZCByZXN0b3JlClNWQ19JM0NfTUNPTkZJRyBhbmQgU1ZD
+X0kzQ19NRFlOQUREUi4KCklmIHRoZSBjb250cm9sbGVyIGxvc2VzIHJlZ2lzdGVyIHN0YXRlIGR1
+cmluZyBzdXNwZW5kIG9yIGhpYmVybmF0aW9uLAp3b3VsZG4ndCBJM0NfQU9fRkNMS19ESVZfQ1RS
+TCByZW1haW4gdW5jb25maWd1cmVkIG9uIHJlc3VtZSB1bmxlc3MgaXQgaXMKc2F2ZWQgYW5kIHJl
+c3RvcmVkIG9yIHJlLWluaXRpYWxpemVkPwoKWyAuLi4gXQoKPiAtLSAKPiAyLjQ3LjMKCi0tIApT
+YXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjEw
+MTktYTlfaTNjLXYxLTAtMzI5ZDgxOWQ2MjFmQGFtbG9naWMuY29tP3BhcnQ9MwoKLS0gCmxpbnV4
+LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
