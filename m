@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E26BCCF2D3
-	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 06:00:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09FB5CCF2D3
+	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 06:01:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hv+XKClkXzLEnGyFFO/2oJaerauwqUWJ7dM+EsC9YyE=; b=JeNTc4f5i+GylT
-	iK9xsVoNxMd6fDqiAoMTYgKkE889yjGGZjtZZAHicXWVoU1b2OOqaSJYJAsfhKQQ8Tg+Vp0oTRu+q
-	tNaZmAML7XtDeBhZvm5u6xe6zmUb2Ec4qr84pjSMDp4JbGI6jUki+c0YIUoRxx29T/jA/GbbX42sD
-	ANT4KHkVRV8+j2iJ78imfKVY0GbPb4yQQABrLPtsytS7jLoxRLU5CScMxhf7Yi/OajliPToSBBki2
-	XgsupRdaPKXxRsAJKvphuq0R+0h5o/+yp6y3I+n8uuS/566HwdgDDSoKlA6xXRWjeCyud7+afw0Ua
-	Asi524W+HbU+l9Uwp+uQ==;
+	List-Owner; bh=q1SfHg/Mg5MCEX+h+bUmoBP/HFRtrG9v/O2pAwpe28E=; b=yB+BUnYV7/0Ui6
+	JEqlNcmFbEypx2CUeNlb0o0yejMuCQeU9KyFzEvEUbwjnWikD8GmZ6PVaNI221F2s12drseGCE3KW
+	EDynkzXNZDW69Pj9rTskBFe1EnsYXj75tGASnEUZukK7dAH18l0ui4KwG+dktEdVPmzMfr2xnyrX3
+	c6aNueGorqjwtXA9KXWdvRkR75VngcBwSO3X1CZJ8wufMbdM+a8KexPz0czgdliCnJ8ApCCJwWzu9
+	shzAi8jwA+UK/PMs08tenyK+tLoUEYlUimk0BU+K7UzD9xWOl04hKMOCSZFJOG61c0nfrSLb8nYh3
+	sTJcM8QKi/4C8OSpC6LA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIgQZ-00000006fQq-0mK1;
-	Mon, 19 Oct 2026 06:00:55 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xIgRX-00000006fZT-2udF;
+	Mon, 19 Oct 2026 06:01:55 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIgQW-00000006fQP-3D4o;
-	Mon, 19 Oct 2026 06:00:53 +0000
+	id 1xIgRT-00000006fYq-1YEG;
+	Mon, 19 Oct 2026 06:01:51 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id EF1B7600CB;
-	Mon, 19 Oct 2026 06:00:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9A441F000C4;
-	Mon, 19 Oct 2026 06:00:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 68777600CB;
+	Mon, 19 Oct 2026 06:01:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5341B1F000C4;
+	Mon, 19 Oct 2026 06:01:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792389651;
-	bh=hL5PQEK/ie9WfNiFzlAjb8P6kM5LwoPPjq6aWCCppCc=;
+	s=k20260515; t=1792389710;
+	bh=guAxLVnBrzbtbLtxdX+Xt+/dnElaoi1SWUVPVVVeGrc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=Zbpz5q5+6RVkJa2gx9yrULY66JBVQz6RjOFTSlHqlXNAAT3zSgoZlF78ffGQ1xwRb
-	 Iwh/3hF1S2K6upOfbfK7Iha58xCpcuPn5EFFGbd2V1BI/EUwx0jgPsJQ453dzbWLFo
-	 Mcq0MNYYZDwRqfkIhOKSZ7kauhqTFhEsckaoB8uwbDHn+R4IDM5YG5lmJAIMvAs+bS
-	 BqjG4zp/5K+IJ/pjA1u+orH6J1v7EkhXM3Oj+C4oMauYCi5ZtWGYlyN9lOcpZhxs1/
-	 VaDXm4qFEc6gXqip0jrt+9mFkO/HsG/GPk5jpuaZHHv4VwWnxn0ea2zlsFqb+xzjOR
-	 Jw+UtE1+PJzlA==
-Message-ID: <c84d861a-2e28-45b0-80c8-e533864d5e6c@kernel.org>
-Date: Mon, 19 Oct 2026 08:00:42 +0200
+	b=BOVrdr7S1kpxFlTBlvGTTGpb/xCPqoF8qa5rcp1V4dPrSCpGrFYUWC5weE+cI72Mf
+	 dyQAbG1Z9Y2+qOU0AKfuNn9jpG+AiYpQ6nrpKjZJRwaOgrDyHW5/4jz66Y8/CL1Gi+
+	 NzfBG9uWXuIW2eaRpS8DJaejOTDhmjWZeus+l6niUdUND6QuJRAKZnd4t/WHBSAjOa
+	 g9T1e4QRVgtIMaVlVcdI64exDExwfiFgMRDWpN8BNDWX3o72D49wFr2mDvPYXhK3iG
+	 woW8YeTF8tJuVcFwbpQTjlBr9Xpx+d4dxe9m8CPXEZ431o3jlQmau7SQXnPqli2Hx0
+	 18a9pqexMSGHw==
+Message-ID: <2f656848-5f03-40c6-88fa-d1fdae10a03c@kernel.org>
+Date: Mon, 19 Oct 2026 08:01:43 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 2/3] dt-bindings: i3c: Add Amlogic A9 I3C controller
@@ -125,82 +125,6 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 19/10/2026 07:34, Junyi Zhao via B4 Relay wrote:
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - amlogic,i3c-a9
-> +      - amlogic,i3c-ao-a9
-
-What is ao?
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  clock-names:
-> +    minItems: 1
-> +    maxItems: 2
-
-Names go here
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +
-> +unevaluatedProperties: false
-
-This goes before example
-
-> +
-> +if:
-
-And this in allOf, see example schema or other bindings.
-
-> +  properties:
-> +    compatible:
-> +      const: amlogic,i3c-a9
-> +then:
-> +  properties:
-> +    clocks:
-> +      items:
-> +        - description: APB peripheral clock
-> +        - description: I3C fast clock
-> +    clock-names:
-> +      items:
-> +        - const: pclk
-> +        - const: fast_clk
-
-That's just fast
-
-minItems: 1
-
-> +else:
-> +  properties:
-> +    clocks:
-> +      maxItems: 1
-> +    clock-names:
-> +      items:
-> +        - const: fast_clk
-
-maxItems: 1
-
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
 > +    i3c@3a7000 {
 > +        compatible = "amlogic,i3c-a9";
 > +        reg = <0x3a7000 0x10000>;
@@ -211,28 +135,9 @@ maxItems: 1
 > +                 <&clkc 16>;
 > +        clock-names = "pclk", "fast_clk";
 > +        status = "disabled";
-> +    };
-> +
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    i3c@22000 {
 
-Drop, one example is enough.
 
-> +        compatible = "amlogic,i3c-ao-a9";
-> +        reg = <0x22000 0x10000>;
-> +        interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
-> +        #address-cells = <3>;
-> +        #size-cells = <0>;
-> +        clocks = <&clkc 17>;
-> +        clock-names = "fast_clk";
-> +        status = "disabled";
-> +    };
-> +...
-> 
-
+Drop, your binding was not actually tested.
 
 Best regards,
 Krzysztof
