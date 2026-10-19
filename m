@@ -1,71 +1,147 @@
-Return-Path: <linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org>
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
-	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F158CCF2EB
-	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 14:26:06 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 67229606A319
+	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 20:32:57 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=by1Qv35x;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=QEOJVKki
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=08MT6lW8cKhuP48fhoOnk4JJBxahy2RdlK4jPQ3BdpY=; b=fmo1YZNAAvD313
-	ISBoKvfSVjC6ufR2iLfVV/efITEfFPI08MpbNANzvXPWUCK6IjUcBuis6zrynp84vWkzaeF2J/zGR
-	ku6ud81sqCPpWS9kEPA+8F2PLFg7pw86rIGjTZaZ0AnktG66511xIlP7k2O+cOqAPE6FO8Gs+T1ik
-	psw0su6CrzyJXlDTc0eTACj/yuZ7gNytjsMQOkiTcbPQajCOLL0Pc9Nj3JxUDO0/nM74pi91K2CjE
-	CDiKJorfn7XJZ+cCowg3UOuUVzus/13oF64DJh5uiaJMIqZVSAmFzfEe5RiI4/zZGx1l117a0+NBC
-	wwn0zouXh1n8wIQEf7CA==;
+	List-Owner; bh=UU5bYSn26uwESb46qp4i33yn6RbbTccjO/YvPgj1K+s=; b=by1Qv35xRwAFo8
+	y1AK51c6K7iIMTWV9DyPRldTCejWZB1zVxGpfqWeXuds+tq+UDkIl97/+Ck+XQ34IcSkpK11zpLhU
+	3IdK26vRmTm6K/VGdtW4G22bYlQBDm4AI8/yxWbb+yCOXTUQSKXPvH6eZ+9mSp89/tezFc8bjLdr3
+	a4xPHFg6Ekmr7hT28ZPeozwZSh+HlXgxah7mFCwrqcZSi6F1sA4FK7gYfZvo11SIiMdSNmEfnn7r8
+	vEVZNWRQoBw11wK8bR95HxyE5t8c0cjmnhjUKE6zbhA03e+TDHTB495n+CVgzdVOzaS5FxRQN/FSX
+	s74kvqqdjCbLGuJ/GQmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIoJS-00000007jpw-03pj;
-	Mon, 19 Oct 2026 14:26:06 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xIu2T-00000008JPe-0cK7;
+	Mon, 19 Oct 2026 20:32:57 +0000
+Received: from mail-francecentralazon11013053.outbound.protection.outlook.com ([40.107.162.53] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIoJQ-00000007jpp-0QYe
-	for linux-i3c@lists.infradead.org;
-	Mon, 19 Oct 2026 14:26:04 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 40A4A60136;
-	Mon, 19 Oct 2026 14:26:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2FC91F000C4;
-	Mon, 19 Oct 2026 14:25:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792419962;
-	bh=5c7yVaLtr9x4fkx2BIkC1OF7uxkwFHyouac+2BuosV8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=gK829uGJwuHy0+KUuUByxqIxBVMzXAoNbSej8eAWfvgRaS+5YW1j5+tGZBOxMj5AK
-	 gjd5XvAqtMkOyARij0M6L/Ah0i2oee/l2wDD3B49iLnn8SmyztKaHkYKo8aBhnPD9k
-	 wkOh48gpxMWMlmBM3OwydpOuj4uUlBzxW1HFZv+VdxeZx9bR5P4W+tkaf2QiED27BG
-	 Bc6O/HBPILIPgOnuCN4ZLwYJxMUqdBUs/paPiIukoYGJRptYqDoMIaT+65zVg3zQ3V
-	 6Z/6WVtoJ/VY9LnLw6z3I/Dr4i1doDDnl5g7ZuqbGp8GalMl5Ao9MQ6ZVXwOjnv+XO
-	 ynQq2sStMJcSw==
-Date: Mon, 19 Oct 2026 15:25:55 +0100
-From: Lee Jones <lee@kernel.org>
-To: Lakshay Piplani <lakshay.piplani@nxp.com>
-Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
-	mfd@lists.linux.dev, Frank.Li@nxp.com, lgirdwood@gmail.com,
-	linux-gpio@vger.kernel.org, linusw@kernel.org, brgl@kernel.org,
-	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
-	aman.kumarpandey@nxp.com
-Subject: Re: [RFC PATCH 7/7] gpio: p3h2x4x: add GPIO expander for the NXP
- P3H2x4x I3C hub
-Message-ID: <20261019142555.GB2663669@google.com>
-References: <20261016164625.3166779-1-lakshay.piplani@nxp.com>
- <20261016164625.3166779-8-lakshay.piplani@nxp.com>
-MIME-Version: 1.0
+	id 1xIu2Q-00000008JOe-2MEH;
+	Mon, 19 Oct 2026 20:32:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=HKt2Dy7G2p3m/VuaQNpSZC7N21BgzccDqsdc4DYd1fawknPwEog9YSdCYWVqPIbh9WUVd/fGxGoUOUT4bqjzsIS3AUP6piCXDQTT+3gGBmxgMl5g9gqMPcpTbd0s40jMiFVf/H0ini8WEvSmCn5DaMAghvBYQDnBwhREN7M0zQVZAx15gTJVeVsqG++ksIldfg05zcq9JTMhXVqTReaI/KL+j6FihEZS2hhTtRJPvznPDsMJhONHqYv/SylaR9JSYnlX9yWEkkjN/B5DD7e7WI55RT0mvkJiQAF0mmz02gaYHaGdXXXjK0OBPbOfLarO/dXZF7reyw7R/YW/61D1Ig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=NnZVSzSXcAj3KELfmay509eAzpFndEelCVPDyrd+ROQ=;
+ b=DUQsDw9fLb1SHqv0Ql+XEwkHhZtg7bsGUT35jAXUlpuP7n7qu0lVS7t0/iLoBNcUzZzZw75TaPkv3fSrswNKBuukVoJy1kcMfLhWlBAYZ4pys/CuHxepaH1t2ywcc7jHcYs+kKq1XYLQFTdBAROB4L/qiOVJ/vhVnbDOCbaG0ax9zd4hLetZ6agc0Y8rRuBjxYW25191S5Mzj3tMejI9tbE7SYRJHnJjzGtmi4dJSj2/MZNMLzy1rEJYMHwECzRGUlz8w3t9nlid8ImddcoF9lJdWbeCxi0NBqn/gWlvVDtj1AYw7Ud0ZwiRx0Y3kUd0xLzXx+INme1fbn2G1z5gBA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NnZVSzSXcAj3KELfmay509eAzpFndEelCVPDyrd+ROQ=;
+ b=QEOJVKkimIDql3c30i6gpuqhn2Re4zLf6R0vrFmK7CmjQQSkaaVJYixKvQeJJ09jZSkci5qk4vjJlJ41PJubaoeT5veclyWffie3YaLdLQvpehfLXnjs0JbKGVz56JCzcq9uzNOdtZv9bvObvOOnK8Y7np+xysn7MtMlhy/CPzdi6OwZ2lnoaSiEWpGZ/yFQ5EylSlz5lNPeND4jNknNLhBx9xjjvfXE1dRzTzuKL4HJEii8m93cGB4KaX4rr6YTof8EvqgHK06pJZvo7SA5dVp9MoBbGx1IX6ReV5vapme6x42Q6CKq3WLCJR9mafE+a1VWTYVw9rlra05PWFRUbA==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
+ by PAXPR04MB9105.eurprd04.prod.outlook.com (2603:10a6:102:225::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.522.19; Mon, 19 Oct
+ 2026 20:32:48 +0000
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b%6]) with mapi id 15.21.0522.017; Mon, 19 Oct 2026
+ 20:32:48 +0000
+Date: Mon, 19 Oct 2026 15:32:35 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: junyi.zhao@amlogic.com
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Jerome Brunet <jbrunet@baylibre.com>,
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Kees Cook <kees@kernel.org>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-amlogic@lists.infradead.org, imx@lists.linux.dev,
+	linux-hardening@vger.kernel.org, xianwei.zhao@amlogic.com,
+	Kelvin.Zhang@amlogic.com
+Subject: Re: [PATCH 1/3] i3c: master: Rework SVC I3C to support vendor glue
+ layers
+Message-ID: <atZ-YyEmG-KvUZAF@SMW015318>
+References: <20261019-a9_i3c-v1-0-329d819d621f@amlogic.com>
+ <20261019-a9_i3c-v1-1-329d819d621f@amlogic.com>
 Content-Disposition: inline
-In-Reply-To: <20261016164625.3166779-8-lakshay.piplani@nxp.com>
+In-Reply-To: <20261019-a9_i3c-v1-1-329d819d621f@amlogic.com>
+X-ClientProxiedBy: PH8P222CA0004.NAMP222.PROD.OUTLOOK.COM
+ (2603:10b6:510:2d7::34) To MI3PR04MB12438.eurprd04.prod.outlook.com
+ (2603:10a6:290:76::14)
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|PAXPR04MB9105:EE_
+X-MS-Office365-Filtering-Correlation-Id: c99f35e9-54c0-49e1-ee0f-08df2e2023a4
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|19092799006|1800799024|23010399003|366016|6133799003|18002099003|10067099003|22082099003|4143699003|261009223027099003|11063799006|56012099006;
+X-Microsoft-Antispam-Message-Info: dbgPGYwX89F4FXPQGY/Mj4N21QTpE5JwwtD6zKPDn1qYgGNHHTRVdLLNjU7rcOjECU2EgZHzdHzk8Bs3s5/HGtRIuQLltpNnr7nsxq0iWr8+2xckN07z81WZFvlylOyv3WszY2azO/mWMLQv3dPaGH0/nYCSPKzstkGJBMR91DQ0igqu2HIYFinayVMdUZbFwFI/WdNgRSYRKIDqA4hOSbP0j5hq/OP2Fr+xTGuqiqqAu+TvZIzsRzM/h2VC4m0Uz+mr5cEPpCBqBdAvtFtEPvTtzIKUfNTdAcu4UHc7q3VSALT49iKANrcwqB2TlPCWFnV1GQoT2Qt2kGfZcNnX6vytuOkIPvVNmmJ3+CEfum6ad/eUTjTMb/wz6nX3ZzA+Rx/40gXkTS4eWRJO121OThJEksCs//Mvimm2l9j9vJD+NU9QMWnWM+Ab1hmK3MhCiRkeezEPEwUrh/5jB9DtOvAmqCHZ7saIkgxgxOFbG1Gh1u+jHKt/0zIVglS4jM93HQFM5sVcbDwMISuor3wCtkeUFCJNGP9Ocfx3etKhaH2vUM4pUQMvmTqovWPmn4guESSyOYfvSZj9v+yKy+Acw2tCgtQUOTDf6TrE6fyTd0j8eCgd4wKEjJBO+bYzApMGl1aXMCa9YPJGUEt+0XkMVKILVCKe8zuBq6SaSLbsUS4=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(19092799006)(1800799024)(23010399003)(366016)(6133799003)(18002099003)(10067099003)(22082099003)(4143699003)(261009223027099003)(11063799006)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Yh9oizP5hJ7Bo3Rpc/ri6d/2r/yMxrtrg7faHR4VZyIxm/HIWGnkd/38xlVE?=
+ =?us-ascii?Q?mLFn1/jfVJn9zQi4xAPLIwwSBhv45qo38WhXCH6KFjttI+Hs85YIDPDV2wUh?=
+ =?us-ascii?Q?qkl+e8+O9yogrNoVpPJkPXnSElBPfPteOFOnFOBicH08+AU0LisrjmEUzAwh?=
+ =?us-ascii?Q?lEcBN8Dn6NmKwbXswtDALAOzd37q93DkSZYNkwD253Xw1q1OtX4VKYGg+WhO?=
+ =?us-ascii?Q?CLnONv6GaOXxRxZqAaz1IdwdQACv5EAZ/vMvQ/Ny69Nb7O/bksk1ma3s/FDd?=
+ =?us-ascii?Q?2x5aRkJp8PW9mpVFwrYR6Aw7+7NfEKoXmhmubH9yTNTWs76guhu+lh+M047C?=
+ =?us-ascii?Q?ImppGgfVSEFJXSKD2IpUkZAV+Mqj0VUp70tBi42gXWQnk7NqZ6ch2Frp6/sV?=
+ =?us-ascii?Q?0qYSnsYJAIpS1S7MejbTEHrt2VVhi41MFd5XKWjoCbBVkL1tITovmNqrN3G1?=
+ =?us-ascii?Q?xz/1HAXxGuYOKJHIUiG8aK3ZxdX8CTkWfA3HE9VmiVHWZhA4zrFGGBKJM9S1?=
+ =?us-ascii?Q?NwDLJd+VSZUZwIHtWNKeAZVP2gGJi1RmXUMAew6hmhIVkLaOKBCW4qxtuklL?=
+ =?us-ascii?Q?AFJcFSPgxboT7qsJhaPgrFv3IPLoSvXpb/bESJez6Gsq2ZvO8KUdnlvj08Wj?=
+ =?us-ascii?Q?6mahB+va0tX0kJ8s8AISNlPHnnkE05E0G+VJKkmeySpgksp7GlVG+vSstJ2c?=
+ =?us-ascii?Q?Y0Ca6kJJBjsrr181nMraAEskBZ8rAptKDI5KUWYPHGf795JOvaxFVWurSGrK?=
+ =?us-ascii?Q?gXJAHUv9ATUATCenQ8wVt6Y2TOrfdSZIUKUqTCtuNjrDg8b8A4SNMpWm9ufd?=
+ =?us-ascii?Q?mLx8nJ7VHOAChPrSFAmaK3yLZnUw6/r/zGq0DNngzvlC1qmrRvrtWPQBdMBw?=
+ =?us-ascii?Q?XZRAxaN6RcDbn8vekkxHVSpourW569ihU4C4OBB/YpLcHEh2U+QCpzZV1ooe?=
+ =?us-ascii?Q?XVtvSLAvNyy9JCBKthZaOSYlckjuzWrbrjgXyL2X2meDKm506cIWf6C3z9G4?=
+ =?us-ascii?Q?qqHoCH+h+NhkfZAIGAIN+9q3v1g2U4K7pS3fitBoBxSWeNCtYbh5djRSvFeP?=
+ =?us-ascii?Q?TxCxchpK5gCiSYuThWJ0gr0W6IhoARg5zkBDz95UAFrDlP2yTX3hOmu+xtuX?=
+ =?us-ascii?Q?HOo4EECqNQ/XmoXhZIm8zdviuyP/95wIb9Mb7/WTf1wRWSYh0cteAjg3+IKV?=
+ =?us-ascii?Q?6q5OfAlgKcioGbnZnDNaIFzASYrDo16a8ebi5AzclxLaaDc23Qcxg4Ma8kFA?=
+ =?us-ascii?Q?boCYTT5QL7vLqBFetb2XU5bIp2kcyYpghBYrB8FLR11lns+yCezNz2Ao9Rpr?=
+ =?us-ascii?Q?KfohuVfMHWwA2GSuKWfuzbjz2NORpj7i8msEPoacUnIvUoiXu198wlphiq2i?=
+ =?us-ascii?Q?PO3YwqGHvImFJpzG+AHoNimXNgTr9pNThOAW75ZaviQ6GQdSmyCknDP7M8uP?=
+ =?us-ascii?Q?ucg7FhfOqX8gr8Tr/n+33fmY4/Kwy0sT3WWqHedyeViECw03g8u6ZmDvDU2m?=
+ =?us-ascii?Q?nxvSyoYe0drFVyqKSAzxLfF8L0ubYuAhirVujzJeVVBDyhIJ3KAeT43mC2b4?=
+ =?us-ascii?Q?nErjiuX96X+dSA5W0nx7JkyryxmyNZGzYEeG0qDCDv1JJ8DB6QKnDeA3b/7N?=
+ =?us-ascii?Q?SHxZhn5tMo4oDUgiTJjzDZKVZ5yL10aoKBgiFrJXwpzL0vSqZWrKekVlBbag?=
+ =?us-ascii?Q?dwZ6QPAZgJBMybcC9kLOsXFY/8d3qBb3ElHKzfYP/uK5dBjCisJxhUV+r0UQ?=
+ =?us-ascii?Q?wO40kNI3kYXTJ7RLic902d7X5GVRlH89WeWh/fohvWdw1TBzwqkv?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c99f35e9-54c0-49e1-ee0f-08df2e2023a4
+X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Oct 2026 20:32:48.3950
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: MrfLepdCehiW98B6anBCBN0ZyOXdfg52vQki4hiVQo8+RBcEXdEwNFAxNz9BrDBvCbjrgHzrYh48WMggXLtzP+5UZnXebENKzrULzPkyp+9E2poaKzDOVPldf0wyyiUc
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9105
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261019_133254_608597_E4A50E00 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
 List-Id: <linux-i3c.lists.infradead.org>
-List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-i3c>,
- <mailto:linux-i3c-request@lists.infradead.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/linux-i3c/>
 List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
@@ -74,49 +150,37 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
+	aws-us-west-2-korg-listserv-alma10-1
 
-On Fri, 16 Oct 2026, Lakshay Piplani wrote:
-
-> Expose the pins of the target ports placed in GPIO mode as a gpio_chip, so
-> the hub can be used as an IO expander.
-> 
-> Each port contributes two lines, the SCL pin first, so target port N owns
-> the lines 2 * N and 2 * N + 1, and the line number is also the port bit
-> position in the direction and level registers. Ports that carry bus traffic
-> are masked out through init_valid_mask. The port function is taken from the
-> device tree rather than from the GPIO mode register, because the hub child
-> that programs that register and this child are independent MFD devices with
-> no probe ordering guarantee.
-> 
-> Direction is the output enable: clearing it leaves the pin in Hi-Z. An
-> output drives the level before the buffer is enabled to avoid a glitch, and
-> the input level register is used for reads in both directions. These
-> registers are not protected, so the callbacks do not take the shared
-> register lock. Implement get_multiple and set_multiple so an access to all
-> lines of the hub costs two register accesses instead of one per line.
-> 
-> Interrupts on input level changes are not supported yet: they arrive as an
-> I3C in-band interrupt and the edge detection configuration is shared by
-> groups of four ports.
-> 
-> Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+On Mon, Oct 19, 2026 at 01:34:26PM +0800, Junyi Zhao via B4 Relay wrote:
+> [You don't often get email from devnull+junyi.zhao.amlogic.com@kernel.org. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
+>
+> From: Junyi Zhao <junyi.zhao@amlogic.com>
+>
+> The SVC I3C controller IP can be integrated into SoCs from different
+> vendors. Peripheral resources associated with the controller, such as
+> clocks, may vary between vendor implementations.
+>
+> Rework the driver to separate common functionality from
+> vendor-specific extensions. The common logic is shared across all
+> implementations, while platform-dependent operations are provided
+> through vendor-specific hooks.
+>
+> Also add a corresponding MAINTAINERS entry for the SILVACO I3C
+> controller.
+>
+> Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
 > ---
->  MAINTAINERS                 |   1 +
->  drivers/gpio/Kconfig        |  11 ++
->  drivers/gpio/Makefile       |   1 +
->  drivers/gpio/gpio-p3h2x4x.c | 294 ++++++++++++++++++++++++++++++++++++
->  drivers/mfd/p3h2840.c       |   5 +
 
-This needs to be a separate patch.
+No big difference. Needn't rework svc-i3c-master.c, you can add amlogic at
+svc-i3c-master.c directly.
 
->  5 files changed, 312 insertions(+)
->  create mode 100644 drivers/gpio/gpio-p3h2x4x.c
-
--- 
-Lee Jones
+Frank
 
 -- 
 linux-i3c mailing list
