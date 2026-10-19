@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EC9BCCF2E3
-	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 12:55:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 425AECCF2E3
+	for <linux-i3c@archiver.kernel.org>; Mon, 19 Oct 2026 12:55:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=85sUEPeRmtCCChcXPrXxxi5xYgA+EsftnsGKsmBKFVI=; b=fnbjwB9yiQH5XG
-	PQA+zY3RJ8LB6uNMkOnLeMRtMhrm2BkI1OouaedWUsahHx/LFVl3z1mOCni7yM2qhDUo41ChtA5nk
-	O0KMKPuSIteqGKXyTVcpiebAky6PrZZhGcpQUaBmo5i4VngM8p8+tv80wmgy2IyUv4LbqsEx3aWKU
-	F7SozDTvZfMaIns0RzSEt2alhdpA4wQwUO1Mq+o8K8GWqM7n5qQpV5Oi+I6rAJyVX9UAGIsH33kp4
-	HE79IJDdo1PnB1gDGg4VG/AvBi/hR17titlBtrPCfLOl1dXE5RIO0q2rsGM9k5Xf3Y1ta8blj43BM
-	vmWapGB/4PjNV6uZRLEA==;
+	List-Owner; bh=0CHHCqqf/z5i1eI2rnT0ak9z4EFTwZn3TiE6qhsnfh8=; b=MNjj98XSyJVz+q
+	QN9yyKkETsRn6wcMvGW7r7cjYOv1GAgYSK8qii3FMXqBZcz22nGYfyo7jIymvcBnZIntNwfzyAMAt
+	wIUxHI3ZrFVsyajmnV/j1PCkX7UtqiU7LqYPosgZLbP836CW5DaaxrSw9qSkGCSYr54Mbx0BpJ+e7
+	+iGZ54g3XEgpf0pBu4GlcShieJZzij5ngzHgRv9UcxIicglz92YheRukfFcEowKCrEpEgceJfMezK
+	Jt0Q83T27V/Zw0JA82aFYTXTCImR1O9UI4nzUeLlW0Fnuf7+h/+TR7wLB8JX4fexMsIRcsxh+u0Ou
+	8KAxWR9UJKt2ocGMaEFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xImte-00000007ROP-3Mz4;
-	Mon, 19 Oct 2026 12:55:22 +0000
+	id 1xImtj-00000007RQI-43hW;
+	Mon, 19 Oct 2026 12:55:27 +0000
 Received: from mx1.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::107])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xImtb-00000007RMm-1piU;
-	Mon, 19 Oct 2026 12:55:20 +0000
+	id 1xImtf-00000007RO6-0Wdh;
+	Mon, 19 Oct 2026 12:55:24 +0000
 Received: from [IPv6:2a0a:edc0:0:900:1d::4e] (lupine.office.stw.pengutronix.de [IPv6:2a0a:edc0:0:900:1d::4e])
 	(Authenticated sender: pza@pengutronix.de)
-	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id D2E57202283;
-	Mon, 19 Oct 2026 14:55:14 +0200 (CEST)
+	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 631DE201B55;
+	Mon, 19 Oct 2026 14:55:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1792414514;
+	s=20260414; t=1792414521;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=D62cup5vprZgFRRa2wzv2xPzHFDPatAnjBm5Em342R8=;
-	b=CvLrU8+GmNypWn9xx/r4fdYSchqqMToLCIphjGezVcKgEReCLDwu4KClpz/9k7dw1wUZtT
-	mLQJtWWOEHZfwcmFWN2Q0u2KPfbgvNIFKpnHc4M4eL9J2ppYYeE8kakZHVR8qglWYiPRhu
-	tYZ3D7c/SUgQN2jLVW6PuM12R8trJGPc4aFTkE8PIX51UoIsHFVHBRJ33hRwRkzchdulpY
-	TVZnMDQwW1y/Pl2ERHoUNvPVbd45xg0JL6nIHyj7/6YpzHqR+ujBDiobvlNxhcyRSmyXj2
-	hC7WNh59pIeLAC0D8SM1sL9x1INHzeOVwMPXM66o8yUD8SdwazuBiFhfQttJJQ==
-ARC-Seal: i=1; s=20260414; d=pengutronix.de; t=1792414514; a=rsa-sha256;
+	bh=EDFACtr3joZkKek48vhVDUWWppSHXimH9DiDBJeDnxE=;
+	b=gepNrz1U6+E8DSXqJNpla4aXDaQwIAZnouL+bQeaRSWSAnv2PkKkBDIfOu+/sUKzcSIb69
+	Vb3gNn7tFjTsoSAdFA9FAC1jK5tMR/cYy8zNGtOj9R0kLVV9AEV0atx2vQR0hkuIRecLCo
+	GGZg/l/BkkQXqi2qah6aklRy1TpfVXdcwjb3RnHha1JokSF6VVy29R9/r1XK7QDjXBlpfy
+	ud42s54DCGMykv2BFWruIe/Oa3Kp5kB5gJplt96g1mFC1Ka6F9cijJo8605D3aJ0AD6T7w
+	URe84NPQPBiddAqyK5z3YB3p1mnPJgINxVlBVF0vS0JPFRssVrf6vtTvEjrolQ==
+ARC-Seal: i=1; s=20260414; d=pengutronix.de; t=1792414521; a=rsa-sha256;
 	cv=none;
-	b=Z3Hoz5ZYqpiDZNjSQCUX4qtokt95RYWHbGqNXWqhqiGqf+TwUCDZ8tMYc1DdbjSl0As+kp
-	no2s+1YvTtJ47puPaAYw0LLqisyWf1XSiXfOutBQNcWZnR56ARSWULa/+Z1Vi3EQSwB6Vf
-	2PG+IVa7/V/TDFQuDeNZZK2s/2OwcJ27ePvLyXSygTXpTRMFdkMHUCKccQ63E9TjcdyLRF
-	qAAIM+ugML03WPm6FjdGWP37XLj8TnexXawtwG++tmeanbeufaJjOnmWZr1UfZRpc+P96r
-	PiYVYIvtUXh+bgSKvdZ7ubpLSfrmYX5zTFZdUY095wH8ruyWH+E5eXYEIS86hA==
+	b=M+hY0bCqbBjAqkJiO2Dr0W85cayLgKDgnezkb8w7P8Kbnfem5o4rkdVs+OO5MYoRU1GhyY
+	1emQfM7kAJ7J/0Du2oa+qljCtBrlE+muxwidb+1I0Rzp9det36UkWsn9F72JYTjMFicR5r
+	3BDmGClKSVFcl4ZxDKWlQVNT8oPYgu0pvsvb9oPfch6QM97vUbkokmNUl2y8ZccmpwJw52
+	T4X/FIfYiE4E11R0m9JaQXOccNBdLul94VMjlfthBlzujHddG61+0ArW8R8qbgYuawyALt
+	ZIB+uJ68KX3UzMV7mb0bw/h/aEZJsNH/xmJBJljzNxVETGf7yhI+THk8vvkiMQ==
 ARC-Authentication-Results: i=1;
 	ORIGINATING;
 	auth=pass smtp.auth=pza@pengutronix.de smtp.mailfrom=p.zabel@pengutronix.de
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1792414514;
+	s=20260414; t=1792414521;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=D62cup5vprZgFRRa2wzv2xPzHFDPatAnjBm5Em342R8=;
-	b=PqOAWYC9utW8pHVrGs/4aeyNUl89dwzkhYkJEoxW9do8WrW2lE7H6h/Dx2Ebkf4qFRaSMz
-	tV9u2MvW/3x7lVS6juzYWIkKfOmGFMNRVZcAQZN0tnH5bOtoaoFN1ta4h76p3ANwS54IbJ
-	4asBYp0P9935uack+6hWfLV3repCSXTntsMywf1TZTIo8IaTFA918AbUxAAA8GfrIgoB1x
-	HbX+tGOzBHSZgtOQA5WnVqTN6OiUqzse8VZKDZ+UjxKS0sOfwGappRHsHqb+C616Z2k+cN
-	ifQ344VCgdmFjU6y3fwGq4cz6mLcupOmwGQkySCga9wDVz3tDIyRtqz8CTOPdQ==
-Message-ID: <80b084d130b7dc7406ae23e54a77706a4f42b606.camel@pengutronix.de>
-Subject: Re: [PATCH 04/20] dt-bindings: i3c: dw: support up to two reset
- lines
+	bh=EDFACtr3joZkKek48vhVDUWWppSHXimH9DiDBJeDnxE=;
+	b=SUHVSVb/QsnfjboxpMPWcd1QAf94pumlmEDKgHK+WWDxGpOuKE7pQW7TXFJWTXqcf/dmQH
+	YG7xgdA+2RnWlMj8FDVd6/IZ93shS0Si6MPewJztTSRrEq+tSGSKpM0JdzGNpYn+Y0Ejhc
+	osYs7kdzZXtj9PuQBcmmrSr7QJd8q0Ol9Pij963siJ6W3WM+bT2Wwhb0dncClsMgGvTRwo
+	kI3VVPwSQ+xfY5gum4LASWgNwQxbe7edm/DEItkd1W0C7MIx5tjqhrvTuLsqYM8t5jya54
+	8aomFz9pg01MLE9NmR6a0PX/m0w0TVzYWCIC+RWrNEhYzyU1v+04FQiPExG6Zw==
+Message-ID: <62860351b9ae360c174d36dd54d4110417f395ad.camel@pengutronix.de>
+Subject: Re: [PATCH 05/20] i3c: dw: switch to array-based exclusive reset
+ control
 From: Philipp Zabel <p.zabel@pengutronix.de>
 To: Jisheng Zhang <jszhang@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski	 <krzk+dt@kernel.org>, Conor Dooley
@@ -83,16 +83,15 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
  linux-gpio@vger.kernel.org, 	linux-serial@vger.kernel.org,
  linux-spi@vger.kernel.org, 	linux-arm-kernel@lists.infradead.org
-Date: Mon, 19 Oct 2026 14:55:14 +0200
-In-Reply-To: <20260929061417.20733-5-jszhang@kernel.org>
+Date: Mon, 19 Oct 2026 14:55:21 +0200
+In-Reply-To: <20260929061417.20733-6-jszhang@kernel.org>
 References: <20260929061417.20733-1-jszhang@kernel.org>
-	 <20260929061417.20733-5-jszhang@kernel.org>
+	 <20260929061417.20733-6-jszhang@kernel.org>
 User-Agent: Evolution 3.56.2-0+deb13u1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_055519_622598_90DD9DEF 
-X-CRM114-Status: UNSURE (   6.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261019_055523_325365_771D7FCB 
+X-CRM114-Status: GOOD (  18.55  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,12 +110,63 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On Di, 2026-09-29 at 14:14 +0800, Jisheng Zhang wrote:
 > The Synopsys DesignWare I3C master controller can have multiple reset
-> lines, such as core reset, apb reset, and dma reset.
+> lines, such as a core reset and APB reset.
 > 
-> Update the DT binding documentation to increase maxItems for the resets
-> property to 2.
+> Refactor the driver to use devm_reset_control_array_get_exclusive()
+> instead of a single named reset handle. This automatically manages all
+> resets allocated to the device node sequentially.
 
-The last sentence just listed three reset lines. Why increase to 2?
+Note that this does not guarantee any particular order. Are you sure
+that this is good enough for all implementations of the DW I3C core?
+
+Otherwise it may be wise to at least specify the names in binding, to
+be able to switch to the bulk API or individual control later, if
+needed.
+
+> Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+> ---
+>  drivers/i3c/master/dw-i3c-master.c | 24 ++++++++++++++++++------
+>  drivers/i3c/master/dw-i3c-master.h |  2 +-
+>  2 files changed, 19 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 4563d8761ba0..1c6c870f5bb3 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -1657,6 +1657,11 @@ static const struct dw_i3c_platform_ops dw_i3c_platform_ops_default = {
+>  	.set_dat_ibi = dw_i3c_platform_set_dat_ibi_nop,
+>  };
+>  
+> +static void dw_i3c_resets_assert(void *data)
+> +{
+> +	reset_control_assert(data);
+> +}
+> +
+>  int dw_i3c_common_probe(struct dw_i3c_master *master,
+>  			struct platform_device *pdev)
+>  {
+> @@ -1696,10 +1701,17 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>  	if (IS_ERR(master->pclk))
+>  		return PTR_ERR(master->pclk);
+>  
+> -	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
+> -										NULL);
+> -	if (IS_ERR(master->core_rst))
+> -		return PTR_ERR(master->core_rst);
+> +	master->resets = devm_reset_control_array_get_optional_exclusive(&pdev->dev);
+> +	if (IS_ERR(master->resets))
+> +		return PTR_ERR(master->resets);
+> +
+> +	ret = reset_control_deassert(master->resets);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = devm_add_action_or_reset(&pdev->dev, dw_i3c_resets_assert, master->resets);
+> +	if (ret)
+> +		return ret;
+
+This looks like we are missing
+devm_reset_control_array_get_optional_exclusive_deasserted().
 
 regards
 Philipp
