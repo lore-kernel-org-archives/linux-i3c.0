@@ -2,47 +2,47 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6FCF8606A322
-	for <linux-i3c@archiver.kernel.org>; Tue, 20 Oct 2026 01:22:06 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5FFBB606A31C
+	for <linux-i3c@archiver.kernel.org>; Tue, 20 Oct 2026 01:28:23 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=QLxLosBX;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Ij/ZTfSV
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=fSv0cq2h;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Nr5uW3Qt
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rZv+QY09mkkIScNAXVQqNHx5b+cBQuLjEQO7G75po7g=; b=QLxLosBXhFXDO6
-	y1zHEPzhR94JSqVV//OnrjgYs0WxOdU3HXibFOiLsCWDxFmIa7Mg/YHqWZPCcwBTfbOCPJ+f3S3VD
-	/22Zz4shr/OIo0XRmvpSHcXyQy/3r/X5LGZIzSsV35CarGro/cx9c4+Fv1KEteTfTpRV5lOcofRBt
-	dmO8pqk2Sm8HsCMcBh3N3ja8jW7y+7vaeTHW5771QN3nbxDtHe1F9C3rg+3m82uMxhz49AoaABcRr
-	zXbulIkBNwXgOX9NLReP7e0xUAmjK5cC8C0/ctLoJZKhGoOs12xnifYQxoVr2zcjiiZ51ukcyubV6
-	IXBcHK4rm+13Y7/ak9Dg==;
+	List-Owner; bh=pkdzi1LSzkXzmp6sUMviexkAh1WPla64RY9AT9nnct0=; b=fSv0cq2hxzb71y
+	1wKQ15rvOnxL3Vz2yGeQocvSJV367gvLMqgMX8Hjh1lDmJ8Yj5/pcTVDTLmEsVePJ6yt4hTe9wEiZ
+	/f93bmQDdL+POzzhHm4iaaxVBRGuJuzBcALYctGwT6bgyGouhbOWoZzMQnq3fwu8/Gu2LIxalDsDo
+	mGRwgLTfWgwshvtMF0S9PNcAFcdqqqYVXwS7lDgrr3042M8vULjW+LXd+d736gRiinHo0Q6gqXio0
+	0MNCibmtbMDCgM5e7NQSptYuQdOkQEnU4IvtgQ4UJFZS8jXO6soPh4cCG8pLbQzsl1BbJIRoHfv7E
+	4vnjIPKHYSiQNAh0M0oA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIyYI-00000008bsw-0mqY;
-	Tue, 20 Oct 2026 01:22:06 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xIyeN-00000008cCt-0Aar;
+	Tue, 20 Oct 2026 01:28:23 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIyYG-00000008bsV-2Xkm;
-	Tue, 20 Oct 2026 01:22:04 +0000
+	id 1xIyeL-00000008cCR-0qqz;
+	Tue, 20 Oct 2026 01:28:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0229842391;
-	Tue, 20 Oct 2026 01:22:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 36EE11F000C4;
-	Tue, 20 Oct 2026 01:21:58 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id A1658602A8;
+	Tue, 20 Oct 2026 01:28:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9E3A01F000C5;
+	Tue, 20 Oct 2026 01:28:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792459323;
-	bh=Y5PuInUz/jG/sVc55vzwpQmtUc4DneWfMKEBS2B1HkA=;
+	s=k20260515; t=1792459698;
+	bh=5qUgLs+CjpBbZipOhT6HHA1szcA4CGwnixmqJCQRTuQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Ij/ZTfSVf2swDQKjpQY+M1H2I5MkLeX5CF4dH4/9XKE165jBsDdvEwhW81eUmMMjb
-	 Qa7Npvl6yBb17a13UvFrx+F558g8qtjW3Jx8HQ2wmPfgDecd4FVrr176Pvye0m7huB
-	 b8gB3PVWN+ieA2OWvMaqKqc1pFccggf6hGdppcfcNIIzPb4SLFLMiOICvTaBe8MAMo
-	 ccYqYzmJWOF0vh9T+5mTGwhv1K8ArNjqo22DC2bm6gpAiLDfN6Zb7V8wILCD7w7hbg
-	 OGRinhBbeU5+ZdzL+gEGhTHiNXTwxiIjthvTzVDhkDx0SgvL4YvUPNJZZ9WRLDx3D2
-	 G3K1Ev46o1B/g==
-Date: Tue, 20 Oct 2026 09:01:50 +0800
+	b=Nr5uW3QtlmxoP4tox6wXnKraKe2Y/uT2upIvGqeVqRQNQurkI65qu2/74qwIj2tmm
+	 FC6ADKO5hnjDmn9Exb23lD9oAJpVTaq2ahFErEs+UD+/yp7375unDeYqydoPlts/Cx
+	 E+1wIPk/+SBcNYuCycNiLcKxDIMH9o1FjFjvOZ9hXb8APeuLO+JgmUir8FA8UsA7TX
+	 Mhe+E96RWfYOoxFNLiBPHr3S3lcSz4pDRwoptJPdKG6v+oJNurZWikAWd6ju98SX7d
+	 QIddXUrKr85C0TUkEnu/Z73Qbwcd2lRfqI74dpW5PZN6Yfzavn0d/p4y9vPfhZHd+/
+	 yUMRCBoYlhWwg==
+Date: Tue, 20 Oct 2026 09:08:08 +0800
 From: Jisheng Zhang <jszhang@kernel.org>
 To: Philipp Zabel <p.zabel@pengutronix.de>
 Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -63,16 +63,15 @@ Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
 	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
 	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 05/20] i3c: dw: switch to array-based exclusive reset
- control
-Message-ID: <ata9fqjAm09xnBQM@xhacker>
+Subject: Re: [PATCH 04/20] dt-bindings: i3c: dw: support up to two reset lines
+Message-ID: <ata--JFFUzSoMock@xhacker>
 References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929061417.20733-6-jszhang@kernel.org>
- <62860351b9ae360c174d36dd54d4110417f395ad.camel@pengutronix.de>
+ <20260929061417.20733-5-jszhang@kernel.org>
+ <80b084d130b7dc7406ae23e54a77706a4f42b606.camel@pengutronix.de>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <62860351b9ae360c174d36dd54d4110417f395ad.camel@pengutronix.de>
+In-Reply-To: <80b084d130b7dc7406ae23e54a77706a4f42b606.camel@pengutronix.de>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,81 +84,28 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Oct 19, 2026 at 02:55:21PM +0200, Philipp Zabel wrote:
+On Mon, Oct 19, 2026 at 02:55:14PM +0200, Philipp Zabel wrote:
 > On Di, 2026-09-29 at 14:14 +0800, Jisheng Zhang wrote:
 > > The Synopsys DesignWare I3C master controller can have multiple reset
-> > lines, such as a core reset and APB reset.
+> > lines, such as core reset, apb reset, and dma reset.
 > > 
-> > Refactor the driver to use devm_reset_control_array_get_exclusive()
-> > instead of a single named reset handle. This automatically manages all
-> > resets allocated to the device node sequentially.
+> > Update the DT binding documentation to increase maxItems for the resets
+> > property to 2.
 > 
-> Note that this does not guarantee any particular order. Are you sure
-> that this is good enough for all implementations of the DW I3C core?
+> The last sentence just listed three reset lines. Why increase to 2?
 
-Per my understanding of the doc, it only requires the resets are
-asserted and de-asserted, didn't mention the order. And per my tests
-on syna SL2610 platforms, the DW I3C works perfectly no matter I
-reset apb reset or core reset firstly.
-> 
-> Otherwise it may be wise to at least specify the names in binding, to
-> be able to switch to the bulk API or individual control later, if
-> needed.
-> 
-> > Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
-> > ---
-> >  drivers/i3c/master/dw-i3c-master.c | 24 ++++++++++++++++++------
-> >  drivers/i3c/master/dw-i3c-master.h |  2 +-
-> >  2 files changed, 19 insertions(+), 7 deletions(-)
-> > 
-> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> > index 4563d8761ba0..1c6c870f5bb3 100644
-> > --- a/drivers/i3c/master/dw-i3c-master.c
-> > +++ b/drivers/i3c/master/dw-i3c-master.c
-> > @@ -1657,6 +1657,11 @@ static const struct dw_i3c_platform_ops dw_i3c_platform_ops_default = {
-> >  	.set_dat_ibi = dw_i3c_platform_set_dat_ibi_nop,
-> >  };
-> >  
-> > +static void dw_i3c_resets_assert(void *data)
-> > +{
-> > +	reset_control_assert(data);
-> > +}
-> > +
-> >  int dw_i3c_common_probe(struct dw_i3c_master *master,
-> >  			struct platform_device *pdev)
-> >  {
-> > @@ -1696,10 +1701,17 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
-> >  	if (IS_ERR(master->pclk))
-> >  		return PTR_ERR(master->pclk);
-> >  
-> > -	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
-> > -										NULL);
-> > -	if (IS_ERR(master->core_rst))
-> > -		return PTR_ERR(master->core_rst);
-> > +	master->resets = devm_reset_control_array_get_optional_exclusive(&pdev->dev);
-> > +	if (IS_ERR(master->resets))
-> > +		return PTR_ERR(master->resets);
-> > +
-> > +	ret = reset_control_deassert(master->resets);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ret = devm_add_action_or_reset(&pdev->dev, dw_i3c_resets_assert, master->resets);
-> > +	if (ret)
-> > +		return ret;
-> 
-> This looks like we are missing
-> devm_reset_control_array_get_optional_exclusive_deasserted().
-> 
-> regards
-> Philipp
+Per the doc, the last one is dma reset, currently dw I3C driver doesn't support dma.
+And increasing it to 3 is still dt compatible. Maybe I misunderstood
+something. what's more, I don't have platforms with all 3 resets to test and verify.
+
+If dt maintainers prefer 3 in one step, I will sent out a follow-up patch.
 
 -- 
 linux-i3c mailing list
