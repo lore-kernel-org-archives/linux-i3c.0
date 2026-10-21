@@ -2,95 +2,144 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 98B8A606A32F
-	for <linux-i3c@archiver.kernel.org>; Wed, 21 Oct 2026 13:03:12 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9EEE5606A327
+	for <linux-i3c@archiver.kernel.org>; Wed, 21 Oct 2026 14:37:23 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=SowF43zr;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=LQZgum0Q
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=MT1rh12b;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=ucX01732
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8J+S1O4LoDkNzbJz89wOrSXOsz1+BS4IUeoFyszD+Ow=; b=SowF43zrpZY4KG
-	f2TAuFKeo03cQx5vJzoMKjbOYnF91OfVwets7BRfIdybbuYm8WNWpAz7YoE6M51AOXbcOyBM5237v
-	evk55GEpHNeqFpujnj80+IylG9lrs+ePHTZBBBO2MZgvqawLBJrhLJxnTUAG8zviEWsNrw2f1JgfN
-	I+IQRuU8oca0LTw63dsifSp4qMcQDc5PPyepuX8WkCQJoiCCWtPgNukdf0QfdSb1jUQOwtw5HT9OV
-	MvqmOg0CT4fNGv9GoDwxnJy2hsBrpiSeiZorY6hN1X7pktbumo9dbkKfL49kV2MY/IgmngaRLKXHV
-	A4hqyMbY11TDL1BENGUw==;
+	List-Owner; bh=j34lM0gGyCU+3/ypm9V77GVPAaMQFRtlF3Q6qC28ygA=; b=MT1rh12bEHwZqc
+	7UAKFbcHkPWt3F9FptoZ2QH4NmDvP/hhAPOkea1++3lP5+hWHcYw4t/AIDVuXuSrKFrsBQLbnc/vQ
+	ccuyAXerR0nfqpKLdf4z2tU+mVIOtOR4jb4gc0zAinjBOPsaMtTxN9Jkxxuf5mk4NLWySYr7AE8Y9
+	64OQBtLrGUv5gzGab32Y162iDa5DIgS7gTA7SVROLq3IEzXIYt2jwLBqvn8vQIUCSFioXPBbZfjZ4
+	8jQCiyrP8yZwwcW3ETEoTAaEgggIKjX0UBN9fFuS+euV+EEn8E84jRgBQOxK/85FAZ9oGDZRC2wn4
+	FDJzhK9xDbUGtBJy6FFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJVyK-0000000BrBw-1QYp;
-	Wed, 21 Oct 2026 13:03:12 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1xJXRT-0000000C7GI-1Vxu;
+	Wed, 21 Oct 2026 14:37:23 +0000
+Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJVyH-0000000BrBJ-1heA
-	for linux-i3c@lists.infradead.org;
-	Wed, 21 Oct 2026 13:03:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1792587790; x=1824123790;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=1ORT0tjK0c2r1UtF2vEYJ2mzd1Ob03HwCzlzEcEcpmI=;
-  b=LQZgum0QXxUa5XQnO14nx/2ivlSiNz4GLlcpmqzMTojAtUE4g7ifv6gJ
-   RPqIFn3Tk1vzI3CkuDTKP2fmjXjsaogt4e8vXE/XsYxFocMDjj/OXJl7x
-   NONFloL6LTIsANyW4MpRICd1TWMoOBy5XHRlPiDYHcvnkSzqOxo2C0NTX
-   cVJE5bUO4iXEV7hhCfzNbknN685KhXsSmXPolVvR93WN/cvn1s8sukFIN
-   0Q+GyRtTLETn7IwCVvUOCqWtdT8gXaHqb8hGoviqsAz31lBS0nFzVz78K
-   Az4kWlyPVSkpRcN8lkPwyaP7M0T/WYbhiPRz3yUqckgQ0cZyR34HR2zEJ
-   A==;
-X-CSE-ConnectionGUID: gKGD4JfOSnebcAsLK1GafA==
-X-CSE-MsgGUID: 3fWWMKVbT5iPs1yY8Xb7fA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11941"; a="1321178"
-X-IronPort-AV: E=Sophos;i="6.27,170,1787036400"; 
-   d="scan'208";a="1321178"
-Received: from orviesa006.jf.intel.com ([10.64.159.146])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Oct 2026 06:03:09 -0700
-X-CSE-ConnectionGUID: /jP1GDWuRdeVAyCf+CaKNw==
-X-CSE-MsgGUID: yTfWaygqSMuOYFJZCb470g==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,170,1787036400"; 
-   d="scan'208";a="3140257"
-Received: from cpetruta-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.245.24])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Oct 2026 06:03:05 -0700
-Date: Wed, 21 Oct 2026 16:03:03 +0300
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Sam Agazaryan <samagazaryan@google.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	linux-i3c@lists.infradead.org, Frank Li <Frank.Li@nxp.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Adrian Hunter <adrian.hunter@intel.com>,
-	Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
-	Vitor Soares <vitor.soares@toradex.com>,
-	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>,
-	Boris Brezillon <boris.brezillon@collabora.com>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 0/5] i3c: add i3cdev module to expose i3c dev in /dev
-Message-ID: <ati4B33tnKsCD4c_@ashevche-desk.local>
-References: <20260921230603.2518652-1-samagazaryan@google.com>
- <arY6DfVf_9tZ_TCu@black.igk.intel.com>
- <arZTphXbVF5wagy2@shikoro>
- <CAHreonFzhYk6fDswn7OVZfL3ybUHU15G3_q9+1sDhe8h670r3A@mail.gmail.com>
- <as487H8-0Gc77mXI@ashevche-desk.local>
- <CAHreonHiesGbR4VB+3sRxoLDmNHXFFEB=6_o6TNedm-N6VksEQ@mail.gmail.com>
- <atXmovzepBLP8Mqo@ashevche-desk.local>
- <atXnS1ZKGVfHDNEK@ashevche-desk.local>
- <CAHreonFnUSKJMUpR0rmsnSMHEhcJ_W332_NTcGfTKiRkkPse_w@mail.gmail.com>
- <202610210957562f3f6511@mail.local>
+	id 1xJXRQ-0000000C7FJ-2Rhl;
+	Wed, 21 Oct 2026 14:37:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GOZOWsqsMYS62hxWa2g5YwWt3gOrMB+7p/XxT540Q8ZGYGSobRrigOSLoS4OcWarynBINPF7Vdidn9fOuxhehh9xFzxMO1RvsUVNQX45nNNcB7Zr/i0+bM1V7mq+AxingWTJDlOdg28DHV6x76YG5byCRJsRQQl2DGjz3SYl6jCgWhXDPuBBXZiV3I0ysGcNeOjtkZN0XzzC1LiEE191J0/aR5y5aUWQqdZw3PWctDzuKiC9V4wg694sx6kbP11cP84SNnxvUsvaKSzUc3R44k7d56Hp755fn1mClXR2bGH5I+TTwmDpjhglzo0iOZeDllCm4CUjfCEa3QdqzBKsSw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=/zOBCCMcC9+Ss7AsuwDjFtkz7VCjAw/hS+sgCQ3RMwY=;
+ b=m5jhVwzXtevM7bSV+gMpQ3SSKHZ1AtQhkfw+HItp+gmI5S5IWPbmu3jDLrtjfrvpnFoD7bfsPye7GttQUV8NCW4z7BgqkczE4h4WEFsO1+JoRpMmrxbqpD7BlCLTmaaZJ0Tetawy/1vcLhNI9hSfxQVFxcel3hh64AKjT7xnjnCsxr6IA/4Sc3iHGtNDsjBHaVfdxSJ7Fb1dCbIHNH5V+9J3mqQc2c2VJV75cpPgvB2eI80jRliRZFya90UgkqObnoLhWdWbFiQQiKP5zDxmck6hxfq/qm32/AUFQKWUosAnrQMPC+e8sFeeAAn7H3V+1+4BQps7CK6j/V32JJ3IjQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/zOBCCMcC9+Ss7AsuwDjFtkz7VCjAw/hS+sgCQ3RMwY=;
+ b=ucX01732tOwOVCxYuVyeV0CYv22VdmrUOroa+Niuf4fZw271evv+hIaw6C179e6w0DNfzKGYY6KYZd5dwbG3fipx40ZQBHSUTmzBWfr/n5afeglRBd/Ua8i9UXdyVacYhquruS1LI+ie0TvAySCUEO2aDQMDYiDk86GG7kK1QnIMVHNRAKa+RIXvgozj0jhht+MpcEa2Jje+Nf/2lvlUZZMB+gEOVM8XDvUUWeo5tVEBLHdcC80q6bG/+hjy+pwHyHl7hQ4Mz+n3xBRGdnuJen+JID5Y4/KzQqjIKfEYCrqwCOTSrm/+jxWk1Mtu0hqfKbLrFzfPDHo1x3Nfy7PwJw==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
+ by VI0PR04MB554873.eurprd04.prod.outlook.com (2603:10a6:800:361::24) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.522.19; Wed, 21 Oct
+ 2026 14:37:15 +0000
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b%6]) with mapi id 15.21.0546.012; Wed, 21 Oct 2026
+ 14:37:11 +0000
+Date: Wed, 21 Oct 2026 10:37:03 -0400
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Junyi Zhao <junyi.zhao@amlogic.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Jerome Brunet <jbrunet@baylibre.com>,
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Kees Cook <kees@kernel.org>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-amlogic@lists.infradead.org, imx@lists.linux.dev,
+	linux-hardening@vger.kernel.org, xianwei.zhao@amlogic.com,
+	Kelvin.Zhang@amlogic.com
+Subject: Re: [PATCH 1/3] i3c: master: Rework SVC I3C to support vendor glue
+ layers
+Message-ID: <atjOD0PwVGDeh2uL@lizhi-Precision-Tower-5810>
+References: <20261019-a9_i3c-v1-0-329d819d621f@amlogic.com>
+ <20261019-a9_i3c-v1-1-329d819d621f@amlogic.com>
+ <atZ-YyEmG-KvUZAF@SMW015318>
+ <887f0b2d-3a05-418b-bda5-0b01abbcb409@amlogic.com>
+Content-Disposition: inline
+In-Reply-To: <887f0b2d-3a05-418b-bda5-0b01abbcb409@amlogic.com>
+X-ClientProxiedBy: DS7P221CA0028.NAMP221.PROD.OUTLOOK.COM
+ (2603:10b6:8:25c::14) To MI3PR04MB12438.eurprd04.prod.outlook.com
+ (2603:10a6:290:76::14)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <202610210957562f3f6511@mail.local>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|VI0PR04MB554873:EE_
+X-MS-Office365-Filtering-Correlation-Id: ea2be661-942d-411e-7295-08df2f80caa0
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|19092799006|1800799024|23010399003|366016|6133799003|18002099003|22082099003|11063799006|4143699003|10067099003|261009223027099003|56012099006;
+X-Microsoft-Antispam-Message-Info: OK5scHxVYjktj1WRuMSTmAjb7hi7fIXj/6fRuR1Np7oPDnIZk5SQy9inA9ByGClZiO+xwAwxGgqAbMC0vteHFau4KnEhtnTJV+W9goCbj7E+RXanri6uj5ki5biYg74tq93RERPXFK1UuU5/EG9D/7qJTALgVD2VrEcrVRzmsK1HDAyDo/I8wVhNIQXfIhWZ0Z7tXBqq8oSJfNvZ9YJWKF9hmubQftZTS+TAO7shEGnevUFi3t2Ze1/WqAF8mxMUcJ7NYqQbbWO4MEAj49CwhusaMIDP9EWwG41XDhmo/AQP7QoKch7kSAhyqTuY4WtTWTKNqbCOIyeF5YoCImcZ6Jzd5uLX5mbSbz6H8Q1IMGKgP5WzbQte2g8rOl5NR+uiT6sdbqATq35JaeyGz+FTRGZtJtG2JOGSi1VVAkiMdCX7Yj9QMXYdYizZ0RjONMsP9xNi5J0JRj0mV0FyezuIStiATZC3OxuhmRv0lE2tbeeuVtGhzGQ0r81bs22rF+eqYgKpZivVTURBSQ3UbkoIObwgT5zKjKEcEWbjJMmcZ8veENSRn/H3Di+cQEHKvk5uGg9vzXWSedZc8ZCNtalXRFoo4dtjDZYxHd8BHE3kgdfrjx4uVJM9DI/iP0uz4iGf1ZRehYb5R2fKdpmmCxvAlKBWEx9YELDlJgs/ASprHSg=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(19092799006)(1800799024)(23010399003)(366016)(6133799003)(18002099003)(22082099003)(11063799006)(4143699003)(10067099003)(261009223027099003)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?fH/Nm9VMbmbm3c28hmsWRmiGP9n4j3LGGRwyiDSKkooLNYRdD2t2HwvBWFMz?=
+ =?us-ascii?Q?vRfZVXZODkeSxJlHrls+V/ORzUpBnQOgVyJ1IkSZ/RNr7t3iXN+CL7HTwJmK?=
+ =?us-ascii?Q?8Cb/WZSADbEJAG+wdK5B20Sl6rX43ITsMXkq6B6ggAqVAwcSeR0jC5IzlNJ4?=
+ =?us-ascii?Q?ngxghJruXvIEITL5GOuWGXSll2RdPIBazg+YMUFevwH7KjcCFplCsvBDex+2?=
+ =?us-ascii?Q?uSH/vW4egEqN1SJ5vIZ6YBOumfSsBhEhf9UtTFeH8VBKCkXB8x/AfAHos9Sq?=
+ =?us-ascii?Q?1kmiv2IIHn+XCueZzbIhuA709K2eK3dDVuKWsePio/j3qjTmesYXvHj5pGT4?=
+ =?us-ascii?Q?vVumRw0uF9HH1qoG7l5/22mQXtSvk+s/PyHImeBUKV3OQil0GB19xxxrlpIR?=
+ =?us-ascii?Q?qlIlRVYgCL99KExclSalZf2IR4UUSnkbbl1QnWciTQ9IhZwY0199oolPwLtm?=
+ =?us-ascii?Q?Q1M4uK6Y3HVSgfujHUs/H0pEpwSox+SecyEygLpbw6oyjtpxcSRh1SlMLJT/?=
+ =?us-ascii?Q?Hpxzu0A81W0zLLoUgXEjaO4mL8lwfKFOJO8p1p9vNWAMgr87zpmpUb/KlSi3?=
+ =?us-ascii?Q?qnEDSctuIn9bi5PEeFhn9KDgE3eV+5X/VZcINXvL0ijmGqmoWFrqZVs85AIo?=
+ =?us-ascii?Q?t5erYDowYx7isWzw5Ae2zVegMTgslKly1DAn3KsFxlg1LM0/nyrmaeE2jZ1c?=
+ =?us-ascii?Q?UUVCXfbZBjKsoPM+yNBlhdLnCcvqjh2/yB6BNDIaIsS05AnuQKUF4Hk+b5xI?=
+ =?us-ascii?Q?JxB6yTyzJokVzgZHTz1kJaq8chYCHp5KnQV5rih4FL3uw31D4XNJzXFqm9mL?=
+ =?us-ascii?Q?X2DAGjnD+Ga8AKvocQxlbwk0czwn1ApOKY980Co1rhX0acl7I+IemU/bvn/2?=
+ =?us-ascii?Q?gC6qpyoOcs2BBuXXiNKFLBR6ZcxoiyUiHz0Z5Cz+EcYc6IC8S8WDs4BXtHHL?=
+ =?us-ascii?Q?8dYuaWTIMYk25c2OWaeBU9rzQlctY7kCwFc/mH4/La3LSeWiJqjV/uKyne9L?=
+ =?us-ascii?Q?XPW5/R1sOz6bYn+CqQ1ialnjJW4fay25cNQXTTQBqFUTSjsw85HyFLtLLF3t?=
+ =?us-ascii?Q?Jj4lIHvI3vwOOhmknf6odrcPmSEEAZyzfOz7oOlbIhcDL3WtedqbdN2Odgwh?=
+ =?us-ascii?Q?4DWbzlg4nx92v+nrt8FZ0or0JryT/TCDFONRpKmrc1LdFAbkjXH+dFKqaRvN?=
+ =?us-ascii?Q?fwsTYs6v9WjxU19clEhtesdvzGpmChoTsQ5SrYY4fZj6EpdP39eFiR6y2xsU?=
+ =?us-ascii?Q?GCAIe3kBsInavroBoXBA4sJtNBp0iuSEr9a8bhrai5meDjX0nsNqSt3eIitT?=
+ =?us-ascii?Q?T1A8qvLP/r16PYO8QHsnWSTOur7dzXfNOaYvDZzer42UNSfK1ckTmwS5LBvy?=
+ =?us-ascii?Q?daLIFYVcH5znESa2MFRXNbU2dmAZuOz3N9FKG3AAfolu3UT1dX1vVY/wEAwx?=
+ =?us-ascii?Q?vnxYsBYu9UpwbA4sFhHWmeBIXQETpwoUU2Wrcm0TIDVnHNRd8/jiyrQMnLPu?=
+ =?us-ascii?Q?A8o96jTOkkz7ddvY6HX92DM5qfINo9UY1ga/EyCrX1hXADCOVBQKcToeVrBR?=
+ =?us-ascii?Q?A9FG8w7fDQEJcvdfjhQii8GSau3sTmASQDLN93Xpc599Eo8IyjXqcFWsZMww?=
+ =?us-ascii?Q?DqNVYHGYwqowoWtMVaUSsbYZYvokChFTuXOiQz2snSN2Pn9Mo7CAKqmsCuIh?=
+ =?us-ascii?Q?/dwH5q4vkmpFdcYZM/FbZVfpxMBuJyFiLKn86SRskZIp/GkFzF1Ge+9/F+g/?=
+ =?us-ascii?Q?5Wfg0Q6+kUi68bja5zh0k90bahYes8W55ibT2m201Wcg/0RHXXRh?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ea2be661-942d-411e-7295-08df2f80caa0
+X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Oct 2026 14:37:11.2761
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: n/2YHTHgzfiwuDgUCGKB7fr6IGIO9ddgF6xE3FmkkIodcXB2BsO0EkJsz+K+w2WpvoBJ2m8pLRB1Of/R48fUKVCLLRWPmgkd3mazjPaLavX3XmyxndBNLCwDxobQAAzV
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB554873
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261021_060310_034859_EE49265B 
-X-CRM114-Status: GOOD (  45.39  )
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20261021_073720_625317_7104357B 
+X-CRM114-Status: GOOD (  27.87  )
+X-Spam-Score: 0.0 (/)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,128 +152,100 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Oct 21, 2026 at 11:57:56AM +0200, Alexandre Belloni wrote:
-> On 20/10/2026 14:20:16-0700, Sam Agazaryan wrote:
-> > > Did I miss this in the initial explanation? If not, please add it next time.
-> > 
-> > That is just how the existing I3C core enumerates targets during DAA,
-> > not something added by this series. I will add a sentence to the
-> > cover letter and Patch 4 commit message in v6 contrasting it with
-> > i2c-dev to make that context clear.
-> > 
-> > > Do we have such use cases IRL? Do we have tooling support (at least pending)
-> > > somewhere? Why does it require user space interaction in _this_ way (meaning
-> > > IOCTL and /dev node)?
-> > 
-> > Yes, this is used in real systems today:
-> > 
-> > 1. Tooling & production users:
-> > 
-> > - i3ctransfer (Patch 5/5 of this series, and carried out-of-tree in
-> > AspeedTech-BMC/i3c-tools and vendor OpenBMC BSPs for several
-> > years).
-> > 
-> > - OCP Secure Firmware Recovery (DCR 0xBD) [1] and Caliptra Root-of-Trust
-> > recovery agents on OpenBMC/gBMC platforms (e.g., AST2700 / Caliptra
-> > MCU recovery tooling and BMC recovery daemons). Because Vitor's
-> > original i3cdev series was not merged in 2019, multiple silicon
-> > vendors and OpenBMC trees have been carrying out-of-tree forks of i3cdev;
-> > upstreaming consolidates those diverging implementations.
-> > 
-> > 2. Why an ioctl is required over a read and write:
-> > 
-> > - In the OCP Secure Firmware Recovery v1.1 specification (Section
-> > 8.4, "Recovery I3C Interface Block Read via Private Write and
-> > Private Read"), every recovery command read is a combined transaction
-> > consisting of a Private Write with no STOP, followed by a Repeated START,
-> > followed by a Private Read, and finally a STOP.
-> > 
-> > - Because write() and read() only submit a single transfer at a time
-> > (nxfers = 1), the controller emits a STOP condition on the wire
-> > at the end of write() and drops the bus lock. Submitting multiple
-> > i3c_ioc_xfer descriptors in a single I3C_IOC_XFER(N) ioctl is
-> > required so i3c_device_do_xfers() queues them together under one
-> > bus lock acquisition and the controller emits a Repeated START
-> > between messages (as well as passing HDR mode/cmd parameters).
-> > 
-> > [1] https://www.opencompute.org/documents/ocp-recovery-document-1p1-final-pdf
-> > 
-> > > So, imagine that someone submits a kernel driver for a simple device, while
-> > > another person already uses the driver for multi-functional device where the
-> > > former one is driving only part of it. Strictly speaking the kernel driver
-> > > submission becomes a user space regression. Which effectively means that whenever
-> > > you open i3cdev, no other kernel drivers may appear. Yes, I understand that
-> > > a poor victim of such an unlikely course of events may recompile the kernel,
-> > > disable driver, et cetera, but this still raises the same question, why do
-> > > we do that to the mere users?
-> > 
-> > Note that a user does not need to recompile the kernel if a kernel
-> > driver binds to a device they wish to access via i3cdev. Because i3cdev
-> > handles BUS_NOTIFY_UNBOUND_DRIVER, unbinding the kernel driver at
-> > runtime via sysfs:
-> > 
-> > echo <dev> > /sys/bus/i3c/devices/<dev>/driver/unbind
-> > 
-> > automatically triggers i3cdev_attach() and exposes /dev/bus/i3c/<dev>
-> > without rebuilding the kernel. Also, I3C drivers match against a
-> > target's MIPI-assigned DCR or 48-bit PID (Manufacturer ID + Part ID),
-> > so a driver for a simple device will not accidentally match a different
-> > chip's PID or a dedicated DCR like 0xBD.
-> > 
-> > > P.S> Still not convinced, that this has to be an ABI. For debugfs and something
-> > > like this, no objections, but ABI.
-> > 
-> > Production BMC recovery daemons cannot rely on debugfs, which is
-> > optional and restricted or unmounted on production builds. A character
-> > device in /dev/bus/i3c/* provides the stable ioctl those tools need and
-> > integrates with udev so non-root daemons can be granted access to
-> > specific target nodes (e.g. matching on DCR 0xBD), similar to spidev
-> > and hidraw.
-> > 
-> > 
-> > > Forgot to ask, but do they interfere?
-> > 
-> > Is this in reference to i2c devices on the i3c bus? No, I3C transfers
-> > and legacy
-> > I2C transfers on a mixed-mode bus do not interfere:
-> > 
-> > 1. Both i3c_device_do_xfers() and i3c_master_i2c_adapter_xfer() acquire
-> > i3c_bus_normaluse_lock(&master->bus), so I3C and I2C transactions on
-> > the same bus are serialized by the I3C core.
-> > 
-> > 2. Attached I2C client addresses are marked as I3C_ADDR_SLOT_I2C_DEV in
-> > the bus address slot table, preventing DAA from assigning an I2C
-> > device's address to an I3C target.
-> 
-> On my side, I believe i3cdev can be added to the kernel and that it is
-> way safer than i2cdev but I agree that the ABI has to be properly
-> designed, maybe we need to version it or have a way to probe for
-> supported features so we can update safely later on. It is failry simple
-> right now but I feel like we are going to see people with more needs
-> than initiating transfers.
+On Wed, Oct 21, 2026 at 10:56:19AM +0800, Junyi Zhao wrote:
+> Hi Frank,
+>
+> Thanks for looking at this.
+>
+> Amlogic A9 used the same SVC I3C IP engine, but the integration of it
+> differs in the resources *around* the controller, which cannot be
+> expressed as another quirks entry:
+>
+> - On the "ao" instance the bus clock is generated by an internal
+>   divider (I3C_AO_FCLK_DIV_CTRL @0x304) programmed directly by the
+>   driver; there is no CCF clock to clk_set_rate() on, while the
+>   common probe assumes the fclk is a plain enable-able clock.
 
-Yeah, I really think that i2cdev was a pure mistake (as to be an ABI).
-I don't want to repeat it now, when we learnt about that case a lot.
-If we ever going to have i3cdev (which justification I also put in doubts)
-it needs to be very strict of what can be done and how.
+If it is in I3C memory region, you can do that by use callback. otherwise
+should go through clock framework.
 
-> Also, I think this should not bind to any devices by default and make
-> binding explicit.
+>
+> - Amlogic added register blocks outside the Silvaco map: a
+>   DMA bridge and a bus monitor (0x200..0x22c).
 
-Yes, this is quite dangerous "feature".
+Does DMA bridge only for I3C? It should be go through standard DMA engine.
 
--- 
-With Best Regards,
-Andy Shevchenko
+what bus monitor use for.
 
+>   Enabling the DMA bridge later will need hooks in the common
+>   transfer path.
 
+We also need support DMA in future.
+
+>
+> Adding A9 support to svc-i3c-master.c directly, would make these
+> becomes if-branches in probe()/PM/transfer paths of the shared
+> driver, and the next vendor repeats that.
+
+You can use callback function in drvdata.
+
+> With the glue layer,
+> i3c-main.c keeps today's logic unchanged: i3c-silvaco.c is the
+> current probe code moved as-is (rename with 79% similarity), so
+> blame/history is preserved.
+>
+> If the file move is the main concern, I can keep
+> svc-i3c-master.c where it is and only export the alloc/probe/remove/PM/
+> interface for glue drivers -- the essential part for me is keeping
+> the resource handling out of the common code paths.
+
+Now, there are not much user yet. Rename or re-org only when it becomes
+complex enough.
+
+Frank
+
+>
+> Also, per Neil's suggestion I'll try modeling the AO divider as a
+> CCF clock in v2, which should drop one hook.
+>
+> Thanks,
+> Junyi
+>
+>
+> On 2026/10/20 4:32, Frank Li wrote:
+> > [ EXTERNAL EMAIL ]
+> >
+> > On Mon, Oct 19, 2026 at 01:34:26PM +0800, Junyi Zhao via B4 Relay wrote:
+> > > [You don't often get email from devnull+junyi.zhao.amlogic.com@kernel.org. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
+> > >
+> > > From: Junyi Zhao <junyi.zhao@amlogic.com>
+> > >
+> > > The SVC I3C controller IP can be integrated into SoCs from different
+> > > vendors. Peripheral resources associated with the controller, such as
+> > > clocks, may vary between vendor implementations.
+> > >
+> > > Rework the driver to separate common functionality from
+> > > vendor-specific extensions. The common logic is shared across all
+> > > implementations, while platform-dependent operations are provided
+> > > through vendor-specific hooks.
+> > >
+> > > Also add a corresponding MAINTAINERS entry for the SILVACO I3C
+> > > controller.
+> > >
+> > > Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
+> > > ---
+> >
+> > No big difference. Needn't rework svc-i3c-master.c, you can add amlogic at
+> > svc-i3c-master.c directly.
+> >
+> > Frank
 
 -- 
 linux-i3c mailing list
