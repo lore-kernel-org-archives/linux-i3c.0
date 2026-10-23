@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3A92E606A31B
-	for <linux-i3c@archiver.kernel.org>; Fri, 23 Oct 2026 08:28:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 83BCE606A31B
+	for <linux-i3c@archiver.kernel.org>; Fri, 23 Oct 2026 10:27:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=iSUgfZm1;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Ma26LA6K
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=rdcVr4ep;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=sang-engineering.com header.i=@sang-engineering.com header.a=rsa-sha256 header.s=k1 header.b=ZbIMhIhr
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,56 +14,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZLBBNBj8dWbMx+Fkklx2I4Pgn2EnAgxk4Syk+a1cPSs=; b=iSUgfZm11/DzheDj4D8YTKD7/G
-	NXlC2/NngfcymtdIQqbABgmSYtbjtTbHy7Nj5UFD7ZbSSO+Xh1cLcolO9K0k50C91YNrqwyIRJdU8
-	3KOlX9s5fZOeczJ/hnBKDieg2OESTUn8CGM2XJnEzdj9mOoH83TdUPNcvGlArR19FyXyYC4dPHsky
-	Upb7KWJ5fKKupaKC1fcI2BFH6Q6DWY6EhrhlfD6dOC+h74/b7iv3cWDu987+kftajt2IYL2CRJJ0g
-	WqFJEu23np98fMZRboJkXeFZ1WBsF7rrE7GnabH+mjRumooTk7BGZJdPhXeOM6C/4wwHAMxY3wET9
-	zwSFSmeA==;
+	bh=0fi0awUdrgTMCdEY68vOoEiMhXj5yBXIWs39L0OtWVo=; b=rdcVr4ep18uW8reXpu9B48gIWB
+	O0tUA9lITOlJjyrXNB+xcguuddXPmea6fqkq0m1YKAq/kLAh8zknPVzk0erPLrvqYLwHfJHxX2yBy
+	Jd5PIgl2eEddzz1WZVyMPgswi9PiTZzPIcv9JO0pXVi23rNExa0kUGxZV6R4Vt+Xf7ePaEvq57SOv
+	rz0lk1LEczqFHxx1sED9E55SkwCBHpeG5QPOlV15cmOSu/zDGfz0pwKbv8jUAyV9lHGIT++XnmN54
+	0zOkC7YcZoqktvjGQtU59sYOhKLC0CmQ9m9l4/4a2N4h1SNzgI2suSu7O7kDG5+xlkrW4P8OUgEvf
+	6OtYoW/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKAdR-0000000FviB-47QT;
-	Fri, 23 Oct 2026 08:28:21 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xKCV6-0000000G9u8-0zGl;
+	Fri, 23 Oct 2026 10:27:52 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKAdP-0000000Fvhp-2IZm
+	id 1xKCV2-0000000G9tg-1uG5
 	for linux-i3c@lists.infradead.org;
-	Fri, 23 Oct 2026 08:28:20 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5047440101;
-	Fri, 23 Oct 2026 08:28:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4FA7B1F01828;
-	Fri, 23 Oct 2026 08:28:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792744099;
-	bh=tbu6KQCYR0HIbEcZ3PFIb172SAM08206TRIlFmm9r2c=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Ma26LA6KRJ2xmPXLEtu4nqIk5Fexa/c+6M2S5CrxTBtPYsMJo6Hjv2LrTNyrvCd2o
-	 FwnZb0wiJtzOgDffW72jwfj6sr0H6KX/wEDXDXvTSEy48/bw8gHXu+zbvjH6BihmUy
-	 RCN/MUxb6SdmRS9Zb11QejLUoesen2m++WPx0cQBWp1hNZsp9gYnw6413FpLox/pDL
-	 3blYZ+P13T7QnFz+LXlG98gVQVg7DEpE3M/h/lFnNCSZRXW8kJ8EvyQL4ew64TtURw
-	 FiRLOxxSRDGuCY/bR0YywD5eb8Q095tKRlunL1YmihY4kEgn5QJzMdMp+LP6zgNEDz
-	 gtgdcJ0gVDcyw==
-Date: Fri, 23 Oct 2026 10:28:16 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
+	Fri, 23 Oct 2026 10:27:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=qZ4/
+	eiHVwBullnoqGWKFL11/mhEiAdGloLPRwlR6r+8=; b=ZbIMhIhrgXZDuqu2lwwb
+	5iRvKSTpxPy5LvrOUvYWWXaMTT1Fv5ibgEYanyUX3uSns+/xJef3M0xY1Oci9hHg
+	wZKWD9rq1XzxK/dHN1WJ/ZBauju7E8i4IMyTpYfn77fstXsYdENGLrhPBGAT4AFO
+	9DWeyYkdSVRPcJ4xUjjxGG7l85bMTL+KwoKM1YWh1e/bBrcCVz3JljNqddvRUyfS
+	y/APWvsW9z91/yPFZ8ZJYwC3Z3aEFtcpsy+OgYYzTDITYsrV4MXeC328y6SiyqWi
+	f2MtDePfCTR5mYbi07eUSoh/wL5b38GAdSOYAR09wRF95l2NfumKL8+yMk2vejs9
+	7g==
+Received: (qmail 1512031 invoked from network); 23 Oct 2026 12:27:42 +0200
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 23 Oct 2026 12:27:42 +0200
+X-UD-Smtp-Session: l3s3148p1@oDMgbn9eTKYujnv2
+Date: Fri, 23 Oct 2026 12:27:41 +0200
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: Diogo Ivo <diogo.ivo.sx@renesas.com>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>, 
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
-	Jerome Brunet <jbrunet+clk@baylibre.com>, Linus Walleij <linusw@kernel.org>, linux-i3c@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org
-Subject: Re: [PATCH 4/8] i3c: renesas: Add RZ/G3L support
-Message-ID: <20261023-thundering-axolotl-of-examination-aaa6ba@quoll>
+Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Linus Walleij <linusw@kernel.org>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org, linux-clk@vger.kernel.org,
+	linux-gpio@vger.kernel.org, stable@vger.kernel.org
+Subject: Re: [PATCH 1/8] i3c: renesas: Fix zero I2C SCL rate on pure I3C buses
+Message-ID: <ats2nSA-kV10hlje@shikoro>
 References: <20261020-divo-ssgrlpcsrc-2966-i3c-v1-0-30a47f25e515@renesas.com>
- <20261020-divo-ssgrlpcsrc-2966-i3c-v1-4-30a47f25e515@renesas.com>
+ <20261020-divo-ssgrlpcsrc-2966-i3c-v1-1-30a47f25e515@renesas.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261020-divo-ssgrlpcsrc-2966-i3c-v1-4-30a47f25e515@renesas.com>
+In-Reply-To: <20261020-divo-ssgrlpcsrc-2966-i3c-v1-1-30a47f25e515@renesas.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261023_032749_416286_239CEB10 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,51 +83,31 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Tue, Oct 20, 2026 at 10:14:58AM +0100, Diogo Ivo wrote:
-> Add support for the I3C Bus Interface on the Renesas RZ/G3L (R9A08G046)
-> SoC by adding the renesas,r9a08g046-i3c compatible to the OF match
-> table.
+On Tue, Oct 20, 2026 at 10:14:55AM +0100, Diogo Ivo wrote:
+> On a pure I3C bus there are no I2C devices, so the I3C core leaves
+> bus->scl_rate.i2c at zero if i2c-scl-hz is not specified in DT.
+> Deriving i2c_total_ticks from that zero rate programs a zero-width
+> open-drain SCL into the STDBR open-drain fields, which are still used
+> in pure I3C mode for example in DAA.
 > 
-> The controller is very similar to the IP on the RZ/G3S. However, for
-> instance the RZ/G3L variant has no HDR Exit Pattern detection interrupt:
-> RZ/G3S exposes 17 interrupts, while RZ/G3L exposes 16. A RZ/G3L node
-> therefore cannot be described with the RZ/G3S compatible, as its bindings
-> require at least 17 interrupts. The same point applies to RZ/G3E, that
-> requires 3 clocks while the RZ/G3L requires 2.
+> Fall back to the 1 MHz FM+ limit instead, the fastest rate an I2C
+> device could have, so that a sane open-drain timing is programmed.
 > 
-> >From the driver point of view there is no difference between the two
-> SoCs: the driver only consumes the tclk clock, the presetn and tresetn
-> resets and seven named interrupts (resp, rx, tx, st, sp, tend, nack),
-> all of which are among the 16 shared ones. No driver changes are needed
-> besides the new compatible.
-> 
+> Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
+> Cc: stable@vger.kernel.org
 > Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
-> ---
->  drivers/i3c/master/renesas-i3c.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-> index 4fddc1b4fdbb..80a6df1151bf 100644
-> --- a/drivers/i3c/master/renesas-i3c.c
-> +++ b/drivers/i3c/master/renesas-i3c.c
-> @@ -1625,6 +1625,7 @@ static const struct dev_pm_ops renesas_i3c_pm_ops = {
->  
->  static const struct of_device_id renesas_i3c_of_ids[] = {
->  	{ .compatible = "renesas,r9a08g045-i3c" },
-> +	{ .compatible = "renesas,r9a08g046-i3c" },
 
-So fully compatible? If so, drop this and express compatibility in the
-bindings.
+Great catch! Kudos for adding a good comment. I agree with Geert about
+using the ternary operator, though. After that, you can add my:
 
-Best regards,
-Krzysztof
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
 
 -- 
