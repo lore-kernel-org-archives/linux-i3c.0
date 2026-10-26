@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4017C606A33E
-	for <linux-i3c@archiver.kernel.org>; Mon, 26 Oct 2026 11:36:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5087D606A328
+	for <linux-i3c@archiver.kernel.org>; Mon, 26 Oct 2026 11:37:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dAL3BMvH;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=renesas.com header.i=@renesas.com header.a=rsa-sha256 header.s=selector1 header.b=UQ7Nhm46
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LrD+m7yO;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=renesas.com header.i=@renesas.com header.a=rsa-sha256 header.s=selector1 header.b=a8NOeXYi
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,28 +14,28 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=rCLlx5mPoLGbY0j080bzv7Qp40kIgMEilCrMIY13hgs=; b=dAL3BMvHDGmPTRi4v4t9M30a0X
-	U56yiMOKGIFcPUc0jUJJhPUCAZ5i9T8FCUp4NW69KEaVZWeKS/Gc9ekmZkXG7V9oAZTpj5MkvWr/3
-	MFAKo144iNagWKtCjNvFDXOxLk13eneMVzs8en99wF+MTLEcNr1XGa1jyFmutXXuMTJ9xUevXFT9L
-	UlWhrtdEnNKWuElGH/LL8zA3/9Tbrp8LgA9BN/YCYSXPZxKddFNYURQqVU5TbPOhVREH2ZOf+bsQ0
-	JRugDBrOupbJTSdogzvVq+Kmi8q50pfhEhQelTkC0vKFn9nMDqsz3fWXR43VdVxE7T3Y4nuNJEU7X
-	qOunx7Xw==;
+	bh=ZboWy/hBHCxjRHo4FT6lKg+0JmLJEQ3F1iAhWlZMo30=; b=LrD+m7yOU8TJ3RSHX/i+Vw7UjG
+	JXhaIe9WLFhGdcmQI97P7vt8VgTMY6SL9V7oX7xtE7705YrxVhm3L9Des87TwP4w1zbsQzpDNTzdI
+	nvIhy+T0RPTQ0NmgyGQ4SxErZzoTRjdP9asYXtSoOVZ9EWgXfaqPtLy3wrX5joiVdxxGI/+IohveN
+	LdZI13DYGwrbVlHxUsNIyL2R/mvGajr054XgQcsFX0QhofwFZUVjYBoPuuc607UlXlGZCXzu2k5UD
+	RpPLsQjNxklEBecoe500mQVs3HzmPnLRaQMEenRH8fLuWcMrhrEAsD8utTz3R6DmarsyZ8gf/wBOj
+	+PzNvlzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLJ0V-00000002OM5-012S;
-	Mon, 26 Oct 2026 11:36:51 +0000
-Received: from mail-japanwestazlp170110001.outbound.protection.outlook.com ([2a01:111:f403:c407::1] helo=OS0P286CU010.outbound.protection.outlook.com)
+	id 1xLJ0n-00000002OP4-0HFV;
+	Mon, 26 Oct 2026 11:37:09 +0000
+Received: from mail-japaneastazon11010036.outbound.protection.outlook.com ([52.101.229.36] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLJ0T-00000002OLh-25CX
+	id 1xLJ0k-00000002OON-3eks
 	for linux-i3c@lists.infradead.org;
-	Mon, 26 Oct 2026 11:36:50 +0000
+	Mon, 26 Oct 2026 11:37:08 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=COosIdVCSCDAIHRqx5amPyWaiw+FNSByv8jS7dTyd5OADClzjAbEaYtLU3mBc0JvmU5AZS5bHvlKDbe6bKQIZ15YHsXndCFWbm0cldTxvC4nwdxRfNWA6kmqsn8qDlKaei9fSmU+AthNtl7FjsH83aI/hxkrkVqaUDFEdGbR2+sbsp23WSzi2Wt1d+jR5aoL4rtCBpNUe8WSFVFJAypyuhWlEsi43Bl5T6PrIrVa8hUa5mZ0e0rCqSyRpHIcVN74Vy6RJ5q+PoS/nUi2mFhMdw8uUHX5Hh/eI78ZLdzeinS0qMwQJOl0IOHadRbffXNRUYI1/QeWEOEK5lbbW6WjMQ==
+ b=WJMNgDD1xiK/81UyeWoh/cB4e9LmAPeAJBM95/GRrIZyMPq6xVxQ9i1Kyo2CrDPwLnao8IPEOmECE26nD8ksE00Wzn0Y+b1Zn6YVXGN+iFefv+EWlpfL+95kg8XI5EYviqgCFlwlV6w0ynjcWnUXJI67B5JUsywDaHh3WdLUO8TKJOCt/Hbrn4/MSo30PozoR9X4swOnHCX6gvyGjuQ/5kqkA1BFjo3wojBseARnyIhoFRWyjczPFl70Q4XcS9wg31cg1vAB9INEYf0YIaJj2FTV/T6jTjXfoajgF0S3lnKtgWBOl5TFYfUuI6dsdK7z93KNhMTJXPwM/aekd0jRdg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=bBq4ljD0JBjrOPYPos7Q6pP8UbqWlhgc2nYN2PIGiCM=;
- b=kXO5LL0C44pkoEvnnWtZaAa+Fe1DO3olxZfz9LbQCx82SmCqCxfnJyqGkcmaBnZxzOYp6QVOhv2RRZHb2fYcrNG0IJ/TPbpqbuQtw1hubyfxiwh2JlMwEYS0uiv7hqlvdTZalarX7A/UmHxFRdWGIK6jDXHVKzpm2xv0g+bSWGPunMasu5ZmcR+i2RB1XjuLaRra5XOCjKqe3dfFaLQ3IwHI56JjEiDivntmeEhy3pDSoX/wfdosiQIjEui34O0LhHwfmLXStnucNMIkCgXS/dBsuzIt7Rw0EKDeRyYlzfSNYIjS3TK0NFhN3nmQczpa8HZxxEPzQDBJssnONTvCOQ==
+ bh=/q+cu0IMhbkUSyO2IVNcOzMWw31ny4dUBrb6tlnrqCE=;
+ b=u97568RYIGILvnuUowWe007CIrydUl3wNyExMBM4k1tR3b6A0EQnA936f7t0BkLqU6lHm4KnTugEcjWDRGxWfAlg5X7BuBnVL31cqh71NcF+vGGcXb1de1OPK4rXdD98QOJfq945y81DwWt4GKrOse85uK8O6RxL9iDWyZ1ZKJmZrDtTySyl/2qzIJRmGjJfW589oWcFYnKW/dv+5Bv3TkoCqDDvo8aypYIFkyTy5+dvE4M7J84yx7exMWgSsYS0miTiaYC5H9/iExM3FgJAuvhuUfTwV7w3TqRNi1SMyZ0cJq6PR3t5/yK4OUSU41rk0R0GbvCds3cP8xcrinb98g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  8.62.32.50) smtp.rcpttodomain=baylibre.com smtp.mailfrom=renesas.com;
  dmarc=pass (p=none sp=none pct=100) action=none header.from=renesas.com;
@@ -43,18 +43,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bBq4ljD0JBjrOPYPos7Q6pP8UbqWlhgc2nYN2PIGiCM=;
- b=UQ7Nhm46qiijUbx79dHapDpleHwdMnI0MBus0TZaVbuZxCF4mdvSN5NALOpnRZgv/7tIEYReiNc26HLk2SCmSTk8w7GD2X2RXTeGsiqxCowZDtQjz9FsIH5bnNfGOWek8Z+8My6fZu7FWbe4KlW0dQ7p3kCoyo76fW7VUP96yTg=
-Received: from TYCP286CA0207.JPNP286.PROD.OUTLOOK.COM (2603:1096:400:385::20)
- by TYCPR01MB7218.jpnprd01.prod.outlook.com (2603:1096:400:f3::14) with
+ bh=/q+cu0IMhbkUSyO2IVNcOzMWw31ny4dUBrb6tlnrqCE=;
+ b=a8NOeXYiLKDZXO16qPjodrRwoLxvUT8e3Whz9P6hNlZ68wYUtG2ni/7cpk9eNam2TUDV7MD8SNl0wXUUbBYhebFDk9xll0DAwCGwNIjO9CQUPw/Wn37YM7nSBecn5JJOf7yOXL7okR6vta2Qni04wWWmg6EpxtUrgRGduDhtIdk=
+Received: from OS3PR01CA0036.jpnprd01.prod.outlook.com (2603:1096:604:db::23)
+ by TYYPR01MB13352.jpnprd01.prod.outlook.com (2603:1096:405:1c6::9) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.546.22; Mon, 26 Oct
- 2026 11:36:43 +0000
-Received: from TY1PEPF0000BAD7.JPNP286.PROD.OUTLOOK.COM
- (2603:1096:400:385:cafe::2b) by TYCP286CA0207.outlook.office365.com
- (2603:1096:400:385::20) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 11:37:00 +0000
+Received: from OS1PEPF0000D216.JPNP286.PROD.OUTLOOK.COM
+ (2603:1096:604:db:cafe::82) by OS3PR01CA0036.outlook.office365.com
+ (2603:1096:604:db::23) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.21.546.22 via Frontend Transport; Mon,
- 26 Oct 2026 11:36:43 +0000
+ 26 Oct 2026 11:37:00 +0000
 X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
  is 8.62.32.50) smtp.mailfrom=renesas.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=renesas.com;
@@ -62,19 +62,18 @@ Received-SPF: Pass (protection.outlook.com: domain of renesas.com designates
  8.62.32.50 as permitted sender) receiver=protection.outlook.com;
  client-ip=8.62.32.50; helo=ejcrelay005p.adwin.renesas.com; pr=E
 Received: from ejcrelay005p.adwin.renesas.com (8.62.32.50) by
- TY1PEPF0000BAD7.mail.protection.outlook.com (10.167.240.36) with Microsoft
+ OS1PEPF0000D216.mail.protection.outlook.com (10.167.240.23) with Microsoft
  SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.569.4
- via Frontend Transport; Mon, 26 Oct 2026 11:36:42 +0000
+ via Frontend Transport; Mon, 26 Oct 2026 11:37:00 +0000
 Received: from [192.168.1.82] (unknown [10.226.92.223])
-	by ejcrelay005p.adwin.renesas.com (Postfix) with ESMTP id A1EE23000278;
-	Mon, 26 Oct 2026 20:36:34 +0900 (JST)
+	by ejcrelay005p.adwin.renesas.com (Postfix) with ESMTP id 2AD523000253;
+	Mon, 26 Oct 2026 20:36:51 +0900 (JST)
 From: Diogo Ivo <diogo.ivo.sx@renesas.com>
-Date: Mon, 26 Oct 2026 11:35:48 +0000
-Subject: [PATCH v2 5/7] pinctrl: renesas: rzg2l: Split SoC-specific masks
- in struct rzg2l_register_masks
+Date: Mon, 26 Oct 2026 11:35:50 +0000
+Subject: [PATCH v2 7/7] arm64: dts: renesas: r9a08g046: Add I3C support
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-5-2e76b87209bb@renesas.com>
+Message-Id: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-7-2e76b87209bb@renesas.com>
 References: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-0-2e76b87209bb@renesas.com>
 In-Reply-To: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-0-2e76b87209bb@renesas.com>
 To: Wolfram Sang <wsa+renesas@sang-engineering.com>, 
@@ -92,38 +91,38 @@ Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org, 
  Diogo Ivo <diogo.ivo.sx@renesas.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1793014549; l=1929;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1793014549; l=4789;
  i=diogo.ivo.sx@renesas.com; s=20240529; h=from:subject:message-id;
- bh=eEsbuMwbCmlwZj1kXhIWUry4TAcI2XXVkhanKObD2wY=;
- b=nOc37G8KQ1UO6gLTDtCaSHixo0hS3dmCMzpkqzBK4Ep8nT3CTizvsv5BVgALD1gVpj19gX+Jp
- mOMqTwou1WsDT+Ew/hmyCg7xDYPzvbuW2KAcU+bI47e9Q9+RukPrsoz
+ bh=KxAZw+LJvuR5A3VLM7tEpFJpnpPJOciCtYDezW1GNNc=;
+ b=rfxprELImaGLr6EQkDKC8WdOkK1hk2aqmBghW9ZIjNS+lDr2BnqhHYYhdhG8A/Gf5c3y8xWvQ
+ IaNad9+kuEtAdWCVrwtBVhX8OirdfUeRZhV1uinMf8zoAvay5vFUm0J
 X-Developer-Key: i=diogo.ivo.sx@renesas.com; a=ed25519;
  pk=BRGXhMh1q5KDlZ9y2B8SodFFY8FGupal+NMtJPwRpUQ=
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TY1PEPF0000BAD7:EE_|TYCPR01MB7218:EE_
-X-MS-Office365-Filtering-Correlation-Id: c4ba5a09-3cee-4ce1-50db-08df3355688c
+X-MS-TrafficTypeDiagnostic: OS1PEPF0000D216:EE_|TYYPR01MB13352:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8fc4f507-4794-4c26-7af8-08df335572c8
 X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|23010399003|1800799024|7416014|376014|82310400026|261009223027099003|261021121427099003|261021123027099003|10067099003|56012099006|3023799007|22082099003|18002099003|921020|11063799006;
-X-Microsoft-Antispam-Message-Info: FCdxetM74CY48Ghv9Wb815RD8YHUg02L5YM1C2aSfpc89CYalGXDllbiRXZ1IiUFzo1wxkrZvD0d15Iiekhjv74w5he5q+QktHBv01m0BPKAekDUwVKujFxkuLHknUlz6cHwxm+U82VXGwLZrXHxcBCN6qhqIAth2tjnLoZjm7TYxDkYiHRzagbyn+gLTDimByS8zbZPT4qku8W7n6fytBqTxUal6KUp4ooQv/zbPJfDXxFSDL+6zm21B5IEC+CCRdPcwwdQfsXlgXU45m0+DNtsMnhsmw05nzuJZrtOn8bJL57M1086rrqnMeAJhUUkRw4QpZiE/Qsh4vwk3Zg9X7jg0CRX3f5+eOo3fyxm3CilhxTeLrQ6dmExvFhUcmCCR5smuGr9Kean0aUQINo7bWzsaly5catTjjq8rG3Tp1n6wU9Nc+nzw3ZHsb9K6IwSoxkpzNBYqJapiJgEERZYT+yTxhyBWHKJ51e+Ia8FPvVaDYq/+QTPGTR+4tSbQ7MNY7Xq6aRM4nIJCNL53rG06DuQMfKCZPNs2gk0TNtL0IsIRy+qygiskqLnxfkzK9HJLMbR/8tGbge8/5bCa+VOSpTGC2YMp979S3J1yk3B31aTXy6AKtVPl6ZJgeiiGMmOrbTt+OHc92gHBvG0hSBW2aIcH5HoEPj6bD/mrdSjirJ+jfqE+sn6ike8JdwzjwDjRYtK25ImbFPr9sB6Lf73HyS8XFZwk1dpT1qYYnqjml2J90jIVizEWvfUZhZlfVmV
-X-Forefront-Antispam-Report: CIP:8.62.32.50;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ejcrelay005p.adwin.renesas.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(23010399003)(1800799024)(7416014)(376014)(82310400026)(261009223027099003)(261021121427099003)(261021123027099003)(10067099003)(56012099006)(3023799007)(22082099003)(18002099003)(921020)(11063799006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|82310400026|36860700016|23010399003|1800799024|921020|11063799006|56012099006|261021123027099003|261021121427099003|261022105027099003|261009223027099003|10067099003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: MMjLnfwsJKXWuQjmVmwFyTT9CEXOsBEGsYHiqTamAKseX4kN2Y7N0QSnuYr6gMw7gd5vb9QjM55vZBTkx2jNJrSGVeRYKgTwBGinzrxp4A4rD4RWEPXemAvEFiIVrSsYNRyEUSYz2huufoBVHrcVojwzaJBnXOdGXmXiUNN4vCV19nlq5EDKrerbokLuzeOfWvvnxUEfypaiuS1aM42Hx8qQEYGeUesW0XnfiJwENoCz/z/+gyShK0D9KyaJfqJwMRbyuOjQbn0Nv+YL99Acn5CWbsCspH/0yz2igrJmmpP/ojXHxTGgn3BUVe9+vVe4mBE6xTF9ZBVJC85KkxqMiVK33IMsqNVNlvq8AwizwlBrOzPn8aiIk/9cAu1uoPoQYnG0qmV0FQT+n3VQMD8rkO/VZtTFtaBI+HobRslRqNCBWgANX5R4TOuNB2hPOoA2a8jzLwCeEWdomp4riJgHkFRSbjJlUaf1PdAz8YVApwBOdHcv6svJwfZ4n3WRlIl9LMO/roeQk9zn32ROuQ1nebgDj75xAb+hPY1Qw0moAxGAkGhZr4DQHsxH5YufcjePkyyfEp2cHGHtyVRZ1HmwFhjFpmDX9c9ox/hMOVmFb2DL3o72DZYfb189HHio9FArAF12Bou15Y9h+RTz51CCgCtjeweM9aa1WpNouoA08TB1M0AtpGLaBnGGh5yHio8gzv3QBWVuYwvLLjTilLFsx597/29xNchCtoJcSrhsTaZDoN1vbwgYK4PTPW10xIe7
+X-Forefront-Antispam-Report: CIP:8.62.32.50;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ejcrelay005p.adwin.renesas.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(7416014)(376014)(82310400026)(36860700016)(23010399003)(1800799024)(921020)(11063799006)(56012099006)(261021123027099003)(261021121427099003)(261022105027099003)(261009223027099003)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: DXUvZMJ7ExI6tc8YA0vBa7Sq35pDDSCTZs8bv95m75aSOryYw1c/iNLKaX8pqyjZTiUL0tRoSivGTTCqcb4i7DST/DnaUH1KZPySLkm2NYkDEqWNs8JAZ1yQIwvldAnR3SmB/fXwqmWVudBNwxnCg8FV286odcsQJSaY6iNug8Di0nJncfWc5wPI3KJdWBwC+KsBncXU51cfzfyiYJtgDdwlBlgx/h96770ue0AwXLyeeWSLTHcuz5eVNO3Py03u8CZoRre8vL+8ciw1uXvDimYL3KBIgg7pVV3c1P1zTmcGimPr3q94GmvN+9rUlTn91VP4WmrBH4t+YefYeb7sNZ7+0iUT30vu+juNDIbOpQF/SfZbbPW3dZYNNDAABo6KH0Qsi+PGkiTYaK12TWr28vl7u32Rrn94jHn7/mMvxT6YVMClxvnYmkcWvVe5YDWz
+X-MS-Exchange-AntiSpam-MessageData-0: UV8Mkk1jtzmtcQkFasvaOPfyki/mv/mVosYE9iJ2AvQBoqI6xIunsDmxslCuBUSCjcBNi5Gwbz7Cnu1DnY/kZ3Se/atroM8BUKBnaje5nTBqQnj9EJbUojBDHdHY0trKiJVZeEsjEBlZU7AS5fgwNfXVaZrdxbUVyrdH6OxBk4E+tivqqUzsvtPo2dbbasNW0N1YcWwhrnjk2XRGVg+mbvRAopgYzwG0Kh7xuZvEYwpyoTkJ57GImoB+0ZHFmKPFZPVB51aj3ZEyRnYWTgsNAXrVVVqRuDVCK6O16fqAWUwo4A4ArdwmKSE5bOExzPZ584er9B8GSae+OuYzA9QCE7XgfAtHYbSF66ekqVV4RjWCCniIsvKJnH5P6CEs8a6JSdEj1pOv7He68qVpiL3RRCrBoziFSvNejPg8rPFJhg/zG+SA+5Xc3GnECrBjWEZ5
 X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Oct 2026 11:36:42.8660
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Oct 2026 11:37:00.0240
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: c4ba5a09-3cee-4ce1-50db-08df3355688c
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8fc4f507-4794-4c26-7af8-08df335572c8
 X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=53d82571-da19-47e4-9cb4-625a166a4a2a;Ip=[8.62.32.50];Helo=[ejcrelay005p.adwin.renesas.com]
-X-MS-Exchange-CrossTenant-AuthSource: TY1PEPF0000BAD7.JPNP286.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthSource: OS1PEPF0000D216.JPNP286.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYCPR01MB7218
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYYPR01MB13352
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261026_043649_542718_A725C2A6 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20261026_043706_919041_995C03BC 
+X-CRM114-Status: GOOD (  15.73  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -144,61 +143,141 @@ X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-struct rzg2l_register_masks declares the masks of the OTHER_POC register
-of RZ/G3L and of the I3C_SET_POC register of RZ/G3S in two branches of an
-anonymous union. As both branches share the same storage, initializing both
-other_poc_pvdd1833_oth_awo_poc and i3c_set_poc on RZ/G3L would have the
-designated initializers override each other, ending up with the I3C_SET_POC
-value in the PVDD1833_OTH_AWO_POC mask.
+Add the I3C Bus Interface node to the RZ/G3L (R9A08G046) SoC DTSI and
+enable it on the RZ/G3L SMARC EVK, together with the required pin
+control.
 
-Split the union into a common area, for masks shared by multiple SoCs, and
-per-SoC areas: the RZ/G3S and RZ/G3L I3C_SET_POC mask moves to the common
-area, and the RZ/G3L OTHER_POC masks stay in a dedicated RZ/G3L area. This
-way every mask gets its own member, and new SoCs can be described by
-adding their own struct (possibly inside a union).
+The driver only consumes resources that are common to the RZ/G3L and
+the RZ/G3S (R9A08G045), so the node uses the SoC-specific
+renesas,r9a08g046-i3c compatible with a fallback to the
+renesas,r9a08g045-i3c compatible of the RZ/G3S, following the bindings.
 
-The existing RZ/G3S data only initializes i3c_set_poc, so it is not
-affected by this change.
+The I3C pins are shared with RIIC3, so the controller is only enabled
+when the SW_I3C_EN switch is on.
+
+The I3C I/O voltage can be set to 1.2V or 1.8V on the board through
+the SYS.3 (I3C_IOVS) switch, so configure the pin controller for the
+selected voltage through the power-source property.
 
 Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
 ---
 Changes in v2:
- - No changes
+ - Declare compatible with G3S fallback
+ - Sort the &i3c and i3c_pins nodes alphabetically in
+   r9a08g046l48-smarc.dts
 ---
- drivers/pinctrl/renesas/pinctrl-rzg2l.c | 20 ++++++++------------
- 1 file changed, 8 insertions(+), 12 deletions(-)
+ arch/arm64/boot/dts/renesas/r9a08g046.dtsi         | 35 ++++++++++++++++++++++
+ arch/arm64/boot/dts/renesas/r9a08g046l48-smarc.dts | 21 +++++++++++++
+ arch/arm64/boot/dts/renesas/rzg3l-smarc-som.dtsi   |  4 +++
+ 3 files changed, 60 insertions(+)
 
-diff --git a/drivers/pinctrl/renesas/pinctrl-rzg2l.c b/drivers/pinctrl/renesas/pinctrl-rzg2l.c
-index 9bf3743dc1ce..f73d273df362 100644
---- a/drivers/pinctrl/renesas/pinctrl-rzg2l.c
-+++ b/drivers/pinctrl/renesas/pinctrl-rzg2l.c
-@@ -278,18 +278,14 @@ struct rzg2l_register_offsets {
-  * @i3c_set_poc: I3C_SET_POC mask
-  */
- struct rzg2l_register_masks {
--	union {
--		/* RZ/G3L masks */
--		struct {
--			u8 other_poc_pvdd1833_oth_awo_poc;
--			u8 other_poc_pvdd1833_oth_iso_poc;
--			u8 other_poc_wdtovf_n_poc;
--		};
--
--		/* RZ/G3S masks */
--		struct {
--			u8 i3c_set_poc;
--		};
-+	/* Masks common to multiple SoCs */
-+	u8 i3c_set_poc; /* RZ/G3S, RZ/G3L */
-+
-+	/* RZ/G3L masks */
-+	struct {
-+		u8 other_poc_pvdd1833_oth_awo_poc;
-+		u8 other_poc_pvdd1833_oth_iso_poc;
-+		u8 other_poc_wdtovf_n_poc;
- 	};
- };
+diff --git a/arch/arm64/boot/dts/renesas/r9a08g046.dtsi b/arch/arm64/boot/dts/renesas/r9a08g046.dtsi
+index f33d5d7468ff..fccfe8d7faf5 100644
+--- a/arch/arm64/boot/dts/renesas/r9a08g046.dtsi
++++ b/arch/arm64/boot/dts/renesas/r9a08g046.dtsi
+@@ -620,6 +620,41 @@ canfd: can@100c0000 {
+ 			/* placeholder */
+ 		};
  
++		i3c: i3c@100e0000 {
++			compatible = "renesas,r9a08g046-i3c", "renesas,r9a08g045-i3c";
++			reg = <0 0x100e0000 0 0x1000>;
++			interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 359 IRQ_TYPE_EDGE_RISING>,
++				     <GIC_SPI 360 IRQ_TYPE_EDGE_RISING>,
++				     <GIC_SPI 361 IRQ_TYPE_EDGE_RISING>,
++				     <GIC_SPI 362 IRQ_TYPE_EDGE_RISING>,
++				     <GIC_SPI 363 IRQ_TYPE_EDGE_RISING>,
++				     <GIC_SPI 364 IRQ_TYPE_EDGE_RISING>,
++				     <GIC_SPI 369 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 370 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 372 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 373 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 374 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 375 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 376 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "ierr", "terr", "abort", "resp",
++					  "cmd", "ibi", "rx", "tx", "rcv",
++					  "st", "sp", "tend", "nack", "al",
++					  "tmo", "wu";
++			clocks = <&cpg CPG_MOD R9A08G046_I3C_PCLK>,
++				 <&cpg CPG_MOD R9A08G046_I3C_TCLK>;
++			clock-names = "pclk", "tclk";
++			resets = <&cpg R9A08G046_I3C_PRESETN>,
++				 <&cpg R9A08G046_I3C_TRESETN>;
++			reset-names = "presetn", "tresetn";
++			power-domains = <&cpg>;
++			#address-cells = <3>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
+ 		ssi0: ssi@100e4000 {
+ 			compatible = "renesas,r9a08g046-ssi", "renesas,rz-ssi";
+ 			reg = <0 0x100e4000 0 0x400>;
+diff --git a/arch/arm64/boot/dts/renesas/r9a08g046l48-smarc.dts b/arch/arm64/boot/dts/renesas/r9a08g046l48-smarc.dts
+index 68d7b579e352..a713d63b4510 100644
+--- a/arch/arm64/boot/dts/renesas/r9a08g046l48-smarc.dts
++++ b/arch/arm64/boot/dts/renesas/r9a08g046l48-smarc.dts
+@@ -13,6 +13,7 @@
+ #define SW_DPI_EN		0
+ #define SW_GPIO4		1
+ #define SW_I3C_EN		0
++#define SW_I3C_IOVS		0
+ #define SW_SER0_PMOD		1
+ 
+ #define PMOD_GPIO4		0
+@@ -120,6 +121,16 @@ da7212: codec@1a {
+ };
+ #endif
+ 
++#if SW_I3C_EN
++&i3c {
++	pinctrl-0 = <&i3c_pins>;
++	pinctrl-names = "default";
++	i2c-scl-hz = <400000>;
++	i3c-scl-hz = <12500000>;
++	status = "okay";
++};
++#endif
++
+ &keys {
+ #if !RZ_BOOT_MODE3 || !SW_GPIO4 || PMOD_GPIO4
+ 	/delete-node/ key-1;
+@@ -163,6 +174,16 @@ i2c3_pins: i2c3 {
+ 			 <RZG3L_PORT_PINMUX(2, 1, 4)>; /* RIIC3_SDA */
+ 	};
+ 
++	i3c_pins: i3c {
++		pinmux = <RZG3L_PORT_PINMUX(2, 0, 2)>, /* I3C_SCL */
++			 <RZG3L_PORT_PINMUX(2, 1, 2)>; /* I3C_SDA */
++#if SW_I3C_IOVS
++		power-source = <1800>;
++#else
++		power-source = <1200>;
++#endif
++	};
++
+ 	pcie-clkreq-n-hog {
+ 		gpio-hog;
+ 		gpios = <RZG3L_GPIO(G, 6) GPIO_ACTIVE_HIGH>;
+diff --git a/arch/arm64/boot/dts/renesas/rzg3l-smarc-som.dtsi b/arch/arm64/boot/dts/renesas/rzg3l-smarc-som.dtsi
+index 91b2d0d43104..5959e62ad7ed 100644
+--- a/arch/arm64/boot/dts/renesas/rzg3l-smarc-som.dtsi
++++ b/arch/arm64/boot/dts/renesas/rzg3l-smarc-som.dtsi
+@@ -13,6 +13,10 @@
+  *      0 - SMARC_I2C_GP is enabled
+  *      1 - I3C is enabled
+  *
++ * Switch position SYS.3, Macro SW_I3C_IOVS:
++ *      0 - I3C voltage is 1.2V (when SW_I3C_EN == 1)
++ *      1 - I3C voltage is 1.8V
++ *
+  * Switch position SYS.4, Macro SW_SD2_EN:
+  *      0 - Select I2S0
+  *      1 - Select SD2
 
 -- 
 2.56.0
