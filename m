@@ -2,75 +2,149 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 106E1606A336
-	for <linux-i3c@archiver.kernel.org>; Mon, 26 Oct 2026 15:04:54 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 440A5606A31D
+	for <linux-i3c@archiver.kernel.org>; Mon, 26 Oct 2026 16:21:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Rf7AUPDr;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=l3qz8qhW
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Pqo72tAi;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=renesas.com header.i=@renesas.com header.a=rsa-sha256 header.s=selector1 header.b=pCV7V752
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=tcRiyu0FW8WFPxXGxAORad1DtXwubnnGD5pR8JKLYxM=; b=Rf7AUPDro/vldoRoCR+YKwuzmH
-	rVxEE+dhHH4VQlq+xxl53wrbBvs5cO64SurRrDt79YSOpp3FTxPWFKenN0ug1hj+hMZDlNTkWhsXf
-	25Hw00AzkTKAK5hA+4DU27lbWjG0aBDKGfllFw5YfkC4PAPPQwXQXII0YfrbJFShDoy51dzOaN0Mw
-	PPvTsVAAfUdh4LbdAyzqe672r6Qlnrz3CZkIyB5MbQTdEciAl1UUSV8fNxgolBGjRdtzgabufy05/
-	KI3qyPjULZ/GksV8b9bTMbYdzOIZORplBpMP+ESYUSd1/b1lrbDk2wSKtApK86qccpr2IPF+wRb5F
-	dKm3UUSA==;
+	bh=uSsY0Rkyl7o4uRPhgooN5aOtIh750ol7Ch2zgSDTjzA=; b=Pqo72tAidqrBDfyQcgeOq1/xXh
+	1RqE+7GX1RsCakzUkza6eSiTcIM8F2ide30OzvCSiww9emDQK+BW118Z+TyRN8TxxAVjJH8UmLdf3
+	38xAPxs3Dc6kev72AXY93eClNaQdcneH3oepiImiiK6k+S0NiP+QRiu5K6QKYLwOcvloaSXI3USWk
+	ZVJjccLCiqAsuhWP/TzKOUQY5F/E3GrthdAHg+LcXnoOl+SQiCthiilATzg+uY7OHJbn9o09b+lW5
+	go5erHPXbDXZmyVwCSVuMdHftIwC6Njp9YBc/kGPsTTSjEPMmZ8/PkV59vmmrp32Pr94Ent5WExqd
+	+G6uAUCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLMFp-00000002kEg-3IGD;
-	Mon, 26 Oct 2026 15:04:53 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xLNSC-00000002rri-29Ge;
+	Mon, 26 Oct 2026 16:21:44 +0000
+Received: from mail-japanwestazlp170110001.outbound.protection.outlook.com ([2a01:111:f403:c407::1] helo=OS0P286CU010.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLMFp-00000002kEY-0kHY
+	id 1xLNS9-00000002rqp-34gr
 	for linux-i3c@lists.infradead.org;
-	Mon, 26 Oct 2026 15:04:53 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 99C1141453;
-	Mon, 26 Oct 2026 15:04:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 781DA1F031E2;
-	Mon, 26 Oct 2026 15:04:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793027092;
-	bh=9XE2j6DUb6n5+qYI4Bd75SEMcPwHROZ60jDXuopARVE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=l3qz8qhWyTMcNtsxWqOvXSdiIexDlTpz+mnt0gK0cuC05exPRrvBp/Y4p33zXmj+0
-	 JqM4JGmm9QT/UdL35MMf0Tsn2bJN4sfvniApV8hcOi506oA1nG6kjv2tCiPpsCV/JB
-	 y13Qalef/ToGeb6FFcQzJ2Rz6xTF++/GWeNkOr4rSirhkNtnc+OhD88PCDdBBsJbNF
-	 bX/MLFXdwn6vaix51RJiX96VG21VfyLWrA05Gfk9BE4eBmqheAGzcC0vQdBqsory19
-	 ktKpAMZERper+2TzZ2JCdVUHTfZzK0Wee269MPWSSpIgVkuRAuOWPNNEdSiZHyB3zH
-	 D+Rw2Wizteeqw==
-Date: Mon, 26 Oct 2026 15:04:46 +0000
-From: Lee Jones <lee@kernel.org>
-To: Lakshay Piplani <lakshay.piplani@nxp.com>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>,
-	"robh@kernel.org" <robh@kernel.org>,
-	"conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"broonie@kernel.org" <broonie@kernel.org>,
-	"mfd@lists.linux.dev" <mfd@lists.linux.dev>,
-	Frank Li <frank.li@nxp.com>,
-	"lgirdwood@gmail.com" <lgirdwood@gmail.com>,
-	Vikash Bansal <vikash.bansal@nxp.com>,
-	Priyanka Jain <priyanka.jain@nxp.com>,
-	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Subject: Re: [PATCH v20 4/8] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
- and on-die regulator
-Message-ID: <20261026150446.GB2195460@google.com>
-References: <20260922103551.2754613-1-lakshay.piplani@nxp.com>
- <20260922103551.2754613-5-lakshay.piplani@nxp.com>
- <AS4PR04MB9362E4F3E5E69CE45BE436E9FB642@AS4PR04MB9362.eurprd04.prod.outlook.com>
+	Mon, 26 Oct 2026 16:21:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=fD5L/UumnlluydmS05j9zX/PkR/yJyuYUH5ymHpnbfeo0ep7D4x6c2auT3tU7DNajYg5xigqh+EfXhBMBfDtuz8A4i+c3vKmBVePnqOq67zL6DiJ3Dk6FU0RFNYGkiPVwTYjb4RrM6QPoRH5tiS0StP0p6o//Yxxs7CKZoaMPGYceETFy3xrSOaAro1uuXN2D6IjAiHgLnSofuPjOe0c8gdvwYQAVzqTI2/v9OuUHBiZOpy6uGg3nND+5xB7lvGToMxqf8AXS0iwsmvVJPef76FM4uLMqzkBx0gzlNGCng6BebHQQjnNk8A4U8r2a4KiqShdo519bBPppPxh4wbxpg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ONyJs2o6vUTcrolkYveJ/SOlnxXM+6ru8B0UzgeL8vI=;
+ b=NVTmnH5yz+KKVUpf4foM5JkrAXUD/3SvoZbt1URgzyU2NxVCKjeqc55/wNRj/bjihVuAkq1OXEgXgniAAkKB9CqkZzIhaP0CcQoEUI4cIgOJW86aJYHjCI1pCGrszHBWyeZSoWZFcxUxnsHpti81OxKnzjNzimiiy267M+hyYSfc19/ckxKxViAaZLUTWa6w+xQSXcVjtlDVQqQcyd+yR/4/FdgjHxMvtVXJJicRr9AStgsRhKDM+aZ0Li3Y9udmxcOBZxVQhV3qzCFzIp5bbyT6mFd0Hz6m46Hx4zAQe5G0z298IEPc34ZYbZoBVLJ7gZ1Jn4tar1PRfbtZt1+V6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ONyJs2o6vUTcrolkYveJ/SOlnxXM+6ru8B0UzgeL8vI=;
+ b=pCV7V752PlcPzDFiCFdMXyzQRoijg4IWK3dsUyT/cw8zufRzX1jN4OKEEKlWjD1mQ5Q7GaKsBjLsYPvigTyLf9vx9d7u+448vIGFtdq2Opi4++NIYZRpRhz/BcE7hbxdHEMWebdcPMaDFLHRuHnUwQisuSxhndZ+kJT1quoqG3g=
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=renesas.com;
+Received: from TYYPR01MB15118.jpnprd01.prod.outlook.com
+ (2603:1096:405:1a1::11) by OSCPR01MB13330.jpnprd01.prod.outlook.com
+ (2603:1096:604:34b::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.546.22; Mon, 26 Oct
+ 2026 16:21:17 +0000
+Received: from TYYPR01MB15118.jpnprd01.prod.outlook.com
+ ([fe80::1116:d56:8164:63b4]) by TYYPR01MB15118.jpnprd01.prod.outlook.com
+ ([fe80::1116:d56:8164:63b4%6]) with mapi id 15.21.0546.021; Mon, 26 Oct 2026
+ 16:21:17 +0000
+Message-ID: <64f604a7-7e70-4a0d-8164-28c5d7b1e509@renesas.com>
+Date: Mon, 26 Oct 2026 16:21:06 +0000
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/3] dt-bindings: i3c: renesas,i3c: Document analog noise
+ filter control
+To: Frank Li <Frank.li@oss.nxp.com>
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, Linus Walleij <linusw@kernel.org>
+References: <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-0-b7ad60cde650@renesas.com>
+ <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-1-b7ad60cde650@renesas.com>
+ <ate-aNmqsyXCAIX8@lizhi-Precision-Tower-5810>
+Content-Language: en-US
+From: Diogo Ivo <diogo.ivo.sx@renesas.com>
+In-Reply-To: <ate-aNmqsyXCAIX8@lizhi-Precision-Tower-5810>
+X-ClientProxiedBy: MA3P292CA0041.ESPP292.PROD.OUTLOOK.COM
+ (2603:10a6:250:46::16) To TYYPR01MB15118.jpnprd01.prod.outlook.com
+ (2603:1096:405:1a1::11)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AS4PR04MB9362E4F3E5E69CE45BE436E9FB642@AS4PR04MB9362.eurprd04.prod.outlook.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TYYPR01MB15118:EE_|OSCPR01MB13330:EE_
+X-MS-Office365-Filtering-Correlation-Id: a2ed8308-4fab-48fa-4e62-08df337d2992
+X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|23010399003|366016|1800799024|261026121527099003|4143699003|11063799006|56012099006|261021123027099003|261021121427099003|261022105027099003|261022075727099003|261009223027099003|10067099003|20046099003|18002099003|22082099003|261026140227099003|3023799007;
+X-Microsoft-Antispam-Message-Info: nK17od90vbnRMaoUxC975tu4Yj2bqUcG+WgiZLr6+OeR+RsvbHPr1UcIh5K3g7yRWY5GnFrjMBMlV5q4dA5+KriaHv1IOIwjB3PfCdMx2QVNrAiRXGtFhGG6Qoxt3PuvtD3IkBzrVT5cdIFVDm1RNIoei15JxMSQM1xait2H3sHpW5uvr48/Qme39YrVlpYVe7S5Sn0gBZgzezj8AhaUzfseLZrc/J+/GXv1wFFIDzGEfr3dqJGXTimTkbIPrXegscNXWmwOV19XtsOwu++GhHd95mREpun5jisBxQa9q/aYPHzhAuH8pAuneyljmeyaYK0VHMLS2CcPnRvUqSQ+pL2UyBz9T3eNVh5UOERwxJEFohfkdEgVSBEQpWZMfhyYGFtJ+vE8OQgxaIbGrntoMYtGdhBlFWCzQwQdKEH2S9DtP/gwO76gUjGZ2X4P305stGdCmouZV5DmrAZFEI9h5Z2LyiabeI3EunWQayPqISexc0YMo5uJSIVJ4x2raD2N9GcLBMD/vDsCYdWddTJ09WODFEKUquqtIY+rlTGZN6vSsTqsnu8KkHdYchenxanJWavzUCYDyeqVl9akI0hgSfM770YlKPq2W/PZK630iyby5ObZ2mVpp+e4veQYvIV1zWdaJ6b/cj2WLOuI5WyRx30gQp7l+/QOVY3NnlfXHjo=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYYPR01MB15118.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(23010399003)(366016)(1800799024)(261026121527099003)(4143699003)(11063799006)(56012099006)(261021123027099003)(261021121427099003)(261022105027099003)(261022075727099003)(261009223027099003)(10067099003)(20046099003)(18002099003)(22082099003)(261026140227099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZDhaRFlJbjRUalpybXMyRDJwK1J6OFJhWTYrRyt5VU5nazNvMllkbzdva3hM?=
+ =?utf-8?B?OXRMRHpLRWpFcWIrc2dRTjF5a1NqY05MejZMbVdya3BEeGdLOVZjalpST0dk?=
+ =?utf-8?B?eExFOG9xR0RHcW81T25qbGthTWVrRzlWc25IemtxeFgrVjhoeHlPbXZlVjFl?=
+ =?utf-8?B?T1h4NGRGT2IrNHNna3lseXBadDlpS0pyYU54MEpRNk9ZTnZPZm15WlptY2JS?=
+ =?utf-8?B?aVZUUXRUelovZXQ2VFJuVW5qVHl3RTFXQlQ5TlZOaU44TW9JbkhKN0ticUJn?=
+ =?utf-8?B?bHg4dUpocEpVSlJIOXNBNk5nTWJrZFoyTUQwU2dTUnZBTDNiL0E3ankwS2pF?=
+ =?utf-8?B?bEt4V0hCendqQVZxVEFWWHRhR2lKbys4Sy9lUGhnYTBHc1ptcGs4bWVwMy8w?=
+ =?utf-8?B?a1RHU0RSdWRXNHBkWnBYdnp6RTBQR3pZK2IwS3dOMVBnNytFWTNJeWM2RTRw?=
+ =?utf-8?B?WWI0MUxYcnhJUDFHSlkwY2RYa0kwYy9JTEdDaS93bzU0TGZFQ1QrTGNTRnRH?=
+ =?utf-8?B?VTZDam9CZnhaK0dtNjAxL1dEb29EUnJwc0V4eXdaRXFCc1JEdzRBbi9sVVYz?=
+ =?utf-8?B?QVB6MXdUbkRRRGJHZzlXVGxzSjV0MXNnWlNTUFFVTnowMWQzeW5kcnB6WUtH?=
+ =?utf-8?B?cGdFc1NhVndMV1JaUzVIQ2xLdU5ESktXRElVSTZvUmpEYUVMSnd0dDh4bFVR?=
+ =?utf-8?B?QVcvZFVMSXVSRnhncjJPYkZpS1JpWjFaaENnZDZpTUJ6MzFzM1RVN1dCVTI5?=
+ =?utf-8?B?WkdaQnA3OUhTN1pKdU5HVTRldTg1RGJVc20zSTdLOHJaejdPVDhqUGtZMHgx?=
+ =?utf-8?B?V2ZubUF4YVgxZmJrTkxVVm1scW11YWc2M3FnWWJod0h2T1Fjb1I5cGxrdDV6?=
+ =?utf-8?B?Rk9xeFhhdzUrd0Z3YzM2dEQvU2l6ZzcrcU9zSUtZSkM0bWJiamxzWGc2L3lL?=
+ =?utf-8?B?TDd3aG5pdHlhYTZTd0VXZDI1N2FHcXh3ckI3RlcvWS8xeHp1a3BxdlNRWXpw?=
+ =?utf-8?B?T3JsR1ZUdSs3RGRrbXF0SVZvcWxDTHllQm9vWVo0M3dJWGMvcWdjNUNITHRN?=
+ =?utf-8?B?T0xwL3ZRbHdvRlUvL2hHWWRYZDBTcWtrYWZOOGloVmxHUURTekVQYTl5VkpJ?=
+ =?utf-8?B?Y2t5ZndjbmgwVGREMm9kclFCeFp6THBlWE5POExTT0ZQNE0zQUIwSk5sR2Y0?=
+ =?utf-8?B?aGZ0cmovZDFELzg4eDVrc0JGSnY5dkN4eTJzUUp4WnpXT1ppbnVyUmgrOVRQ?=
+ =?utf-8?B?UnJrb1BFNmJXM2tYRXJ0UlF2NDJmRUxxZXQ3T0RCdDlOdEEwNThicTdUTzlH?=
+ =?utf-8?B?WUN4Vmxac2hPanQ2eStyTHBkcDVDejlWemViV3BPRWVGRE43YjZCaUhDbjBU?=
+ =?utf-8?B?Z2svd0lONERLNlRESmNkaUVQZkNMeUhZZ1hjVnVDMkR4bVFWK0s1aXNvNmMv?=
+ =?utf-8?B?eWZ3dGtnU1diUzMyWDErNlVsdnp5YlRBZ3JGeXpNYzFtWTdxY0FiTnpHOFl2?=
+ =?utf-8?B?QTVaV0xYWSt3RHE4aUIwaHhMVlVqaGRGNlNFNVc5ejV3a3MranduZ3N2MndJ?=
+ =?utf-8?B?YXJ3V1hJZUpYMjdaUTJKYUQvOCtmSWlSZnRmWkRsaTVxN211N29PSWZkUTFk?=
+ =?utf-8?B?eHZtanUwVzlLMTlqd200SklnVVNoei96aHBKbXJ3eE9HN0FXb2t6R280TTRH?=
+ =?utf-8?B?cWxNOHRRcHh0RDVkY1E5VGFGeWxqclR5SlVmS0c4cUNIWmljN3FtSGhnNXpE?=
+ =?utf-8?B?TGdYL3YrWUlmSURFQWpRV3lNeUdNNmxOWGZCZzFSNWwzcGhydWVFWUJlS3Mv?=
+ =?utf-8?B?SytxdjVOcmt2WXBDUGdiNWVRdkRPd0JRUWE2UW12OG52OHFkdUhzQUdKak1s?=
+ =?utf-8?B?QUdIUHY1ZitiandhSWhGT0NCTHgwdEdpSnJjZlN5dlAwRG9VR1p0MSt6ZHJv?=
+ =?utf-8?B?c3F4dUtyYk12UGxzTkNROWVPYW45VlZ2OWFvNGdyOURIQlNUbG1GTW43WENL?=
+ =?utf-8?B?UEtFSmlQdDlWTlZ4d1hmeWJMVXRTVlhybUNXK0tLN1F0anQvZmtSMTlIaGdU?=
+ =?utf-8?B?TDZmWUhVOVBnQjBjUmZTR0RPblNGaXpXVFFyV2UwMnhYYVRPNkRTUHRRMVVt?=
+ =?utf-8?B?dVlaVnR6Y3VoVXErSWxNWmVQczdpMU1IVVl6eXQ4d2VjTWNjeXFGKzlMUGdR?=
+ =?utf-8?B?aHpGdlN6SUlzQUFxT3ZGOTZqZVdWTUVRcmFRME1ON2taNm5ZR1RrcllvdklK?=
+ =?utf-8?B?ZittOFptNEVZOXRRSmNrd2ZRSWZGek1TdHBzZjlkNUtPZVlJZSsvOFlqNXJP?=
+ =?utf-8?B?dU5IK1FNSXZ0bmp5VklzMFdFRDYram1Wem5HamZCTWpkbVc5bXpQQT09?=
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a2ed8308-4fab-48fa-4e62-08df337d2992
+X-MS-Exchange-CrossTenant-AuthSource: TYYPR01MB15118.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Oct 2026 16:21:17.4737
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: +i+v8MNA5SH5jZwocJFeeu6A3d64od6gCDvN4equuo4AOecRghlCzgY0eoV1Rpz7erT89xIbmf7d0icQxYJPrzAc6NZ0uOTNa0606dVFRc8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSCPR01MB13330
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261026_092141_835513_1640F816 
+X-CRM114-Status: GOOD (  23.03  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,164 +154,109 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Fri, 23 Oct 2026, Lakshay Piplani wrote:
+Hi Frank,
+
+On 10/20/2026 8:18 PM, Frank Li wrote:
+> On Tue, Oct 20, 2026 at 10:36:26AM +0100, Diogo Ivo wrote:
+>> The analog noise filter for the input terminals (I3C_SDA, I3C_SCL) of
+>> the Renesas I3C controller is controlled through the SYS_I3C_CFG
+>> register of the system controller. Document the
+>> renesas,analog-noise-filter property, which references the system
+>> controller together with the offset of the SYS_I3C_CFG register and
+>> the state of the filter: 1 enables the filter and 0 bypasses it.
+>>
+>> The property is optional: device trees not providing it keep the
+>> filter at its reset value.
+>>
+>> Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
+>> ---
+>>   .../devicetree/bindings/i3c/renesas,i3c.yaml          | 19 +++++++++++++++++++
+>>   1 file changed, 19 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+>> index 08fcea89a015..381807844351 100644
+>> --- a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+>> +++ b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+>> @@ -96,6 +96,25 @@ properties:
+>>         - const: presetn
+>>         - const: tresetn
+>>
+>> +  renesas,analog-noise-filter:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> 
+> I don't like this syscon property, look like it is one kind pad propterty.
+> Is it possible model as pinctrl?
+
+On the RZ/G3L and RZ/G3S this filter is not controlled on the pin 
+controller's address space but in the SYSC address space (hence the
+need for the sysc phandle).
+
+There are a few factors weighing against modeling this as pinctrl.
+
+The first is that the physical pads used by I3C are multiplexed between 
+it and for example RIIC3, so we are not filtering the pad but the 
+internal path of the I3C IP. The pinctrl does indeed have some controls 
+for the pad's digital filters, that apply to whatever block is 
+multiplexed to the pad.
+
+Besides this, even if it were moved to pinctrl we would still need the 
+sysc reference, as the pfc driver would need a way to reference the sysc 
+address space.
+
+With this, I think that having a DT property is the best approach. 
+However, the form of the property can be changed if you are against this 
+particular one. For example, the register offset can be moved to 
+platform_data in the I3C driver:
+
+  - renesas,analog-noise-filter = <&sysc 0/1> at the SoC level
+
+or I can also split it into two properties.
+
+What approach would work better here? Me I'm leaning towards having
+renesas,analog-digital-filter.
+
+Best regards,
+Diogo
 
 > 
-> NXP Confidential
-
-Really?
-
-> > -----Original Message-----
-> > From: Lakshay Piplani <lakshay.piplani@nxp.com>
-> > Sent: Tuesday, September 22, 2026 4:06 PM
-> > To: linux-kernel@vger.kernel.org; linux-i3c@lists.infradead.org;
-> > alexandre.belloni@bootlin.com; krzk+dt@kernel.org; robh@kernel.org;
-> > conor+dt@kernel.org; devicetree@vger.kernel.org; broonie@kernel.org;
-> > mfd@lists.linux.dev; lee@kernel.org; Frank Li <frank.li@nxp.com>;
-> > lgirdwood@gmail.com
-> > Cc: Vikash Bansal <vikash.bansal@nxp.com>; Priyanka Jain
-> > <priyanka.jain@nxp.com>; Aman Kumar Pandey
-> > <aman.kumarpandey@nxp.com>; Lakshay Piplani
-> > <lakshay.piplani@nxp.com>
-> > Subject: [PATCH v20 4/8] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
-> > and on-die regulator
-
-Why is your mailer adding headers?  Please configure it properly.
-
-> > From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> >
-> > Add core MFD support for the NXP P3H2x4x
-> > (P3H2440/P3H2441/P3H2840/P3H2841) family of multiport I3C hub devices.
-> > These devices connect to a host via I3C/I2C/SMBus and expose multiple
-> > downstream target ports.
-> >
-> > All variants share the same register interface. Read the implemented target-
-> > port count from DEV_CAPAB, so no per-compatible driver data is required.
-> >
-> > Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> > Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-> > Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
-> > Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> >
-> > ---
-> > Changes in v20:
-> >  - No change
-> >
-> > Changes in v19:
-> >  - Retain only nxp,p3h2840 in the OF match table because the other
-> >    variants use it as their fallback compatible
-> >
-> > Changes in v18:
-> >  - Rebased onto v7.3-rc1; no intended driver behaviour changes
-> >
-> > Changes in v17:
-> >  - No change
-> >
-> > Changes in v16:
-> >  - Use a named initializer for struct i2c_device_id
-> >   ({ .name = "nxp-i3c-hub" })
-> >  - Keep the shared header in include/linux/mfd/ (struct p3h2x4x is shared by
-> >    the mfd parent and its regulator/i3c-hub children). The i3c_hub_priv
-> >    back-pointer is retained for IBI routing, with documented publish/clear
-> >    ordering
-> >
-> > Changes in v15:
-> >  - Read the device capability register to determine whether the device has
-> >    four or eight target ports
-> >  - Store the detected target-port count in the shared MFD data
-> >  - Add OF match entries for all P3H2440, P3H2441, P3H2840 and P3H2841
-> >    variants
-> >  - Add a shared hub-context pointer for use by the IBI handler without
-> >    overwriting the MFD parent's driver data
-> >
-> > Changes in v14:
-> >  - Clean up MFD driver comments, formatting, variable names and author
-> >    information
-> >  - Define and document the I3C hub DCR value in hexadecimal form
-> >  - Use direct regmap bit-width values instead of local macros
-> >  - Add a shared protected_reg_lock for protected register accesses across
-> >    P3H2X4X child drivers
-> >
-> > Changes in v13:
-> >  - Use i3c_device helpers (i3cdev_to_dev()) instead of direct struct access
-> >    to maintain API abstraction
-> >  - Avoid including internal I3C headers and use public device headers instead
-> >  - Ensure proper device matching by relying on manufacturer ID checks in
-> > probe
-> >
-> > Changes in v12:
-> >  - No change, added Reviewed-By tag
-> >
-> > Changes in v11:
-> >  - Use MFD_CELL_NAME() for child device registration
-> >  - Rename local variables for consistency
-> >  - Rename driver names to follow subsystem conventions:
-> >    - Use '-' instead of '_' in driver names
-> >    - Drop the "_drv" suffix from driver names
-> >
-> > Changes in v10:
-> >  - Drop redundant is_p3h2x4x_in_i3c flag
-> >
-> > Changes in v9:
-> >  - Renamed macros to follow consistent uppercase naming conventions
-> >  - Made REGMAP selects in the P3H2X4X MFD Kconfig conditional,
-> >    to avoid I3C/I2C dependency issues
-> >
-> > Changes in v8:
-> >  - No change
-> >
-> > Changes in v7:
-> >  - Use new config I3C_OR_I2C
-> >
-> > Changes in v6:
-> >  - No change
-> >
-> > Changes in v5:
-> >  - Corrected the ordering in the Makefile and Kconfig for MFD_P3H2X4X
-> >  - Updated dev_err_probe() for regmap_init failure.
-> >  - Updated module description
-> >
-> > Changes in v4:
-> >  - Split the driver into three separate patches(mfd, regulator and I3C hub)
-> >  - Added support for NXP P3H2x4x MFD functionality
-> > ---
-> > ---
-> >  MAINTAINERS                 |   2 +
-> >  drivers/mfd/Kconfig         |  13 +++
-> >  drivers/mfd/Makefile        |   1 +
-> >  drivers/mfd/p3h2840.c       | 164 ++++++++++++++++++++++++++++++++++++
-> >  include/linux/i3c/device.h  |   2 +
-> >  include/linux/mfd/p3h2840.h |  41 +++++++++
-> >  6 files changed, 223 insertions(+)
-> >  create mode 100644 drivers/mfd/p3h2840.c  create mode 100644
-> > include/linux/mfd/p3h2840.h
-> >
+> Frank
 > 
-> Hi Lee,
-> 
-> Alexandre has already applied patches 1/8, 2/8, 3/8 and 6/8 from the v20 series.
-> 
-> Patches 4/8, 5/8, 7/8 and 8/8 remain outstanding, with patch 4/8 providing the MFD core required by the remaining patches.
-> 
-> Do you plan to pick patch 4/8 through the MFD tree, or would you prefer it to go through the I3C tree with your Reviewed-by?
+>> +    description:
+>> +      Analog noise filter for the I3C input signals (I3C_SDA, I3C_SCL),
+>> +      controlled through the SYS_I3C_CFG register of the system
+>> +      controller (SYSC). Three entries specifying the system controller,
+>> +      the offset of the SYS_I3C_CFG register and the state of the filter.
+>> +      If not present, the filter keeps its reset state.
+>> +    items:
+>> +      - items:
+>> +          - description: phandle to the system controller node
+>> +          - description: offset of the SYS_I3C_CFG register within the SYSC
+>> +          - enum: [0, 1]
+>> +            description: |
+>> +              state of the analog noise filter:
+>> +               - 1: enable the filter, performing noise reduction on the
+>> +                 I3C_SDA and I3C_SCL input signals
+>> +               - 0: bypass the filter
+>> +
+>>   required:
+>>     - compatible
+>>     - reg
+>>
+>> --
+>> 2.56.0
+>>
 
-I'd be happy to apply the MFD patch and the dependents.
-
-However, right now it looks like you have a bunch of Sahiko issues
-pending.  Is that the case?
-
--- 
-Lee Jones
 
 -- 
 linux-i3c mailing list
