@@ -2,79 +2,143 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0BCC760A2605
-	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 11:00:58 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 20BC8606A31F
+	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 14:28:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=gQlOoqPo;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=T5klA8w8
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wglOZFhy;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=NG5TJsrT
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Rfa2YJMUmSo5oJml++nPWSLkZIcDraTDO70NPRi0rmM=; b=gQlOoqPogV9dM+ktvOjtknvN2v
-	wRWw3VgHIoARx/R4zOnOyEC/GTgIz/FSiF9VvyHoJhHHJYY6Ob8osFR4eakCImIzhng6hOZWWv1tp
-	Kd4j+KuTAZGvV6tgA2WFz6+Yomzm162vsR39NdA/htyM+VL4Zz7YaGbZRmMp+Rv1PD7Auf4R3XcQf
-	18TZWUBfth/134zGgU4tpH2SODYAMmpiD2bCYWS8p7ApFFcq+xQ/yML1o3txOhZqFc8NKzkMMuZ2X
-	rBsABKXvGJ8UCELoW7z7YK5TfChQFAO8D2RLJ4pLOYtrxNvwLICfy1ZtgngtZ8jear66i3eqol3FB
-	eqp72K5A==;
+	bh=PrGYNZI5Z4doBCpRQvLBIgfrrunSlFLpnytTVvDOCv8=; b=wglOZFhy3J/iHHyBkaxnuw/4+i
+	hcIRnOyanZs480oTTlByW7omV1YxwpWCndfbiel4zCW/oC+6KcDcF6KsUD4IT50uHHNkGnmVkwHpA
+	zMJqIkbaAPoEOILfdPSHMZYTihjuwVd1qoyjI/Ziwk/UYDRF4yQV5uZvbrTjaFr1Pu6Aafre6kvGZ
+	Wdi2xHzSUrh257L4n9m88pRA/JgHNkPi1E++BnnKGV+2o7cPJ2jUTtgqq9Cys0q4mKs0Nh1a8vPyK
+	3ngT8TqEVu/W4SWBT6ha2/NxCh/bDnUJI0kC4qIAdixFG/5QvMWBlaCqTEk86YLiAtvLyKyFw0PDZ
+	rMtzBn3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLevJ-00000004NOq-2KmC;
-	Tue, 27 Oct 2026 11:00:57 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
-	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJDw1-0000000ANh6-2530;
-	Tue, 20 Oct 2026 17:47:37 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0270143834;
-	Tue, 20 Oct 2026 17:47:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1C7C1F000C9;
-	Tue, 20 Oct 2026 17:47:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792518456;
-	bh=HAHTPseBysoQyjFWdWhxEUoIlAFSx4P0uFPxuTZC58E=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=T5klA8w8ldhaGXex5p2C1vk2XmCWEI5ePLrDsiyhXLVFchdZEn+v5/j//jHND7keT
-	 Meqe1HYRaPtXccMkRp824RMlBY/ggOISFpPO91xfQXQlxRa2BEF/hHxRG/jK8L1CgQ
-	 9muVPdNXFcV74oJ2Dgz4HaRViQo1tQbIdaPr+01vyY4wLmybDhkP+Vl1I+bioV+Ygq
-	 uCkDYDCq983KX1BvcP2HAwIVds8N7k+Rqtsxjca0Ovu269GytYQIsu/QGvdh3m3Bcg
-	 UwXzztQF8VoJ3nyz6bU2aIRxqOIpInSrUm2TtfG3URLEtNoUiddkCE0GL6sKdGKVFJ
-	 c6nOo9rgiy+pg==
-Date: Tue, 20 Oct 2026 18:47:29 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Jisheng Zhang <jszhang@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	Brian Masney <bmasney+clk@redhat.com>,
-	Jerome Brunet <jbrunet+clk@baylibre.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
+	id 1xLi9w-0000000522h-3XDX;
+	Tue, 27 Oct 2026 14:28:16 +0000
+Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xLi9r-00000005220-1fgw
+	for linux-i3c@lists.infradead.org;
+	Tue, 27 Oct 2026 14:28:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Pj4WoSXlHfDQhu3AUHgHHWPEBtYsf7qNLIW+KpV0diU1+I8T45XQrOVNHbnnBbytzt/oUB3LNPZ60qxuGmxa4qZNKbg7AGlTFHmGf73f1+K3r98f1NgyFgElusTOFJ0FpeVR9jrHnHCo7zhTu1Go27+sx1NyKMoWl54NAhQMU0t915kJH3GQ9fwg3XZM+bWd1OlgSsEoYa1SCKBbSWIlw6fOD2IZ7QTdbivCt09XFkhF6g21lBzkP2/qqt1FwxpkR3irUIevLRM9A6lIdO1a0VF1KMI9H4CXiBPIPAqHUvotNCRHA55bEzQ4Wj63xeVPgsrbHQKAizj/KrvOGrpThg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=m4ny03zCi4eHHuiZ6QF9KU9QJWLmZoCeRkXIeUWyfH0=;
+ b=VHmWFhX9bbPSG0lic7RPme6hxMT60oXIzk+557fOpURv2x6HUD25+rhef1J3WKGbPFkrAyixrABBoKIJa+14waTT8NNiv4noGrYxhW+lT4StPGnFwZtXzMnKGi9UxcX0dWNPBeGpd9rcgFNJgdupxnmxv8YmvgZahq3j6xm6wNF3WSc90is4/yRQcW78cDHbr7X0UcOtcRGUpuHKwRLGO5alm8fPBq/BhQJnvyfc00AQ/6ly/10jFMGdZJjbktZ0D4HQLzdbOeSAitEL+gAbIn8RQLG66xXvoq3KyWxuILBd7Awj3PgfzZ6wug3BpXj488zTPg2dRz2p0nz5pCXqTg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=m4ny03zCi4eHHuiZ6QF9KU9QJWLmZoCeRkXIeUWyfH0=;
+ b=NG5TJsrTeG8jcm5n32KjfwR98MRfvhoYVO76f83kO9huh/2l0ew5UN98TrVeai16k97cQF0IghrlaTdZI87+z5G0zdTIbGyAJq6kArp86XIT838N4NmcyOZdO+/5MUy3Qcp1021Zb27Ir6K0VMIjrcyrLI0F+asQ3fWfNxgBoJmi1jHGBxuK3iUe0Iyn5SWHi0jgUMDE88m3mP6OLgGx1Cb2gaGwP2TE9e2P0U/NbMG5qupE8+gNBU5X2GmT0+vwPcybaRHKWc3tMyeU+tWtojwJNLwpRgiFprbG7Dq+oiwCwM9vs/cO79WgB8o98BNbj/b1xxC4XySvVak8xOOxQg==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
+ by PA1PR04MB11472.eurprd04.prod.outlook.com (2603:10a6:102:4e2::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.546.22; Tue, 27 Oct
+ 2026 14:28:05 +0000
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b%6]) with mapi id 15.21.0546.021; Tue, 27 Oct 2026
+ 14:28:04 +0000
+Date: Tue, 27 Oct 2026 09:27:54 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Diogo Ivo <diogo.ivo.sx@renesas.com>
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Lee Jones <lee@kernel.org>,
-	Linus Walleij <linusw@kernel.org>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Jiri Slaby <jirislaby@kernel.org>,
-	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
-	linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 04/20] dt-bindings: i3c: dw: support up to two reset lines
-Message-ID: <20261020-endocrine-crown-c6d3c83cf436@spud>
-References: <20260929061417.20733-1-jszhang@kernel.org>
- <20260929061417.20733-5-jszhang@kernel.org>
- <80b084d130b7dc7406ae23e54a77706a4f42b606.camel@pengutronix.de>
- <ata--JFFUzSoMock@xhacker>
+	linux-renesas-soc@vger.kernel.org,
+	Linus Walleij <linusw@kernel.org>
+Subject: Re: [PATCH 1/3] dt-bindings: i3c: renesas,i3c: Document analog noise
+ filter control
+Message-ID: <auC06gqa5lGtKPjj@SMW015318>
+References: <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-0-b7ad60cde650@renesas.com>
+ <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-1-b7ad60cde650@renesas.com>
+ <ate-aNmqsyXCAIX8@lizhi-Precision-Tower-5810>
+ <64f604a7-7e70-4a0d-8164-28c5d7b1e509@renesas.com>
+ <at-5E3b_wKcnuJ9Z@lizhi-Precision-Tower-5810>
+ <f4b8a714-dab8-45d4-b98f-717d010806de@renesas.com>
+Content-Disposition: inline
+In-Reply-To: <f4b8a714-dab8-45d4-b98f-717d010806de@renesas.com>
+X-ClientProxiedBy: DM6PR03CA0101.namprd03.prod.outlook.com
+ (2603:10b6:5:333::34) To MI3PR04MB12438.eurprd04.prod.outlook.com
+ (2603:10a6:290:76::14)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <ata--JFFUzSoMock@xhacker>
-X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:49 -0700
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|PA1PR04MB11472:EE_
+X-MS-Office365-Filtering-Correlation-Id: 65d35601-e07a-40ff-f088-08df34368341
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|23010399003|19092799006|1800799024|366016|18002099003|6133799003|22082099003|261026140227099003|3023799007|261021121427099003|56012099006|4143699003|11063799006|261021123027099003|10067099003|261009223027099003|261022105027099003|261026121527099003;
+X-Microsoft-Antispam-Message-Info: fQ9VuM0nCK0QtwnZSTSGPspwpDFRMbHjwK6bY8SPCBXt4d8SryqRaDvASsXzF+6W3ZHbKVs9HDumPg8HvSiOqKz2DgwftI1UMkW3dvcRdT3HVCz8laFsOTzMrnyyH72YAOmFJ9Iid/lU/BH2Mb+bcgnkdO5Fri720qeNeWvE5T/ZqxM0zvse7xQYicMAjyHzzttmvpKpYVKTIy7eZUFmkvFwdKLkQ+4+0jgoKhnebN12IAMSdZAWRA2474Rfy/AinUMLNVO3EgMA8fAs3OqUE6fY9kFeWNciecqCKlls921H731DguXJtcNbAYUvmo1goIcn3d6QXA7X6y32GKIyB/PLPodpdWM2x0YjrUJCiVMxg1DigxXWmzWcToUTMbKZn6lwTbVCFZK9Qoj8J8IAdr9EjyZGkZ/Rc1Ww4cArY+bH27mJOqwQrQ1LA3fvvzF6WMHFSV60pUYAD4y9vXju+8G1JQiRoqyl8ErJ/64KG9OaA55VRe2L/JpChW5XnhQI+OCdPPUchCqsXCh2k0YIyZdYp38nVlaFxfhbg12YmMNPrPZOvoYbv1IRrzAK5ae+PdQUt+OouMiS5YH1uaB/k1B2ShhL/R4u/EilHQTpOAbYdIXk/FRxwOgtlCpQj7080eC9agwt+FOr5QQj33Nfbtm0rUR8ZwJ3Qav7Z/I9V10=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(23010399003)(19092799006)(1800799024)(366016)(18002099003)(6133799003)(22082099003)(261026140227099003)(3023799007)(261021121427099003)(56012099006)(4143699003)(11063799006)(261021123027099003)(10067099003)(261009223027099003)(261022105027099003)(261026121527099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?nD9B/9LX6l1s5eCoZncndy/ixTlS3nTR5aX32XPiaN+sZ6cK7Vtq659YqKIU?=
+ =?us-ascii?Q?nzdZfoy6orgIuZXXtILtZro2aHQZGiYG3jBjzPQ1kWZMUnXt7ql2EM29XyyK?=
+ =?us-ascii?Q?B9f/Bl14AZBRA+BNTJ0H81Qyp6YQPiAOy9wYlEPD5ic3hh+iFtNDM/FjiOkW?=
+ =?us-ascii?Q?Pc+8howsRhtosi+Poel7uLRzCnDjoJw4ZxnrpEYsWwyTE/MUDOP3+alBkBnD?=
+ =?us-ascii?Q?DcJQsCqpWq1Y72O8k8IerqEmaRDu3dfBAUeHJA6IGVXYG0zG2ptNXJjtaRjM?=
+ =?us-ascii?Q?z3KRzn+84ez/mPjJyDFDed3wjbkaAF4jhYGH9Iili5Jlv+2Yt9eAcBidT05H?=
+ =?us-ascii?Q?RzuQ/JVx9+qtB1F/PpzLB0zcVZIAbb+xzT8A7I6ZbT+YBWd6aTYU7JALkZMg?=
+ =?us-ascii?Q?rVOKM2DQsS3qWRDnzer3AX5S+pR4Njyi9zjOHAMJOf3S7JgCwn8SPnYMpYo6?=
+ =?us-ascii?Q?UE0AlD3UPG39Vnv8ceJepBSGUq4rsAiCEtg3V5X8LIoPKupzdOydpgCOolce?=
+ =?us-ascii?Q?WLPBXRAfmYjeLALYLZpTVG4FR749TvAd+SBbrdO536ZrwU8dA1THF+TfhqWC?=
+ =?us-ascii?Q?aDhldgBGS0IspiKjJSVuon6hZu1gSU8PZDE4MOqy4MRFWtkqYDRd/BtU80pi?=
+ =?us-ascii?Q?qgyf8TG5gP5hZZ/zo76YURNeKR73Azmr44fmEXS0TUwGruEhju56GU1ojYm3?=
+ =?us-ascii?Q?mgwKQTKc4jfKAYHVZGin3wmXqSKdfijS7/CVuhxwvTqcy8iOGX9RPPk70vaO?=
+ =?us-ascii?Q?UISERTQnaCLp6dRpoDcROAHBKE65UUJ5zXlig1xFXk+ABCmejIxTbgM/KrCY?=
+ =?us-ascii?Q?Sf1yMn0DxWR1Q/BBuR2vspomPUGnywHYQm7Y7sWOfk3c0aNbxFAph3ZVOfnJ?=
+ =?us-ascii?Q?sFa0e5Bnni/UnAjt0OgYE7F1PWzCdCNDKsjWsKDkVZ4rStTP1cEFDlSxkrUC?=
+ =?us-ascii?Q?OUEJZ4zHqH0glhlc9wwhes6hXB/zEZAoaZk8RfPKWaA7cqcVNLIRMqtG++Df?=
+ =?us-ascii?Q?oNnrUJnSRnmiN+P3pZEvoby9g9uuvY3cAtBtP3c+tFp6t8cWbfxBJwgLMK/z?=
+ =?us-ascii?Q?6hse5HABnzuA1bmtOWMCidnJcyQSF1B7P2I4JGYjZajdI30O9EYm8/+hrOEr?=
+ =?us-ascii?Q?iA4tL6+QP9tE7al1UepXYGNObbP68sO6ssEnu8lGGjDDDBbEGQWFIFMkZTjb?=
+ =?us-ascii?Q?QtxoXnmTmLC/zbQCrnY74qkt+RaZPIqZOaoaLiBjuz0GUWqAxDCOogc44YDZ?=
+ =?us-ascii?Q?hXHlyfVNm7IS+ntauR+Dpb6zGZ04fJhPsuT7NP9AXg/cgPaoJGdYIYWdamga?=
+ =?us-ascii?Q?IS5xdRmz7NLTzc9SJ8L0iDmc+3wtdjhmEfsSyViNwBPX4fhQdgtXM58V8dXr?=
+ =?us-ascii?Q?HesBYw9IS+iWlSA1+2BUFZ5tfohuInbgKfUs/07h7UkHSxjSMw1pp0dZdT92?=
+ =?us-ascii?Q?FXuSVMZ4BnKqD06QMsm4QGU8UCFefiw7LEXRXOoUjHd9qK2u2rCGJNANwh2U?=
+ =?us-ascii?Q?vZORRQo1vfoMyoI30tUkC+diylP0BbI77doxSorYFT2V1H4GQBhRWpG5sKgV?=
+ =?us-ascii?Q?oKyn7um7HhgpywzozpCfkG0h9vAXQJh33VR/GnQFWlBDCKY+B/iAAtKMyMd2?=
+ =?us-ascii?Q?Vh8Zvzm9TCtMJz44wnU2P9yugyAXhHP0/GpQ3YauQ5SEKoCRRVK5kDm4SW+a?=
+ =?us-ascii?Q?kv8ubmdwG62BWothQ7QLCxeRQzpvRxaJRSeqbWaMeki0PVE5SzfzyYRponc2?=
+ =?us-ascii?Q?Gvd5baZG1oiKaCzO2OyyBcn6hkYXpO7tsMx+bPNLZyUHW6qLIz6T?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 65d35601-e07a-40ff-f088-08df34368341
+X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2026 14:28:04.6824
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 2KLtfra2eJva9GoTqSo1Hz3phyH8oPPIgnYDFfWy0dCyn3faT5l7Z6z3yo4N4xbLdYTc64sKpcp2lGlG6RdvLIkr8sgmlpxusJEAHKuJNvNDbF03udUOOcdOAgapRJs7
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB11472
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261027_072811_917174_A1190D0E 
+X-CRM114-Status: GOOD (  35.54  )
+X-Spam-Score: 0.0 (/)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,72 +148,94 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1967827156896458019=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============1967827156896458019==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="PF0S8SXN4APeQtUF"
-Content-Disposition: inline
+On Tue, Oct 27, 2026 at 10:34:54AM +0000, Diogo Ivo wrote:
+> On 10/26/2026 8:33 PM, Frank Li wrote:
+> > On Mon, Oct 26, 2026 at 04:21:06PM +0000, Diogo Ivo wrote:
+> > > Hi Frank,
+> > >
+> > > On 10/20/2026 8:18 PM, Frank Li wrote:
+> > > > On Tue, Oct 20, 2026 at 10:36:26AM +0100, Diogo Ivo wrote:
+> > > > > The analog noise filter for the input terminals (I3C_SDA, I3C_SCL) of
+> > > > > the Renesas I3C controller is controlled through the SYS_I3C_CFG
+> > > > > register of the system controller. Document the
+> > > > > renesas,analog-noise-filter property, which references the system
+> > > > > controller together with the offset of the SYS_I3C_CFG register and
+> > > > > the state of the filter: 1 enables the filter and 0 bypasses it.
+> > > > >
+> > > > > The property is optional: device trees not providing it keep the
+> > > > > filter at its reset value.
+> > > > >
+> > > > > Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
+> > > > > ---
+> > > > >    .../devicetree/bindings/i3c/renesas,i3c.yaml          | 19 +++++++++++++++++++
+> > > > >    1 file changed, 19 insertions(+)
+> > > > >
+> > > > > diff --git a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> > > > > index 08fcea89a015..381807844351 100644
+> > > > > --- a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> > > > > +++ b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> > > > > @@ -96,6 +96,25 @@ properties:
+> > > > >          - const: presetn
+> > > > >          - const: tresetn
+> > > > >
+> > > > > +  renesas,analog-noise-filter:
+> > > > > +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> > > >
+> > > > I don't like this syscon property, look like it is one kind pad propterty.
+> > > > Is it possible model as pinctrl?
+> > >
+> > > On the RZ/G3L and RZ/G3S this filter is not controlled on the pin
+> > > controller's address space but in the SYSC address space (hence the
+> > > need for the sysc phandle).
+> > >
+> > > There are a few factors weighing against modeling this as pinctrl.
+> > >
+> > > The first is that the physical pads used by I3C are multiplexed between it
+> > > and for example RIIC3, so we are not filtering the pad but the internal path
+> > > of the I3C IP. The pinctrl does indeed have some controls for the pad's
+> > > digital filters, that apply to whatever block is multiplexed to the pad.
+> > >
+> > > Besides this, even if it were moved to pinctrl we would still need the sysc
+> > > reference, as the pfc driver would need a way to reference the sysc address
+> > > space.
+> >
+> > System allows multi pinctrl devices. your syscon can work as pinctrl provider
+> >
+> > pinctrl-0 = <&your nomral pinctrl>, <&syscon i3c ... > ;
+> >
+> > The key problem is if model is resonable. Syscon is simple, but have not
+> > good abstract.
+>
+> Doing this in pinctrl is feasible, especially since the pinctrl driver on
+> G3L already has a reference to syscon for clone channels. The question
+> really is if this is what makes the most sense, as again we are not really
+> controlling an external pin but something inside the IP
+> block,
 
---PF0S8SXN4APeQtUF
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I don't think so. Generally, PAD some property, like pull up/down, driver
+strength, some include glitch filter (capacitor or schmitter trigger),
 
-On Tue, Oct 20, 2026 at 09:08:08AM +0800, Jisheng Zhang wrote:
-> On Mon, Oct 19, 2026 at 02:55:14PM +0200, Philipp Zabel wrote:
-> > On Di, 2026-09-29 at 14:14 +0800, Jisheng Zhang wrote:
-> > > The Synopsys DesignWare I3C master controller can have multiple reset
-> > > lines, such as core reset, apb reset, and dma reset.
-> > >=20
-> > > Update the DT binding documentation to increase maxItems for the rese=
-ts
-> > > property to 2.
-> >=20
-> > The last sentence just listed three reset lines. Why increase to 2?
->=20
-> Per the doc, the last one is dma reset, currently dw I3C driver doesn't s=
-upport dma.
-> And increasing it to 3 is still dt compatible. Maybe I misunderstood
-> something. what's more, I don't have platforms with all 3 resets to test =
-and verify.
->=20
-> If dt maintainers prefer 3 in one step, I will sent out a follow-up patch.
+'renesas,analog-noise-filter' like adjust some capacitor at PAD, only
+controler signal (register) is not in your pinctrl region.
 
-I think you can increase it to 3 globally, then restrict to 1 for the
-altera device and 2 for your new one.
+There are not analog-noise in side SOC's digtial part (Or we can't care it).
+Analog sigal generally existed in PHY and PAD.
 
---PF0S8SXN4APeQtUF
-Content-Type: application/pgp-signature; name=signature.asc
+Frank
 
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCatepLgAKCRB4tDGHoIJi
-0nTbAP41tIofP+UpvSN0IwKJvT76VMbRwSrA7SIYBjKeyCaPgwEA7iCZGXK59MXH
-F8eKb5c+ngwawXhmX7aqW4NflYqjyAY=
-=Yxu4
------END PGP SIGNATURE-----
-
---PF0S8SXN4APeQtUF--
-
-
---===============1967827156896458019==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> so I'm still not fully convinced. Are there more opinions on this?
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============1967827156896458019==--
-
