@@ -2,143 +2,63 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 20BC8606A31F
-	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 14:28:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90A94606A31D
+	for <linux-i3c@archiver.kernel.org>; Wed, 28 Oct 2026 10:13:12 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wglOZFhy;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=NG5TJsrT
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=5GBxR3Pn;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=Y32I/9WL
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=PrGYNZI5Z4doBCpRQvLBIgfrrunSlFLpnytTVvDOCv8=; b=wglOZFhy3J/iHHyBkaxnuw/4+i
-	hcIRnOyanZs480oTTlByW7omV1YxwpWCndfbiel4zCW/oC+6KcDcF6KsUD4IT50uHHNkGnmVkwHpA
-	zMJqIkbaAPoEOILfdPSHMZYTihjuwVd1qoyjI/Ziwk/UYDRF4yQV5uZvbrTjaFr1Pu6Aafre6kvGZ
-	Wdi2xHzSUrh257L4n9m88pRA/JgHNkPi1E++BnnKGV+2o7cPJ2jUTtgqq9Cys0q4mKs0Nh1a8vPyK
-	3ngT8TqEVu/W4SWBT6ha2/NxCh/bDnUJI0kC4qIAdixFG/5QvMWBlaCqTEk86YLiAtvLyKyFw0PDZ
-	rMtzBn3Q==;
+	bh=AnsO1nZA9cXxxhtuwMrzCxJ/KY/3XurW1mVLQ1Yw7ro=; b=5GBxR3PnO7qGUxDht5rLhd5tnD
+	1NGrOl2slnI3BzE/bHC8nfyblnG4C3jqR0yqqZMMaPWSarwSQlqJjkyySA9rLhPztCoKBdgcSArYQ
+	LzHzeyC7DEfsSj1Urqtqye/33ifFCX5IZ1FgDnp6Hgl+yTyJStjxUnvuo/9PPtj374RQvLvi2hp6Y
+	mQ77J1sdSZBxDyVMh2NuJaPFfnEW0AnqLP3LPGS1/aoHD79NV8Sus/9CVDPSP2uUj0ZjUB7vcshoy
+	x7+Avwv7Cx2GYN3ydORXWN1oB2aKsiThKxno8Fv38lQ7UyatwLkK3sM8XHbRoA+w+paJtxBYuZ07T
+	/r41Fiig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLi9w-0000000522h-3XDX;
-	Tue, 27 Oct 2026 14:28:16 +0000
-Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
+	id 1xM0ee-00000006jTp-0GtF;
+	Wed, 28 Oct 2026 10:13:12 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLi9r-00000005220-1fgw
+	id 1xM0eZ-00000006jTT-2Tr3
 	for linux-i3c@lists.infradead.org;
-	Tue, 27 Oct 2026 14:28:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Pj4WoSXlHfDQhu3AUHgHHWPEBtYsf7qNLIW+KpV0diU1+I8T45XQrOVNHbnnBbytzt/oUB3LNPZ60qxuGmxa4qZNKbg7AGlTFHmGf73f1+K3r98f1NgyFgElusTOFJ0FpeVR9jrHnHCo7zhTu1Go27+sx1NyKMoWl54NAhQMU0t915kJH3GQ9fwg3XZM+bWd1OlgSsEoYa1SCKBbSWIlw6fOD2IZ7QTdbivCt09XFkhF6g21lBzkP2/qqt1FwxpkR3irUIevLRM9A6lIdO1a0VF1KMI9H4CXiBPIPAqHUvotNCRHA55bEzQ4Wj63xeVPgsrbHQKAizj/KrvOGrpThg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=m4ny03zCi4eHHuiZ6QF9KU9QJWLmZoCeRkXIeUWyfH0=;
- b=VHmWFhX9bbPSG0lic7RPme6hxMT60oXIzk+557fOpURv2x6HUD25+rhef1J3WKGbPFkrAyixrABBoKIJa+14waTT8NNiv4noGrYxhW+lT4StPGnFwZtXzMnKGi9UxcX0dWNPBeGpd9rcgFNJgdupxnmxv8YmvgZahq3j6xm6wNF3WSc90is4/yRQcW78cDHbr7X0UcOtcRGUpuHKwRLGO5alm8fPBq/BhQJnvyfc00AQ/6ly/10jFMGdZJjbktZ0D4HQLzdbOeSAitEL+gAbIn8RQLG66xXvoq3KyWxuILBd7Awj3PgfzZ6wug3BpXj488zTPg2dRz2p0nz5pCXqTg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=m4ny03zCi4eHHuiZ6QF9KU9QJWLmZoCeRkXIeUWyfH0=;
- b=NG5TJsrTeG8jcm5n32KjfwR98MRfvhoYVO76f83kO9huh/2l0ew5UN98TrVeai16k97cQF0IghrlaTdZI87+z5G0zdTIbGyAJq6kArp86XIT838N4NmcyOZdO+/5MUy3Qcp1021Zb27Ir6K0VMIjrcyrLI0F+asQ3fWfNxgBoJmi1jHGBxuK3iUe0Iyn5SWHi0jgUMDE88m3mP6OLgGx1Cb2gaGwP2TE9e2P0U/NbMG5qupE8+gNBU5X2GmT0+vwPcybaRHKWc3tMyeU+tWtojwJNLwpRgiFprbG7Dq+oiwCwM9vs/cO79WgB8o98BNbj/b1xxC4XySvVak8xOOxQg==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
- by PA1PR04MB11472.eurprd04.prod.outlook.com (2603:10a6:102:4e2::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.546.22; Tue, 27 Oct
- 2026 14:28:05 +0000
-Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
- ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
- ([fe80::c715:c32:8bb1:b70b%6]) with mapi id 15.21.0546.021; Tue, 27 Oct 2026
- 14:28:04 +0000
-Date: Tue, 27 Oct 2026 09:27:54 -0500
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Diogo Ivo <diogo.ivo.sx@renesas.com>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Linus Walleij <linusw@kernel.org>
-Subject: Re: [PATCH 1/3] dt-bindings: i3c: renesas,i3c: Document analog noise
- filter control
-Message-ID: <auC06gqa5lGtKPjj@SMW015318>
-References: <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-0-b7ad60cde650@renesas.com>
- <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-1-b7ad60cde650@renesas.com>
- <ate-aNmqsyXCAIX8@lizhi-Precision-Tower-5810>
- <64f604a7-7e70-4a0d-8164-28c5d7b1e509@renesas.com>
- <at-5E3b_wKcnuJ9Z@lizhi-Precision-Tower-5810>
- <f4b8a714-dab8-45d4-b98f-717d010806de@renesas.com>
-Content-Disposition: inline
-In-Reply-To: <f4b8a714-dab8-45d4-b98f-717d010806de@renesas.com>
-X-ClientProxiedBy: DM6PR03CA0101.namprd03.prod.outlook.com
- (2603:10b6:5:333::34) To MI3PR04MB12438.eurprd04.prod.outlook.com
- (2603:10a6:290:76::14)
+	Wed, 28 Oct 2026 10:13:10 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 93FDF1A1377
+	for <linux-i3c@lists.infradead.org>; Wed, 28 Oct 2026 10:13:02 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 6021D60769;
+	Wed, 28 Oct 2026 10:13:02 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 9E68910329092;
+	Wed, 28 Oct 2026 11:13:00 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1793182381; h=from:subject:date:message-id:to:cc:mime-version:content-type;
+	bh=ubjEcerpRYPkrBmSQwo5V4W5j9UQ8STAOxq9l3KgdhY=;
+	b=Y32I/9WLzaPlwIj+mxfZ/HpWH7Un45e7Ahgutq1FG6U2toCHBXBGO14FoK3dsBY/0j9WWk
+	y187cJNvUOe3o2z29mEPbpsXFSQ3lUa21MggROM8RxLR16bxf3Y/8uQvMOlpKlYHe961Ws
+	QITSz4QfWsLmHSD6zQkv6gzbmIVY0u4Mdzv2m7kBiJ+tajt5y14PMkfWKcC+1qpSoHWC6A
+	v0jF9LVBHrkBSBKmcc7tWkAxWfZf9MG/NCfeG1LXx8GnP35sAXOzyWJNZx8mMGTWFrUgwI
+	VKdIUmsZdENydcaY1mse15Sbx56oNy+21pfBMn/NiigbTScV8/c1ZOfjht746w==
+Date: Wed, 28 Oct 2026 11:12:59 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [GIT PULL] I3C changes for 7.4
+Message-ID: <20261028101259ce32989d@mail.local>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|PA1PR04MB11472:EE_
-X-MS-Office365-Filtering-Correlation-Id: 65d35601-e07a-40ff-f088-08df34368341
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|23010399003|19092799006|1800799024|366016|18002099003|6133799003|22082099003|261026140227099003|3023799007|261021121427099003|56012099006|4143699003|11063799006|261021123027099003|10067099003|261009223027099003|261022105027099003|261026121527099003;
-X-Microsoft-Antispam-Message-Info: fQ9VuM0nCK0QtwnZSTSGPspwpDFRMbHjwK6bY8SPCBXt4d8SryqRaDvASsXzF+6W3ZHbKVs9HDumPg8HvSiOqKz2DgwftI1UMkW3dvcRdT3HVCz8laFsOTzMrnyyH72YAOmFJ9Iid/lU/BH2Mb+bcgnkdO5Fri720qeNeWvE5T/ZqxM0zvse7xQYicMAjyHzzttmvpKpYVKTIy7eZUFmkvFwdKLkQ+4+0jgoKhnebN12IAMSdZAWRA2474Rfy/AinUMLNVO3EgMA8fAs3OqUE6fY9kFeWNciecqCKlls921H731DguXJtcNbAYUvmo1goIcn3d6QXA7X6y32GKIyB/PLPodpdWM2x0YjrUJCiVMxg1DigxXWmzWcToUTMbKZn6lwTbVCFZK9Qoj8J8IAdr9EjyZGkZ/Rc1Ww4cArY+bH27mJOqwQrQ1LA3fvvzF6WMHFSV60pUYAD4y9vXju+8G1JQiRoqyl8ErJ/64KG9OaA55VRe2L/JpChW5XnhQI+OCdPPUchCqsXCh2k0YIyZdYp38nVlaFxfhbg12YmMNPrPZOvoYbv1IRrzAK5ae+PdQUt+OouMiS5YH1uaB/k1B2ShhL/R4u/EilHQTpOAbYdIXk/FRxwOgtlCpQj7080eC9agwt+FOr5QQj33Nfbtm0rUR8ZwJ3Qav7Z/I9V10=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(23010399003)(19092799006)(1800799024)(366016)(18002099003)(6133799003)(22082099003)(261026140227099003)(3023799007)(261021121427099003)(56012099006)(4143699003)(11063799006)(261021123027099003)(10067099003)(261009223027099003)(261022105027099003)(261026121527099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?nD9B/9LX6l1s5eCoZncndy/ixTlS3nTR5aX32XPiaN+sZ6cK7Vtq659YqKIU?=
- =?us-ascii?Q?nzdZfoy6orgIuZXXtILtZro2aHQZGiYG3jBjzPQ1kWZMUnXt7ql2EM29XyyK?=
- =?us-ascii?Q?B9f/Bl14AZBRA+BNTJ0H81Qyp6YQPiAOy9wYlEPD5ic3hh+iFtNDM/FjiOkW?=
- =?us-ascii?Q?Pc+8howsRhtosi+Poel7uLRzCnDjoJw4ZxnrpEYsWwyTE/MUDOP3+alBkBnD?=
- =?us-ascii?Q?DcJQsCqpWq1Y72O8k8IerqEmaRDu3dfBAUeHJA6IGVXYG0zG2ptNXJjtaRjM?=
- =?us-ascii?Q?z3KRzn+84ez/mPjJyDFDed3wjbkaAF4jhYGH9Iili5Jlv+2Yt9eAcBidT05H?=
- =?us-ascii?Q?RzuQ/JVx9+qtB1F/PpzLB0zcVZIAbb+xzT8A7I6ZbT+YBWd6aTYU7JALkZMg?=
- =?us-ascii?Q?rVOKM2DQsS3qWRDnzer3AX5S+pR4Njyi9zjOHAMJOf3S7JgCwn8SPnYMpYo6?=
- =?us-ascii?Q?UE0AlD3UPG39Vnv8ceJepBSGUq4rsAiCEtg3V5X8LIoPKupzdOydpgCOolce?=
- =?us-ascii?Q?WLPBXRAfmYjeLALYLZpTVG4FR749TvAd+SBbrdO536ZrwU8dA1THF+TfhqWC?=
- =?us-ascii?Q?aDhldgBGS0IspiKjJSVuon6hZu1gSU8PZDE4MOqy4MRFWtkqYDRd/BtU80pi?=
- =?us-ascii?Q?qgyf8TG5gP5hZZ/zo76YURNeKR73Azmr44fmEXS0TUwGruEhju56GU1ojYm3?=
- =?us-ascii?Q?mgwKQTKc4jfKAYHVZGin3wmXqSKdfijS7/CVuhxwvTqcy8iOGX9RPPk70vaO?=
- =?us-ascii?Q?UISERTQnaCLp6dRpoDcROAHBKE65UUJ5zXlig1xFXk+ABCmejIxTbgM/KrCY?=
- =?us-ascii?Q?Sf1yMn0DxWR1Q/BBuR2vspomPUGnywHYQm7Y7sWOfk3c0aNbxFAph3ZVOfnJ?=
- =?us-ascii?Q?sFa0e5Bnni/UnAjt0OgYE7F1PWzCdCNDKsjWsKDkVZ4rStTP1cEFDlSxkrUC?=
- =?us-ascii?Q?OUEJZ4zHqH0glhlc9wwhes6hXB/zEZAoaZk8RfPKWaA7cqcVNLIRMqtG++Df?=
- =?us-ascii?Q?oNnrUJnSRnmiN+P3pZEvoby9g9uuvY3cAtBtP3c+tFp6t8cWbfxBJwgLMK/z?=
- =?us-ascii?Q?6hse5HABnzuA1bmtOWMCidnJcyQSF1B7P2I4JGYjZajdI30O9EYm8/+hrOEr?=
- =?us-ascii?Q?iA4tL6+QP9tE7al1UepXYGNObbP68sO6ssEnu8lGGjDDDBbEGQWFIFMkZTjb?=
- =?us-ascii?Q?QtxoXnmTmLC/zbQCrnY74qkt+RaZPIqZOaoaLiBjuz0GUWqAxDCOogc44YDZ?=
- =?us-ascii?Q?hXHlyfVNm7IS+ntauR+Dpb6zGZ04fJhPsuT7NP9AXg/cgPaoJGdYIYWdamga?=
- =?us-ascii?Q?IS5xdRmz7NLTzc9SJ8L0iDmc+3wtdjhmEfsSyViNwBPX4fhQdgtXM58V8dXr?=
- =?us-ascii?Q?HesBYw9IS+iWlSA1+2BUFZ5tfohuInbgKfUs/07h7UkHSxjSMw1pp0dZdT92?=
- =?us-ascii?Q?FXuSVMZ4BnKqD06QMsm4QGU8UCFefiw7LEXRXOoUjHd9qK2u2rCGJNANwh2U?=
- =?us-ascii?Q?vZORRQo1vfoMyoI30tUkC+diylP0BbI77doxSorYFT2V1H4GQBhRWpG5sKgV?=
- =?us-ascii?Q?oKyn7um7HhgpywzozpCfkG0h9vAXQJh33VR/GnQFWlBDCKY+B/iAAtKMyMd2?=
- =?us-ascii?Q?Vh8Zvzm9TCtMJz44wnU2P9yugyAXhHP0/GpQ3YauQ5SEKoCRRVK5kDm4SW+a?=
- =?us-ascii?Q?kv8ubmdwG62BWothQ7QLCxeRQzpvRxaJRSeqbWaMeki0PVE5SzfzyYRponc2?=
- =?us-ascii?Q?Gvd5baZG1oiKaCzO2OyyBcn6hkYXpO7tsMx+bPNLZyUHW6qLIz6T?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 65d35601-e07a-40ff-f088-08df34368341
-X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2026 14:28:04.6824
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 2KLtfra2eJva9GoTqSo1Hz3phyH8oPPIgnYDFfWy0dCyn3faT5l7Z6z3yo4N4xbLdYTc64sKpcp2lGlG6RdvLIkr8sgmlpxusJEAHKuJNvNDbF03udUOOcdOAgapRJs7
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB11472
+Content-Disposition: inline
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261027_072811_917174_A1190D0E 
-X-CRM114-Status: GOOD (  35.54  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20261028_031307_934423_DC542319 
+X-CRM114-Status: GOOD (  14.34  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,89 +71,127 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,INCLUDES_PULL_REQUEST,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Tue, Oct 27, 2026 at 10:34:54AM +0000, Diogo Ivo wrote:
-> On 10/26/2026 8:33 PM, Frank Li wrote:
-> > On Mon, Oct 26, 2026 at 04:21:06PM +0000, Diogo Ivo wrote:
-> > > Hi Frank,
-> > >
-> > > On 10/20/2026 8:18 PM, Frank Li wrote:
-> > > > On Tue, Oct 20, 2026 at 10:36:26AM +0100, Diogo Ivo wrote:
-> > > > > The analog noise filter for the input terminals (I3C_SDA, I3C_SCL) of
-> > > > > the Renesas I3C controller is controlled through the SYS_I3C_CFG
-> > > > > register of the system controller. Document the
-> > > > > renesas,analog-noise-filter property, which references the system
-> > > > > controller together with the offset of the SYS_I3C_CFG register and
-> > > > > the state of the filter: 1 enables the filter and 0 bypasses it.
-> > > > >
-> > > > > The property is optional: device trees not providing it keep the
-> > > > > filter at its reset value.
-> > > > >
-> > > > > Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
-> > > > > ---
-> > > > >    .../devicetree/bindings/i3c/renesas,i3c.yaml          | 19 +++++++++++++++++++
-> > > > >    1 file changed, 19 insertions(+)
-> > > > >
-> > > > > diff --git a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
-> > > > > index 08fcea89a015..381807844351 100644
-> > > > > --- a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
-> > > > > +++ b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
-> > > > > @@ -96,6 +96,25 @@ properties:
-> > > > >          - const: presetn
-> > > > >          - const: tresetn
-> > > > >
-> > > > > +  renesas,analog-noise-filter:
-> > > > > +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> > > >
-> > > > I don't like this syscon property, look like it is one kind pad propterty.
-> > > > Is it possible model as pinctrl?
-> > >
-> > > On the RZ/G3L and RZ/G3S this filter is not controlled on the pin
-> > > controller's address space but in the SYSC address space (hence the
-> > > need for the sysc phandle).
-> > >
-> > > There are a few factors weighing against modeling this as pinctrl.
-> > >
-> > > The first is that the physical pads used by I3C are multiplexed between it
-> > > and for example RIIC3, so we are not filtering the pad but the internal path
-> > > of the I3C IP. The pinctrl does indeed have some controls for the pad's
-> > > digital filters, that apply to whatever block is multiplexed to the pad.
-> > >
-> > > Besides this, even if it were moved to pinctrl we would still need the sysc
-> > > reference, as the pfc driver would need a way to reference the sysc address
-> > > space.
-> >
-> > System allows multi pinctrl devices. your syscon can work as pinctrl provider
-> >
-> > pinctrl-0 = <&your nomral pinctrl>, <&syscon i3c ... > ;
-> >
-> > The key problem is if model is resonable. Syscon is simple, but have not
-> > good abstract.
->
-> Doing this in pinctrl is feasible, especially since the pinctrl driver on
-> G3L already has a reference to syscon for clone channels. The question
-> really is if this is what makes the most sense, as again we are not really
-> controlling an external pin but something inside the IP
-> block,
+Hello Linus,
 
-I don't think so. Generally, PAD some property, like pull up/down, driver
-strength, some include glitch filter (capacitor or schmitter trigger),
+Here is the i3c subsystem pull request for 7.4. It introduces the I3C
+hub support in the core with drivers still being worked on. Then we have
+the usual fixes and cleanups.
 
-'renesas,analog-noise-filter' like adjust some capacitor at PAD, only
-controler signal (register) is not in your pinctrl region.
 
-There are not analog-noise in side SOC's digtial part (Or we can't care it).
-Analog sigal generally existed in PHY and PAD.
+The following changes since commit cee9395acd8043be0644b25c34bfa86623f2b935:
 
-Frank
+  Linux 7.3-rc1 (2026-08-30 13:34:40 -0700)
 
-> so I'm still not fully convinced. Are there more opinions on this?
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-7.4
+
+for you to fetch changes up to fc5eb1b0631aa3b34c530ae962d01699ed22a0ae:
+
+  dt-bindings: i3c: Add Synaptics sl2610 i3c (2026-10-08 14:21:37 +0200)
+
+----------------------------------------------------------------
+I3C for 7.4
+
+Subsystem:
+ - Add APIs for I3C hub support
+ - Restrict HDR modes to those supported by the bus and target
+ - Fix ACPI target enumeration on multi-instance controllers by extracting the
+   bus-controller instance number and PID from the correct _ADR fields.
+ - allocate IBI workqueue with WQ_HIGHPRI
+
+Drivers:
+ - dw: Synaptics sl2610 support
+ - mipi-i3c-hci: HDR-DDR support, cleanup and fixes
+
+----------------------------------------------------------------
+Adrian Hunter (17):
+      i3c: master: Fix out-of-bounds read in DMA bounce buffer setup
+      i3c: mipi-i3c-hci: Bounce short reads irrespective of the IOMMU
+      i3c: mipi-i3c-hci-pci: Set drvdata before creating LTR sysfs attribute
+      i3c: master: Match ACPI targets to the correct bus controller instance
+      i3c: master: Remove stale GETSTATUS length check
+      i3c: mipi-i3c-hci: Restore controller state if i3c_hci_enable_ibi() returns an error
+      i3c: mipi-i3c-hci: Send DISEC before disabling IBIs in hardware
+      i3c: mipi-i3c-hci: Fix runtime PM violation in i3c_hci_free_ibi()
+      i3c: mipi-i3c-hci: Process multiple IBIs per interrupt
+      i3c: mipi-i3c-hci: Move DMA suspend/resume callbacks
+      i3c: mipi-i3c-hci: Stop rings gracefully when suspending
+      i3c: mipi-i3c-hci: Correct RESP_DATA_LENGTH to bits 15:0
+      i3c: mipi-i3c-hci: Remove invalid transfer size limit
+      i3c: mipi-i3c-hci: Remove invalid HDR-BT and Fm/Fm+ definitions
+      i3c: mipi-i3c-hci: Support configurable device NACK retries
+      i3c: Restrict HDR modes to those supported by the bus and target
+      i3c: mipi-i3c-hci: Add HDR-DDR support
+
+Aman Kumar Pandey (2):
+      i3c: master: Add APIs for I3C hub support
+      dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+
+Fan Wu (1):
+      i3c: master: adi: free the IRQ before unregistering the master
+
+Jisheng Zhang (3):
+      dt-bindings: i3c: dw: support up to two reset lines
+      i3c: dw: switch to array-based exclusive reset control
+      dt-bindings: i3c: Add Synaptics sl2610 i3c
+
+Lakshay Piplani (2):
+      i3c: master: Add controller-only device operation helpers
+      i3c: hub: Add support for the I3C interface in the I3C hub
+
+Pawel Zalewski (1):
+      i3c: master: use named initializers for acpi_device_id
+
+Shubham Patil (1):
+      i3c: master: amd: Report direct CCC read length in payload.actual_len
+
+Stanley Chu (1):
+      i3c: master: allocate IBI workqueue with WQ_HIGHPRI
+
+ .../devicetree/bindings/i3c/nxp,p3h2840.yaml       | 330 ++++++++
+ .../bindings/i3c/snps,dw-i3c-master.yaml           |  16 +-
+ MAINTAINERS                                        |   9 +
+ drivers/i3c/Kconfig                                |  14 +
+ drivers/i3c/Makefile                               |   1 +
+ drivers/i3c/device.c                               |  15 +-
+ drivers/i3c/hub.c                                  | 832 +++++++++++++++++++++
+ drivers/i3c/internals.h                            |  16 +
+ drivers/i3c/master.c                               | 476 ++++++++++--
+ drivers/i3c/master/adi-i3c-master.c                |   4 +
+ drivers/i3c/master/amd-i3c-master.c                |   4 +-
+ drivers/i3c/master/dw-i3c-master.c                 |  28 +-
+ drivers/i3c/master/dw-i3c-master.h                 |   2 +-
+ drivers/i3c/master/mipi-i3c-hci/cmd.h              |   4 +-
+ drivers/i3c/master/mipi-i3c-hci/cmd_v1.c           |  28 +-
+ drivers/i3c/master/mipi-i3c-hci/cmd_v2.c           |   4 +-
+ drivers/i3c/master/mipi-i3c-hci/core.c             | 112 ++-
+ drivers/i3c/master/mipi-i3c-hci/dat.h              |   2 +
+ drivers/i3c/master/mipi-i3c-hci/dat_v1.c           |  13 +-
+ drivers/i3c/master/mipi-i3c-hci/dma.c              | 136 +++-
+ drivers/i3c/master/mipi-i3c-hci/hci.h              |   9 +-
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c |   5 +-
+ include/linux/i3c/device.h                         |   4 +
+ include/linux/i3c/hub.h                            |  92 +++
+ include/linux/i3c/master.h                         |  20 +
+ include/linux/platform_data/mipi-i3c-hci.h         |   4 +
+ 26 files changed, 2024 insertions(+), 156 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+ create mode 100644 drivers/i3c/hub.c
+ create mode 100644 include/linux/i3c/hub.h
+
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
