@@ -2,58 +2,75 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CDD9D606A31A
-	for <linux-i3c@archiver.kernel.org>; Sun,  1 Nov 2026 01:06:45 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0EED4606A32C
+	for <linux-i3c@archiver.kernel.org>; Sun,  1 Nov 2026 20:25:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=gl3Rgw7v;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=WeUojHIU
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1NGYFT3E;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=sang-engineering.com header.i=@sang-engineering.com header.a=rsa-sha256 header.s=k1 header.b=FWCl+TKL
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=UH5xdqgAjgiQwRrbGRLD3Riu22hCxycBQUpEdWVh8QA=; b=gl3Rgw7vYi66YTwp/oTMudqfNe
-	XqYqm+ZOSSr9boXZZrFwtOnnQRd7e109tttNf1xJtDisQLNdCu6fqI/geiBN9c7/I3po+gMtDTkhg
-	4NVbwHsnhkjoqOLyjvtZsXZ2Tlg4A0LcjS9/TU+i6ZJtTk87dz71LIk+dG/BZpHnWA9RFQU7UvLyW
-	X4/SQx1+pQaZpFkrFrnv3eGgnTt/CdWsgWwANU8kzEPdGkChi9TAAXLISKZmUd+Xvpq3RNRjegp8+
-	RWpOC2xvbW6zBFl4YplWG8bxcVUK6E8b57NDh4Zs6DSyQLA5JzJBO0KNCeSsCBl3eqDhab9PPkofH
-	/WQ/uROw==;
+	bh=quu47qUYVG/8bGQa4IB5VPWAKL91RpOA8Uejj62r778=; b=1NGYFT3EhmtqlcsdI41RNqe8nx
+	L8vuPcGUJTTY/7Yv8Qs3GZI7HNrzRu/MFbf3HgJtNtpce2rFQDtlkmlC90XV/4tJG4qymm/4cH6sJ
+	pIe6bV7+2h2xoD3xz9DFUE8M5qT8QZv9Gf8mjuNfsOscQSiuIZtwKfbnEVfmmuAxeC+2cgK+yFb98
+	cValevaHogWPGzHoNP7W6UYVSHnawGKMFWLTfwrAP1gSFZwrxrhMKVMe4cofqjXdG5JSk5OaVCdQF
+	TzkFxcx3ynWIiMODbc9vK5Hhow0fYDlmu4Nscg01SCsdpKnHBk0g895EVmCSfY76SWkHuX+Q4nMwC
+	lXw0/U5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNK21-0000000Dn0g-1aXt;
-	Sun, 01 Nov 2026 01:06:45 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xNc7J-0000000EsR5-2W9a;
+	Sun, 01 Nov 2026 20:25:25 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNK1z-0000000Dn0a-3MNZ
+	id 1xNc7F-0000000EsQV-3XfF
 	for linux-i3c@lists.infradead.org;
-	Sun, 01 Nov 2026 01:06:43 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 020EC60054;
-	Sun,  1 Nov 2026 01:06:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6F17B1F000C1;
-	Sun,  1 Nov 2026 01:06:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793495202;
-	bh=Rc/R2Jivuh/pNjNJWYptYQCx9BX5qTDMqZUPTJxypos=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=WeUojHIUdwhnndV4xg8O+Buxq0/A90QsZ1hu+sjt1QGoWIywp2WcW5qLmzzE/2sGD
-	 MZ/dFN/DUVckrmCRsCscSm0TDSsM2ms1XgemszwxhnesywvAwCM38QWX+591lgV9zY
-	 N3VU8G2jb38zHZU7zJoPtu65t6TzkOwxTzfKxNtqxwjCYRSRkZ7dDfQ4gR6oCnNXKC
-	 S+HBp86bAK8UpHyxpRUmBxKJ/+YYk/0hP+g9DY2UaDqUiR9JQrw+bR47AHTVgcS9N8
-	 Y0Hf0hC1v8HO8Cnod+vDEq+YCRP7R/1jJfbA7tnBhCmjdXpQgXM6CtONSEGjPKPYZw
-	 Bzm+PyBJmCYcA==
-Message-ID: <sashiko-outbox-192232@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2] i3c: master: dw-i3c-master: Add HDR-DDR support to
- Designware Controller.
-To: "Dineshkumar Parameswaran" <Dineshkumar.Parameswaran@synopsys.com>
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20261101005243.4739-1-parame@synopsys.com>
-References: <20261013073126.5948-1-parame@synopsys.com>
- <20261101005243.4739-1-parame@synopsys.com>
-Date: Sun, 01 Nov 2026 01:06:41 +0000
+	Sun, 01 Nov 2026 20:25:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=hCEp
+	617jQD08gcsGuzNPxj0pZDjFgXb5JPdljCDEfxg=; b=FWCl+TKLp4Z61J6CB67M
+	gFQTDB9/UXXUgn0V98cIpWxxpIHDvaPi/XldHBCMJ3N9yzKPh30HLEOQa+36Pd7q
+	0haglR1fTxaewQJqmoZ9vR0qNCtw3c5eQ6wfLM/7AVfyo4GbiNRqh27Camk9NYuU
+	LKSgNK9JmCiNHZxrldDF61H2214cAUyCGpw9YT/EWBQKQ0vKifzMqfX5P1EKYore
+	kPARxwByg9V76spKWAxO+egrw9wp85atxHGGewXQuxfKeFWr96xEI7qzuruXRNV5
+	JsEI4PlaZWpMtXyN9VkMm4M2d3eLaRjP8LKSLqrh4Fi9AnkBVpXlDyNc+AUNNa1T
+	2A==
+Received: (qmail 851632 invoked from network); 1 Nov 2026 21:25:15 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 1 Nov 2026 21:25:15 +0100
+X-UD-Smtp-Session: l3s3148p1@89W+0zxfLOfB0HFD
+Date: Sun, 1 Nov 2026 22:25:15 +0200
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Diogo Ivo <diogo.ivo.sx@renesas.com>
+Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Linus Walleij <linusw@kernel.org>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org, linux-clk@vger.kernel.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v2 3/7] dt-bindings: i3c: renesas,i3c: Add RZ/G3L support
+Message-ID: <auegK_2i5fp3Q34Y@shikoro>
+References: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-0-2e76b87209bb@renesas.com>
+ <20261026-divo-ssgrlpcsrc-2966-i3c-v2-3-2e76b87209bb@renesas.com>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-3-2e76b87209bb@renesas.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261101_122522_781947_9199D3B9 
+X-CRM114-Status: GOOD (  12.28  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,92 +80,41 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGkzYzogbWFzdGVyOiBk
-dzogYnJva2VuIEhEUi1ERFIgZGlyZWN0aW9uIGNoZWNrIGluIGR3X2kzY19tYXN0ZXJfaTNjX3hm
-ZXJzKCkKLSBbSGlnaF0gaTNjOiBtYXN0ZXI6IGR3OiBtaXNzaW5nIEhEUiBjb21tYW5kIGNvZGUg
-aW4gZHdfaTNjX21hc3Rlcl9pM2NfeGZlcnMoKQotLQoKY29tbWl0IGM2MmNhNWIzMmYxYmJkYWY5
-OGI2NDEyOTYyMGZhOTNjZjQ5YmUyNzgKQXV0aG9yOiBEaW5lc2hrdW1hciBQYXJhbWVzd2FyYW4g
-PERpbmVzaGt1bWFyLlBhcmFtZXN3YXJhbkBzeW5vcHN5cy5jb20+CgppM2M6IG1hc3RlcjogZHct
-aTNjLW1hc3RlcjogQWRkIEhEUi1ERFIgc3VwcG9ydCB0byBEZXNpZ253YXJlIENvbnRyb2xsZXIu
-CgpUaGlzIGNvbW1pdCBhZGRzIEhEUi1ERFIgcHJpdmF0ZSB0cmFuc2ZlciBzdXBwb3J0IHRvIHRo
-ZSBEZXNpZ25XYXJlIEkzQwptYXN0ZXIgZHJpdmVyIGJ5IGFkdmVydGlzaW5nIEkzQ19IRFJfRERS
-IGluIGR3X2kzY19tYXN0ZXJfYnVzX2luaXQoKSBhbmQKY29uZmlndXJpbmcgQ09NTUFORF9QT1JU
-X0NQIGFuZCBEV19JM0NfSERSX0REUl9TUEVFRCBpbgpkd19pM2NfbWFzdGVyX2kzY194ZmVycygp
-LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYyBiL2Ry
-aXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFzdGVyLmMKPiBpbmRleCBkMTExOWYyMDNkMWI2Li42
-YTk1ZTk4MmY1OWQ3IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFz
-dGVyLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCgpbIC4uLiBd
-Cgo+IEBAIC0xMDAzLDIwICsxMDA3LDI1IEBAIHN0YXRpYyBpbnQgZHdfaTNjX21hc3Rlcl9pM2Nf
-eGZlcnMoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LAo+ICAJCWlmIChpM2NfeGZlcnNbaV0ucm53
-KSB7Cj4gIAkJCWNtZC0+cnhfYnVmID0gaTNjX3hmZXJzW2ldLmRhdGEuaW47Cj4gIAkJCWNtZC0+
-cnhfbGVuID0gaTNjX3hmZXJzW2ldLmxlbjsKPiAtCQkJY21kLT5jbWRfbG8gPSBDT01NQU5EX1BP
-UlRfUkVBRF9UUkFOU0ZFUiB8Cj4gLQkJCQkgICAgICBDT01NQU5EX1BPUlRfU1BFRUQoZGV2LT5p
-bmZvLm1heF9yZWFkX2RzKTsKPiArCQkJY21kLT5jbWRfbG8gPSBDT01NQU5EX1BPUlRfUkVBRF9U
-UkFOU0ZFUjsKPiAgCj4gIAkJfSBlbHNlIHsKPiAgCQkJY21kLT50eF9idWYgPSBpM2NfeGZlcnNb
-aV0uZGF0YS5vdXQ7Cj4gIAkJCWNtZC0+dHhfbGVuID0gaTNjX3hmZXJzW2ldLmxlbjsKPiAtCQkJ
-Y21kLT5jbWRfbG8gPQo+IC0JCQkJQ09NTUFORF9QT1JUX1NQRUVEKGRldi0+aW5mby5tYXhfd3Jp
-dGVfZHMpOwo+ICAJCX0KCltTZXZlcml0eTogSGlnaF0KRG9lcyBjaGVja2luZyBpM2NfeGZlcnNb
-aV0ucm53IGRpcmVjdGx5IG1pc2NsYXNzaWZ5IEhEUi1ERFIgd3JpdGUgdHJhbnNmZXJzCndpdGgg
-bm9uLXplcm8gY29tbWFuZCBjb2RlcyBhcyByZWFkcz8KCkluIHN0cnVjdCBpM2NfeGZlciAoaW5j
-bHVkZS9saW51eC9pM2MvZGV2aWNlLmgpLCBybncgYW5kIGNtZCBzaGFyZSBhbgphbm9ueW1vdXMg
-dW5pb246CgpzdHJ1Y3QgaTNjX3hmZXIgewoJdW5pb24gewoJCXU4IHJudzsKCQl1OCBjbWQ7Cgl9
-OwoKSW4gSTNDX0hEUl9ERFIgbW9kZSwgY2FsbGVycyBwb3B1bGF0ZSBjbWQgd2l0aCB0aGUgOC1i
-aXQgSERSIGNvbW1hbmQgd29yZCwKd2hlcmUgYml0IDcgKEkzQ19IRFJfQ01EX1JOVykgZW5jb2Rl
-cyB0aGUgdHJhbnNmZXIgZGlyZWN0aW9uICgweDAwLi4weDdmCmZvciB3cml0ZSwgMHg4MC4uMHhm
-ZiBmb3IgcmVhZCkgYW5kIGJpdHMgNjowIChJM0NfSERSX0NNRF9DT0RFKSBob2xkIHRoZQo3LWJp
-dCBjb21tYW5kIGNvZGUuCgpCZWNhdXNlIGR3X2kzY19tYXN0ZXJfaTNjX3hmZXJzKCkgdGVzdHMg
-aWYgKGkzY194ZmVyc1tpXS5ybncpIGRpcmVjdGx5IGluCnRocmVlIHBsYWNlczoKCglmb3IgKGkg
-PSAwOyBpIDwgaTNjX254ZmVyczsgaSsrKSB7CgkJaWYgKGkzY194ZmVyc1tpXS5ybncpCgkJCW5y
-eHdvcmRzICs9IERJVl9ST1VORF9VUChpM2NfeGZlcnNbaV0ubGVuLCA0KTsKCQllbHNlCgkJCW50
-eHdvcmRzICs9IERJVl9ST1VORF9VUChpM2NfeGZlcnNbaV0ubGVuLCA0KTsKCX0KCgkuLi4KCgkJ
-aWYgKGkzY194ZmVyc1tpXS5ybncpIHsKCQkJY21kLT5yeF9idWYgPSBpM2NfeGZlcnNbaV0uZGF0
-YS5pbjsKCQkJY21kLT5yeF9sZW4gPSBpM2NfeGZlcnNbaV0ubGVuOwoJCQljbWQtPmNtZF9sbyA9
-IENPTU1BTkRfUE9SVF9SRUFEX1RSQU5TRkVSOwoKCQl9IGVsc2UgewoJCQljbWQtPnR4X2J1ZiA9
-IGkzY194ZmVyc1tpXS5kYXRhLm91dDsKCQkJY21kLT50eF9sZW4gPSBpM2NfeGZlcnNbaV0ubGVu
-OwoJCX0KCgkuLi4KCgkJaWYgKGkzY194ZmVyc1tpXS5ybncpCgkJCWkzY194ZmVyc1tpXS5sZW4g
-PSBjbWQtPnJ4X2xlbjsKCmFueSBIRFItRERSIHdyaXRlIHRyYW5zZmVyIHdpdGggYSBub24temVy
-byBjb21tYW5kIGNvZGUgKDB4MDEuLjB4N2YpIGhhcwppM2NfeGZlcnNbaV0ucm53ICE9IDAuIEFz
-IGEgcmVzdWx0LCBpdHMgcGF5bG9hZCBpcyBjb3VudGVkIGluIG5yeHdvcmRzCmluc3RlYWQgb2Yg
-bnR4d29yZHMsIHRoZSBjb21tYW5kIGlzIHByb2dyYW1tZWQgd2l0aApDT01NQU5EX1BPUlRfUkVB
-RF9UUkFOU0ZFUiwgbm90aGluZyBpcyB3cml0dGVuIHRvIHRoZSBUWCBGSUZPLCBhbmQKZHdfaTNj
-X21hc3Rlcl9lbmRfeGZlcl9sb2NrZWQoKSAtPiBkd19pM2NfbWFzdGVyX3JlYWRfcnhfZmlmbygp
-IG92ZXJ3cml0ZXMKdGhlIGNhbGxlcidzIGNvbnN0IGRhdGEub3V0IGJ1ZmZlciB2aWEgY21kLT5y
-eF9idWYgKHdoaWNoIGFsaWFzZXMgZGF0YS5vdXQKaW4gdW5pb24gZGF0YSkuCgpTaG91bGQgdGhl
-IGRpcmVjdGlvbiBjaGVjayBpbiBkd19pM2NfbWFzdGVyX2kzY194ZmVycygpIGluc3BlY3QKKGkz
-Y194ZmVyc1tpXS5jbWQgJiBJM0NfSERSX0NNRF9STlcpIHdoZW4gbW9kZSA9PSBJM0NfSERSX0RE
-Uiwgc2ltaWxhciB0bwppM2NfaGNpX3JudygpIGluIGRyaXZlcnMvaTNjL21hc3Rlci9taXBpLWkz
-Yy1oY2kvY29yZS5jIGFuZApzdmNfaTNjX21hc3Rlcl9pM2NfeGZlcnMoKSBpbiBkcml2ZXJzL2kz
-Yy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYz8KCj4gIAo+ICAJCWNtZC0+Y21kX2xvIHw9IENPTU1B
-TkRfUE9SVF9USUQoaSkgfAo+ICAJCQkgICAgICAgQ09NTUFORF9QT1JUX0RFVl9JTkRFWChkYXRh
-LT5pbmRleCkgfAo+ICAJCQkgICAgICAgQ09NTUFORF9QT1JUX1JPQzsKPiAgCj4gKwkJaWYgKG1v
-ZGUgPT0gSTNDX0hEUl9ERFIpCj4gKwkJCWNtZC0+Y21kX2xvIHw9IENPTU1BTkRfUE9SVF9DUCB8
-Cj4gKwkJCQlDT01NQU5EX1BPUlRfU1BFRUQoRFdfSTNDX0hEUl9ERFJfU1BFRUQpOwoKW1NldmVy
-aXR5OiBIaWdoXQpXaGVyZSBpcyB0aGUgNy1iaXQgSERSIGNvbW1hbmQgY29kZSBmcm9tIGkzY194
-ZmVyc1tpXS5jbWQgcHJvZ3JhbW1lZCBpbnRvCmNtZC0+Y21kX2xvPwoKV2hlbiBtb2RlID09IEkz
-Q19IRFJfRERSLCBzZXR0aW5nIENPTU1BTkRfUE9SVF9DUCBtYXJrcyB0aGUgY29tbWFuZCBmaWVs
-ZApDT01NQU5EX1BPUlRfQ01EIChiaXRzIDE0OjcpIGFzIHZhbGlkIGZvciB0aGUgSERSIGNvbW1h
-bmQgY29kZSwgYnV0CkNPTU1BTkRfUE9SVF9DTUQoaTNjX3hmZXJzW2ldLmNtZCAmIEkzQ19IRFJf
-Q01EX0NPREUpIGlzIG5ldmVyIE9SZWQgaW50bwpjbWQtPmNtZF9sby4gU2luY2UgeGZlciBpcyB6
-ZXJvLWFsbG9jYXRlZCBpbiBkd19pM2NfbWFzdGVyX2FsbG9jX3hmZXIoKSwKYml0cyAxNDo3IHJl
-bWFpbiAweDAwIGFuZCBldmVyeSBIRFItRERSIHRyYW5zZmVyIHNlbmRzIGNvbW1hbmQgY29kZSAw
-eDAwIG9uCnRoZSBidXMgcmVnYXJkbGVzcyBvZiBpM2NfeGZlcnNbaV0uY21kLgoKU2hvdWxkIHRo
-aXMgYWxzbyBPUiBpbiBDT01NQU5EX1BPUlRfQ01EKGkzY194ZmVyc1tpXS5jbWQgJiBJM0NfSERS
-X0NNRF9DT0RFKQp3aGVuIG1vZGUgPT0gSTNDX0hEUl9ERFI/CgotLSAKU2FzaGlrbyBBSSByZXZp
-ZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMTAxMDA1MjQzLjQ3Mzkt
-MS1wYXJhbWVAc3lub3BzeXMuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QK
-bGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+On Mon, Oct 26, 2026 at 11:35:46AM +0000, Diogo Ivo wrote:
+> Add device tree binding support for I3C on the Renesas RZ/G3L
+> (R9A08G046) SoC.
+> 
+> The I3C IP on the RZ/G3L is a subset of the one on the RZ/G3S, as the
+> RZ/G3L has no HDR Exit Pattern detection interrupt. The resources are
+> consumed by name (the tclk clock, the presetn and tresetn resets and
+> seven of the named interrupts), all of which the RZ/G3L provides, so
+> software can match and bind a RZ/G3L node through the RZ/G3S
+> compatible. Add the RZ/G3L-specific "renesas,r9a08g046-i3c" compatible
+> with a fallback to the RZ/G3S "renesas,r9a08g045-i3c" compatible.
+> 
+> The RZ/G3L is not compatible with the RZ/G3E, which has no input analog
+> filters and supports high-speed mode (up to 3.4 Mbps).
+> 
+> Split the clock and interrupt constraints into separate if/else blocks
+> so that RZ/G3L nodes inherit the 2-clock limit from the RZ/G3S fallback
+> while being constrained to 16 interrupts alongside the RZ/G3E.
+> 
+> Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
+
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
