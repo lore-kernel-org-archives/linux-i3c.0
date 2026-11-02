@@ -2,75 +2,110 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2306B606A324
-	for <linux-i3c@archiver.kernel.org>; Sun,  1 Nov 2026 20:34:27 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E6791606A334
+	for <linux-i3c@archiver.kernel.org>; Mon,  2 Nov 2026 11:05:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HY5/DUZt;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=sang-engineering.com header.i=@sang-engineering.com header.a=rsa-sha256 header.s=k1 header.b=BtuJ+9TG
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oibpnISB;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Bgz+yMfM
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=xzMBsWi0PKXu4ZrjsRdRsBmWxgaTRUmhHrCh0mYc9wI=; b=HY5/DUZt8PN2fNGON1MU1kI/88
-	0ZyzUxwD1Kh+1HQPrYKnG8oqDDBw4akM+7YrWjhHmyr1FmKxJkcX6iWA4/vlc7GZCtlleSfTPB8LF
-	uJzJGfi9g/OTOiPdt4PP6+O+us4HoqId4syoAepg9v6b5m61LQLfa1nrtmq/i8u/NlJZFbfFpiDkn
-	+Xor7/U2RUXoaWrGTOJ3kIVejJpf8kil/O6nnfiQJtTseafVEIjIwo6iQXUjkqu8CHBDFQ8+mRMHx
-	13js/47/jtUxl8Lo9sB/ZuQdozxN+3zxYEpUYGv8S1Q+cAci9nGpym3w8ErFYokqAaE5rflCrjsla
-	Urs/raFg==;
+	bh=1IzFXFajDC2tp8hnBgENC5rwodmg/OlWHhMf5/DI/7M=; b=oibpnISBgL6C8WWMx6rWLy0QB+
+	pGLRvcGooXkm4Y9U6jFy1qIUZhUBFhE0YZ4IXlAxsX/JCyGiBbyTn10b3dRxe3hjVh2C8+mIzhWKr
+	T+11MmvYg7LAsZCIf+VKKLewSQ7vmQ4lMgPNtPpkEDWM43NBqsGCUznhhR6w4VxmIMtbbR87Q8N91
+	Z9QsvqDtwW80pKQLjBfASXdstarjmHTdO0zg9Kes2dl9cmQEWqagxetQg9xzoER/qTnSgurEmbW+q
+	ux6m1vi4pyqZaxSm/qvG5YUQ+vIamqfgqtlmvOqxmB9MwAxfWXBK2gafDFlngJlHBNEF9NsJ5I9kh
+	cgs3IkOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNcG2-0000000EssB-3U7y;
-	Sun, 01 Nov 2026 20:34:26 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+	id 1xNprK-0000000GFZq-2lQI;
+	Mon, 02 Nov 2026 11:05:50 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNcFm-0000000Espi-1jeU
-	for linux-i3c@lists.infradead.org;
-	Sun, 01 Nov 2026 20:34:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=WEci
-	nyzXvpzdrQbdmzGRVBkMmzuM3NlP9qlzk0r7u+M=; b=BtuJ+9TGthEvfHggV1K7
-	8HCM7lmDmDVKnstgAkSutQeepbxM9f+LBjaFk5F7H0FOumehplkJKLqoJ4+ceSBh
-	YK2ss/QChr71ijKyvjcVkjJLIy4l+mwVhX+S0+XWv8HGGxsgbS3TL9RxhUbSVG/E
-	axv8+Pk12kFE5H2dIY84wmQcx62TwwtQW8iTi8kMfH2anW9M1GuJzYn0um/iNzoS
-	MqQKrx44llXCiyQQ7aiR0H9+sB8qB7UaGm2wtCRRck41rxjhBhdU4H/PyL28+gfh
-	1iQa6igkkswZenPR28OwGiM6B5IRigeuzt7kfw2me4EMvNskJM0zliJLQI9IogCF
-	wA==
-Received: (qmail 853660 invoked from network); 1 Nov 2026 21:34:07 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 1 Nov 2026 21:34:07 +0100
-X-UD-Smtp-Session: l3s3148p1@YnRo8zxfVKTB0HFD
-Date: Sun, 1 Nov 2026 22:34:06 +0200
-From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Diogo Ivo <diogo.ivo.sx@renesas.com>
-Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Brian Masney <bmasney+clk@redhat.com>,
-	Jerome Brunet <jbrunet+clk@baylibre.com>,
-	Linus Walleij <linusw@kernel.org>, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-clk@vger.kernel.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v2 7/7] arm64: dts: renesas: r9a08g046: Add I3C support
-Message-ID: <aueiPnMvmHQhFtM4@shikoro>
-References: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-0-2e76b87209bb@renesas.com>
- <20261026-divo-ssgrlpcsrc-2966-i3c-v2-7-2e76b87209bb@renesas.com>
+	id 1xNprI-0000000GFYr-3Bos;
+	Mon, 02 Nov 2026 11:05:48 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 83ED6408CA;
+	Mon,  2 Nov 2026 11:05:48 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1793617548;
+	b=rWr11ZJBqEL0aGNXbaCGqseIREFRP3NOglvUsQABzxc/6iB8XCUOALuuPE0Tu3OvK4fe
+	 9i2A0puCzuZFQAfyqnVXYyQ37FZ8ImZigtDEqoO+SOHfpbKU3yuRm5rHTqnfzjjUbZDsq
+	 Lkm/D2oWXe0AzwcJ1wUPD63mxRLcb7wHWSGMPH9S4IogHZFoOKYql36qD+mVyEkZhCumD
+	 HVinqFlQ1o5cKMS5ng2SZgVdWbOGjZ19NoDmHET9juEWo9wArlr5Rs3bKDf/1wRJaHX9A
+	 Mv7PxUFCUeWiw58BQpI42Yo+OILw3bwqDDM7iYps9fewEHxGk3eH4lppZLiGGyVBl9w==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1793617548;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=7aAbwd3bYb82jK+lqdIlaSeyPNIbeoyxMw+OMzIVIVo=;
+	b=ud887XKI/MIJbzrwKFedmdpfNph6Q4rmYIQv7mXB3Rp4Exz5865eH/q6hog2X+X6N5BT
+	 /vkLAvEyhykOF+Wc0nuFCJ87yFW6RHzhb4ldh0ddoeo61nkfWiIyAkpfU+/MkhZVm4f0x
+	 H0Zn5uIqd/y8V7TmEFzl3WvwQ1FdVyxk9dDT0WyoHzUVqP6HM1bdIJAVRs9Z34AYoQi+P
+	 GM8CwdIoojBQsEsESvvAKd5s0nMsySQCHp4EiPBrpdSU1+FiaVwc3B22uyk5p6tGwMJkO
+	 aTADDdiv1oaFPDu/ygMCQtAuN1D/WtxLR39ZzZrGqvqi01Xm4hpqNabYvy0x5sZN5rw==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id BFC2A1F00A17;
+	Mon,  2 Nov 2026 11:05:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793617548;
+	bh=7aAbwd3bYb82jK+lqdIlaSeyPNIbeoyxMw+OMzIVIVo=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
+	b=Bgz+yMfMV2FNBhZHScXdCUyeG127xsbdfJPJqpfqFYX1TR8qe5dipzpa72q1UuDJB
+	 RZZNNlyRVcZ1QDyycJNh+cnQqX0oboT7jcqAMLsFBr14NF4OtnIvX9Pc4LW03tPAGi
+	 LiOn/etAjkInA7jZxWvQ0MYl5aS0HTOYr4yf9zsDDGFFnvNuFeou9dc2tJ6I5/oQkL
+	 JikHuwR5ydMsw3Dh/D34dEHsiQ+MinRE9vjhVbkkYGeP5OyyU7Ru9IgAYHKGlx0ZwW
+	 PC8acOGAXTbF4FPRGLUsw+MrXQLNM0U/RNwSIAqVcfivq4+ypwGnvkO393p2APyWPV
+	 zKyP8blQ7gKCg==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 41F48464B1;
+	Mon,  2 Nov 2026 11:05:47 +0000 (UTC)
+From: Junyi Zhao via B4 Relay <devnull+junyi.zhao.amlogic.com@kernel.org>
+Date: Mon, 02 Nov 2026 19:05:40 +0800
+Subject: [PATCH v2 2/2] dt-bindings: i3c: silvaco,i3c-master: Add Amlogic
+ A9 support
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-7-2e76b87209bb@renesas.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_123410_744575_6B468491 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: -2.1 (--)
+Message-Id: <20261102-a9_i3c-v2-2-0c474bfccffa@amlogic.com>
+References: <20261102-a9_i3c-v2-0-0c474bfccffa@amlogic.com>
+In-Reply-To: <20261102-a9_i3c-v2-0-0c474bfccffa@amlogic.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
+ Miquel Raynal <miquel.raynal@bootlin.com>, Kees Cook <kees@kernel.org>, 
+ "Gustavo A. R. Silva" <gustavoars@kernel.org>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-amlogic@lists.infradead.org, imx@lists.linux.dev, 
+ linux-hardening@vger.kernel.org, xianwei.zhao@amlogic.com, 
+ Kelvin.Zhang@amlogic.com, Junyi Zhao <junyi.zhao@amlogic.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1793617545; l=2417;
+ i=junyi.zhao@amlogic.com; s=20260924; h=from:subject:message-id;
+ bh=VT+yxtCcLwOnlSZwmUk7jkYSPZwtcYrMQt3WmbKM8GU=;
+ b=Zyyzgp93TKMyE6jcJva/Zq1NmI1BVjP38JPANbk3tdzRgiWllHITIyK7Vpovl9498mKkoLFEo
+ 6eEov0fXsgEDx8+q1wg0bmzZ1fVltozCJ9/WjtaU8Fp5N6bxJhAEyFW
+X-Developer-Key: i=junyi.zhao@amlogic.com; a=ed25519;
+ pk=hiL5PjGIksGFiWvEx9J3MhQqU/ro6vNbj72NIw4bbvA=
+X-Endpoint-Received: by B4 Relay for junyi.zhao@amlogic.com/20260924 with
+ auth_id=1054
+X-Original-From: Junyi Zhao <junyi.zhao@amlogic.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,38 +115,102 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Reply-To: junyi.zhao@amlogic.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Oct 26, 2026 at 11:35:50AM +0000, Diogo Ivo wrote:
-> Add the I3C Bus Interface node to the RZ/G3L (R9A08G046) SoC DTSI and
-> enable it on the RZ/G3L SMARC EVK, together with the required pin
-> control.
-> 
-> The driver only consumes resources that are common to the RZ/G3L and
-> the RZ/G3S (R9A08G045), so the node uses the SoC-specific
-> renesas,r9a08g046-i3c compatible with a fallback to the
-> renesas,r9a08g045-i3c compatible of the RZ/G3S, following the bindings.
-> 
-> The I3C pins are shared with RIIC3, so the controller is only enabled
-> when the SW_I3C_EN switch is on.
-> 
-> The I3C I/O voltage can be set to 1.2V or 1.8V on the board through
-> the SYS.3 (I3C_IOVS) switch, so configure the pin controller for the
-> selected voltage through the power-source property.
-> 
-> Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
+From: Junyi Zhao <junyi.zhao@amlogic.com>
 
-Didn't double check the pinmux values, but rest looks good to me:
+Amlogic A9 SoCs integrate the Silvaco I3C IP with two controller
+instances:
 
-Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+  - amlogic,a9-i3c for the EE domain, which takes two clocks,
+    "pclk" and "fast_clk" like the NXP variants;
+
+  - amlogic,a9-ao-i3c for the Always-On (AO) domain, which exposes
+    only "pclk": its bus clock is generated by an internal divider
+    located in the controller's own register space.
+
+Allow both compatibles with the "silvaco,i3c-master-v1" fallback and
+enforce the per-variant clock counts.
+
+Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
+---
+ .../bindings/i3c/silvaco,i3c-master.yaml           | 24 ++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+index 853092f75..de1fdec65 100644
+--- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
++++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+@@ -19,6 +19,8 @@ properties:
+           - enum:
+               - nxp,imx94-i3c
+               - nxp,imx95-i3c
++              - amlogic,a9-i3c
++              - amlogic,a9-ao-i3c
+           - const: silvaco,i3c-master-v1
+ 
+   reg:
+@@ -28,14 +30,14 @@ properties:
+     maxItems: 1
+ 
+   clocks:
+-    minItems: 2
++    minItems: 1
+     items:
+       - description: system clock
+       - description: bus clock
+       - description: other (slower) events clock
+ 
+   clock-names:
+-    minItems: 2
++    minItems: 1
+     items:
+       - const: pclk
+       - const: fast_clk
+@@ -72,12 +74,30 @@ allOf:
+             enum:
+               - nxp,imx94-i3c
+               - nxp,imx95-i3c
++              - amlogic,a9-i3c
+     then:
+       properties:
+         clocks:
++          minItems: 2
+           maxItems: 2
+         clock-names:
++          minItems: 2
+           maxItems: 2
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: amlogic,a9-ao-i3c
++    then:
++      properties:
++        clocks:
++          maxItems: 1
++          description:
++            The "ao" variant is the controller instance in the Always-On (AO)
++            domain, which has no separate bus clock and derives the
++            bus clock from an internal divider.
++        clock-names:
++          maxItems: 1
+ 
+ unevaluatedProperties: false
+ 
+
+-- 
+2.42.0
+
 
 
 -- 
