@@ -2,58 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 04E55606A326
-	for <linux-i3c@archiver.kernel.org>; Wed,  4 Nov 2026 11:16:36 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 48D63606A330
+	for <linux-i3c@archiver.kernel.org>; Wed,  4 Nov 2026 11:18:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UG8HNR2i;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=ZhDwHyDb
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=2Hj7Z8+y;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=j8QE9k5W
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Ir095qzvlTIhVMAGMXIH9+ZQjpgvp4K9l6SWPJA2PTA=; b=UG8HNR2i5C+xoMo9zWCKr2Ileo
-	GeiaPEMPCcwqFBByKdVaZ8KQQkRuEzUVM7ne9AjKjiCYO626sV8r6owZV/38fAckOWyMWaUZLU5lY
-	/DazWO+qwX/hZUChoGB5WO7g8xPeADzw3VbdWMs+H12bIDAgR/0u+/u1sVhWP6CcsrMXLKE4W2GWd
-	X0BUMxlOYQOUscrJNvoEcuGBN7KJM39nb5jcgk+rxng0zWbg+aCPw9HE93mnfhwkqpmWYh9cUOTAA
-	Mlg9AhcsYzjMNwev/Yl7ETkQSviMlFmINcZBtlD4pd/mdxb4RbFvjYMdcdBU4vXKiIRJNt3GNqpri
-	QJQdBgiQ==;
+	bh=9L8g2oNBgtnTkRJto8yj7w3jSKO4+iR79y/bxkiePL4=; b=2Hj7Z8+y1d4HP7nSGbujq45ht7
+	wzvGVmRp1tAwowTEqvMxqnBohF3an1YCHa0PON9zI9EAlDje44aS3ilu5dVPMzdIrvzYLgg6lbEPq
+	4Qj+nmcyO02S6Qp0vOaWTa8jRKQGitSY6zWLrmy0AunFJaEQjZGkq6SQAmMl2ml4Cc/nyrbsSQs1j
+	8wySzT0EIRvDDedT8bdaY79W910I97tLnqy6FriUw45CA3QSuGGC/FjbN+HMYv12/zkhzlTBV13dO
+	LO1V4zKqI4XFGU+BREjafTv41AJT1gXHmHewSvOEhCHTsTDZ+bonvwcnmS42o/Hc09sL6XhzaCSxT
+	5aOjHDNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOYyp-000000057sh-3CpI;
-	Wed, 04 Nov 2026 11:16:35 +0000
+	id 1xOZ0G-00000005850-0BNS;
+	Wed, 04 Nov 2026 11:18:04 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOYym-000000057rz-3NXk
+	id 1xOZ0E-0000000584g-2GFA
 	for linux-i3c@lists.infradead.org;
-	Wed, 04 Nov 2026 11:16:34 +0000
+	Wed, 04 Nov 2026 11:18:03 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A4B5VaO2600273;
-	Wed, 4 Nov 2026 11:16:22 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A4B5G3P2599691;
+	Wed, 4 Nov 2026 11:17:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=EKNkHe58jko
-	DMKUXvbrXleOxHAGull+uYnWOftiZvcw=; b=ZhDwHyDb59ye51cMKfhgCqe6+wA
-	vn81Zch/4w86yG8DlxY6+ecGLHujRJiEi4jD7ez1yVHJLZp/7nHM4RVlPZw11gtn
-	pIk+0pCv2pKS3Xgu54JuzVBdv0GRv/iumKaGSslMah6O6OazfZBejCdqFPLyhM+v
-	gM3YJ4FbF5nGWO6wsWlWaSfnCOcrTYAEJAzhyhjIigyAkpZ/TZQ6BAkzZTeJq0Cf
-	+EEoN9i8G04Cd6WThbswxsaI3nzh9gGzCTIu7qIcmbiA2ppM/C9hjkEFY+iSbHFH
-	bF2KDQE3XiJ6IoVQXOudUGdP2+eUNgMXvYavB+UosAA/H47a2vSCX/neatw==
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=4RJ6M+JjySay4WKw8KPrIRm4D2pO/biJ5kq
+	HdcznYKs=; b=j8QE9k5Wt0v6erqo4TztWoLdfNaKyNPJ4fDEvDehb1GGOzWrET+
+	swxSUMynF+C7neo6EMSs5nH2nyictmEjDGEt540M+BwX4OhgxTa1vwK16OTQSfXX
+	sr2/6PU+ZVTOnja5E4kJRhvZ2d7PPLrff81IuYEeWBU6bwdsF59QDVO9hSCPtHrb
+	pQejdEzxorad4ziEZA5Rn/ldkcsJOjio9BD1rdQ2c29OzKW3Ozia4bWWnZhK+9CL
+	EiqN2g50DLCeGRTyj2Fah+tqP7tOxX9HUwtFzOx3zNvH1YZnbYoFofVvuwuh5Hhq
+	LGKjkRZFzKlo2zJaRXlpNWYtxShtR6d3MIw==
 Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hqm2pkt3x-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hqm2pkt9n-7
 	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Wed, 04 Nov 2026 11:16:22 +0000 (GMT)
+	Wed, 04 Nov 2026 11:17:55 +0000 (GMT)
 Received: from pps.filterd (apblrppmta01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.18.1.11/8.18.1.11) with ESMTP id 6A4BGKeb2675674;
-	Wed, 4 Nov 2026 11:16:20 GMT
+	by APBLRPPMTA01.qualcomm.com (8.18.1.11/8.18.1.11) with ESMTP id 6A4BGGWf2675525;
+	Wed, 4 Nov 2026 11:16:16 GMT
 Received: from hu-devc-hyd-u24-a.qualcomm.com (hu-msavaliy-hyd.qualcomm.com [10.147.246.140])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 6A4BGJkQ2675660
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 6A4BGFd92675519
 	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Wed, 04 Nov 2026 11:16:19 +0000 (GMT)
+	Wed, 04 Nov 2026 11:16:16 +0000 (GMT)
 Received: by hu-devc-hyd-u24-a.qualcomm.com (Postfix, from userid 429934)
-	id AF973216CA; Wed,  4 Nov 2026 16:46:18 +0530 (+0530)
+	id BAE0A21442; Wed,  4 Nov 2026 16:46:14 +0530 (+0530)
 From: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
 To: mukesh.savaliya@oss.qualcomm.com, alexandre.belloni@bootlin.com,
         Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
@@ -66,36 +66,33 @@ To: mukesh.savaliya@oss.qualcomm.com, alexandre.belloni@bootlin.com,
 Cc: konrad.dybcio@oss.qualcomm.com, andersson@kernel.org,
         jyothi.seerapu@oss.qualcomm.com, viken.dadhaniya@oss.qualcomm.com,
         aniket.randive@oss.qualcomm.com, praveen.talari@oss.qualcomm.com
-Subject: [PATCH v7 3/3] MAINTAINERS: Add maintainer for Qualcomm's I3C controller driver
-Date: Wed,  4 Nov 2026 16:46:10 +0530
-Message-ID: <20261104111610.3739095-3-mukesh.savaliya@oss.qualcomm.com>
+Subject: [PATCH v7 1/3] dt-bindings: i3c: Add support for Qualcomm I3C controller
+Date: Wed,  4 Nov 2026 16:46:08 +0530
+Message-ID: <20261104111610.3739095-1-mukesh.savaliya@oss.qualcomm.com>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20261104111610.3739095-1-mukesh.savaliya@oss.qualcomm.com>
-References: <20261104111610.3739095-1-mukesh.savaliya@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Proofpoint-Reinject: loops=2 maxloops=12
 X-QCInternal: smtphost
 X-QCInternal: smtphost
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA0MDA0NCBTYWx0ZWRfX4b3yMqPucaBU
- zZYp6XCB9uI4FA9Sy1o8QEuveGBv69jibgks4Ji0U8RpEmL4RkCl9DtLh9TTMo31AjsGHf6CL7V
- bg08X8KfrgVMgY13FlbfCl8trhCLy1o4gpbE3DeGshqDqSg6YBv/c3L1qpQsyK6YNDM8h6e6EfV
- GtdAiLctMBDXoN09Iv2Lxja2roz6K1+hnuowhMHk+mgW713OUa+4OZAUcniwXU75yTIy9ue8rrE
- +XNOwm0j2YIbzTWMAqFTK1lk4vMteKpuMCEyEXOrfcuPHVG5XwbkNsRQhBvAJH8i5A1GYjOHKSJ
- 9CxCOei9E5V7+lE5H6OlRzUgPq1TnUX2E3G4CzeCkFE5VbpxOOkqyQgqLdFf2dXHxl4XTpznuJW
- os+61r2mBiGP27gOpLfGsBXlBoYNr6MraeFngqNppNij5UFPFpNPcYVm15YfnyB1RTDU8drQBl0
- nVlwXeqdrmZtL8YrgFA==
-X-Proofpoint-GUID: DILj6uuxh-N5uuwGQY9ZQyPrOlCmBUCg
-X-Proofpoint-ORIG-GUID: DILj6uuxh-N5uuwGQY9ZQyPrOlCmBUCg
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA0MDA0NCBTYWx0ZWRfXzrmUCp2GJfqP
- KlkLESRRfxgsRhFt7OnIsprOyX/R7WvdXdSNnFeKUjxAbodkEUSWgbX2WnHC5sJctRhQpMnZBJw
- QpcIRTwk+oA14mhITR6TrdLhiFrS+HY=
-X-Authority-Analysis: v=2.4 cv=c64+0h9l c=1 sm=1 tr=0 ts=6aeb1406 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA0MDA0NCBTYWx0ZWRfX2p0U8BCkRYnl
+ 3kGCPqV4FlUTr186LmTpRbKUGRWtme32paDuP/v2zq9WeSEUKGajdajuMj769wkLAjkFZawcQ2e
+ 8d8uAGN6fKW4z3V3QZ3e/ou+FCs80/k3vGWm1mxiXGxpS/9TFN9rbWarvPfQ+1prscVWDtxs1Nu
+ qfDUEMg/pWkonvLV8FIpSHEGPXIiQ0u6VA6FJ/iBT7qC9dSSZZow0eU9f2XqweXI3UltBMM2Vq7
+ 5xgjmuoFlgUz53+RQ594bgpo6zWbCDgGEH6OrYYsJLpx7U5FT/bbWC6qG6v4/142kmY4rSdZY/q
+ mqGu4DQ3awZxvh3ICZ9K3aF/2LLUlffCpJrX2KSPKytC2uhnV5ESYsOzpIUICApSXeqSOjabU6+
+ CTDxGXAqAvuBdVZ+kZWYcwc8/xWEtCGZsc8BOJuzppZDXRusW29TbBixKl10sy2s2/cEyoF8/8A
+ 4PVVgrR7VkGr5sseBuA==
+X-Proofpoint-GUID: xFu2Ebln7wVPe8h_7vtNauucD1dZfn5w
+X-Proofpoint-ORIG-GUID: xFu2Ebln7wVPe8h_7vtNauucD1dZfn5w
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA0MDA0NCBTYWx0ZWRfXyFBBaOt4a6y6
+ akuqsxzujPEqMH46Xw5hYSvj+JamAWLOpHFxm7rhd+gqyCVnH3pgfhu0SIwfRktRYqUTep28Q8X
+ SfqIkfnQlPK9zGemgBas1B1Wuggm64M=
+X-Authority-Analysis: v=2.4 cv=c64+0h9l c=1 sm=1 tr=0 ts=6aeb1463 cx=c_pps
  a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=zJRp6_cAMcgA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
- a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8 a=JfrnYn6hAAAA:8 a=VwQbUJbxAAAA:8
- a=LDBv8-xUAAAA:8 a=yC-0_ovQAAAA:8 a=tiOelxa7q5ZmzYUgxBwA:9
- a=1CNFftbPRP8L7MoqJWF3:22 a=DZeXCJrVpAJBw65Qk4Ds:22
+ a=eoimf2acIAo5FJnRuUoq:22 a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8
+ a=m-1na6zgiUrtrnXSVq4A:9 a=sptkURWiP4Gy88Gu7hUp:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-04_03,2026-11-03_04,2025-10-01_01
@@ -106,8 +103,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610300000
  definitions=main-2611040044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261104_031632_848437_741BA665 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20261104_031802_584772_74829F3F 
+X-CRM114-Status: GOOD (  13.46  )
 X-Spam-Score: -2.7 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -128,34 +125,143 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add a new entry for the I3C QCOM GENI driver to the MAINTAINERS file.
-This entry includes the maintainer's name and contact information,
-ensuring proper maintainership and communication for the new driver.
+Add device tree bindings for the Qualcomm GENI-based I3C controller.
+
+The controller supports I3C SDR transfers in mixed-bus mode with both I2C
+and I3C target devices present on the same bus. The binding describes the
+I3C controller instance along with its associated In-Band Interrupt (IBI)
+controller used for handling I3C target IBI events.
+
+Document the required resources, interrupts, clocks, and dependencies
+needed to represent the hardware in device tree.
 
 Signed-off-by: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
 ---
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ .../bindings/i3c/qcom,geni-i3c.yaml           | 115 ++++++++++++++++++
+ 1 file changed, 115 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/qcom,geni-i3c.yaml
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 46c416cadacd..43c5730dd007 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12637,6 +12637,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml
- F:	drivers/i3c/master/i3c-master-cdns.c
- 
-+I3C DRIVER FOR QUALCOMM GENI CONTROLLER IP
-+M:	Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
-+L:	linux-i3c@lists.infradead.org (moderated for non-subscribers)
-+L:	linux-arm-msm@vger.kernel.org
-+S:	Supported
-+F:	Documentation/devicetree/bindings/i3c/qcom,geni-i3c.yaml
-+F:	drivers/i3c/master/i3c-qcom-geni.c
+diff --git a/Documentation/devicetree/bindings/i3c/qcom,geni-i3c.yaml b/Documentation/devicetree/bindings/i3c/qcom,geni-i3c.yaml
+new file mode 100644
+index 000000000000..bab89aeee23f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i3c/qcom,geni-i3c.yaml
+@@ -0,0 +1,115 @@
++# SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i3c/qcom,geni-i3c.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- I3C DRIVER FOR RENESAS
- M:	Wolfram Sang <wsa+renesas@sang-engineering.com>
- M:	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
++title: Qualcomm Geni based QUP I3C Controller
++
++maintainers:
++  - Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
++
++description:
++  Qualcomm GENI-based I3C controller implementing an MIPI I3C bus master.
++  The controller supports SDR transfers in mixed bus mode with both I2C and
++  I3C target devices present on the same bus.
++
++  The controller consists of a GENI Serial Engine (SE) responsible for I3C
++  bus transactions and an associated dedicated IBI controller(IBI_C) block
++  used for Hot-Join, In-Band Interrupt (IBI) handling and management of GPII
++  resources associated with the I3C controller.
++
++  I3C controller nodes must be child nodes of a GENI-based Qualcomm Universal
++  Peripheral(QUP) wrapper. Refer to the GENI QUP wrapper binding described in
++  Documentation/devicetree/bindings/soc/qcom/qcom,geni-se.yaml.
++
++allOf:
++  - $ref: i3c.yaml#
++  - $ref: /schemas/soc/qcom/qcom,se-common-props.yaml#
++
++properties:
++  compatible:
++    const: qcom,geni-i3c
++
++  reg:
++    items:
++      - description: SE (Serial Engine) register address space
++      - description: IBI controller (IBI_C) register address space
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: se
++
++  interrupts:
++    items:
++      - description: Core Serial Engine (SE) IRQ
++      - description: IBI controller (IBI_C) manager IRQ
++      - description: IBI controller (IBI_C) GPII IRQ
++
++  interconnects:
++    minItems: 2
++    maxItems: 3
++
++  interconnect-names:
++    minItems: 2
++    items:
++      - const: qup-core
++      - const: qup-config
++      - const: qup-memory
++
++  pinctrl-names:
++    minItems: 1
++    items:
++      - const: default
++      - const: sleep
++
++  dmas:
++    maxItems: 2
++
++  dma-names:
++    items:
++      - const: tx
++      - const: rx
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - interrupts
++  - interconnects
++  - interconnect-names
++  - pinctrl-0
++  - pinctrl-1
++  - pinctrl-names
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/qcom,sm8550-gcc.h>
++    #include <dt-bindings/interconnect/qcom,kaanapali-rpmh.h>
++
++    i3c@884000 {
++        compatible = "qcom,geni-i3c";
++        reg = <0x00884000 0x4000>,
++              <0x008c0000 0x10000>;
++        clocks = <&gcc GCC_QUPV3_WRAP2_S1_CLK>;
++        clock-names = "se";
++        interrupts = <GIC_SPI 583 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 796 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 797 IRQ_TYPE_LEVEL_HIGH>;
++        interconnects = <&clk_virt MASTER_QUP_CORE_2 &clk_virt SLAVE_QUP_CORE_2>,
++                        <&gem_noc MASTER_APPSS_PROC &config_noc SLAVE_QUP_2>,
++                        <&aggre2_noc MASTER_QUP_2 &mc_virt SLAVE_EBI1>;
++        interconnect-names = "qup-core", "qup-config", "qup-memory";
++        pinctrl-0 = <&qup_i3c1_data_clk>;
++        pinctrl-1 = <&qup_i3c1_data_clk_sleep>;
++        pinctrl-names = "default", "sleep";
++        #address-cells = <3>;
++        #size-cells = <0>;
++    };
++...
 -- 
 2.43.0
 
