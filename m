@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 656F7606A326
-	for <linux-i3c@archiver.kernel.org>; Thu,  5 Nov 2026 22:09:53 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9711A606A326
+	for <linux-i3c@archiver.kernel.org>; Thu,  5 Nov 2026 22:11:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Jgb9zBDN;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=wtPByOwc
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=2NGhI9Wy;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=oDUgjth2
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,122 +14,120 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=OmMpjB4R5XfUouz1uFA1QhH0+Iv+wL4lcUsTEu7mpP0=; b=Jgb9zBDNt3rfWXq6efYzzOlE75
-	n3JszVF2dS8nTHDUairKcEEVAGF1vltX4W9xIXoqxjMh3wTE/jxdImETBblYcedbIOgeX/D01dXFc
-	3Ldy+pCG/np+HMM9hg73YN5ow9iXUhigVfQYho0HdDt0v2bVte8HojWQDWJUQ9jiD2rvx8gtNKTFn
-	a5D6rIts/zODOqKdPJtjJFb/ZDVxjyAtf2oz1EhdoDOVV3qnbUbRJfFoXgqo5n+YThsuHLadDeKX+
-	5c8hat3xc88d3rJ71+ZfK8x9VljH5byx+TYFtWXZLrPhCzvz9YR61DdVqNyykzZtTAvx1MC1iKJJJ
-	3cvKx7Zg==;
+	bh=4OHLdrbd/3CVA0kt/SSYI7TahnNUOOObTVA03GIMmPE=; b=2NGhI9WyuJcjzfroyZMZ+wifDj
+	Kr2PCQV/GbmIGc1WT+Rkd1HxE9k0xxJ3FlSsAjObDHewhW1Ptudl+vfinfh+l25DBQkf/HGpthbVM
+	dLs9w0Y8g75dSmGSCV0SMHM0JvZd9IG9GI7JMB2gB/KzNH849KX76SWg6D30uaH0fj+aMuidWNess
+	VoZaqMc8Ifvb2YTg2OiMuS1GQ1ArCnBgrCO98jWDxMWXq/9JiyQAhYU6F3L6v2nfwviUewKlbBm6w
+	5YCP4Z+VYHqCmtkSU+M7h2C74kUMnkfDHbPnyXuSDBQ9Iw2vPoF4pkRMh7kCVJ0vLRu4gUUDBVm7L
+	N5dBgeTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP5eb-0000000AmZC-0PNE;
-	Thu, 05 Nov 2026 22:09:53 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1xP5fp-0000000Amcx-16RL;
+	Thu, 05 Nov 2026 22:11:09 +0000
+Received: from mail-francecentralazon11013025.outbound.protection.outlook.com ([40.107.162.25] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP5eX-0000000AmYr-3q1B
+	id 1xP5fm-0000000AmcY-3v1J
 	for linux-i3c@lists.infradead.org;
-	Thu, 05 Nov 2026 22:09:51 +0000
+	Thu, 05 Nov 2026 22:11:08 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=unSgFUwwYWfRRHr+rjTn3NwzDBJZXcl365ASxPY1Sijur7mNYl8k2E3ob3Cyy1Zev/nt8cG4Hz7CoYbppbmwd5JRIJGn1Nc/BbO1kb7pkH87Rqve8XokeWjnAAQ29yrpWffLNBxVVZzgTvCCGgnNink8ePV3BGrBBBifA4uvSk3uTYVc9yQIEWme6mcbKZTIzDVlpX/P3oXa+lc4Nmi9tkvUT7cLu3nPj7yENkjmIhMUuedKgQyZfMxPQtfnDflJZqzS8Ef2WdFqOsuE7rvepgkXi7IhNBm/JUeYRS4HQUtQUQjAiX6PJX2TwGoEmApHs9Mx6QY1fKFm+0/4VknAAA==
+ b=FaL1z7lFvnP3lmSiCk0aGuQbZN0eATkpiumpBmKKQLw/cJA5IZRq0P5dH63M3ZJsyuAI1pC03hN8bFPqDuwnSlIyoEy/Ypi/l/P+tVjbCc7fReIdwuJNEYZtufg3YgXyCxOV4XZx3aDqu8Ym8+TalNnK9iE5O0rmMJtX7+f/MKUcth3rWjjIO6k9R8mvABaP+hppNOmGc7QAGsLyeEvtmExxq+d+O8QC4S11k4PDhPlZx+qvS3wC/yjs0CLz3AfXhGHBbHxGgVEFwsMeibYfVru9vWWmQoLJYx9/BG4WIb1HplGIJWHrjdd+Cd307xoUcW0xLt+NXRer8KSVrsAV2w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=YpPn3dlP03U9qZLs3oavWGepVCo5I9P0h7xZhsfwANw=;
- b=CukuYfrBMtTsehhWaN5C2718FzNBVDaWPKHohj1uKmfs6SRDnLtgvIDMyE/RDWT7RdIgTrrzOMaD3HoyPyojGtIUSnDRg1HYihmmjxjF0MTYfmmH/jcu8foaNzIFmdJKjP6rjm/sv9WZar9onrhioYJs0nebrLjK9ukC3+UAJerAkUGpZP92EYUwVkUWKeUgM4fVqD8HY/p7SbWsgn/BTFnw9mqfTp9E+E4MLFOetLvtowtHtGzMQtKgIsaXujh13XE5VfYlQHYMvyR8S63W+z7VBJC5b3DxK+ji05wkT5CT25QkCLTqGzk3tpN4Ce8GA76eoU6Uhgy+32/0j4YYfQ==
+ bh=7MTBEjDPVfkCoAaj+iEh3c7S4M6Np5HboSMttSz04VU=;
+ b=b+zSYjnEj0It5l6xN+/GdEc/XYsIIIwjxAhVSzVbHR9VWfwQRzfPSVi/DuJB1iEKSBcnZxxf0s54Shyk6B7JT1S2OUfUKicLUzdrBZlpMezQMuAxIftaK7FkS9IuGpwQIycJXewCPC/B4DaMPDp0S+AMbj3WC+NqQ0ahkBQZNnWeqfNqdgKanc0mLEpgxR2hYpYXxk6W/Yc8yf1SlsUpqqlaZWReYbayH7YvEKsacSxhO8GUTfrlDLn+wvZVjkcsXKbVp+ccii+jhc6BftMPvvBtWIlrTJ7uUC5dsesK6ijJ+V/s17Qt319y/LGTn0JUAwOJv/2/cfQUtx6Xte92hQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YpPn3dlP03U9qZLs3oavWGepVCo5I9P0h7xZhsfwANw=;
- b=wtPByOwcXbJVQW4c4FKHmXv0UMIiP+gf9Xibr8XULtN9k5sFtN5s28KPeqN1jtfgxco+On2mngyygmO9D6qcwXQoCbyRATjBlXJkiMU6bn/t3zLH6nyxyp238l3KCs8NAPQetAIe3G1OFjMmR9NiImFHTfdpd8B4xKBCLP8TbBUqg2NYwwQOW1EK+CPu5Ij0gn9wreyBkQVF4F8qFBsOQFJ7FmwC+6AXyvadcI1BVKE2FKCdPft2idsJxgZWIunjhN0GIaLt8/cd3A8QAR4a4+yC4gPZzQst3OdUujEFMVRIL12IfryRxdj4afllrZKxRPLAaz5mEdD39c4zw0iOeg==
+ bh=7MTBEjDPVfkCoAaj+iEh3c7S4M6Np5HboSMttSz04VU=;
+ b=oDUgjth2UG5SX8L/NbJAmQAJS3+Nv4+X99Z8i9z9OYK/FiNlXenh2FUc6uB98BADdT0+oMR2T+PP4TARLVcnuGpWuutrjR9J66blFiDLhhrw3HoCuKKrDIOspUlRp6D728YP6F6+rk1yq53LxpLKYJV0cm9DyReZbLGkWrkIS0JsnnEpnO9uPavOIdldfJz9w/1HlVvcOHcJNzMBCIt8GPA2PN4YQW9+9wsXvvWa+u86z7TBvM7E0/oameasUiZZY9Oq5I6XseOMig+yBVxlqVirYx8Nd4ByyqakHRpY2LXrlAjmyCrgGNcCTOzuc8Agsn1/9duOpYlm3LOH3SM6QA==
 Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
  by PAXPR04MB8541.eurprd04.prod.outlook.com (2603:10a6:102:214::23) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.10; Thu, 5 Nov
- 2026 22:09:45 +0000
+ 2026 22:11:02 +0000
 Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
  ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
  ([fe80::c715:c32:8bb1:b70b%6]) with mapi id 15.21.0592.009; Thu, 5 Nov 2026
- 22:09:45 +0000
-Date: Thu, 5 Nov 2026 17:09:37 -0500
+ 22:11:02 +0000
+Date: Thu, 5 Nov 2026 17:10:55 -0500
 From: Frank Li <Frank.li@oss.nxp.com>
-To: sashiko-reviews@lists.linux.dev
-Cc: Shubham Patil <shubhamsanjay.patil@amd.com>,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	robh@kernel.org, conor+dt@kernel.org, Frank.Li@kernel.org,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH v2 2/3] i3c: dw: Track the transmit and receive buffer
- depths separately
-Message-ID: <auz-oTwusjUDhgh3@lizhi-Precision-Tower-5810>
+To: Shubham Patil <shubhamsanjay.patil@amd.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	meaganlloyd@linux.microsoft.com, git@amd.com
+Subject: Re: [PATCH v2 3/3] mctp i3c: Clamp transfer lengths to the
+ controller limits
+Message-ID: <auz-7yXIAj1BFH5F@lizhi-Precision-Tower-5810>
 References: <20261105085425.3418230-1-shubhamsanjay.patil@amd.com>
- <20261105085425.3418230-3-shubhamsanjay.patil@amd.com>
- <sashiko-outbox-198746@kernel.org>
+ <20261105085425.3418230-4-shubhamsanjay.patil@amd.com>
 Content-Disposition: inline
-In-Reply-To: <sashiko-outbox-198746@kernel.org>
-X-ClientProxiedBy: PH3PEPF0000409A.namprd05.prod.outlook.com
- (2603:10b6:518:1::46) To MI3PR04MB12438.eurprd04.prod.outlook.com
+In-Reply-To: <20261105085425.3418230-4-shubhamsanjay.patil@amd.com>
+X-ClientProxiedBy: DS7PR06CA0030.namprd06.prod.outlook.com
+ (2603:10b6:8:54::22) To MI3PR04MB12438.eurprd04.prod.outlook.com
  (2603:10a6:290:76::14)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|PAXPR04MB8541:EE_
-X-MS-Office365-Filtering-Correlation-Id: f28d61fd-1463-4e0e-c64a-08df3b897fce
+X-MS-Office365-Filtering-Correlation-Id: 106bee28-35d5-4a75-562a-08df3b89ad8a
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|23010399003|366016|376014|19092799006|261022105027099003|11063799006|56012099006|4143699003|261028144727099003|261009223027099003|261021121427099003|261026121527099003|261026140227099003|261102123227099003|10067099003|22082099003|6133799003|18002099003|3023799007;
-X-Microsoft-Antispam-Message-Info: 7EyulDLTPSvvXTftVGYoFV6Uf/HkX2GqzJpb3mv4XsbAIcp1prLEUj0xfTDJJy4wv5M60YYdajbYvhBQ/w4iKaTCPTEuGkOzJFO5OPPtv77O05BVIkRk32DrCJRAeco+ITnXc88oh7AADMRyoyLBXzn+lOj70PUNdKi22eOAvtnifdcdUSSEjn7PAYVJafqhNDM3qKMbSgG5PWBw1ZQlBFPbB7h1KxuEg8iJGojCb+rZddtjQ07cpenxjMJBNjh5l6nC/9wTKNANsTx2Tg/WFTOFLnub07j4ndOly5UQMQFnv+qRjTW/H5pJNo9ACan4fVy/R4EhDQFv6zlSm48lp0GiBkUxrsGY4q+3um768vXU3ERPHSVyK3BeRU84ubZfHIgk4AzlxyT9S1lbakQKrno0EIoTpeeiNDFlcH29CDGlzoXGCXNbCJ+JkcesEfHoVn15rBf2ydWiDVbYBrN6WUESSiFcXe1SDFtpmZYNkIDnuUjGF5DpJi9Hi/cK5lEDXTGj8DEAQobqGL6GP8ctcN8H7PaLRnCoTviAoaOzfSwsuMRW+U5E5UW7WzFLWhUpKasSD/kVA0o8gCLZbsMR/Gvw4hnyynZInWMV4nmIQBE=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(23010399003)(366016)(376014)(19092799006)(261022105027099003)(11063799006)(56012099006)(4143699003)(261028144727099003)(261009223027099003)(261021121427099003)(261026121527099003)(261026140227099003)(261102123227099003)(10067099003)(22082099003)(6133799003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|23010399003|366016|376014|19092799006|261021123027099003|261022105027099003|5023799004|11063799006|56012099006|4143699003|261028144727099003|261009223027099003|261021121427099003|261026121527099003|261026140227099003|261022075727099003|261022113327099003|261102123227099003|10067099003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: Jb9h8jo0QWVzPY9wP6EBoxPRnAu60I848Gxdchw76MJWYES19ayPndlX9UOklD+wse1H6b9iIsXBYw7KaR10ozv/83M0RSD1xMUngcFVjZa3+VGXBCtDdixeAbYgy1wcL6kzfLN2LIoy1uvt1RNxabvwIUt3dpBdFMXg+DoPEIoOdwC6+QLb3bZE1iEVU0WOWBDNvXmpU0vC9pt0ikUIAy2/qwmu9t3vYZ0DQpLQ7F19l6llx9i6p1lf+d97S92g6Hlercmk+QZLJkgMJZ30kiJfPIY2KxPqWQkmNlUmtMjqFIBfltDOnDvOUaS2TLN7QF/k8k9baMJABGP9GfrKPzez1d1qfCN/+nupfqk7kVxHwqoJJlq/9NUj6u5hkw5O2znoMsLmLv3RKuES0DLwM8Jy2YrzR7WM517UHOq1QgJz7bcouWMr5eHJvm7zIPCDbGpDBmzH/d4AZSvt9qbQguUyGuta5iPzG9Vy/6jFRNTZn1KuFAH08822CCIF3a/Wyw3UIIeeawHGeyAaq9JFP8ySeefvd8S1HpINCMfSt2YC4bfUCW2kqe0RYIVah4ufEDKtXPSbmdK7QloPlm1eM/WumI/8ub2wzYkRDlMalZs7L2DG3MnBzSLL9w1vjjBRCaRauXDTwkCM4p1J6TFtEUSS96vGpS62lFRi09muxjg=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(23010399003)(366016)(376014)(19092799006)(261021123027099003)(261022105027099003)(5023799004)(11063799006)(56012099006)(4143699003)(261028144727099003)(261009223027099003)(261021121427099003)(261026121527099003)(261026140227099003)(261022075727099003)(261022113327099003)(261102123227099003)(10067099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?ip4brVsZ9Yx7M4THJoLa5Dc2EisKwWzdwOV5OmiWjamvadwAI13TLkOX+8?=
- =?iso-8859-1?Q?nWZsnO74TNGMHimeKgGjAKYN01RarhPO7abcpXk0JGk/1m/cNBhKnHZdph?=
- =?iso-8859-1?Q?SinOvtqam2Gc3u7gz35QpNVCdAKUTB50ewKot1A64t2ynTHcqZIuYBF08i?=
- =?iso-8859-1?Q?s+NJKSpMA9zsfuvHDrdwh0pkOa1X1F+ebUz/nWBeXxoYJnl5rK+TPmOGwX?=
- =?iso-8859-1?Q?j4/KviSXD+wInIaMnAng2swjQ7mV9mMRRT4j611rU+OIY+cBvYvB54e1gc?=
- =?iso-8859-1?Q?5yEp3rcDBKI9Y64k/O/E9IPkoVFMaoLUWSMaw/BVyVPgFsNFLC/mb0H6m3?=
- =?iso-8859-1?Q?oacUQbB/c1VtPcIsptMamx0BHiOKz26SGH53Lfxb4z5H5a6LyiUlA9f6UB?=
- =?iso-8859-1?Q?CDP+/RC5JtuCg8sDRpG0DMNTK37hcAmuJr6Pi+IjmYtrYHNpTAg39veWMc?=
- =?iso-8859-1?Q?rcCIj+zbE59BDLV0WhQ96uxA3mtejgAjlZ5xYhazG2kP2ycP5v4EKUVZXn?=
- =?iso-8859-1?Q?CDjOvLjBhngYAnE6CnPV2jeuQHteiuLGw9qex8YNiewSrfnqCfU4b9CVD/?=
- =?iso-8859-1?Q?5cOLpgsQcHTrN9b3iqj13GxVqsz+BwT/XRoCOlbCcKuiC0QIs18vJqqr8y?=
- =?iso-8859-1?Q?07JS6kyOvHZ4BYw/RHMdq2J+nnwUBYFDRcaAM29gylh2wRhviz+tqHeIFX?=
- =?iso-8859-1?Q?AI9AT59rpbhrupIUjAOZ1NS/KUfGS1NiSipDo0xqLQxpbncUu4yplzyqYq?=
- =?iso-8859-1?Q?HeXaLeGRKfvOCiXkpnTUatw/y+CKt7y1eByhgx3vS0r+A/j7D6+KX1xMt0?=
- =?iso-8859-1?Q?fahZ7TZxfoyDJvIGgL6B/lc4fWA3HXNo36MKfk8nT3Bm74cLuq9ErVMc7c?=
- =?iso-8859-1?Q?awAbHY9rE4sgE87ZL5MWKmKP6ZpEkIjXpkeA4HXwZ7ySJwrDqPc8dDnhj7?=
- =?iso-8859-1?Q?RMOrJJOAy/ocob+pwtaqGFfEWdo8D3pb2YOwVeM/M2HILucsYvqm3zAFEQ?=
- =?iso-8859-1?Q?XmiqMP32EAWjJy6OahmgZ5sKqPX35x+xFuJC5BUXYy6eI2aP0Jk1Nmf0hi?=
- =?iso-8859-1?Q?OABHllJtpbNnoMw39tGK/gYOnlShqy0KwewfxvIJWR2Ecyk7H04xO76qZE?=
- =?iso-8859-1?Q?7ZgEinSfagvpfddvzVEM4BvIwgKCegCM52YtR5OFj5o5sFLfcgTMyRQVV4?=
- =?iso-8859-1?Q?0+AZRXMISPq+/kHsqyBSRyiweUAwLSz6srldijKPOcyqktgIgrK8u50z4o?=
- =?iso-8859-1?Q?xN2Uqqzg2L8lZJ4NxrraXS5XPEgExl3gI1Bzw5fNpuR0pMNt+30vC4VsPI?=
- =?iso-8859-1?Q?cEPFlj4WpoBZpoWjnZO4rZhEmMu+HKotabCHSOb5RX01uxTFQAj76gWp6N?=
- =?iso-8859-1?Q?tQgFNae4pnzBqc+iSdDu5Q20Ul5MhpRdbcTCruH438XP+hklATTXA7eELr?=
- =?iso-8859-1?Q?B4Bilo09MWU74OWoiMu78C3Xn2ssC+HcgC2amHFa8kfUjOe+Al9bVxw+tc?=
- =?iso-8859-1?Q?P0xIt2b2SNUugcr3BlJ3RrzQ2ZEZGYuxCVW+R3H6Q6fQMbi6BREejl60yI?=
- =?iso-8859-1?Q?QSzgqYzTUelux0lCUq2D8GtZyjR4jJ+u4DUbpdC/QE0iINPcKnpO+gbw34?=
- =?iso-8859-1?Q?WpThi/sCA+mL8GhtYFVtANDWaZtHqXVKXo0E20G6G+Wk2fkDUO/E+3DlA+?=
- =?iso-8859-1?Q?OUqFBqSmSqniE+P4aOgyKbuLsJS3Z8HB7UrT+5OXb6YJUYgIDi7S7ftQMU?=
- =?iso-8859-1?Q?+5t5W+GPYFcjNyTzO2LPCrsEk6KHAAALFB6X7Y7jKpuzuEql1EsPca+/it?=
- =?iso-8859-1?Q?8GwklIz6CRZUBInPMqtulz1Vb96euCKzLfEkWTjpTCrApaIWCGkq?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?CoOqj50GGcEsaJSi6hwt4Ojp204MEYQKZlMfukdDRU+Cwp7P+JNZXtwLUkHR?=
+ =?us-ascii?Q?vz825x6dP0OIYyvn1v9ogV4L5gsAcp0hxs5V+M7Wj9jfCXtLtWXR660sJb/w?=
+ =?us-ascii?Q?HLYQEB+5K7ph4RTfUx0It/ZxjLOZSnFkjDczRIlN7yHNPktRceWh6NywpXB/?=
+ =?us-ascii?Q?fL11En6tOAjpyD1LxCuwYjrIFGqQHpQVBdIAAsC56hVG2NzJ05f4wwcF+/8w?=
+ =?us-ascii?Q?P77a3Q4jiIUVHStRrP8TQKYTEFd1hoK2egPiZacVIatpGdGMCTNAWN17LOEU?=
+ =?us-ascii?Q?N/GY0+5Zc7itCToa/dRUinqqRilT9rT+TZkHl6jcNuMJ86xbPGBwapsUI4jv?=
+ =?us-ascii?Q?91fpXkoO21arNQTs/o1WE0f+8d6ZoywYOIjGNoQji4mhlGcuLUaPS9rPmv/G?=
+ =?us-ascii?Q?b8s7MoRzGFvJFxyXAGu1BlbeDg5OV4hKvf573VuVwOsBLwIgHTNgUEG8jagh?=
+ =?us-ascii?Q?gbquQNim8u87zB4rIswiebZhf0dWj9h4QkA569e+LBJM8GF1RrICv1LRALHq?=
+ =?us-ascii?Q?j84jElNLDGskDrcwqtyFZQwrL/rPQmMMzkNIaWaV+ZiTDdtYFlPFVobYmJjV?=
+ =?us-ascii?Q?RacafzjMFj5vgKfVjQ1KScK175H/4bWtbwsZtzT3D51LJgRkWyLSf+BnG6Ae?=
+ =?us-ascii?Q?Sux0Ek/7ycNDaL4msQV6/C6PXCVyqPsFfvWrOR8LTHHQZPNZlR8Za+PONqHa?=
+ =?us-ascii?Q?kQrfXSsFP6OG24WJc695wc07WBOZBnhdfJ6pjB0Ssb6LoXhL5TJAhsECJ/U/?=
+ =?us-ascii?Q?e1tVngeeoC5xDXAkjOMmzXqhwWoBh32x6ciTOm9gMJL9SrrAjMAgwch/tzxQ?=
+ =?us-ascii?Q?avKsVFBzinijQhhDraDhgE8ni7JyVnqzzyHnhFeKYE3q5ueYUAzEs16CG09h?=
+ =?us-ascii?Q?1SDABPTWi7ANNSGhLDPmPku+pntceamc3Bcamt57CBvsrdeLpyudvFXZR9t/?=
+ =?us-ascii?Q?vCv2n9ogbSYEf2Uij97/S+UKKUpQqxx2Fxr1EsEEssy1kMkJr6VTtI8O14vJ?=
+ =?us-ascii?Q?vkaTKkeH6jbE0By1C+wLRA/wjFSaa6ueWv60IGbNRd50hIakikn7Js94kv9a?=
+ =?us-ascii?Q?wZC4rpiQtzqS5A5HrpZbAXkOl17+FDqzsDE8U5izJ88kBafHwC5OpaDSg5/P?=
+ =?us-ascii?Q?qrHp1sgt9klE1zuc+DhiCbkQHGMvF/4zaMYRhGdSR4v7tkvduMYMtAms6CIf?=
+ =?us-ascii?Q?3MydrShPxipKPB0+J3ukiUxDsSX9TfakNO0LtulbeTPBhNdBT3B8uERFbYck?=
+ =?us-ascii?Q?bJLy13c1MOah4Z9wquMyU5a7OulHD+9Gm2T+nNm7Zsh8NQWKwGi3g8IvVwLe?=
+ =?us-ascii?Q?eQwk0bCJXSK5Kkx1dVdqXupzbiE6KLWGD1Mr+1RKUFC1qrf42I5oVnxnbNYh?=
+ =?us-ascii?Q?wFjJpIXqFFDVr5JiyMPrl3pFvLqNmiEGFU4G+6Km54Cy8q/sF8rGuVtVnBxr?=
+ =?us-ascii?Q?Q/kImfzDSCM4Hs4qKtE2owqrynDFW6zVOZHL4/1B00E0HTPamST44iozMDYP?=
+ =?us-ascii?Q?OCo9yl++CzfdLDfFKnpSOT60FN8gV6VkutCtZ1U+izVyqBcsCx9CS+k94H8k?=
+ =?us-ascii?Q?bJZ+Avh2+MrzRjZfp4YPspnE7EL9HWKsenQx2jXTjcFKOl8SV6bpS7EVl7Kx?=
+ =?us-ascii?Q?blbrCpEPND9dlKoOgm1CGEVS72YpgVZY8X5oxJtVDDPcYfmx7aPl4RQ01OTi?=
+ =?us-ascii?Q?B66nhYkWAop8BXiBQoBEeoPQ+3eaKKlGnYcoDUr8Mi04//c8S9iGdx2hiC9C?=
+ =?us-ascii?Q?9x9VBJOBb+E0BpjrJVLafULhQlR9TCYE8zHc8CfM9bbX0bm/25Z2?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f28d61fd-1463-4e0e-c64a-08df3b897fce
+X-MS-Exchange-CrossTenant-Network-Message-Id: 106bee28-35d5-4a75-562a-08df3b89ad8a
 X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Nov 2026 22:09:45.1376
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Nov 2026 22:11:01.9901
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 1fPbfDm4bwBLQKSvL6rRxhijdDyPBirWH8yDE1o6DVfnW8Q2K9IyXZlYzBNg7FH3lbR3tCFhm/lYoRbvB+odsG6UPxKQVv4nj6xbX/4jWzlM3st+bENFCR3BRoi8xo03
+X-MS-Exchange-CrossTenant-UserPrincipalName: AHbTTWOs3n7QoTuHlzPyz140w5KtaixfWYTHWNxoKIzPJ8iz2663w/B0TLAk7XjRLFxveBiCDNx2VHJX7O1UM1nI64OHIAtu98nDsjzmeU0AY5a4ws2LfeTp4K4rNxuj
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8541
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261105_140949_982366_0EDF637A 
-X-CRM114-Status: GOOD (  20.20  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20261105_141106_996387_12B0BB99 
+X-CRM114-Status: GOOD (  19.71  )
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,137 +137,71 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Thu, Nov 05, 2026 at 09:01:14AM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issu=
-e(s) to consider:
-> - [High] i3c: dw: u8 truncation of rxfifodepth in dw_i3c_common_probe()
+On Thu, Nov 05, 2026 at 02:24:25PM +0530, Shubham Patil wrote:
+> mctp_i3c_setup() takes the maximum read and write lengths straight from
+> GETMRL and GETMWL. Those describe the endpoint alone, so on a controller
+> with a smaller limit every read can be built too large and rejected.
+> Transmit packets can similarly reach the controller even when they are
+> larger than its transmit buffer. The receive path also allocates an skb
+> for data the hardware can never deliver.
+>
+> Use i3c_device_get_max_read_xfer_bytes() and
+> i3c_device_get_max_write_xfer_bytes() instead, which return the smaller
+> of the endpoint and controller limits.
+>
+> Behaviour is unchanged when neither reports a limit, as the helpers
+> return 0 exactly as the GETMRL and GETMWL fields do today.
+>
+> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> ---
+
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+
+>  drivers/net/mctp/mctp-i3c.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/net/mctp/mctp-i3c.c b/drivers/net/mctp/mctp-i3c.c
+> index 88d9e36cd4a2..6d08898e1d21 100644
+> --- a/drivers/net/mctp/mctp-i3c.c
+> +++ b/drivers/net/mctp/mctp-i3c.c
+> @@ -81,9 +81,9 @@ struct mctp_i3c_device {
+>  	bool have_mdb;
+>  	/* I3C dynamic address */
+>  	u8 addr;
+> -	/* Maximum read length */
+> +	/* Maximum read length, limited by the device MRL and the controller */
+>  	u16 mrl;
+> -	/* Maximum write length */
+> +	/* Maximum write length, limited by the device MWL and the controller */
+>  	u16 mwl;
+>  	/* Provisioned ID */
+>  	u64 pid;
+> @@ -214,8 +214,8 @@ static int mctp_i3c_setup(struct mctp_i3c_device *mi)
+>  	i3c_device_get_info(mi->i3c, &info);
+>  	mi->have_mdb = info.bcr & BIT(2);
+>  	mi->addr = info.dyn_addr;
+> -	mi->mwl = info.max_write_len;
+> -	mi->mrl = info.max_read_len;
+> +	mi->mwl = i3c_device_get_max_write_xfer_bytes(mi->i3c);
+> +	mi->mrl = i3c_device_get_max_read_xfer_bytes(mi->i3c);
+>  	mi->pid = info.pid;
+>
+>  	rc = i3c_device_request_ibi(mi->i3c, &ibi);
 > --
+> 2.34.1
 >
-> commit c93cc6843b57993d053db03cc3f7cee25dbd4371
-> Author: Shubham Patil <shubhamsanjay.patil@amd.com>
->
-> i3c: dw: Track the transmit and receive buffer depths separately
->
-> This commit splits caps.datafifodepth into caps.txfifodepth and
-> caps.rxfifodepth, populates caps.rxfifodepth from the QUEUE_SIZE_CAPABILI=
-TY
-> register, and exposes the FIFO capacities via base.tx_fifo_bytes and
-> base.rx_fifo_bytes.
->
-> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw=
--i3c-master.c
-> > index d1119f203d1b6..dd5462b129514 100644
-> > --- a/drivers/i3c/master/dw-i3c-master.c
-> > +++ b/drivers/i3c/master/dw-i3c-master.c
-> > @@ -203,7 +203,10 @@
-> >  #define BUS_IDLE_TIMING			0xd8
-> >  #define I3C_VER_ID			0xe0
-> >  #define I3C_VER_TYPE			0xe4
-> > -#define EXTENDED_CAPABILITY		0xe8
-> > +#define QUEUE_SIZE_CAPABILITY		0xe8
-> > +#define QUEUE_SIZE_CAPABILITY_RX_BUF(x)	(((x) & GENMASK(7, 4)) >> 4)
-> > +/* Sizes are encoded, 0 meaning 2 DWORDs and every further step doubli=
-ng it. */
-> > +#define QUEUE_SIZE_TO_DWORDS(x)		(2U << (x))
-> >  #define SLAVE_CONFIG			0xec
-> >
-> >  #define DYN_ADDR_LO_MASK GENMASK(4, 0)
-> > @@ -978,8 +981,8 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_d=
-esc *dev,
-> >  			ntxwords +=3D DIV_ROUND_UP(i3c_xfers[i].len, 4);
-> >  	}
-> >
-> > -	if (ntxwords > master->caps.datafifodepth ||
-> > -	    nrxwords > master->caps.datafifodepth)
-> > +	if (ntxwords > master->caps.txfifodepth ||
-> > +	    nrxwords > master->caps.rxfifodepth)
-> >  		return -EOPNOTSUPP;
-> >
-> >  	struct dw_i3c_xfer *xfer __free(kfree) =3D dw_i3c_master_alloc_xfer(m=
-aster, i3c_nxfers);
-> > @@ -1136,8 +1139,8 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev=
-_desc *dev,
-> >  			ntxwords +=3D DIV_ROUND_UP(i2c_xfers[i].len, 4);
-> >  	}
-> >
-> > -	if (ntxwords > master->caps.datafifodepth ||
-> > -	    nrxwords > master->caps.datafifodepth)
-> > +	if (ntxwords > master->caps.txfifodepth ||
-> > +	    nrxwords > master->caps.rxfifodepth)
-> >  		return -EOPNOTSUPP;
-> >
-> >  	struct dw_i3c_xfer *xfer __free(kfree) =3D dw_i3c_master_alloc_xfer(m=
-aster, i2c_nxfers);
-> > @@ -1738,7 +1741,14 @@ int dw_i3c_common_probe(struct dw_i3c_master *ma=
-ster,
-> >  	master->caps.cmdfifodepth =3D QUEUE_STATUS_LEVEL_CMD(ret);
-> >
-> >  	ret =3D readl(master->regs + DATA_BUFFER_STATUS_LEVEL);
-> > -	master->caps.datafifodepth =3D DATA_BUFFER_STATUS_LEVEL_TX(ret);
-> > +	master->caps.txfifodepth =3D DATA_BUFFER_STATUS_LEVEL_TX(ret);
-> > +
-> > +	ret =3D readl(master->regs + QUEUE_SIZE_CAPABILITY);
-> > +	master->caps.rxfifodepth =3D
-> > +		QUEUE_SIZE_TO_DWORDS(QUEUE_SIZE_CAPABILITY_RX_BUF(ret));
-> > +
-> > +	master->base.tx_fifo_bytes =3D master->caps.txfifodepth * 4;
-> > +	master->base.rx_fifo_bytes =3D master->caps.rxfifodepth * 4;
-> >
-> >  	ret =3D readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
-> >  	master->datstartaddr =3D ret;
-> > diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw=
--i3c-master.h
-> > index f5b4491b247a0..e23554bfc5e49 100644
-> > --- a/drivers/i3c/master/dw-i3c-master.h
-> > +++ b/drivers/i3c/master/dw-i3c-master.h
-> > @@ -14,7 +14,8 @@
-> >
-> >  struct dw_i3c_master_caps {
-> >  	u8 cmdfifodepth;
-> > -	u8 datafifodepth;
-> > +	u8 txfifodepth;
-> > +	u8 rxfifodepth;
->
-> [Severity: High]
-> Can master->caps.rxfifodepth overflow u8 and truncate to 0 in
-> dw_i3c_common_probe()?
->
-> In the DesignWare I3C controller, QUEUE_SIZE_CAPABILITY_RX_BUF(ret) can
-> return up to 0x7 (256 32-bit words, or 1024 bytes). When that happens,
-> QUEUE_SIZE_TO_DWORDS(7) evaluates to 256 (0x100), which truncates to 0 wh=
-en
-> stored into the u8 rxfifodepth field in struct dw_i3c_master_caps.
->
-> With master->caps.rxfifodepth set to 0, master->base.rx_fifo_bytes also
-> becomes 0 in dw_i3c_common_probe(), and the nrxwords >
-> master->caps.rxfifodepth check in both dw_i3c_master_i3c_xfers() and
-> dw_i3c_master_i2c_xfers() will reject every non-empty read transfer with
-> -EOPNOTSUPP.
->
-> Should rxfifodepth (and txfifodepth) in struct dw_i3c_master_caps be u16
-> instead of u8?
 
-Make sense, please fix it.
-
-Frank
-
->
-> --
-> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20261105085425.34182=
-30-1-shubhamsanjay.patil@amd.com?part=3D2
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
