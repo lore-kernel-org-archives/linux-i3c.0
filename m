@@ -2,89 +2,132 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DE100606D814
-	for <linux-i3c@archiver.kernel.org>; Thu,  5 Nov 2026 14:50:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B8605606A31B
+	for <linux-i3c@archiver.kernel.org>; Thu,  5 Nov 2026 22:05:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GaPg7ABY;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=e7tgmK9k
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=f2x3zcOS;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=q5hmPZFv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=gZ5DdHDd5fEEZM5m9keCUq2k5zoZG3d+mZ9wRI0Meu0=; b=GaPg7ABYYghFxcpZ4f6uvOvBy9
-	qMlxWZevnlWRkXOe0ZnmI2MMhttQHT+1IJvtBhRRj82XARGE9iCG6ApwtB0/fUTzXfij/wVqkhqJb
-	KNuadjXW2Y7buTCofOATYc66qIskKX6UypAzkAX4Bt9mH6VABH9iOeWE7k05YbUb/Dbncf9lOvWls
-	bxNwVGO6gH61YOhLkELpUliyHJsiOIV6aafGiq412tL730GCHkJvXc0cmbSMs3U9TJYkGSA+2gePY
-	JimfskJuxGH+DnEikzTIO/YeOCGtFDfl9yztltsbuY9FTBYg/Pc5BJvjJgLMuqdqluoxHj8sTpIZy
-	M20qAd4w==;
+	bh=i9igr3TqAJWIe8+vJSoZ9WES4qkWHzTL13A4NGMm9fM=; b=f2x3zcOSfRmeZ3EMH+YGXCCp0X
+	tIBXAmLcbvXAPSjalIJXAF6UU+D+07GfNQzjO3p711/VNBtW7TbgccU2IIh1WEIsmyzscoEYSoS07
+	MPfclE6J77npAjM+K5QsmyukSkUtyQkcboqvLSqTY8gPis7mHZ2q0/uZphR+r++uE8q7d9w+RYiF/
+	leoU8mDSl5iu0O5i/73rRuGCksmlrp1pFWgcN/chwnyyB98N5lE09EWFgX2LZaKs1e5aagrJ7ZwS4
+	GhdhChhzKSshT0B2ygHxrBrAtCs8bDlM513z8CuvJv42p+WkHtWXI1F+3TF911eyni6vNryp3XHUY
+	TiyUgUCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOynF-00000009KhX-2dTT;
-	Thu, 05 Nov 2026 14:50:21 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1xP5a3-0000000AmPt-2v2P;
+	Thu, 05 Nov 2026 22:05:13 +0000
+Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOynC-00000009Kgd-2cbK
+	id 1xP5a1-0000000AmPP-2NbT
 	for linux-i3c@lists.infradead.org;
-	Thu, 05 Nov 2026 14:50:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1793890218; x=1825426218;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=SEacydVAocOoM2UCf6wrFxtqPAImR/F2TO+ME5G6D8s=;
-  b=e7tgmK9kFATUWtIoIGkUJ7wNxpitInSs4XMdgDf2nOWqD7tTAuhQhBRk
-   RquqEi4kW3Rh5al7Fjgq6UzJVm5/cAiB/wWZw2Z60Om7o3Is9NZIWTrIQ
-   tZ2x4XRCUKyW6dGWaIL34pBUTAePMxi3+rDYHlQQWyPAU1JGXaI9jAK5E
-   lqBpOEDG9DZdmQHjtKoOyiDyKVhXp1aJwqmJlXtWGJCqGFHC0oVB7y0Qu
-   +P9YqkeE461FFV9GCeyiSelVZ04c+GDaTsGMVHJXNfua+oOXjCCX9Qbp6
-   qRRAVAJgpDLegm59ZQhZ71F6dXBtZj9jGwRWaIPZVVEYMzmKuHwZ33FVW
-   w==;
-X-CSE-ConnectionGUID: R7tFpNfKTGOg7+26NGZ1rg==
-X-CSE-MsgGUID: cv+zIYD0Q5O+NAbkHLaukw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11957"; a="2551293"
-X-IronPort-AV: E=Sophos;i="6.27,197,1787036400"; 
-   d="scan'208";a="2551293"
-Received: from orviesa009.jf.intel.com ([10.64.159.149])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Nov 2026 06:50:17 -0800
-X-CSE-ConnectionGUID: VCsj7JxxQo6Ld5HGrJ2f3Q==
-X-CSE-MsgGUID: DXMJKH2VR4iY8okcCBmtKQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,197,1787036400"; 
-   d="scan'208";a="7151188"
-Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
-  by orviesa009.jf.intel.com with ESMTP; 05 Nov 2026 06:50:13 -0800
-Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1xOyn3-00000000mLZ-3tNZ;
-	Thu, 05 Nov 2026 14:50:09 +0000
-Date: Thu, 5 Nov 2026 22:49:36 +0800
-From: kernel test robot <lkp@intel.com>
-To: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>,
-	alexandre.belloni@bootlin.com, Frank.Li@nxp.com, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shubhrajyoti.datta@amd.com,
-	shubhamsanjay.patil@amd.com, adrian.hunter@intel.com,
-	manikanta.guntupalli@amd.com, linux-i3c@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, jarkko.nikula@linux.intel.com,
-	wsa+renesas@sang-engineering.com, alok.a.tiwari@oracle.com
-Cc: oe-kbuild-all@lists.linux.dev, konrad.dybcio@oss.qualcomm.com,
-	andersson@kernel.org, jyothi.seerapu@oss.qualcomm.com,
-	viken.dadhaniya@oss.qualcomm.com, aniket.randive@oss.qualcomm.com,
-	praveen.talari@oss.qualcomm.com
-Subject: Re: [PATCH v7 2/3] i3c: master: Add Qualcomm I3C controller driver
-Message-ID: <202611060055.y4Q35SU8-lkp@intel.com>
-References: <20261104111610.3739095-2-mukesh.savaliya@oss.qualcomm.com>
+	Thu, 05 Nov 2026 22:05:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ZSHwm3WBdYDWm7nUvYG6mNxIWXN61KDW0xklDT+fcNa4uuHCEB0qAwwc8QrOkCQdsYuY6dbDrx/KRgen9RXewOib5xvYeOet+0t2e/eBUkhR0RgpqEKNOebkR146DkM9qCJs15Q4e9/zOVG0AqTp8ca+pqvSzPxuLojbN2y/CtqQ9WxFRnFGaWhtP0mxEeq4kWgqgzX0sSX2iE/ZWrQklTMh5+cnyy9VsP5P94VXhkecUmNoKB8WBB6zJxx55CjEp+woE1HWT3Y/Dx7or1/ue+yoGS95S+1Q1Hh/YK/B7SYQDWaPAY50hk58/SqlqI2D4t96GLgc6oQw7I6+eH/ErQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=UM79h6/XeKWukEb9O63r2sc+IIK+Q8AyvjK8pFLS5ek=;
+ b=egBKD8udShZdPSBFAMNDtyDRY2NSAbyOACvhQUuDR2jtQEj9JQs9h/bJkSGeJx0THhBoNBC75q5pHCpTHCHWXLKFuqBfh9JSCJ2oMCi3Z6Wa3rV7O70/PcBgWvmFpkaXrdEkF/dIb+lB9yWbKdmUnOgPQx8fEeqgLngz5UJdBULhrCIjy5gWUvsF7TDW+Uk78mu+WFQs+3a/gwKd1Iuj3Fcm+46fmL1EU55nI7F1z+kYsyySGNByvCdzo2QvfBmxgj0Iqp3tknIT3P/sJE8wUVJ38fBWdF1KypZ//7YSLgRJQ6vlUjZvzMmq6zaNA5vRqCMltIvEqFgsuAjgqTrp3w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UM79h6/XeKWukEb9O63r2sc+IIK+Q8AyvjK8pFLS5ek=;
+ b=q5hmPZFvjC335dzC3T/n/fQ04AY3NelKcVYhSrwngIWfJDowTcst2GEuRXWeyW5XKFrMiYEpWLEdZwuT1Pb9MhXwXfVNX3XiY7hVDcuM8KmSd1RAfV8mWiZwZBrOWl3x4p9nW75chlVlePM2IBQS0WfiBTEkppVG2m6Md5Cc7LZSjdBRoZ5ZOomyTqDxvd1Tl76nqhHtK6Z90uf5ud0kMsmtUmTdrE+XEEMQ8FXzidPiOK+B3Bkcrpo7RlkMrtlnbOuRnvOQ6tAWY41ct72s0osps4YdchWAyqmkVBQeMzMP6/2T9qrv2DsA/4CpmjtfcJoQokTBCtNqIc2bq3uo2A==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
+ by AM9PR04MB7684.eurprd04.prod.outlook.com (2603:10a6:20b:287::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.10; Thu, 5 Nov
+ 2026 22:05:00 +0000
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b%6]) with mapi id 15.21.0592.009; Thu, 5 Nov 2026
+ 22:04:59 +0000
+Date: Thu, 5 Nov 2026 17:04:52 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Shubham Patil <shubhamsanjay.patil@amd.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	meaganlloyd@linux.microsoft.com, git@amd.com
+Subject: Re: [PATCH v2 1/3] i3c: Add helpers to get the maximum transfer size
+ for a device
+Message-ID: <auz9hONlL4kr6qrL@lizhi-Precision-Tower-5810>
+References: <20261105085425.3418230-1-shubhamsanjay.patil@amd.com>
+ <20261105085425.3418230-2-shubhamsanjay.patil@amd.com>
+Content-Disposition: inline
+In-Reply-To: <20261105085425.3418230-2-shubhamsanjay.patil@amd.com>
+X-ClientProxiedBy: DS1PR02CA0010.namprd02.prod.outlook.com
+ (2603:10b6:8:452::18) To MI3PR04MB12438.eurprd04.prod.outlook.com
+ (2603:10a6:290:76::14)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261104111610.3739095-2-mukesh.savaliya@oss.qualcomm.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|AM9PR04MB7684:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0cb5e5ee-219c-41d6-458e-08df3b88d5b0
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|23010399003|366016|1800799024|10067099003|18002099003|22082099003|11063799006|56012099006|261102123227099003|4143699003|5023799004|261026121527099003|261021121427099003;
+X-Microsoft-Antispam-Message-Info: 9WEBUGe1lbrKCzzRL8sa+XnKnC5kKT7ErDJT4NwlifA0p1JRRZverk1fcRTtqZzFV4Ha9OUTthP+WDJacUXWq2hPDuYzbgWOCQuc5C9xcueK8UNU0xUvYTD6imvayQjJuvccKvuqjaTUIqjpFNhCP7UdELITPfx11p3ZGysGOSJB+KaPP7Phxgolbbwdi+QGIRT6wvNtTyLLXY3CJi4dL++9ssccvvAgJ+V1L0FKFpLEt1F2fbC0nDgLwGMU4jGecOAFUJ+lnYpqxw9SHu4e5J8wDiDFDl+rMR2ywD5LHTEbpur45Ax+XhUV9OkgTWUPpOILDuW7aPzFTotkHP14Lo3SPVAMLRJHrZfKQ02sOs9wWlYPxehNBHBnRQMIHNwKsObKhQoJjkte3V0qrUS4oK3OGAXxSEe6oHZ4PoycE3TdKyQOTbvmJ5jv+5olKHnfralJaICxlct7DLlgJhHwL5/XbF9pa+RfzB836BAyeIFsgvCDHrZwyJhWBycFaVV6bcsbgV1C0LVBUOOoCDEIpD2MDD4TxVyBWw+uqkhcVvNaLb78G4AWeqoLNI0sJPwfO4zwgTkV2q3l/a3stcPWINS3TgA+2grydSeO23oTz9pAjbwCyM/xAbZsoA2jJjt51EDSvSDWfTGwF8W2jvJoGHR3SKqlYR4mzjdXY8As1fk=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(23010399003)(366016)(1800799024)(10067099003)(18002099003)(22082099003)(11063799006)(56012099006)(261102123227099003)(4143699003)(5023799004)(261026121527099003)(261021121427099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?tw/aps4NVF+fzaTWGizW6QTZRw34kujYjdmyGA+bUQZhKOtz9McQUbVsd6bb?=
+ =?us-ascii?Q?ePJ3yCEMXUtQC7te0SxVeRDYrolYjuQqKDNMaH/GI6TNQwJrX5dmq1O+aDIB?=
+ =?us-ascii?Q?YZbteEZdvZ/zwB7hwGa1I6xkeas2t4nx6puA8D485P+fR1nNE239OjCvl5o5?=
+ =?us-ascii?Q?aSykArBoODHXvT/eUyRksz7tzfnijrepnx5XPgbp9nY8RZhxBIm8Ke4ndtHf?=
+ =?us-ascii?Q?2ArN1R7qjAphgg2cmZwnYjgIR2NUlEe7e8VM9CbBo+nfzUQZGjKR8MdSZUeV?=
+ =?us-ascii?Q?egN/zeJ9DI4z9GW684fdH0ewOXR/MMaqyPY4BVUg9e3MemW5QsZ/k19548bC?=
+ =?us-ascii?Q?8uANfkgvQVehrD1uoiZmHTVrlkoFz69cndPfWaKb7GsSJIElazl5dn4bINKP?=
+ =?us-ascii?Q?6DPx4iV4VIhHXfpXpW4Tf/GP4ZnpSZRi/ET4up1g0f8RzohYiByq6/SQofj8?=
+ =?us-ascii?Q?Nx6cj8gisrLlqhMujEgB2rXmbffk9f1ZRD1G4kKCA3im3bmOfl9TenyP977s?=
+ =?us-ascii?Q?yTDDDHX3eVzJFCbsAJNLnmKhhB2GFJkLgyhcqqsIcAnxptHP1pdsjVwZBH8z?=
+ =?us-ascii?Q?eiPoRVXl9MEcS5WM/V5TrKVFKmQwfGIMuPiJRQEyKRufrIFzSwczK4+4E+Sn?=
+ =?us-ascii?Q?IFXrtrZmAZefDgii3rnds26mhADhIUAA8Q73EsbKSddtdchJtk4m73wK5ITS?=
+ =?us-ascii?Q?TwWahpvCLxrlmrze6P9GDLYiCZD2sKlqSdNssS5GwecjN0lvCGpvaOfd2GL3?=
+ =?us-ascii?Q?JQ+bGhFnQQBmS7QYgmFoy+4Ftu0oMyDUKsmzykNV4gjc6WL5DpkBP+DfdciK?=
+ =?us-ascii?Q?Cb/h+drgBFxrcRBKYHIiNQcT6N23M8uqtvotVeI2VCLGyyH7gdhHF0P8Xjlj?=
+ =?us-ascii?Q?POQiMsk4s08KZBk89NQWtqDqH13dJ82eN17NX4J2mzAt9znxFug6t8w6cVAa?=
+ =?us-ascii?Q?uP+26Rtl7u029/ZjUqzLQb2FIGlY5A9qLC5h7LQrx00OxOhBH9Bj2tjzfGD1?=
+ =?us-ascii?Q?FfQ4NXaIRK1IfdAIPtmDfW5wdcs1Wel250SoxF+E69ngpllHSs+r/M+8BhRr?=
+ =?us-ascii?Q?0pEJLaZ6PBnSVvjtbd6lXx2VKdflpH5GxZzXeDAbO16BD/eH4qpTzOBSujVg?=
+ =?us-ascii?Q?gCPTaQV2dDN3pOdEs4ChqjSvQv9S7xmxcj8ovnbYurArJ4pzW5/E0v9BjBBh?=
+ =?us-ascii?Q?c5pP2anFvBI1a585eQ6rkLZDJMK9fGH7kK4Drdq5Y40xiUgxgnWIpNgP4Gsp?=
+ =?us-ascii?Q?NDkpncd+jCCk1Wovadl3p7vwFi7ih4qkEy244kftg7zXOuHeDp8jJ3PpB/wA?=
+ =?us-ascii?Q?xBrrAba5K8qbnPChnx9DJSnz7477NLgjl21s1ASY4f5Wo30J+xUmfV5w8FWU?=
+ =?us-ascii?Q?Od5dixvD/q//dv02ya+ojYnLyv6dAS3dDJ79wx1KlhTXBMFjnQ629EKqBZ4A?=
+ =?us-ascii?Q?7JFW+FTMQPQgB44X2EKAB7lBbuvaLnreJFC7J0e93CM+NgQ1t16zcT6ph8K7?=
+ =?us-ascii?Q?7bxsBAqxvQMxcujLaj/xbqNlehSETVHIG3qsaffZJ2P9sv1GgisI5/4Oq399?=
+ =?us-ascii?Q?7z07dWYyx8qd+kesHBx8OTaOv/Wm2mfIWhU1CEFMKrZOoXo20wkMxoDY76zI?=
+ =?us-ascii?Q?wBLL8tZBrMPwi5hOZCwRk4O2C5SSqwA+VxNnqJolbB8wYM9EPHmsi6SeVDJS?=
+ =?us-ascii?Q?2TKzhE2JTHXnGWefyMzCyMlDTh9C32qXblYzhT+ixOLpvvpAgEztwS+AHEmt?=
+ =?us-ascii?Q?R6aVHZymYbW+cBETngE9FscLqqCpgxtx5Ojsi/0DJFe9eD/lM3WV?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0cb5e5ee-219c-41d6-458e-08df3b88d5b0
+X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Nov 2026 22:04:59.7603
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: U9jHGDSZOcy58fLLXnW0E3ECK+B5f6AWswpmq9Z73sLvfyYN16cMv+K0L4XLFnU2XJ1y7A5c0ShWfTa3u1xa8ehMmJLkxviVPbnIfpcjpD9aKprcEinlSJcZdox/ya0P
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB7684
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261105_065018_781219_1511E3D2 
-X-CRM114-Status: GOOD (  15.01  )
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20261105_140509_642025_E03F7FEC 
+X-CRM114-Status: GOOD (  20.58  )
+X-Spam-Score: 0.0 (/)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,136 +140,74 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Mukesh,
+On Thu, Nov 05, 2026 at 02:24:23PM +0530, Shubham Patil wrote:
+> A target's MRL and MWL, retrieved with GETMRL and GETMWL, describe only
+> what that target can accept. They say nothing about the controller
+> driving it, which may impose a smaller limit of its own: the DesignWare
+> controller, for example, rejects any private SDR transfer that does not
+> fit its data buffer. A device driver sizing a transfer from MRL alone
+> can therefore build one the controller has to refuse with -EOPNOTSUPP.
+>
+> Add tx_fifo_bytes and rx_fifo_bytes to struct i3c_master_controller, to
+> be set by a controller driver before i3c_master_register() when it has
+> such a limit, together with two helpers returning the smaller of the
+> target and controller values for each direction.
+>
+> Both inputs use 0 to mean "no limit reported", so the helpers combine
+> them with min_not_zero() and return 0 only when neither side reports
+> one, leaving each caller to apply its own default. struct
+> i3c_device_info keeps the raw target values untouched.
+>
+> The returned value applies to a single message. A controller is free to
+> budget its buffer across every message in one i3c_device_do_xfers()
+> call, so a caller batching several messages in the same direction may
+> still be rejected.
 
-kernel test robot noticed the following build warnings:
+can you try rephase commit message to make it shorter and summary most
+importnat part.
 
-[auto build test WARNING on i3c/i3c/next]
-[also build test WARNING on linus/master v7.3 next-20261030]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+>
+> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> ---
+...
+>   *
+>   * A &struct i3c_master_controller has to be registered to the I3C subsystem
+> - * through i3c_master_register(). None of &struct i3c_master_controller fields
+> - * should be set manually, just pass appropriate values to
+> - * i3c_master_register().
+> + * through i3c_master_register(). Except for @tx_fifo_bytes and
+> + * @rx_fifo_bytes, which a controller driver may set before registering, none
+> + * of &struct i3c_master_controller fields should be set manually, just pass
+> + * appropriate values to i3c_master_register().
+>   */
+>  struct i3c_master_controller {
+>  	struct device dev;
+> @@ -580,6 +585,8 @@ struct i3c_master_controller {
+>  	struct work_struct hj_work;
+>  	struct work_struct reg_work;
+>  	unsigned int dev_nack_retry_count;
+> +	u16 tx_fifo_bytes;
+> +	u16 rx_fifo_bytes;
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Mukesh-Kumar-Savaliya/i3c-master-Add-Qualcomm-I3C-controller-driver/20261104-164609
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git i3c/next
-patch link:    https://lore.kernel.org/r/20261104111610.3739095-2-mukesh.savaliya%40oss.qualcomm.com
-patch subject: [PATCH v7 2/3] i3c: master: Add Qualcomm I3C controller driver
-config: sh-allyesconfig (https://download.01.org/0day-ci/archive/20261106/202611060055.y4Q35SU8-lkp@intel.com/config)
-compiler: sh4-linux-gcc (GCC) 16.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261106/202611060055.y4Q35SU8-lkp@intel.com/reproduce)
+if support dma, FIFO size become not important.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202611060055.y4Q35SU8-lkp@intel.com/
+max_tx_bytes,
 
-All warnings (new ones prefixed by >>):
+Frank
 
-   drivers/i3c/master/i3c-qcom-geni.c: In function 'qcom_geni_i3c_conf':
-   drivers/i3c/master/i3c-qcom-geni.c:284:15: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
-     284 |         val = FIELD_PREP(CLK_DIV_VALUE_MASK, clk_idx->clk_div);
-         |               ^~~~~~~~~~
-   drivers/i3c/master/i3c-qcom-geni.c: In function 'geni_i3c_irq':
->> drivers/i3c/master/i3c-qcom-geni.c:363:13: warning: variable 'm_stat_mask' set but not used [-Wunused-but-set-variable=]
-     363 |         u32 m_stat_mask, dm_tx_st, dm_rx_st;
-         |             ^~~~~~~~~~~
-   drivers/i3c/master/i3c-qcom-geni.c: In function 'i3c_geni_resources_init':
-   drivers/i3c/master/i3c-qcom-geni.c:977:15: error: too few arguments to function 'geni_icc_get'; expected 2, have 1
-     977 |         ret = geni_icc_get(&gi3c->se);
-         |               ^~~~~~~~~~~~
-   In file included from drivers/i3c/master/i3c-qcom-geni.c:19:
-   include/linux/soc/qcom/geni-se.h:576:5: note: declared here
-     576 | int geni_icc_get(struct geni_se *se, const char *icc_ddr);
-         |     ^~~~~~~~~~~~
-
-
-vim +/m_stat_mask +363 drivers/i3c/master/i3c-qcom-geni.c
-
-   359	
-   360	static irqreturn_t geni_i3c_irq(int irq, void *dev)
-   361	{
-   362		struct geni_i3c_dev *gi3c = dev;
- > 363		u32 m_stat_mask, dm_tx_st, dm_rx_st;
-   364		u32 m_stat, rx_st, dma_mode;
-   365	
-   366		m_stat = readl_relaxed(gi3c->se.base + SE_GENI_M_IRQ_STATUS);
-   367		m_stat_mask = readl_relaxed(gi3c->se.base + SE_GENI_M_IRQ_EN);
-   368		rx_st = readl_relaxed(gi3c->se.base + SE_GENI_RX_FIFO_STATUS);
-   369		dm_tx_st = readl_relaxed(gi3c->se.base + SE_DMA_TX_IRQ_STAT);
-   370		dm_rx_st = readl_relaxed(gi3c->se.base + SE_DMA_RX_IRQ_STAT);
-   371		dma_mode = readl_relaxed(gi3c->se.base + SE_GENI_DMA_MODE_EN);
-   372	
-   373		scoped_guard(spinlock, &gi3c->irq_lock) {
-   374			if (m_stat & SE_I3C_ERR || dm_rx_st & DM_I3C_CB_ERR) {
-   375				geni_i3c_handle_err(gi3c, m_stat);
-   376				/* Disable the TX Watermark interrupt to stop TX */
-   377				if (!dma_mode)
-   378					writel_relaxed(0, gi3c->se.base + SE_GENI_TX_WATERMARK_REG);
-   379			} else if (dma_mode) {
-   380				dev_dbg(gi3c->se.dev, "i3c dma tx:0x%x, dma rx:0x%x\n", dm_tx_st, dm_rx_st);
-   381			} else if ((m_stat & (M_RX_FIFO_WATERMARK_EN | M_RX_FIFO_LAST_EN)) &&
-   382				    !gi3c->cur_is_write && gi3c->cur_buf) {
-   383				/* FIFO RX handling */
-   384				u32 rxcnt = rx_st & RX_FIFO_WC_MSK;
-   385				int avail = rxcnt * 4;
-   386				int need  = gi3c->cur_len - gi3c->cur_idx;
-   387				int n     = min(need, avail);
-   388	
-   389				if (n > 0) {
-   390					i3c_readl_fifo(gi3c->se.base + SE_GENI_RX_FIFOn,
-   391						       gi3c->cur_buf + gi3c->cur_idx, n);
-   392					gi3c->cur_idx += n;
-   393				}
-   394			} else if ((m_stat & M_TX_FIFO_WATERMARK_EN) &&
-   395				   gi3c->cur_is_write && gi3c->cur_buf) {
-   396				/* FIFO TX handling */
-   397				int avail = gi3c->tx_wm * 4;
-   398				int need  = gi3c->cur_len - gi3c->cur_idx;
-   399				int n     = min(need, avail);
-   400	
-   401				if (n > 0) {
-   402					i3c_writel_fifo(gi3c->se.base + SE_GENI_TX_FIFOn,
-   403							(void *)(gi3c->cur_buf + gi3c->cur_idx), n);
-   404					gi3c->cur_idx += n;
-   405				}
-   406			}
-   407	
-   408			if (!dma_mode && gi3c->cur_idx == gi3c->cur_len)
-   409				writel_relaxed(0, gi3c->se.base + SE_GENI_TX_WATERMARK_REG);
-   410		}
-   411	
-   412		if (m_stat)
-   413			writel_relaxed(m_stat, gi3c->se.base + SE_GENI_M_IRQ_CLEAR);
-   414	
-   415		if (dma_mode) {
-   416			if (dm_tx_st)
-   417				writel_relaxed(dm_tx_st, gi3c->se.base + SE_DMA_TX_IRQ_CLR);
-   418			if (dm_rx_st)
-   419				writel_relaxed(dm_rx_st, gi3c->se.base + SE_DMA_RX_IRQ_CLR);
-   420		}
-   421	
-   422		/* if this is err with done-bit not set, handle that through timeout. */
-   423		if (m_stat & (M_CMD_DONE_EN | M_CMD_ABORT_EN)) {
-   424			writel_relaxed(0, gi3c->se.base + SE_GENI_TX_WATERMARK_REG);
-   425			complete(&gi3c->done);
-   426		} else if ((dm_tx_st & TX_DMA_DONE) || (dm_rx_st & (RX_DMA_DONE | RX_RESET_DONE))) {
-   427			complete(&gi3c->done);
-   428		}
-   429	
-   430		return IRQ_HANDLED;
-   431	}
-   432	
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+>  };
+>
+>  /**
+> --
+> 2.34.1
+>
 
 -- 
 linux-i3c mailing list
