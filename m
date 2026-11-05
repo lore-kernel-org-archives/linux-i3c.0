@@ -2,59 +2,68 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2BA4E606A326
-	for <linux-i3c@archiver.kernel.org>; Thu,  5 Nov 2026 09:01:18 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BD2AE606A326
+	for <linux-i3c@archiver.kernel.org>; Thu,  5 Nov 2026 11:26:37 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=t1Slj8ON;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Kw0M1BnE
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=v0ocLTFQ;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=kV7uWx02
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=wopSVd5xALsCuOaSIbIXFlqmZ4cme91E8giSAI8GB9Q=; b=t1Slj8ON9Rvvy9IqVSZaIYpMZg
-	C9owm7ebDnn5MZR89FEfomdFYxDlMwGLCpQLB4StSU9USvYO0/MqCb+6+OcuAMedGb9fHhV7eHp8r
-	6Rj3hXLqIRtR1/nJpb7/jzZq2UlTTAL7yy9rNWCnmQBpcwNlsfW+01YDRJz7c6PBSAyBu0dlyP9Gf
-	lmFJUCG7xZNlkuN3MHyTWuh0uTQ/9K788+QpiIhA9c/DJqPu1SEEwfn0l+jGYkNpJPNOna8ZlIqnl
-	E/ZEavFFEHVjN1Joq+GxEJbltxsdvXyxISnE24R0Pl9cQxaxMn0PhM78x9gEjHxQeoCWN+zCN+nE2
-	lqDmm8VA==;
+	bh=2x73bZZ6aVXviJl9wEqpqb4QOC5TKySydLJxtf2vGzk=; b=v0ocLTFQuWqH5+apIB31Y0m+uz
+	IpFDOz7g3OlSkmqyaXt41GqRZkr3qsTvWo1a2xO8nYPyNglv75AGVwfr+58vmpqwCuPfYcYgswB8P
+	iJkNoKyqdQUugtIRw6RriOeQxK9Hug+D7+BA3+wTL93gqc9H0vpTKpXwhp/clxmZZ5r2Aw0ngj39W
+	EIG9iWuYg8UiP+CxmYi4yCaCfx91RgkYlC0Jy1OttAZZjlxxKmm1Ykqn2P2FyYmBxn1B81YEscjfn
+	mla9iK+2DVPirS99pVabp4KrjpPL19gfb9G2ItxjuRl+Yn4uCbM59QX4jpu1tU+sxxyNaOZxLqkWf
+	nyjQ7xTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOtLR-00000008EO3-3b6q;
-	Thu, 05 Nov 2026 09:01:17 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xOvc4-00000008dtU-1P86;
+	Thu, 05 Nov 2026 11:26:36 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOtLQ-00000008ENs-32cJ
+	id 1xOvbn-00000008dse-4BPs
 	for linux-i3c@lists.infradead.org;
-	Thu, 05 Nov 2026 09:01:17 +0000
+	Thu, 05 Nov 2026 11:26:23 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id E8D1A60F2A;
-	Thu,  5 Nov 2026 09:01:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F3A91F000C1;
-	Thu,  5 Nov 2026 09:01:15 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7705840F7A;
+	Thu,  5 Nov 2026 11:26:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9825B1F000C1;
+	Thu,  5 Nov 2026 11:26:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793869275;
-	bh=NceYa3NZayFxuHHB+QmpGXbPguwXwvX7k5dpGHlALec=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Kw0M1BnExzPwaBnZ7Xyad9+a0J277W3l2fS0SmYCeFST97fiqz8ghyTfbT83DErZP
-	 c+bz3QVhQmO4n9lurexB72yiBKWBawHHWxKERChQENMsU10t70scHm+MnuOkUhNNaI
-	 wWP0gFa50mk1L0mur5Ph5rRhE2jNwArpY0hO0Z8GwNvohwJwnylUGcKk3CqXWBqx6/
-	 GBiAB0BCqqGei1r224Z8F8Nsru6araoBV7c5rjmcvZfWHof6f5Nru+6+JHOtQuGiss
-	 meSfwVY7cv5kMLQCG9LAG7C/3HUklN0D6Uy9SjjZ8kVMnvY63bxh2ALbRxYnz9YCpj
-	 UDy6eTc36YmuA==
-Message-ID: <sashiko-outbox-198746@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 2/3] i3c: dw: Track the transmit and receive buffer
- depths separately
-To: "Shubham Patil" <shubhamsanjay.patil@amd.com>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, Frank.Li@kernel.org, "Alexandre
- Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20261105085425.3418230-3-shubhamsanjay.patil@amd.com>
-References: <20261105085425.3418230-1-shubhamsanjay.patil@amd.com>
- <20261105085425.3418230-3-shubhamsanjay.patil@amd.com>
-Date: Thu, 05 Nov 2026 09:01:14 +0000
+	s=k20260515; t=1793877979;
+	bh=C1hrqNfab2BUyeQ19amVpDlqCunra+cEiy/RJrNmaJA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=kV7uWx027yJNBJV681LZoEv5Bq9G0Br+8GS0AUvEyFZR+1OLxWiSV8sXwwsRe5bLk
+	 BIK9S4QaLJE5aN26WFS2dY8USE7ULwRmuKaMugMzZh7FH7w4VsnjeEzlO6r4whbAG2
+	 4NwEbDt2/RNKcwWEwOwqwZ2Kv5CfWAyDj9uos1kGHiYeP+UJWMZfZxJsoa6RxxUJmz
+	 oqlbi8S6NLYzfHEnaMFqhKkimoY6TmTdnF2QiBs0yx5zjd1EFOLmXvliOUWYaNyrIS
+	 UVvLyV0mIvxqoEwFan24dInFGdHn6C542Wyx1zQoPnK4GWUAbNKpnZzE0WxVCzP6q/
+	 OAYY5BHoU6byQ==
+Date: Thu, 5 Nov 2026 12:26:15 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, shubhrajyoti.datta@amd.com, 
+	shubhamsanjay.patil@amd.com, adrian.hunter@intel.com, manikanta.guntupalli@amd.com, 
+	linux-i3c@lists.infradead.org, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, jarkko.nikula@linux.intel.com, wsa+renesas@sang-engineering.com, 
+	alok.a.tiwari@oracle.com, konrad.dybcio@oss.qualcomm.com, andersson@kernel.org, 
+	jyothi.seerapu@oss.qualcomm.com, viken.dadhaniya@oss.qualcomm.com, 
+	aniket.randive@oss.qualcomm.com, praveen.talari@oss.qualcomm.com
+Subject: Re: [PATCH v7 1/3] dt-bindings: i3c: Add support for Qualcomm I3C
+ controller
+Message-ID: <20261105-nonchalant-groovy-manticore-76d2a1@quoll>
+References: <20261104111610.3739095-1-mukesh.savaliya@oss.qualcomm.com>
+ <d40f2212-754d-4788-a555-6a58c2479bed@oss.qualcomm.com>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <d40f2212-754d-4788-a555-6a58c2479bed@oss.qualcomm.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,91 +73,33 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGkzYzogZHc6IHU4IHRy
-dW5jYXRpb24gb2YgcnhmaWZvZGVwdGggaW4gZHdfaTNjX2NvbW1vbl9wcm9iZSgpCi0tCgpjb21t
-aXQgYzkzY2M2ODQzYjU3OTkzZDA1M2RiMDNjYzNmN2NlZTI1ZGJkNDM3MQpBdXRob3I6IFNodWJo
-YW0gUGF0aWwgPHNodWJoYW1zYW5qYXkucGF0aWxAYW1kLmNvbT4KCmkzYzogZHc6IFRyYWNrIHRo
-ZSB0cmFuc21pdCBhbmQgcmVjZWl2ZSBidWZmZXIgZGVwdGhzIHNlcGFyYXRlbHkKClRoaXMgY29t
-bWl0IHNwbGl0cyBjYXBzLmRhdGFmaWZvZGVwdGggaW50byBjYXBzLnR4Zmlmb2RlcHRoIGFuZApj
-YXBzLnJ4Zmlmb2RlcHRoLCBwb3B1bGF0ZXMgY2Fwcy5yeGZpZm9kZXB0aCBmcm9tIHRoZSBRVUVV
-RV9TSVpFX0NBUEFCSUxJVFkKcmVnaXN0ZXIsIGFuZCBleHBvc2VzIHRoZSBGSUZPIGNhcGFjaXRp
-ZXMgdmlhIGJhc2UudHhfZmlmb19ieXRlcyBhbmQKYmFzZS5yeF9maWZvX2J5dGVzLgoKPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYyBiL2RyaXZlcnMvaTNj
-L21hc3Rlci9kdy1pM2MtbWFzdGVyLmMKPiBpbmRleCBkMTExOWYyMDNkMWI2Li5kZDU0NjJiMTI5
-NTE0IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFzdGVyLmMKPiAr
-KysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gQEAgLTIwMyw3ICsyMDMs
-MTAgQEAKPiAgI2RlZmluZSBCVVNfSURMRV9USU1JTkcJCQkweGQ4Cj4gICNkZWZpbmUgSTNDX1ZF
-Ul9JRAkJCTB4ZTAKPiAgI2RlZmluZSBJM0NfVkVSX1RZUEUJCQkweGU0Cj4gLSNkZWZpbmUgRVhU
-RU5ERURfQ0FQQUJJTElUWQkJMHhlOAo+ICsjZGVmaW5lIFFVRVVFX1NJWkVfQ0FQQUJJTElUWQkJ
-MHhlOAo+ICsjZGVmaW5lIFFVRVVFX1NJWkVfQ0FQQUJJTElUWV9SWF9CVUYoeCkJKCgoeCkgJiBH
-RU5NQVNLKDcsIDQpKSA+PiA0KQo+ICsvKiBTaXplcyBhcmUgZW5jb2RlZCwgMCBtZWFuaW5nIDIg
-RFdPUkRzIGFuZCBldmVyeSBmdXJ0aGVyIHN0ZXAgZG91YmxpbmcgaXQuICovCj4gKyNkZWZpbmUg
-UVVFVUVfU0laRV9UT19EV09SRFMoeCkJCSgyVSA8PCAoeCkpCj4gICNkZWZpbmUgU0xBVkVfQ09O
-RklHCQkJMHhlYwo+ICAKPiAgI2RlZmluZSBEWU5fQUREUl9MT19NQVNLIEdFTk1BU0soNCwgMCkK
-PiBAQCAtOTc4LDggKzk4MSw4IEBAIHN0YXRpYyBpbnQgZHdfaTNjX21hc3Rlcl9pM2NfeGZlcnMo
-c3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LAo+ICAJCQludHh3b3JkcyArPSBESVZfUk9VTkRfVVAo
-aTNjX3hmZXJzW2ldLmxlbiwgNCk7Cj4gIAl9Cj4gIAo+IC0JaWYgKG50eHdvcmRzID4gbWFzdGVy
-LT5jYXBzLmRhdGFmaWZvZGVwdGggfHwKPiAtCSAgICBucnh3b3JkcyA+IG1hc3Rlci0+Y2Fwcy5k
-YXRhZmlmb2RlcHRoKQo+ICsJaWYgKG50eHdvcmRzID4gbWFzdGVyLT5jYXBzLnR4Zmlmb2RlcHRo
-IHx8Cj4gKwkgICAgbnJ4d29yZHMgPiBtYXN0ZXItPmNhcHMucnhmaWZvZGVwdGgpCj4gIAkJcmV0
-dXJuIC1FT1BOT1RTVVBQOwo+ICAKPiAgCXN0cnVjdCBkd19pM2NfeGZlciAqeGZlciBfX2ZyZWUo
-a2ZyZWUpID0gZHdfaTNjX21hc3Rlcl9hbGxvY194ZmVyKG1hc3RlciwgaTNjX254ZmVycyk7Cj4g
-QEAgLTExMzYsOCArMTEzOSw4IEBAIHN0YXRpYyBpbnQgZHdfaTNjX21hc3Rlcl9pMmNfeGZlcnMo
-c3RydWN0IGkyY19kZXZfZGVzYyAqZGV2LAo+ICAJCQludHh3b3JkcyArPSBESVZfUk9VTkRfVVAo
-aTJjX3hmZXJzW2ldLmxlbiwgNCk7Cj4gIAl9Cj4gIAo+IC0JaWYgKG50eHdvcmRzID4gbWFzdGVy
-LT5jYXBzLmRhdGFmaWZvZGVwdGggfHwKPiAtCSAgICBucnh3b3JkcyA+IG1hc3Rlci0+Y2Fwcy5k
-YXRhZmlmb2RlcHRoKQo+ICsJaWYgKG50eHdvcmRzID4gbWFzdGVyLT5jYXBzLnR4Zmlmb2RlcHRo
-IHx8Cj4gKwkgICAgbnJ4d29yZHMgPiBtYXN0ZXItPmNhcHMucnhmaWZvZGVwdGgpCj4gIAkJcmV0
-dXJuIC1FT1BOT1RTVVBQOwo+ICAKPiAgCXN0cnVjdCBkd19pM2NfeGZlciAqeGZlciBfX2ZyZWUo
-a2ZyZWUpID0gZHdfaTNjX21hc3Rlcl9hbGxvY194ZmVyKG1hc3RlciwgaTJjX254ZmVycyk7Cj4g
-QEAgLTE3MzgsNyArMTc0MSwxNCBAQCBpbnQgZHdfaTNjX2NvbW1vbl9wcm9iZShzdHJ1Y3QgZHdf
-aTNjX21hc3RlciAqbWFzdGVyLAo+ICAJbWFzdGVyLT5jYXBzLmNtZGZpZm9kZXB0aCA9IFFVRVVF
-X1NUQVRVU19MRVZFTF9DTUQocmV0KTsKPiAgCj4gIAlyZXQgPSByZWFkbChtYXN0ZXItPnJlZ3Mg
-KyBEQVRBX0JVRkZFUl9TVEFUVVNfTEVWRUwpOwo+IC0JbWFzdGVyLT5jYXBzLmRhdGFmaWZvZGVw
-dGggPSBEQVRBX0JVRkZFUl9TVEFUVVNfTEVWRUxfVFgocmV0KTsKPiArCW1hc3Rlci0+Y2Fwcy50
-eGZpZm9kZXB0aCA9IERBVEFfQlVGRkVSX1NUQVRVU19MRVZFTF9UWChyZXQpOwo+ICsKPiArCXJl
-dCA9IHJlYWRsKG1hc3Rlci0+cmVncyArIFFVRVVFX1NJWkVfQ0FQQUJJTElUWSk7Cj4gKwltYXN0
-ZXItPmNhcHMucnhmaWZvZGVwdGggPQo+ICsJCVFVRVVFX1NJWkVfVE9fRFdPUkRTKFFVRVVFX1NJ
-WkVfQ0FQQUJJTElUWV9SWF9CVUYocmV0KSk7Cj4gKwo+ICsJbWFzdGVyLT5iYXNlLnR4X2ZpZm9f
-Ynl0ZXMgPSBtYXN0ZXItPmNhcHMudHhmaWZvZGVwdGggKiA0Owo+ICsJbWFzdGVyLT5iYXNlLnJ4
-X2ZpZm9fYnl0ZXMgPSBtYXN0ZXItPmNhcHMucnhmaWZvZGVwdGggKiA0Owo+ICAKPiAgCXJldCA9
-IHJlYWRsKG1hc3Rlci0+cmVncyArIERFVklDRV9BRERSX1RBQkxFX1BPSU5URVIpOwo+ICAJbWFz
-dGVyLT5kYXRzdGFydGFkZHIgPSByZXQ7Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rl
-ci9kdy1pM2MtbWFzdGVyLmggYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5oCj4g
-aW5kZXggZjViNDQ5MWIyNDdhMC4uZTIzNTU0YmZjNWU0OSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJz
-L2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5oCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL2R3
-LWkzYy1tYXN0ZXIuaAo+IEBAIC0xNCw3ICsxNCw4IEBACj4gIAo+ICBzdHJ1Y3QgZHdfaTNjX21h
-c3Rlcl9jYXBzIHsKPiAgCXU4IGNtZGZpZm9kZXB0aDsKPiAtCXU4IGRhdGFmaWZvZGVwdGg7Cj4g
-Kwl1OCB0eGZpZm9kZXB0aDsKPiArCXU4IHJ4Zmlmb2RlcHRoOwoKW1NldmVyaXR5OiBIaWdoXQpD
-YW4gbWFzdGVyLT5jYXBzLnJ4Zmlmb2RlcHRoIG92ZXJmbG93IHU4IGFuZCB0cnVuY2F0ZSB0byAw
-IGluCmR3X2kzY19jb21tb25fcHJvYmUoKT8KCkluIHRoZSBEZXNpZ25XYXJlIEkzQyBjb250cm9s
-bGVyLCBRVUVVRV9TSVpFX0NBUEFCSUxJVFlfUlhfQlVGKHJldCkgY2FuCnJldHVybiB1cCB0byAw
-eDcgKDI1NiAzMi1iaXQgd29yZHMsIG9yIDEwMjQgYnl0ZXMpLiBXaGVuIHRoYXQgaGFwcGVucywK
-UVVFVUVfU0laRV9UT19EV09SRFMoNykgZXZhbHVhdGVzIHRvIDI1NiAoMHgxMDApLCB3aGljaCB0
-cnVuY2F0ZXMgdG8gMCB3aGVuCnN0b3JlZCBpbnRvIHRoZSB1OCByeGZpZm9kZXB0aCBmaWVsZCBp
-biBzdHJ1Y3QgZHdfaTNjX21hc3Rlcl9jYXBzLgoKV2l0aCBtYXN0ZXItPmNhcHMucnhmaWZvZGVw
-dGggc2V0IHRvIDAsIG1hc3Rlci0+YmFzZS5yeF9maWZvX2J5dGVzIGFsc28KYmVjb21lcyAwIGlu
-IGR3X2kzY19jb21tb25fcHJvYmUoKSwgYW5kIHRoZSBucnh3b3JkcyA+Cm1hc3Rlci0+Y2Fwcy5y
-eGZpZm9kZXB0aCBjaGVjayBpbiBib3RoIGR3X2kzY19tYXN0ZXJfaTNjX3hmZXJzKCkgYW5kCmR3
-X2kzY19tYXN0ZXJfaTJjX3hmZXJzKCkgd2lsbCByZWplY3QgZXZlcnkgbm9uLWVtcHR5IHJlYWQg
-dHJhbnNmZXIgd2l0aAotRU9QTk9UU1VQUC4KClNob3VsZCByeGZpZm9kZXB0aCAoYW5kIHR4Zmlm
-b2RlcHRoKSBpbiBzdHJ1Y3QgZHdfaTNjX21hc3Rlcl9jYXBzIGJlIHUxNgppbnN0ZWFkIG9mIHU4
-PwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNl
-dC8yMDI2MTEwNTA4NTQyNS4zNDE4MjMwLTEtc2h1YmhhbXNhbmpheS5wYXRpbEBhbWQuY29tP3Bh
-cnQ9MgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1p
-M2MK
+On Wed, Nov 04, 2026 at 06:01:15PM +0530, Mukesh Savaliya wrote:
+> Apologies for the additional email. I missed including the cover letter with
+> this series.
+> 
+> Please ignore this series without the cover letter. I have resent the
+> complete series with the cover letter included.
+> 
+> Sorry for the inconvenience.
+
+You got here some Sashiko review, so that has to be addressed.
+
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
