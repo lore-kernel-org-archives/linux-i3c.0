@@ -2,109 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 010C2606A334
-	for <linux-i3c@archiver.kernel.org>; Fri,  6 Nov 2026 07:13:18 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 41A0A606A329
+	for <linux-i3c@archiver.kernel.org>; Fri,  6 Nov 2026 07:23:02 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=p9dL26Tf;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=RWEyuZCE
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=SH8Dkbrs;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lPb5vqkp
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=LjJUX9Q+m3ipBcXJa4iMPou1d5wo9jXgTCpn1kUlPr4=; b=p9dL26TfEDbkBgvsY8yvXEcBlO
-	fF1ZgsHhUKJzr/gZgGGB48OH5K3j2jYmFhYxW9erAmRr9XEbBTOwX97YIL5uP/ljhoCTMs5vNJGGA
-	aRv3qKy7eCZO4oWHH9vvHH1E6lUoH+CLsGunpBkxXFR9/4wc7biW/6drOTQDDtmHDBnfaITKZJOm3
-	myWvo2uATeaKobjaVN59GRPkDNQ1YDUCcMHJjIgpvEdVqdKDgXOB1rqAtWI3+dI+kCy9cfitgeDiJ
-	ooqNtS06J9jiOp9BECp3ZwvmL6kuUI41xFPRiwk7L7etmZaZ1cV8K5ThHAjf81Pi8FGjwWkxzHQXU
-	rFEDijSA==;
+	bh=E+4moQjtrQas1yBFK6KNYbwtQwCi7Reectpvn1fRfH8=; b=SH8Dkbrs82YSBz74MmlzPfNKZo
+	hldNjCvYXRVqNM8Lr24E5QCcXXYRdlfE/mtj1icLgryFH7gLXX5/uA3EQmT2s2vwU1gM8LnB4Oye0
+	aHz7HvPu3IHDJsIdHTsABPVZBAwp4DQOvzykqj+SBJlqRaJ6FeOm0qdiIJaKHncqzwy7BsG+V1P9W
+	T+1HwyEOuOZqvMTXfFpke8+FxxL9F1CFGwb9KU+EL7j+7gmm0PRLL2z7oG6xUU/5e7/sHpaOSYRJf
+	2EyKPoSHlz+ZVWdeB/bGiAC0b8xx1zp4ZmnK8582hQoS0Pk9fMlADooljEWojo7o/yKWOsG89oCgO
+	AYLZX+Og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPE8T-0000000BPNc-2z9A;
-	Fri, 06 Nov 2026 07:13:17 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xPEHt-0000000BR6L-4Bsg;
+	Fri, 06 Nov 2026 07:23:02 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPE8S-0000000BPLd-0U6p;
-	Fri, 06 Nov 2026 07:13:16 +0000
+	id 1xPEHs-0000000BR5z-1Fh1;
+	Fri, 06 Nov 2026 07:23:00 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DB5594450A;
-	Fri,  6 Nov 2026 07:13:15 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1793949195;
-	b=2ZuaWVodxLy9drEc5WeHUThuQUlxGeJTFx9qnaQnIVlJID3Sq9txUqzqHufXTZ3uWt3Y
-	 yShJqWRB8hE7HdDpfZZBh87pD3mnTjqCbAf/I6n41uYcSRk0sLMRoxV2lNB+LAxw/D++o
-	 zbbChYTmLVhA4hP0hrq17CreGr0t+scsTPE98802mSKqYhb5eSDH2U4jshxqQ9jZZDTUM
-	 kzfuV4/8Wlg6cDPYaTsFePIglioGMEJGSbuZMM34wibBAMGzfWEicp91LHgEC8a0jj18i
-	 j12NJ7X8J1AAWs4FNxwRa1/VI4EHn2/HFpL0Urt9oeF+2v1xt3z/y12otBYmveIshqA==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1793949195;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=zdPeS6s99L+auD7mgH6Si4Wn/O72B2/44ayw5WpKUX4=;
-	b=F2bb42qGZIqQGbx1OstWv3PcD2XWyZ9LSuOZK6+HJDy/5EvElJYaAI29lXiMymOKLLfm
-	 rXmXV4iQ/0d/Cj4ZYOW7XE7HmQ61mSQ8rqiHGCKxkgPGz/YozG7Fs9PObDFV1BZeZXXNA
-	 9tRormvM0ggcL+2YjiF0EwwRlff/u6lswnue9emvaZgJ+hC6idtT6fCGt4Ah/mtGLagUp
-	 zJH4vMjRJSxcT2xJQS2XkgQaApxBiWHdL4bkpYlZC5wxxVkWvzfaey8O13nrBLRruO0eO
-	 DkrvKp2Ox8Zhsal1JbOKjsD4vOrTzknT0R63gIv5Qu8JFzLYtppFFylHczTnu8yQEjw==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 753F71F008A2;
-	Fri,  6 Nov 2026 07:13:14 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0D81B40103;
+	Fri,  6 Nov 2026 07:23:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7B3DC1F0089F;
+	Fri,  6 Nov 2026 07:22:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793949195;
-	bh=zdPeS6s99L+auD7mgH6Si4Wn/O72B2/44ayw5WpKUX4=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=RWEyuZCEBrNGec2pWS8g1R9gMmugFLQdZ8Dwjd2AZhIp9Cff9/Ub+boDTpX52d5cy
-	 ljiQ7vaHipDLg0sF/pxmwDNeR5ljYhvCaR6rpzlpwAYzJNkOiOESpJUgjXhha45G9O
-	 OezDpYG1Qe4+03oF8ELmRkFgzK1hiImI6OV72j4E9lw+f3n+PaSVNXjWmksqHF/yvI
-	 RON6xRp1bsX5lzFnQTnVY0dda6vfIzsilBWP+YW50X/7zC5pKJ+gw1H/0Yomj1GB3Q
-	 mCNjAy32efZMjM4Fpj70U4PGxGHoBjhuaZfuGkJHPA/0AnTWp4d94yTx8/W353/iU0
-	 xV9XCe5Yom1IA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 030AB45C43;
-	Fri,  6 Nov 2026 07:13:14 +0000 (UTC)
-From: Junyi Zhao via B4 Relay <devnull+junyi.zhao.amlogic.com@kernel.org>
-Date: Fri, 06 Nov 2026 15:13:08 +0800
-Subject: [PATCH v3 1/2] i3c: master: svc: Add amlogic a9 support
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261106-a9_i3c-v3-1-804b69b9095b@amlogic.com>
+	s=k20260515; t=1793949779;
+	bh=l+JJGuwRJM3z7N4kO/kgTH54i4ethXSyzCMfLiGeBfo=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=lPb5vqkp5peh+FGlxrIgMbxTsFX0re3sCatibuw+wXpGnX23nZuzPubjmu6xawIPT
+	 t0Hxcx27XKGjFyI7yEreLaIVcvB4P3PViVEdmTI5ymxZP64EzPduNxBt2X/4SnBEpA
+	 KTZKM741SufHk5Jw4O4P/B4hlRjB1gA55MOu6a3YTqOBEsyBLDbBMMeNu2plgk1ak/
+	 n3YLpy42Hp8f/l8CnltK/dKphS6VwyVuVJoQLZFtpam1tMJK5rfyLtLIz9fE0+ja2p
+	 hCwY9yRaafS8Q9ARA+dp7MhTRnFsMLsjYBjDfSWi8QwVJnwcADgqkOqpkmbfQV3YiO
+	 aLennEEUfvdvA==
+Message-ID: <sashiko-outbox-200991@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 2/2] dt-bindings: i3c: silvaco,i3c-master: Add
+ Amlogic A9 support
+To: "Junyi Zhao" <junyi.zhao@amlogic.com>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org, imx@lists.linux.dev, robh@kernel.org, conor+dt@kernel.org, Frank.Li@kernel.org, neil.armstrong@linaro.org, "Alexandre
+ Belloni" <alexandre.belloni@bootlin.com>
+In-Reply-To: <20261106-a9_i3c-v3-2-804b69b9095b@amlogic.com>
 References: <20261106-a9_i3c-v3-0-804b69b9095b@amlogic.com>
-In-Reply-To: <20261106-a9_i3c-v3-0-804b69b9095b@amlogic.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
- Miquel Raynal <miquel.raynal@bootlin.com>, Kees Cook <kees@kernel.org>, 
- "Gustavo A. R. Silva" <gustavoars@kernel.org>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-amlogic@lists.infradead.org, imx@lists.linux.dev, 
- linux-hardening@vger.kernel.org, xianwei.zhao@amlogic.com, 
- Kelvin.Zhang@amlogic.com, Junyi Zhao <junyi.zhao@amlogic.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1793949192; l=12528;
- i=junyi.zhao@amlogic.com; s=20260924; h=from:subject:message-id;
- bh=pmfcNqUCmiZzIjfWWuw1499PDnCYyiV+Y+E4nTqNiD4=;
- b=2M2C6fIDWWcVFVxImHggjr0L9XRiSacrXQACm09Ofs+VmzIkQBV2OJuirgIfCMoG4uE0ccZOJ
- xN+fwaJjJdzDpyCuY61uw6RQXNmDlDoB89AiBkqiNNk0EscY3DLonrO
-X-Developer-Key: i=junyi.zhao@amlogic.com; a=ed25519;
- pk=hiL5PjGIksGFiWvEx9J3MhQqU/ro6vNbj72NIw4bbvA=
-X-Endpoint-Received: by B4 Relay for junyi.zhao@amlogic.com/20260924 with
- auth_id=1054
-X-Original-From: Junyi Zhao <junyi.zhao@amlogic.com>
+ <20261106-a9_i3c-v3-2-804b69b9095b@amlogic.com>
+Date: Fri, 06 Nov 2026 07:22:59 +0000
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,410 +63,76 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: junyi.zhao@amlogic.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Junyi Zhao <junyi.zhao@amlogic.com>
-
-Amlogic a9 SoCs integrate the Silvaco I3C IP, and their peripheral
-clocks vary from the vanilla implementation:
-
-  - The EE-domain controller (amlogic,a9-i3c) takes two clocks,
-    "pclk" and "fast_clk", and the fast clock rate must be programmed
-    before the controller can be used.
-
-  - The AO-domain controller (amlogic,a9-ao-i3c) exposes only "pclk":
-    its bus clock is generated by an internal divider located in the
-    controller's own register space.
-
-Both variants need setup that the generic driver does not perform:
-the fast clock rate must be rounded and set at probe time, and on the
-AO variant the internal divider must be registered with the clock
-framework so that "fast_clk" even exists. The divider registers sit
-in the controller's own register space, so they can only be accessed
-while pclk is running.
-
-Add a vendor_init callback, invoked from the probe with the clocks
-enabled, to handle this. On the AO variant it registers the internal
-divider chain (div_en -> div -> gate) with the common clock framework
-and appends the resulting clock to the clk bulk array as "fast_clk";
-for both variants it then rounds and sets the fast clock rate
-(target 25 MHz). As vendor_init now runs after
-clk_bulk_prepare_enable(), the probe error paths that follow disable
-the clocks on failure.
-
-Extend the quirks bitmask with an Amlogic-specific bit
-(AML_I3C_QUIRK_AO) marking the AO variant's internal-divider
-behaviour. Since the driver now registers clocks through the common
-clock framework, SVC_I3C_MASTER also depends on COMMON_CLK.
-
-Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
----
- drivers/i3c/master/Kconfig          |   1 +
- drivers/i3c/master/svc-i3c-master.c | 274 ++++++++++++++++++++++++++++++++++--
- 2 files changed, 263 insertions(+), 12 deletions(-)
-
-diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
-index da96d2aaa..ac7d246c2 100644
---- a/drivers/i3c/master/Kconfig
-+++ b/drivers/i3c/master/Kconfig
-@@ -47,6 +47,7 @@ config AST2600_I3C_MASTER
- 
- config SVC_I3C_MASTER
- 	tristate "Silvaco I3C Dual-Role Master driver"
-+	depends on COMMON_CLK
- 	depends on HAS_IOMEM
- 	depends on !(ALPHA || PARISC)
- 	help
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index e700392f0..aef56286e 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -9,6 +9,7 @@
- 
- #include <linux/bitfield.h>
- #include <linux/clk.h>
-+#include <linux/clk-provider.h>
- #include <linux/completion.h>
- #include <linux/errno.h>
- #include <linux/i3c/master.h>
-@@ -166,6 +167,31 @@
-  */
- #define SVC_I3C_QUIRK_DAA_CORRUPT	BIT(2)
- 
-+/*
-+ * AML_I3C_QUIRK_AO:
-+ * AO is the Always-On domain on Amlogic SoCs (remains powered in suspend).
-+ * Its clock is generated by an internal divider located in the I3C
-+ * controller's own register space.
-+ */
-+#define AML_I3C_QUIRK_AO	BIT(3)
-+
-+/*
-+ * Quirks shared by all the Amlogic A9 I3C instances.
-+ */
-+#define AML_A9_I3C_QUIRKS	(SVC_I3C_QUIRK_FIFO_EMPTY | \
-+				 SVC_I3C_QUIRK_FALSE_SLVSTART | \
-+				 SVC_I3C_QUIRK_DAA_CORRUPT)
-+
-+/* Amlogic specific registers */
-+#define AML_AO_I3C_FCLK_DIV_CTRL		0x304
-+#define AML_AO_I3C_FCLK_DIV_EN_SHIFT		8
-+#define AML_AO_I3C_FCLK_DIV_SHIFT		0
-+#define AML_AO_I3C_FCLK_DIV_WIDTH		8
-+#define AML_AO_I3C_FCLK_EN_SHIFT		9
-+
-+/* Target fast clock rate of the Amlogic A9 I3C controllers, in Hz */
-+#define AML_I3C_FAST_CLK_RATE		25000000
-+
- struct svc_i3c_cmd {
- 	u8 addr;
- 	union {
-@@ -195,8 +221,11 @@ struct svc_i3c_regs_save {
- 	u32 mdynaddr;
- };
- 
-+struct svc_i3c_master;
-+
- struct svc_i3c_drvdata {
- 	u32 quirks;
-+	int (*vendor_init)(struct svc_i3c_master *master);
- };
- 
- /**
-@@ -2011,6 +2040,7 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
- 	if (!master->drvdata)
- 		return -EINVAL;
- 
-+	master->dev = dev;
- 	master->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(master->regs))
- 		return PTR_ERR(master->regs);
-@@ -2019,27 +2049,43 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
- 	if (master->num_clks < 0)
- 		return dev_err_probe(dev, -EINVAL, "can't get I3C clocks\n");
- 
-+	ret = clk_bulk_prepare_enable(master->num_clks, master->clks);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "can't enable I3C clocks\n");
-+
-+	/*
-+	 * Vendor specific setup may register additional clocks (e.g. the
-+	 * internal divider chain of the AO variant) and program clock rates,
-+	 * so it must run with the clocks enabled.
-+	 */
-+	if (master->drvdata->vendor_init) {
-+		ret = master->drvdata->vendor_init(master);
-+		if (ret)
-+			goto err_disable_clks;
-+	}
-+
- 	for (i = 0; i < master->num_clks; i++) {
- 		if (!strcmp(master->clks[i].id, "fast_clk"))
- 			break;
- 	}
- 
--	if (i == master->num_clks)
--		return dev_err_probe(dev, -EINVAL,
--				     "can't get I3C peripheral clock\n");
-+	if (i == master->num_clks) {
-+		ret = dev_err_probe(dev, -EINVAL,
-+				    "can't get I3C peripheral clock\n");
-+		goto err_disable_clks;
-+	}
- 
- 	master->fclk = master->clks[i].clk;
--	if (IS_ERR(master->fclk))
--		return PTR_ERR(master->fclk);
-+	if (IS_ERR(master->fclk)) {
-+		ret = PTR_ERR(master->fclk);
-+		goto err_disable_clks;
-+	}
- 
- 	master->irq = platform_get_irq(pdev, 0);
--	if (master->irq < 0)
--		return master->irq;
--
--	master->dev = dev;
--	ret = clk_bulk_prepare_enable(master->num_clks, master->clks);
--	if (ret)
--		return dev_err_probe(dev, ret, "can't enable I3C clocks\n");
-+	if (master->irq < 0) {
-+		ret = master->irq;
-+		goto err_disable_clks;
-+	}
- 
- 	mutex_init(&master->lock);
- 
-@@ -2163,9 +2209,213 @@ static const struct svc_i3c_drvdata npcm845_drvdata = {
- 
- static const struct svc_i3c_drvdata svc_default_drvdata = {};
- 
-+/**
-+ * struct aml_i3c_ao_clk - container for the AO variant's internal fast clock
-+ * @div_en: enables the internal divider
-+ * @div: bus clock divider
-+ * @gate: output gate of the generated fast clock
-+ * @lock: spinlock shared by the gate and divider register operations
-+ *
-+ * The clock HW structures are registered with the clock framework and must
-+ * stay alive for the whole driver lifetime, so they are kept along with the
-+ * shared lock used by their gate/divider operations.
-+ */
-+struct aml_i3c_ao_clk {
-+	struct clk_gate div_en;
-+	struct clk_divider div;
-+	struct clk_gate gate;
-+	spinlock_t lock;
-+};
-+
-+/**
-+ * aml_ao_i3c_tail_clocks - register the AO variant's internal fast clock
-+ * @master: I3C master controller
-+ * @parent: parent clock of the internal divider chain; must be "pclk", the
-+ *          only clock the AO variant exposes (see silvaco,i3c-master.yaml)
-+ *
-+ * Register the internal divider chain that produces the AO variant's
-+ * fast_clk and append it to the clk bulk array as "fast_clk". The caller
-+ * must run with the clocks enabled since the divider registers are
-+ * accessed during registration. The appended clock is prepared and
-+ * enabled here as well, because clk_bulk_prepare_enable() already ran
-+ * in the probe with the original clock list.
-+ *
-+ * Return: 0 on success, or a negative error code.
-+ */
-+static int aml_ao_i3c_tail_clocks(struct svc_i3c_master *master, struct clk *parent)
-+{
-+	struct device *dev = master->dev;
-+	struct clk_bulk_data *new_clks;
-+	struct clk_init_data init = {};
-+	struct aml_i3c_ao_clk *ao;
-+	struct clk *fclk;
-+	char name[64];
-+	int ret;
-+
-+	ao = devm_kzalloc(dev, sizeof(*ao), GFP_KERNEL);
-+	if (!ao)
-+		return -ENOMEM;
-+
-+	spin_lock_init(&ao->lock);
-+
-+	snprintf(name, sizeof(name), "%s#div_en", dev_name(dev));
-+	init.name = name;
-+	init.ops = &clk_gate_ops;
-+	init.flags = CLK_IGNORE_UNUSED;
-+	init.parent_data = &(struct clk_parent_data) {
-+		.index = -1,
-+		.hw = __clk_get_hw(parent),
-+	};
-+	init.num_parents = 1;
-+
-+	ao->div_en.reg = master->regs + AML_AO_I3C_FCLK_DIV_CTRL;
-+	ao->div_en.bit_idx = AML_AO_I3C_FCLK_DIV_EN_SHIFT;
-+	ao->div_en.hw.init = &init;
-+	ao->div_en.lock = &ao->lock;
-+
-+	ret = devm_clk_hw_register(dev, &ao->div_en.hw);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "failed to register %s\n", name);
-+
-+	snprintf(name, sizeof(name), "%s#div", dev_name(dev));
-+	init.name = name;
-+	init.ops = &clk_divider_ops;
-+	init.flags = 0;
-+	init.parent_data = &(struct clk_parent_data) {
-+		.index = -1,
-+		.hw = &ao->div_en.hw,
-+	};
-+	init.num_parents = 1;
-+
-+	ao->div.reg = master->regs + AML_AO_I3C_FCLK_DIV_CTRL;
-+	ao->div.shift = AML_AO_I3C_FCLK_DIV_SHIFT;
-+	ao->div.width = AML_AO_I3C_FCLK_DIV_WIDTH;
-+	ao->div.hw.init = &init;
-+	ao->div.lock = &ao->lock;
-+
-+	ret = devm_clk_hw_register(dev, &ao->div.hw);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "failed to register %s\n", name);
-+
-+	snprintf(name, sizeof(name), "%s#gate", dev_name(dev));
-+	init.name = name;
-+	init.ops = &clk_gate_ops;
-+	init.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED;
-+	init.parent_data = &(struct clk_parent_data) {
-+		.index = -1,
-+		.hw = &ao->div.hw,
-+	};
-+	init.num_parents = 1;
-+
-+	ao->gate.reg = master->regs + AML_AO_I3C_FCLK_DIV_CTRL;
-+	ao->gate.bit_idx = AML_AO_I3C_FCLK_EN_SHIFT;
-+	ao->gate.hw.init = &init;
-+	ao->gate.lock = &ao->lock;
-+
-+	ret = devm_clk_hw_register(dev, &ao->gate.hw);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "failed to register %s\n", name);
-+
-+	fclk = devm_clk_hw_get_clk(dev, &ao->gate.hw, NULL);
-+	if (IS_ERR(fclk))
-+		return dev_err_probe(dev, PTR_ERR(fclk),
-+				     "tail i3c fast clock failed\n");
-+
-+	new_clks = devm_kcalloc(dev, master->num_clks + 1, sizeof(*new_clks),
-+				GFP_KERNEL);
-+	if (!new_clks)
-+		return -ENOMEM;
-+
-+	memcpy(new_clks, master->clks,
-+	       master->num_clks * sizeof(*master->clks));
-+	new_clks[master->num_clks].id = "fast_clk";
-+	new_clks[master->num_clks].clk = fclk;
-+	master->clks = new_clks;
-+	master->num_clks++;
-+
-+	/*
-+	 * Keep the clk bulk state balanced for the following
-+	 * clk_bulk_disable_unprepare() calls (error paths and runtime PM).
-+	 */
-+	ret = clk_prepare_enable(fclk);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "can't enable fast_clk\n");
-+
-+	return 0;
-+}
-+
-+/**
-+ * aml_i3c_init - Amlogic A9 specific init, called with the clocks enabled
-+ * @master: I3C master controller
-+ *
-+ * Register the AO variant's internal divider chain and round/set the fast
-+ * clock rate for both variants.
-+ *
-+ * Return: 0 on success, or a negative error code.
-+ */
-+static int aml_i3c_init(struct svc_i3c_master *master)
-+{
-+	struct device *dev = master->dev;
-+	struct clk *fclk;
-+	long fin_freq;
-+	int ret, i;
-+
-+	if (svc_has_quirk(master, AML_I3C_QUIRK_AO)) {
-+		/*
-+		 * clk_bulk_get_all() preserves the DT order, and the
-+		 * binding restricts the AO variant to exactly one clock,
-+		 * which is always "pclk".  So clks[0] is the input of the
-+		 * internal divider chain.
-+		 */
-+		if (strcmp(master->clks[0].id, "pclk"))
-+			return dev_err_probe(dev, -EINVAL,
-+					     "invalid AO input clock\n");
-+
-+		ret = aml_ao_i3c_tail_clocks(master, master->clks[0].clk);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	for (i = 0; i < master->num_clks; i++) {
-+		if (!strcmp(master->clks[i].id, "fast_clk"))
-+			break;
-+	}
-+
-+	if (i == master->num_clks)
-+		return dev_err_probe(dev, -EINVAL,
-+				     "can't get I3C fast clock\n");
-+
-+	fclk = master->clks[i].clk;
-+	if (IS_ERR(fclk))
-+		return PTR_ERR(fclk);
-+
-+	fin_freq = clk_round_rate(fclk, AML_I3C_FAST_CLK_RATE);
-+	if (fin_freq <= 0)
-+		return dev_err_probe(dev, fin_freq ? fin_freq : -EINVAL,
-+				     "invalid fast_clk\n");
-+
-+	ret = clk_set_rate(fclk, fin_freq);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "setting fast_clk rate failed\n");
-+
-+	return 0;
-+}
-+
-+static const struct svc_i3c_drvdata aml_a9_drvdata = {
-+	.quirks = AML_A9_I3C_QUIRKS,
-+	.vendor_init = aml_i3c_init,
-+};
-+
-+static const struct svc_i3c_drvdata aml_a9_ao_drvdata = {
-+	.quirks = AML_A9_I3C_QUIRKS | AML_I3C_QUIRK_AO,
-+	.vendor_init = aml_i3c_init,
-+};
-+
- static const struct of_device_id svc_i3c_master_of_match_tbl[] = {
- 	{ .compatible = "nuvoton,npcm845-i3c", .data = &npcm845_drvdata },
- 	{ .compatible = "silvaco,i3c-master-v1", .data = &svc_default_drvdata },
-+	{ .compatible = "amlogic,a9-i3c", .data = &aml_a9_drvdata },
-+	{ .compatible = "amlogic,a9-ao-i3c", .data = &aml_a9_ao_drvdata },
- 	{ /* sentinel */ },
- };
- MODULE_DEVICE_TABLE(of, svc_i3c_master_of_match_tbl);
-
--- 
-2.42.0
-
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtMb3ddIGR0LWJpbmRpbmdzOiBpM2M6
+IHNpbHZhY286IHVud2llbGR5IHBlci1jb21wYXRpYmxlIGNsb2NrCiAgY29uZGl0aW9uYWxzCi0g
+W0xvd10gZHQtYmluZGluZ3M6IGkzYzogc2lsdmFjbzogc2luZ2xlLWl0ZW0gZW51bSBhbmQgZGVz
+Y3JpcHRpb24gaW4KICBpZi90aGVuCi0tCgpjb21taXQgZGJhYzQ0MzZlY2MzZjg1N2VmMGZhN2Ri
+ZTEwZDBmZDUxMTZjZGIyZApBdXRob3I6IEp1bnlpIFpoYW8gPGp1bnlpLnpoYW9AYW1sb2dpYy5j
+b20+CgpkdC1iaW5kaW5nczogaTNjOiBzaWx2YWNvLGkzYy1tYXN0ZXI6IEFkZCBBbWxvZ2ljIEE5
+IHN1cHBvcnQKClRoaXMgY29tbWl0IGFkZHMgdGhlIGFtbG9naWMsYTktaTNjIGFuZCBhbWxvZ2lj
+LGE5LWFvLWkzYyBjb21wYXRpYmxlCnN0cmluZ3MgYW5kIHRoZWlyIHBlci12YXJpYW50IGNsb2Nr
+IGNvbnN0cmFpbnRzIHRvIHRoZSBTaWx2YWNvIEkzQyBtYXN0ZXIKRGV2aWNlIFRyZWUgYmluZGlu
+ZyBzY2hlbWEuCgo+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvaTNjL3NpbHZhY28saTNjLW1hc3Rlci55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2kzYy9zaWx2YWNvLGkzYy1tYXN0ZXIueWFtbAo+IGluZGV4IDg1MzA5MmY3NTIy
+ZDMuLmQ4OTJkNDJiZWU2NWMgMTAwNjQ0Cj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2kzYy9zaWx2YWNvLGkzYy1tYXN0ZXIueWFtbAo+ICsrKyBiL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9pM2Mvc2lsdmFjbyxpM2MtbWFzdGVyLnlhbWwKPiBAQCAt
+MTMsNiArMTMsOCBAQCBwcm9wZXJ0aWVzOgo+ICAgIGNvbXBhdGlibGU6Cj4gICAgICBvbmVPZjoK
+PiAgICAgICAgLSBlbnVtOgo+ICsgICAgICAgICAgLSBhbWxvZ2ljLGE5LWkzYwo+ICsgICAgICAg
+ICAgLSBhbWxvZ2ljLGE5LWFvLWkzYwo+ICAgICAgICAgICAgLSBudXZvdG9uLG5wY204NDUtaTNj
+Cj4gICAgICAgICAgICAtIHNpbHZhY28saTNjLW1hc3Rlci12MQo+ICAgICAgICAtIGl0ZW1zOgo+
+IEBAIC0yOCwxNCArMzAsMTQgQEAgcHJvcGVydGllczoKPiAgICAgIG1heEl0ZW1zOiAxCj4gIAo+
+ICAgIGNsb2NrczoKPiAtICAgIG1pbkl0ZW1zOiAyCj4gKyAgICBtaW5JdGVtczogMQo+ICAgICAg
+aXRlbXM6Cj4gICAgICAgIC0gZGVzY3JpcHRpb246IHN5c3RlbSBjbG9jawo+ICAgICAgICAtIGRl
+c2NyaXB0aW9uOiBidXMgY2xvY2sKPiAgICAgICAgLSBkZXNjcmlwdGlvbjogb3RoZXIgKHNsb3dl
+cikgZXZlbnRzIGNsb2NrCj4gIAo+ICAgIGNsb2NrLW5hbWVzOgo+IC0gICAgbWluSXRlbXM6IDIK
+PiArICAgIG1pbkl0ZW1zOiAxCj4gICAgICBpdGVtczoKPiAgICAgICAgLSBjb25zdDogcGNsawo+
+ICAgICAgICAtIGNvbnN0OiBmYXN0X2Nsawo+IEBAIC03MCwxNSArNzIsMzUgQEAgYWxsT2Y6Cj4g
+ICAgICAgICAgY29tcGF0aWJsZToKPiAgICAgICAgICAgIGNvbnRhaW5zOgo+ICAgICAgICAgICAg
+ICBlbnVtOgo+ICsgICAgICAgICAgICAgIC0gYW1sb2dpYyxhOS1pM2MKPiAgICAgICAgICAgICAg
+ICAtIG54cCxpbXg5NC1pM2MKPiAgICAgICAgICAgICAgICAtIG54cCxpbXg5NS1pM2MKPiAgICAg
+IHRoZW46Cj4gICAgICAgIHByb3BlcnRpZXM6Cj4gICAgICAgICAgY2xvY2tzOgo+ICsgICAgICAg
+ICAgbWluSXRlbXM6IDIKPiAgICAgICAgICAgIG1heEl0ZW1zOiAyCj4gICAgICAgICAgY2xvY2st
+bmFtZXM6Cj4gKyAgICAgICAgICBtaW5JdGVtczogMgo+ICAgICAgICAgICAgbWF4SXRlbXM6IDIK
+CltTZXZlcml0eTogTG93XQpTaG91bGQgdGhlIEFtbG9naWMgQTkgdmFyaWFudHMgYmUgc3BsaXQg
+aW50byBhIHNlcGFyYXRlIGJpbmRpbmcgc2NoZW1hCmluc3RlYWQgb2YgYWRkaW5nIG1vcmUgcGVy
+LWNvbXBhdGlibGUgY29uZGl0aW9uYWxzIGhlcmU/CgpOZWl0aGVyIGFtbG9naWMsYTktaTNjIG5v
+ciBhbWxvZ2ljLGE5LWFvLWkzYyB1c2VzIHRoZSBzaWx2YWNvLGkzYy1tYXN0ZXItdjEKZmFsbGJh
+Y2ssIGFuZCBhY2NvbW1vZGF0aW5nIHRoZSAxLWNsb2NrIEFPIHZhcmlhbnQgd2Vha2VucyB0aGUg
+dG9wLWxldmVsCmNsb2NrcyBhbmQgY2xvY2stbmFtZXMgbWluSXRlbXMgdG8gMSBzbyB0aGF0IDMt
+Y2xvY2ssIDItY2xvY2ssIGFuZCAxLWNsb2NrCnZhcmlhbnRzIGFsbCBoYXZlIHRvIGJlIGNvbnN0
+cmFpbmVkIHZpYSBzZXBhcmF0ZSBpZi90aGVuIGJsb2NrcyBpbiBhbGxPZi4KCj4gKwo+ICsgIC0g
+aWY6Cj4gKyAgICAgIHByb3BlcnRpZXM6Cj4gKyAgICAgICAgY29tcGF0aWJsZToKPiArICAgICAg
+ICAgIGNvbnRhaW5zOgo+ICsgICAgICAgICAgICBlbnVtOgo+ICsgICAgICAgICAgICAgIC0gYW1s
+b2dpYyxhOS1hby1pM2MKPiArICAgIHRoZW46Cj4gKyAgICAgIHByb3BlcnRpZXM6Cj4gKyAgICAg
+ICAgY2xvY2tzOgo+ICsgICAgICAgICAgbWF4SXRlbXM6IDEKPiArICAgICAgICAgIGRlc2NyaXB0
+aW9uOgo+ICsgICAgICAgICAgICBUaGUgImFvIiB2YXJpYW50IGlzIHRoZSBjb250cm9sbGVyIGlu
+c3RhbmNlIGluIHRoZSBBbHdheXMtT24gKEFPKQo+ICsgICAgICAgICAgICBkb21haW4sIHdoaWNo
+IGhhcyBubyBzZXBhcmF0ZSBidXMgY2xvY2sgYW5kIGRlcml2ZXMgdGhlCj4gKyAgICAgICAgICAg
+IGJ1cyBjbG9jayBmcm9tIGFuIGludGVybmFsIGRpdmlkZXIuCj4gKyAgICAgICAgY2xvY2stbmFt
+ZXM6Cj4gKyAgICAgICAgICBtYXhJdGVtczogMQoKW1NldmVyaXR5OiBMb3ddCkRvZXMgdGhpcyBu
+ZXcgaWYvdGhlbiBibG9jayBwYXNzIGR0X2JpbmRpbmdfY2hlY2s/CgpUaGUgZHRzY2hlbWEgbWV0
+YS1zY2hlbWEgcmVxdWlyZXMgZW51bSBhcnJheXMgdG8gaGF2ZSBhdCBsZWFzdCB0d28gaXRlbXMs
+CnNvIG1hdGNoaW5nIHRoZSBzaW5nbGUgYW1sb2dpYyxhOS1hby1pM2Mgc3RyaW5nIHVuZGVyIGNv
+bnRhaW5zIG5lZWRzIGNvbnN0CnJhdGhlciB0aGFuIGEgc2luZ2xlLWVudHJ5IGVudW0uICBBbHNv
+LCBwcm9wZXJ0eSBkZXNjcmlwdGlvbnMgYmVsb25nIGluIHRoZQp0b3AtbGV2ZWwgcHJvcGVydGll
+cyBibG9jayByYXRoZXIgdGhhbiBpbnNpZGUgYW4gaWYvdGhlbiBjb25kaXRpb25hbC4KCi0tIApT
+YXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjEx
+MDYtYTlfaTNjLXYzLTAtODA0YjY5YjkwOTViQGFtbG9naWMuY29tP3BhcnQ9MgoKLS0gCmxpbnV4
+LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
