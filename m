@@ -2,69 +2,59 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3251660A2633
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Nov 2026 03:17:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 580EA606A321
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Nov 2026 04:22:39 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oOK3TnE3
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=E+640EhI;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=kSRM09eR
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=HSSoMVqzzXAiy08nE5RlEiF1vBdVmGdjGpWT2mbyAKU=; b=oOK3TnE3Zb68Ng++uqfMLtHYRv
-	PUdCZlv4WIoUJ1Vl7nYKE7LaxzqqYEwf4NZFnZzfTbRuDmLuHy1V5J9Dpee+4KDfyxEqEzndrz0o9
-	VOhh7plvbtKvFbCD0VIvJzLNtaJXmvieLxBc+Yf0j0AQwKf5B4jDQ1pDqs84v8pB9JTl0xH/6hiuG
-	B4vTqB4Sh5zO6IdaFYN20Ctj4rgSEYVvMMH4PW20Z36Rl03bz8FxEAfuhh/on/eUa3wUjmFj/hEmW
-	QeSIbg1EKuAd6QUcOQYo+2zPVfQov9nv7G8LKdK+Ni0NcO8H3Iy8Lobo2/PWHne36mrNHQYLJlG9y
-	PBeDp/ng==;
+	bh=96yUnfBW1wtB3yocB4Fu7SVPZzY6d1AqVGDsVKO0UkE=; b=E+640EhIqcBvQ1OZtKAiKuzq4e
+	FvFSWmGU1RaElvTf8eF7LWbV/NbbIuxcU67GpggJkXd8aJQNY+/fbT9kYb/l4suLUob+F7elI3hE/
+	nxmVKO5iuaI0W55pHRlbnY8W0PREE+4Bde5sHDaQIgMXhGUM+6jYLDvmZHevIgK1knM9F88EcZkBZ
+	c0tcUayUi6ZmaKmQ3aUSo7X1hJ8JsjDmoQteTzZ6PB5xQ/UrEvzrwrAq1phL719vsfK+SAcdRY1qj
+	nrTDRp3/DZkTc2JX0WPnwcYQCIQW821p4UMuBuaKauywUlJPPVoyoOk8jsXM1RtdHGMMuAkfIHETg
+	h5mt7HCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQypn-00000005Wo3-3dse;
-	Wed, 11 Nov 2026 03:17:15 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
+	id 1xQzr5-00000005bgE-0Nqs;
+	Wed, 11 Nov 2026 04:22:39 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQypd-00000005WER-0sms;
-	Wed, 11 Nov 2026 03:17:06 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.39; Wed, 11 Nov
- 2026 11:16:32 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.39 via Frontend
- Transport; Wed, 11 Nov 2026 11:16:32 +0800
-From: Billy Tsai <billy_tsai@aspeedtech.com>
-Date: Wed, 11 Nov 2026 11:16:37 +0800
-Subject: [PATCH v2 9/9] i3c: mipi-i3c-hci: Support the AST2700 internal
- pull-ups
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-ID: <20261111-b4-i3c-hci-ast2700-v2-9-4d8fff5c5196@aspeedtech.com>
+	id 1xQzr2-00000005bfp-3fzL
+	for linux-i3c@lists.infradead.org;
+	Wed, 11 Nov 2026 04:22:36 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id B2E0A61D11;
+	Wed, 11 Nov 2026 04:22:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 094911F0093C;
+	Wed, 11 Nov 2026 04:22:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794370955;
+	bh=tGte33G70WlD86NL9KI+4i6b5lHMmJ/9O0wo+2lnvSU=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=kSRM09eRzWBmIW+bWl4meqV7Eoc5/xP7rWf0aNZzmQxnjbYzAQWkHJnq/cyREiknl
+	 qzh7skHWVwRETSJMUlBpRAPS6Jcxtvt1mRRsao4rfB71d+dQ5Cv295wLvhGrxkfa0P
+	 xAndvgI1ZHoSjHDPTwPNEai6pYqtYGahK8GhKmJ/vLD/yXSJLSk8N5VD1/4HY1dNUY
+	 OCxPoOCIv5V6t6aogBOY8anGk8ybQDEyIBqVynGdLTrc6DwQjALDfQ5of2f52tYEQA
+	 kifZfnxhTR6tBjfIlF1/z1A6SxtziBNkZRhGO0MnmzeZS623RwCrcn8NKiQmFkl7Ks
+	 3A9Unpln0+eXg==
+Message-ID: <sashiko-outbox-208274@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 6/9] i3c: mipi-i3c-hci: Add support for the AST2700
+ I3C controller
+To: "Billy Tsai" <billy_tsai@aspeedtech.com>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, Frank.Li@kernel.org, "Alexandre
+ Belloni" <alexandre.belloni@bootlin.com>
+In-Reply-To: <20261111-b4-i3c-hci-ast2700-v2-6-4d8fff5c5196@aspeedtech.com>
 References: <20261111-b4-i3c-hci-ast2700-v2-0-4d8fff5c5196@aspeedtech.com>
-In-Reply-To: <20261111-b4-i3c-hci-ast2700-v2-0-4d8fff5c5196@aspeedtech.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
-	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
-	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Joel Stanley
-	<joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>, Philipp Zabel
-	<p.zabel@pengutronix.de>, Miquel Raynal <miquel.raynal@bootlin.com>, "Ryan
- Chen" <ryan_chen@aspeedtech.com>
-CC: <tbevis@amazon.com>, <linux-i3c@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>, Billy Tsai
-	<billy_tsai@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794366991; l=5963;
- i=billy_tsai@aspeedtech.com; s=20251118; h=from:subject:message-id;
- bh=+kGXXSXJX0VtXkxub2tvdKAYW26lF5M0TaZsOE2nZpY=;
- b=hZxmZzQe/z1aSlXnmHlyFoWDcS006utE+vM9s5x1nRR1y42JS0t1RJRM2h7BEooIP51fJKTbt
- BvX01yKmi9hB1UVV2pGJ19gbZvfCxJ2LyQ0k0Id9XprVlGN8v8T4T3W
-X-Developer-Key: i=billy_tsai@aspeedtech.com; a=ed25519;
- pk=/A8qvgZ6CPfnwKgT6/+k+nvXOkN477MshEGJvVdzeeQ=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261110_191705_285811_6054063E 
-X-CRM114-Status: GOOD (  15.30  )
-X-Spam-Score: -1.9 (-)
+ <20261111-b4-i3c-hci-ast2700-v2-6-4d8fff5c5196@aspeedtech.com>
+Date: Wed, 11 Nov 2026 04:22:34 +0000
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,208 +64,105 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Boards that do not populate external I3C pull-up resistors can use the
-pull-ups built into the AST2700 PHY.
-
-When bias-pull-up is present, determine the pin voltage domain from
-the pinctrl-0 group already selected for the bus and enable the
-internal pull-ups on both SCL and SDA at the requested strength.
-Currently only pinctrl-0 is inspected; a node selecting its group
-through a different pinctrl state is not yet supported. The controller
-reset clears the SW force control register, so the internal pull-ups
-start disabled unless bias-pull-up requests otherwise. A resistance
-with no entry in the domain's table, or an unrecognized pinctrl-0
-group, is rejected with an error.
-
-Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
----
- drivers/i3c/master/mipi-i3c-hci/aspeed.c | 118 +++++++++++++++++++++++++++++++
- drivers/i3c/master/mipi-i3c-hci/aspeed.h |   6 ++
- 2 files changed, 124 insertions(+)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/aspeed.c b/drivers/i3c/master/mipi-i3c-hci/aspeed.c
-index 8f2a00a940f7..1e093fb5d9d9 100644
---- a/drivers/i3c/master/mipi-i3c-hci/aspeed.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/aspeed.c
-@@ -15,6 +15,7 @@
- #include <linux/of.h>
- #include <linux/platform_device.h>
- #include <linux/reset.h>
-+#include <linux/string.h>
- 
- #include "hci.h"
- #include "aspeed.h"
-@@ -197,6 +198,100 @@ static u32 aspeed_i3c_get_sdr_ctrl0_reg(struct i3c_hci *hci)
- 	return ASPEED_I3C_PHY_I3C_SDR4_CTRL0;
- }
- 
-+struct aspeed_i3c_pullup_ohms {
-+	u32 ohms;
-+	u8 code;
-+};
-+
-+/* SW_FORCE_CTRL strength selector to resistance, by pin voltage domain */
-+static const struct aspeed_i3c_pullup_ohms aspeed_i3c_pullup_hv[] = {
-+	{ 600, 1 },
-+	{ 470, 2 },
-+	{ 400, 3 },
-+};
-+
-+static const struct aspeed_i3c_pullup_ohms aspeed_i3c_pullup_lv[] = {
-+	{ 750, 1 },
-+	{ 550, 2 },
-+	{ 317, 3 },
-+	{ 400, 4 },
-+	{ 261, 5 },
-+	{ 231, 6 },
-+	{ 177, 7 },
-+};
-+
-+/* pinctrl-0 group names for each pin voltage domain */
-+static const char * const aspeed_i3c_hv_groups[] = {
-+	"HVI3C0", "HVI3C1", "HVI3C2", "HVI3C3",
-+	"HVI3C12", "HVI3C13", "HVI3C14", "HVI3C15",
-+};
-+
-+static const char * const aspeed_i3c_lv_groups[] = {
-+	"I3C4", "I3C5", "I3C6", "I3C7",
-+	"I3C8", "I3C9", "I3C10", "I3C11",
-+};
-+
-+static int aspeed_i3c_pin_is_hv(struct i3c_hci *hci, bool *is_hv)
-+{
-+	struct device_node *np = hci->master.dev.of_node;
-+	struct device_node *state;
-+	const char *group;
-+	int ret, i;
-+
-+	state = of_parse_phandle(np, "pinctrl-0", 0);
-+	if (!state)
-+		return -ENODEV;
-+
-+	ret = of_property_read_string(state, "groups", &group);
-+	if (ret)
-+		goto put_state;
-+
-+	for (i = 0; i < ARRAY_SIZE(aspeed_i3c_hv_groups); i++) {
-+		if (!strcmp(group, aspeed_i3c_hv_groups[i])) {
-+			*is_hv = true;
-+			goto put_state;
-+		}
-+	}
-+
-+	for (i = 0; i < ARRAY_SIZE(aspeed_i3c_lv_groups); i++) {
-+		if (!strcmp(group, aspeed_i3c_lv_groups[i])) {
-+			*is_hv = false;
-+			goto put_state;
-+		}
-+	}
-+
-+	dev_err(&hci->master.dev, "unrecognized pinctrl-0 group \"%s\"\n",
-+		group);
-+	ret = -EINVAL;
-+
-+put_state:
-+	of_node_put(state);
-+	return ret;
-+}
-+
-+static int aspeed_i3c_pullup_code(struct i3c_hci *hci, bool is_hv, u32 ohms)
-+{
-+	const struct aspeed_i3c_pullup_ohms *map;
-+	size_t i, n;
-+
-+	if (is_hv) {
-+		map = aspeed_i3c_pullup_hv;
-+		n = ARRAY_SIZE(aspeed_i3c_pullup_hv);
-+	} else {
-+		map = aspeed_i3c_pullup_lv;
-+		n = ARRAY_SIZE(aspeed_i3c_pullup_lv);
-+	}
-+
-+	for (i = 0; i < n; i++)
-+		if (map[i].ohms == ohms)
-+			return map[i].code;
-+
-+	dev_err(&hci->master.dev,
-+		"unsupported internal pull-up %u ohms for %s-voltage domain\n",
-+		ohms, is_hv ? "high" : "low");
-+	return -EINVAL;
-+}
-+
- int aspeed_i3c_phy_init(struct i3c_hci *hci)
- {
- 	u16 hcnt, lcnt, total_cnt, min_tbit_cnt, cas_lcnt, cas_cnt, cbp_cnt;
-@@ -206,6 +301,7 @@ int aspeed_i3c_phy_init(struct i3c_hci *hci)
- 	struct device_node *np = hci->master.dev.of_node;
- 	u32 sdr_ctrl0_reg, ctrl0, ctrl1, ctrl2;
- 	unsigned long core_rate, period_ns;
-+	u32 pullup_ohms = 0;
- 
- 	core_rate = clk_get_rate(to_aspeed_vendor_data(hci)->clk);
- 	if (!core_rate) {
-@@ -374,6 +470,28 @@ int aspeed_i3c_phy_init(struct i3c_hci *hci)
- 
- 	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_PULLUP_EN, 0);
- 
-+	of_property_read_u32(np, "bias-pull-up", &pullup_ohms);
-+	if (pullup_ohms) {
-+		int ret, strength;
-+		bool is_hv;
-+
-+		ret = aspeed_i3c_pin_is_hv(hci, &is_hv);
-+		if (ret)
-+			return ret;
-+
-+		strength = aspeed_i3c_pullup_code(hci, is_hv, pullup_ohms);
-+		if (strength < 0)
-+			return strength;
-+
-+		aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_SW_FORCE_CTRL,
-+				     ASPEED_I3C_PHY_SW_FORCE_SCL_PU_EN |
-+				     ASPEED_I3C_PHY_SW_FORCE_SDA_PU_EN |
-+				     FIELD_PREP(ASPEED_I3C_PHY_SW_FORCE_SCL_PU_VAL,
-+						strength) |
-+				     FIELD_PREP(ASPEED_I3C_PHY_SW_FORCE_SDA_PU_VAL,
-+						strength));
-+	}
-+
- 	hcnt = aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_OD_DAP_NS, period_ns);
- 	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_I3C_OD_CTRL4,
- 			     FIELD_PREP(ASPEED_I3C_PHY_I3C_OD_CTRL4_DAP, hcnt));
-diff --git a/drivers/i3c/master/mipi-i3c-hci/aspeed.h b/drivers/i3c/master/mipi-i3c-hci/aspeed.h
-index e80a0dff0dc9..69d7ae92d3c5 100644
---- a/drivers/i3c/master/mipi-i3c-hci/aspeed.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/aspeed.h
-@@ -69,6 +69,12 @@ unsigned int aspeed_i3c_avail_tx_entries(struct i3c_hci *hci);
- #define   ASPEED_INTR_SUM_PIO			BIT(1)
- #define   ASPEED_INTR_SUM_CAP			BIT(0)
- 
-+#define ASPEED_I3C_PHY_SW_FORCE_CTRL		0x04
-+#define   ASPEED_I3C_PHY_SW_FORCE_SCL_PU_EN	BIT(28)
-+#define   ASPEED_I3C_PHY_SW_FORCE_SDA_PU_EN	BIT(24)
-+#define   ASPEED_I3C_PHY_SW_FORCE_SCL_PU_VAL	GENMASK(10, 8)
-+#define   ASPEED_I3C_PHY_SW_FORCE_SDA_PU_VAL	GENMASK(2, 0)
-+
- #define ASPEED_I3C_PHY_I2C_FM_CTRL0		0x08
- #define   ASPEED_I3C_PHY_I2C_FM_CTRL0_CAS	GENMASK(26, 16)
- #define   ASPEED_I3C_PHY_I2C_FM_CTRL0_SU_STO	GENMASK(10, 0)
-
--- 
-2.34.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtNZWRpdW1dIGkzYzogbWlwaS1pM2Mt
+aGNpOiBOVUxMIGRlcmVmIGFuZCBtaXNzaW5nIG9mZnNldCBjaGVjayBpbgogIGhjaV9leHRjYXBf
+dmVuZG9yX0FTUEVFRCgpCi0gW01lZGl1bV0gaTNjOiBtaXBpLWkzYy1oY2k6IEFDS19MIHByb2dy
+YW1tZWQgd2l0aCBoY250IGluc3RlYWQgb2YgbGNudAogIGluIGFzcGVlZF9pM2NfcGh5X2luaXQo
+KQotLQoKY29tbWl0IGFkY2JkNWFhZTIxNGNlZmI1NWU3NmQyOTI4ZDk5ODg1MjEwOGZmYWYKQXV0
+aG9yOiBCaWxseSBUc2FpIDxiaWxseV90c2FpQGFzcGVlZHRlY2guY29tPgoKaTNjOiBtaXBpLWkz
+Yy1oY2k6IEFkZCBzdXBwb3J0IGZvciB0aGUgQVNUMjcwMCBJM0MgY29udHJvbGxlcgoKVGhpcyBj
+b21taXQgYWRkcyB2ZW5kb3IgY2FwYWJpbGl0eSBwYXJzaW5nLCByZXNvdXJjZSBtYW5hZ2VtZW50
+LCBpbnRlcnJ1cHQKc3VtbWFyeSBoYW5kbGluZywgUEhZIHRpbWluZyBzZXR1cCwgYW5kIERBQSBp
+bmRleCBjb25maWd1cmF0aW9uIGZvciB0aGUKQVNQRUVEIEFTVDI3MDAgSTNDIGNvbnRyb2xsZXIu
+Cgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2kzYy9tYXN0ZXIvbWlwaS1pM2MtaGNpL2FzcGVlZC5j
+IGIvZHJpdmVycy9pM2MvbWFzdGVyL21pcGktaTNjLWhjaS9hc3BlZWQuYwo+IG5ldyBmaWxlIG1v
+ZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uM2FhOTEwZTc4NmY4ZQo+IC0tLSAvZGV2
+L251bGwKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvbWlwaS1pM2MtaGNpL2FzcGVlZC5jCj4g
+QEAgLTAsMCArMSwzNTEgQEAKClsgLi4uIF0KCj4gK2ludCBoY2lfZXh0Y2FwX3ZlbmRvcl9BU1BF
+RUQoc3RydWN0IGkzY19oY2kgKmhjaSwgdm9pZCBfX2lvbWVtICpiYXNlKQo+ICt7Cj4gKwlzdHJ1
+Y3QgYXNwZWVkX2kzY192ZW5kb3JfZGF0YSAqdmQgPSB0b19hc3BlZWRfdmVuZG9yX2RhdGEoaGNp
+KTsKPiArCj4gKwl2ZC0+aW5ob3VzZV9yZWdzID0gaGNpLT5iYXNlX3JlZ3MgKyByZWFkbChiYXNl
+ICsgMHgwNCk7Cj4gKwl2ZC0+cGh5X3JlZ3MgPSBoY2ktPmJhc2VfcmVncyArIHJlYWRsKGJhc2Ug
+KyAweDA4KTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsKPiArYm9vbCBhc3BlZWRfaTNjX3Zl
+bmRvcl9jYXBfZm91bmQoc3RydWN0IGkzY19oY2kgKmhjaSkKPiArewo+ICsJc3RydWN0IGFzcGVl
+ZF9pM2NfdmVuZG9yX2RhdGEgKnZkID0gdG9fYXNwZWVkX3ZlbmRvcl9kYXRhKGhjaSk7Cj4gKwo+
+ICsJcmV0dXJuIHZkLT5pbmhvdXNlX3JlZ3MgJiYgdmQtPnBoeV9yZWdzOwo+ICt9CgpbU2V2ZXJp
+dHk6IE1lZGl1bV0KQ2FuIGhjaV9leHRjYXBfdmVuZG9yX0FTUEVFRCgpIGRlcmVmZXJlbmNlIGEg
+TlVMTCB2ZCBwb2ludGVyIG9yIHBvcHVsYXRlCm5vbi1OVUxMIHJlZ2lzdGVyIHBvaW50ZXJzIGZy
+b20gemVybyBvZmZzZXRzPwoKRVhUX0NBUF9WRU5ET1IoQVNQRUVELCAweGMwLCAweDA4KSBpcyBy
+ZWdpc3RlcmVkIHVuY29uZGl0aW9uYWxseSBpbgp2ZW5kb3JfZXh0X2NhcHNbXSwgd2hlcmVhcyBo
+Y2ktPnZlbmRvcl9kYXRhIGlzIG9ubHkgYWxsb2NhdGVkIGluCmkzY19oY2lfcHJvYmUoKSB3aGVu
+IEhDSV9RVUlSS19WRU5ET1JfUkVTT1VSQ0VTIGlzIHNldC4gIElmIGFuIEFTUEVFRApjb250cm9s
+bGVyIGlzIGJvdW5kIHdpdGhvdXQgSENJX1FVSVJLX1ZFTkRPUl9SRVNPVVJDRVMgKGZvciBleGFt
+cGxlIHZpYSB0aGUKZ2VuZXJpYyAibWlwaS1pM2MtaGNpIiBjb21wYXRpYmxlKSwgaTNjX2hjaV9w
+YXJzZV9leHRfY2FwcygpIGNhbGxzCmhjaV9leHRjYXBfdmVuZG9yX0FTUEVFRCgpIHdpdGggaGNp
+LT52ZW5kb3JfZGF0YSA9PSBOVUxMIGFuZCBjcmFzaGVzLgpTaW1pbGFybHksIHRoZSBvdGhlciBm
+b3VyIHZlbmRvciBxdWlya3MgKEhDSV9RVUlSS19WRU5ET1JfQlVTX1NFVFVQLApIQ0lfUVVJUktf
+Qk9BUkRfUEhZX1RJTUlOR1MsIEhDSV9RVUlSS19WRU5ET1JfSU5UUl9TVU1NQVJZLCBhbmQKSENJ
+X1FVSVJLX1ZFTkRPUl9EQUFfSU5ERVgpIGRlcmVmZXJlbmNlIGhjaS0+dmVuZG9yX2RhdGEgd2l0
+aG91dCBjaGVja2luZwp0aGF0IEhDSV9RVUlSS19WRU5ET1JfUkVTT1VSQ0VTIGFsbG9jYXRlZCBp
+dCBvciB2ZXJpZmllZAphc3BlZWRfaTNjX3ZlbmRvcl9jYXBfZm91bmQoKS4KCkluIGFkZGl0aW9u
+LCB1bmxpa2UgdGhlIHNlY3Rpb24gcGFyc2VycyBpbiBpM2NfaGNpX2luaXQoKSB0aGF0IGNoZWNr
+CiJvZmZzZXQgPyBoY2ktPmJhc2VfcmVncyArIG9mZnNldCA6IE5VTEwiLCBoY2lfZXh0Y2FwX3Zl
+bmRvcl9BU1BFRUQoKSBhZGRzCnJlYWRsKGJhc2UgKyAweDA0KSBhbmQgcmVhZGwoYmFzZSArIDB4
+MDgpIGRpcmVjdGx5IHRvIGhjaS0+YmFzZV9yZWdzLiAgQQp6ZXJvIG9mZnNldCBpbiBlaXRoZXIg
+cmVnaXN0ZXIgeWllbGRzIGhjaS0+YmFzZV9yZWdzIHJhdGhlciB0aGFuIE5VTEwsIHNvCmFzcGVl
+ZF9pM2NfdmVuZG9yX2NhcF9mb3VuZCgpIHJldHVybnMgdHJ1ZSBhbmQgbGF0ZXIgdmVuZG9yIG9y
+IFBIWSB3cml0ZXMKb3ZlcndyaXRlIHRoZSBjb3JlIEhDSSByZWdpc3RlcnMgYXQgaGNpLT5iYXNl
+X3JlZ3MuCgpbIC4uLiBdCgo+ICsJaGNudCA9IGFzcGVlZF9pM2NfbnNfdG9fY250KEFTUEVFRF9J
+M0NfUEhZX0kyQ19GTV9TQ0xfSF9OUywgcGVyaW9kX25zKTsKPiArCWxjbnQgPSBhc3BlZWRfaTNj
+X25zX3RvX2NudChBU1BFRURfSTNDX1BIWV9JMkNfRk1fU0NMX0xfTlMsIHBlcmlvZF9ucyk7Cj4g
+Kwlhc3BlZWRfaTNjX3BoeV93cml0ZShoY2ksIEFTUEVFRF9JM0NfUEhZX0kyQ19GTV9DVFJMMSwK
+PiArCQkJICAgICBGSUVMRF9QUkVQKEFTUEVFRF9JM0NfUEhZX0kyQ19GTV9DVFJMMV9TQ0xfSCwg
+aGNudCkgfAo+ICsJCQkgICAgIEZJRUxEX1BSRVAoQVNQRUVEX0kzQ19QSFlfSTJDX1BIWV9JMkNf
+Rk1fQ1RSTDFfU0NMX0wsIGxjbnQpKTsKPiArCWFzcGVlZF9pM2NfcGh5X3dyaXRlKGhjaSwgQVNQ
+RUVEX0kzQ19QSFlfSTJDX0ZNX0NUUkwyLAo+ICsJCQkgICAgIEZJRUxEX1BSRVAoQVNQRUVEX0kz
+Q19QSFlfSTJDX0ZNX0NUUkwyX0FDS19ILCBoY250KSB8Cj4gKwkJCSAgICAgRklFTERfUFJFUChB
+U1BFRURfSTNDX1BIWV9JMkNfRk1fQ1RSTDJfQUNLX0wsIGhjbnQpKTsKPiArCj4gKwloY250ID0g
+YXNwZWVkX2kzY19uc190b19jbnQoQVNQRUVEX0kzQ19QSFlfSTJDX0ZNX0hEX0RBVF9OUywgcGVy
+aW9kX25zKTsKPiArCWxjbnQgPSBhc3BlZWRfaTNjX25zX3RvX2NudChBU1BFRURfSTNDX1BIWV9J
+MkNfRk1fQUhEX0RBVF9OUywgcGVyaW9kX25zKTsKPiArCWFzcGVlZF9pM2NfcGh5X3dyaXRlKGhj
+aSwgQVNQRUVEX0kzQ19QSFlfSTJDX0ZNX0NUUkwzLAo+ICsJCQkgICAgIEZJRUxEX1BSRVAoQVNQ
+RUVEX0kzQ19QSFlfSTJDX0ZNX0NUUkwzX0hEX0RBVCwgaGNudCkgfAo+ICsJCQkgICAgIEZJRUxE
+X1BSRVAoQVNQRUVEX0kzQ19QSFlfSTJDX0ZNX0NUUkwzX0FIRF9EQVQsIGxjbnQpKTsKPiArCj4g
+KwloY250ID0gYXNwZWVkX2kzY19uc190b19jbnQoQVNQRUVEX0kzQ19QSFlfSTJDX0ZNUF9DQVNf
+TlMsIHBlcmlvZF9ucyk7Cj4gKwlsY250ID0gYXNwZWVkX2kzY19uc190b19jbnQoQVNQRUVEX0kz
+Q19QSFlfSTJDX0ZNUF9TVV9TVE9fTlMsIHBlcmlvZF9ucyk7Cj4gKwlhc3BlZWRfaTNjX3BoeV93
+cml0ZShoY2ksIEFTUEVFRF9JM0NfUEhZX0kyQ19GTVBfQ1RSTDAsCj4gKwkJCSAgICAgRklFTERf
+UFJFUChBU1BFRURfSTNDX1BIWV9JMkNfRk1QX0NUUkwwX0NBUywgaGNudCkgfAo+ICsJCQkgICAg
+IEZJRUxEX1BSRVAoQVNQRUVEX0kzQ19QSFlfSTJDX0ZNUF9DVFJMMF9TVV9TVE8sIGxjbnQpKTsK
+PiArCj4gKwloY250ID0gYXNwZWVkX2kzY19uc190b19jbnQoQVNQRUVEX0kzQ19QSFlfSTJDX0ZN
+UF9TQ0xfSF9OUywgcGVyaW9kX25zKTsKPiArCWxjbnQgPSBhc3BlZWRfaTNjX25zX3RvX2NudChB
+U1BFRURfSTNDX1BIWV9JMkNfRk1QX1NDTF9MX05TLCBwZXJpb2RfbnMpOwo+ICsJYXNwZWVkX2kz
+Y19waHlfd3JpdGUoaGNpLCBBU1BFRURfSTNDX1BIWV9JMkNfRk1QX0NUUkwxLAo+ICsJCQkgICAg
+IEZJRUxEX1BSRVAoQVNQRUVEX0kzQ19QSFlfSTJDX0ZNUF9DVFJMMV9TQ0xfSCwgaGNudCkgfAo+
+ICsJCQkgICAgIEZJRUxEX1BSRVAoQVNQRUVEX0kzQ19QSFlfSTJDX0ZNUF9DVFJMMV9TQ0xfTCwg
+bGNudCkpOwo+ICsJYXNwZWVkX2kzY19waHlfd3JpdGUoaGNpLCBBU1BFRURfSTNDX1BIWV9JMkNf
+Rk1QX0NUUkwyLAo+ICsJCQkgICAgIEZJRUxEX1BSRVAoQVNQRUVEX0kzQ19QSFlfSTJDX0ZNUF9D
+VFJMMl9BQ0tfSCwgaGNudCkgfAo+ICsJCQkgICAgIEZJRUxEX1BSRVAoQVNQRUVEX0kzQ19QSFlf
+STJDX0ZNUF9DVFJMMl9BQ0tfTCwgaGNudCkpOwoKW1NldmVyaXR5OiBNZWRpdW1dClNob3VsZCBB
+U1BFRURfSTNDX1BIWV9JMkNfRk1fQ1RSTDJfQUNLX0wgYW5kCkFTUEVFRF9JM0NfUEhZX0kyQ19G
+TVBfQ1RSTDJfQUNLX0wgYmUgcHJvZ3JhbW1lZCB3aXRoIGxjbnQgaW5zdGVhZCBvZiBoY250LApt
+YXRjaGluZyBBU1BFRURfSTNDX1BIWV9JM0NfT0RfQ1RSTDJfQUNLX0wgZnVydGhlciBkb3duPyAg
+UGFzc2luZyBoY250IHNldHMKdGhlIEkyQyBBQ0sgU0NMIGxvdyBwZXJpb2QgdG8gMTEzMCBucyBp
+biBGYXN0IE1vZGUgKGJlbG93IHRoZSAxMzAwIG5zIEkyQwptaW5pbXVtIHRMT1cpIGFuZCAzODAg
+bnMgaW4gRmFzdCBNb2RlIFBsdXMgKGJlbG93IHRoZSA1MDAgbnMgbWluaW11bSkuCgotLSAKU2Fz
+aGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMTEx
+LWI0LWkzYy1oY2ktYXN0MjcwMC12Mi0wLTRkOGZmZjVjNTE5NkBhc3BlZWR0ZWNoLmNvbT9wYXJ0
+PTYKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNj
+Cg==
