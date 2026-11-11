@@ -2,117 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F0E7B606A320
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Nov 2026 02:12:12 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 82644606A321
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Nov 2026 02:54:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qJpntI/4;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=synopsys.com header.i=@synopsys.com header.a=rsa-sha256 header.s=pfptdkimsnps header.b=TFjypjka;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=synopsys.com header.i=@synopsys.com header.a=rsa-sha256 header.s=mail header.b=SGsvb1j4
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3R6ThL4J;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=U46dkGLY
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=I638sHhsyr9UGnaqzYnmjn0qynaxbzAICF/6dnAKQJw=; b=qJpntI/4g7dDdAGJMGxZVKCd13
-	pQrrytypKCxvmcBrzcsMif/cftsUNmGBA8CMRyp7ubY1MhGh+kjX+GEVaLIsAgEq3GtYl08JlyKdM
-	m79N7b5GnVqu88HkS/9Hu1IvRgxoCn6fu0GlCkn2hLN46eJyWaGvOPmYcF0F1hEca7WpUKuU8O7mW
-	e3e9bqOURsMezYsPmhkF3ulKzGju+9q8BqDOhKkxgxc+EX5gRv/t5Wtop/ZRqahgMHzQr+1Cr3G1N
-	rI2YKMJjKy7LG27uGeq/zDdtD7sH6oTjYxja+WLqgUbxtz5vSiNAFz9r9VbTohhqdpz2/TlkEnCaz
-	SLR/TeVw==;
+	bh=RULa/tQj8DKpst63BzF7238w4r3dmt9tzRVx90K13c4=; b=3R6ThL4JiHFsInxiC1xXwT19D2
+	i/db0hVfi5RR2I5rN9MDFkvRj12pDO4H3lZhZqi11EWNgNwuXmAIxXZq0nDXZ7lUJXufpuXqAxGEU
+	AO5hU4tuRv7O164FVx0mru/RO8gpBUD/hOBdVo99rMAt2yXoq2twlc90WDM2sH4ESv3btrgBLhUSV
+	zvEg/0SDr6TxnSRCyEuJiVPFv4BR5Oq4fh12OBD5tIjzaysxoNCeSadu3YdiQsJyP5Z52TlbSNCuH
+	gSTNhlWzepNrO86XAuznEp21OV41g+lMtTDTOLxVQOcfkyn6m64ekTOgOwQniiCIaMnCzOEr0haNi
+	Kpss0IpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQxoq-00000005Q9S-2JPO;
-	Wed, 11 Nov 2026 02:12:12 +0000
-Received: from mx0b-00230701.pphosted.com ([148.163.158.9])
+	id 1xQyTW-00000005UID-0DJW;
+	Wed, 11 Nov 2026 02:54:14 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQxoo-00000005Q8p-0W2M
+	id 1xQyTU-00000005UI4-0XZT
 	for linux-i3c@lists.infradead.org;
-	Wed, 11 Nov 2026 02:12:11 +0000
-Received: from pps.filterd (m0098572.ppops.net [127.0.0.1])
-	by mx0b-00230701.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AB1vjGI105268;
-	Tue, 10 Nov 2026 18:12:00 -0800
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=pfptdkimsnps; bh=qvUqrU4f
-	ec6L7/JMRT3UFkPpzmbLsrCf6gtFOY022kQ=; b=TFjypjkaWep+OgHW5D2TEFeb
-	FXMOckcApLejqz3+X1fTT2PTfWE3I18asdeE31uzMXhQomIvgIy6GAJixmdovbEV
-	A5Bu+zSFO3soAhx+wU2kbX3J6aDnan4N7feJ9DhSeegTOmF3DM/A+QkOVCTR7T/b
-	YJbmAUHAit2ReTZtgU21Ut+PLlfd9EbdvXYvOE3Arb38hmAl0j6iJl7mKBn7QOtw
-	EB07LWpsd5+OIDgLcj6TVQRItl8huBSbYV8BRBVV7kyTCD/Pw871bAzyDoX9AYJ8
-	rsp0PuNbJk6/iVliINP92kVCbUKXw8yQtvz6P5kkUHWB6dJJ1atX3l/iR5OFKQ==
-Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com [149.117.73.133])
-	by mx0b-00230701.pphosted.com (PPS) with ESMTPS id 4hv6ypbqpb-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Tue, 10 Nov 2026 18:11:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
-	t=1794363119; bh=Z4Eu8lEbXj4Q2sh57UImvHC2PzcM8RTnhlI+KZBLI9g=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=SGsvb1j43p7Mx+HgUJrkvv84oiwrMiDq1rDAerCg1tTkaeOSGrZftd8lJSS/2lR4o
-	 Md/BLteYjIBkmsIjMuhK44ax7BkqfaEMu9zIQG+FelpZHlwAmic/zJ/Mq1B2F2dd8X
-	 m1t8IAZLlgJPckH0mQGmHpOW479PNCxS6ox4RoCvjFrVq58qsSIt//sHI8bPh02Vm9
-	 cp6+tG5z0/XZGgNXFuLVr1l/l3FLbbXp4qwsRVT44iuNCAF+6oXE55eyQThPsOVMeI
-	 k7dDl5J6f4Qi/JQXY5e1WOEdWbs6XoVP4jt7i0sEj9qFjnEDw64/TQFk1xNntuzZGE
-	 L2U88TA/y/TMQ==
-Received: from mailhost.synopsys.com (eudc-mailhost2.synopsys.com [10.213.161.17])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits)
-	 client-signature RSA-PSS (2048 bits))
-	(Client CN "mailhost.synopsys.com", Issuer "SNPSica2" (verified OK))
-	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3996540693;
-	Wed, 11 Nov 2026 02:11:58 +0000 (UTC)
-Received: from Ubuntu.internal.synopsys.com (unknown [10.150.8.73])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(Client did not present a certificate)
-	by mailhost.synopsys.com (Postfix) with ESMTPSA id 489C0C129A;
-	Wed, 11 Nov 2026 02:11:55 +0000 (UTC)
-X-SNPS-Relay: synopsys.com
-From: Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
-To: Dineshkumar.Parameswaran@synopsys.com
-Cc: Frank.Li@nxp.com, alexandre.belloni@bootlin.com,
-        linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-        Dineshkumar Parameswaran <Dineshkumar.Parameswaran@synopsys.com>
-Subject: [PATCH v3] i3c: master: dw-i3c-master: Add HDR-DDR support to Designware Controller.
-Date: Wed, 11 Nov 2026 07:41:51 +0530
-Message-Id: <20261111021151.58380-1-parame@synopsys.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261101005243.4739-1-parame@synopsys.com>
+	Wed, 11 Nov 2026 02:54:12 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7D1A542296;
+	Wed, 11 Nov 2026 02:54:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1FA2A1F0093C;
+	Wed, 11 Nov 2026 02:54:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794365651;
+	bh=rvWTUYdbEHaGLvlmw5KeJhOouS+QjXyt4I/GAmot5NQ=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=U46dkGLYJPFs3rOXgQaVU6cPRyFIe5NZxEuEF/20t/4n6tcExF7qImgpO5T3SNyK/
+	 h7DHvedml6Ko5io5wRlCJ/ENFbbMQqL7cdQv1466mgIds0NMdSjPj3a3IKZd9qIQF9
+	 KCHeqJyxMqTN0QKTOkG9v4fgXkcqKpdavva7cpYsjBGNfMPPSUJT1yFLwaXgUP9m49
+	 AhjsZAlxTltQfFhCp6cttpAdW6ukTiBIKZctKmjtdSwNpVN7gDkiR1TAyhMqc6VpCO
+	 BAk/K/bGNVR9uWX0JH5duFs+0xYPEG5N6xcCIpf21YHz2qgy2M7rF+WS6ki7WyAfpz
+	 BlCIupUyVkIAw==
+Message-ID: <sashiko-outbox-208126@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3] i3c: master: dw-i3c-master: Add HDR-DDR support to
+ Designware Controller.
+To: "Dineshkumar Parameswaran" <Dineshkumar.Parameswaran@synopsys.com>
+Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
+In-Reply-To: <20261111021151.58380-1-parame@synopsys.com>
 References: <20261101005243.4739-1-parame@synopsys.com>
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTExMDAwOCBTYWx0ZWRfX4dZE6dKtVxcH
- 6+hDc5Qwlpv7Wh/Ju16/7txpj0ZuIjIDASx4wpBhkWXLvTxt5UFnp0YpB4RMaMLUo9SVX/0yDyO
- KOqJcptv7MOExSwNDOl066nxeLvdVlbtOHhFfu2qzYxIg33t+aL8pl6nqlSrXgtxK7/kyyy/eiB
- LioC9pYdkKKvX+8FYDOHGhu7D8ssPjMHYj5hHNwbtgjGYVK9mmxT3VF0gjWTM7+tYkFOKwOqbVy
- TDUd/d3i8jgXg3blvszNntGnDXJTC75jJG6OE5AVkvX1lBUOosAM5zYjtwDZf5yonKzsHSQHHAB
- +t+NCwRyXXa3q2XsZew5iyY2UVA5iIVheWTfX79vhCzAWdTvWR5saWU4j+QBQETVcywck6OrFHr
- /bXEup3ZPZYycqSzmxDF3nzABtVgBWKLssBsKbNMH1OKycO+oUeOJTPyqfA7RwiMc7BMiGV/4zn
- ERDxV0uzV1wSTTU6XXg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTExMDAwOCBTYWx0ZWRfX3Bp4I5wFLDMx
- 3EOSpGMAhr+j2EZ3vlAtELe74hZvYot/7Ai2ZkjUr0BQZg7K/kzLMeeCYhvGJuJsiS5B3Wql2vV
- NKOuBFd97a3i+K4Lj8ACui51ygLMjZs=
-X-Authority-Analysis: v=2.4 cv=Y6ptIReN c=1 sm=1 tr=0 ts=6af3ceef cx=c_pps
- a=8EbXvwLXkpGsT4ql/pYRAw==:117 a=8EbXvwLXkpGsT4ql/pYRAw==:17
- a=zJRp6_cAMcgA:10 a=qPHU084jO2kA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=tU_645BZ7FZt8VqRJtHG:22 a=jSPayVjLy6xbsuKauFBc:22 a=jIQo8A4GAAAA:8
- a=fP0m63MfXcOeATsXSlwA:9 a=0bXxn9q0MV6snEgNplNhOjQmxlI=:19
-X-Proofpoint-GUID: b_Y-wSIjn9MBMccKRU9DVI7H921_fdXq
-X-Proofpoint-ORIG-GUID: b_Y-wSIjn9MBMccKRU9DVI7H921_fdXq
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-11_01,2026-11-06_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_active_cloned_notspam
- policy=outbound_active_cloned score=0 impostorscore=0 phishscore=0
- bulkscore=0 spamscore=0 lowpriorityscore=0 clxscore=1015 adultscore=0
- malwarescore=0 priorityscore=1501 suspectscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.22.0-2611040001 definitions=main-2611110008
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261110_181210_292017_368683C4 
-X-CRM114-Status: GOOD (  17.81  )
-X-Spam-Score: -2.8 (--)
+ <20261111021151.58380-1-parame@synopsys.com>
+Date: Wed, 11 Nov 2026 02:54:10 +0000
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,126 +63,63 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Implement HDR-DDR transfer support for the DesignWare Controller.
-Only support for private transfers and does not support sending CCC
-commands in HDR mode.
-
-Key differences:
-- Sets the speed to HDR_DDR_SPEED(6) and COMMAND_PORT_CP to do
-data transfer in HDR-DDR mode. Hardware will generate the ENTHDR0
-based on this.
-- HDR exit pattern will generated from the hardware when it sees
-the TOC on HDR-DDR mode.
-
-Signed-off-by: Dineshkumar Parameswaran <parame@synopsys.com>
----
-changes in v3:
-- Updated commit message.
-- Sets the HDR-DDR Read and Write based on cmd.
-
- drivers/i3c/master/dw-i3c-master.c | 29 ++++++++++++++++++++++++-----
- 1 file changed, 24 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 05584ddaf104..d4a0b1d316a9 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -65,6 +65,8 @@
- #define COMMAND_PORT_DEV_COUNT(x)	(((x) << 21) & GENMASK(25, 21))
- #define COMMAND_PORT_ADDR_ASSGN_CMD	0x03
- 
-+#define HDR_DDR_CMD_READ		0x80
-+
- #define RESPONSE_QUEUE_PORT		0x10
- #define RESPONSE_PORT_ERR_STATUS(x)	(((x) & GENMASK(31, 28)) >> 28)
- #define RESPONSE_NO_ERROR		0
-@@ -232,6 +234,8 @@
- #define I3C_BUS_I2C_FMP_TLOW_MIN_NS	500
- #define I3C_BUS_THIGH_MAX_NS		41
- 
-+#define DW_I3C_HDR_DDR_SPEED	6
-+
- #define XFER_TIMEOUT (msecs_to_jiffies(1000))
- #define RPM_AUTOSUSPEND_TIMEOUT 1000 /* ms */
- 
-@@ -381,6 +385,11 @@ static void dw_i3c_master_read_ibi_fifo(struct dw_i3c_master *master,
- 	i3c_readl_fifo(master->regs + IBI_QUEUE_STATUS, bytes, nbytes);
- }
- 
-+static bool dw_cmd_is_read(u32 rnw_cmd, enum i3c_xfer_mode mode)
-+{
-+	return (mode == I3C_HDR_DDR) ? (rnw_cmd & HDR_DDR_CMD_READ) : rnw_cmd;
-+}
-+
- static struct dw_i3c_xfer *
- dw_i3c_master_alloc_xfer(struct dw_i3c_master *master, unsigned int ncmds)
- {
-@@ -726,6 +735,8 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
- 	memset(&info, 0, sizeof(info));
- 	info.dyn_addr = ret;
- 
-+	info.hdr_cap = I3C_CCC_HDR_MODE(I3C_HDR_DDR);
-+
- 	ret = i3c_master_set_info(&master->base, &info);
- 	if (ret)
- 		goto rpm_out;
-@@ -995,28 +1006,36 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
- 	}
- 
- 	for (i = 0; i < i3c_nxfers; i++) {
-+		u32 rnw_cmd = (mode == I3C_SDR) ? i3c_xfers[i].rnw : i3c_xfers[i].cmd;
-+		bool rnw = dw_cmd_is_read(rnw_cmd, mode);
- 		struct dw_i3c_cmd *cmd = &xfer->cmds[i];
- 
- 		cmd->cmd_hi = COMMAND_PORT_ARG_DATA_LEN(i3c_xfers[i].len) |
- 			COMMAND_PORT_TRANSFER_ARG;
- 
--		if (i3c_xfers[i].rnw) {
-+		if (rnw) {
- 			cmd->rx_buf = i3c_xfers[i].data.in;
- 			cmd->rx_len = i3c_xfers[i].len;
--			cmd->cmd_lo = COMMAND_PORT_READ_TRANSFER |
--				      COMMAND_PORT_SPEED(dev->info.max_read_ds);
-+			cmd->cmd_lo = COMMAND_PORT_READ_TRANSFER;
- 
- 		} else {
- 			cmd->tx_buf = i3c_xfers[i].data.out;
- 			cmd->tx_len = i3c_xfers[i].len;
--			cmd->cmd_lo =
--				COMMAND_PORT_SPEED(dev->info.max_write_ds);
- 		}
- 
- 		cmd->cmd_lo |= COMMAND_PORT_TID(i) |
- 			       COMMAND_PORT_DEV_INDEX(data->index) |
- 			       COMMAND_PORT_ROC;
- 
-+		if (mode == I3C_HDR_DDR) {
-+			cmd->cmd_lo |= COMMAND_PORT_CMD(rnw_cmd) | COMMAND_PORT_CP |
-+				COMMAND_PORT_SPEED(DW_I3C_HDR_DDR_SPEED);
-+		} else {
-+			cmd->cmd_lo |= (i3c_xfers[i].rnw) ?
-+				COMMAND_PORT_SPEED(dev->info.max_read_ds) :
-+				COMMAND_PORT_SPEED(dev->info.max_write_ds);
-+		}
-+
- 		if (i == (i3c_nxfers - 1))
- 			cmd->cmd_lo |= COMMAND_PORT_TOC;
- 	}
--- 
-2.34.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGkzYzogbWFzdGVyOiBkdzog
+YnJva2VuIEhEUi1ERFIgZGlyZWN0aW9uIGNoZWNrIGluCiAgZHdfaTNjX21hc3Rlcl9pM2NfeGZl
+cnMoKQotLQoKY29tbWl0IGU4OThjMzJhZWQwODFjY2VhZTdmNTY3ZjNkYTFjNTBiODI1ZjU1YzYK
+QXV0aG9yOiBEaW5lc2hrdW1hciBQYXJhbWVzd2FyYW4gPERpbmVzaGt1bWFyLlBhcmFtZXN3YXJh
+bkBzeW5vcHN5cy5jb20+CgppM2M6IG1hc3RlcjogZHctaTNjLW1hc3RlcjogQWRkIEhEUi1ERFIg
+c3VwcG9ydCB0byBEZXNpZ253YXJlIENvbnRyb2xsZXIuCgpUaGlzIGNvbW1pdCBhZGRzIEhEUi1E
+RFIgcHJpdmF0ZSB0cmFuc2ZlciBzdXBwb3J0IHRvIHRoZSBTeW5vcHN5cwpEZXNpZ25XYXJlIEkz
+QyBjb250cm9sbGVyIGRyaXZlci4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci9k
+dy1pM2MtbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gaW5k
+ZXggMzRhYThmOGUxYTBhMi4uYWJhMjdhYmI3OTI3MiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kz
+Yy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkz
+Yy1tYXN0ZXIuYwoKWyAuLi4gXQoKPiBAQCAtOTk1LDI4ICsxMDA2LDM2IEBAIHN0YXRpYyBpbnQg
+ZHdfaTNjX21hc3Rlcl9pM2NfeGZlcnMoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LAo+ICAJfQo+
+ICAKPiAgCWZvciAoaSA9IDA7IGkgPCBpM2NfbnhmZXJzOyBpKyspIHsKPiArCQl1MzIgcm53X2Nt
+ZCA9IChtb2RlID09IEkzQ19TRFIpID8gaTNjX3hmZXJzW2ldLnJudyA6IGkzY194ZmVyc1tpXS5j
+bWQ7Cj4gKwkJYm9vbCBybncgPSBkd19jbWRfaXNfcmVhZChybndfY21kLCBtb2RlKTsKPiAgCQlz
+dHJ1Y3QgZHdfaTNjX2NtZCAqY21kID0gJnhmZXItPmNtZHNbaV07Cj4gIAo+ICAJCWNtZC0+Y21k
+X2hpID0gQ09NTUFORF9QT1JUX0FSR19EQVRBX0xFTihpM2NfeGZlcnNbaV0ubGVuKSB8Cj4gIAkJ
+CUNPTU1BTkRfUE9SVF9UUkFOU0ZFUl9BUkc7Cj4gIAo+IC0JCWlmIChpM2NfeGZlcnNbaV0ucm53
+KSB7Cj4gKwkJaWYgKHJudykgewo+ICAJCQljbWQtPnJ4X2J1ZiA9IGkzY194ZmVyc1tpXS5kYXRh
+LmluOwo+ICAJCQljbWQtPnJ4X2xlbiA9IGkzY194ZmVyc1tpXS5sZW47Cj4gLQkJCWNtZC0+Y21k
+X2xvID0gQ09NTUFORF9QT1JUX1JFQURfVFJBTlNGRVIgfAo+IC0JCQkJICAgICAgQ09NTUFORF9Q
+T1JUX1NQRUVEKGRldi0+aW5mby5tYXhfcmVhZF9kcyk7Cj4gKwkJCWNtZC0+Y21kX2xvID0gQ09N
+TUFORF9QT1JUX1JFQURfVFJBTlNGRVI7Cj4gIAo+ICAJCX0gZWxzZSB7Cj4gIAkJCWNtZC0+dHhf
+YnVmID0gaTNjX3hmZXJzW2ldLmRhdGEub3V0Owo+ICAJCQljbWQtPnR4X2xlbiA9IGkzY194ZmVy
+c1tpXS5sZW47Cj4gLQkJCWNtZC0+Y21kX2xvID0KPiAtCQkJCUNPTU1BTkRfUE9SVF9TUEVFRChk
+ZXYtPmluZm8ubWF4X3dyaXRlX2RzKTsKPiAgCQl9CgpbU2V2ZXJpdHk6IEhpZ2hdCkFzIHJlcG9y
+dGVkIGJ5IEZyYW5rIExpIG9uIHYyIFsxXSwgc2hvdWxkIHRoZSBGSUZPIGRlcHRoIGNoZWNrIGxv
+b3AgYW5kCnRoZSBwb3N0LXRyYW5zZmVyIGxlbmd0aCB1cGRhdGUgbG9vcCBpbiBkd19pM2NfbWFz
+dGVyX2kzY194ZmVycygpIGFsc28KdXNlIGR3X2NtZF9pc19yZWFkKCkgaW5zdGVhZCBvZiB0ZXN0
+aW5nIGkzY194ZmVyc1tpXS5ybncgZGlyZWN0bHk/CgpJbiBzdHJ1Y3QgaTNjX3hmZXIsIHJudyBh
+bmQgY21kIHNoYXJlIGFuIGFub255bW91cyB1bmlvbjoKCmluY2x1ZGUvbGludXgvaTNjL2Rldmlj
+ZS5oOgpzdHJ1Y3QgaTNjX3hmZXIgewoJdW5pb24gewoJCXU4IHJudzsKCQl1OCBjbWQ7Cgl9OwoK
+Rm9yIGFueSBIRFItRERSIHdyaXRlIHdpdGggYSBub24temVybyBjb21tYW5kIGNvZGUgKDB4MDEu
+LjB4N2YpLAppM2NfeGZlcnNbaV0ucm53IGlzIG5vbi16ZXJvIGV2ZW4gdGhvdWdoIGJpdCA3IChI
+RFJfRERSX0NNRF9SRUFEKSBpcwpjbGVhci4gIFRoZSBvdGhlciB0d28gbG9vcHMgaW4gZHdfaTNj
+X21hc3Rlcl9pM2NfeGZlcnMoKSBzdGlsbCBjaGVjawppZiAoaTNjX3hmZXJzW2ldLnJudyksIHNv
+IEhEUi1ERFIgd3JpdGVzIHdpdGggY21kIGluIDB4MDEuLjB4N2YgYXJlCmNvdW50ZWQgaW50byBu
+cnh3b3JkcyBpbnN0ZWFkIG9mIG50eHdvcmRzIGR1cmluZyB0aGUgZGF0YWZpZm9kZXB0aCBjaGVj
+aywKYW5kIG9uIGNvbXBsZXRpb24gdGhlaXIgaTNjX3hmZXJzW2ldLmxlbiBpcyBvdmVyd3JpdHRl
+biB3aXRoIGNtZC0+cnhfbGVuCigwKS4KClsxXSBodHRwczovL2xvcmUua2VybmVsLm9yZy9yL2F1
+a0NmMXJlQjhMV2J1enFAbGl6aGktUHJlY2lzaW9uLVRvd2VyLTU4MTAKCi0tIApTYXNoaWtvIEFJ
+IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjExMTEwMjExNTEu
+NTgzODAtMS1wYXJhbWVAc3lub3BzeXMuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LWkzYyBtYWlsaW5n
+IGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
