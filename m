@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EA704606A33D
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Nov 2026 16:50:37 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5A221606A32A
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Nov 2026 16:57:36 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nyeTRVfn;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=CJRYa/Po
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=QOV/Lm25;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=OKKjeSHm
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,126 +14,122 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=kCuGMuqZ2jaDiILTjZ4E2xE9rfK0fMbdkYCyBdz1eUs=; b=nyeTRVfntKtXRvawJKRLKYSrrN
-	d8wLcaKSraY13ur9i09QGeiS8vAORkBajB1bBMRvYuxiN6a6k4RnIwNgwjepK8rfMAqi+SgSkBWK/
-	u6NpQGrb1W3SYtmXlLZH+Fb0Z3DU6P1Ryd0a2RcPudlYwrwju4xj7EHEybNhE2kYVrD22I0cxsAPZ
-	CMtrs7/1SxF7Bg2BXmaNlybQ5SSD1zy5l7qoCPF+m76Plk1I3Skp7sc5mBrscWMVZn5kKAB79WB7S
-	YXHs3Xne4lLlWfDyjqt0qWkjJewdJXQvPm8Pc2Q8ik/LNvId/Pweq3de3dsRIBu+6uLM3CbxhvJQg
-	AwMjr1Ow==;
+	bh=WWlJykemwCcNFZoQLkoKnB+8ybMNiRyfmSKVcgDL5Q8=; b=QOV/Lm25I3yZp5PgVeH5BC23am
+	6ivItNYLMbF7iYp6PPc0e0K/tBC1UHTSN/5aZ5hsvMpBBZjwh6joHDF5pDMisPncje0Dz01HPHMpP
+	tQvxY5m4jD69Ze2ChkqhzVRqbKxcrTDKt66Qv7JmjcGts2vMPxBagO963p58THI3DJ5XfPnBzgFfO
+	N5XZP7boy75erNLqiidy8/ZB0oVNerOJdSLGmEerNBApj7ZRucMeDXWudbClFDlAtsh5TP61IE67P
+	y1hIJ6QATNHNc89oRASW6ioWvy9Q6BMn5oopsVfkKldo3qhNg0BGH2ZgO3wv3NQdBqhGlpTrQL+wT
+	RAvKy6tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRBWv-00000007FKs-2mZD;
-	Wed, 11 Nov 2026 16:50:37 +0000
-Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1xRBdg-00000007G4R-0JfB;
+	Wed, 11 Nov 2026 16:57:36 +0000
+Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRBWs-00000007FKF-2ncw;
-	Wed, 11 Nov 2026 16:50:36 +0000
+	id 1xRBdd-00000007G3z-1avV
+	for linux-i3c@lists.infradead.org;
+	Wed, 11 Nov 2026 16:57:34 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=UZm2sKic8UttRCL0SChy/SugyFelrL4k6AuBOGrMSMYQwJ3iMZVHO/Tjhhl0akdlKLTbFMT0aCk59wIBGV9yl4417x/XnWecHhe4Ne6H8VZcUtxXUHGIDi5ZqDhVmkGp5UBy24a5YXnG2JhDdxtidrC8vxZJHyLwomV9eXsxYjxi9MBtwLtV2dUy1I/Ck6s7DSZRduPoB3OXhDx5sS8I2t0M60Em9Bd4Uq/HzUqMLvVcnat1ArytH/gKiml1Y8CPRnq7Oa2h1rxZKUJJxNDPCNt8HV94h5bFKsXtIaYP9Uigbn2uBNaFkQXDmOiWKdRRovOa2GQl+6y7e6CUw4D/Xw==
+ b=Vo0F80vKMMATz1eiyM9jee8oDlZGDPDr6WCJyT1QVd+/9Z0Se9dHwAwz6GDo/ru1v6JLno9XAIUQflgKzTbM2cWKIiZ4KFSqitSYJAoQ18zD4FZjd9K927H23SZkMpZbWxgoBiZPbh3Ha+STv6WZGjNQvNfQNDtx4uZRhwpe5Ji9woUMwUAHqPFCEfdM7+Tjk3IYjhmgDmND6JOlt/wQOazRcZ7KLemFrOaTLVQJO5w4HumqXpnw65zxmZA+A+o4udVVVWahcl4C25CaiZUmK2nBUFXzMR3LbvMDF2QC82Opvo1YlrcKw+oQk4XhHIL5Kt1ExevJZ3KIxhjdWGJyAQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1NN0HbzSKxHThYGDasp4fu7PUBHzIf6sPu96a0RGN/I=;
- b=bbJDUDD38OLnufTTu6m7ZBe7cOqub5BvSHfN41yCPs0ld89+MEFBeMtNHjPqMARStVrvmr8n+ZBmTXi1P3ZuHmBSDHlDCf9GuVimZXBhhGeKZM4ECUIvDfECWRFivePiH6+0NT/TMafkbRl2Fsil8mg4B0SFFMnrDEpreKFxbr+MiAFtKRm99KB2BF30GG0XfmSeWsGRMkR/TNsXIAjhmxUQJg7Sn5AMYoi+kpTGojD03Hg8ynqJJdDLiqc0C3QUN1AGDED01b3xk8c9ksiuEhS428bZliZuJmLiz48f2MfGhYyt2tLYG7h+NvLRgjOsalgeI/EqOAbZfx/zvx9o8Q==
+ bh=Z4d49uP51xBBPD9rIIv22pxzKMc3fUsL4oL6P0N4gZM=;
+ b=O1z+UjT9JcmSVdLvWxYLtDx3cTtok3Mjpav84LJNigZlhjkp9s04yl32i/DmyRCDoe1XTUrflsPEHbhw30w6O+7xZPcehYLOxE5W8RvmKj+Akvhym34EbkaNUyU9M/OWhMBdvqGYIyBG2YGRNf63R+if4T/c8yXrQu7CLG+qpfy5eRSWtuqTZs/fkcKMghubZksbr0t3TCB5DuvNJqbv4dSLuGNdghh0KI2qfOJ8PBaV2ec3630iik0l2lFXWhy/mqR4fYOAtiDxPtv96Ow9wKNBUaRlCf6NGPo0DkVN1RlPyjckrD4i8nYQwhhZiGkfCr//XHTdQ+ekW9oHQe5P8w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1NN0HbzSKxHThYGDasp4fu7PUBHzIf6sPu96a0RGN/I=;
- b=CJRYa/PoDnEK26VM0d9J30vADR/NAiV3n7jtO7DsO4i0uEt9CuhSWGdck8cfWltljFuC9A/os7Xb7Bk/H+MO8zNgaSAhBmgib/XffzmUFmDIeOIAcvqsBLIf7+DeAex00vKuhsUGuGf9ugN7mu/8sGUhCOPU6e2esA/SP2s4Iby1AULEGVlHVhiNU+N9E/1KUE3oT67GnXDlIetvVra8Z7ZLSWdWquAU4DdGtwXm34Ze9hBlvm+1F7QRTh5bSkeJkN04fRwSqNEVb4AjTInPXQSjmm6S5s29ph0ijAuPwZWjRuTQDSalm/Zfg3h1SB2V0yUT2+auvWA99qAnQ7ry8Q==
+ bh=Z4d49uP51xBBPD9rIIv22pxzKMc3fUsL4oL6P0N4gZM=;
+ b=OKKjeSHmA2ZpbsOcD9YqyM9TXg4rKk6raL+gGz5ovv66pkmG3mK56pCBuNSQIxrQta6YP9g8hPx1LYVIvlPalrZ0j9kcrC711NiVYYOsE2VtDK4u2yqgKDuD21u8V9q2JMq0r24yey5NPzJuJ9l5YTVm19gammFMgoi2PRjLtT6UWReuc5Yd+yxRnmC7gfZP6/49mFzunS1ELG6DJyDdoIB2Rri4uDRZQseT1A1RmD/i+OrDmNpiQFy8bPEF4WljOivgvECxpLND7X/w+HBkoSwK/znkzDcwRO1xbSp2ayS8MO+rpy+DQ8i2NdjX2eWh4QPo8PjszKv4PgGG0CP4Qw==
 Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
- by DB9PR04MB8379.eurprd04.prod.outlook.com (2603:10a6:10:241::10) with
+ by WA4PR04MB222900.eurprd04.prod.outlook.com (2603:10a6:1d0:3a::13) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.8; Wed, 11 Nov
- 2026 16:50:30 +0000
+ 2026 16:57:27 +0000
 Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
  ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
  ([fe80::c715:c32:8bb1:b70b%4]) with mapi id 15.21.0615.007; Wed, 11 Nov 2026
- 16:50:29 +0000
-Date: Wed, 11 Nov 2026 11:50:22 -0500
+ 16:57:27 +0000
+Date: Wed, 11 Nov 2026 11:57:20 -0500
 From: Frank Li <Frank.li@oss.nxp.com>
-To: Billy Tsai <billy_tsai@aspeedtech.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
-	Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Ryan Chen <ryan_chen@aspeedtech.com>, tbevis@amazon.com,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/9] dt-bindings: i3c: Document generic bus timing
- properties
-Message-ID: <avSczhZGS9cCcNSu@lizhi-Precision-Tower-5810>
+To: sashiko-reviews@lists.linux.dev
+Cc: Billy Tsai <billy_tsai@aspeedtech.com>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org,
+	Frank.Li@kernel.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH v2 6/9] i3c: mipi-i3c-hci: Add support for the AST2700
+ I3C controller
+Message-ID: <avSecMkz0yAeMQLs@lizhi-Precision-Tower-5810>
 References: <20261111-b4-i3c-hci-ast2700-v2-0-4d8fff5c5196@aspeedtech.com>
- <20261111-b4-i3c-hci-ast2700-v2-1-4d8fff5c5196@aspeedtech.com>
+ <20261111-b4-i3c-hci-ast2700-v2-6-4d8fff5c5196@aspeedtech.com>
+ <sashiko-outbox-208274@kernel.org>
 Content-Disposition: inline
-In-Reply-To: <20261111-b4-i3c-hci-ast2700-v2-1-4d8fff5c5196@aspeedtech.com>
-X-ClientProxiedBy: DS7PR03CA0119.namprd03.prod.outlook.com
- (2603:10b6:5:3b7::34) To MI3PR04MB12438.eurprd04.prod.outlook.com
+In-Reply-To: <sashiko-outbox-208274@kernel.org>
+X-ClientProxiedBy: DS7PR03CA0250.namprd03.prod.outlook.com
+ (2603:10b6:5:3b3::15) To MI3PR04MB12438.eurprd04.prod.outlook.com
  (2603:10a6:290:76::14)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|DB9PR04MB8379:EE_
-X-MS-Office365-Filtering-Correlation-Id: 1d53db86-b58c-4362-5675-08df4013e4d2
+X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|WA4PR04MB222900:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9cfc457f-36ea-459e-f941-08df4014dda0
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|7416014|23010399003|19092799006|366016|22082099003|18002099003|261009223027099003|3023799007|11063799006|4143699003|56012099006|261028144727099003|261102123227099003|261026121527099003|261021121427099003|261026140227099003|261022105027099003|261022075727099003|10067099003;
-X-Microsoft-Antispam-Message-Info: AKpj/MhLO/Xla+SgHmOliGOSmtR64MQvGHAdn1LISVxH4TtFrz+vFtsdTK0wq8frF96ebHqIxirig+tZY2kVivBhpLCdXv1GNMe3ByU/9xVHSRc7DlTIb/7jDovBCiXPvKvpSx5PWW/jx1Q5KkrH1+rqPbShOtfav8EmGjkzJ3Hr4tDykTFSIH4P8GI43qFeFkExzXhwEo8MCUn2fPH/SDcQBLN90vRk/X4ZmK0ZzxjAjqoeRgyHIfDobYbEUIWwDBJ2+QvC7jTkol2fZTuV+tSX06iESKqeG+gmVsIlwT2fHBwVm0S4okAPsAYlXIs6kVcI4ijhIDYLjeBuStpDRR21huhsKXh837hEFLv9gPzZF0VByLkUJFaHoMvNc+siWpC3TemiorrMH8QMFdQ6nVaJnHgYCp6Hgv1Rjf/jiOMIUHULhbvg1g8nCEqn93/BKUDH+efqoH9CFnckMHWjt+LtyDPIAtHBG0yN0yTJeXT9rWHHHSHhcvvENQmEBSNOY9gaUbOyFexfi4vAMY2T8BRn8aPM9Q3jcV6JA7Z6FG/HamP/SoNRBazcRzcWhLEDBafQJJGVSoGgb8bPuRZ2SRlVuGUrsS8RSLOl+Kz4TN/Fbq4E6jox1ajWTYYF+Zd0YZ+lsXJfM3BwdNUd8rhHJTzdWcWMnMf0esuNm2LeT2c=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(7416014)(23010399003)(19092799006)(366016)(22082099003)(18002099003)(261009223027099003)(3023799007)(11063799006)(4143699003)(56012099006)(261028144727099003)(261102123227099003)(261026121527099003)(261021121427099003)(261026140227099003)(261022105027099003)(261022075727099003)(10067099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|1800799024|19092799006|261026121527099003|11063799006|4143699003|261022105027099003|56012099006|261022075727099003|261021121427099003|261026140227099003|261102123227099003|261028144727099003|261009223027099003|18002099003|22082099003|6133799003|10067099003;
+X-Microsoft-Antispam-Message-Info: RFIl0u0GWo+CBBcVlsv4C0PDfi08ySqDHfKilwvAlSl1gZUU4HLib/x2a7Lo2TgvWaso2+ldIygJxCsJypKDYdcFiEOeXGOpgo8QrsVkQDznOFJuRR1f7BUdS1R8bHPE9BXC+kLzoaaD07v7gyF4/0H3eJMOLHgSTpfq+vQ7TkWK79S7diIrBSO2TAmXoaTDqDOqtijQWd0ANMx0OpSdjPB/0ORl0pBt05CSPDsIKCpw1dRws4LGAPVfKxfMycBxCST5i/iA1ubmVwm+DlEuffTxAxsXQBQcaDRmzRxflJNX/uOVVz17rak8/uWfE7uopQY4BrXNBHN5fGN2/U1K4rmGWzFuBaQ7hTSp6LNbsEUE0foVBezbqGSd0JU1Zg8TdCyQwUaVIf5EE01sjnrxg6llwwjbuUmITbkDKFkHgfwJVYly9CVhDsnGUKFFYLWPAx/8e2O0E82LZ4rXVax8eX80RNz56Ka5OtxEhkrhZk+d+xYpss4iB/YFTy4WEhBwN0dGkiSIQlILmG6JLQ681gGkBl3Or0H2n8wp4Vux1QJwZlQFJ/319up9qWotts5sp6E2BvlWpxVHqMEf5fmK0INH0Cpu+SdjINSUH3FN/5c=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(1800799024)(19092799006)(261026121527099003)(11063799006)(4143699003)(261022105027099003)(56012099006)(261022075727099003)(261021121427099003)(261026140227099003)(261102123227099003)(261028144727099003)(261009223027099003)(18002099003)(22082099003)(6133799003)(10067099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9GWnyXibWy0s0KHsl+iGoPsXXZWjN9xGtM9plB8QWbNy7vL/OgPQSA5bFJRH?=
- =?us-ascii?Q?4C2iGuSlab9RX913Jti0otfJufynzPfCsh99q+oXGQR77r8WN/8OCFjR0wa+?=
- =?us-ascii?Q?0GqHRVulGFvw/AFEjAFce3n7+uEzZPv4DiZlLgMQ0f67LqF89EToTVPVwmK7?=
- =?us-ascii?Q?NUDe3XVV/D8ClkwKG5xnESh4b7jTKsAddv6+k70beL2fuNHg1iw15Z6ZhEba?=
- =?us-ascii?Q?TXcSbuh2VrGatVwZ6mxbMbJW/XA8wKM4luddObnyNRxxgyt6miY7qmTW4ofU?=
- =?us-ascii?Q?mOkI7SUQr9lD+fthTmCXRtqZxXMXXE0X09AKtX3Kfipz9fQVsn8EjgpzasWW?=
- =?us-ascii?Q?YwfeFJaGQar6wlDI3Uwy1AMW9CVjqejWdmMU11+0Q87/e9lhSf1NJyzL0yPP?=
- =?us-ascii?Q?X/+khhKpBy5/mS2zGhHpOhPBoveqv7HZg3yB3Lna4uLaoRR0lS4sy7My4IP+?=
- =?us-ascii?Q?YG/oeB3vrXdxRZrzh2ue/qYyDXG9UUMB8mBlzeRwwi3q7Nel7quimThdgOVg?=
- =?us-ascii?Q?Sl1DViDNJXrDf5gnUW/wD+9A2TgBIELzmDGRAtq16820G6M3Mwyah/qsNnHj?=
- =?us-ascii?Q?be2qgmhmYOsRT8BSxVzs1tuzrGWN9BX/MGPMVssPxFFQ2dZ+zo/natdgziJ/?=
- =?us-ascii?Q?fJ0PBFbfgirnli7j+6wyX+RPpcglN5P6a0amdBPELVf/dRHc3wGIY3m7+X6k?=
- =?us-ascii?Q?v0qSBaLCDCizsHUiRc3x6HSqmRqSguXlyH62Yvblhli9CEtdmwp6008yekzB?=
- =?us-ascii?Q?3kM+xYs1vp4wyeR91WEKyBi36uebsBagZJGf5xbjxYzoZ8BTzDBAAWhI1rPd?=
- =?us-ascii?Q?hYTc5uwlJhL6ntDJarz0gGVW+sQBgUEyFOoGBzvw2ciEL9w3JEqczIbyQRhJ?=
- =?us-ascii?Q?3KIzI55AAJoXKjQ10qicrWq/9Ijj5wEuT28sTGPsOmBcLSCu/bZ20PHrvd2m?=
- =?us-ascii?Q?C31cSTKeCCs+i1hCHnMy4IGW4YNKO8hThJMNbc8u4F6Ib9BH2EjwKT0B2TbB?=
- =?us-ascii?Q?FblbnUx1pc/uet4vYL73dDfoiyt7z/gmy621TKisZFb34/NWSue0l7OJ0fws?=
- =?us-ascii?Q?vCVlBLESCRhxf+zykyDETgaQ7InnC7f8FqUyCQ0rbzmev1iDG+tn+3TwfsPt?=
- =?us-ascii?Q?Kohl2PSHDH+ekgUJlm4TAsp15QkOps71A+cvWK0yzRYo5UavN5C1ZUx92Sg0?=
- =?us-ascii?Q?Rvc0PdTg78DSgNm1ef+eLw8m3r1+Y9/s0tIyD3tb5Wci8u/KIPwxbgENght+?=
- =?us-ascii?Q?sizMHfJvm00FyKEsvF/l3PM3KtFXPmj6coGfjdiRAPTDwHH8h3XAhYbLub9/?=
- =?us-ascii?Q?YXKE/Ff6D3WWUkN4ZCf/RoPQwr1sjaSMWr/EL6WiKuZMns1RcI6QCuKFEkNB?=
- =?us-ascii?Q?Xzcn9VdZapPADn1tWaqpmjOjpuhtf62TZpdG5jBEwIagr/ccqj7KakCwp/hS?=
- =?us-ascii?Q?7OgNohqPpDUm2z1DLG2TIIviyWViLJLd8GOhP8XHB6iIZn6Ny8Dq4EwonE0d?=
- =?us-ascii?Q?lq0rMHAgIsGfRdj5OktbC0RarfpG/e4Tt+tp7EMdVNjot2RPCH7qY0KwkX/c?=
- =?us-ascii?Q?FjUC0pvndnti82b+/eCeUGaKYPKtPEI+zHZbsMuYKHQWYcClTy9U34Z5DahS?=
- =?us-ascii?Q?W52JhEQa57lUT01eAWTRG8DUUwWBNPlgm8eFuAdYem1DP7CNxPUsiX4rxrTK?=
- =?us-ascii?Q?eZo/ilXjBVk84tXK3hk6uWFYIJ9fE+JTcG3+tPXmixPmlkIR9CTztBJr5lvI?=
- =?us-ascii?Q?zhtbtp/o27s8Rl+3SzJnZ5ds8Ug/l7MI+zBG9C6StaXqWYhRCZMK?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?KYQQ6526v4hYvuy4Y1zXYJUdtNgckOPAj364RCunaLuHzkaiujQtzEcr3n?=
+ =?iso-8859-1?Q?dGI/pqHRp//GmuG6RdkzIOFLYNX1Wt7yFnzIxnAjxq+J1woJQ2rCCSXbNC?=
+ =?iso-8859-1?Q?A2gzK4EfOtKfDtkpjMNETUTthuJ3G1Dam8CxBiVjpS7QZvc90Zw+yJkGrD?=
+ =?iso-8859-1?Q?9xTa8HItdnSNSCkNbWV0l/CZoGv//ZOJvEOv6g5R3nqdX2mfNKW0yKk2iN?=
+ =?iso-8859-1?Q?INhUKKbvuT5qLJ0Htvj7ybqwtPrBVUhlYUymdZFPnK+anLSaRitLPwZPVf?=
+ =?iso-8859-1?Q?yODiaVroF5Ld2k5GZhvPmCIlLo1+IPv9mwU7hg+eOjWToUyjptkztrS17M?=
+ =?iso-8859-1?Q?bMPWm7gVA4hyleRhjK/AVGEcWPrEG7vyt3rYwO+mqPnAaFgeLGx8DonAnM?=
+ =?iso-8859-1?Q?N1zbaWT1MuIvMO66sdS8ZJEmkn84iFNYl068kP1hhwFwWeKbZmnb8XucVR?=
+ =?iso-8859-1?Q?IKEPLCEyrT7YT43ozW78lr6us2Wro7yi1lHgH1E8nJNkGbzuRHhtgKcfTY?=
+ =?iso-8859-1?Q?MFfL6e8lO4sCv4Fycbn7JGKTuxFveJuGECI67ba1FZUQKDQDX92Ug/oVfI?=
+ =?iso-8859-1?Q?e74xojseM5YSt6AtzAzec3DXj25V7hKX7HKtWWZBwNUnjo9cjOZPcfjzJI?=
+ =?iso-8859-1?Q?TgCM6iTDu3ArnnS+OylU25zNrenjyzaKe/tV3Z5AYJYshWyJJkbjh3YySp?=
+ =?iso-8859-1?Q?+KVvVmXNcseLS3bHu/4Vixa9ew6cshbZ8nQ0RT0u8Na3DnrDV3adA/DD7n?=
+ =?iso-8859-1?Q?pQOMD9nleHZYhsssfNbb7Fva1tgK8aOdvYIfM4zuRgkpeMCUuVbWgMIkOV?=
+ =?iso-8859-1?Q?Q6OH/WzXA/EswhPnTF5hootpE0bhk2Y0+0DbyOl5bsMOxbKbhsZrOP3LSx?=
+ =?iso-8859-1?Q?rSLhFsVMwvmQfllTsdEMMDAn6LIXVWP9IE6oyrK7wiNmr4XOI7EK0BYYWp?=
+ =?iso-8859-1?Q?VJ03yTsrg5wmoR4siDyjHFobHZIkA35n/giwF+LagzLUbepuPb7oeu28iX?=
+ =?iso-8859-1?Q?X6I5HG5G5Z/zxcuMSZ29B3rP7wb2bEgei40nSwOwe1PbixrTxpHlNm4JPd?=
+ =?iso-8859-1?Q?zxovMGstsw7zwjtrZILhM/ZKssM65FDtwb7e2wqJHXC8OHP8xt1nvohZJH?=
+ =?iso-8859-1?Q?KIb+cLY9cpK9Tgojq8NqNMfx0LnMiOQPJa2C5gHlBiMSKMR296aIIbCiwy?=
+ =?iso-8859-1?Q?m/jOgcp1pZJ4XRilK98TrdrObn1/JyynRYAX9ZytZzPIo3IWRscxOQ13su?=
+ =?iso-8859-1?Q?D+pUSO8jqLBHZOAUB5iBqZxieMwkF79kihsRTZ0QFUB3Lwe9R4bQIctSOt?=
+ =?iso-8859-1?Q?QSOV1oHJ9kWH9872fkAFtvFDU1dTj+cZoCpBj2DrjbwCduaisTRyK9IPJR?=
+ =?iso-8859-1?Q?2KzjT93nH8NVirO/7ckdb9Qj7yO9ONOvcF4JkjMoH7BqXub2degU5Jc0Zn?=
+ =?iso-8859-1?Q?O+UEAPXSR+MO9w87iUbQeC7WHlIKNAHVciUSL7c1yqmz8oH7APthYufrF5?=
+ =?iso-8859-1?Q?zE9kogACZxzLaCnRllll3U0wGxts/bxd3Shx3DflGjRzEnJi+j2YVZrUc/?=
+ =?iso-8859-1?Q?tgpLRHx79Fl1iLKjrDuSQdwfTeuwf5hkZGh+4fCbtFZSBDpM3sTnH7mi8B?=
+ =?iso-8859-1?Q?FDc00WvTyxkKt/za8iNJi/Pp83+gMGy2RS0up2pFJ6WorrTkI8M+XW16iS?=
+ =?iso-8859-1?Q?yiLo6uYL4lsEvVXZ2DPoXdjNkhUuBZzsciBovEUi7o3a4lvHoerVHBItzS?=
+ =?iso-8859-1?Q?Nu7v5LTktThi3tJSxUiHBeoKLJaXHAp90/I7x3SuZXZWANnzZ42yBU1H64?=
+ =?iso-8859-1?Q?zmvpxtU3QDPfL1QA6Iadc2ymkSi84+4=3D?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1d53db86-b58c-4362-5675-08df4013e4d2
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9cfc457f-36ea-459e-f941-08df4014dda0
 X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Nov 2026 16:50:29.8540
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Nov 2026 16:57:27.3469
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 38iLylBEaCBpHuEVRuSOAZpMfQo5tubd2PmZgpU4w9Yzhvkiet60V9LuthNfhD06CDuzulRGlQZzZ/Cko2i+7Vh/noQVSlb2l0dRX/54oRJKr3D7CRI/apCY1E8lNEC0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8379
+X-MS-Exchange-CrossTenant-UserPrincipalName: YJ/8waOxscHWShYDWZaUyWKHnbjTHgZ6ksN+zQVOkUtHAceqLgtCHroXKs9TzxwBvqASYCPtA5Za1cov67PuEwQjH7ztEgqXGWahIi/B4Q+mQ/T+fcMTcAR8ZSWjPbUv
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: WA4PR04MB222900
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_085034_737052_EE843148 
-X-CRM114-Status: GOOD (  21.54  )
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20261111_085733_449900_447523C0 
+X-CRM114-Status: GOOD (  22.32  )
+X-Spam-Score: 0.2 (/)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,114 +139,145 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Nov 11, 2026 at 11:16:29AM +0800, Billy Tsai wrote:
-> The push-pull and open-drain SCL periods, push-pull SDA output hold
-> time, and the tCAS/tCBP periods around START and STOP conditions are
-> normally derived from i3c-scl-hz, but board-level trace length,
-> pull-up strength and capacitive loading can require different values
-> than what that derivation produces for a given board.
+On Wed, Nov 11, 2026 at 04:22:34AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 2 potential
+> issues to consider:
+> - [Medium] i3c: mipi-i3c-hci: NULL deref and missing offset check in
+>   hci_extcap_vendor_ASPEED()
+> - [Medium] i3c: mipi-i3c-hci: ACK_L programmed with hcnt instead of lcnt
+>   in aspeed_i3c_phy_init()
+> --
 >
-> Document properties to override each of these independently, naming
-> them after the MIPI I3C Basic Specification v1.1.1 timing parameters
-> they adjust:
+> commit adcbd5aae214cefb55e76d2928d998852108ffaf
+> Author: Billy Tsai <billy_tsai@aspeedtech.com>
 >
->  - i3c-pp-scl-high-period-ns, i3c-pp-scl-low-period-ns
->    tHIGH, tLOW: Table 87 (I3C Push-Pull Timing Parameters)
+> i3c: mipi-i3c-hci: Add support for the AST2700 I3C controller
 >
->  - i3c-od-scl-high-period-ns, i3c-od-scl-low-period-ns
->    tHIGH, tLOW_OD: Table 86 (I3C Open Drain Timing Parameters)
+> This commit adds vendor capability parsing, resource management, interrupt
+> summary handling, PHY timing setup, and DAA index configuration for the
+> ASPEED AST2700 I3C controller.
 >
->  - i3c-pp-sda-hold-ns
->    tHD_PP: Table 87 (I3C Push-Pull Timing Parameters)
+> > diff --git a/drivers/i3c/master/mipi-i3c-hci/aspeed.c b/drivers/i3c/mas=
+ter/mipi-i3c-hci/aspeed.c
+> > new file mode 100644
+> > index 0000000000000..3aa910e786f8e
+> > --- /dev/null
+> > +++ b/drivers/i3c/master/mipi-i3c-hci/aspeed.c
+> > @@ -0,0 +1,351 @@
 >
->  - i3c-cas-period-ns, i3c-cbp-period-ns
->    tCAS, tCBP: Table 86, Figures 144/145 (I3C Open Drain Timing
->    Parameters). These carry the protocol minima as constraints.
+> [ ... ]
 >
->  - i3c-sr-p-scl-low-period-ns
->    The SCL low period held while a Controller stalls the clock in
->    the T-Bit phase before a STOP or repeated START, per Section
->    5.1.2.5 "Controller Clock Stalling" (Figures 19 and 20). The
->    specification describes this requirement qualitatively and does
->    not assign it a dedicated timing symbol, unlike the other
->    properties above.
+> > +int hci_extcap_vendor_ASPEED(struct i3c_hci *hci, void __iomem *base)
+> > +{
+> > +	struct aspeed_i3c_vendor_data *vd =3D to_aspeed_vendor_data(hci);
+> > +
+> > +	vd->inhouse_regs =3D hci->base_regs + readl(base + 0x04);
+> > +	vd->phy_regs =3D hci->base_regs + readl(base + 0x08);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +bool aspeed_i3c_vendor_cap_found(struct i3c_hci *hci)
+> > +{
+> > +	struct aspeed_i3c_vendor_data *vd =3D to_aspeed_vendor_data(hci);
+> > +
+> > +	return vd->inhouse_regs && vd->phy_regs;
+> > +}
 >
-> Any property left out keeps the derived default.
+> [Severity: Medium]
+> Can hci_extcap_vendor_ASPEED() dereference a NULL vd pointer or populate
+> non-NULL register pointers from zero offsets?
 >
-> Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
-> ---
->  Documentation/devicetree/bindings/i3c/i3c.yaml | 86 ++++++++++++++++++++++++++
->  1 file changed, 86 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> index 5603f2e7807d..30f65fd1afa7 100644
-> --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> @@ -57,6 +57,82 @@ properties:
->
->        May not be supported by all controllers.
->
-> +  i3c-pp-scl-high-period-ns:
-> +    description: |
+> EXT_CAP_VENDOR(ASPEED, 0xc0, 0x08) is registered unconditionally in
+> vendor_ext_caps[], whereas hci->vendor_data is only allocated in
+> i3c_hci_probe() when HCI_QUIRK_VENDOR_RESOURCES is set.  If an ASPEED
+> controller is bound without HCI_QUIRK_VENDOR_RESOURCES (for example via t=
+he
+> generic "mipi-i3c-hci" compatible), i3c_hci_parse_ext_caps() calls
+> hci_extcap_vendor_ASPEED() with hci->vendor_data =3D=3D NULL and crashes.
+> Similarly, the other four vendor quirks (HCI_QUIRK_VENDOR_BUS_SETUP,
+> HCI_QUIRK_BOARD_PHY_TIMINGS, HCI_QUIRK_VENDOR_INTR_SUMMARY, and
+> HCI_QUIRK_VENDOR_DAA_INDEX) dereference hci->vendor_data without checking
+> that HCI_QUIRK_VENDOR_RESOURCES allocated it or verified
+> aspeed_i3c_vendor_cap_found().
 
-Needn't |
-
-> +      Push-pull SCL high period override, in nanoseconds (tHIGH, MIPI
-> +      I3C Basic Specification v1.1.1 Table 87). When undefined, the
-> +      value is derived from i3c-scl-hz.
-> +
-> +      May not be supported by all controllers.
-
-Add
-
-    minimum:
-    maximum:
-
-to restrict validate rang.
-
-> +
-...
->      type: boolean
->      description: |
-> @@ -67,6 +143,16 @@ required:
->    - "#address-cells"
->    - "#size-cells"
->
-> +dependencies:
-> +  i3c-pp-scl-high-period-ns:
-> +    - i3c-pp-scl-low-period-ns
-> +  i3c-pp-scl-low-period-ns:
-> +    - i3c-pp-scl-high-period-ns
-> +  i3c-od-scl-high-period-ns:
-> +    - i3c-od-scl-low-period-ns
-> +  i3c-od-scl-low-period-ns:
-> +    - i3c-od-scl-high-period-ns
-> +
-
-why need these dependencies? Suppose it should be default value if not
-existing.
+Please check this one
 
 Frank
 
->  patternProperties:
->    "@[0-9a-f]+$":
->      type: object
+>
+> In addition, unlike the section parsers in i3c_hci_init() that check
+> "offset ? hci->base_regs + offset : NULL", hci_extcap_vendor_ASPEED() adds
+> readl(base + 0x04) and readl(base + 0x08) directly to hci->base_regs.  A
+> zero offset in either register yields hci->base_regs rather than NULL, so
+> aspeed_i3c_vendor_cap_found() returns true and later vendor or PHY writes
+> overwrite the core HCI registers at hci->base_regs.
+>
+> [ ... ]
+>
+> > +	hcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FM_SCL_H_NS, period_=
+ns);
+> > +	lcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FM_SCL_L_NS, period_=
+ns);
+> > +	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_I2C_FM_CTRL1,
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FM_CTRL1_SCL_H, hcnt) |
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_PHY_I2C_FM_CTRL1_SCL_L, lcnt));
+> > +	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_I2C_FM_CTRL2,
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FM_CTRL2_ACK_H, hcnt) |
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FM_CTRL2_ACK_L, hcnt));
+> > +
+> > +	hcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FM_HD_DAT_NS, period=
+_ns);
+> > +	lcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FM_AHD_DAT_NS, perio=
+d_ns);
+> > +	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_I2C_FM_CTRL3,
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FM_CTRL3_HD_DAT, hcnt) |
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FM_CTRL3_AHD_DAT, lcnt));
+> > +
+> > +	hcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FMP_CAS_NS, period_n=
+s);
+> > +	lcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FMP_SU_STO_NS, perio=
+d_ns);
+> > +	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_I2C_FMP_CTRL0,
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FMP_CTRL0_CAS, hcnt) |
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FMP_CTRL0_SU_STO, lcnt));
+> > +
+> > +	hcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FMP_SCL_H_NS, period=
+_ns);
+> > +	lcnt =3D aspeed_i3c_ns_to_cnt(ASPEED_I3C_PHY_I2C_FMP_SCL_L_NS, period=
+_ns);
+> > +	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_I2C_FMP_CTRL1,
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FMP_CTRL1_SCL_H, hcnt) |
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FMP_CTRL1_SCL_L, lcnt));
+> > +	aspeed_i3c_phy_write(hci, ASPEED_I3C_PHY_I2C_FMP_CTRL2,
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FMP_CTRL2_ACK_H, hcnt) |
+> > +			     FIELD_PREP(ASPEED_I3C_PHY_I2C_FMP_CTRL2_ACK_L, hcnt));
+>
+> [Severity: Medium]
+> Should ASPEED_I3C_PHY_I2C_FM_CTRL2_ACK_L and
+> ASPEED_I3C_PHY_I2C_FMP_CTRL2_ACK_L be programmed with lcnt instead of hcn=
+t,
+> matching ASPEED_I3C_PHY_I3C_OD_CTRL2_ACK_L further down?  Passing hcnt se=
+ts
+> the I2C ACK SCL low period to 1130 ns in Fast Mode (below the 1300 ns I2C
+> minimum tLOW) and 380 ns in Fast Mode Plus (below the 500 ns minimum).
 >
 > --
-> 2.34.1
->
+> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20261111-b4-i3c-hci-=
+ast2700-v2-0-4d8fff5c5196@aspeedtech.com?part=3D6
 
--- 
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
