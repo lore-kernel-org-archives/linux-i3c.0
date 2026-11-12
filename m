@@ -2,58 +2,134 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D46DA606A33D
-	for <linux-i3c@archiver.kernel.org>; Thu, 12 Nov 2026 13:15:24 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CDA00606A327
+	for <linux-i3c@archiver.kernel.org>; Thu, 12 Nov 2026 17:14:28 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1AvU5QUE;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JxDc2gE0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Iy+QnQDM;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=KZlZb/V5
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=dPwNk2UAFX3i/I/i9OD5MiOI3+k35HazPEsBZDxxkAE=; b=1AvU5QUE5/uwtELQ/5LU55PAdp
-	BjXP7yK0XtX8PWYLq8XdcAW6YMXtz9B1BvivDxIFe0nKeBIqxnPkZQn1DTxTTNQZMk+fjRvTSbVKB
-	2gAqPhyyjnxS33Jy8W5DlH+IaciPhG/Rkkag1ZiHu0GbjFptZPDagOC1LR4P1Tkn+8kaVS3TKM8xP
-	j0bYvfBxPQCDDr1bYzyhcIWoS0CFcsYk68Ampiu5sSQhF13Il1Od4p8jl4LD9zftaUVcBhNr76Fts
-	LuauOqHaGW8yc9Mk4qCwW8g962xODjDSjUxxUrQMOCY2cq8IRa+0c/eyeuocauEi3Ivsxc/7EoF+C
-	ib8b4AYA==;
+	bh=eCgeyK88gsY5yH5IAbVe8mWIDZHV66sCAWQXP/9LhGE=; b=Iy+QnQDMR2PlGiXbkRzwn2fehA
+	OOz7pEzLjDiZuJ5PSkz2WUYxWxebh7jc/l1tthztSTCPkJksH1+D+48Z8HGn2/pXkUt86yZQkf8dl
+	sX+QUQf32EBr/P0xhektMvufQltq4TgpXr+OfnXwmNV2iQfE/3ltaUmZZFojOIOxJTeKG4LaVuNPb
+	Gq651qja/5qzU/FetVOFO1K+Vfsvphsgyu8s1ufTya7ftQ8Ukj5Lwf5lCi4fhAT6CyxcjwuDHO03/
+	ZdKwhVrsGO1Bs5EyPztBYSbqyqs8dac4ez6ysoN9wLEqMhR0olSNGBm9As33Yz4mSHUFWuXoufLsW
+	9B8dwklA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRUeC-00000009zk4-2SRI;
-	Thu, 12 Nov 2026 13:15:24 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xRYNX-0000000Aj97-0Grg;
+	Thu, 12 Nov 2026 17:14:28 +0000
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRUeB-00000009zjZ-0H5Q
+	id 1xRYNU-0000000Aj8E-087C
 	for linux-i3c@lists.infradead.org;
-	Thu, 12 Nov 2026 13:15:23 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7BCC442211;
-	Thu, 12 Nov 2026 13:15:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1064A1F00A05;
-	Thu, 12 Nov 2026 13:15:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794489322;
-	bh=OpodrxUl4i8c/etqQN9xTTjufn5lj/rJiTJmj17zYNU=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=JxDc2gE0Vns9yL1GqjoIttoG8d3wL6Xl2JNN/Ex4Y3gBcXIrIShNOo3aejuEiUThh
-	 2o2rzSBE2HTD9I5kCAztWyYSWtwnoVSRFgdKvMx90/+wEnXX2cH8jFR7SbVaSi6mIL
-	 Me+e5jeYm5OPu23pOOY1PSxcg6Q5Lg6PWJylKylhBBs2gsNxa8llLNcmWDq3asCCTb
-	 clft7JLDfrcJC+67KrdPfkfb0M5rNJO5Pi/fQf3B5AehHLG/2prptQg25uNS0nBh3G
-	 z6dRpiTGkNfXQMwDsTkdZP63PqB3Po8jw9vnJ7DksBvvWcg2YIFFuJ+L8Q5QSI/orD
-	 MV0uD5DwNtPeQ==
-Message-ID: <sashiko-outbox-211154@kernel.org>
-From: sashiko-bot@kernel.org
+	Thu, 12 Nov 2026 17:14:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=wgjV9fiChIAJy43YQIzKgFjUKlxo7PTNHQhzSW/JQp03r06K9rw8hkCxNyw+KPSA2z1i/SIWzYa9wv3t7qfeMzKtSB0mZfrI7pvu2x8nnnvWuy3OCm07WWX68Se4E6XhXt3qc3YLigZzb5LF+mCQGx9QzWx34hLossZ1fpdeCSUgw5SDIDO8F8I8h9AOA6e49o+MmAChLupNoZSyFSHGQNA8xrc7hl81RMDygw2lCFVTNOL/WOUuMy7i4h+IEG/i9fnpDaAHbss+H9PyfzHmxEQGEiOd4lwc8KQy++e1Q2/EjQHSntCh2ddrJrwkiTYyH/6GgymLUmZlJ9M4Kb35bw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=O2VUFLxmPvAf5/3hZ33KIVzzXH9c3+P+DFhIVVIkLc8=;
+ b=MpTPBjtdRK+g5M2Uz/QEMr+UkXq6e8e3j4XJhHfzyYQrJpbh8jZfDmoD/LL7TCrnjOU+i0ZV5hByt1U7w0CJ+2iJmO8ZcFkqt006KShalUjsAiaH/CF3k8qH9qSaTopgvdOadT8HxBCGljKGPgkQ8VHd58062u6peBL0ZzEXSBaHcsm620WVQe0/KZHG0TdZWGRDb8yzvCIMC1DmgZQNrYhHozckLawNpQ97gwgK8W4LdaoxJQTq69v1Up3KSC2JTmlrOu2HHMUTkXdrLdm6wORIpPW840KUKHUEjoBCh6iyUPy846HueoA6OSqywFfo5gDrog9D8z+cdQFKqWe1QQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=O2VUFLxmPvAf5/3hZ33KIVzzXH9c3+P+DFhIVVIkLc8=;
+ b=KZlZb/V58pniu8jJtOEtZ9VJvMX/KY7j5CGwsG7mlD4wzjv7HBQ16zi0Ds0l9NnNei/CCi2brlPWxjMhf8zeMhVcd9T4Ryx24AdLAEv7CrUlH+NpiggkDU/mkCWiRCYlcx2Cp9hHWYpDVmRkwd9cS1COUEQuqcQfLRKgMuyFkm2SO97786ps1bwNy2tp/x4gUqoKnngWlMMev671SR0SNXiiqxLVdp4PKlz546Zqt6vROVAPvfwXeDaOgsk3A1URZKCltWxLXzFJD4zDZfaJ+zVFALdMj6gym2hnew3nlNw5kvaYNi/nuCDpzkoNs/uQisQcWrZ2qIoX8dTocF4Vqw==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
+ by GVXPR04MB12315.eurprd04.prod.outlook.com (2603:10a6:150:31b::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.8; Thu, 12 Nov
+ 2026 17:14:17 +0000
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b%4]) with mapi id 15.21.0615.009; Thu, 12 Nov 2026
+ 17:14:17 +0000
+Date: Thu, 12 Nov 2026 12:14:09 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: sashiko-reviews@lists.linux.dev
+Cc: Lakshay Piplani <lakshay.piplani@nxp.com>,
+	linux-i3c@lists.infradead.org, mfd@lists.linux.dev,
+	Frank.Li@kernel.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, lee@kernel.org
 Subject: Re: [PATCH v21 3/4] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x
  I3C hub functionality
-To: "Lakshay Piplani" <lakshay.piplani@nxp.com>, linux-i3c@lists.infradead.org, mfd@lists.linux.dev
-Cc: Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>, lee@kernel.org
-In-Reply-To: <20261112124437.3367252-4-lakshay.piplani@nxp.com>
+Message-ID: <avXz4X9HGmF4ajIj@lizhi-Precision-Tower-5810>
 References: <20261112124437.3367252-1-lakshay.piplani@nxp.com>
  <20261112124437.3367252-4-lakshay.piplani@nxp.com>
-Date: Thu, 12 Nov 2026 13:15:21 +0000
+ <sashiko-outbox-211154@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <sashiko-outbox-211154@kernel.org>
+X-ClientProxiedBy: CY8PR12CA0065.namprd12.prod.outlook.com
+ (2603:10b6:930:4c::9) To MI3PR04MB12438.eurprd04.prod.outlook.com
+ (2603:10a6:290:76::14)
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|GVXPR04MB12315:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0e0144ec-d92a-4a3f-a5fe-08df40e06201
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|23010399003|376014|366016|22082099003|18002099003|6133799003|11063799006|4143699003|261026140227099003|261028144727099003|261026121527099003|261021121427099003|56012099006|261022105027099003|261009223027099003|261102123227099003|261022075727099003|10067099003;
+X-Microsoft-Antispam-Message-Info: n/XaeFgz5qE3vnylnZnqbRRKgk2mX+gDnQAIF+gbx9sCWq/kST6pn472ZMkNX7DLi1Dvvx/4mTtR6YInsf+0huX4L4KUYRNfPTwUchguwDeR+zn5vRXDFS5jQliH1h5jk5hd1emrzYr4bIPeafanw9AsbvQgkYEBTbAQiciaLB2R2pyce4b6T1NV7yKpmnkg1axvGgcaUg6iCLc2sl8VUffQvGWQwTjvGGRl+FvtWQdmhUBdVj1L58MjqdBSmGTKRlAe3u8ahAFu9FoZGkdeyDUoagDaQEqZ6Yudd3A7ER4hdzPkW85MPDQC1FB0NBsKL4UoQQ5ANwaWAVPr6sjGNiF0LsT7SKPOKkDGKhc/2Ia5jntzfQ/6xfWGXmuE8iwIY6ibKJqdEiANTkdREnn32gowEkSic8aO9q1rDOcuvxRbeqjMTaG5pNl08cM2cXXzF4FscKfA0MZgYPQgLn0T9qDKP+gna2v0mlqx55mlhuQHqADWhSrR/5ZbzKUUuStQ28DQmLP+XxCs0pY/V9p/7+J/hb1e6RjNtFy78sv8z7JCm+Xoeds4Dx8NV00ArCFyxdEyojaNL9ZPEOoof1vqD9Pzl+9NSOasWNpOM8ZOiFA=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(23010399003)(376014)(366016)(22082099003)(18002099003)(6133799003)(11063799006)(4143699003)(261026140227099003)(261028144727099003)(261026121527099003)(261021121427099003)(56012099006)(261022105027099003)(261009223027099003)(261102123227099003)(261022075727099003)(10067099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?LpTkhWh924DmxIg4KbUHe4jeB1jQE1yi859qZVj2Aih4AQuUdW0Mhmp8qq?=
+ =?iso-8859-1?Q?jAkrzH9IJawPN+6fUcAqU66fnS94hN7IsN0xcNpewEJmJ8ZyEHoP8jnsym?=
+ =?iso-8859-1?Q?UJnBwf28A1YEMlMaH818GWNY6j8/PU77b9rSoFoPPGr78h3wwctgzth/Os?=
+ =?iso-8859-1?Q?oUn0fKE8N8umSs2XY5c4Pzv6WgNXLDpYmoNJBRkwANM9x33+eapJRBw0lN?=
+ =?iso-8859-1?Q?yiQw8x/IaGPNIrD6xFYMprG0oCP2ZoOtaP3pbs/CYmECmqOt9+EjxfnuOh?=
+ =?iso-8859-1?Q?sAM3OFtcKJSaGkhej2vwiBJD6TMl+7uqbxLS1lWodgkbw3NJr7MoAu9Nkv?=
+ =?iso-8859-1?Q?4Dii4DFa8Q5cHdvtcYeswmMmP0Kmz4TZ7v/GJaqo4RAp2Fj9JF8RbLl0e8?=
+ =?iso-8859-1?Q?vOxI9dCIqiYH7v75iQilpCfFjSfsrT5ArJ/eKIoKdizYjyeQW4wXkD9zCj?=
+ =?iso-8859-1?Q?cjX31e0peOhpRdqmrS0cUoXyAoTXHECLI1zjXer3AqOYOQMR3dsUUJYPia?=
+ =?iso-8859-1?Q?Jn3E6V0dQ1Dt3sNBHcFC5W4NwAMY80zkE9qjDDmnUp6KFZF4TTrGwtnuBH?=
+ =?iso-8859-1?Q?Pd7JfR2Yf/S6myRc7I4xpbXMaJBwMlTeeIehX9YqD/HO6GhZjmhtlujd7I?=
+ =?iso-8859-1?Q?0kwL1DqZC9SrVwCwDnT++tDsOVyMEkB8LmU+uGxgwxC96xETov1mj8XV8j?=
+ =?iso-8859-1?Q?ytan1Oy82aznPWgiO8711lpN4PcvTuFoArnt7OGnponfBAk4P4BgiIXWRV?=
+ =?iso-8859-1?Q?RhxJGRze5PLqwhAuF4IrB52ugpw2YXYxMUfrfdaw3VH6Ot17Ra9Pmfsmdr?=
+ =?iso-8859-1?Q?2vFQDbzUmM2SYKwZANhXy4rbNU3ZriejZ/JwXNTXIgKzfIA/KV3POcsCAA?=
+ =?iso-8859-1?Q?mL6Fjb0xuA3YPXbi4YAOj3RFfRoqwtPPMuhGw/M1XuUa9NX7+/Ys+o4fRL?=
+ =?iso-8859-1?Q?UNKBW/uDMPdhW5C+O33gLQ0GqDDEzHFS8ZK2QOxvOMjsRQ4J4ggaWgbzvr?=
+ =?iso-8859-1?Q?G46WktncSk/HtE0cSb9k8G4A2vdIftiRwAco4lc3RkXp28NKBS/wuzrE1S?=
+ =?iso-8859-1?Q?YwBZO0SDKo4NUlEw14XjSId0NNOpx5EQc9JqW4THiCxoa1UbYiUrOYWHhu?=
+ =?iso-8859-1?Q?z+F3OePjVEdRznS9f5IsNhUsr/UiiJrIQDXh3+Yvj7pXAlPtw23ROfuVkS?=
+ =?iso-8859-1?Q?KywsaglncouvbudxgCQI2PrmyXo4pskjXiiPzsEBGBl5hNj4tJ5HalCqVY?=
+ =?iso-8859-1?Q?CtnEfBU9CdzSN4GSjfxDIgW7JxqtcL8AV6zcZhgMPVvTN9kd6W7D9nMvNu?=
+ =?iso-8859-1?Q?wSVJjEpYYCLsk5ePWAHu25s/pyjawyf9WnNjrs1gyI6/vWjFaVILet8M4T?=
+ =?iso-8859-1?Q?uHfoxf/eJuW/lSR3p4FgUG4jIz6XXVU3mNC2e0ALh82N6O0BmRtyAL9iou?=
+ =?iso-8859-1?Q?Ce2AIsh8Sbx2DNe8CYo0TLQX8LK6L/5ZJF5Vq+Iq/B8jNo7md35RKlt038?=
+ =?iso-8859-1?Q?B/11IDgQ7joNHnzkrvqZ+6MlKRiwkauj6h7bUZcDeTPQZU1kFF7140y7CN?=
+ =?iso-8859-1?Q?+2+3vFU6kKCh5JjdPNtNW1Lvqs7SyrMuhzJG3EFBsn9aBT437eM8pB7r7H?=
+ =?iso-8859-1?Q?sZwbxwHVuBCnr6Aea3Fdt6RD1eN1+3UMsEE0VyxCt3u50nLK5IqszN5PfM?=
+ =?iso-8859-1?Q?TevBh4a3WGUQIJVP0c5+4ofKM4ke+pmwIDgpaa39q2secumikezWeujtLU?=
+ =?iso-8859-1?Q?Ye2pT3xyUDuQbyaKde0AmRL/BrH/A85CBzZQU/+zgEtbS02drPaHWMk7J7?=
+ =?iso-8859-1?Q?H8U+CF4Vi9Ymg7MHit5x+7d8DVCyvoCeDzsHZ1AXU4Q3O1xwRxmC?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0e0144ec-d92a-4a3f-a5fe-08df40e06201
+X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Nov 2026 17:14:17.3275
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: fcw305HxRXWPGeAQc6vFVtYRfacuvDCWF47IJR0yxjg8V9genYcofADspTAfbJgXL88k19+UnXuseCzsM5fDxPXWCIsM+OSitNjrx9FCxv80uubsQl/tvWQbSS/bqV86
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB12315
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261112_091424_806381_D6A39500 
+X-CRM114-Status: GOOD (  31.33  )
+X-Spam-Score: 0.2 (/)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,11 +139,8 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
@@ -76,189 +149,335 @@ X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NSBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtIaWdoXSBpM2M6IGh1YjogcDNoMng0
-eDogdW5pbml0aWFsaXplZCBQM0gyWDRYX1RQX05FVF9DT05fQ09ORiBicmVha3MKICBwb3J0IGlz
-b2xhdGlvbgotIFtIaWdoXSBpM2M6IGh1YjogcDNoMng0eDogcGFyZW50IERBQSByZWNvbmNpbGVy
-IGNsb2JiZXJzIERUIGFkZHJlc3MKICByZXNlcnZhdGlvbnMKLSBbSGlnaF0gaTNjOiBodWI6IHAz
-aDJ4NHg6IGJyb2tlbiBTTUJ1cyBmdW5jdGlvbmFsaXR5IGluCiAgcDNoMng0eF90cF9zbWJ1c19m
-dW5jcygpCi0gW0hpZ2hdIGkzYzogaHViOiBwM2gyeDR4OiBwb3J0cyBkaXNjb25uZWN0ZWQgZHVy
-aW5nIHByb2JlIGluCiAgcDNoMng0eF90cF9pM2NfYWxnbygpCi0gW01lZGl1bV0gaTNjOiBodWI6
-IHAzaDJ4NHg6IGNvbWJpbmVkIHRyYW5zZmVyIGNoZWNrIGluCiAgcDNoMng0eF90cF9pMmNfeGZl
-cigpCi0tCgpjb21taXQgOTU2MmExZjBlMzUxNWI3YjM1NGU4YTE5MzMzOWM1YzJlMTYzMGM4NQpB
-dXRob3I6IEFtYW4gS3VtYXIgUGFuZGV5IDxhbWFuLmt1bWFycGFuZGV5QG54cC5jb20+CgppM2M6
-IGh1YjogcDNoMng0eDogQWRkIHN1cHBvcnQgZm9yIE5YUCBQM0gyeDR4IEkzQyBodWIgZnVuY3Rp
-b25hbGl0eQoKVGhpcyBjb21taXQgYWRkcyB0aGUgSTNDIGh1YiBkcml2ZXIgZm9yIHRoZSBOWFAg
-UDNIMng0eCBmYW1pbHksIHN1cHBvcnRpbmcKZG93bnN0cmVhbSB0YXJnZXQgcG9ydHMgY29uZmln
-dXJlZCBhcyB2aXJ0dWFsIEkzQyBidXNlcyBvciBTTUJ1cyBhZGFwdGVycy4KCj4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvaTNjL2h1Yi9wM2gyODQwX2kzY19odWJfaTNjLmMgYi9kcml2ZXJzL2kzYy9o
-dWIvcDNoMjg0MF9pM2NfaHViX2kzYy5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAw
-MDAwMDAwMDAwMDAwLi5hMDcwYmUzMmZmZWQzCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZl
-cnMvaTNjL2h1Yi9wM2gyODQwX2kzY19odWJfaTNjLmMKPiBAQCAtMCwwICsxLDE2MiBAQAoKWyAu
-Li4gXQoKPiArc3RhdGljIHZvaWQgcDNoMng0eF9odWJfZW5hYmxlX3BvcnQoc3RydWN0IGkzY19t
-YXN0ZXJfY29udHJvbGxlciAqY29udHJvbGxlcikKPiArewo+ICsJc3RydWN0IHRwX2J1cyAqYnVz
-ID0gcDNoMng0eF9idXNfZnJvbV9jb250cm9sbGVyKGNvbnRyb2xsZXIpOwo+ICsJc3RydWN0IHAz
-aDJ4NHhfaTNjX2h1Yl9kZXYgKnAzaDJ4NHhfaTNjX2h1YiA9IGJ1cy0+cDNoMng0eF9pM2NfaHVi
-Owo+ICsKPiArCWlmIChwM2gyeDR4X2kzY19odWItPmh1Yl9jb25maWcudHBfY29uZmlnW2J1cy0+
-dHBfcG9ydF0uYWx3YXlzX2VuYWJsZSkKPiArCQlyZXR1cm47Cj4gKwo+ICsJcmVnbWFwX3NldF9i
-aXRzKHAzaDJ4NHhfaTNjX2h1Yi0+cmVnbWFwLCBQM0gyWDRYX1RQX05FVF9DT05fQ09ORiwgYnVz
-LT50cF9tYXNrKTsKPiArfQo+ICsKPiArc3RhdGljIHZvaWQgcDNoMng0eF9odWJfZGlzYWJsZV9w
-b3J0KHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKmNvbnRyb2xsZXIpCj4gK3sKPiArCXN0
-cnVjdCB0cF9idXMgKmJ1cyA9IHAzaDJ4NHhfYnVzX2Zyb21fY29udHJvbGxlcihjb250cm9sbGVy
-KTsKPiArCXN0cnVjdCBwM2gyeDR4X2kzY19odWJfZGV2ICpwM2gyeDR4X2kzY19odWIgPSBidXMt
-PnAzaDJ4NHhfaTNjX2h1YjsKPiArCj4gKwlpZiAocDNoMng0eF9pM2NfaHViLT5odWJfY29uZmln
-LnRwX2NvbmZpZ1tidXMtPnRwX3BvcnRdLmFsd2F5c19lbmFibGUpCj4gKwkJcmV0dXJuOwo+ICsK
-PiArCXJlZ21hcF9jbGVhcl9iaXRzKHAzaDJ4NHhfaTNjX2h1Yi0+cmVnbWFwLCBQM0gyWDRYX1RQ
-X05FVF9DT05fQ09ORiwgYnVzLT50cF9tYXNrKTsKPiArfQoKW1NldmVyaXR5OiBIaWdoXQpEb2Vz
-IGxlYXZpbmcgUDNIMlg0WF9UUF9ORVRfQ09OX0NPTkYgdW5pbml0aWFsaXplZCBiZWZvcmUgdGhl
-IHJlZ2lzdHJhdGlvbgpsb29wIGJyZWFrIHBlci1wb3J0IGlzb2xhdGlvbj8KCnAzaDJ4NHhfaHVi
-X2VuYWJsZV9wb3J0KCkgYW5kIHAzaDJ4NHhfaHViX2Rpc2FibGVfcG9ydCgpIG9ubHkgc2V0IGFu
-ZCBjbGVhcgpidXMtPnRwX21hc2ssIGFuZCBuZWl0aGVyIHAzaDJ4NHhfY29uZmlndXJlX3RwKCkg
-bm9yIHAzaDJ4NHhfdHBfaTNjX2FsZ28oKQpjbGVhcnMgUDNIMlg0WF9UUF9ORVRfQ09OX0NPTkYg
-YmVmb3JlaGFuZCBvciBvbiB0ZWFyZG93bi4gIElmIGFueSBiaXRzIGFyZQphbHJlYWR5IHNldCBp
-biBQM0gyWDRYX1RQX05FVF9DT05fQ09ORiAoZm9yIGV4YW1wbGUgb24gZHJpdmVyIHJlYmluZCwg
-b3Igb24KUDNIMjQ0MS9QM0gyODQxIHdoZXJlIHRhcmdldCBwb3J0cyBkZWZhdWx0IHRvIGNvbm5l
-Y3RlZCBhdCBwb3dlci1vbiksCm11bHRpcGxlIHBvcnRzIHN0YXkgYnJpZGdlZCBvbnRvIHRoZSBp
-bnRlcm5hbCBuZXR3b3JrIGR1cmluZwppM2NfbWFzdGVyX3JlZ2lzdGVyX2Z3bm9kZSgpLCBleHBv
-c2luZyBvdGhlciBwb3J0cycgZGV2aWNlcyB0byBTRVREQVNBIGFuZApFTlREQUEgbWVhbnQgZm9y
-IGEgc2luZ2xlIHBvcnQuCgpbIC4uLiBdCgo+ICsJZm9yICh0cCA9IDA7IHRwIDwgcDNoMng0eC0+
-bnVtX3RhcmdldF9wb3J0czsgdHArKykgewo+ICsJCWlmICghcDNoMng0eF9odWItPnRwX2J1c1t0
-cF0ub2Zfbm9kZSB8fAo+ICsJCSAgICBwM2gyeDR4X2h1Yi0+aHViX2NvbmZpZy50cF9jb25maWdb
-dHBdLm1vZGUgIT0gUDNIMlg0WF9UUF9NT0RFX0kzQykKPiArCQkJY29udGludWU7Cj4gKwo+ICsJ
-CXN0cnVjdCBpM2NfaHViX2NvbnRyb2xsZXIgKmh1Yl9jb250cm9sbGVyID0KPiArCQkJCSZwM2gy
-eDR4X2h1Yi0+dHBfYnVzW3RwXS5odWJfY29udHJvbGxlcjsKPiArCQlzdHJ1Y3QgaTNjX21hc3Rl
-cl9jb250cm9sbGVyICpjb250cm9sbGVyID0gJmh1Yl9jb250cm9sbGVyLT5jb250cm9sbGVyOwo+
-ICsKPiArCQlodWJfY29udHJvbGxlci0+cGFyZW50ID0gcGFyZW50Owo+ICsJCWh1Yl9jb250cm9s
-bGVyLT5odWIgPSBwM2gyeDR4X2h1Yi0+aHViOwo+ICsKPiArCQlkZXZfc2V0X2RydmRhdGEoJmNv
-bnRyb2xsZXItPmRldiwgaHViX2NvbnRyb2xsZXIpOwo+ICsKPiArCQlyZXQgPSBpM2NfaHViX3Jl
-c2VydmVfcGFyZW50X2FkZHJzbG90c19mcm9tX2R0KGh1Yl9jb250cm9sbGVyLAo+ICsJCQkJCQkJ
-ICAgICAgIHAzaDJ4NHhfaHViLT50cF9idXNbdHBdLm9mX25vZGUpOwo+ICsJCWlmIChyZXQpCj4g
-KwkJCXJldHVybiByZXQ7Cj4gKwl9Cj4gKwo+ICsJZm9yICh0cCA9IDA7IHRwIDwgcDNoMng0eC0+
-bnVtX3RhcmdldF9wb3J0czsgdHArKykgewo+ICsJCWlmICghcDNoMng0eF9odWItPnRwX2J1c1t0
-cF0ub2Zfbm9kZSB8fAo+ICsJCSAgICBwM2gyeDR4X2h1Yi0+aHViX2NvbmZpZy50cF9jb25maWdb
-dHBdLm1vZGUgIT0gUDNIMlg0WF9UUF9NT0RFX0kzQykKPiArCQkJY29udGludWU7Cj4gKwo+ICsJ
-CXN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKmNvbnRyb2xsZXIgPQo+ICsJCQkJJnAzaDJ4
-NHhfaHViLT50cF9idXNbdHBdLmh1Yl9jb250cm9sbGVyLmNvbnRyb2xsZXI7Cj4gKwo+ICsJCXJl
-dCA9IGkzY19tYXN0ZXJfcmVnaXN0ZXJfZndub2RlKGNvbnRyb2xsZXIsCj4gKwkJCQkJCSBwM2gy
-eDR4X2h1Yi0+ZGV2LAo+ICsJCQkJCQkgb2ZfZndub2RlX2hhbmRsZShwM2gyeDR4X2h1Yi0+dHBf
-YnVzW3RwXS5vZl9ub2RlKSwKPiArCQkJCQkJICZpM2NfaHViX21hc3Rlcl9vcHMsCj4gKwkJCQkJ
-CSBmYWxzZSk7CgpbU2V2ZXJpdHk6IEhpZ2hdCldvbid0IGkzY19tYXN0ZXJfcmVjb25jaWxlX2R5
-bl9hZGRycygpIG9uIHRoZSBwYXJlbnQgYnVzIGNsb2JiZXIgdGhlCnJlc2VydmF0aW9ucyBtYWRl
-IGJ5IGkzY19odWJfcmVzZXJ2ZV9wYXJlbnRfYWRkcnNsb3RzX2Zyb21fZHQoKT8KCmkzY19odWJf
-cmVzZXJ2ZV9wYXJlbnRfYWRkcnNsb3RzX2Zyb21fZHQoKSBtYXJrcyBlYWNoIGNoaWxkJ3MKYXNz
-aWduZWQtYWRkcmVzcyBvbiBwYXJlbnQtPmJ1cyBhcyBJM0NfQUREUl9TTE9UX0kzQ19ERVYgd2l0
-aG91dCBhIG1hdGNoaW5nCmRlc2NyaXB0b3IgaW4gcGFyZW50LT5idXMuZGV2cy5pM2MuICBXaGVu
-IHRoZSBmaXJzdCBwb3J0IHJ1bnMKaTNjX21hc3Rlcl9yZWdpc3Rlcl9md25vZGUoKSAtPiAuLi4g
-LT4gaTNjX2h1Yl9kb19kYWEoKSAtPgppM2NfbWFzdGVyX2RvX2RhYShwYXJlbnQpLCBpM2NfbWFz
-dGVyX3JlY29uY2lsZV9keW5fYWRkcnMocGFyZW50KSByZXNldHMKZXZlcnkgSTNDX0FERFJfU0xP
-VF9JM0NfREVWIHNsb3Qgbm90IGluIHBhcmVudC0+YnVzLmRldnMuaTNjIHRvCkkzQ19BRERSX1NM
-T1RfRlJFRSBhbmQgcHJvYmVzIGl0OgoKZHJpdmVycy9pM2MvbWFzdGVyLmM6aTNjX21hc3Rlcl9y
-ZWNvbmNpbGVfZHluX2FkZHJzKCkgewogICAgLi4uCgkJaWYgKHN0YXR1cyAhPSBJM0NfQUREUl9T
-TE9UX0kzQ19ERVYgfHwgdGVzdF9iaXQoYWRkciwgZGV2X2R5bl9hZGRycykpCgkJCWNvbnRpbnVl
-OwoJCWkzY19idXNfc2V0X2FkZHJfc2xvdF9zdGF0dXMoJm1hc3Rlci0+YnVzLCBhZGRyLCBJM0Nf
-QUREUl9TTE9UX0ZSRUUpOwoJCS8qIFRyeSB0byBhZGQgdGhlIGRldmljZSwgYnV0IHByb2JlIHRv
-IHNlZSBpZiBpdCBpcyByZWFsbHkgcHJlc2VudCAqLwoJCV9faTNjX21hc3Rlcl9hZGRfaTNjX2Rl
-dl9sb2NrZWQobWFzdGVyLCBhZGRyLCB0cnVlKTsKICAgIC4uLgp9CgpGb3IgbGF0ZXIgcG9ydHMg
-dGhhdCBhcmUgc3RpbGwgZGlzY29ubmVjdGVkLCB0aGUgcHJvYmUgc2VlcyBubyBkZXZpY2UgYW5k
-CmxlYXZlcyB0aGUgc2xvdCBJM0NfQUREUl9TTE9UX0ZSRUUsIHdpcGluZyBvdXQgdGhlaXIgcmVz
-ZXJ2YXRpb25zLiAgRm9yCmRldmljZXMgb24gdGhlIGNvbm5lY3RlZCBwb3J0IHRoYXQgYWxyZWFk
-eSBnb3QgdGhlaXIgYWRkcmVzcyB2aWEgU0VUREFTQSBvbgpjb250cm9sbGVyLT5idXMsIHRoZSBw
-cm9iZSBzdWNjZWVkcyBhbmQgcmVnaXN0ZXJzIGEgZHVwbGljYXRlIGkzY19kZXZpY2Ugb24KcGFy
-ZW50LT5idXMuCgo+ICsJCWlmIChyZXQpCj4gKwkJCXJldHVybiByZXQ7Cj4gKwo+ICsJCXJldCA9
-IGRldm1fYWRkX2FjdGlvbl9vcl9yZXNldChwM2gyeDR4X2h1Yi0+ZGV2LAo+ICsJCQkJCSAgICAg
-ICBwM2gyeDR4X3VucmVnaXN0ZXJfaTNjX21hc3RlciwKPiArCQkJCQkgICAgICAgY29udHJvbGxl
-cik7Cj4gKwkJaWYgKHJldCkKPiArCQkJcmV0dXJuIHJldDsKPiArCj4gKwkJbnR3a19tYXNrIHw9
-IHAzaDJ4NHhfaHViLT50cF9idXNbdHBdLnRwX21hc2s7Cj4gKwkJcDNoMng0eF9odWItPnRwX2J1
-c1t0cF0uaXNfcmVnaXN0ZXJlZCA9IHRydWU7Cj4gKwl9Cj4gKwo+ICsJLyoKPiArCSAqIFRha2Ug
-dGhlIHJvdXRpbmcgbG9jayB1c2VkIGJ5IHRoZSBodWIgY2FsbGJhY2tzIHNvIHRoZXkgY2Fubm90
-Cj4gKwkgKiBvYnNlcnZlIGFsd2F5c19lbmFibGUgYmVmb3JlIHRoZSByb3V0ZSBpcyBwcm9ncmFt
-bWVkLgo+ICsJICovCj4gKwltdXRleF9sb2NrKCZwM2gyeDR4X2h1Yi0+aHViLT5sb2NrKTsKPiAr
-Cj4gKwlyZXQgPSByZWdtYXBfd3JpdGUocDNoMng0eF9odWItPnJlZ21hcCwKPiArCQkJICAgUDNI
-Mlg0WF9UUF9ORVRfQ09OX0NPTkYsIG50d2tfbWFzayk7Cj4gKwlpZiAoIXJldCkgewo+ICsJCWZv
-ciAodHAgPSAwOyB0cCA8IHAzaDJ4NHgtPm51bV90YXJnZXRfcG9ydHM7IHRwKyspIHsKPiArCQkJ
-aWYgKCEobnR3a19tYXNrICYgcDNoMng0eF9odWItPnRwX2J1c1t0cF0udHBfbWFzaykpCj4gKwkJ
-CQljb250aW51ZTsKPiArCj4gKwkJCXAzaDJ4NHhfaHViLT5odWJfY29uZmlnLnRwX2NvbmZpZ1t0
-cF0uYWx3YXlzX2VuYWJsZSA9IHRydWU7Cj4gKwkJfQo+ICsJfQo+ICsJbXV0ZXhfdW5sb2NrKCZw
-M2gyeDR4X2h1Yi0+aHViLT5sb2NrKTsKCltTZXZlcml0eTogSGlnaF0KRG9lcyBrZWVwaW5nIGFs
-d2F5c19lbmFibGUgZmFsc2UgdW50aWwgYWxsIHBvcnRzIGFyZSByZWdpc3RlcmVkIGxlYXZlIHRh
-cmdldApwb3J0cyBkaXNjb25uZWN0ZWQgd2hpbGUgZG93bnN0cmVhbSBkZXZpY2UgZHJpdmVycyBw
-cm9iZT8KCkNQVTAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAga3dvcmtlciAocGFy
-ZW50LT53cSkKcDNoMng0eF90cF9pM2NfYWxnbygpCiAgaTNjX21hc3Rlcl9yZWdpc3Rlcl9md25v
-ZGUoKQogICAgLi4uCiAgICAgIGkzY19odWJfZG9fZGFhKCkKICAgICAgICBpM2NfbWFzdGVyX2Rv
-X2RhYShwYXJlbnQpCiAgICAgICAgICBxdWV1ZV93b3JrKC4uLiwgJnBhcmVudC0+cmVnX3dvcmsp
-CiAgICAgICAgaTNjX2h1Yl9kaXNhYmxlX3BvcnQoY29udHJvbGxlcikKICAgICAgICAgIHJlZ21h
-cF9jbGVhcl9iaXRzKC4uLiwgdHBfbWFzaykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICBpM2NfbWFzdGVyX3JlZ193b3JrX2ZuKCkKICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIGRldmljZV9hZGQoJmkzY2Rldi0+ZGV2KQogICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICA8dGFyZ2V0IGRyaXZlciBwcm9iZT4KICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpM2NfZGV2aWNlX2RvX3ByaXZfeGZl
-cnMoKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC0tIHBv
-cnQgaXMgZGlzY29ubmVjdGVkCiAgLyogbmV4dCBwb3J0J3MgaTNjX21hc3Rlcl9yZWdpc3Rlcl9m
-d25vZGUoKSAqLwogIHJlZ21hcF93cml0ZSguLi4sIFAzSDJYNFhfVFBfTkVUX0NPTl9DT05GLCBu
-dHdrX21hc2spCgpEZXZpY2VzIGRpc2NvdmVyZWQgdmlhIEVOVERBQSBhcmUgcXVldWVkIG9uIHBh
-cmVudC0+cmVnX3dvcmsgYW5kIHVzZQpwYXJlbnQtPm9wcyBkaXJlY3RseSB3aXRob3V0IGNhbGxp
-bmcgcDNoMng0eF9odWJfZW5hYmxlX3BvcnQoKSwgc28gdGhlaXIKcHJvYmVzIGZhaWwgaWYgdGhl
-eSBydW4gYmVmb3JlIFAzSDJYNFhfVFBfTkVUX0NPTl9DT05GIGlzIHdyaXR0ZW4gYXQgdGhlCmVu
-ZCBvZiBwM2gyeDR4X3RwX2kzY19hbGdvKCkuICBMaWtld2lzZSwgZm9yIHN0YXRpY2FsbHkgZGVz
-Y3JpYmVkIGRldmljZXMgb24KY29udHJvbGxlci0+YnVzIHRoYXQgY2FsbCBpM2NfZGV2aWNlX2Vu
-YWJsZV9pYmkoKSBkdXJpbmcKaTNjX21hc3Rlcl9yZWdpc3Rlcl9md25vZGUoKSwgaTNjX2h1Yl9l
-bmFibGVfaWJpKCkgZGlzY29ubmVjdHMgdGhlIHBvcnQgb24KZXhpdCwgZHJvcHBpbmcgSUJJcyB1
-bnRpbCBhbGwgcmVtYWluaW5nIHBvcnRzIGZpbmlzaCByZWdpc3RlcmluZy4KCj4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvaTNjL2h1Yi9wM2gyODQwX2kzY19odWJfc21idXMuYyBiL2RyaXZlcnMvaTNj
-L2h1Yi9wM2gyODQwX2kzY19odWJfc21idXMuYwo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5k
-ZXggMDAwMDAwMDAwMDAwMC4uMjQ3ZDBmNDg4M2I3Ywo+IC0tLSAvZGV2L251bGwKPiArKysgYi9k
-cml2ZXJzL2kzYy9odWIvcDNoMjg0MF9pM2NfaHViX3NtYnVzLmMKPiBAQCAtMCwwICsxLDM1MiBA
-QAoKWyAuLi4gXQoKPiArc3RhdGljIHMzMiBwM2gyeDR4X3RwX2kyY194ZmVyKHN0cnVjdCBpMmNf
-YWRhcHRlciAqYWRhcCwgc3RydWN0IGkyY19tc2cgKm1zZ3MsIGludCBudW0pCj4gK3sKPiArCWlu
-dCByZXRfc3VtID0gMCwgcmV0LCBtc2dfY291bnQ7Cj4gKwl1OCBydzsKPiArCj4gKwlzdHJ1Y3Qg
-dHBfYnVzICpidXMgPSBpMmNfZ2V0X2FkYXBkYXRhKGFkYXApOwo+ICsJc3RydWN0IHAzaDJ4NHhf
-aTNjX2h1Yl9kZXYgKnAzaDJ4NHhfaTNjX2h1YiA9IGJ1cy0+cDNoMng0eF9pM2NfaHViOwo+ICsK
-PiArCWd1YXJkKG11dGV4KSgmcDNoMng0eF9pM2NfaHViLT5ldHhfbXV0ZXgpOwo+ICsJZ3VhcmQo
-bXV0ZXgpKCZidXMtPnBvcnRfbXV0ZXgpOwo+ICsKPiArCWZvciAobXNnX2NvdW50ID0gMDsgbXNn
-X2NvdW50IDwgbnVtOyBtc2dfY291bnQrKykgewo+ICsJCXJ3ID0gKG1zZ3NbbXNnX2NvdW50XS5m
-bGFncyAmIEkyQ19NX1JEKSA/IDEgOiAwOwo+ICsJCWlmICghcncpIHsKPiArCQkJLyogSWYgYSB3
-cml0ZSBtZXNzYWdlIGlzIGltbWVkaWF0ZWx5IGZvbGxvd2VkIGJ5IGEgcmVhZCBtZXNzYWdlIHRv
-Cj4gKwkJCSAqIHRoZSBzYW1lIGFkZHJlc3MsICBjb25zaWRlciBjb21iaW5pbmcgdGhlbSBpbnRv
-IGEgc2luZ2xlIHRyYW5zYWN0aW9uLgo+ICsJCQkgKi8KPiArCQkJaWYgKG1zZ19jb3VudCArIDEg
-PCBudW0gJiYKPiArCQkJICAgIG1zZ3NbbXNnX2NvdW50XS5hZGRyID09IG1zZ3NbbXNnX2NvdW50
-ICsgMV0uYWRkciAmJgo+ICsJCQkgICAgKG1zZ3NbbXNnX2NvdW50ICsgMV0uZmxhZ3MgJiBJMkNf
-TV9SRCkpIHsKPiArCQkJCWlmIChtc2dzW21zZ19jb3VudF0ubGVuICsgbXNnc1ttc2dfY291bnQg
-KyAxXS5sZW4gPgo+ICsJCQkJICAgIFAzSDJYNFhfU01CVVNfUEFZTE9BRF9TSVpFKQo+ICsJCQkJ
-CXJldHVybiAtRUlOVkFMOwoKW1NldmVyaXR5OiBNZWRpdW1dClNob3VsZCB0aGlzIGZhbGwgYmFj
-ayB0byBzZW5kaW5nIHRoZSB3cml0ZSBhbmQgcmVhZCBhcyBzZXBhcmF0ZSB0cmFuc2FjdGlvbnMK
-KG9yIHNldCBtYXhfY29tYl8xc3RfbXNnX2xlbiBhbmQgbWF4X2NvbWJfMm5kX21zZ19sZW4gaW4K
-cDNoMng0eF90cF9pMmNfcXVpcmtzKSBpbnN0ZWFkIG9mIHJldHVybmluZyAtRUlOVkFMPwoKQmVj
-YXVzZSBwM2gyeDR4X3RwX2kyY19xdWlya3MgYWR2ZXJ0aXNlcyBtYXhfcmVhZF9sZW4gPSA4NCBh
-bmQKbWF4X3dyaXRlX2xlbiA9IDg0IHdpdGggbm8gY29tYmluZWQgbGltaXQsIGNhbGxlcnMgc3Vj
-aCBhcyByZWdtYXAtaTJjIGlzc3VlCmEgMS0gb3IgMi1ieXRlIHJlZ2lzdGVyIHdyaXRlIGZvbGxv
-d2VkIGJ5IGFuIDg0LWJ5dGUgcmVhZDsgYm90aCBtZXNzYWdlcwpwYXNzIGkyY19jaGVja19mb3Jf
-cXVpcmtzKCksIGJ1dCB0aGVpciBzdW0gZXhjZWVkcwpQM0gyWDRYX1NNQlVTX1BBWUxPQURfU0la
-RSAoODQpIGFuZCBmYWlscyBoZXJlIHdpdGggLUVJTlZBTC4KCj4gKwo+ICsJCQkJcncgPSAyOwo+
-ICsJCQkJbXNnX2NvdW50ICs9IDE7Cj4gKwkJCQlyZXRfc3VtICs9IDE7Cj4gKwkJCX0KPiArCQl9
-Cj4gKwo+ICsJCXJldCA9IHAzaDJ4NHhfdHBfaTJjX3hmZXJfbXNnKHAzaDJ4NHhfaTNjX2h1YiwK
-PiArCQkJCQkgICAgICBtc2dzLAo+ICsJCQkJCSAgICAgIGJ1cy0+dHBfcG9ydCwKPiArCQkJCQkg
-ICAgICAocncgPT0gMikgPyAobXNnX2NvdW50IC0gMSkgOiBtc2dfY291bnQsCj4gKwkJCQkJICAg
-ICAgIHJ3KTsKPiArCQlpZiAocmV0KQo+ICsJCQlyZXR1cm4gcmV0Owo+ICsKPiArCQlyZXRfc3Vt
-Kys7Cj4gKwl9Cj4gKwlyZXR1cm4gcmV0X3N1bTsKPiArfQo+ICsKPiArc3RhdGljIHUzMiBwM2gy
-eDR4X3RwX3NtYnVzX2Z1bmNzKHN0cnVjdCBpMmNfYWRhcHRlciAqYWRhcHRlcikKPiArewo+ICsJ
-cmV0dXJuIEkyQ19GVU5DX0kyQyB8IEkyQ19GVU5DX1NNQlVTX0JMT0NLX0RBVEE7Cj4gK30KCltT
-ZXZlcml0eTogSGlnaF0KRG9lcyBhZHZlcnRpc2luZyBJMkNfRlVOQ19TTUJVU19CTE9DS19EQVRB
-IHdpdGhvdXQgaGFuZGxpbmcgSTJDX01fUkVDVl9MRU4KaW4gcDNoMng0eF90cF9pMmNfeGZlcl9t
-c2coKSBjb3JydXB0IFNNQnVzIGJsb2NrIHJlYWRzIGFuZCBsZWFrIHN0YWNrIG1lbW9yeT8KCkJl
-Y2F1c2UgcDNoMng0eF90cF9pMmNfYWxnb3JpdGhtIGhhcyBubyAuc21idXNfeGZlciBjYWxsYmFj
-aywKaTJjX3NtYnVzX3JlYWRfYmxvY2tfZGF0YSgpIGFuZCBJMkNfU01CVVNfQkxPQ0tfREFUQSBy
-ZWFkIGlvY3RscyBnbyB0aHJvdWdoCmkyY19zbWJ1c194ZmVyX2VtdWxhdGVkKCksIHdoaWNoIHNl
-dHMgbXNnWzFdLmZsYWdzIHw9IEkyQ19NX1JFQ1ZfTEVOIGFuZAptc2dbMV0ubGVuID0gMS4gIHAz
-aDJ4NHhfdHBfaTJjX3hmZXJfbXNnKCkgaWdub3JlcyBJMkNfTV9SRUNWX0xFTiBhbmQgcmVhZHMK
-b25seSAxIGJ5dGUgKHRoZSBibG9jayBsZW5ndGggTikgaW50byBtc2dbMV0uYnVmWzBdLCBhZnRl
-ciB3aGljaAppMmNfc21idXNfeGZlcl9lbXVsYXRlZCgpIGNvcGllcyBOIHVud3JpdHRlbiBieXRl
-cyBmcm9tIG1zZ1sxXS5idWZbMS4uTl0gdG8KdGhlIGNhbGxlciAoemVyb2VzIGZyb20gdGhlIGJv
-dW5jZSBidWZmZXIsIG9yIHVuaW5pdGlhbGl6ZWQgc3RhY2sgYnl0ZXMgZnJvbQptc2didWYxIGlm
-IGt6YWxsb2MoKSBpbiBpMmNfc21idXNfdHJ5X2dldF9kbWFidWYoKSBmYWlscykuCgpBbHNvLCBv
-bWl0dGluZyBJMkNfRlVOQ19TTUJVU19FTVVMIGxlYXZlcyBzdGFuZGFyZCBieXRlLCB3b3JkLCBh
-bmQgSTJDLWJsb2NrClNNQnVzIG9wZXJhdGlvbnMgdW5hZHZlcnRpc2VkLCBwcmV2ZW50aW5nIFNN
-QnVzIGFuZCBod21vbiBkcml2ZXJzIGZyb20gdXNpbmcKdGhlIGFkYXB0ZXIuCgotLSAKU2FzaGlr
-byBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMTEyMTI0
-NDM3LjMzNjcyNTItMS1sYWtzaGF5LnBpcGxhbmlAbnhwLmNvbT9wYXJ0PTMKCi0tIApsaW51eC1p
-M2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+On Thu, Nov 12, 2026 at 01:15:21PM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 5 potential
+> issues to consider:
+> - [High] i3c: hub: p3h2x4x: uninitialized P3H2X4X_TP_NET_CON_CONF breaks
+>   port isolation
+> - [High] i3c: hub: p3h2x4x: parent DAA reconciler clobbers DT address
+>   reservations
+> - [High] i3c: hub: p3h2x4x: broken SMBus functionality in
+>   p3h2x4x_tp_smbus_funcs()
+> - [High] i3c: hub: p3h2x4x: ports disconnected during probe in
+>   p3h2x4x_tp_i3c_algo()
+> - [Medium] i3c: hub: p3h2x4x: combined transfer check in
+>   p3h2x4x_tp_i2c_xfer()
+> --
+>
+> commit 9562a1f0e3515b7b354e8a193339c5c2e1630c85
+> Author: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+>
+> i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
+>
+> This commit adds the I3C hub driver for the NXP P3H2x4x family, supporting
+> downstream target ports configured as virtual I3C buses or SMBus adapters.
+>
+> > diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c b/drivers/i3c/hub/p3=
+h2840_i3c_hub_i3c.c
+> > new file mode 100644
+> > index 0000000000000..a070be32ffed3
+> > --- /dev/null
+> > +++ b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+> > @@ -0,0 +1,162 @@
+>
+> [ ... ]
+>
+> > +static void p3h2x4x_hub_enable_port(struct i3c_master_controller *cont=
+roller)
+> > +{
+> > +	struct tp_bus *bus =3D p3h2x4x_bus_from_controller(controller);
+> > +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub =3D bus->p3h2x4x_i3c_hub;
+> > +
+> > +	if (p3h2x4x_i3c_hub->hub_config.tp_config[bus->tp_port].always_enable)
+> > +		return;
+> > +
+> > +	regmap_set_bits(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP_NET_CON_CONF, bus=
+->tp_mask);
+> > +}
+> > +
+> > +static void p3h2x4x_hub_disable_port(struct i3c_master_controller *con=
+troller)
+> > +{
+> > +	struct tp_bus *bus =3D p3h2x4x_bus_from_controller(controller);
+> > +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub =3D bus->p3h2x4x_i3c_hub;
+> > +
+> > +	if (p3h2x4x_i3c_hub->hub_config.tp_config[bus->tp_port].always_enable)
+> > +		return;
+> > +
+> > +	regmap_clear_bits(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP_NET_CON_CONF, b=
+us->tp_mask);
+> > +}
+>
+> [Severity: High]
+> Does leaving P3H2X4X_TP_NET_CON_CONF uninitialized before the registration
+> loop break per-port isolation?
+>
+> p3h2x4x_hub_enable_port() and p3h2x4x_hub_disable_port() only set and cle=
+ar
+> bus->tp_mask, and neither p3h2x4x_configure_tp() nor p3h2x4x_tp_i3c_algo()
+> clears P3H2X4X_TP_NET_CON_CONF beforehand or on teardown.  If any bits are
+> already set in P3H2X4X_TP_NET_CON_CONF (for example on driver rebind, or =
+on
+> P3H2441/P3H2841 where target ports default to connected at power-on),
+> multiple ports stay bridged onto the internal network during
+> i3c_master_register_fwnode(), exposing other ports' devices to SETDASA and
+> ENTDAA meant for a single port.
+
+Suggest disable all port at probe functions.
+
+>
+> [ ... ]
+>
+> > +	for (tp =3D 0; tp < p3h2x4x->num_target_ports; tp++) {
+> > +		if (!p3h2x4x_hub->tp_bus[tp].of_node ||
+> > +		    p3h2x4x_hub->hub_config.tp_config[tp].mode !=3D P3H2X4X_TP_MODE_=
+I3C)
+> > +			continue;
+> > +
+> > +		struct i3c_hub_controller *hub_controller =3D
+> > +				&p3h2x4x_hub->tp_bus[tp].hub_controller;
+> > +		struct i3c_master_controller *controller =3D &hub_controller->contro=
+ller;
+> > +
+> > +		hub_controller->parent =3D parent;
+> > +		hub_controller->hub =3D p3h2x4x_hub->hub;
+> > +
+> > +		dev_set_drvdata(&controller->dev, hub_controller);
+> > +
+> > +		ret =3D i3c_hub_reserve_parent_addrslots_from_dt(hub_controller,
+> > +							       p3h2x4x_hub->tp_bus[tp].of_node);
+> > +		if (ret)
+> > +			return ret;
+> > +	}
+> > +
+> > +	for (tp =3D 0; tp < p3h2x4x->num_target_ports; tp++) {
+> > +		if (!p3h2x4x_hub->tp_bus[tp].of_node ||
+> > +		    p3h2x4x_hub->hub_config.tp_config[tp].mode !=3D P3H2X4X_TP_MODE_=
+I3C)
+> > +			continue;
+> > +
+> > +		struct i3c_master_controller *controller =3D
+> > +				&p3h2x4x_hub->tp_bus[tp].hub_controller.controller;
+> > +
+> > +		ret =3D i3c_master_register_fwnode(controller,
+> > +						 p3h2x4x_hub->dev,
+> > +						 of_fwnode_handle(p3h2x4x_hub->tp_bus[tp].of_node),
+> > +						 &i3c_hub_master_ops,
+> > +						 false);
+>
+> [Severity: High]
+> Won't i3c_master_reconcile_dyn_addrs() on the parent bus clobber the
+> reservations made by i3c_hub_reserve_parent_addrslots_from_dt()?
+
+You should set I3C_ADDR_SLOT_EXT_DESIRED status in
+i3c_hub_reserve_parent_addrslots_from_dt(), assigned-address should mark
+as I3C_ADDR_SLOT_EXT_DESIRED to avoid other i3c device use it.
+
+>
+> i3c_hub_reserve_parent_addrslots_from_dt() marks each child's
+> assigned-address on parent->bus as I3C_ADDR_SLOT_I3C_DEV without a matchi=
+ng
+> descriptor in parent->bus.devs.i3c.  When the first port runs
+> i3c_master_register_fwnode() -> ... -> i3c_hub_do_daa() ->
+> i3c_master_do_daa(parent), i3c_master_reconcile_dyn_addrs(parent) resets
+> every I3C_ADDR_SLOT_I3C_DEV slot not in parent->bus.devs.i3c to
+> I3C_ADDR_SLOT_FREE and probes it:
+>
+> drivers/i3c/master.c:i3c_master_reconcile_dyn_addrs() {
+>     ...
+> 		if (status !=3D I3C_ADDR_SLOT_I3C_DEV || test_bit(addr, dev_dyn_addrs))
+> 			continue;
+> 		i3c_bus_set_addr_slot_status(&master->bus, addr, I3C_ADDR_SLOT_FREE);
+> 		/* Try to add the device, but probe to see if it is really present */
+> 		__i3c_master_add_i3c_dev_locked(master, addr, true);
+>     ...
+> }
+>
+> For later ports that are still disconnected, the probe sees no device and
+> leaves the slot I3C_ADDR_SLOT_FREE, wiping out their reservations.  For
+> devices on the connected port that already got their address via SETDASA =
+on
+> controller->bus, the probe succeeds and registers a duplicate i3c_device =
+on
+> parent->bus.
+>
+> > +		if (ret)
+> > +			return ret;
+> > +
+> > +		ret =3D devm_add_action_or_reset(p3h2x4x_hub->dev,
+> > +					       p3h2x4x_unregister_i3c_master,
+> > +					       controller);
+> > +		if (ret)
+> > +			return ret;
+> > +
+> > +		ntwk_mask |=3D p3h2x4x_hub->tp_bus[tp].tp_mask;
+> > +		p3h2x4x_hub->tp_bus[tp].is_registered =3D true;
+> > +	}
+> > +
+> > +	/*
+> > +	 * Take the routing lock used by the hub callbacks so they cannot
+> > +	 * observe always_enable before the route is programmed.
+> > +	 */
+> > +	mutex_lock(&p3h2x4x_hub->hub->lock);
+> > +
+> > +	ret =3D regmap_write(p3h2x4x_hub->regmap,
+> > +			   P3H2X4X_TP_NET_CON_CONF, ntwk_mask);
+> > +	if (!ret) {
+> > +		for (tp =3D 0; tp < p3h2x4x->num_target_ports; tp++) {
+> > +			if (!(ntwk_mask & p3h2x4x_hub->tp_bus[tp].tp_mask))
+> > +				continue;
+> > +
+> > +			p3h2x4x_hub->hub_config.tp_config[tp].always_enable =3D true;
+> > +		}
+> > +	}
+> > +	mutex_unlock(&p3h2x4x_hub->hub->lock);
+>
+> [Severity: High]
+> Does keeping always_enable false until all ports are registered leave tar=
+get
+> ports disconnected while downstream device drivers probe?
+
+yes,
+
+>
+> CPU0                                  kworker (parent->wq)
+> p3h2x4x_tp_i3c_algo()
+>   i3c_master_register_fwnode()
+>     ...
+>       i3c_hub_do_daa()
+>         i3c_master_do_daa(parent)
+>           queue_work(..., &parent->reg_work)
+>         i3c_hub_disable_port(controller)
+>           regmap_clear_bits(..., tp_mask)
+>                                       i3c_master_reg_work_fn()
+>                                         device_add(&i3cdev->dev)
+>                                           <target driver probe>
+>                                             i3c_device_do_priv_xfers()
+>                                               <-- port is disconnected
+>   /* next port's i3c_master_register_fwnode() */
+>   regmap_write(..., P3H2X4X_TP_NET_CON_CONF, ntwk_mask)
+>
+> Devices discovered via ENTDAA are queued on parent->reg_work and use
+> parent->ops directly without calling p3h2x4x_hub_enable_port(), so their
+> probes fail if they run before P3H2X4X_TP_NET_CON_CONF is written at the
+> end of p3h2x4x_tp_i3c_algo().  Likewise, for statically described devices=
+ on
+> controller->bus that call i3c_device_enable_ibi() during
+> i3c_master_register_fwnode(), i3c_hub_enable_ibi() disconnects the port on
+> exit, dropping IBIs until all remaining ports finish registering.
+>
+> > diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c b/drivers/i3c/hub/=
+p3h2840_i3c_hub_smbus.c
+> > new file mode 100644
+> > index 0000000000000..247d0f4883b7c
+> > --- /dev/null
+> > +++ b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+> > @@ -0,0 +1,352 @@
+>
+> [ ... ]
+>
+> > +static s32 p3h2x4x_tp_i2c_xfer(struct i2c_adapter *adap, struct i2c_ms=
+g *msgs, int num)
+> > +{
+> > +	int ret_sum =3D 0, ret, msg_count;
+> > +	u8 rw;
+> > +
+> > +	struct tp_bus *bus =3D i2c_get_adapdata(adap);
+> > +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub =3D bus->p3h2x4x_i3c_hub;
+> > +
+> > +	guard(mutex)(&p3h2x4x_i3c_hub->etx_mutex);
+> > +	guard(mutex)(&bus->port_mutex);
+> > +
+> > +	for (msg_count =3D 0; msg_count < num; msg_count++) {
+> > +		rw =3D (msgs[msg_count].flags & I2C_M_RD) ? 1 : 0;
+> > +		if (!rw) {
+> > +			/* If a write message is immediately followed by a read message to
+> > +			 * the same address,  consider combining them into a single transac=
+tion.
+> > +			 */
+> > +			if (msg_count + 1 < num &&
+> > +			    msgs[msg_count].addr =3D=3D msgs[msg_count + 1].addr &&
+> > +			    (msgs[msg_count + 1].flags & I2C_M_RD)) {
+> > +				if (msgs[msg_count].len + msgs[msg_count + 1].len >
+> > +				    P3H2X4X_SMBUS_PAYLOAD_SIZE)
+> > +					return -EINVAL;
+>
+> [Severity: Medium]
+> Should this fall back to sending the write and read as separate transacti=
+ons
+> (or set max_comb_1st_msg_len and max_comb_2nd_msg_len in
+> p3h2x4x_tp_i2c_quirks) instead of returning -EINVAL?
+>
+> Because p3h2x4x_tp_i2c_quirks advertises max_read_len =3D 84 and
+> max_write_len =3D 84 with no combined limit, callers such as regmap-i2c i=
+ssue
+
+can set such limit to simplify the case?
+
+> a 1- or 2-byte register write followed by an 84-byte read; both messages
+> pass i2c_check_for_quirks(), but their sum exceeds
+> P3H2X4X_SMBUS_PAYLOAD_SIZE (84) and fails here with -EINVAL.
+>
+> > +
+> > +				rw =3D 2;
+> > +				msg_count +=3D 1;
+> > +				ret_sum +=3D 1;
+> > +			}
+> > +		}
+> > +
+> > +		ret =3D p3h2x4x_tp_i2c_xfer_msg(p3h2x4x_i3c_hub,
+> > +					      msgs,
+> > +					      bus->tp_port,
+> > +					      (rw =3D=3D 2) ? (msg_count - 1) : msg_count,
+> > +					       rw);
+> > +		if (ret)
+> > +			return ret;
+> > +
+> > +		ret_sum++;
+> > +	}
+> > +	return ret_sum;
+> > +}
+> > +
+> > +static u32 p3h2x4x_tp_smbus_funcs(struct i2c_adapter *adapter)
+> > +{
+> > +	return I2C_FUNC_I2C | I2C_FUNC_SMBUS_BLOCK_DATA;
+> > +}
+>
+> [Severity: High]
+> Does advertising I2C_FUNC_SMBUS_BLOCK_DATA without handling I2C_M_RECV_LEN
+> in p3h2x4x_tp_i2c_xfer_msg() corrupt SMBus block reads and leak stack mem=
+ory?
+>
+
+Please check this one.
+
+Frank
+
+> Because p3h2x4x_tp_i2c_algorithm has no .smbus_xfer callback,
+> i2c_smbus_read_block_data() and I2C_SMBUS_BLOCK_DATA read ioctls go throu=
+gh
+> i2c_smbus_xfer_emulated(), which sets msg[1].flags |=3D I2C_M_RECV_LEN and
+> msg[1].len =3D 1.  p3h2x4x_tp_i2c_xfer_msg() ignores I2C_M_RECV_LEN and r=
+eads
+> only 1 byte (the block length N) into msg[1].buf[0], after which
+> i2c_smbus_xfer_emulated() copies N unwritten bytes from msg[1].buf[1..N] =
+to
+> the caller (zeroes from the bounce buffer, or uninitialized stack bytes f=
+rom
+> msgbuf1 if kzalloc() in i2c_smbus_try_get_dmabuf() fails).
+>
+> Also, omitting I2C_FUNC_SMBUS_EMUL leaves standard byte, word, and I2C-bl=
+ock
+> SMBus operations unadvertised, preventing SMBus and hwmon drivers from us=
+ing
+> the adapter.
+>
+> --
+> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20261112124437.33672=
+52-1-lakshay.piplani@nxp.com?part=3D3
+
+-- =
+
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
