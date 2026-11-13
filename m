@@ -2,67 +2,77 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CC422606A31C
-	for <linux-i3c@archiver.kernel.org>; Thu, 12 Nov 2026 23:35:28 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4B603606A323
+	for <linux-i3c@archiver.kernel.org>; Fri, 13 Nov 2026 18:11:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=RSzP0kuy;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=WAqvoOxH
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=L59G0IUh;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=CcXxNjL/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=IvfQTcTI5xz6b/TKPivkJlDJERvsWQKmBpKAUHhRkFw=; b=RSzP0kuynRKf6FsQ4p9IPxOXDO
-	gm9VQk83Kgff8k1M09C2gCQ3H19LKv+IA9fcSnZ8QIGtcNIDjm55GXHjbCOEZ2+QEJn+unBHU6Qx4
-	YnadvDqXT+l0zGwa/QCtfNTjhiBo0chRg44fgQczqvhpMKnTeXeCOCgHb6hbK2PWC9jXjv09mzhfo
-	KXwPlqVQN3rsrHUJUxxKQrBiAhKzBEOH5IVovlFtbz1f3erSxDdj1kv3NqMriho75XR2sRv1IlTkB
-	VcvmXttR4QAdWw92BZe/WbgPTVq1yXqU3G2qQbQkkdZy3/hqxh3AMLdVUa8LZlD2aEdqGPPUid53r
-	TVV0j9PA==;
+	bh=b9036l+UWxg5wkvojMa8s//JF1ieHzBSfaSHg+v2Vr0=; b=L59G0IUhL61V2SoVL8tFo+fm5w
+	dLlR1tSbxg7ftqat8hP1EZVp5I7Zncq/q9b40FNFlJcRJ7aHi9biUEMRg5GbG3j78OayqhV89VDmZ
+	6kQnqt3kE4E7VbtfBlwjQ5/LkwG0pQs6+e0RNE+KwSI0Fr78YMfZ6t2//tDWksRiPhmx8O48ajSD5
+	vQpSfRjG/V45Sv45Qaw0yF1jUf3/NaKkYgWb6sBxdNSqLf964aw9W97y74uqpx4y1O+xX0cIbl30g
+	xpdV5i8+IyeIuoeoKwyJ8UI9esqPtWAWLlQ86AJCaItnLEGTKsVhg/aXWdaYc6Or5D3+FoIyB0J6B
+	E8Il7EQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xReKG-0000000BFp1-2QBR;
-	Thu, 12 Nov 2026 23:35:28 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1xRvkU-0000000Dq0q-07Tg;
+	Fri, 13 Nov 2026 18:11:42 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xReKC-0000000BFnS-3z34
+	id 1xRvkQ-0000000Dpzw-0I6t
 	for linux-i3c@lists.infradead.org;
-	Thu, 12 Nov 2026 23:35:27 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id CDCBA4E41599
-	for <linux-i3c@lists.infradead.org>; Thu, 12 Nov 2026 23:35:21 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 910F2601AD;
-	Thu, 12 Nov 2026 23:35:21 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id CC67011BC138E;
-	Fri, 13 Nov 2026 00:35:14 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1794526517; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=VXZSMq9bS+pv1r23/W5YZTxBrtghVTtZRlA85g7hY0A=;
-	b=WAqvoOxH6uPg5TMia1mxs+Fnv6flJYlFSJ0zdTdafZ3tkxLdMgAWulcXPLKEaXQ5eh4OWe
-	iT64iWd6CjqhHKKWTX18tQKVKws+JtCig4gwZ5mV/HvqG64ER7x5EGMjbmCdppY8TVzhzt
-	H6PDjLrfek3i4AnFfOeBkjQH6s21ZqcDrSuxX/Y7bPCY/eeO1Rkj37nvDBCcTkjk3CJH87
-	gEix9EfZvefjo2XEmKxYaOOF7Vd5PVMmgoduchUv651ItfwITitDoCed7NOtU9lrP0xhaK
-	Pah42EaFaanWo6bsEi2YnHlk7IlVbtzB+ZWPjZgCwtyj6W+LxKNs1UB3Dgcnlw==
-Date: Fri, 13 Nov 2026 00:35:13 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: "Pathak, Asutosh" <asutosh.pathak@linux.intel.com>
-Cc: Frank.Li@nxp.com, Frank.li@oss.nxp.com, linux-i3c@lists.infradead.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [RFC] i3c: USB-I3C (class 0x3C) master + userspace access -
- which way do you want it?
-Message-ID: <202611122335131c454ddf@mail.local>
-References: <087d879a-e8fd-402f-b8d2-2531244ff69f@linux.intel.com>
+	Fri, 13 Nov 2026 18:11:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1794593498; x=1826129498;
+  h=message-id:date:mime-version:to:cc:from:subject:
+   content-transfer-encoding;
+  bh=NftcWOEpz10X8zhDp8eC7MrcWLds1DFCIFWv9A2egaA=;
+  b=CcXxNjL/DM3OJOjZq1KLJuLileubFlD49AsRDj/peTsN8Tq08MGXU01I
+   MLITvX6yEgbuwVk0T5ZzbsPwk5dUDNTeWCHKxFVKNhWoTpDbJKiQKRjwl
+   NjCSB4mbBMkVZ1mDxJG+Miq3UqjshoeBgxjDofQ2JAEZeEvsbpdm2ZEvA
+   QaH/ikOLL1kQAxkqMhq4E7jBSL119BVgedhnwO+u/N/OQM7pKFFdTVfw+
+   gENjmt0xxkAR9t9FOOQOZX0oU0i84M4cAkWKIobM8vXbHc3hBcf03iFzh
+   Cw9JUMXXU2IvQ2qG1JzJ8JW7//KQZSzq317D1MmcM+yRknRmjLtiSrzvF
+   w==;
+X-CSE-ConnectionGUID: ZomL3LzXQdeFAx05sYEIyA==
+X-CSE-MsgGUID: +pCOwtQTTvq+pLCb/AdChw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11965"; a="3506731"
+X-IronPort-AV: E=Sophos;i="6.27,212,1787036400"; 
+   d="scan'208";a="3506731"
+Received: from fmviesa013.fm.intel.com ([10.60.135.153])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2026 10:11:36 -0800
+X-CSE-ConnectionGUID: cSPMYPTtTzm15KNToOEvng==
+X-CSE-MsgGUID: SdaP1JczTBCpdyIaf+00CQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,212,1787036400"; 
+   d="scan'208";a="10886912"
+Received: from soc-pf3zy3k3.clients.intel.com (HELO [10.80.113.125]) ([10.80.113.125])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2026 10:11:36 -0800
+Message-ID: <298e818d-90b5-4231-bbc6-ef840c0691ca@linux.intel.com>
+Date: Fri, 13 Nov 2026 10:11:36 -0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <087d879a-e8fd-402f-b8d2-2531244ff69f@linux.intel.com>
-X-Last-TLS-Session-Version: TLSv1.3
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: samagazaryan@google.com
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
+ meaganlloyd@linux.microsoft.com, linux-i3c@lists.infradead.org
+From: "Pathak, Asutosh" <asutosh.pathak@linux.intel.com>
+Subject: Re: [PATCH v5 0/5] i3c: add i3cdev module to expose i3c dev in /dev
+X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261112_153525_160038_9079687E 
-X-CRM114-Status: GOOD (  25.98  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261113_101138_900747_84756DC3 
+X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -4.2 (----)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,74 +85,47 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 12/11/2026 15:22:44-0800, Pathak, Asutosh wrote:
-> Hi Alexandre,
-> 
-> Before I send a real series I want to settle one design question, because the
-> answer decides whether half of this is even worth submitting.
-> 
-> We have an out-of-tree driver for the USB-I3C device class (USB class 0x3C) - a
-> USB device that bridges the host to an I3C bus. It's two modules:
-> 
->  - a controller driver: USB class driver that also calls i3c_master_register()
->    and implements the usual master ops (do_daa, send_ccc_cmd, priv xfers, IBI).
->    It's a normal I3C master that just happens to talk over USB. I think this
->    belongs in drivers/i3c/master/ and goes upstream the usual way.
-> 
->  - a target driver: binds the I3C devices behind it and hands a char dev +
->    ioctls to userspace (OpenIPC and similar tools) so they can drive the bus.
-> 
-> The whole reason this hardware exists is userspace-driven I3C from a host PC.
-> But as far as I can tell the I3C subsystem has no userspace interface at all -
-> no i3c-dev, no uapi header - so anything we add there is new ABI you'd have to
-> live with. Hence the RFC instead of a patch bomb.
-> 
-> So, which of these do you want?
-> 
->  a) nothing in userspace upstream - we only send the master, keep the ioctls
->     out of tree.
->  b) a generic i3c-dev (like i2c-dev), proper include/uapi/linux/i3c-dev.h,
->     usable by any master. Happy to do it, but I'm not going to design that ABI
->     without you on board.
->  c) what we already have: the controller stays a pure master with no userspace
->     ABI, and the target side is a normal I3C device driver (drivers/i3c/device.c)
->     where each bound target exposes its own char dev + ioctl and reaches the bus
->     through the standard priv-xfer path. It's the least churn for us and matches
->     our architecture doc - so if you're fine with a per-target ioctl node living
->     inside the USB-I3C driver (not a generic subsystem ABI), we'll run with it.
-> 
-> I'll build whichever one you pick.
-> 
-> Rough plan either way: master in drivers/i3c/master/ first (useful on its own,
-> no userspace ABI), then the userspace piece separately, then docs + MAINTAINERS.
-> 
-> Mainly I'd like your call on (a)/(b)/(c), and confirmation that a USB-transport
-> master is OK in drivers/i3c/master/. For what it's worth (c) is our preference,
-> since it's already working and keeps the ABI contained. Would rather get this
-> right now than argue about it at v3.
-> 
+Hi Sam,
 
-USB-transport master is not an issue and you can submit it. For the
-i3c-dev related question, you should probably have a look at the current
-threads so you can add your use case:
+Alexandre pointed me at this series. I'm working on a driver for the USB-I3C
+device class (USB class 0x3C) - a USB device that acts as an I3C controller,
+with a host-side tool (OpenIPC) that drives the bus from userspace. The master
+part registers normally, so its targets would show up as i3cdev nodes and we'd
+rather use I3C_IOC_XFER than carry our own ioctls. So +1 on the direction.
 
-https://lore.kernel.org/linux-i3c/ati3c2JBNLGRnPen@ashevche-desk.local/T/#mb42d9b2785f8508d39eaf782b3d29189226b8029
+A few things we need that the current UAPI doesn't cover yet - wanted to raise
+them now rather than after it lands:
 
-https://lore.kernel.org/linux-i3c/20260911210935.1353126-1-meaganlloyd@linux.microsoft.com/
+1. IBIs to userspace. Our main use case is reacting to target interrupts, but
+   i3cdev is transfer-only today. We'd need a way to get IBIs (and ideally
+   hot-join) delivered to the fd - poll()/read() of an event, or similar.
+   This is the big one for us.
 
-Regards,
+2. Larger transfers. len/actual_len are u16 and I3C_IOC_XFER caps the count.
+   Our bulk flows go past 64K, so we'd want either a larger width or a
+   documented way to split without dropping the bus lock mid-sequence.
 
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+3. Explicit opt-in over auto-attach. For bring-up/validation we don't want a
+   node appearing just because a driver got unbound - Meagan's driver_override
+   approach fits us better, and it also answers Andy's HW-damage concern.
+
+4. CCCs from userspace. The union { rnw; cmd; } looks like it's meant for this -
+   just confirming direct/broadcast CCCs are in scope, since our tooling needs
+   them.
+
+Happy to help with (1) if you want - it's the piece we care about most and I
+suspect the recovery/BMC folks could use it too. Not trying to expand the scope
+of v5, just flagging so the ABI leaves room.
+
+Thanks,
+Asutosh
 
 -- 
 linux-i3c mailing list
