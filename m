@@ -2,66 +2,144 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 96F5E606A335
-	for <linux-i3c@archiver.kernel.org>; Fri, 13 Nov 2026 21:03:56 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DD892606A330
+	for <linux-i3c@archiver.kernel.org>; Fri, 13 Nov 2026 21:08:11 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1uKMCZuL;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=NsozwJp3
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BEVQZpdl;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=LqJVACuX;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=QmoyZLGv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=bqzJuH6BYeGzsrfSJVl2VB9oN3zz1SPOKfP0ZsOtE/A=; b=1uKMCZuL97Fq0dpN41ZRLqSn2j
-	Ly/jn2IjKCZN+x4y2+kQN54skJNv7tMDyJhHLiiBaOi8y+o+4bhNQjP/FEdZzcqCalcwtJdZPRw7R
-	KDq7uztyk3lCmaiWAiGrCDyvjeQTCB1lXXjy216846/sqJWQlMDWGDGO+ZYt5kzIOKjkYfgixSFhj
-	33mRRanhQbLNsDahZkpE/V23hBZS45XAzksTyqpu34U/6qvm2GrVJQx9U2dc11Ds2TNkkhVzZ1FyX
-	/zliWMqlZISOcAGMixPC/m6XWB+bSd9R+8Hj8GmFhzwT2YojaTFPZRXXmRpxtcPcoGhBJwPd4Y3wt
-	WXVf390w==;
+	bh=amern0hMkcV1Fe33vb5VF1uddZG+uOzZj6O/H3pAiBc=; b=BEVQZpdlylytccjZQzR9mgdttP
+	46e8I+KhXtZ+wwgzxDCf8S46TCRZsXCJPk95ffPAw93EAeg53VuPMc4LX9tJLDvDyatezTXjWn+co
+	y7EyrE00nZS32sjHsWOLnDjd6Zs/f3YJzgWfLiagolLpkUHoffGJBdr+pwiFv3q+qEnd9QNdTrlyE
+	DxVOO7Uo5mFWJlLozakyiYyeRWkgSP6AyjJceeyiqitgk7NukqgAMbfoT3RdcrI0ukpI/1oOZDv2N
+	Q1cAgj6bK3jsSEH5HQMaocux3fkPv0xscmRKtBhybrW8QQyBpYFW2hWTkfvbwlVZiRDCt32E+ReWu
+	mI/6smIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRyRA-0000000EVsO-1QOE;
-	Fri, 13 Nov 2026 21:03:56 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1xRyVH-0000000EWkr-2d5b;
+	Fri, 13 Nov 2026 21:08:11 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRyR6-0000000EVro-0guv
+	id 1xRyVF-0000000EWk8-3e1n
+	for linux-i3c@bombadil.infradead.org;
+	Fri, 13 Nov 2026 21:08:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=Zm8IpXwBsdsetm3nd3VhIMUWujfVlw4qFtnrgcXBEbU=; b=LqJVACuX2EmvZq2zKUyEdJWUYN
+	6uqBuzC//Qlw66nC23yJWYcrXJ2KdgFUyFUizF/1DWvOJz1NE1oGQw025BZiF4g7T3sGgqms3a4G+
+	fv5x6mBqqpI2CL20U3M9ONkHzZjtVHfGxbzPSRrS0zbpaEFs6iZAhuqoovfAnZNYXSBMFM3AOdb8C
+	zAS2ySdHa9AhqamOsCuyEweaOiLoX/t8suXlzICWwxRmb4C0IC3JDocPNAWWtVzezcKRh2ZO1+nA3
+	mcyeN2DCKK8O1LoNbwQM7hT6a765RfRjeu+GcKeGjtfEWpyer/qHwGr1rCm8WObFcBZ6hKLHxzSR+
+	ozVjew2A==;
+Received: from mail-francecentralazon11013029.outbound.protection.outlook.com ([40.107.162.29] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xRyVC-0000000Br2h-2XS7
 	for linux-i3c@lists.infradead.org;
-	Fri, 13 Nov 2026 21:03:54 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 4DC6A4E415B5
-	for <linux-i3c@lists.infradead.org>; Fri, 13 Nov 2026 21:03:47 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 1ADDD60015;
-	Fri, 13 Nov 2026 21:03:47 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 4992B11BC1337;
-	Fri, 13 Nov 2026 22:03:44 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1794603826; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=ck6Xb76oYj2opbdzc1LWSQxElh6ruQvZWniy29JDCHo=;
-	b=NsozwJp3th5HnfhRbz8Jgo4qJEtdfaS8tRtF4QCFsJsxKpEqe9PeXXadPfy/CnramYkmcs
-	EjIpm+NpWxD4yxJ/S9aLJuXvUinJcJ9V1SDNoHlNNbXHorWPXQiOK4F6qjlliQP/tJWBVn
-	cu/jzw/fYLy9VMeviu9bafjzPaYESM6tOGbWd3nIgLP1HjtU/4xNzQZgERanfbq7Z2jkaG
-	wiN/EPrg8Vhfiz/VeKMEKR1MwVtj1Quc5n1gFZTfHU2l+xB9JNnWus0j7W0fk7FCb7uuws
-	v+OaWS6PmGgPdwRfjYF5nQtOx+tPuGEKC+Cpada2LmK0Nv1leTLGyHO2/KvJyg==
-Date: Fri, 13 Nov 2026 22:03:43 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: "Pathak, Asutosh" <asutosh.pathak@linux.intel.com>
-Cc: samagazaryan@google.com, Frank.Li@nxp.com,
-	meaganlloyd@linux.microsoft.com, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH v5 0/5] i3c: add i3cdev module to expose i3c dev in /dev
-Message-ID: <202611132103434b1803e4@mail.local>
-References: <298e818d-90b5-4231-bbc6-ef840c0691ca@linux.intel.com>
+	Fri, 13 Nov 2026 21:08:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=UZ8RfFP3uEbJiX7jEfrLK83v+UmDjVyVsF3Y3e+DBiGCGkSx9lnlq8JCuAj8J5QBjbQPtPhNeEOIby+w6jmFkr0uxHJuJHYn35gU7ixvPaVPHBADo5ZdByZocvqubl1cjo+AHIGVtfALxEu1QVwHJnTGCib6cUJ03wBENO/o3XHO43uwGcF/EuBm42PUmGUJrfz2o0mnE/z4UGrHNpv4Uu0dVkRk6B3aAFh079QwQrVKwo/lzvABP6Kjaz0X6Q8puR4XFoFAxkHM0MKAhUXKjMo/tRw3kixywAzE4ki6FyWLEEk3D0Trgk1f5fLbVjg5r7+9s+YZW6N0zzLgaH3lFQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Zm8IpXwBsdsetm3nd3VhIMUWujfVlw4qFtnrgcXBEbU=;
+ b=xi45HOFZTvOosZs+rXPq00b2wkZs2ixCbLFv0ZnuSjvPp9tT/g5kH8TXL1xc1rV8IJM0LsoACZokJy/N2jJf+IvPz21VIJfb9Ux/67CFvU0x2h99zHGbQzXuh2cZ0ESAGYjwavM4xzcmVXtYbShY8XefAFyRDWgNdolJHZ9bOInbTstnqzNt1MX3DV03Y140JMMP5qjw+DeG8sWJsirrL74d41W9fdYuUlBVsaTB5TxxZVSuyQ9EnkhPjjFddNxJlpDmJYKgOsWYMRmoZb12ooGTJYYnHsdIrPSfhOH+2VD2LzETKzfWwQo2oOH1TKwdpMCdk3M06pDZzgz+ERkXiw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Zm8IpXwBsdsetm3nd3VhIMUWujfVlw4qFtnrgcXBEbU=;
+ b=QmoyZLGv2fDfz/vURa1RIbIM7G3e5ViKBqneZgwFrtpuQ15MYVqjk+ycM8IcE/alvzC02yXZeLYOPWRjMRn42cai3gQXVzBAEevcVqE0ylVA4VMno3/oRsI5icPCp67zD+OcQKbtbFXwswHlH/kHoy3aOUKmzVfxxaemryevGCs05V/Z7C16GisZJC9P0JalOjYYs0zH01T9+XYMhmIYpFtpdBWyqmMvXaXOSRsnkJ7BPTA+C2SlJBggxNoWtK0yvBTr5N3P85hzujooQwecjP8BkQ7ab+vDh9fs1t7QYsVVJsMqHS6i1xCWMAj6ZLRVcvQm5usqRyS0WGp6yGQG9w==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
+ by AM9PR04MB8857.eurprd04.prod.outlook.com (2603:10a6:20b:408::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.9; Fri, 13 Nov
+ 2026 21:08:03 +0000
+Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
+ ([fe80::c715:c32:8bb1:b70b%4]) with mapi id 15.21.0615.009; Fri, 13 Nov 2026
+ 21:08:02 +0000
+Date: Fri, 13 Nov 2026 16:07:56 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Rui Wang <wr574332525@163.com>
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] i3c: dw: Prevent premature transfer completion on IBI
+Message-ID: <avd8LPup7jOtWmdY@lizhi-Precision-Tower-5810>
+References: <20261112090538.1917-1-wr574332525@163.com>
+Content-Disposition: inline
+In-Reply-To: <20261112090538.1917-1-wr574332525@163.com>
+X-ClientProxiedBy: DS1P220CA0023.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:8:44c::16) To MI3PR04MB12438.eurprd04.prod.outlook.com
+ (2603:10a6:290:76::14)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <298e818d-90b5-4231-bbc6-ef840c0691ca@linux.intel.com>
-X-Last-TLS-Session-Version: TLSv1.3
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|AM9PR04MB8857:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6f9ef00d-6f7c-49a8-a754-08df41ca341e
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|23010399003|1800799024|376014|19092799006|18002099003|22082099003|10067099003|56012099006|261028144727099003|261009221227099003|261009223027099003|11063799006|261026140227099003|261102123227099003|261026121527099003|261022075727099003|261009221727099003|261022105027099003|261009223327099003|261009220027099003|261021121427099003|261021123027099003;
+X-Microsoft-Antispam-Message-Info: ws5KnPVj3jpfUXVLqaJ3bmixwYY3B7MXp2qvE0Vk6JJ63nCHR76hkLg6XMHoNEAPhEeTw30eNLSjKGeb8tzSKDuVozd0nZa0oYEJa42X6TgtHmKuHhRAF+UviX7f4hSDWXyc4vMXGg7W/40H2CxrQlF0mzYtR1yqhWOqQabOS38QYY/uwuY0D3AaTRN+glefupXqM17rQleqp453QkXoBUOjgen1aIOmPXM2T3kJ5/2pcqeW2zyXohzcJVhYi1sgqCnNSg9NvZEPXYmRz6bpF5kSiPUEtZfDyjAmDL+ozQstcStBJLdM9WfYIUwYpVrZA7WEQ5O9z9Gj572YdFf65oGYvYNxCcuY8YxfZTqQIIoVnRVgGDhSQeWnJdMIUB3uSnC+l1UYSQpeQhEMZj+9GSeIM1guwyl0zMRrglAi6ZjmYKSey+tVg1SU6ymuvVBDVL2OtaRU88huZYILmq4fkOBQJXanDiSkM8ZlQL1gaJ/POO9YqQxJpGqyQ3i5C5TetoU4UYr1CUXBeeNS+sst2+U5Zls/mAo1i8dl1zEvHcKsb7r1M7DJbitcCYhf1GC+BLqTXRGP8Dk6sg/1Fv1pMNNdqK+uCdaeqNdGFG4Wgz94RKtpmG/cgtJs+EWjUJ3ugZVlKC9AJ4xe9rPwmGNj20QxKrShqS7wSe995vleKxQ=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(23010399003)(1800799024)(376014)(19092799006)(18002099003)(22082099003)(10067099003)(56012099006)(261028144727099003)(261009221227099003)(261009223027099003)(11063799006)(261026140227099003)(261102123227099003)(261026121527099003)(261022075727099003)(261009221727099003)(261022105027099003)(261009223327099003)(261009220027099003)(261021121427099003)(261021123027099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?oFJRSBSU6eOLfn5IOKXCC5AXpReXb5jHZayW37ZkDjsmZzFaPcw4YZ2TqRnm?=
+ =?us-ascii?Q?FnYlz3sBw/5ysQTbc48nLf8HPmpVdWuvE8qwv672soQGKc+T9G02zT4w6IBU?=
+ =?us-ascii?Q?ySfH1Y7WeR57sdAFUDnbc51DoiBvUk6cVcL2fIAt6bd9w+39eAxIWFQ0aDbZ?=
+ =?us-ascii?Q?fLFPvaL58ZQ2EqUaCC44IDh8Ean6qpNOSFcSYYqiC9aF6AKCAIl19RLq28H9?=
+ =?us-ascii?Q?Hr/jmmNjsFcLLDa7XqF+ihKGDjr2+mpdHgTm0jzuTY/8zx5RI5+AFywuGfLr?=
+ =?us-ascii?Q?j0cf3nxguP4SXsPzTSNFglKlZAjh25nX1i4bpYdkJGeSbY3sgNMJe4txduPI?=
+ =?us-ascii?Q?lFYvu60LgJqHY1IIQdmF0k2t7wFKP4mBFqoZgwn2vGckrzCp9d2wsoBZ021C?=
+ =?us-ascii?Q?2tzshdFo63dL1xUqkrmefTuT75o2ViNTiuIXdl4KXe+pgZSR3JZwMKXZGhWa?=
+ =?us-ascii?Q?oFKHJPSmDXCDP+sXz08hBC5RNSq8GUDv6q371+63d/7Lg+uBhowrX5qebX+x?=
+ =?us-ascii?Q?0Q6LfffzKXzuUV9JO5NglzXhDiUY/jD7Er39dPEnkbKDsefnaeVKoh3JWaT+?=
+ =?us-ascii?Q?XTMOktfRbam4UJTDUzfiDDDSCFWDuPx88+eA1x7mjK7RQH2D+pLNvaDsQLGL?=
+ =?us-ascii?Q?GhuE+vcTfPCnXoph/f7OhVf8JGSY8xony0owL0eC8ynj0Z3oevqeYF3uUilC?=
+ =?us-ascii?Q?6kO+cpMYb+C3hhnnZSbR7zeQPYuhp64HboAdcsIrMBN+LyWoqIUm4Y4NxqFa?=
+ =?us-ascii?Q?QVlVJmKLRrUDa8FhwCLb1qaCPZ4DiwfDQVVIVSnTXtxQcyz1PWXbtO/QFBQ0?=
+ =?us-ascii?Q?KU6gLp3wpqSBCgYZavEOIqN9vLDUY02J0F6wNpGD00qh5IpstmCF+cJEXMWj?=
+ =?us-ascii?Q?wk+3wYvcXfMsdMZGwNzUTcfFX2hjTqmntyQ8AGvr0zFUVsdJn+8IyiC8OgV6?=
+ =?us-ascii?Q?yrIAxGAE9DcIPKh+1sJAtUA6284730EO/sGCGuc5gAwKbXzNtqa8hy7XI1aH?=
+ =?us-ascii?Q?45Iz/ZQGaTdfEmYvtMnsVSTOICJjmRgK1UfgyjPgRQGxb4aCUTQ/hQufLE0F?=
+ =?us-ascii?Q?FPVnq20pvJxpXC1k+tvyFkOewjg6709sPsjlTAu+N2sMaf6rPQcU7U2SxRD5?=
+ =?us-ascii?Q?7jtIpm3qotTM7zFGVQKLYnlsCfVOU14AqRuKNQzw3djnd620TakzsrJDm0Au?=
+ =?us-ascii?Q?C4M5sfsHPrb5ywmNEK95KZCq/xYiyK4gOlp8U8Jk4fq9xWbCOoDT1gBtcbeN?=
+ =?us-ascii?Q?WJbxAfHJbU7qGypYSAcGW6/3CFF3D6IU7detOC+Pc+lP3V9ZAZ3Kc3FzWAdk?=
+ =?us-ascii?Q?JnEWAPeGl9RFhFg0bdFsaebUFu1de68WDF4BQaSTdkPCdpTPAllrFDuzzuQX?=
+ =?us-ascii?Q?Zs6/tI1SWqWI7QznNwfqo37Xh7DcjiabUMUu6eCMp2+dtLLP7xIEjC0NODF9?=
+ =?us-ascii?Q?2Q7V6Z9YnNv8Wsb8+h7oA+Ebi/RS6Re321ABlSylTh0TvEJWISOPXh4Ykp2v?=
+ =?us-ascii?Q?xQRIeX/TkxwSMS8i5B8o+LfN9oJZWzgWKi3DOKZ98BpduKjO9w3CifOmyhUv?=
+ =?us-ascii?Q?pm4GQLyCrteng/oaXHx+aTreHsz/YRy6Se7aWSQs5VZKkmluVsQYhHRwG6SD?=
+ =?us-ascii?Q?ZHN0aQDvGLVcabqVJGO8kmrRHi/VYWKBQArTCUzxqyEErvjT3Tmz8xjTdLTN?=
+ =?us-ascii?Q?4vj/jfyVghcxrw7VbyyWTT/gOU1sxsOzJYmeBO4+fFJKoSQhucGK/lnfsheC?=
+ =?us-ascii?Q?BpXVlyzPZRIhkcJ4D8jlMR5cCJ9EPjVnOq+0NP8UiRZXVXme6U0K?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6f9ef00d-6f7c-49a8-a754-08df41ca341e
+X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Nov 2026 21:08:02.4397
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Sd2UNcJ8SISEfolRxdSjOJdVK36GRumUWe6RORjmrQRotQ42yldUz4HYjEg2UUEuXi/WQURFGaFxOAPHWDbsddLrzI5kwIWtvelz6u3BBXUef+rq5jeh4cWfCL0oQRBY
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8857
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261113_130352_370425_D897A0BA 
-X-CRM114-Status: GOOD (  16.45  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261113_210806_644330_FDE84A58 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: -0.0 (/)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,55 +152,62 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 13/11/2026 10:11:36-0800, Pathak, Asutosh wrote:
-> Hi Sam,
-> 
-> Alexandre pointed me at this series. I'm working on a driver for the USB-I3C
-> device class (USB class 0x3C) - a USB device that acts as an I3C controller,
-> with a host-side tool (OpenIPC) that drives the bus from userspace. The master
-> part registers normally, so its targets would show up as i3cdev nodes and we'd
-> rather use I3C_IOC_XFER than carry our own ioctls. So +1 on the direction.
-> 
-> A few things we need that the current UAPI doesn't cover yet - wanted to raise
-> them now rather than after it lands:
-> 
-> 1. IBIs to userspace. Our main use case is reacting to target interrupts, but
->    i3cdev is transfer-only today. We'd need a way to get IBIs (and ideally
->    hot-join) delivered to the fd - poll()/read() of an event, or similar.
->    This is the big one for us.
-> 
-> 2. Larger transfers. len/actual_len are u16 and I3C_IOC_XFER caps the count.
->    Our bulk flows go past 64K, so we'd want either a larger width or a
->    documented way to split without dropping the bus lock mid-sequence.
-> 
+On Thu, Nov 12, 2026 at 05:05:38PM +0800, Rui Wang wrote:
+> An IBI threshold interrupt can arrive while a transfer is pending and
+> before its command responses are ready. The IRQ handler calls
+> dw_i3c_master_end_xfer_locked() even for an IBI-only interrupt. If the
+> response queue is empty, the function completes the transfer with a
+> return value of zero. Later responses can remain unconsumed and keep the
+> response-ready interrupt asserted.
+>
+> Only call the transfer completion handler when INTR_MASTER_MASK
+> indicates that responses are ready or a transfer error has occurred.
+> An IBI-only interrupt leaves the transfer pending.
+>
+> The fix was tested successfully on FPGA hardware.
+>
+> Fixes: e389b1d72a624 ("i3c: dw: Add support for in-band interrupts")
+> Signed-off-by: Rui Wang <wr574332525@163.com>
+> ---
 
-Hum, seeing 1 and 2 now, shouldn't you rather have an actual kernel
-driver to handle the devices present on the i3c bus? What are those
-devices?
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-> 3. Explicit opt-in over auto-attach. For bring-up/validation we don't want a
->    node appearing just because a driver got unbound - Meagan's driver_override
->    approach fits us better, and it also answers Andy's HW-damage concern.
-> 
-> 4. CCCs from userspace. The union { rnw; cmd; } looks like it's meant for this -
->    just confirming direct/broadcast CCCs are in scope, since our tooling needs
->    them.
-> 
-
-Which CCCs do you need?
-
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+> Changes in v2
+> - Use Rui Wang in the author and sign-off fields.
+>
+> The possible queue stall reported by Sashiko is in the timeout recovery
+> path and predates this patch. If I can reproduce it, I'll send a
+> separate fix.
+>
+>  drivers/i3c/master/dw-i3c-master.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 34aa8f8..19735ec 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -1527,7 +1527,8 @@ static irqreturn_t dw_i3c_master_irq_handler(int irq, void *dev_id)
+>  	}
+>
+>  	spin_lock(&master->xferqueue.lock);
+> -	dw_i3c_master_end_xfer_locked(master, status);
+> +	if (status & INTR_MASTER_MASK)
+> +		dw_i3c_master_end_xfer_locked(master, status);
+>  	if (status & INTR_TRANSFER_ERR_STAT)
+>  		writel(INTR_TRANSFER_ERR_STAT, master->regs + INTR_STATUS);
+>  	spin_unlock(&master->xferqueue.lock);
+>
+> base-commit: 7475ea8b58616b33c04afb976cf0fbaad9dd63fb
+> --
+> 2.53.0.windows.2
+>
 
 -- 
 linux-i3c mailing list
