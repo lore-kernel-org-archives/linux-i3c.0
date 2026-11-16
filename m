@@ -2,80 +2,66 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00D64606A327
-	for <linux-i3c@archiver.kernel.org>; Sun, 15 Nov 2026 11:57:09 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 15D33606A31C
+	for <linux-i3c@archiver.kernel.org>; Mon, 16 Nov 2026 03:55:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=AusTHmxA;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=sang-engineering.com header.i=@sang-engineering.com header.a=rsa-sha256 header.s=k1 header.b=ijmaewX4
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wqy6eYBk;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=huawei.com header.i=@huawei.com header.a=rsa-sha256 header.s=dkim header.b=R7sLG4T9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=XgvuXxmOlljNBJJMVBikmrAIBJPCNcFG/Ug+vQ+yFD8=; b=AusTHmxAvlALqLE2lCKnRkvSxY
-	q3aAqOFmah6AafPgzR5F2IcLpiA6VgYR/MAp5hFlNZFqNoWNzkDSbpTXg9BTDsWAb3plU4CmBgVaq
-	1LbwSN4ynaka0bepDSCY5/A1AEhdBHAP3g6k8J/crmvWqY6DdxJqpqdNw2KD8THPEHAF9jkXzYCPp
-	hB/nT8ZxJiHsQ42fTsZtvQ/i13cZ+n1e/ifCJZAEEF1+XTIKbHF3fEZx/TsrYBY54GIEtxxKrDw1n
-	NzWi+XutORa/3xjOZS5u1S3w7lADFvGILMFuYwXiJb8ryV9RFcvINnmFy8NQ/pph+9gpPGSQWbxK2
-	jBMJcExA==;
+	bh=itj8aOVP4VjiqjEJhZR22OEOOeVxXvArT1NljKPP06U=; b=wqy6eYBkP4mrEAYXnCjnGtmWIv
+	uvUasAHOLgzgVxaXvCFQUv+n2j+rcCdzQM6RPrL/0KUZA/rfi4EG0Of+ZVtY/KU2qCahl57+KWxqP
+	H69TXqFDcdpv3wETbXA81sWi9MSy/QAvFht1lKN8t04he9bbz6z5LEHuuISi6UZ8IOxgLBYw34Jjy
+	iDjTb83rDN8MPd0G+uNfcS8cAl3qSqNmmM5peihb8T4S4EFL3jQ1266BzhVzl/gklXUtPOMeQ92xh
+	LJ3cqBnrROq0H81JJxo1iA71H7kRfiZzlkeZjPOn4aadX5PZ1E3I/5NejXK4kd0WJd95xna9yaiKj
+	dd4JNW8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSYr6-0000000HUIg-2hX7;
-	Sun, 15 Nov 2026 11:57:08 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+	id 1xSnoG-00000001539-3FNW;
+	Mon, 16 Nov 2026 03:55:12 +0000
+Received: from canpmsgout01.his.huawei.com ([113.46.200.216])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSYr1-0000000HUIH-3ZMH
+	id 1xSnoC-0000000152U-3Ksv
 	for linux-i3c@lists.infradead.org;
-	Sun, 15 Nov 2026 11:57:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=zhhD
-	m2qyru0LaqxksPFvsWC42WCRzYXUzwovCybxf/w=; b=ijmaewX4miP4ddwVG2zc
-	FelrOxzBahZlunioU4qSakWVzoN8fPAagUD6YVAJ0ZOjcjb7/yv/V26nBnSPy/f5
-	aYgQ9ONhYbdH9dKEWGVUN98pvjTap8Au+ouO1fOtBzgwrSHIxhWTWSaNXS89mdiE
-	dxYYYJbHzWSkvfkdJRhHCxZRw62t5bI1k+1FtFb2PulTwIKeIm4jKvjOche8IkOs
-	Q/hxqRt8wzUEEJjBR1XDrm74hJm9zznBOQBZN1TANbnnI8/KDlbMZ1ExM1ot4ARV
-	l24JpZjPcT/mBTM0D/GEFmoUZCtwLC/jJiCpj4kDknMk4FuL+HKzwiqsi22ad4Fp
-	vw==
-Received: (qmail 906437 invoked from network); 15 Nov 2026 12:56:58 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 15 Nov 2026 12:56:58 +0100
-X-UD-Smtp-Session: l3s3148p1@cPS5W09g7qgujnuZ
-Date: Sun, 15 Nov 2026 12:56:56 +0100
-From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Diogo Ivo <diogo.ivo.sx@renesas.com>
-Cc: Frank Li <Frank.li@oss.nxp.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Linus Walleij <linusw@kernel.org>
-Subject: Re: [PATCH 1/3] dt-bindings: i3c: renesas,i3c: Document analog noise
- filter control
-Message-ID: <avmeCELZRvJVNtyl@shikoro>
-References: <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-0-b7ad60cde650@renesas.com>
- <20261020-divo-ssgrlpcsrc-2966-i3c-anf-v1-1-b7ad60cde650@renesas.com>
- <ate-aNmqsyXCAIX8@lizhi-Precision-Tower-5810>
- <64f604a7-7e70-4a0d-8164-28c5d7b1e509@renesas.com>
- <at-5E3b_wKcnuJ9Z@lizhi-Precision-Tower-5810>
- <f4b8a714-dab8-45d4-b98f-717d010806de@renesas.com>
- <auC06gqa5lGtKPjj@SMW015318>
- <7dea4022-20d8-493b-b560-ee635deb7cbc@renesas.com>
- <auIK38HPyv7PmDJF@SMW015318>
- <db1ad309-c02e-4616-8486-ffa967207d44@renesas.com>
+	Mon, 16 Nov 2026 03:55:11 +0000
+dkim-signature: v=1; a=rsa-sha256; d=huawei.com; s=dkim;
+	c=relaxed/relaxed; q=dns/txt;
+	h=From;
+	bh=XVo8cX/ZclE2JZLJ5Sy4t7M6wxCXh5CPKIlg5JJkfRI=;
+	b=R7sLG4T9vY049yplmjnT6eRystNU87CIO2ZCQLt+aQXGzOQlCmADTVHSxbU6wvUSHp9FGtCUF
+	ZdY0OpNctAk7BW91JZ/ymjVka4sZSTT7t8+ilaMcOvTGrKFfLDRdbudEUJn+S2sSzMK7JTVuSYT
+	LTkTzqbkQdVVovu5MIdlxoY=
+Received: from mail.maildlp.com (unknown [172.19.163.0])
+	by canpmsgout01.his.huawei.com (SkyGuard) with ESMTPS id 4jSYrs35q8z1T4Fp;
+	Mon, 16 Nov 2026 11:54:21 +0800 (CST)
+Received: from whupemk300003.china.huawei.com (unknown [7.152.185.49])
+	by mail.maildlp.com (Postfix) with ESMTPS id EB55B40561;
+	Mon, 16 Nov 2026 11:54:57 +0800 (CST)
+Received: from huawei.com (10.50.87.204) by whupemk300003.china.huawei.com
+ (7.152.185.49) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.45; Mon, 16 Nov
+ 2026 11:54:57 +0800
+From: Zhang Yuwei <zhangyuwei20@huawei.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
+	<Frank.Li@nxp.com>
+CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<stable@vger.kernel.org>, <chenjun102@huawei.com>
+Subject: [PATCH] i3c: master: Skip IDR cleanup if bus ID allocation fails
+Date: Mon, 16 Nov 2026 11:53:17 +0800
+Message-ID: <20261116035317.132490-1-zhangyuwei20@huawei.com>
+X-Mailer: git-send-email 2.22.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <db1ad309-c02e-4616-8486-ffa967207d44@renesas.com>
+X-ClientProxiedBy: kwepems500001.china.huawei.com (7.221.188.70) To
+ whupemk300003.china.huawei.com (7.152.185.49)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261115_035704_788417_0ADFE92A 
-X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-CacheID: sfid-20261115_195509_303518_52065315 
+X-CRM114-Status: UNSURE (   9.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -90,20 +76,59 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+Since commit 9d4f219807d5 ("i3c: fix refcount inconsistency in
+i3c_master_register"), an i3c_bus_init() failure is handled by dropping
+the initialized device reference. This invokes i3c_masterdev_release(),
+which unconditionally calls i3c_bus_cleanup().
 
-> In the end we got confirmation from the HW team that the SYS_I3C_CFG
-> register does not actually "exist" and was unintentionally left in the HW
-> manual, meaning that we cannot control if the filter is ON/OFF so this whole
-> discussion and patch series becomes moot.
+However, i3c_bus_init() only assigns the bus ID after idr_alloc()
+succeeds. If the allocation fails, a zero-initialized controller retains
+a bus ID of zero, and i3c_bus_cleanup() removes ID zero from the IDR.
+If another bus owns that ID, its mapping is incorrectly removed, allowing
+the ID to be reused while that bus is still registered.
 
-Interesting outcome! But easier for us :)
+Initialize the bus ID to -1 before attempting allocation and skip IDR
+cleanup when the ID is negative. Keep the put_device() error path so that
+the device reference and firmware node reference are released normally.
+
+Fixes: 9d4f219807d5 ("i3c: fix refcount inconsistency in i3c_master_register")
+Cc: stable@vger.kernel.org
+Signed-off-by: Zhang Yuwei <zhangyuwei20@huawei.com>
+---
+ drivers/i3c/master.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 9928c5dffb5b..39363c097682 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -523,6 +523,9 @@ static void i3c_bus_init_addrslots(struct i3c_bus *bus)
+ 
+ static void i3c_bus_cleanup(struct i3c_bus *i3cbus)
+ {
++	if (i3cbus->id < 0)
++		return;
++
+ 	mutex_lock(&i3c_core_lock);
+ 	idr_remove(&i3c_bus_idr, i3cbus->id);
+ 	mutex_unlock(&i3c_core_lock);
+@@ -532,6 +535,7 @@ static int i3c_bus_init(struct i3c_bus *i3cbus, struct fwnode_handle *fwnode)
+ {
+ 	int ret, start, end, id = -1;
+ 
++	i3cbus->id = -1;
+ 	init_rwsem(&i3cbus->lock);
+ 	INIT_LIST_HEAD(&i3cbus->devs.i2c);
+ 	INIT_LIST_HEAD(&i3cbus->devs.i3c);
+-- 
+2.22.0
 
 
 -- 
