@@ -2,85 +2,87 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3ADAD606A32C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 60077606A335
 	for <linux-i3c@archiver.kernel.org>; Mon, 16 Nov 2026 10:49:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UIsCzzVX;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jn5iy83Q
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wCGll3Ig;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=l8Lxn8QD
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
+	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=DPWqvuzcQ5EONvUHQmlirk4CUPcP59h6nF17RoCCs9w=; b=UIsCzzVX5CaOsANdsHeuJ/+dQi
-	TxcQJIR9CIfL7eHk9UgOFqyhY1/omKqynkLIcmSnRkDYFo0QYV5iCJpYVt68E+2n8Qy8JVGnepxkd
-	gnY6q9gIYGTOzjUh3H3wEo0EtNF1vUrlFJbK2SVTyJ7fKi5XMJwJj71GCOwnCD0JKY9snJ+JKRbzt
-	TFtSxVTiFK8thmx5lAjJ0lz+/8WgsCchdTEYQRusn3LxZq+hUBJPi3R+Qqe8voyHpt9I01VPsU6Bh
-	AYV3kYYpPN6DDs77welng0vuxgNkMRXBFFLQAu7ji4PW5vf77dE4COsOcnnZSUVS7RZCn5F/ejTfY
-	196wMBJw==;
+	bh=T4ObIQuEYb2KanUymozTflmE1wC3+s0yVQ4Br6PKhO4=; b=wCGll3IgtPG1COwJC7f1KCrtyG
+	VBlU+GU5NpnYAGPOBQoEgSbd9JMpkvxRzBr+xscP7nbkLgTVp9dVPRy+XozbSgThftQEOpLAIXvb3
+	Y0bkTaxPeQVs61WHxvGa875QzFJ7HHiO9D69o22oz9PHs3mpWBjQe2KYsNmA95FhS71Bb4MT20Ogw
+	8guzz935ZB1/kFcXNDA5lr8gkXH55Vqahc5PywCAikmWlOoFSfknDEp4H7JCPO1rF7r9weDx+r0/f
+	L6YjB+byvJr8P7LMH4yAN2JH+IrbptNgKA1i1HAxr4jnzkvVXrHuMKootThn5lVi0Lbsnt52Hwd0Y
+	sgQsgVBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSuHL-000000020uv-3te3;
-	Mon, 16 Nov 2026 10:49:39 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xSuHM-000000020vC-0VRN;
+	Mon, 16 Nov 2026 10:49:40 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSuHJ-000000020u1-3Dg6;
-	Mon, 16 Nov 2026 10:49:37 +0000
+	id 1xSuHK-000000020u2-0RsS;
+	Mon, 16 Nov 2026 10:49:38 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id F3D8A62894;
-	Mon, 16 Nov 2026 10:49:36 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8CCEA42E26;
+	Mon, 16 Nov 2026 10:49:37 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794826176;
-	b=DQH+bblN5mZyP9LRLnYw66t4iGBYTgfhfkBmFQDZpjLzr7cOWHwX2bQadLrRLmYTFJk5
-	 KiMRvaS0TRwZeuFhgnSGgw+KmYMt3aU6Nccsv2ms45Y6YooU7DB5f6nNRkhI+McyKBALh
-	 arTQl4c9OisiRAiQsC6xORixQWRc0q2ic5xT5JnNkq7qzNf8uiAiqYQmscLaHgLf4YYhM
-	 O9Sm+sv/fVBZWwcm0znKAY5AQD+i/wOhJMyW0RFECI4HCd5HRFE9c9+eyhz8aKHG2cxtp
-	 g7fOD728U6uwqORLWlo7yncZWtiOex/RG8OOnHhXzsxvxxa9ARIInjlieT3ReBaXCWA==
+	t=1794826177;
+	b=J6MCTqGwWq7/0fbVfny6G+ItdMqjZXSpPyX0yXrjikmg9XtanIR7l7uZpDSqHVFFIhjd
+	 Yfw+8J6loEeetf3qaj8J0rz3EEUEyVHT/AshFsly8l8mvFd16qIkq7kZ4PWoTw4KS5OSm
+	 WSpUJOMPeumCThkds+XJnKIOGC5pmqh34qkOlin7laJKXKV/aRtUqC6t2Ap9PCr/7vIqu
+	 GcGGuChL0Mx/z4mPF7eCLXM196mENk/ePt1O5xdkinMezgQeGIyA+3n8S/ctxdUDYilS3
+	 /1ZxtCdxkk/eaWcmvoOqnJJzgPSBjhRJH4Eh8gUeL3sswDmRhZZu1ht79chM6o4+UOg==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794826176;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=A81oYfFCXcO6HZpWwd5qxf6wQpKOmYnm0LcgiCbY46Y=;
-	b=LlVI6cvAjdokomq2ZrUyleJUQABIkCy4RAzYsuXMX7d2r9ne/OwUdIBu62rnWwevLFsO
-	 lTCY/5YODETPZnGV6mP1FODklLWAD4hRGqPoJcnJDjIIIy+FnPufR7SWIuqN6NnFiPXIp
-	 NX8Ap+bNUrQiB7Su0W/IeNwZixGWuxKOF72VVbONoMVHCq9Wbr65wIpmh4P9UZ/NF/2dT
-	 /r3n/Y3tKSKObymzuHxweBYqnf2AeboFYneDVpsx4ZZRkOQQwdgshnEe5InRJrzEU5LUl
-	 U9w83+2pja/74moyOEXF9+29tp1+ldOyE8KdGlD4GAktUezcjavyBNSHGsB1i2PR2Xg==
+	c=relaxed/relaxed; t=1794826177;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=9mEt1ki6LJVDYJ303Gf1hVtG0akuG6QKkchh3nXSXkQ=;
+	b=l02vd+FZQlrdA+2sPe9rRJSeXnFXQxbMBieAzjfLcWhx+WMhUgWuUyN2+GOYmUlL4OUm
+	 hTxXm5eF8VNLBnDD2nnOk6j+5uUdyMT4CnDFGW/iAeHBpPZhtYqbZTsa2TX1RPLCuZN84
+	 k8MOp96En6JrfNQxBBLVkhNMGElyL90Dh4pQtpQid6ItRb3wpccWlVF85j2X1J18N1WwN
+	 Ovysqo5KMXGp9qID9sqqsyCerkA1L/aq9kICZmPSG/vaWdG7hlleV9gxV/SfAu91Pqb6p
+	 D9RDf/xWQkVWZAcRh2LnST8rXSq66+yAqmRThr1H4ksmc0YF+MuS9Z9dNImv0VG3YdQ==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 153BC1F000C4;
+	by smtp.kernel.org (Postfix) with ESMTPS id 154551F000C5;
 	Mon, 16 Nov 2026 10:49:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794826176;
-	bh=A81oYfFCXcO6HZpWwd5qxf6wQpKOmYnm0LcgiCbY46Y=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=jn5iy83QsJtIwOQWqXT1GyZCEE0DRfqluUuctwQMsxJBB2mmcf6kYFL/Clh6omTp9
-	 cwcsiPfCFvYYIU7+svWoG54aRMuvFTUazC6cqOkMAWv/5j4hCCm6CYGeBGkHrissgC
-	 0bdPpofJWq7dxAciZv3NSFvXp+GNwokacpHOuilU/MtLXacEw1PMwJo0iRsbu2As3C
-	 nCBbXc/eH9QwCw0XbtcPsGgJSIB6keEZh1YK7EFDVfeOdJwmwmpTGzyStBMU+7RLqh
-	 mfpMRqlMayyaFrrjmeZ4QAB3vpVeC8j4arP4frkMwJlYWaUt3y11siMLLwbRFehx69
-	 LzYBV66sEGFbA==
+	s=k20260515; t=1794826177;
+	bh=9mEt1ki6LJVDYJ303Gf1hVtG0akuG6QKkchh3nXSXkQ=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=l8Lxn8QDQO/lqPQstct8KiGbhqyEhfhaVTi2Sck5ph+ZZQY9HfEXty9oVs21OOg2h
+	 O36jG77HiAQkdDFasCACjcH693qSkdyxkgxck7ZVPAxvA5GPbO5Po/iuCzQQRHZ0Yd
+	 zt+mbmuGnCGoCtkqSQVD0RXw7w2WlhDhIBvdIFb1dJ/gcQvEX9EWyrIapi+0zZSefW
+	 Vqv77z02uyhUdNxMb0Pi7KLD7tHQfplCwAtoByIygI1cZiFalkZnp2wcoupQvwBFkb
+	 50jjwaPJG1G34m65/QHY69tv10GM2Z3hzDYAEpJIGgCZAANvaDmF+u+FCM/rz1yS90
+	 xizBe7IDqzlPQ==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 87B5F4A41A;
+	by lkml.kernel.org (Postfix) with ESMTP id 684B04A429;
 	Mon, 16 Nov 2026 10:49:35 +0000 (UTC)
 From: Junyi Zhao via B4 Relay <devnull+junyi.zhao.amlogic.com@kernel.org>
-Date: Mon, 16 Nov 2026 18:49:29 +0800
-Subject: [PATCH v4 1/2] dt-bindings: i3c: silvaco,i3c-master: Add Amlogic
- A9 support
+Subject: [PATCH v4 0/2] Add Amlogic A9 I3C support
+Date: Mon, 16 Nov 2026 18:49:28 +0800
+Message-Id: <20261116-a9_i3c-v4-0-3d3222b7128d@amlogic.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261116-a9_i3c-v4-1-3d3222b7128d@amlogic.com>
-References: <20261116-a9_i3c-v4-0-3d3222b7128d@amlogic.com>
-In-Reply-To: <20261116-a9_i3c-v4-0-3d3222b7128d@amlogic.com>
+X-B4-Tracking: v=1; b=H4sIALjf+moC/2XNQQ6CMBQE0KuQrq35LQX5rryHMYb+tlCjYqgSj
+ eHuFgyocTnJvJknC7b1NrB18mSt7XzwzTkGtUgY1eW5stybmJkEmQsQwEvc+5Q4mkyqzAAqKlg
+ sX1rr/H0c2u7eOdz0wdJ10EOj9uHatI/xqRNDbxrFabQTHHgq0RQCTS6F25SnY1N5WlJzYsNsJ
+ z9QgJyhjBBIrZR2RM6V/zD9hvkM0wgLUDpHjYCZ/oV9378A3j0XxSIBAAA=
+X-Change-ID: 20261010-a9_i3c-9d5245d094c8
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
  Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -97,11 +99,11 @@ Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
  Kelvin.Zhang@amlogic.com, Junyi Zhao <junyi.zhao@amlogic.com>, 
  Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794826174; l=3081;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794826174; l=2920;
  i=junyi.zhao@amlogic.com; s=20260924; h=from:subject:message-id;
- bh=dIkv8OCvN45i4CbYK1jcC+1GlXumNc4PG6TMfSPbzdY=;
- b=zdXFGGS6SyLc2mvbTC4jp4sYjVVAJvJ0Hg2d7mMwFoz4nN/qoIaXc7Ly8IRrM0WUxZSYpt27j
- aUD2MFwhIlkAf/91eTICrTHk340V2SSuJDIsLmSHj4HLtzRQ7hcmeqO
+ bh=tEwHdY6mdhTInElfOAdG6vOt9+cf0Vk0A3dk5bHZYZI=;
+ b=pc0or0fzYVQZI40xYj5aVT8xvcrZ6X6fqq6ehw9PkNRbWdB9Ln5BaE0MLtADdfzTQBfvy1E4s
+ OF46/MSZkB7D8DuOJSqWIrGKGOGPSZn7bhdA0IIs1jLdN5iuzBdZGqM
 X-Developer-Key: i=junyi.zhao@amlogic.com; a=ed25519;
  pk=hiL5PjGIksGFiWvEx9J3MhQqU/ro6vNbj72NIw4bbvA=
 X-Endpoint-Received: by B4 Relay for junyi.zhao@amlogic.com/20260924 with
@@ -127,102 +129,78 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Junyi Zhao <junyi.zhao@amlogic.com>
+Amlogic A9 SoCs integrate the Silvaco I3C IP, but their peripheral
+clock setup differs from the original implementation: the EE-domain
+controller (amlogic,a9-i3c) takes two clocks, "pclk" and "fast_clk",
+while the AO-domain controller (amlogic,a9-ao-i3c) exposes only
+"pclk" and derives its bus clock from an internal divider inside the
+controller's own register region.
 
-Amlogic A9 SoCs integrate the Silvaco I3C master IP in two domains:
-the EE-domain instance (amlogic,a9-i3c) takes "pclk" and "fast_clk"
-like the NXP integration, while the AO-domain instance
-(amlogic,a9-ao-i3c) lives in the Always-On domain and generates its
-bus clock from a divider inside the controller's own register space,
-so there is no external fast clock and only "pclk" is exposed.
+This series consists of:
 
-The two instances differ from the vanilla Silvaco/NXP integrations in
-clock topology and required init, so the driver matches them by
-dedicated compatibles instead of the "silvaco,i3c-master-v1"
-fallback: a fallback would bind the generic driver data, which
-neither programs the fast clock rate nor handles the AO internal
-divider, and the variant would then fail to work.
+  - Add the Amlogic compatibles and per-variant clock
+    constraints to the silvaco,i3c-master binding schema.
 
-Add both compatibles to the schema without the fallback, following
-nuvoton,npcm845-i3c, and use per-compatible if/then conditionals to
-enforce the clock counts: two clocks for the EE-domain instance and
-one clock for the AO-domain instance.
+  - Add a vendor_init callback for the clock setup and an
+    Amlogic-specific bit (AML_I3C_QUIRK_AO) for AO-specific behaviour
+    to the Silvaco I3C master driver, and enable the existing
+    Silvaco workaround quirks for both Amlogic variants.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Verified on Amlogic A9 (BY401) with both EE and AO controller
+instances. dt_binding_check and dtbs_check pass with this series.
+
 Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
 ---
- .../bindings/i3c/silvaco,i3c-master.yaml           | 26 ++++++++++++++++++++--
- 1 file changed, 24 insertions(+), 2 deletions(-)
+Changes in v4:
+  - Move the DT binding patch before the driver patch.
+  - Add CLK_OPS_PARENT_ENABLE flag for ao tail clocks.
+  - Enable fclk before allocating the new clk bulk array.
 
-diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-index 853092f75..d892d42be 100644
---- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-+++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-@@ -13,6 +13,8 @@ properties:
-   compatible:
-     oneOf:
-       - enum:
-+          - amlogic,a9-i3c
-+          - amlogic,a9-ao-i3c
-           - nuvoton,npcm845-i3c
-           - silvaco,i3c-master-v1
-       - items:
-@@ -28,14 +30,14 @@ properties:
-     maxItems: 1
- 
-   clocks:
--    minItems: 2
-+    minItems: 1
-     items:
-       - description: system clock
-       - description: bus clock
-       - description: other (slower) events clock
- 
-   clock-names:
--    minItems: 2
-+    minItems: 1
-     items:
-       - const: pclk
-       - const: fast_clk
-@@ -70,15 +72,35 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - amlogic,a9-i3c
-               - nxp,imx94-i3c
-               - nxp,imx95-i3c
-     then:
-       properties:
-         clocks:
-+          minItems: 2
-           maxItems: 2
-         clock-names:
-+          minItems: 2
-           maxItems: 2
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - amlogic,a9-ao-i3c
-+    then:
-+      properties:
-+        clocks:
-+          maxItems: 1
-+          description:
-+            The "ao" variant is the controller instance in the Always-On (AO)
-+            domain, which has no separate bus clock and derives the
-+            bus clock from an internal divider.
-+        clock-names:
-+          maxItems: 1
-+
- unevaluatedProperties: false
- 
- examples:
+- Link to v3: https://patch.msgid.link/20261106-a9_i3c-v3-0-804b69b9095b@amlogic.com
 
--- 
-2.42.0
+Changes in v3:
+  - Merge vendor quirks into the legacy quirks bitmask and add
+    AML_I3C_QUIRK_AO for the AO variant.
+  - Check the devm_kcalloc() return value when allocating the new
+    clk bulk array.
+  - Enable the clocks before aml_ao_i3c_tail_clocks(), because the
+    divider registers are accessed during registration.
+  - Rework the probe error paths so the clocks are disabled when
+    vendor_init or later steps fail.
+  - Reorder the local variables (longest first).
+  - Convert comments to kernel-doc format.
+  - Depend on COMMON_CLK in Kconfig.
+  - Drop the silvaco,i3c-master-v1 fallback and add a blank line
+    before the new if/then block in the binding.
+  - Explain the I3C peripheral integration details in the binding
+    commit message.
+
+- Link to v2: https://patch.msgid.link/20261102-a9_i3c-v2-0-0c474bfccffa@amlogic.com
+
+Changes in v2:
+
+  - No need rework the Silvaco I3C driver. 
+  - Based on vanilla driver, adapt A9 SoCs through callback 
+    and quirks to handle the variant.
+
+- Link to v1: https://patch.msgid.link/20261019-a9_i3c-v1-0-329d819d621f@amlogic.com
+
+---
+Junyi Zhao (2):
+      dt-bindings: i3c: silvaco,i3c-master: Add Amlogic A9 support
+      i3c: master: svc: Add amlogic a9 support
+
+ .../bindings/i3c/silvaco,i3c-master.yaml           |  26 +-
+ drivers/i3c/master/Kconfig                         |   1 +
+ drivers/i3c/master/svc-i3c-master.c                | 276 ++++++++++++++++++++-
+ 3 files changed, 289 insertions(+), 14 deletions(-)
+---
+base-commit: aac26bee2287c88af5be5a5ff96d783b19a28790
+change-id: 20261010-a9_i3c-9d5245d094c8
+
+Best regards,
+--  
+Junyi Zhao <junyi.zhao@amlogic.com>
 
 
 
