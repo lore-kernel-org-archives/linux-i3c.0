@@ -2,67 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0DEF560A2610
-	for <linux-i3c@archiver.kernel.org>; Thu, 19 Nov 2026 09:55:23 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7A890606A320
+	for <linux-i3c@archiver.kernel.org>; Thu, 19 Nov 2026 10:12:06 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=fqax1uEP
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NU3QTC8h;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=B9Kx6mj/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=SKtRQ/2k18a0ppizm3h1Xc8SwR/7FD4lS+tcpnbRDik=; b=fqax1uEPQVNl/NPrrMRUh1jbkD
-	ygAPWdh+EGWX2cX30CZ32MD8JMSxxVf06zAT7iC+rWRd8lMYf0dOXLenG8puu4yODYhDXdkybkrbH
-	LBsM4Uv9wl8OdSYNIX6HJK2mO5y/8jojAGpxFOwYIajSDZ3WpPTyXMlKFz0nshqbfcbN8qxkGqwFb
-	QqYYOnqHtA4+G4zAXCUcZ40drfiD03pd/nm9Ik3LZzWunOkOihaGRGVFQrnaUHCCEinyMzdfW5cx+
-	/59+RD0q6p3ERczs51wVUNMhz15BhaWB0F7tksKYElJZIS/ndBwl17mVbcZO+8c6InEo3A++zXZ+E
-	q0SykM/Q==;
+	bh=JiEPqsu7kG2HK2FMn/tLswpj6zrYimereAoMDg748uo=; b=NU3QTC8hQubNc2JTlCWs0rMhIJ
+	vO7KGlflbbBq6fiTlZEmduSlG6GJHUoW1jrrtvdNU3TRkf33TRU9ioFWyHnMM7BdD4WTjzHB5GqND
+	Tx7LoNY/S1uvjACSKbhwkXK+9jx6foRWPoPwSHSTm7qojzF2PhY36T4td3qasd97FiN3VlidPsCj3
+	Z3TxqOZZdRuj80mDvPFIUtbGWYBj5fnZFp9tNtWC5Azzvu6RDvXXsG8VAuMMDSTfH4GmDdWW80pHQ
+	lKGuWSr0QZHYDM8wkxio4gRa14h/JwXI7S+3HGkoQQjBkWuJBPvZZ6wE2G5RG5BbEFoETLMlDXpea
+	avQe5B4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTyrS-0000000BSVK-3FUX;
-	Thu, 19 Nov 2026 09:55:22 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1xTz7e-0000000BUv2-0vWW;
+	Thu, 19 Nov 2026 10:12:06 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTyrO-0000000BST2-3Pef
+	id 1xTz7d-0000000BUul-0HWU
 	for linux-i3c@lists.infradead.org;
-	Thu, 19 Nov 2026 09:55:21 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6F0D61A002D;
-	Thu, 19 Nov 2026 10:55:17 +0100 (CET)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0F0D31A0003;
-	Thu, 19 Nov 2026 10:55:17 +0100 (CET)
-Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 569CA18000B1;
-	Thu, 19 Nov 2026 17:55:14 +0800 (+08)
-From: Lakshay Piplani <lakshay.piplani@nxp.com>
-To: linux-kernel@vger.kernel.org,
-	linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com,
-	broonie@kernel.org,
-	mfd@lists.linux.dev,
-	lee@kernel.org,
-	Frank.Li@nxp.com,
-	lgirdwood@gmail.com
-Cc: vikash.bansal@nxp.com,
-	priyanka.jain@nxp.com,
-	aman.kumarpandey@nxp.com,
-	Lakshay Piplani <lakshay.piplani@nxp.com>
-Subject: [PATCH v22 5/5] i3c: hub: p3h2x4x: Add SMBus slave mode support
-Date: Thu, 19 Nov 2026 15:24:49 +0530
-Message-Id: <20261119095449.555593-6-lakshay.piplani@nxp.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20261119095449.555593-1-lakshay.piplani@nxp.com>
+	Thu, 19 Nov 2026 10:12:05 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 84573403DD;
+	Thu, 19 Nov 2026 10:12:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 15B231F000C4;
+	Thu, 19 Nov 2026 10:12:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795083124;
+	bh=b57EhIeMh3GyP+Ty5MoLZAGMe7ksDipfqF6EJAD6Pto=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=B9Kx6mj/Ty4FtSrBMOMC1JqGX36GbANGKS4i+dTNdxRkMhbU7WeYQxyMd0DdrCOAC
+	 ibIImBeegoowlHEeepCchflXWe+zoRHuM/pAy6ZpguvxRb1mKFRAmAkfRTgDobxMCh
+	 31OGNgnXo0T9qOiSQyzh/2+mv6WEBwjSy1uxCx2/IEaKt7x0P72QFMvRLLMbbygWdo
+	 jzI7nKn2t/NMnjRdZuFxIONjOHJRnDKiKi3FRNzs0CqRPcftK2/W3Fba/bPO2CKkSN
+	 imUvost+UN4fnTTW6BFRwXzDYEJWheZqK21xbiUU2Lk7f1KickDlgo2IUbi6ga+7p/
+	 v7+9MxmkWrZ8w==
+Message-ID: <sashiko-outbox-222922@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v22 1/5] i3c: hub: Mark downstream DT addresses as
+ desired on parent bus
+To: "Lakshay Piplani" <lakshay.piplani@nxp.com>, linux-i3c@lists.infradead.org, mfd@lists.linux.dev
+Cc: Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>, lee@kernel.org
+In-Reply-To: <20261119095449.555593-2-lakshay.piplani@nxp.com>
 References: <20261119095449.555593-1-lakshay.piplani@nxp.com>
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-Virus-Scanned: ClamAV using ClamSMTP
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261119_015519_288368_ED1F2FBE 
-X-CRM114-Status: GOOD (  29.64  )
-X-Spam-Score: -4.2 (----)
+ <20261119095449.555593-2-lakshay.piplani@nxp.com>
+Date: Thu, 19 Nov 2026 10:12:03 +0000
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,570 +63,124 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add SMBus slave mode support for the P3H2x4x hub SMBus target ports.
-
-The hub SMBus slave agent can receive downstream payloads into target
-buffers and report receive events through IBI. Add CONFIG_I2C_SLAVE
-to support the receive path and forward the received payloads to the
-registered I2C slave client through i2c_slave_event().
-
-Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-
----
-Changes in v22:
- - Reject zero-length SMBus receive buffers before reading the address or
-   forwarding events to the slave client.
- - Clear stale receive-buffer and overflow flags before enabling the SMBus
-   slave IBI during registration.
- - Preserve the controller-agent transaction-finish flag when clearing
-   stale receive status.
- - Reject unsupported 10-bit slave-address registration with
-   -EAFNOSUPPORT.
-
-Changes in v21:
- - Handle both receive-buffer flags independently, including on overflow
- - Acknowledge only the overflow flag to preserve buffer-refill events and
-   report the affected port
- - Initialize optional IBI support before acquiring the routing mutex
-
-Changes in v20:
- - No change
-
-Changes in v19:
- - No change
-
-Changes in v18:
- - Rebased onto v7.3-rc1; no intended driver behaviour changes
-
-Changes in v17:
- - No change
-
-Changes in v16:
- - Always clear the software slave state on unregister: even if the hardware
-   IBI-disable write fails, log the error but still set bus->tp_smbus_client = NULL
-   and return 0, so a later IBI cannot deref a dangling client and call a freed slave_cb
- - Use a heap DMA-safe buffer for the SMBus-agent RX path
-   instead of a stack buffer passed to regmap_bulk_read() over I3C
- - Advertise I2C_FUNC_SLAVE when CONFIG_I2C_SLAVE is enabled, and reject slave
-   registration with -EOPNOTSUPP unless an I3C upstream device and working IBI
-   path are available (hub->i3cdev and hub->ibi_ready)
- - Validate the IBI payload length and bound the target-port loop by
-   num_target_ports
-
-Changes in v15:
- - Retrieve the hub context through the shared MFD data instead of replacing
-   the I3C device's parent driver data
- - Rework SMBus slave registration and unregistration to use the shared
-   protected-register lock
- - Report protected-register relock failures separately from the original
-   enable or disable operation
-
-Changes in v14:
- - Clear receive-buffer flags even on SMBus receive error paths to avoid
-   repeated IBI storms
- - Decode receive-buffer status using FIELD_GET()
- - Fix overflow status value and explicitly clear overflow after reading both
-   target buffers
-
-Changes in v13:
- - Make IBI setup optional and robust: avoid probe failure when IBI is unsupported and add proper
-   cleanup using devm actions
- - Fix SMBus slave receive path: avoid over-clearing buffer status, handle unregistered ports,
-   and ensure correct event delivery
- - Improve safety by adding proper locking around shared state
-
-Changes in v12:
- - Add devm cleanup for IBI request/enable path
- - Fix NULL pointer dereference before tp_smbus_client check
- - Clear tp_smbus_client before disabling SMBus-agent IBI in unreg_slave()
-
-Changes in v11:
- - Improve SMBus slave mode payload validation and parsing
-
-Changes in v10:
- - Split SMBus slave mode support into a separate patch
----
----
- drivers/i3c/hub/p3h2840_i3c_hub.h       |  14 ++
- drivers/i3c/hub/p3h2840_i3c_hub_i3c.c   |  51 ++++
- drivers/i3c/hub/p3h2840_i3c_hub_smbus.c | 319 +++++++++++++++++++++++-
- 3 files changed, 383 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/hub/p3h2840_i3c_hub.h b/drivers/i3c/hub/p3h2840_i3c_hub.h
-index 883a5dbded8b..b9e1fca4a392 100644
---- a/drivers/i3c/hub/p3h2840_i3c_hub.h
-+++ b/drivers/i3c/hub/p3h2840_i3c_hub.h
-@@ -316,6 +316,10 @@ struct p3h2x4x_i3c_hub_dev {
- 	struct i2c_client *i2c_client;
- 	struct hub_configuration hub_config;
- 	struct tp_bus tp_bus[P3H2X4X_TP_MAX_COUNT];
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	bool ibi_ready;
-+	u8 *slave_rx_buffer;
-+#endif
- 	struct i3c_hub *hub;
- };
- 
-@@ -341,4 +345,14 @@ int p3h2x4x_tp_smbus_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub);
-  */
- int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub);
- 
-+/**
-+ * p3h2x4x_ibi_handler - IBI handler.
-+ * @i3cdev: i3c device.
-+ * @payload: two byte IBI payload data.
-+ */
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+void p3h2x4x_ibi_handler(struct i3c_device *i3cdev,
-+			 const struct i3c_ibi_payload *payload);
-+#endif
-+
- #endif /* P3H2840_I3C_HUB_H */
-diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
-index ef93c577a68c..c06a48a1f86b 100644
---- a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
-+++ b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
-@@ -10,6 +10,14 @@
- 
- #include "p3h2840_i3c_hub.h"
- 
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+static const struct i3c_ibi_setup p3h2x4x_ibireq = {
-+	.handler = p3h2x4x_ibi_handler,
-+	.max_payload_len = P3H2X4X_MAX_PAYLOAD_LEN,
-+	.num_slots = P3H2X4X_NUM_SLOTS,
-+};
-+#endif
-+
- static inline struct tp_bus *
- p3h2x4x_bus_from_controller(struct i3c_master_controller *controller)
- {
-@@ -71,6 +79,16 @@ static void p3h2x4x_disconnect_i3c_ports(void *data)
- 			 "Failed to disconnect I3C target ports: %d\n", ret);
- }
- 
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+static void p3h2x4x_free_ibi(void *data)
-+{
-+	struct i3c_device *i3cdev = data;
-+
-+	i3c_device_disable_ibi(i3cdev);
-+	i3c_device_free_ibi(i3cdev);
-+}
-+#endif
-+
- /*
-  * SETDASA-configured targets are represented on their respective virtual
-  * I3C buses. Targets discovered by ENTDAA are handled by the physical
-@@ -192,5 +210,38 @@ int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_hub)
- 		p3h2x4x_hub->tp_bus[tp].is_registered = true;
- 	}
- 
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	p3h2x4x_hub->slave_rx_buffer = devm_kzalloc(p3h2x4x_hub->dev,
-+						    P3H2X4X_SMBUS_TARGET_PAYLOAD_SIZE,
-+						    GFP_KERNEL);
-+	if (!p3h2x4x_hub->slave_rx_buffer)
-+		return -ENOMEM;
-+
-+	ret = i3c_device_request_ibi(p3h2x4x_hub->i3cdev, &p3h2x4x_ibireq);
-+	if (ret) {
-+		dev_warn(p3h2x4x_hub->dev,
-+			 "IBI not available, SMBus slave mode disabled\n");
-+		p3h2x4x_hub->ibi_ready = false;
-+	} else {
-+		ret = i3c_device_enable_ibi(p3h2x4x_hub->i3cdev);
-+		if (ret) {
-+			i3c_device_free_ibi(p3h2x4x_hub->i3cdev);
-+			dev_warn(p3h2x4x_hub->dev,
-+				 "Failed to enable IBI, SMBus slave mode disabled\n");
-+			p3h2x4x_hub->ibi_ready = false;
-+		} else {
-+			p3h2x4x_hub->ibi_ready = true;
-+
-+			ret = devm_add_action_or_reset(p3h2x4x_hub->dev,
-+						       p3h2x4x_free_ibi,
-+						       p3h2x4x_hub->i3cdev);
-+			if (ret) {
-+				p3h2x4x_hub->ibi_ready = false;
-+				return ret;
-+			}
-+		}
-+	}
-+#endif
-+
- 	return 0;
- }
-diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
-index 611290f02f43..6877a7e28a24 100644
---- a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
-+++ b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
-@@ -3,6 +3,7 @@
-  * Copyright 2025-2026 NXP
-  * This P3H2X4X driver file contain functions for SMBus/I2C virtual Bus creation and read/write.
-  */
-+#include <linux/i3c/device.h>
- #include <linux/mfd/p3h2840.h>
- #include <linux/regmap.h>
- 
-@@ -15,6 +16,177 @@ enum p3h2x4x_smbus_desc_idx {
- 	P3H2X4X_DESC_READ_LEN,
- };
- 
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+static void p3h2x4x_read_smbus_agent_rx_buf(struct i3c_device *i3cdev, enum p3h2x4x_rcv_buf rfbuf,
-+					    enum p3h2x4x_tp tp)
-+{
-+	struct p3h2x4x *p3h2x4x = i3cdev_get_drvdata(i3cdev);
-+	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub;
-+	u8 target_buffer_page, flag_clear, temp = 0, i, addr;
-+	u32 packet_len, slave_address;
-+	struct i2c_client *client;
-+	u8 *slave_rx_buffer;
-+	int ret;
-+
-+	if (!p3h2x4x || !p3h2x4x->i3c_hub_priv)
-+		return;
-+
-+	p3h2x4x_i3c_hub = p3h2x4x->i3c_hub_priv;
-+	slave_rx_buffer = p3h2x4x_i3c_hub->slave_rx_buffer;
-+
-+	switch (rfbuf) {
-+	case RCV_BUF_0:
-+		target_buffer_page = P3H2X4X_TARGET_BUFF_0_PAGE;
-+		flag_clear = P3H2X4X_TARGET_BUF_0_RECEIVE;
-+		break;
-+	case RCV_BUF_1:
-+		target_buffer_page = P3H2X4X_TARGET_BUFF_1_PAGE;
-+		flag_clear = P3H2X4X_TARGET_BUF_1_RECEIVE;
-+		break;
-+	default:
-+		return;
-+	}
-+
-+	target_buffer_page += P3H2X4X_NO_PAGE_PER_TP * tp;
-+
-+	ret = regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_PAGE_PTR, target_buffer_page);
-+	if (ret)
-+		goto ibi_err;
-+
-+	/* read buffer length */
-+	ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_LENGTH, &packet_len);
-+	if (ret)
-+		goto ibi_err;
-+
-+	/*
-+	 * The length includes the address byte, so zero means the buffer
-+	 * holds no transaction and its address field is stale.
-+	 */
-+	if (!packet_len)
-+		goto ibi_err;
-+
-+	packet_len--;
-+
-+	if (packet_len > P3H2X4X_SMBUS_TARGET_PAYLOAD_SIZE) {
-+		dev_err(&i3cdev->dev, "Received message too big for p3h2x4x buffer\n");
-+		goto ibi_err;
-+	}
-+
-+	/* read slave  address */
-+	ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_ADDRESS, &slave_address);
-+	if (ret)
-+		goto ibi_err;
-+
-+	/* read data */
-+	if (packet_len) {
-+		ret = regmap_bulk_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_DATA,
-+				       slave_rx_buffer, packet_len);
-+		if (ret)
-+			goto ibi_err;
-+	}
-+
-+	client = p3h2x4x_i3c_hub->tp_bus[tp].tp_smbus_client;
-+	if (!client)
-+		goto ibi_err;
-+
-+	/* notify slave driver about received data */
-+	if ((client->addr & 0x7f) == (slave_address >> 1)) {
-+		addr = slave_address >> 1;
-+		i2c_slave_event(client,
-+				I2C_SLAVE_WRITE_REQUESTED, &addr);
-+		for (i = 0; i < packet_len; i++) {
-+			temp = slave_rx_buffer[i];
-+			i2c_slave_event(client,
-+					I2C_SLAVE_WRITE_RECEIVED, &temp);
-+		}
-+		i2c_slave_event(client, I2C_SLAVE_STOP, &temp);
-+	}
-+
-+ibi_err:
-+	regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_PAGE_PTR, 0x00);
-+
-+	regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP0_SMBUS_AGNT_STS + tp, flag_clear);
-+}
-+
-+/**
-+ * p3h2x4x_ibi_handler - IBI handler.
-+ * @i3cdev: i3c device.
-+ * @payload: two byte IBI payload data.
-+ *
-+ */
-+void p3h2x4x_ibi_handler(struct i3c_device *i3cdev,
-+			 const struct i3c_ibi_payload *payload)
-+{
-+	struct p3h2x4x *p3h2x4x = i3cdev_get_drvdata(i3cdev);
-+	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub;
-+	u8 payload_byte_one, payload_byte_two;
-+	u32 target_port_status;
-+	const u8 *data;
-+	int ret, i;
-+
-+	if (!payload || payload->len < P3H2X4X_MAX_PAYLOAD_LEN)
-+		return;
-+
-+	data = payload->data;
-+	payload_byte_one = data[0];
-+
-+	if (!(payload_byte_one & P3H2X4X_SMBUS_AGENT_EVENT_FLAG_STATUS))
-+		return;
-+
-+	p3h2x4x_i3c_hub = p3h2x4x ? p3h2x4x->i3c_hub_priv : NULL;
-+
-+	if (!p3h2x4x_i3c_hub || !p3h2x4x_i3c_hub->regmap)
-+		return;
-+
-+	payload_byte_two = data[1];
-+	guard(mutex)(&p3h2x4x_i3c_hub->etx_mutex);
-+
-+	for (i = 0; i < p3h2x4x->num_target_ports; ++i) {
-+		if (!((payload_byte_two >> i) & 0x01))
-+			continue;
-+
-+		if (!p3h2x4x_i3c_hub->tp_bus[i].is_registered) {
-+			dev_dbg(&i3cdev->dev, "IBI for unregistered SMBus port %u\n", i);
-+			regmap_write(p3h2x4x_i3c_hub->regmap,
-+				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
-+				     BUF_RECEIVED_FLAG_TF_MASK);
-+			continue;
-+		}
-+
-+		ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP0_SMBUS_AGNT_STS + i,
-+				  &target_port_status);
-+		if (ret) {
-+			dev_err(&i3cdev->dev, "target port read status failed %d\n", ret);
-+			continue;
-+		}
-+
-+		if (target_port_status & P3H2X4X_TARGET_BUF_CA_TF)
-+			regmap_write(p3h2x4x_i3c_hub->regmap,
-+				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
-+				     P3H2X4X_TARGET_BUF_CA_TF);
-+
-+		/* Service the receive flags independently of the overflow flag. */
-+		if (target_port_status & P3H2X4X_TARGET_BUF_0_RECEIVE)
-+			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_0, i);
-+
-+		if (target_port_status & P3H2X4X_TARGET_BUF_1_RECEIVE)
-+			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_1, i);
-+
-+		if (target_port_status & P3H2X4X_TARGET_BUF_OVRFL) {
-+			/*
-+			 * The helpers handle receive-flag acknowledgment. Clear only
-+			 * overflow here, as a released buffer may already have refilled.
-+			 */
-+			regmap_write(p3h2x4x_i3c_hub->regmap,
-+				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
-+				     P3H2X4X_TARGET_BUF_OVRFL);
-+			dev_err(&i3cdev->dev,
-+				"SMBus receive buffer overflow on port %d\n", i);
-+		}
-+	}
-+}
-+#endif
-+
- static int p3h2x4x_read_smbus_transaction_status(struct p3h2x4x_i3c_hub_dev *hub,
- 						 u8 target_port_status,
- 						 u8 data_length)
-@@ -233,8 +405,149 @@ static s32 p3h2x4x_tp_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs, i
- 
- static u32 p3h2x4x_tp_smbus_funcs(struct i2c_adapter *adapter)
- {
--	return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
-+	u32 funcs = I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
-+
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	struct tp_bus *bus = i2c_get_adapdata(adapter);
-+	struct p3h2x4x_i3c_hub_dev *hub = bus->p3h2x4x_i3c_hub;
-+
-+	/*
-+	 * Only advertise slave support when the upstream IBI path is usable.
-+	 * Otherwise reg_slave() returns -EOPNOTSUPP while functionality()
-+	 * reports I2C_FUNC_SLAVE, which is inconsistent for callers.
-+	 */
-+	if (hub->ibi_ready)
-+		funcs |= I2C_FUNC_SLAVE;
-+#endif
-+
-+	return funcs;
-+}
-+
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+static int p3h2x4x_tp_i2c_reg_slave(struct i2c_client *slave)
-+{
-+	struct tp_bus *bus = i2c_get_adapdata(slave->adapter);
-+	struct p3h2x4x_i3c_hub_dev *hub = bus->p3h2x4x_i3c_hub;
-+	struct p3h2x4x *p3h2x4x = dev_get_drvdata(hub->dev->parent);
-+	int relock_ret = 0;
-+	int ret = 0;
-+
-+	/* The receive path matches a 7-bit address only. */
-+	if (slave->flags & I2C_CLIENT_TEN)
-+		return -EAFNOSUPPORT;
-+
-+	guard(mutex)(&hub->etx_mutex);
-+
-+	if (!hub->i3cdev || !hub->ibi_ready)
-+		return -EOPNOTSUPP;
-+
-+	if (bus->tp_smbus_client)
-+		return -EBUSY;
-+
-+	/*
-+	 * Discard data received while the port IBI was masked. The flags are
-+	 * write-one-to-clear and clearing one frees its buffer; bit 0 belongs
-+	 * to the controller agent and is left untouched.
-+	 */
-+	ret = regmap_write(hub->regmap,
-+			   P3H2X4X_TP0_SMBUS_AGNT_STS + bus->tp_port,
-+			   BUF_RECEIVED_FLAG_MASK);
-+	if (ret)
-+		return ret;
-+
-+	scoped_guard(mutex, &p3h2x4x->protected_reg_lock) {
-+		/* Unlock access to protected registers */
-+		ret = regmap_write(hub->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
-+				   P3H2X4X_REGISTERS_UNLOCK_CODE);
-+		if (ret)
-+			break;
-+
-+		ret = regmap_set_bits(hub->regmap,
-+				      P3H2X4X_TP_SMBUS_AGNT_IBI_CONFIG,
-+				      bus->tp_mask);
-+
-+		/* Lock access to protected registers */
-+		relock_ret = regmap_write(hub->regmap,
-+					  P3H2X4X_DEV_REG_PROTECTION_CODE,
-+					  P3H2X4X_REGISTERS_LOCK_CODE);
-+	}
-+
-+	/*
-+	 * A relock failure does not undo the IBI enable, so report it
-+	 * separately and keep the callback result tied to the IBI operation.
-+	 */
-+	if (relock_ret)
-+		dev_err(hub->dev,
-+			"failed to restore protected register lock: %d\n",
-+			relock_ret);
-+
-+	if (ret)
-+		return ret;
-+
-+	/*
-+	 * Publish the software state only after the hardware IBI has been
-+	 * enabled successfully.
-+	 */
-+	bus->tp_smbus_client = slave;
-+	hub->hub_config.tp_config[bus->tp_port].ibi_en = true;
-+
-+	return 0;
-+}
-+
-+static int p3h2x4x_tp_i2c_unreg_slave(struct i2c_client *slave)
-+{
-+	struct tp_bus *bus = i2c_get_adapdata(slave->adapter);
-+	struct p3h2x4x_i3c_hub_dev *hub = bus->p3h2x4x_i3c_hub;
-+	struct p3h2x4x *p3h2x4x = dev_get_drvdata(hub->dev->parent);
-+	int relock_ret = 0;
-+	int ret = 0;
-+
-+	guard(mutex)(&hub->etx_mutex);
-+
-+	if (bus->tp_smbus_client != slave)
-+		return -EINVAL;
-+
-+	scoped_guard(mutex, &p3h2x4x->protected_reg_lock) {
-+		/* Unlock access to protected registers */
-+		ret = regmap_write(hub->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
-+				   P3H2X4X_REGISTERS_UNLOCK_CODE);
-+		if (ret)
-+			break;
-+
-+		ret = regmap_clear_bits(hub->regmap,
-+					P3H2X4X_TP_SMBUS_AGNT_IBI_CONFIG,
-+					bus->tp_mask);
-+
-+		/* Lock access to protected registers */
-+		relock_ret = regmap_write(hub->regmap,
-+					  P3H2X4X_DEV_REG_PROTECTION_CODE,
-+					  P3H2X4X_REGISTERS_LOCK_CODE);
-+	}
-+
-+	if (relock_ret)
-+		dev_err(hub->dev,
-+			"failed to restore protected register lock: %d\n",
-+			relock_ret);
-+
-+	if (ret)
-+		dev_err(hub->dev,
-+			"failed to disable SMBus agent IBI on port %u: %d\n",
-+			bus->tp_port, ret);
-+
-+	/*
-+	 * Slave backend removal cannot be rolled back. Detach the
-+	 * callback-visible state even if disabling the hardware IBI failed,
-+	 * and return 0 so the core completes teardown; the failure is still
-+	 * visible in the log above. etx_mutex serializes this with the IBI
-+	 * handler, so later events are acknowledged without invoking the
-+	 * removed client.
-+	 */
-+	bus->tp_smbus_client = NULL;
-+	hub->hub_config.tp_config[bus->tp_port].ibi_en = false;
-+
-+	return 0;
- }
-+#endif
- 
- static const struct i2c_adapter_quirks p3h2x4x_tp_i2c_quirks = {
- 	.flags = I2C_AQ_COMB_WRITE_THEN_READ,
-@@ -249,6 +562,10 @@ static const struct i2c_adapter_quirks p3h2x4x_tp_i2c_quirks = {
-  */
- static struct i2c_algorithm p3h2x4x_tp_i2c_algorithm = {
- 	.master_xfer    = p3h2x4x_tp_i2c_xfer,
-+#if IS_ENABLED(CONFIG_I2C_SLAVE)
-+	.reg_slave = p3h2x4x_tp_i2c_reg_slave,
-+	.unreg_slave = p3h2x4x_tp_i2c_unreg_slave,
-+#endif
- 	.functionality  = p3h2x4x_tp_smbus_funcs,
- };
- 
--- 
-2.25.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtNZWRpdW1dIGkzYzogaHViOiBhdHRh
+Y2hlZCBkb3duc3RyZWFtIGRldmljZXMgbGVhdmUgcGFyZW50IHNsb3QgZnJlZQotIFtNZWRpdW1d
+IGkzYzogaHViOiBkb3duc3RyZWFtIEVOVERBQSBkZXZpY2VzIG1pc3MgYm9hcmRpbmZvIGZvcgog
+IFNFVE5FV0RBCi0gW0xvd10gaTNjOiBodWI6IG1pc3NpbmcgRml4ZXMgdHJhaWxlciBmb3IgY29t
+bWl0IGIwY2ZlNDlhMmUzYgotLQoKY29tbWl0IDgwMjliNTM1ZTAwOThjNTMyNGQyOTdhMDg5MzUz
+ZDcyYzE5M2VlYmUKQXV0aG9yOiBMYWtzaGF5IFBpcGxhbmkgPGxha3NoYXkucGlwbGFuaUBueHAu
+Y29tPgoKPiBpM2M6IGh1YjogTWFyayBkb3duc3RyZWFtIERUIGFkZHJlc3NlcyBhcyBkZXNpcmVk
+IG9uIHBhcmVudCBidXMKPgo+IEkzQyBkZXZpY2VzIGJlaGluZCBodWIgdGFyZ2V0IHBvcnRzIHNo
+YXJlIHRoZSBwYXJlbnQgY29udHJvbGxlcidzCj4gZHluYW1pYyBhZGRyZXNzIHNwYWNlLiBUaGVp
+ciBhc3NpZ25lZCBkeW5hbWljIGFkZHJlc3NlcyBmcm9tIERldmljZQo+IFRyZWUgbXVzdCBiZSBw
+cmVzZXJ2ZWQgc28gdGhhdCBwYXJlbnQgREFBIGRvZXMgbm90IGFsbG9jYXRlIHRoZSBzYW1lCj4g
+YWRkcmVzc2VzIHRvIG90aGVyIGRldmljZXMuCj4KPiBQcmV2aW91c2x5LCB0aGUgaHViIHJlc2Vy
+dmVkIHRoZXNlIGFkZHJlc3NlcyBieSBtYXJraW5nIHRoZSBwYXJlbnQKPiBidXMgc2xvdHMgYXMg
+STNDX0FERFJfU0xPVF9JM0NfREVWLCBldmVuIHRob3VnaCB0aGUgZG93bnN0cmVhbSBkZXZpY2Vz
+Cj4gd2VyZSBub3QgYXR0YWNoZWQgdG8gdGhlIHBhcmVudCBidXMuIFRoaXMgY291bGQgY2F1c2Ug
+YWRkcmVzcwo+IHJlY29uY2lsaWF0aW9uIHRvIGluY29ycmVjdGx5IHRyZWF0IHRoZXNlIHNsb3Rz
+IGFzIG9jY3VwaWVkIGJ5Cj4gb3JwaGFuZWQgSTNDIGRldmljZXMuCj4KPiBJbnRyb2R1Y2UgaTNj
+X2J1c19zZXRfYWRkcl9zbG90X2Rlc2lyZWQoKSB0byBtYXJrIGFuIGFkZHJlc3MgYXMKPiBkZXNp
+cmVkIHdpdGhvdXQgY2hhbmdpbmcgaXRzIGN1cnJlbnQgc2xvdCBzdGF0dXMuCj4KPiBVc2UgdGhp
+cyBoZWxwZXIgd2hlbiBwcm9jZXNzaW5nIGRvd25zdHJlYW0gSTNDIGRldmljZXMgZGVzY3JpYmVk
+IGluCj4gRGV2aWNlIFRyZWUuIFRoaXMgYWxsb3dzIHBhcmVudCBEQUEgdG8gYXZvaWQgdGhlIGRl
+c2lyZWQgYWRkcmVzc2VzCj4gd2hpbGUga2VlcGluZyB0aGUgc2xvdHMgZnJlZSB1bnRpbCB0aGUg
+Y29ycmVzcG9uZGluZyBkZXZpY2VzIGFyZQo+IGFjdHVhbGx5IGF0dGFjaGVkLgo+Cj4gS2VlcCB0
+aGUgZGVzaXJlZCBhZGRyZXNzIG1hcmtpbmdzIGZvciB0aGUgbGlmZXRpbWUgb2YgdGhlIHBhcmVu
+dCBidXMsCj4gYXMgdGhleSByZXByZXNlbnQgdGhlIGZpeGVkIERldmljZSBUcmVlIHRvcG9sb2d5
+Lgo+Cj4gU2lnbmVkLW9mZi1ieTogTGFrc2hheSBQaXBsYW5pIDxsYWtzaGF5LnBpcGxhbmlAbnhw
+LmNvbT4KCltTZXZlcml0eTogTG93XQpUaGlzIGZpeGVzIHRoZSBwYXJlbnQtYnVzIHNsb3QgcmVz
+ZXJ2YXRpb24gaW4KaTNjX2h1Yl9yZXNlcnZlX3BhcmVudF9hZGRyc2xvdHNfZnJvbV9kdCgpLiAg
+U2hvdWxkIHRoaXMgaW5jbHVkZToKCiAgRml4ZXM6IGIwY2ZlNDlhMmUzYiAoImkzYzogaHViOiBB
+ZGQgc3VwcG9ydCBmb3IgdGhlIEkzQyBpbnRlcmZhY2UgaW4gdGhlIEkzQyBodWIiKQoKPiBkaWZm
+IC0tZ2l0IGEvZHJpdmVycy9pM2MvaHViLmMgYi9kcml2ZXJzL2kzYy9odWIuYwo+IGluZGV4IDUz
+OTAyODc2ODA4NDQuLjk1ZWVjNWIwY2FkYTAgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9pM2MvaHVi
+LmMKPiArKysgYi9kcml2ZXJzL2kzYy9odWIuYwo+IEBAIC03NjMsMTAgKzc2MywxNSBAQCBFWFBP
+UlRfU1lNQk9MX0dQTChpM2NfaHViX2luaXQpOwo+ICAgKiBAaHViYzogSTNDIGh1YiBjb250cm9s
+bGVyIGZvciBhIHRhcmdldC1wb3J0IHZpcnR1YWwgYnVzLgo+ICAgKiBAbm9kZTogVGFyZ2V0LXBv
+cnQgYnVzIERldmljZSBUcmVlIG5vZGUuCj4gICAqCj4gLSAqIFJlc2VydmUgcGFyZW50IGJ1cyBh
+ZGRyZXNzIHNsb3RzIGZvciB0aGUgYXNzaWduZWQgZHluYW1pYyBhZGRyZXNzIG9mIGVhY2gKPiAt
+ICogZG93bnN0cmVhbSBJM0MgZGV2aWNlIGRlc2NyaWJlZCBpbiB0aGUgRGV2aWNlIFRyZWUsIHNv
+IHRoYXQgcGFyZW50IERBQSBkb2VzCj4gLSAqIG5vdCBoYW5kIHRoZSBzYW1lIGFkZHJlc3MgdG8g
+YW5vdGhlciBkZXZpY2UuIERvd25zdHJlYW0gZGV2aWNlcyBiZWhpbmQgaHViCj4gLSAqIHRhcmdl
+dCBwb3J0cyBzaGFyZSB0aGUgcGFyZW50IGNvbnRyb2xsZXIncyBkeW5hbWljIGFkZHJlc3Mgc3Bh
+Y2UuCj4gKyAqIE1hcmsgdGhlIGFzc2lnbmVkIGR5bmFtaWMgYWRkcmVzcyBvZiBlYWNoIGRvd25z
+dHJlYW0gSTNDIGRldmljZSBkZXNjcmliZWQgaW4KPiArICogdGhlIERldmljZSBUcmVlIGFzIGRl
+c2lyZWQgb24gdGhlIHBhcmVudCBidXMsIHNvIHRoYXQgcGFyZW50IERBQSBhdm9pZHMKPiArICog
+aGFuZGluZyB0aGUgc2FtZSBhZGRyZXNzIHRvIGFub3RoZXIgZGV2aWNlIHdoaWxlIGl0IGlzIHN0
+aWxsIGZyZWUuCj4gKyAqIERvd25zdHJlYW0gZGV2aWNlcyBiZWhpbmQgaHViIHRhcmdldCBwb3J0
+cyBzaGFyZSB0aGUgcGFyZW50IGNvbnRyb2xsZXIncwo+ICsgKiBkeW5hbWljIGFkZHJlc3Mgc3Bh
+Y2UuCj4gKyAqCj4gKyAqIEEgZGVzaXJlZCBhZGRyZXNzIGlzIG9ubHkgYSBwcmVmZXJlbmNlOiB0
+aGUgc2xvdCBzdGF5cyBmcmVlLCBzbyB0aGUgcGFyZW50Cj4gKyAqIGRvZXMgbm90IHJlcG9ydCBp
+dCBhcyBvY2N1cGllZCBhbmQgYWRkcmVzcyByZWNvbmNpbGlhdGlvbiBkb2VzIG5vdCBtaXN0YWtl
+Cj4gKyAqIGl0IGZvciBhbiBvcnBoYW5lZCBkZXZpY2UgdGhhdCBoYXMgdG8gYmUgcHJvYmVkLgo+
+ICAgKgo+ICAgKiBUaGUgcmVzZXJ2YXRpb25zIGRlc2NyaWJlIGEgZml4ZWQgRGV2aWNlIFRyZWUg
+dG9wb2xvZ3kgYW5kIGFyZSBrZXB0IGZvciB0aGUKPiAgICogbGlmZXRpbWUgb2YgdGhlIHBhcmVu
+dCBidXM7IHRoZXkgYXJlIG5vdCByZWxlYXNlZCB3aGVuIGEgdGFyZ2V0IHBvcnQgaXMKPiBAQCAt
+ODE2LDkgKzgyMSw4IEBAIGludCBpM2NfaHViX3Jlc2VydmVfcGFyZW50X2FkZHJzbG90c19mcm9t
+X2R0KHN0cnVjdCBpM2NfaHViX2NvbnRyb2xsZXIgKmh1YmMsCj4gIAkJc3RhdHVzID0gaTNjX2J1
+c19nZXRfYWRkcl9zbG90X3N0YXR1cygmcGFyZW50LT5idXMsCj4gIAkJCQkJCSAgICAgIGFzc2ln
+bmVkX2FkZHIpOwo+ICAJCWlmIChzdGF0dXMgPT0gSTNDX0FERFJfU0xPVF9GUkVFKQo+IC0JCQlp
+M2NfYnVzX3NldF9hZGRyX3Nsb3Rfc3RhdHVzKCZwYXJlbnQtPmJ1cywKPiAtCQkJCQkJICAgICBh
+c3NpZ25lZF9hZGRyLAo+IC0JCQkJCQkgICAgIEkzQ19BRERSX1NMT1RfSTNDX0RFVik7Cj4gKwkJ
+CWkzY19idXNfc2V0X2FkZHJfc2xvdF9kZXNpcmVkKCZwYXJlbnQtPmJ1cywKPiArCQkJCQkJICAg
+ICAgYXNzaWduZWRfYWRkcik7Cj4gIAkJaTNjX2J1c19tYWludGVuYW5jZV91bmxvY2soJnBhcmVu
+dC0+YnVzKTsKPiAgCX0KPiAgCXJldHVybiAwOwoKW1NldmVyaXR5OiBNZWRpdW1dCkRvZXMgYXNz
+aWduZWRfYWRkciBldmVyIGdldCBtYXJrZWQgYXMgSTNDX0FERFJfU0xPVF9JM0NfREVWIG9uIHBh
+cmVudC0+YnVzCndoZW4gYSBkb3duc3RyZWFtIGRldmljZSBpcyBhdHRhY2hlZCB2aWEgU0VUREFT
+QSBvciBTRVRBQVNBPwoKaTNjX2J1c19zZXRfYWRkcl9zbG90X2Rlc2lyZWQoKSBvbmx5IHNldHMg
+STNDX0FERFJfU0xPVF9FWFRfREVTSVJFRCBhbmQKbGVhdmVzIHRoZSBzbG90IHN0YXR1cyBiaXRz
+IG9uIHBhcmVudC0+YnVzIGFzIEkzQ19BRERSX1NMT1RfRlJFRS4gIFdoZW4KdGhlIHZpcnR1YWwg
+aHViIGNvbnRyb2xsZXIgaW5pdGlhbGl6ZXMgYSBkb3duc3RyZWFtIGRldmljZSB0aGF0IGhhcyBh
+CnN0YXRpYyBhZGRyZXNzIGFuZCBhc3NpZ25lZC1hZGRyZXNzLCBpM2NfbWFzdGVyX2F0dGFjaF9p
+M2NfZGV2KCkgYW5kCmkzY19tYXN0ZXJfcmVhdHRhY2hfaTNjX2Rldl9sb2NrZWQoKSBvbmx5IHVw
+ZGF0ZSB0aGUgdmlydHVhbCBidXMKKGh1YmMtPmNvbnRyb2xsZXIuYnVzKSwgd2hpbGUgaTNjX2h1
+Yl9hdHRhY2hfaTNjX2RldigpIGFuZAppM2NfaHViX3JlYXR0YWNoX2kzY19kZXYoKSBjYWxsIHRo
+ZSBjb250cm9sbGVyLW9ubHkgaGVscGVycyBvbiBwYXJlbnQKd2l0aG91dCB1cGRhdGluZyBwYXJl
+bnQtPmJ1cy5hZGRyc2xvdHMuCgpCZWNhdXNlIHRoZSBkZXZpY2UgYWxyZWFkeSByZWNlaXZlZCBp
+dHMgZHluYW1pYyBhZGRyZXNzLCBpdCBkb2VzIG5vdApwYXJ0aWNpcGF0ZSBpbiBFTlREQUEgZHVy
+aW5nIGkzY19odWJfZG9fZGFhKCkuICBJdHMgc2xvdCBzdGF0dXMgb24KcGFyZW50LT5idXMgcmVt
+YWlucyBJM0NfQUREUl9TTE9UX0ZSRUUgZXZlbiB3aGlsZSB0aGUgZGV2aWNlIGlzIGFjdGl2ZWx5
+CnVzaW5nIGFzc2lnbmVkX2FkZHIgb24gdGhlIHNoYXJlZCBwaHlzaWNhbCBidXMsIGFsbG93aW5n
+IHRoZSBmYWxsYmFjayBsb29wCmluIGkzY19idXNfZ2V0X2ZyZWVfYWRkcigmcGFyZW50LT5idXMs
+IC4uLikgb3Igb3RoZXIKaTNjX2J1c19nZXRfYWRkcl9zbG90X3N0YXR1cygmcGFyZW50LT5idXMs
+IC4uLikgY2hlY2tzIHRvIGhhbmQgdGhlIGluLXVzZQphZGRyZXNzIHRvIGFub3RoZXIgZGV2aWNl
+LgoKW1NldmVyaXR5OiBNZWRpdW1dCkNhbiBhIGRvd25zdHJlYW0gZGV2aWNlIHdpdGggYXNzaWdu
+ZWQtYWRkcmVzcyB0aGF0IGlzIGRpc2NvdmVyZWQgdGhyb3VnaApFTlREQUEgZXZlciByZWNlaXZl
+IGl0cyBkZXNpcmVkIGFkZHJlc3M/CgpNYXJraW5nIGFzc2lnbmVkX2FkZHIgd2l0aCBJM0NfQURE
+Ul9TTE9UX0VYVF9ERVNJUkVEIGNhdXNlcwppM2NfYnVzX2dldF9mcmVlX2FkZHIoJnBhcmVudC0+
+YnVzLCAuLi4pIHRvIHNraXAgYXNzaWduZWRfYWRkciBkdXJpbmcKRU5UREFBIGFuZCBoYW5kIG91
+dCBhIHRlbXBvcmFyeSBkeW5hbWljIGFkZHJlc3MsIHJlbHlpbmcgb24KX19pM2NfbWFzdGVyX2Fk
+ZF9pM2NfZGV2X2xvY2tlZCgpIHRvIGxvb2sgdXAKbmV3ZGV2LT5ib2FyZGluZm8tPmluaXRfZHlu
+X2FkZHIgYW5kIHN3aXRjaCB0aGUgZGV2aWNlIHRvIGl0cyBkZXNpcmVkCmFkZHJlc3MgdmlhIFNF
+VE5FV0RBLgoKSG93ZXZlciwgaTNjX2h1Yl9kb19kYWEoKSBjYWxscyBpM2NfbWFzdGVyX2RvX2Rh
+YShwYXJlbnQpLCBzbwpfX2kzY19tYXN0ZXJfYWRkX2kzY19kZXZfbG9ja2VkKCkgcnVucyB3aXRo
+IG1hc3RlciBzZXQgdG8gcGFyZW50IGFuZAppM2NfbWFzdGVyX2F0dGFjaF9ib2FyZGluZm8oKSBv
+bmx5IHNlYXJjaGVzIHBhcmVudC0+Ym9hcmRpbmZvLmkzYzoKCmRyaXZlcnMvaTNjL21hc3Rlci5j
+OmkzY19tYXN0ZXJfYXR0YWNoX2JvYXJkaW5mbygpIHsKCXN0cnVjdCBpM2NfbWFzdGVyX2NvbnRy
+b2xsZXIgKm1hc3RlciA9IGkzY2Rldi0+Y29tbW9uLm1hc3RlcjsKCXN0cnVjdCBpM2NfZGV2X2Jv
+YXJkaW5mbyAqaTNjYm9hcmRpbmZvOwoKCWxpc3RfZm9yX2VhY2hfZW50cnkoaTNjYm9hcmRpbmZv
+LCAmbWFzdGVyLT5ib2FyZGluZm8uaTNjLCBub2RlKSB7CgkuLi4KfQoKQmVjYXVzZSBmd25vZGVf
+cG9wdWxhdGVfaTNjX2J1cygpIHBvcHVsYXRlZCB0aGUgZG93bnN0cmVhbSBib2FyZGluZm8gZW50
+cmllcwpvbiBodWJjLT5jb250cm9sbGVyLmJvYXJkaW5mby5pM2MgcmF0aGVyIHRoYW4gcGFyZW50
+LT5ib2FyZGluZm8uaTNjLApuZXdkZXYtPmJvYXJkaW5mbyBpcyBuZXZlciBmb3VuZCwgU0VUTkVX
+REEgaXMgbm90IGlzc3VlZCwgYW5kIHRoZSBkZXZpY2UgaXMKbGVmdCBhdCB0aGUgdGVtcG9yYXJ5
+IGFkZHJlc3Mgd2l0aG91dCBpdHMgRFQgYm9hcmRpbmZvIGF0dGFjaGVkLgoKLS0gClNhc2hpa28g
+QUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTExOTA5NTQ0
+OS41NTU1OTMtMS1sYWtzaGF5LnBpcGxhbmlAbnhwLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1pM2Mg
+bWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
