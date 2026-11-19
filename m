@@ -2,147 +2,65 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 35C02606A32A
-	for <linux-i3c@archiver.kernel.org>; Thu, 19 Nov 2026 07:11:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1EFCE606A320
+	for <linux-i3c@archiver.kernel.org>; Thu, 19 Nov 2026 09:55:06 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VxznsCsK;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=oODRBWzo;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=NrDM1GBz
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KyYoeHds
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=OyQfcCV7v0WeoZ9xR/WULiZZ6HWTJVP9Lj5Frl+a7UE=; b=VxznsCsKhV+AkZ0nJIg2J9M03o
-	JIrANITFzt/XNFTJPk71me1+tjots9cRpQakiQmg4q/IkveDzDen3ZsqRyAlRG18HpOyrXrdg0+La
-	mw+t727THoeOPJbWsulX6ajJb0o+uHHcKv171b/C+j6exyNxrvbIMg3chYR4/Uf3EBWhWomiDBKS1
-	YMiuArHb0JoP1Vb/Im4yzNxOFT4HdMnWq8ajU8Ys8wF83BwaO90mDy0+GeM9ggXYYhDJ7sXTBD5jR
-	GahGqBTSZ5nzZEvj6NZUv817kX6GPPmpbSxRSuev4ErQo3tPuI05sgumKnpVdjtTqg9sM6TwBwWSC
-	JwwvHdrA==;
+	bh=fwzQthdVVCEaw56d8NlLbLXoRpfNHHabKB2x3QApj+U=; b=KyYoeHdsxz0roL70nczM4d4GJG
+	zMedlwX6SDUFa3qdWBjTsThvcDrygn5EHxKluHk9gyjNnBKxC+8hmo+le8TBLfNbDKNuvyD900ZXo
+	TAr8lj6yGp6IHeMArunVEj/KXqDXYmtJ6KeMLKwi0TuNOe70wxYLm+Gz2Nfpt+c/sNs+7DtXIt+eK
+	z01ASWTTHr9F9cb3FOTM8BVGbl7RHPREwmkSv3Gs5WKj8UTJ6R1UUm/pPlYLp+Au94chpTb4usENe
+	rrIqOH77clKVeCr3Uw+l0C05iOiZByxND4yKfKEgUW6vxHyGsy2tD2ae+95FYw5nreITdTfrM4lAW
+	lrxmgHpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTwIu-0000000B2h8-3EAY;
-	Thu, 19 Nov 2026 07:11:32 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xTyrB-0000000BSOX-3aPT;
+	Thu, 19 Nov 2026 09:55:05 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTwIr-0000000B2fi-2ijF
+	id 1xTyr9-0000000BSNb-1nPB
 	for linux-i3c@lists.infradead.org;
-	Thu, 19 Nov 2026 07:11:31 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AJ7088R3635530
-	for <linux-i3c@lists.infradead.org>; Thu, 19 Nov 2026 07:11:28 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	DdDcVD4zeEPNRO+BwyCwbOJ/2pD/TbB/A2AoOr6cETg=; b=oODRBWzo0WVLn/yz
-	r/qqs4ew38c5s8Y2C9jWsI/MdgQ3doWeU4tpKM668Y59KVFjh5Ojy6BtYFMQx//Q
-	c9O4rATzmpDthO9TmKuVez34+oEA7Nuu6SO3oJegQR8SukJbaO4NM0+ydcUpkxsj
-	N7nhUFgdy1EvlApUY33U4k2hIVcTe/nwLO6gcnAIaiUOdcSg0qhmQP3xn/WImpid
-	8Wfm6YaIiwoXMAuz4498k8qqJioS/+7JPdSnhH9tiZIhS26sP18VTwlc4xOFTxpq
-	djd0eDo+5vMcTIC1oXcR0ck8bKKnPHKnc45xLa4LK10eS/pxzLtp36m8LTcYahTa
-	Q8M+1g==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j1dnruxuu-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-i3c@lists.infradead.org>; Thu, 19 Nov 2026 07:11:27 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2edd25534afso15647805ad.2
-        for <linux-i3c@lists.infradead.org>; Wed, 18 Nov 2026 23:11:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795072286; x=1795677086; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=DdDcVD4zeEPNRO+BwyCwbOJ/2pD/TbB/A2AoOr6cETg=;
-        b=NrDM1GBzj0eZzQ99GkZLTfijW2I9W9GXUY+KMRo3dPIsp20r8S31iO//A8OGpNyN7/
-         MZWFLV31xF9Z01Hfl+a+VtsZnXizKw6NIEpM5KHtmx8c6NzoF4otoZDe2r5G2QxCqybR
-         BpxJUTPF80y6gR7rCvxlc30Bk9+NyK+xVH90hBgUJ3mZ+DTRrjFdROmdILKsdh/ow6Mg
-         mULBci0GtEhgTdSvd5SBTt519SHIBF2VIRizEpmAtzfIDtJyMEtMtxF9pih2o1JJ+1tq
-         6izoYJROEmclJgEBKSQgKbklTMp5Lx49sO21qDNhGagQ2PWeyDT77GpneQkn+ZvVte+3
-         vDzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795072286; x=1795677086;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=DdDcVD4zeEPNRO+BwyCwbOJ/2pD/TbB/A2AoOr6cETg=;
-        b=F66eW2NxoGIoblAMYFC2SJf7ienVbuqco7WrVXDIHjH3LAegmtBunZDAvDpySJkdLh
-         l6VlFngJsvc+YLAPCSWc8eSCw52pAI0DjCUABEkSfKdGTuNyquY9SjNJ35fUV120D3kU
-         r3A5Xaq4kASSuLjdh58PSHlICBbtiE6C3xNv1OeDrMMeIpnqEM9yCJ3TjLDnOJh4a21E
-         19NVnijD9kZ9+Ym0G3kI70SoZViDgaWBYR7ONcdBOVKcUxe1ldcHhijLGO3YZXy13Bmr
-         1ppRmZ4T65FvAUODHC2zekiHf2MtYS1f5Nuz3AlI29sJxEbH1D5yuUHeaWx+/IdPGOCd
-         oTBw==
-X-Gm-Message-State: APuU4Z/IfKmWoVrQ5pOQw8UeL0J9IcV8LadYKdfxpF+wCJ12dbVnuOa3
-	opEtxVjTICLU7cXtEyOUDrnxz3QplyBYoknEv27rfXfgZrKiXBKhv2nQ6SPE5JqFpsHRY82Ki8q
-	YTlHNC8WEg6nieV5C09mghtMYBUpaEokxl8AU+5V+NwGrjafIrgeF0EpOTrJx4IvdtOGp
-X-Gm-Gg: AZFdTZewLb84Je7uQ3Rt1Q3Zr21r9ahapCj/SBinguRyZH5M1AYqYXiqdmNUljS3Sd+
-	5Hi3VzaISr5670JG75IZLyoAToaoHi3pv8ZO9q5BRmXY7vo5I7va0TjmO9ayjSj37Vxx80nqf4X
-	j/OaEr/zev8S1HPUaouG/pkQ3nxK8jdobTFbjwfyPOeCipdm1Q01/w91X2IZyh6PFjGHXExWrCs
-	VBaFDA084qbnuoPUWnil7favzAdmLWTTe63hTCLaDi3G3yCh2ljorFvBSCUkwtIP+tqJnm0nnHr
-	VO99Pj2nW54zX4VYWGPIrfaded2rUMXp54D82Q88CEjiTMqXSF+5XGEbpICbVR2mkPvcZwKcZfh
-	JM9RM9flf0ITjJ3BIQrjQZRs+j8CiIdrvrfOQUeXGgl4IVNj50GyJtCkKe8nvJhYATCle68Uu+R
-	5aPNzCtZE=
-X-Received: by 2002:a17:90b:4acb:b0:3b3:8094:321d with SMTP id 98e67ed59e1d1-3b3d07aa6e9mr4435703a91.32.1795072286349;
-        Wed, 18 Nov 2026 23:11:26 -0800 (PST)
-X-Received: by 2002:a17:90b:4acb:b0:3b3:8094:321d with SMTP id 98e67ed59e1d1-3b3d07aa6e9mr4435659a91.32.1795072285666;
-        Wed, 18 Nov 2026 23:11:25 -0800 (PST)
-Received: from [10.217.219.98] ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b4057af4e2sm1243414a91.7.2026.11.18.23.11.21
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 18 Nov 2026 23:11:25 -0800 (PST)
-Message-ID: <553b354c-70f1-4b3f-955c-17a197e6ad20@oss.qualcomm.com>
-Date: Thu, 19 Nov 2026 12:41:20 +0530
+	Thu, 19 Nov 2026 09:55:05 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6418620000B;
+	Thu, 19 Nov 2026 10:54:59 +0100 (CET)
+Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2F77E200003;
+	Thu, 19 Nov 2026 10:54:59 +0100 (CET)
+Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 79914180006C;
+	Thu, 19 Nov 2026 17:54:56 +0800 (+08)
+From: Lakshay Piplani <lakshay.piplani@nxp.com>
+To: linux-kernel@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com,
+	broonie@kernel.org,
+	mfd@lists.linux.dev,
+	lee@kernel.org,
+	Frank.Li@nxp.com,
+	lgirdwood@gmail.com
+Cc: vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com,
+	aman.kumarpandey@nxp.com,
+	Lakshay Piplani <lakshay.piplani@nxp.com>
+Subject: [PATCH v22 0/5] Add support for NXP P3H2x4x I3C hub driver
+Date: Thu, 19 Nov 2026 15:24:44 +0530
+Message-Id: <20261119095449.555593-1-lakshay.piplani@nxp.com>
+X-Mailer: git-send-email 2.25.1
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] i3c: master: Disable slave events before RSTDAA
-To: Defa Li <defa.li@mediatek.com>,
-        Alexandre Belloni <alexandre.belloni@bootlin.com>,
-        Frank Li <Frank.Li@nxp.com>, Matthias Brugger <matthias.bgg@gmail.com>,
-        AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-arm-kernel@lists.infradead.org,
-        linux-mediatek@lists.infradead.org, wsd_upstream@mediatek.com,
-        mingchang.jia@mediatek.com, yuhan.wei@mediatek.com,
-        hao.lin@mediatek.com
-References: <20261106062236.564607-1-defa.li@mediatek.com>
-Content-Language: en-US
-From: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
-In-Reply-To: <20261106062236.564607-1-defa.li@mediatek.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE5MDAyOCBTYWx0ZWRfXz2SnM405y8cD
- j/bL0a8iHJSyLajKVJsSHwiLEr95IiQGX3P9yrmOuPc/i4tFyKnoRhYSoTlz1qtApxIkDToktxU
- He002nvdN9RXJLZYhHsoe0DtzHpJiU/7EnPsvOF4afQX6rAOldx4+ni1CPmzZDZMpdrr847JDd6
- ywqi/xSMZZE60m/R4sXoqkhom4CYbd582MuBkzfJsppWIaPkIqI/cdzteHasiqVPs/8wPWu4etm
- jQUwVY1YGS/7VUY26nrFKKeJhboAEVPK7mq9VbdTkasM99o23EgkVYxb9Ve0RHdmPFr6okyOh/G
- di+9a0x4KgP51t/u87WLnU8FiYTz6S3VWFGwilVQQgqg74TMN3buCKnLsDjFMORdPJSOozDO+YG
- JysB6Zl0eNcfKTTQ33EOo3otnt5jc793Qwi9XUBfxmNed5mZuDfZy5UwA67FjM42KA8WCRKuJfS
- Tk7oe37O5CfiM60IPXA==
-X-Proofpoint-GUID: VfIHciOl2Kt_tO0uwhWhQ6F6lJDe8H8T
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE5MDAyOCBTYWx0ZWRfXxWRj94NEwqs7
- 5EPpnudphzgK3S8yIouBvvYrtl6jrVN2e/OH/zGVt/cGklktBrxEnBn6Yi+qmq1wx/4d8TQaHPx
- 8SAvuc5j/h0BuGu//gIM5cAE8nl+U9k=
-X-Proofpoint-ORIG-GUID: VfIHciOl2Kt_tO0uwhWhQ6F6lJDe8H8T
-X-Authority-Analysis: v=2.4 cv=bfH+w+PB c=1 sm=1 tr=0 ts=6afea11f cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=mpaa-ttXAAAA:8 a=qpz-AGu6-bpAACMkIr4A:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-19_02,2026-11-16_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 suspectscore=0 adultscore=0 malwarescore=0 bulkscore=0
- spamscore=0 lowpriorityscore=0 phishscore=0 clxscore=1015 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611190028
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261118_231129_796204_8B049E26 
-X-CRM114-Status: GOOD (  20.14  )
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261119_015503_745029_9D2E9F4F 
+X-CRM114-Status: GOOD (  13.48  )
+X-Spam-Score: -4.2 (----)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,78 +70,154 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
-	version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+This series adds the MFD parent, regulator and hub drivers for NXP's
+four-port and eight-port P3H2x4x I3C hubs. With an I3C host, the hub
+driver exposes I3C ports as virtual controllers. SMBus ports appear
+as I2C adapters with either an I2C or an I3C host.
 
+The I3C core helpers, DT binding and generic hub support from v20
+(patches 1-3 and 6) are already in mainline. This revision adds a
+generic I3C address-slot fix and addresses the Sashiko findings and
+review feedback reported against v21. The series is rebased onto
+v7.4-rc3.
 
-On 11/6/2026 11:52 AM, Defa Li wrote:
-> Bus initialization sends RSTDAA before disabling slave events. A hot-join
-> or other slave event may occur after RSTDAA and interfere with the
-> following DISEC command or the remaining initialization.
-> 
-> Send broadcast DISEC before RSTDAA to disable SIR, master request, and
-> hot-join events before resetting dynamic addresses. This prevents slave
-> events from disrupting bus initialization.
-> 
+The earlier v20 Sashiko reports concerning the location of p3h2840.h
+in the MFD and regulator patches appear to be false positives.
 
-While the sequence you suggested making sense to me, but i am wondering 
-before bus_init, are there really a target device getting powered up who 
-can generate hotjoin ?
+Changes in v22:
 
-MY understanding is, post master registration and bus_init only target 
-devices should start life, isn't it ?
+Sashiko fixes and review feedback
 
+- Factor the common I2C and I3C MFD probe initialization into a shared
+  helper, leaving transport-specific validation and regmap setup in
+  the respective probe functions.
+- Replace the generic I2C device ID "nxp-i3c-hub" with "p3h2x4x".
+- Use platform_device_set_of_node_from_dev() in the regulator driver
+  to avoid leaking the inherited Device Tree node reference.
+- Initialize TP_NET_CON_CONF to a known disconnected state during
+  probe, preventing stale routing state from connecting unintended
+  target ports.
+- Mark downstream DT-assigned addresses as I3C_ADDR_SLOT_EXT_DESIRED
+  instead of I3C_ADDR_SLOT_I3C_DEV on the parent bus. This prevents
+  DAA reconciliation from treating downstream devices as orphaned
+  parent-bus devices and probing them again.
+- Connect each I3C target port before registering its virtual
+  controller, rather than connecting all ports after registration.
+  Keep the ports connected to prevent downstream device probes
+  and IBI operations from accessing disconnected targets.
+- Advertise supported SMBus emulation operations and reject
+  I2C_M_RECV_LEN, avoiding unsupported variable-length block reads.
+- Add combined write-then-read adapter quirks and reject transfers
+  exceeding the shared controller-agent payload capacity.
+- Reject empty SMBus receive buffers before reading their address
+  or delivering slave callbacks.
+- Clear pending SMBus receive and overflow flags before enabling
+  the slave IBI, without clearing the controller transaction-finish
+  flag.
+- Reject unsupported 10-bit I2C slave address registration.
 
-> Signed-off-by: Defa Li <defa.li@mediatek.com>
-> ---
->   drivers/i3c/master.c | 16 ++++++++--------
->   1 file changed, 8 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 01e05bad8661..4fdc8f721364 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2571,10 +2571,12 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->   	}
->   
->   	/*
-> -	 * Reset all dynamic address that may have been assigned before
-> -	 * (assigned by the bootloader for example).
-> +	 * Disable all slave events before starting DAA. When no active device
-> +	 * is on the bus, returns Mx error code M2, this error is ignored.
->   	 */
-> -	ret = i3c_master_rstdaa_locked(master, I3C_BROADCAST_ADDR);
-> +	ret = i3c_master_enec_disec_locked(master, I3C_BROADCAST_ADDR, false,
-> +					   I3C_CCC_EVENT_SIR | I3C_CCC_EVENT_MR |
-> +					   I3C_CCC_EVENT_HJ, true);
->   	if (ret)
->   		goto err_bus_cleanup;
->   
-> @@ -2585,12 +2587,10 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->   	}
->   
->   	/*
-> -	 * Disable all slave events before starting DAA. When no active device
-> -	 * is on the bus, returns Mx error code M2, this error is ignored.
-> +	 * Reset all dynamic address that may have been assigned before
-> +	 * (assigned by the bootloader for example).
->   	 */
-> -	ret = i3c_master_enec_disec_locked(master, I3C_BROADCAST_ADDR, false,
-> -					   I3C_CCC_EVENT_SIR | I3C_CCC_EVENT_MR |
-> -					   I3C_CCC_EVENT_HJ, true);
-> +	ret = i3c_master_rstdaa_locked(master, I3C_BROADCAST_ADDR);
->   	if (ret)
->   		goto err_bus_cleanup;
->   
+Additional changes
+
+- Add managed cleanup to disconnect I3C target ports after virtual
+  controller teardown.
+- Keep port routing updates serialized under the hub routing mutex,
+  marking ports permanently connected only after successful writes.
+- Document SETDASA/ENTDAA handling and the shared parent dynamic
+  address space.
+
+Changes in v21:
+
+Sashiko fixes
+
+- Keep I3C routing callbacks active during virtual controller
+  registration. Serialize routing updates under the hub mutex and
+  mark ports permanently connected only after successful routing.
+- Filter both DT parsing passes to "i3c" and "smbus" target-port
+  nodes, preventing unrelated child nodes from claiming ports.
+- Process pending SMBus receive buffers independently and clear
+  only the overflow flag after servicing them, preserving new
+  buffer-refill events.
+
+Additional fixes
+
+- Reject duplicate target-port indices in Device Tree.
+- Reserve DT-assigned addresses for all I3C target ports before
+  the first virtual controller starts DAA.
+- Clear only the SMBus controller transaction-finish flag before
+  starting a transfer, preserving pending RX and overflow flags.
+- Initialize optional IBI support without holding the routing
+  mutex, avoiding an error path that could leave it locked.
+
+Previous posting (v21)
+https://lore.kernel.org/linux-i3c/20261112124437.3367252-1-lakshay.piplani@nxp.com/
+
+Previously merged upstream patches from v20
+
+[1/8] I3C core hub support
+https://git.kernel.org/i3c/c/9d60a0eafae1
+
+[2/8] I3C controller-only operations
+https://git.kernel.org/i3c/c/8d0008260c32
+
+[3/8] NXP P3H2x4x Device Tree binding
+https://git.kernel.org/i3c/c/58c018414635
+
+[6/8] Generic I3C hub support
+https://git.kernel.org/i3c/c/b0cfe49a2e3b
+
+Aman Kumar Pandey (3):
+  mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub and on-die regulator
+  regulator: p3h2x4x: Add driver for on-die regulators in NXP P3H2x4x
+    i3c hub
+  i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
+
+Lakshay Piplani (2):
+  i3c: hub: Mark downstream DT addresses as desired on parent bus
+  i3c: hub: p3h2x4x: Add SMBus slave mode support
+
+ MAINTAINERS                                   |   6 +
+ drivers/i3c/Kconfig                           |   1 +
+ drivers/i3c/Makefile                          |   1 +
+ drivers/i3c/hub.c                             |  18 +-
+ drivers/i3c/hub/Kconfig                       |  11 +
+ drivers/i3c/hub/Makefile                      |   4 +
+ drivers/i3c/hub/p3h2840_i3c_hub.h             | 358 +++++++++
+ drivers/i3c/hub/p3h2840_i3c_hub_common.c      | 437 +++++++++++
+ drivers/i3c/hub/p3h2840_i3c_hub_i3c.c         | 247 +++++++
+ drivers/i3c/hub/p3h2840_i3c_hub_smbus.c       | 685 ++++++++++++++++++
+ drivers/i3c/master.c                          |  20 +
+ drivers/mfd/Kconfig                           |  13 +
+ drivers/mfd/Makefile                          |   1 +
+ drivers/mfd/p3h2840.c                         | 156 ++++
+ drivers/regulator/Kconfig                     |  10 +
+ drivers/regulator/Makefile                    |   1 +
+ drivers/regulator/p3h2840_i3c_hub_regulator.c | 289 ++++++++
+ include/linux/i3c/device.h                    |   2 +
+ include/linux/i3c/master.h                    |   2 +
+ include/linux/mfd/p3h2840.h                   |  41 ++
+ 20 files changed, 2296 insertions(+), 7 deletions(-)
+ create mode 100644 drivers/i3c/hub/Kconfig
+ create mode 100644 drivers/i3c/hub/Makefile
+ create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub.h
+ create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_common.c
+ create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+ create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+ create mode 100644 drivers/mfd/p3h2840.c
+ create mode 100644 drivers/regulator/p3h2840_i3c_hub_regulator.c
+ create mode 100644 include/linux/mfd/p3h2840.h
+
+-- 
+2.25.1
 
 
 -- 
