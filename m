@@ -2,152 +2,111 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BEB7E606A33E
-	for <linux-i3c@archiver.kernel.org>; Wed, 18 Nov 2026 03:32:27 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A338C60A2628
+	for <linux-i3c@archiver.kernel.org>; Thu, 19 Nov 2026 04:22:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qJEQJZSm;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=aspeedtech.com header.i=@aspeedtech.com header.a=rsa-sha256 header.s=selector1 header.b=opFlTzW5
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=rzNZZc2v;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=H8Md+S4d
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=QS4DBKyTCSjbKfjj2g7rPPH7ymiQXNN1gJVmbn6Rs88=; b=qJEQJZSmUiJq/TV/IPmv6KkbfZ
-	2Rv/LdNU+WTFzy2F73B93NVI8ZfHq4GpUZDRDCeXHBgXCEZKd1gq4/KG/c3Q1We591uEd20o/MY6L
-	qqu7Y7TtrzTo/rMmEg9RrnomY7NYhwnjcwo/DgcOHERi5vvmbSoONPwgTxRSk0JheFkAQwUNNzjO0
-	cfDZNK/XT6IP+RA55pavJrVyfpHJKeV7gS4+SJPIdwzUeovuYPwsDkdXTIZqs92l23qNk0/wq1Cxv
-	vXHuinwVxKkC6990h6r+l4YdF6QKFD+JupeI02zL1YNDW12Vn6nZp598Z74pOH/fEcgHHUtfwOoSl
-	VzU1kDEw==;
+	bh=85UHN+NF6IQEFG14tHHEfqx0eenP0b/LIA2iNXgBMYA=; b=rzNZZc2vhqo8zPZQ+CHPL6W6vg
+	zH/biLWcQFlD6l4zD81Lpt2lSlnClmMaYcQks6zZW2CRVEoo5wsneIYNPQ8gadqYPKcqqB50WatSf
+	uRZLniVrfkcf63rjTYgUOLNt9MNzY+/dc5dpJ2QSJNCqzIShHxaOPKqZKAS7Hj7O1s6Bady/GQSXy
+	DGTYywBESvLv1CabE1snOAMUBb1QSOZargSzIMLtB0QXctqwjKd93wDZ6RYpxtf7+l8MpIx04wka/
+	JoupZmd9X5EzMjajLsVe7E4OcgxIzNypI0XFEGZeqyWMD7tGjbf/zr7o10SANIyS11Qpq+HpQgRWo
+	f53DN9nQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTWPL-00000007eCp-1zcM;
-	Wed, 18 Nov 2026 03:32:27 +0000
-Received: from mail-koreacentralazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c40f::6] helo=SEYPR02CU001.outbound.protection.outlook.com)
+	id 1xTtfh-0000000Aofy-1f34;
+	Thu, 19 Nov 2026 04:22:53 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTWPJ-00000007eC8-2QcH;
-	Wed, 18 Nov 2026 03:32:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=w0EhD5qs4A951vAzJboe/zc8nKV6HrG+y4aS6nEBTwOh7yKjvC9QoROQ6LcYuEOADwQtMAi2EPhlAI44vvnHltzzh09UTaCZxs4HkDCrmvmWQZ4rUS6uPZQT6wZwGNjUKPH2ZIYG2+QlEvP9BTO3+J/PwYCaDLMXisbzweatUTZ9HGnZCxRFs7WmFEyjlKBU2S9eR6UHuelMCoPW4qPEAb8yz5hIwMZe4LiNZAY+EDye/71k7A6adJJYg5HPa/tNh+KpQNDpLOsp0C4qGHd0rfwN7rq8p4Pwk+jnKKBtRnrIwjjEzJMBLERE9gNXGiTq/R9AWtBq2ObdZZ1dUutgWw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=awx/jlrCKfTcHpeyeG9prOlcTmrzWR7zJ064mfXIBDc=;
- b=dMBqakk8szwtXTkMR2Ewibjmg1ZhzlZALzjBgUXNDAWUUOZicBgfpyw9zo5A7B+1ZymMuWCiUVQGJJUWwbl2zsVWpPCVS375S1coT/OrUOeWb87leKoBb9RCWYflc1PiSRK4ncROB/t8pj1QQdNR6esXz/5tW9LMR8pYFdPp75VhWgRVwEDbCGfGC+D6GFHvHkQkZJaxUft3Uh5X28nlN3lFfGp+eXcFeBa1kQzU3p1rDNDca55MWudt/WnQxnfFZVD8JWknDXke89h6EByrkVYFKCqGEC1Qr5HkCEU+4ZHAFL9P4cd3JChWVeePyEWwnzH0UicWJA7IqOnN+E3/eg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
- header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=awx/jlrCKfTcHpeyeG9prOlcTmrzWR7zJ064mfXIBDc=;
- b=opFlTzW5HJoN5ju50Hd3HJuOrQ5pPds1Rj3n5a3q/uWMqsBVhYtZDQ0QuoVYjR9b+bme2H0BVu6F0SCz7CaDzfBRUardM7m+ut3bmKLfUUt+bhUYAFOwRZjhGfA7MT0TKhC56im0Ojhf0Xn6KbnGTFO3nwr79KKNvo6+VGZRG82D5dVlxRMl1RCOO7CraiXOQcbPGKmNFMaIfIKiPQ9hgiA7jbFgn0oNiYX6eSJYUwh30fySKy+goQH2m/kqX66tlfLdsOmv+WmN1V1txPyrJK3f7bZ92Gh20mfKTfpBYTBjQqhcD6+30i8WDih2jnRwAIAlrUEMeaZuB9/DnA+YLg==
-Received: from OSQPR06MB7252.apcprd06.prod.outlook.com (2603:1096:604:29c::6)
- by OSNPR06MB9002.apcprd06.prod.outlook.com (2603:1096:604:49b::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.8; Wed, 18 Nov
- 2026 03:32:22 +0000
-Received: from OSQPR06MB7252.apcprd06.prod.outlook.com
- ([fe80::92af:c9d9:8779:d19]) by OSQPR06MB7252.apcprd06.prod.outlook.com
- ([fe80::92af:c9d9:8779:d19%5]) with mapi id 15.21.0639.006; Wed, 18 Nov 2026
- 03:32:21 +0000
-From: Billy Tsai <billy_tsai@aspeedtech.com>
-To: Frank Li <Frank.li@oss.nxp.com>
-CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
-	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
-	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Joel Stanley
-	<joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>, Philipp Zabel
-	<p.zabel@pengutronix.de>, Miquel Raynal <miquel.raynal@bootlin.com>, Ryan
- Chen <ryan_chen@aspeedtech.com>, "tbevis@amazon.com" <tbevis@amazon.com>,
-	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-aspeed@lists.ozlabs.org"
-	<linux-aspeed@lists.ozlabs.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: =?big5?B?pl7C0DogW1BBVENIIHYyIDcvOV0gaTNjOiBtaXBpLWkzYy1oY2k6IFByb2dyYW0g?=
- =?big5?Q?AST2700_IBI_termination_threshold?=
-Thread-Topic: [PATCH v2 7/9] i3c: mipi-i3c-hci: Program AST2700 IBI
- termination threshold
-Thread-Index: AQHdcYsUM/sgV1Aoakuu6XYDn3sxSLcpHvkAgAoXjYs=
-Date: Wed, 18 Nov 2026 03:32:21 +0000
-Message-ID: <OSQPR06MB72523D56B87D06FB5A5AF82A8B7A2@OSQPR06MB7252.apcprd06.prod.outlook.com>
-References: <20261111-b4-i3c-hci-ast2700-v2-0-4d8fff5c5196@aspeedtech.com>
- <20261111-b4-i3c-hci-ast2700-v2-7-4d8fff5c5196@aspeedtech.com>
- <avSkAIS82rYaLZvH@lizhi-Precision-Tower-5810>
-In-Reply-To: <avSkAIS82rYaLZvH@lizhi-Precision-Tower-5810>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: 
-authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=aspeedtech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: OSQPR06MB7252:EE_|OSNPR06MB9002:EE_
-x-ms-office365-filtering-correlation-id: 7502c2dd-92ca-476f-7ab4-08df45248e4d
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|23010399003|7416014|366016|376014|1800799024|18002099003|22082099003|261009223027099003|56012099006|4143699003|261026140227099003|261028144727099003|10067099003|261026121527099003|261022105027099003|38070700021;
-x-microsoft-antispam-message-info: w7EZJG9dq+e3szrQSPuNAADzEFYd/UDL61VN+ssND7oqSghaL5J30c+2P8DZQbzuVNZBvUfqlSyTb5TmU9FF7Js1CdBWo0NMSytx/JEv3GyvzwFD9jvr7b78ZV+P9bwNvRT/NYtM6XxxC3E/TaBN1xkgsKB6t81ph+nhYgFzsvjSmsZnYwLyfz+765Hzpzz1k3hbMF283JXxltzazgJtHnJnZmxOOLMacl5P+hzzryEhs1Wh7MWYanhpVIRkCJl8ZjTBlOeTRyYcpuUP0/tG0tyzlQ8TuaEaG4pjEosCh3OmwLU+ew7JuvUE/jfPnZQFKAGNr6//wGDc7R+XKMyy/BR/y2+tlHZfPmdB2IEt3W6WpdDV3D6jdSkRFu1U2CYZl8yC/FtmntAUpmIEGBJB/78yxsTm9TD46H8cuuGWMzJYIpAObj0ibsIFoRqZBKwYUmfdn3NhoQUR4EpKr3EPvJWTCWfILOlCz2dRROYOMB7wxYks1inGS9C1wNOzFB9FSeYpgQ6ARIJhqAbYyqRmQwcvZPymhQ9lYGSHipCYv8udwkTpdCGpXmU9hbvBQjYAXIh6LD7eBr0uHnlx/xXvznruWO5ou9BK5DQ7OsooHnUi6GwfCGxOnRyY4PNYS3n70nBXmzt/Kg1K9ideBJYBP0i2+AxmH5ZDFg02tIRjlzpJtveqanLMoqvHi4sKwL8y/93KKcmaoteSNgYYPoukvw==
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSQPR06MB7252.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(7416014)(366016)(376014)(1800799024)(18002099003)(22082099003)(261009223027099003)(56012099006)(4143699003)(261026140227099003)(261028144727099003)(10067099003)(261026121527099003)(261022105027099003)(38070700021);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?big5?B?ZEljSGZsa1k2OUdaamhpL3Y2bm02TkY3eSttN0xOTkVsaGdhRTg5MHcrVlh4RFlj?=
- =?big5?B?elRxblhmakFJYWdOVTdRSzM4bUxEa0FseGZ2ZEdpdFBMRjNwaVMyTExkOE9FdnRJ?=
- =?big5?B?czhnS2JwbkZJQXlrSmVja2IxZlg5R2Rhc1ZRcVJkdzhoTHp0YWtjUmlaeVBuQm5W?=
- =?big5?B?QVdWL1hUVnVWcnh4dmw0WjNOQ0xFbGsveFVSY1YxK2krbzZaMGpGNmtzQ1Z1OE54?=
- =?big5?B?U3g1bEovTlEwR0V2a2lhT0tTU0VRMUdrUE1hV01KTkJlWTFSNmY0THN1SmdBL0hU?=
- =?big5?B?S1g2M3FySTJFMGdneU1QaUNjeDdhbkxhNmowRm54R0d0OEdFWnpUZEZERDJPVDhX?=
- =?big5?B?WDMyYzFLSjRNSzV6c2JwVUhnd1JqZ1lqN05jYllpU2dRTkVUb0p5WjNFU05nT0hG?=
- =?big5?B?YUJRUTNyYldTS3l6dWxZMFl4Q3RiQkRYdm1yMjFuRjB4akZ5am9rTUtNc1MzZVlR?=
- =?big5?B?bW92MGcvYnNIYWpVbGYzQzJLcXZTWjVuK3ZoaHlxK1hDRzBSV05pSHdlNEFCVThj?=
- =?big5?B?S0tVMUhPMFhJVm1EdXJnZkhUcUp4dnBIcjhTdXRRejRjYTNHREo5dzBHNTZXaEtz?=
- =?big5?B?d1NVSE9FZUh3QXJ4dThEbDBEZHQ0eU1LRlJ4dGF3K3NqRjdBL05nN3pablJMM1li?=
- =?big5?B?YzRRM2p4T0xHUUNWSlBXOW8ycmlwckw3SmpJSTdMNTdlVEFFMzJqWGFXYnprcjVi?=
- =?big5?B?UDRqaHpEcENTNTFWRU5icExlNERuTSt2L0RpdzNsQkNBVktJa0NGR284N1JsK2tr?=
- =?big5?B?Z2E5dGxOMHdSWDFRcDJkT3duOGtUS0kwRWhZS21vSnlDcm1FUmlQZzVMTmZ1L2Er?=
- =?big5?B?Y1RhWnlUWlVFK1FScXRGMjlweDN4Ri9DY04yLzd5L3k0dFFCTGxQdWsrSGZja3Ey?=
- =?big5?B?ZE9BMzFXZnZqMklIWC9pRnRkS0h0UnJlbjh5TEdqYWFRVVJTa1g3dkl5TSszbGZD?=
- =?big5?B?c2VkZWlkK0VQNjBXOEh1TVc4OEJhbCsyRFV3SS9GSndBandYMDFaTzRJQVpYL3Fh?=
- =?big5?B?NHVGL2tHK1U5U1JSell2ai93dVVYeWtuaWdBMHlJenc0Nml2VE5wVTU2cVlOWEtH?=
- =?big5?B?Vzh5bGR6SHBsbEpKRTcvQjFqbWVLTjNXNUllQWhWQU41VFlDU1BIOWljQXNhRDRt?=
- =?big5?B?c0c2bEx1WTJxUW1IRFlvZ1puVE41NEc2MGhhMW9JWTJ1NGlzbVlyUVp6SHo3c2ho?=
- =?big5?B?TW9BKyttei9XOENxeUx5NVBzZVg5akcrWUpiTW03RXdldDFEaFJUaVdMcjRUM0xP?=
- =?big5?B?a1BDSjhpT1NKUktsU2FOcU5MdjBsMFptZkVKaEM0K1ora2tEK2dXYVhFbUhPY3di?=
- =?big5?B?Sng1OVE4TEpsU21LbzNNTDl0aFczdk0yNlFrREttbmJTVit2Q3l1VVZzQjBDZFBT?=
- =?big5?B?SXdab1FuNFYwSzNXa2x4ai9QdGxZSHdQdHQ0Z3hUekFab0xNeDJhSFpVOFYzRnVK?=
- =?big5?B?R1haZ0owcWh4YXp2R0pycGM5anBjTWZwWURWRlUzc3dFMEVTUno4N1FkcThDc1dn?=
- =?big5?B?UzV2c3RkR3ljVGhvaWZ0Yk4wejg4bWFQU2pGWEJVNHU1bGVnNmFkZnlOcE11ZzFp?=
- =?big5?B?cUxaYUVUdHV5N3hCaDVjUG5pUFJLdTdDR0xrSEU5SFVpdlpheXc1MDY4dGFLL3pI?=
- =?big5?B?THVBTEJOQ21BSUU0aWREY0NRU01jS1ZybjllM2pEamd5clBoQWp6VGFTRk1SWlhK?=
- =?big5?B?K09ReHMyRFFBbEhnemNsRW01ei84L1BldGNseVJnaGsxUEw4YUcwYTlxZ2R4MHJ0?=
- =?big5?B?a21HOVFPK3VSZ3NTRE1pOEpmenQzNUc1THJyRy9zQ0JsdkF1bFlHYXNncjFyZXhl?=
- =?big5?B?dnN4T0tQQWpUMytma2FpVWlaa01neEUyU1VmakFLT3FoZmoxdURrUW1KZFRxek1M?=
- =?big5?B?dWdlWjRqVWVBVVdSMHV2Z1E4WHFweSttSG9QaVZCOENDUW9TS2RxYlNvcXZCRG5y?=
- =?big5?B?b3c3cVdSUDRLTURhdkI0eUZqSml5RGdGTFpWYmdibmZ0Mk5GcHA1TWhKVTlIZDF6?=
- =?big5?B?Qk9EbE5aL3N1TXJuUjBGQnU0V2RRUFRUclM3R1ljQXBLdHlyRGZKMkd4VDZ5VmRM?=
- =?big5?B?eld6ZHZMSU5zS2pmYjEybU83RGZZaStrZG5pUGhkOC9HVEhkTEtRdVJiKzhnT3Fz?=
- =?big5?B?V1FFN004RDlJeS91eW5pdG9GYjdjdlArd1dWZm5KNDVuMWlZaU1hL1BwQk5mM0dm?=
- =?big5?B?bVpCSTQvZWNFODlUN09JSXFKOVpTQT09?=
+	id 1xTtff-0000000Aof9-3K5a;
+	Thu, 19 Nov 2026 04:22:51 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 0644E64A3E;
+	Thu, 19 Nov 2026 04:22:51 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795062170;
+	b=hSqV8Td7cBnX5aggYL8jidXDmoQkifnuXf+RCZYrUClLFQk9Dk7njZqi29ELMJoZ7QYg
+	 FfRaXFqOenJDsqGdH3b1vdpPct8z9sSv7EbB0m6AHPPnH6lL2LlK3SsQAkuCMPk9+zUgU
+	 g8tpB/bOGHZdvXUcsT0zu+lFl4asHqUtkL2X5WcHvMCXHDPYcKN1lpuhDzMe37n1yNl9p
+	 KD0FY/e/yyf8M8LzZ6heEXltQEnod5pWDZF/fv8gkmQHVR+j+SBa2K41eUY390Do4yzR1
+	 0aGsqzyUqZpEBhtBH1yKSEh2SpGdd69b9zt1vpp+x89wq0+mJvGrkzp6GVYYxZVfyYQ==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795062170;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=hOfT/6IE+yXiSnyrTuJj5KzeTLeDeuD5KGuDO9NiLTo=;
+	b=vERX+JxA91i/mo/21MYwuPyuAM+bYv3ndFBM3aTUUvaFxjSudq0d1fV+zfbRDlpwykmJ
+	 MyutyJTX4iPFe1Rew/6ihXlp9xL3b3KdcG0tsfLZIhyovSbizosbS2hZFtUKcNv0Hhz+Q
+	 lXeDtEtHqIN0L3UUt0enjmjGUoIlm1BJktdDCgwwO+5sXmZQup+N29KpLPE/fhtzrXsHi
+	 7DyYdE78873CslSrtBBQ4SaBD36trndct2RXeJ0k7H1zG6dDOGaNUlWe/8CCeRR62ZX1B
+	 7meVcQGKmhcZA/MZrrmgFp1ZO3HpAdiQE9fAwtz3/IkFWk/yMY4D9+esGx5UpzTWO6A==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id A718A1F000C6;
+	Thu, 19 Nov 2026 04:22:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795062170;
+	bh=hOfT/6IE+yXiSnyrTuJj5KzeTLeDeuD5KGuDO9NiLTo=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
+	b=H8Md+S4demg9p41U88+RTr5Tw3YBxYQ1bFAO4OCfnqhWuttdYybzTZ5IMnh4ZKFp5
+	 PcVjaVLJ4zh/kKvTQuVC0aiD8X/RLdL/FXdPAPDJqi8crI70vY1kmdrR3sQPWJpVPr
+	 A0Et0oahvnb+abMYWWFsl+ujJtop6DE8YxTYEPM1dTBd9j6ITezIvoKhhNvKPKgx49
+	 hYY4+mKcw9qSoDT/ay9nqb11hHg1eabjYocRAcbrvPM15m/FaggI0tRWsd9gaJCyvN
+	 stEb84zSrpiYdaJhhBhs+tVj7+SE2pAScVucHO5U00LVQ9IITajEMAQQD5q8x6uJ/R
+	 2hFH/vrR5VE9Q==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 24F5B4B0CE;
+	Thu, 19 Nov 2026 04:22:49 +0000 (UTC)
+From: Junyi Zhao via B4 Relay <devnull+junyi.zhao.amlogic.com@kernel.org>
+Date: Thu, 19 Nov 2026 12:22:46 +0800
+Subject: [PATCH v5 1/2] dt-bindings: i3c: silvaco,i3c-master: Add Amlogic
+ A9 support
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-OriginatorOrg: aspeedtech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: OSQPR06MB7252.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7502c2dd-92ca-476f-7ab4-08df45248e4d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Nov 2026 03:32:21.8364
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: WQ4qLPgTOh+NmKt4bzJw8lHN5K7gDUGc8boWr7S6gIb7UJ1FPdmp2ADQLEiicNd9COheaqQzEUouO14CT1yYyGqucLPz+uTr4v/tbB5ILzw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSNPR06MB9002
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261117_193225_624810_F231D0CC 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+Message-Id: <20261119-a9_i3c-v5-1-6ec51f8fb59d@amlogic.com>
+References: <20261119-a9_i3c-v5-0-6ec51f8fb59d@amlogic.com>
+In-Reply-To: <20261119-a9_i3c-v5-0-6ec51f8fb59d@amlogic.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
+ Miquel Raynal <miquel.raynal@bootlin.com>, Kees Cook <kees@kernel.org>, 
+ "Gustavo A. R. Silva" <gustavoars@kernel.org>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-amlogic@lists.infradead.org, imx@lists.linux.dev, 
+ linux-hardening@vger.kernel.org, xianwei.zhao@amlogic.com, 
+ Kelvin.Zhang@amlogic.com, Junyi Zhao <junyi.zhao@amlogic.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795062168; l=3123;
+ i=junyi.zhao@amlogic.com; s=20260924; h=from:subject:message-id;
+ bh=Ic31Gjxqnh4s2EDXW6pNiciBkQWy1/9jndpHbnOW4yg=;
+ b=U24vad6OC2nqL7S8VmpM1fVCastdgiDzxgkGZb+7cAToCkFrSvfKC+guCx2FTg/+uSFVddGCk
+ iXD1AiCvR/iDqxk7KS2P5QdgH2NuPbY03rZRKI3VawX7mrNjHfDDl+H
+X-Developer-Key: i=junyi.zhao@amlogic.com; a=ed25519;
+ pk=hiL5PjGIksGFiWvEx9J3MhQqU/ro6vNbj72NIw4bbvA=
+X-Endpoint-Received: by B4 Relay for junyi.zhao@amlogic.com/20260924 with
+ auth_id=1054
+X-Original-From: Junyi Zhao <junyi.zhao@amlogic.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,36 +116,117 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Reply-To: junyi.zhao@amlogic.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-> what's happen if device A have payload 4 bytes and device B have payload
-> 8 bytes, you set payload thld to 8. if device A raise IBI, what's happen
-> if device have not sent out earily termniate?
+From: Junyi Zhao <junyi.zhao@amlogic.com>
 
-Device A is still protected, just at a coarser granularity.
+Amlogic A9 SoCs integrate the Silvaco I3C master IP in two domains:
+the EE-domain instance (amlogic,a9-i3c) takes "pclk" and "fast_clk"
+like the NXP integration, while the AO-domain instance
+(amlogic,a9-ao-i3c) lives in the Always-On domain and generates its
+bus clock from a divider inside the controller's own register space,
+so there is no external fast clock and only "pclk" is exposed.
 
-ASPEED_I3C_MST_MRL's termination length is one controller-wide
-register, not a per-device limit, and aspeed_i3c_ibi_grow_threshold()
-only ever grows it, never shrinks it back down. Once device B
-registers for up to 8 bytes, every device sharing the bus is capped at
-8.
+The two instances differ from the vanilla Silvaco/NXP integrations in
+clock topology and required init, so the driver matches them by
+dedicated compatibles instead of the "silvaco,i3c-master-v1"
+fallback: a fallback would bind the generic driver data, which
+neither programs the fast clock rate nor handles the AO internal
+divider, and the variant would then fail to work.
 
-A well-behaved device A terminating its own 4-byte payload never
-reaches that threshold. A misbehaving one is still forced to stop,
-just at 8 bytes instead of its own 4: the threshold backstops an
-unbounded payload IBI, it doesn't enforce each device's own length.
+Add both compatibles to the schema without the fallback, following
+nuvoton,npcm845-i3c, and use per-compatible if/then conditionals to
+enforce the clock counts: two clocks for the EE-domain instance and
+one clock for the AO-domain instance.
 
-Thanks
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Signed-off-by: Junyi Zhao <junyi.zhao@amlogic.com>
+---
+ .../bindings/i3c/silvaco,i3c-master.yaml           | 26 ++++++++++++++++++++--
+ 1 file changed, 24 insertions(+), 2 deletions(-)
 
-Billy Tsai
+diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+index 853092f75..d892d42be 100644
+--- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
++++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+@@ -13,6 +13,8 @@ properties:
+   compatible:
+     oneOf:
+       - enum:
++          - amlogic,a9-i3c
++          - amlogic,a9-ao-i3c
+           - nuvoton,npcm845-i3c
+           - silvaco,i3c-master-v1
+       - items:
+@@ -28,14 +30,14 @@ properties:
+     maxItems: 1
+ 
+   clocks:
+-    minItems: 2
++    minItems: 1
+     items:
+       - description: system clock
+       - description: bus clock
+       - description: other (slower) events clock
+ 
+   clock-names:
+-    minItems: 2
++    minItems: 1
+     items:
+       - const: pclk
+       - const: fast_clk
+@@ -70,15 +72,35 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - amlogic,a9-i3c
+               - nxp,imx94-i3c
+               - nxp,imx95-i3c
+     then:
+       properties:
+         clocks:
++          minItems: 2
+           maxItems: 2
+         clock-names:
++          minItems: 2
+           maxItems: 2
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - amlogic,a9-ao-i3c
++    then:
++      properties:
++        clocks:
++          maxItems: 1
++          description:
++            The "ao" variant is the controller instance in the Always-On (AO)
++            domain, which has no separate bus clock and derives the
++            bus clock from an internal divider.
++        clock-names:
++          maxItems: 1
++
+ unevaluatedProperties: false
+ 
+ examples:
+
+-- 
+2.42.0
+
+
+
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
