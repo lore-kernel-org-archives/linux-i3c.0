@@ -2,141 +2,64 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 27848606A32E
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2026 10:16:12 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 82FE0606A323
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2026 10:40:21 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JAXmaiYP;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=renesas.com header.i=@renesas.com header.a=rsa-sha256 header.s=selector1 header.b=o+dgep5b
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0m2dL4Es;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=sang-engineering.com header.i=@sang-engineering.com header.a=rsa-sha256 header.s=k1 header.b=l8mmBT7X
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=SARJEFyStbc4Qa+krH5wRm83TfAtGFUgjLx+Z1xXBog=; b=JAXmaiYPxC5I3Y4qZAgzpld1BY
-	jpD78DB3lznHsPAxSrFdRn/OuQxyYA5Vul/maSWTgCJfEw0AYgCqXFMFtsIWQnx29OFfjfTnjzWV3
-	NTRqpeQr9QY0Pg9PqdxzK4zdAnLxKOdZ11m66qnvk6jj6d1/K4VTRdGStcIeZ7WO2cqwSA4HBxMpG
-	n9psIFmFJ8ygerz1vS5+HSjVAVh/U0rcThoH/qjUIYQ/tJYsZtGuj5fjqb+Pdpu+OzFluEJ16nrfa
-	LOISETumPJeZyPy4jseNbGnPPO0hSYqH8dzE9Imltq6okjmmpPV50CxsWCSieYtjW7IL+32jyooZN
-	cI7Y+JjQ==;
+	bh=+54ECUXFPU1mpEAjYQ6BcUXzvJwOnOiBOssGf0FqrAI=; b=0m2dL4EsUOCXvVQGHjjgiCtu3C
+	kj5QJNMoyBXOG6vC5mA6yL7z9BeJKHDCC/ollQH3p1QUa6AeQvN323d70LXz42vlTTN6uVCNvNJk0
+	rxSWvBaDcKkEnCtEDH3UbqPbnBd+o2dumzBQvh4SzRELQlA61/Ohd1ceTxmXzg5LHqOSSqyd8PYKX
+	Z8/Jyw7Vu9jB+jzWMbW1vLR7BvWeAnsEm3x6onOHCbqnDsVXXff/Xk26/yQOo+X35sX3DZXGgZY7H
+	r6PCYCyArdU/2aal9tuC7XwG5o0Zkr4WOAUIMphSAl7etQxts/dAOSeQ/OCdRiAQ9jmeu1kFAMrVM
+	2ZceiTPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWA2t-00000009Qil-2wMY;
-	Wed, 25 Nov 2026 10:16:11 +0000
-Received: from mail-japanwestazlp170110001.outbound.protection.outlook.com ([2a01:111:f403:c407::1] helo=OS0P286CU010.outbound.protection.outlook.com)
+	id 1xWAQH-00000009Uhc-0ZQR;
+	Wed, 25 Nov 2026 10:40:21 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWA2r-00000009QiN-3rop
+	id 1xWAQC-00000009Ugy-3wqn
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Nov 2026 10:16:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=bWeOn7rILS377PT6qsn7CgfUW9/ysxBbkxqbqDBjLhT7GyhWOlk16zUrr9IPxKZwg9/yGnm8RR1l+R8Qy1P+pZn4MEEFzklNtXYk07Q0F1/vGjd6Rhk1xaZnAImKktB6ftKTG5YpJOZa+LYv2rvBJ2pH3TUEgjr/3hdkYUvjAycyzXubS78/5RnWUDB2SHUBZvMFQKzlB4rWYrqzEbMicTtjRKHDPA00wQFoXd7+2jFJP8yqT6zCLGk69Huaxy2ktvOF/D2ki8ASyODvNYeSsOpckrIaGhohCBfcVyJ+vHXvHvxqKaDJK8ujJagZZoR8xMnwz/GIWJj7165N6J1ThA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=8hqibYh/g6E67vpD3DM/hceeU3qTFoSGKDTGH8gSBNM=;
- b=QKVgCQSnnkjAMTnr5GR1ck+NaJZDRFFNsyjK0G1dkqXMGCZ41K1ubafLhTGeEPMn6Jy9gnlXC1o2JIvgjnIJMUXzRDPwtZkUNUSuu0Jepu1XSOfa7T5O85DxEGTZEUbs45VLgOKMV4rVDxBxbeBxA7cw80SDBpZQAVU+QiZh6NmbOTWFd1BNFvnOwdENaFjWtInVu75xBdU+u99xUlL5lNNGo0UPLMkYCUAVTu6jcAwuPQ7YMHLQw0y4O9vfJUzUG4xoCKzC5dQ0KHCnkLFWoBqgvoF0JH0nvhpvhdL9xMU0lUhTDH6iXbWkpfq+SXZrXxtR+BWmF8nmMwLoiQD7vw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8hqibYh/g6E67vpD3DM/hceeU3qTFoSGKDTGH8gSBNM=;
- b=o+dgep5bOrgDxQhKq97aVL+L6VktyCCSWtomVSnHOPhz/9Cn6m7dUOMWhylYs3Mdv8Gc15cHPd7CdwE3dDkgL0GlQLW48OW9/Ci/iqheFFesVoByqUKIJZNYMO/aXtXKZjpCGyjFABaRP1kfvv5i4fc9BZp5qWo90TfDBTweMXQ=
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=renesas.com;
-Received: from TY4PR01MB15109.jpnprd01.prod.outlook.com (2603:1096:405:283::5)
- by TY7PR01MB13826.jpnprd01.prod.outlook.com (2603:1096:405:1fd::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.662.6; Wed, 25 Nov
- 2026 10:15:57 +0000
-Received: from TY4PR01MB15109.jpnprd01.prod.outlook.com
- ([fe80::eaac:e6c3:ef79:e511]) by TY4PR01MB15109.jpnprd01.prod.outlook.com
- ([fe80::eaac:e6c3:ef79:e511%6]) with mapi id 15.21.0662.004; Wed, 25 Nov 2026
- 10:15:57 +0000
-Message-ID: <a394e1f4-1a4e-4dda-a39a-5ae7322dc849@renesas.com>
-Date: Wed, 25 Nov 2026 10:15:48 +0000
-User-Agent: Mozilla Thunderbird
+	Wed, 25 Nov 2026 10:40:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=34E+
+	JD94HLu2tQOT261thhU4F4zT9kW4NNRZx9aDA0o=; b=l8mmBT7XZj6ypCWdj5kB
+	YJ1PzztPYgyH9gCD0lPrnZSR9TY2N0DxnZwVQEwxvWa+OU8l3KYa8j9rrjISygcR
+	iCMVBUhMwPef/FpHJACfPbHGhZ5naoEG6czTIL5lvLFw1GSot6pWDyFmXdQBOORQ
+	Z02YeT4NtgjaZCulTGLRSEEYDd0PVfHb5DoT1FLqI/MR3C3ALb93ZQ/gL0mBYUHP
+	eOfHEnxdVkqq/oWekyI5n95buYF4pzGOSL6Pgtvf2fB9EKqAnkXPVwdTYRgU8ISi
+	Cyp9n/tYj2Tpl8tnarE79a/sUF1aoVWJ6Ps8BLt1uzvWD4pRsOffqJkNiMW6XZJl
+	gA==
+Received: (qmail 881287 invoked from network); 25 Nov 2026 11:40:11 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 25 Nov 2026 11:40:11 +0100
+X-UD-Smtp-Session: l3s3148p1@Q3OWcxdhlMAujnvc
+Date: Wed, 25 Nov 2026 11:40:11 +0100
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Diogo Ivo <diogo.ivo.sx@renesas.com>
+Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, stable@vger.kernel.org
 Subject: Re: [PATCH] i3c: renesas: Fix MDYAD(x) field length
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Frank Li <Frank.Li@nxp.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org
+Message-ID: <awa7C9LO_9Gr8htO@ninjato>
 References: <20261001-divo-ssgrlpcsrc-2966-i3c_mdyad-v1-1-2250225e6d20@renesas.com>
-Content-Language: en-US
-From: Diogo Ivo <diogo.ivo.sx@renesas.com>
-In-Reply-To: <20261001-divo-ssgrlpcsrc-2966-i3c_mdyad-v1-1-2250225e6d20@renesas.com>
-X-ClientProxiedBy: FR4P281CA0333.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:ea::8) To TYYPR01MB15118.jpnprd01.prod.outlook.com
- (2603:1096:405:1a1::11)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TY4PR01MB15109:EE_|TY7PR01MB13826:EE_
-X-MS-Office365-Filtering-Correlation-Id: a8109cfc-51cf-43be-eb25-08df4add186f
-X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|23010399003|1800799024|10067099003|56012099006|11063799006|261026121527099003|261021123027099003|261021121427099003|261102123227099003|261009223027099003|261009221227099003|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: kzia0ciUKd4Rpyppbeo1YA55a7jWRc1SIGuUCdDP9psh5J4Ps0d9evpkuleVFSXuEW8txZKZ5pDUGO3u+4d8kWUJQ+coZBwNVmOdj2JLH2CfSAs5Bi2dLQgJ2HaUvI3R91R5YrnKC4cZeaOC1u2EsLUnDyfW5pyBN5IDSQ4DHqwvhuKWjCeHVn8oLApP5/Dvn/4+PuTEL7QeRstrIu1n14/G/y6EQDU/wULtYMqJ6ogTMfW5N3n62hr9pihncusLP8KIBuZsn81YoTWdItz4m9R98WsV9DZ1SOs16eEJrGsUEY6zc+nLcERk/qo2nXcGtxc4eZPrPWo6IorwURHL08tgmKTLQozBO/sFVYjBOvnkKvmeBhNjGz8V+NLU81RAbwO1EBuYl9x7U9M0qdOZ0XNaIC7Ospjh4/tDUCf8TQRPbSFWpwRZp8JgiCzMFf2hY8/agPqN/e7kU8aVdGITqfnB6fRk3QkgBI/+nUH/8M/5zZvmiLTUsZTLC4ykhMv5mb9kF0cu+gSNciep6zkwoudHv0+ce1U6ljWaQhCqMW5K6BPOhLXJUe5rz4QVMhwLpkou34/pxWCz4filS+fJroYDAdB4vtT+6n3sZL7A+rERk4keKeI2Cc3IO7eeOhHGekwMU/hc5MMYZAMzGev+2YoO2zm/5IL8LaVn2py+/SQ=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY4PR01MB15109.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(23010399003)(1800799024)(10067099003)(56012099006)(11063799006)(261026121527099003)(261021123027099003)(261021121427099003)(261102123227099003)(261009223027099003)(261009221227099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?VytDWWt2UkZ4NmdxUzlIeEd4dWpFN3VEcEdwQS9xVG9lelNSQnRVTnN1RHpX?=
- =?utf-8?B?Q2dFc2s0VmVKalBucEo2SkpHSkFLVG5ZWEd0SCtETmptNCs0alVlMHdCZjhM?=
- =?utf-8?B?cGxlb25FeHJtTTJwVG5aVmpvcW82ZU1tdHhRdlZNL0tRN2tkbEhiRFJ0ay9O?=
- =?utf-8?B?UGVYOXl0RTBKaGdMSmlwZzliTnRQUXU5azNEVDVxMy85dG5jZE1xN1lCQlll?=
- =?utf-8?B?Y0R0dGM5am9TeFRzVFlZOEE2MUJsTHRhb2ZtbFA0d3Y4eVZGWnovUzZGRVpp?=
- =?utf-8?B?bGh0NUtFdXA3MWdjUUpNM1VPRUlkdElnT3J6UDJCMTFSZFB2OXFCQWhCL2F5?=
- =?utf-8?B?L1NLdU5wVXpnenBjcmptbmdDM1RzYW80amZ3WFprMzZuL1dWSjNWZno4Zk5P?=
- =?utf-8?B?Q2ZLZUt4QzZqWTYycmdSMTdSZ3JoTm9NblRzUUcxb2dwbnJneFdPQUQ2bWpa?=
- =?utf-8?B?Q2tkaW5rRVEyMnlsUll0d1FIYkhwZnVGbFUxQXlPbmZQcmVwd1dxTGNFMHlj?=
- =?utf-8?B?Qm1sZWljS25Jc1lLMHl2MCtFa1JRcGU0a2hoV2pialRqUE1rcjJDY0QyNTZ3?=
- =?utf-8?B?UXhpeDhZZXhLNm92T1N6ZUZIaDZpYllhTGFwQXJabU9wMzAwa2tGeGEyL2gv?=
- =?utf-8?B?b2JldVhDK1hwUGpoZE9QR0orMGVlakhBVFI0aE1DMlF2QzY3RkcvNWd6TjFF?=
- =?utf-8?B?WjdSZUwrT1dmMkxhaFpsTUQ2NU1UZ1VzalNSK1JOaGF3eGQ4ajRFaDVOYkQ4?=
- =?utf-8?B?TmgrbklFUVZzZDBjdXR3M0d0dU11Rm10UVgyaG1kSC8wa2o2NWd1RUpSaXF0?=
- =?utf-8?B?cUh0K00zb3JpK3BJNmh2SkI4eFlYWlk1Q25QS3pxak1ueThJZW9JUkZDc2Jv?=
- =?utf-8?B?VEZLVWdHcmtkYzF2cEYza0NXdUIxNGdzM3JOcHdoNktzVWpyMjViUFJWOGZi?=
- =?utf-8?B?TTlQSlZ5ejVsajI5ckhYRFNQOFQvYWdFRHRORmlNQ3ByNnBKTlRZcnQwL01I?=
- =?utf-8?B?TE95TjB0c3NaVWlhcFVBYlMxMWtRRy9VbEtRTFVxZ0NyRHJ5VTJ3ditxcXJ6?=
- =?utf-8?B?R3YrQUtiOUZNVldMU2laU0kzK3dGaTZnMnc5UXU4OUNTVEJINU1ZalRPdmZD?=
- =?utf-8?B?YmpYbFhrVmhiUnZ6NUZZYi8zRFFjRGd4eldJZk5vaExlUDQ5SElVOCtSVU1U?=
- =?utf-8?B?TDA5YXdMQk5USVRUWllPMk1ZRDBaUWlkbVdNNllJRlBPWlRqTURvam5jVzRp?=
- =?utf-8?B?eWx4ZWtuazM1STJsL2JxNUo4NTVMUDRlRzBhaFBKNWtaNk1wc1Vua2JiSnp3?=
- =?utf-8?B?RVk1d2lnd2l4ZU9zakRWR3ViemtNUG9GaU5jU3g4OW5nNnNrTlNNQXBRUFhx?=
- =?utf-8?B?bzd3UUlpRFZXT1EvbWszMVRaSWdSQ05VS0duSzdyOVdKN2tiQnh1SytIWTFw?=
- =?utf-8?B?OVQ5RGREMVpwNG1WcHFFUGhYdVdiU05YdVkwd05oNHp0WTRST0dKVzgyY3NE?=
- =?utf-8?B?VzlERVB6YmdYWll6aDJlZUFORmFCWC82V0xzVVpjOWxhQ3VxNk15ekR0dDF6?=
- =?utf-8?B?aTBhUW8wVHRTc0JrQ3ovTVdoR0pPQkdUQXJONGluREM3dlJYeE42ZXROd2g1?=
- =?utf-8?B?V2NSeEJGMzdvaUpXTTVZOFI2aVhWS3hzUnFIUEdNSXNrUEJkOTNHaklucGd6?=
- =?utf-8?B?aEs5MkRTUmVQZFh5VjU4blJVbWp4MTVYK05lZm9LZWlLdDlLbXQyRStvNk9P?=
- =?utf-8?B?aHVZK0Rmd2xIazBGaXVWVHlkZUs3ZVNmalNIWW0za3p1MFVLTUs5djMzd2xP?=
- =?utf-8?B?S1E2ZzN0VjNyOE5Ta2dHSmdsdEQxTUZRc2htZ1dmWGRXT1hsOTgvWjVHenFH?=
- =?utf-8?B?K0pUeFRlSGo1NUwzbERPL2RIcnRMQnB3WDNrcFU2S1h5M2NPSDlVRU4rQXFE?=
- =?utf-8?B?WFM3Z2xYcHNyejM0amZFUFRlcWFLRU9HbFlvK2t3SG5wcGFNZnp6ZXVKN3hT?=
- =?utf-8?B?OFYxUThDckZiU0NrY1M1cUdQanZSSHhmdTg2MWtQdVIzelVMTHliZnQ2ZEov?=
- =?utf-8?B?dE5yamwxd2l1MVBpYTRXbjFnQ1FGQXFBVnVMcktWR3dsd0c0LzBTKzc4RENP?=
- =?utf-8?B?VGo3ZWxaaUw1NGo3QnkyMUZjejZ6ci9rQkpjR1czUCtIVENoaWhoSFBGZU8r?=
- =?utf-8?B?dEU0UlZERExFdlBITVl5SjdrK2dIb3duWm9jdnc0dzJuT3cyVFhwVDdSa0px?=
- =?utf-8?B?anBJcXE5aHNnemRwdmMxWWY2Q2h0WDgrbXpHL1FQWHRsUkcwUm5IdFBkSDRR?=
- =?utf-8?B?dDUvKzZPZ0ZwYm9RSkY3b25jVUc0blFmOGhwS1dCWEJoQXFDdTlMdz09?=
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a8109cfc-51cf-43be-eb25-08df4add186f
-X-MS-Exchange-CrossTenant-AuthSource: TYYPR01MB15118.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Nov 2026 10:15:57.3336
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: tnn5oAqwF+X2Sc6s9rLa9d3z4nzRvm/D3g1wWE84RJGitCpYXUJg4E9o6keyzT10qd8N6m3todlqy9ZoQ937Rw+9k2kSLd9a+rvtikQrVN8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY7PR01MB13826
+Content-Disposition: inline
+In-Reply-To: <20261001-divo-ssgrlpcsrc-2966-i3c_mdyad-v1-1-2250225e6d20@renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_021609_969762_4F434324 
-X-CRM114-Status: GOOD (  16.12  )
+X-CRM114-CacheID: sfid-20261125_024017_878606_A9625769 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -147,20 +70,17 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
-	version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi all,
-
-On 10/1/2026 4:10 PM, Diogo Ivo wrote:
+On Thu, Oct 01, 2026 at 04:10:09PM +0100, Diogo Ivo wrote:
 > Fix the length of the MDYAD(x) macro to be 7 bits as it represents an
 > I3C address, which is 7 bits. The length of this field was confirmed on
 > the documentation of the RZ/G3{E,L,S} SoCs.
@@ -168,36 +88,12 @@ On 10/1/2026 4:10 PM, Diogo Ivo wrote:
 > Fixes: d028219a9f148 ("i3c: master: Add basic driver for the Renesas I3C controller")
 > Cc: stable@vger.kernel.org
 > Signed-off-by: Diogo Ivo <diogo.ivo.sx@renesas.com>
-> ---
->   drivers/i3c/master/renesas-i3c.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-> index 28c0927a0179..8b264f72e55c 100644
-> --- a/drivers/i3c/master/renesas-i3c.c
-> +++ b/drivers/i3c/master/renesas-i3c.c
-> @@ -37,7 +37,7 @@
->   #define  BCTL_BUSE		BIT(31)
->   
->   #define MSDVAD			0x18
-> -#define  MSDVAD_MDYAD(x)	FIELD_PREP(GENMASK(21, 16), x)
-> +#define  MSDVAD_MDYAD(x)	FIELD_PREP(GENMASK(22, 16), x)
->   #define  MSDVAD_MDYADV		BIT(31)
->   
->   #define RSTCTL			0x20
-> 
-> ---
-> base-commit: 66b734f67a4a0a4c2313afb89033d5ab8b8f7523
-> change-id: 20261001-divo-ssgrlpcsrc-2966-i3c_mdyad-0ba701c9add9
-> 
-> Best regards,
-> --
-> Diogo Ivo <diogo.ivo.sx@renesas.com>
 
-Gentle ping on this patch.
+This is true for R-Car X5H as well. Thanks!
 
-Thanks,
-Diogo
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+
 
 -- 
 linux-i3c mailing list
