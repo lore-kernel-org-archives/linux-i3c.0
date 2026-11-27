@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E9BDD606A31E
-	for <linux-i3c@archiver.kernel.org>; Fri, 27 Nov 2026 09:17:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 003FB606A32C
+	for <linux-i3c@archiver.kernel.org>; Fri, 27 Nov 2026 09:17:36 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1t7p+M4t;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=tuxon.dev header.i=@tuxon.dev header.a=rsa-sha256 header.s=google header.b=pFPWirMp
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=QjuZg0s0;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=tuxon.dev header.i=@tuxon.dev header.a=rsa-sha256 header.s=google header.b=AYFYuvQw
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,73 +14,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=QEysa6zebFFXs7KqKVCBZ5nbTRtqLf4JvrCK8FoeXSE=; b=1t7p+M4tE6uA0jjlCZspmMO8Vh
-	b+KByjqGGXc7CGpYyAe6Kznmk2SJB2O2cxpSb2l4R/YY8ETu5n7Vypzcr+xKpaCsZA/b+StjMJzwz
-	tPUlnJYBHUvvKKZ1mRrAPomPd8Zg+ZIAos2B9g4T6bavIZvOnRYLWOPP6NdpdYuTd4/1x1NI4LqFl
-	DW2SwREnXCAAq6FU1nf2wrO8FHzfi0jB7qr8RIx/s0d8eHN/OE+ip11fzdj2aDzoD7Kmi0icNnRSN
-	8cXuL2eEkWtRYYn0CEgmWNyu0Q4dveAImNqL8VFRx3rShqBKXhkaxwtNm2lL2+nJuy6Q52FMft5Lp
-	CsiiYRGw==;
+	bh=YwiCCFXIfEjU4u2/TUBI1fFhiqBbR9BjaulaqnjDEgQ=; b=QjuZg0s0kXZDnM9QoSSx/51p9/
+	bf+kdA4LGC4f+Y/vHmI7azM5E3OjaUqpjJ1O85J7r7U4KB+xZhobp0ToU5/LZs91zSxW3vgs3a0ij
+	MKVTjQBb7Q9juAdG0S8s9Sch84290UY55AuvLr0R+wKQtubd2YwcNDdxhj2pr87H3DOH41UycTmH7
+	KWLHQboxg8FYv7Kdv8uEDIEKEb1puYKZzeGKIWwmtp8gBB7NgFMkvIA9Pgh4XrqRNpBBrSW60vo4G
+	odJTzZzeMVqojD3bbiHCiAtcu9ihO//OHUzmpTLa5aNb9ZrUn0EdW6EPvYuw+GjWr57TPEZ7j44WY
+	QItI+DHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWs4z-0000000FP55-2u2g;
-	Fri, 27 Nov 2026 09:17:17 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1xWs5H-0000000FP8W-37sp;
+	Fri, 27 Nov 2026 09:17:35 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWs4x-0000000FP4W-20Er
+	id 1xWs5F-0000000FP7l-0zJd
 	for linux-i3c@lists.infradead.org;
-	Fri, 27 Nov 2026 09:17:16 +0000
-Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-490d59c3f0aso3597016f8f.1
-        for <linux-i3c@lists.infradead.org>; Fri, 27 Nov 2026 01:17:15 -0800 (PST)
+	Fri, 27 Nov 2026 09:17:34 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4bba5e17728so24376655e9.2
+        for <linux-i3c@lists.infradead.org>; Fri, 27 Nov 2026 01:17:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1795771034; x=1796375834; darn=lists.infradead.org;
+        d=tuxon.dev; s=google; t=1795771051; x=1796375851; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=F15I2fevZFaSQ3g9iMuUelugyCWRoLXcJodfxUxh7tw=;
-        b=pFPWirMp9JKVw94yKdhaGTwUVW10ayYO+mRx2tpblhPV+q5JRQJQVzbJa1iUGyoIs2
-         pFK3ahTZXArr/q/Tw5MazS4lCbnWmbIbfW2Eu24sTu3shuQ4eubC2darRBte9kK4QnYV
-         MOWXsKBulyq7gmiDXzUYgLVuMBOJsMDIzxeYhjNMwDcZi1YEEb1Jesc0IbEqVMQfic6G
-         hEO1VrCR8nQyYbfAEpIZFzmfQ/qiGnybT8RyroaFX1q/gebSK6UaaHcWbh5veo6xEAkr
-         LHtxTxukbGngY441Ifmydvj1g12zXEAf+t91KR+PDZQkRRueFYXE1RVrPjFYKKMhXIR6
-         NZaw==
+        bh=iJDwnblXoPc0E7sZTKvXtcZa2lLf2LQdU3Jx0B40YZ8=;
+        b=AYFYuvQw3QDPDnBJ/57aPahpg6qUkgYr6rFZcFGzRSYnrLjnltj6D90chUjpTVuDxd
+         yoFGtlnZdBLb9LP6BqkvK53H4647MSyRtFttB1rdTk+Yp06hBBa8uoOE1fpHkJUu6vzL
+         DqCZz/TFmUD28Na1SSIwB5nLwXLxOC2aNyx2lLuhSxfAB+lkwq+pVyQurBOdCROWuAgB
+         aezYI2mDQ5zBFKq+0K6GGEEbgl/2BKqqhlOmzfuqFOwjWYa+wn3Qio/8O7dK+G2x4WBy
+         GFS1okyMSnSozdRn/goknTIukRMf0bHCwUfNMLXMc64bYjAit1ap4+6NyPBM3efDzf53
+         eLHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795771034; x=1796375834;
+        d=1e100.net; s=20260707; t=1795771051; x=1796375851;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=F15I2fevZFaSQ3g9iMuUelugyCWRoLXcJodfxUxh7tw=;
-        b=BTIM/QvdQ3gqIkVydxo+jdixfM/TsI+HmtYWec6dwcO5DIzzVLHeV7a3E9wMGdXYFo
-         zzjo9UGkp1vchMpZKriS67qh+AtScVj6W7nEfozL83YBnUdxdfnJWFg1QFlsC2K1Fd2m
-         saMTejQGsg2AaamQ1UfECDcTQcAIgZzDmF26U76cjW/2n22G3LozLFd9+RGLHlFBaB67
-         550i/vufcXrL2YVkuxy7nbEcoWWPUqhv/qafJ1jVAtm46C1plqvusNRV/lz4TmOydYEB
-         8BHuh+0gEFHRgo/ovdNXhXL6FC25y8mNV3/N7GUn4UdpczGBOfA0Pck7jgkfNLiWA9wV
-         PPDg==
-X-Gm-Message-State: APuU4Z8d8YifumAybO6KsBh5dT3DBR0A15ymLb7eYB3SepmJVkHmZ5XB
-	x96RA/DLiW/tkvYhW5hUQo/Iz8j6XhRWNjh34mCdJ/VvqfMDKrskVOPUsl/GNY9wFZY=
-X-Gm-Gg: AZFdTZcGmVeR5681aFeXtVF0NL+XOZkGwyFsoBdZAq86N/jNbTw4xvnLe42tY8l8B5Z
-	94xPhyGnli44MU61esYOmQY+3RP1PGVoSEXtAQTQZuLBEsylBAXTDQ5P1mbhMf+q+mvyX17kPMX
-	tE/bGwdk1O2PuMnRB9vJwk2N1vBkmblGjor1x9p7eHxfk6aBPNv1CJDuKBuaFhiAK6JGBVyVIg5
-	QhvZ7YAdyUpTdeNLYSjg5W/8I64gUm8Cfh/XnGV7taPQ0Ci7OB9/4NQtvHXNcJ+KbmXJu3XXyFW
-	tRNdhSF7LZGGL2hdXwQTUOU1rgAyHawI5Og5kOrQt8GhDpRVaPGcHdMysbfBMHRn3eQQDztcX0D
-	zkZin002DOY9/CU1pnhMBB8G6MAvdWrUJbyIYyTtcy40GDTiLgVfAVVBsIOyiUOUzBX5ymI0twM
-	93nR8kuRpDlOn8t9fvBP9+37rtmuOAzWrTDUNDWcWdrP6Q/ImbsgXVGa37kwopubNVxpHhSj3xy
-	/6AUId6a2NXgAK57eIgALkYej51zhMlqfpGDjcqQ4mqIk2pNDF/SmpEmLrwGfRdGyCTbjY6vuQh
-	biWgHAIFZcVZvGFojKrNQL+sbpLRgCLm2A1B
-X-Received: by 2002:a05:6000:2f87:b0:4a6:bc53:246b with SMTP id ffacd0b85a97d-4abb5144ebdmr45324253f8f.30.1795771033589;
-        Fri, 27 Nov 2026 01:17:13 -0800 (PST)
+        bh=iJDwnblXoPc0E7sZTKvXtcZa2lLf2LQdU3Jx0B40YZ8=;
+        b=OohA+t7kX8Howi9AJC/cqQLzwFbTPvFbse/USQOTYeGjr+WuoJbb6wFJBRRQIYxKgs
+         vcvLbupRdH0kNdoW1SkEOOvU2mx4m+iQkB93MzoKbFgsSAIfCHVxhyzTjduU6Qk1CLtQ
+         I7Lvzpv41BYmq8TE+JpshQAaKnYuIHRAx4spXOyy933c4nbY9c/Bj5oLP3gGcCJhODKn
+         30s3ePXaxvkD81ZwNG2WS7uQV1j35Gsx8BGCKD269Smb4IDjXJui1aZhAR3ilK6vCupx
+         TelLt/17uiJkNey2LqoFlxbcj1yUKlUHAewkIvkCAsGhfNsZw5CY1+uZ93Z/qVaP/xO8
+         AzyQ==
+X-Gm-Message-State: APuU4Z8KnB1gLcl7q7jOSy4FBbeOuw6Yqq2hWd4CV9LHmfod9uDy7V5J
+	wZznlsvshS4qZtUAK880AN2AeVmBoLVGs4ZZ+6RPfqq3cxRFqJb9sVCBO0ETtgOA7Nw=
+X-Gm-Gg: AZFdTZcSVhXlF8Asi/lPLYThYynorV5Kr4aS3CZuA/kc67vW25qfE0GRV2JDFNm5rvu
+	WmGJ+pem10gvqjgi5F5EDA8ocrHuV1JiF7bVp5ig9XWIcMxygDrhRvA9ieBbTybDGvLXshR5peQ
+	4s9YidXu81ivwMZSaYW1fz9VQVopuPYMJp4Z+PsT8X7pi7ItzaCWBn3t7ze9RBG51qr7Ppqoqxn
+	nlWvGpfgPtrf/D7a7UnKc16eaxAqseZenZsiAFqWzQy21F2yjxMae3a+whLUU6ye8q0Yh5iRIhs
+	H1wdwUJAg6WQ9mTq77GKLidHHkWS2K82YPEf5RUR3X2lA/hj+TtZ/5nGN6KmHg4G77hcDllW4Z0
+	rb1LpQKsYSwOcb8t1+NyNBPdjx/pdKF4wY9RA7BuACgaehypn1Q2rDsorqnbyCIVq0eyE0sZ/vW
+	/Q0vv48RBvIm3bauyiQolhul/ublJnsDXmVgkIHjiqRk605b4IAQ5KiqJ/9eK9sXmGIvUj0iDGK
+	4z3FsXgMQ4tHXJppD+VeBDM4iGvyO54Wk6+j7/V3/fVHfnQHIYi+Iyjvcpf9Kj33K3DeIja2A8V
+	0K5gxQ5fMndXTij7RzXsz05Gkpcp1uT5VKOW
+X-Received: by 2002:a05:600c:1389:b0:4bb:7347:d5c0 with SMTP id 5b1f17b1804b1-4bb88826937mr438432725e9.9.1795771051464;
+        Fri, 27 Nov 2026 01:17:31 -0800 (PST)
 Received: from [192.168.50.4] ([82.78.167.114])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6b8b7888sm45914055f8f.42.2026.11.27.01.17.11
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb8526cbd0sm896151645e9.0.2026.11.27.01.17.29
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 27 Nov 2026 01:17:13 -0800 (PST)
-Message-ID: <bc1ac983-16ba-4165-9827-a7cde032c988@tuxon.dev>
-Date: Fri, 27 Nov 2026 11:17:11 +0200
+        Fri, 27 Nov 2026 01:17:30 -0800 (PST)
+Message-ID: <5c05644b-fcf2-41e7-a012-338ce7eec8d2@tuxon.dev>
+Date: Fri, 27 Nov 2026 11:17:29 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 6/7] pinctrl: renesas: rzg2l: Add RZ/G3L support for
- selecting I3C power source
+Subject: Re: [PATCH v2 2/7] i3c: renesas: Drop comma after OF match table
+ sentinel
 To: Diogo Ivo <diogo.ivo.sx@renesas.com>,
  Wolfram Sang <wsa+renesas@sang-engineering.com>,
  Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
@@ -95,13 +95,13 @@ Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org
 References: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-0-2e76b87209bb@renesas.com>
- <20261026-divo-ssgrlpcsrc-2966-i3c-v2-6-2e76b87209bb@renesas.com>
+ <20261026-divo-ssgrlpcsrc-2966-i3c-v2-2-2e76b87209bb@renesas.com>
 Content-Language: en-US
 From: claudiu beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-6-2e76b87209bb@renesas.com>
+In-Reply-To: <20261026-divo-ssgrlpcsrc-2966-i3c-v2-2-2e76b87209bb@renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261127_011715_524096_B90A2498 
-X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-CacheID: sfid-20261127_011733_290009_F17A273F 
+X-CRM114-Status: UNSURE (   4.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -126,14 +126,12 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 
 On 10/26/26 13:35, Diogo Ivo wrote:
-> The Renesas RZ/G3L I3C pins can be powered at either 1.8V or 1.2V.  The
-> pin controller provides a register to select between these two options.
-> On RZ/G3L the I3C signals are multiplexed on the P2 port pins.  Update
-> the Renesas RZ/G2L pin controller driver to allow selecting the I3C
-> power source on RZ/G3L SoC.
+> Drop the unnecessary terminator comma on the compatible table.
+> No functional changes intended.
 > 
+> Reviewed-by: Wolfram Sang<wsa+renesas@sang-engineering.com>
+> Reviewed-by: Frank Li<Frank.Li@nxp.com>
 > Signed-off-by: Diogo Ivo<diogo.ivo.sx@renesas.com>
-
 Reviewed-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
 -- 
