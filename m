@@ -2,66 +2,57 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id ECC62606A31E
-	for <linux-i3c@archiver.kernel.org>; Fri, 27 Nov 2026 06:20:50 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44803606A31C
+	for <linux-i3c@archiver.kernel.org>; Fri, 27 Nov 2026 06:31:59 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=k9ofH3Ga
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=EK/azuhm;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KCdU839c
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=OA+KIQKCx5zJ9D17uvNx0FpuEymEpadAhALOsWUJ2Nc=; b=k9ofH3GaztUVV+Yx9eGe+7hGHe
-	OTaQ6icbPgcr3YhAYYU4fjvEu3Xfcwgx2HHuEd/MlKyShhy6RU8ZFxi/3kLzWi4L5VqP25JLHiMGX
-	QlJPv8cvtgeIt1opm4VSOU4F/ZWrWUZqtpJyX1gEg1bd73sa/BMRTh+ad2TpNBZuXpF8lhkH8NI2O
-	KmkT9ACqzLUWHz2LYb9v18Jy1LptCkHtrz14PLsrOSZXrKg36MXq0JdZI77worlZQCewM6SkBrt3A
-	hqHf2xfrQS8V5Kan5RVvwtd1qT5bJK80nVgph2LfAyFqdmNljXcEVAUZFR0q0mZivmbXilsyOaM/H
-	pIc9XU1w==;
+	bh=v+naHfkiS0FP+9M/G6wVfFtE9qqlTS5YbHqO2RDRSoA=; b=EK/azuhm+ujNb2nAdsCs0dw/4J
+	G+aKDd4HE7WRY3P5yawQAS58mIuyjxDE8xuj6pfWrMJfxSoz/EUcyj8RIT0AFQWC+K+4pezgxI8Fe
+	M8+/Yl7PKXG6SMj3AqSKCYrgfuGX5ZaMYVlIfxkqFDOGGlwxu+cEZblaS+H6GCeRbcuhJQ9tMZ0Nq
+	WYHkc6mT7cb4PuEcbvis9oPt8wiKZWSM4x8UU3B7MqM8mW42/80dkjwptk4MdP5dJFbbG2UG2hOo4
+	UAwIEqcz6w9WM74dG+qjGkoeaqDq/zZnSpBmVU6ATMpVMNebYjRUkaDWVxMzL+wPpTCNUiubcpZlN
+	5wB8WmDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWpKE-0000000F1jb-2tTO;
-	Fri, 27 Nov 2026 06:20:50 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
+	id 1xWpV0-0000000F2mj-3X2c;
+	Fri, 27 Nov 2026 06:31:58 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWpK9-0000000F1iv-47Ke
+	id 1xWpUz-0000000F2mZ-2q9U
 	for linux-i3c@lists.infradead.org;
-	Fri, 27 Nov 2026 06:20:49 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.39; Fri, 27 Nov
- 2026 14:20:36 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.39 via Frontend
- Transport; Fri, 27 Nov 2026 14:20:36 +0800
-From: Billy Tsai <billy_tsai@aspeedtech.com>
-Date: Fri, 27 Nov 2026 14:20:02 +0800
-Subject: [PATCH] i3c: master: mark OF bus child nodes OF_POPULATED to avoid
- legacy I2C rescan
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-ID: <20261127-i3c-master-of-populated-v1-1-29d2a6a5509c@aspeedtech.com>
-X-B4-Tracking: v=1; b=H4sIABEhCWsC/x3MQQqAIBBA0avErBvIKRK6SrQwG2ugUrQiiO6et
- HyL/x9IHIUTdMUDkS9J4vcMVRZgF7PPjDJlA1XUKkUapba4mXRwRO8w+HCu5uAJiV2lLY2jbmr
- IdYjs5P7P/fC+H1xNdcNpAAAA
-X-Change-ID: 20261127-i3c-master-of-populated-2ef07c2bb743
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
-	<Frank.Li@nxp.com>, Peter Yin <peteryin.openbmc@gmail.com>
-CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<stable@vger.kernel.org>, Billy Tsai <billy_tsai@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795760436; l=3487;
- i=billy_tsai@aspeedtech.com; s=20251118; h=from:subject:message-id;
- bh=61bYkC444y6LURoBfsYDeMvfueN3HRxEzlGVlaACKDY=;
- b=FdCau5Fvp3+HsyVTTucMRi5NsIe6YzcG+tMM4dNypDzwIJwK/IsTiZez6gljMhHu+1liAhf4p
- 1i7ZbgmrXnJCYb3xzdlngYtdQ1v/V/v8w6RdRquc9n2VFq0tKG/ivPU
-X-Developer-Key: i=billy_tsai@aspeedtech.com; a=ed25519;
- pk=/A8qvgZ6CPfnwKgT6/+k+nvXOkN477MshEGJvVdzeeQ=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261126_222046_053129_8E37EDEE 
-X-CRM114-Status: GOOD (  11.79  )
-X-Spam-Score: -1.9 (-)
+	Fri, 27 Nov 2026 06:31:57 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2212643EC7;
+	Fri, 27 Nov 2026 06:31:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CED871F00893;
+	Fri, 27 Nov 2026 06:31:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795761117;
+	bh=bqYg6Zp/JLvmpZJFabvTIag+ijRL/SqJqR0GV9dfwoQ=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=KCdU839cT83ocsmphSj6wWzdQQI2xQBTbZiyiDFubQE8vRPwyKgfoLbcrRHqe3fF7
+	 ptoVdT8ArYaB8NgloUSNn4K8VRK/frbmpct5DakIoRXzh2XIvqTzhmmzNoW3QNlFzN
+	 iDxixyoReQ3zYVJe55Pzfdi/9aT2pWgjQmjM3cfqJrhgiNdutuP9RyCXIZQjecdauV
+	 rTeFlOUqHtEOmdOycqD8OS3kB+Bp8YQlZRxY1zbld/Ul8ftSHE9JMlxjaf5EwJ9Xda
+	 DRh5wFUanilCmjg2NrnYq0xLaaIWFvv6Rp9A79HXlN6gO2qwX+d2U35apDXUTIWeBN
+	 Ij2nXtmPl6gwA==
+Message-ID: <sashiko-outbox-236743@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] i3c: master: mark OF bus child nodes OF_POPULATED to
+ avoid legacy I2C rescan
+To: "Billy Tsai" <billy_tsai@aspeedtech.com>
+Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
+In-Reply-To: <20261127-i3c-master-of-populated-v1-1-29d2a6a5509c@aspeedtech.com>
+References: <20261127-i3c-master-of-populated-v1-1-29d2a6a5509c@aspeedtech.com>
+Date: Fri, 27 Nov 2026 06:31:56 +0000
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,104 +62,69 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Commit f26ecaa0f0ab ("i3c: master: dw-i3c: Fix missing of_node for
-virtual I2C adapter") made the DesignWare I3C master's virtual legacy
-I2C adapter reuse the I3C bus platform device's of_node, so consumers
-can resolve the adapter by phandle. i2c_register_adapter() reacts to
-any adapter with a non-NULL of_node by unconditionally calling
-of_i2c_register_devices(), which walks every child of that node and
-requires a "compatible" property to build a modalias.
-
-The I3C core already owns and fully parses every child of the bus node
-via fwnode_populate_i3c_bus()/i3c_master_add_of_dev(), for both native
-I3C devices (no "compatible" needed per the i3c.yaml binding) and
-legacy-I2C-under-I3C devices (registered explicitly through
-master->boardinfo.i2c in i3c_master_i2c_adapter_init()). Since neither
-path marks the node OF_POPULATED, the generic of_i2c_register_devices()
-walk that now runs afterwards treats every child as unclaimed:
-
- - native I3C-only nodes have no "compatible", so of_i2c_get_board_info()
-   fails the modalias lookup and logs "of_i2c: modalias failure" /
-   "Failed to create I2C device" noise for a device that is already
-   correctly registered on the I3C bus.
-
- - legacy-I2C nodes do have "compatible", so of_i2c_register_devices()
-   silently creates a duplicate i2c_client for the same address that
-   i3c_master_i2c_adapter_init() also registers from boardinfo.i2c.
-
-Mark each OF bus child OF_POPULATED once i3c_master_add_of_dev() has
-accounted for it. ACPI-described children are left untouched, since
-OF_POPULATED and of_i2c_register_devices() only apply to the
-devicetree case. fwnode_populate_i3c_bus() always runs before the I2C
-adapter is registered, so of_i2c_register_devices() sees the flag
-already set and skips these nodes entirely, without disturbing the
-of_node propagation from f26ecaa0f0ab.
-
-Fixes: f26ecaa0f0ab ("i3c: master: dw-i3c: Fix missing of_node for virtual I2C adapter")
-Cc: stable@vger.kernel.org
-Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
----
- drivers/i3c/master.c | 24 +++++++++++++++++-------
- 1 file changed, 17 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 01e05bad8661..f025c9e9a046 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -3353,15 +3353,25 @@ static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
- 		return 0;
- 
- 	fwnode_for_each_available_child_node_scoped(fwnode, child) {
--		if (is_of_node(child))
-+		if (is_of_node(child)) {
- 			ret = i3c_master_add_of_dev(master, child);
--		else if (is_acpi_device_node(child))
--			ret = i3c_master_add_acpi_dev(master, child);
--		else
--			continue;
-+			if (ret)
-+				return ret;
- 
--		if (ret)
--			return ret;
-+			/*
-+			 * Claim the node so that i2c_register_adapter(),
-+			 * called later for the legacy I2C adapter sharing
-+			 * this same of_node, does not also run
-+			 * of_i2c_register_devices() on it: every child here
-+			 * is already fully accounted for, whether it ends up
-+			 * I3C or legacy-I2C boardinfo.
-+			 */
-+			of_node_set_flag(to_of_node(child), OF_POPULATED);
-+		} else if (is_acpi_device_node(child)) {
-+			ret = i3c_master_add_acpi_dev(master, child);
-+			if (ret)
-+				return ret;
-+		}
- 	}
- 
- 	/*
-
----
-base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
-change-id: 20261127-i3c-master-of-populated-2ef07c2bb743
-
-Best regards,
--- 
-Billy Tsai <billy_tsai@aspeedtech.com>
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+bm8gbmV3IGlzc3VlcwppbiB0aGlzIHBhdGNoLCBidXQgbm90aWNlZCAxIHJlbGF0ZWQgcHJlLWV4
+aXN0aW5nIGlzc3VlIGl0IGRvZXMgbm90CmludHJvZHVjZToKLSBbSGlnaF0gaTNjOiBtYXN0ZXI6
+IGR1cGxpY2F0ZSBJMkMgdGFyZ2V0IHJlZ2lzdHJhdGlvbiBpbgogIGkzY19tYXN0ZXJfYWRkX2Fj
+cGlfZGV2KCkgWzFdCi0tCgpjb21taXQgOTBhMTI4ZTE3ZWMzMjY1MjE3ZTZkZjEwMzVmNTU1MTli
+MTdjMGZjMwpBdXRob3I6IEJpbGx5IFRzYWkgPGJpbGx5X3RzYWlAYXNwZWVkdGVjaC5jb20+Cgpp
+M2M6IG1hc3RlcjogbWFyayBPRiBidXMgY2hpbGQgbm9kZXMgT0ZfUE9QVUxBVEVEIHRvIGF2b2lk
+IGxlZ2FjeSBJMkMgcmVzY2FuCgpUaGlzIGNvbW1pdCBtYXJrcyBkZXZpY2V0cmVlIGNoaWxkIG5v
+ZGVzIG9mIGFuIEkzQyBidXMgYXMgT0ZfUE9QVUxBVEVEIGluCmZ3bm9kZV9wb3B1bGF0ZV9pM2Nf
+YnVzKCkgc28gdGhhdCByZWdpc3RlcmluZyBhIHZpcnR1YWwgbGVnYWN5IEkyQyBhZGFwdGVyCnNo
+YXJpbmcgdGhlIGJ1cyBvZl9ub2RlIGRvZXMgbm90IHJlLXBhcnNlIG9yIGR1cGxpY2F0ZSB0aGVt
+IHZpYQpvZl9pMmNfcmVnaXN0ZXJfZGV2aWNlcygpLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9p
+M2MvbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwo+IGluZGV4IDAxZTA1YmFkODY2MWUu
+LmYwMjVjOWU5YTA0NjYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9pM2MvbWFzdGVyLmMKPiArKysg
+Yi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwo+IEBAIC0zMzUzLDE1ICszMzUzLDI1IEBAIHN0YXRpYyBp
+bnQgZndub2RlX3BvcHVsYXRlX2kzY19idXMoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAq
+bWFzdGVyKQo+ICAJCXJldHVybiAwOwo+ICAKPiAgCWZ3bm9kZV9mb3JfZWFjaF9hdmFpbGFibGVf
+Y2hpbGRfbm9kZV9zY29wZWQoZndub2RlLCBjaGlsZCkgewo+IC0JCWlmIChpc19vZl9ub2RlKGNo
+aWxkKSkKPiArCQlpZiAoaXNfb2Zfbm9kZShjaGlsZCkpIHsKPiAgCQkJcmV0ID0gaTNjX21hc3Rl
+cl9hZGRfb2ZfZGV2KG1hc3RlciwgY2hpbGQpOwo+IC0JCWVsc2UgaWYgKGlzX2FjcGlfZGV2aWNl
+X25vZGUoY2hpbGQpKQo+IC0JCQlyZXQgPSBpM2NfbWFzdGVyX2FkZF9hY3BpX2RldihtYXN0ZXIs
+IGNoaWxkKTsKPiAtCQllbHNlCj4gLQkJCWNvbnRpbnVlOwo+ICsJCQlpZiAocmV0KQo+ICsJCQkJ
+cmV0dXJuIHJldDsKPiAgCj4gLQkJaWYgKHJldCkKPiAtCQkJcmV0dXJuIHJldDsKPiArCQkJLyoK
+PiArCQkJICogQ2xhaW0gdGhlIG5vZGUgc28gdGhhdCBpMmNfcmVnaXN0ZXJfYWRhcHRlcigpLAo+
+ICsJCQkgKiBjYWxsZWQgbGF0ZXIgZm9yIHRoZSBsZWdhY3kgSTJDIGFkYXB0ZXIgc2hhcmluZwo+
+ICsJCQkgKiB0aGlzIHNhbWUgb2Zfbm9kZSwgZG9lcyBub3QgYWxzbyBydW4KPiArCQkJICogb2Zf
+aTJjX3JlZ2lzdGVyX2RldmljZXMoKSBvbiBpdDogZXZlcnkgY2hpbGQgaGVyZQo+ICsJCQkgKiBp
+cyBhbHJlYWR5IGZ1bGx5IGFjY291bnRlZCBmb3IsIHdoZXRoZXIgaXQgZW5kcyB1cAo+ICsJCQkg
+KiBJM0Mgb3IgbGVnYWN5LUkyQyBib2FyZGluZm8uCj4gKwkJCSAqLwo+ICsJCQlvZl9ub2RlX3Nl
+dF9mbGFnKHRvX29mX25vZGUoY2hpbGQpLCBPRl9QT1BVTEFURUQpOwo+ICsJCX0gZWxzZSBpZiAo
+aXNfYWNwaV9kZXZpY2Vfbm9kZShjaGlsZCkpIHsKPiArCQkJcmV0ID0gaTNjX21hc3Rlcl9hZGRf
+YWNwaV9kZXYobWFzdGVyLCBjaGlsZCk7Cj4gKwkJCWlmIChyZXQpCj4gKwkJCQlyZXR1cm4gcmV0
+Owo+ICsJCX0KPiAgCX0KCltTZXZlcml0eTogSGlnaF0KVGhpcyBwcm9ibGVtIHdhc24ndCBpbnRy
+b2R1Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1dCBjYW4KaTNjX21hc3Rlcl9hZGRfYWNwaV9kZXYoKSBy
+ZWdpc3RlciBkdXBsaWNhdGUgSTJDIGJvYXJkaW5mbyBhY3Jvc3MgbXVsdGlwbGUKSTNDIGNvbnRy
+b2xsZXJzIFsxXT8KCmRyaXZlcnMvaTNjL21hc3Rlci5jOmkzY19tYXN0ZXJfYWRkX2FjcGlfZGV2
+KCkgewogICAgLi4uCglpZiAoIWFjcGlfaGFzX21ldGhvZChhZGV2LT5oYW5kbGUsICJfQURSIikp
+IHsKCQlyZXQgPSBpM2NfbWFzdGVyX2FkZF9pMmNfYm9hcmRpbmZvKG1hc3RlciwgZndub2RlLCBy
+ZWcpOwoJCWlmIChyZXQgPT0gLUVOT0RFVikKCQkJcmV0dXJuIDA7CgoJCXJldHVybiByZXQ7Cgl9
+CiAgICAuLi4KfQoKV2hlbiBhbiBJM0MgY29udHJvbGxlciBpcyBwYXJ0IG9mIGFuIE1GRCBzaGFy
+aW5nIGEgcGFyZW50IFBDSSBkZXZpY2UncwpBQ1BJIG5vZGUsIGV2ZXJ5IGNvbnRyb2xsZXIgaW5z
+dGFuY2UgaXRlcmF0ZXMgb3ZlciB0aGUgc2hhcmVkIEFDUEkgY2hpbGQKbm9kZXMgaW4gZndub2Rl
+X3BvcHVsYXRlX2kzY19idXMoKS4gIFVubGlrZSBJM0MgdGFyZ2V0cywgQUNQSSBjaGlsZCBub2Rl
+cwpmb3IgSTJDIGRldmljZXMgaGF2ZSBubyBfQURSIG1ldGhvZCwgc28gdGhleSBieXBhc3MgY29u
+dHJvbGxlciBmaWx0ZXJpbmcKYW5kIGFyZSBhZGRlZCB0byBtYXN0ZXItPmJvYXJkaW5mby5pMmMg
+b24gZXZlcnkgY29udHJvbGxlciBpbnN0YW5jZSwKY2F1c2luZyBtdWx0aXBsZSBsb2dpY2FsIEkz
+QyBidXNlcyB0byBpbnN0YW50aWF0ZSBhbmQgcHJvYmUgdGhlIHNhbWUKcGh5c2ljYWwgSTJDIHRh
+cmdldC4KClsxXSBodHRwczovL3Nhc2hpa28uZGV2LyMvYnVnL2xpbnV4LWQ2NGIxNjFiLTA5ZWYt
+NGY1Zi05YmUyLTJmNDY5MTUyYWJlZQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8v
+c2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTEyNy1pM2MtbWFzdGVyLW9mLXBvcHVsYXRlZC12
+MS0xLTI5ZDJhNmE1NTA5Y0Bhc3BlZWR0ZWNoLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1pM2MgbWFp
+bGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
